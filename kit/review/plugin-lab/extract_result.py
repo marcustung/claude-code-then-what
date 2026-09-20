@@ -14,7 +14,7 @@ def scan_objects(txt):
             i = j + 1
     return objs
 def extract(run):
-    d = os.path.join('runs', run)
+    d = run if os.path.isdir(run) else os.path.join('runs', run)   # 接受 runs/ 下的名稱或任何目錄路徑
     evs = [json.loads(l) for l in io.open(os.path.join(d, 'trace.jsonl'), encoding='utf-8') if l.strip()]
     res = [e for e in evs if e.get('type') == 'result'][0]
     tools = []; launched = False

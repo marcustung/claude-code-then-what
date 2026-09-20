@@ -1,7 +1,8 @@
+import shutil, os
 from pathlib import Path
 import subprocess,json,datetime,hashlib
 lab=Path(__file__).parent
-cli=r"<HOME>\.local\bin\claude.exe"
+cli = shutil.which('claude') or os.path.expanduser(r'~\.local\bin\claude.exe')
 def run(n):
  prompt=(lab/f"stage{n}-prompt.txt").read_text(encoding="utf-8")
  args=[cli,"-p",prompt,"--model","sonnet","--effort","low","--safe-mode","--tools","Read","--allowedTools","Read","--strict-mcp-config","--mcp-config",'{"mcpServers":{}}',"--output-format","stream-json","--verbose","--no-session-persistence","--max-budget-usd","1"]

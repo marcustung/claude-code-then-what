@@ -1,6 +1,6 @@
 {
- "files": 315,
- "binary": 18,
+ "files": 316,
+ "binary": 16,
  "scrubbed": [
   "days\\day02\\lab\\day02-write\\trace.jsonl",
   "days\\day03\\lab\\meta.json",
@@ -27,14 +27,12 @@
   "days\\day06\\lab\\impl\\trace.jsonl",
   "days\\day06\\lab\\intent\\trace.jsonl",
   "days\\day06\\lab\\noname\\trace.jsonl",
-  "days\\day06\\lab-two-stage\\run.py",
   "days\\day06\\lab-two-stage\\stage1-meta.json",
   "days\\day06\\lab-two-stage\\stage1-trace.jsonl",
   "days\\day06\\lab-two-stage\\stage2-meta.json",
-  "days\\day06\\lab-two-stage\\stage2-trace.jsonl",
-  "kit\\review\\plugin-lab\\run-lab.ps1"
+  "days\\day06\\lab-two-stage\\stage2-trace.jsonl"
  ],
  "forbidden": [],
  "figures": 42,
- "bytes": 52563220
+ "bytes": 52582850
 }

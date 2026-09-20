@@ -10,6 +10,7 @@ Rules (deterministic; no model):
 """
 import json, re, sys, os, io
 run = sys.argv[1]
+if not os.path.isdir(run) and os.path.isdir(os.path.join('runs', run)): run = os.path.join('runs', run)   # 接受 runs/ 下的名稱或任何目錄路徑
 def load(p):
     return io.open(p, encoding='utf-8').read()
 gate_kw = re.compile(r'\b(Paid|Refund|Amount|Price|Charge|authorized|Auth|Permission|Role|DROP|DELETE FROM|migration)\b|Cancelled\s*=|Status\s*=|State\s*=')

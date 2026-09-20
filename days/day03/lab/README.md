@@ -8,4 +8,4 @@ Codex 檢視 source 後執行模型原樣測試：7 組情境、18 個斷言全�
 
 環境：首次 net8 編譯後因缺 runtime 無法執行，接著 net10 因 SDK 不支援失敗，最終以 net9 執行成功；兩次環境失敗皆保存，未修改模型程式或重抽模型答案。
 
-重跑：在本目錄執行 `dotnet run --project Demo.csproj`，需要 .NET 9 SDK/runtime。僅本機原件，尚未發布公開 repo；不宣稱成效或一般模型出錯率。
+重跑：在本目錄執行 `dotnet run --project Demo.csproj`，需要 .NET 9 SDK/runtime。不宣稱成效或一般模型出錯率。

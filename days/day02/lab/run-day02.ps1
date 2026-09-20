@@ -3,7 +3,7 @@
 # Task: implement the guard from an under-specified ticket. Host compiles and runs the returned code.
 $root = $PSScriptRoot
 $utf8 = [Text.UTF8Encoding]::new($false)
-$cli = '<HOME>\.local\bin\claude.exe'
+$cli = (Get-Command claude.exe, claude.cmd -ErrorAction SilentlyContinue | Select-Object -First 1).Source; if (-not $cli) { $cli = (Get-Command claude.exe, claude.cmd -ErrorAction SilentlyContinue | Select-Object -First 1).Source; if (-not $cli) { $cli = "$env:USERPROFILE\.local\bin\claude.exe" }; if (-not (Test-Path $cli)) { throw "找不到 Claude Code CLI：請先安裝並登入（npm i -g @anthropic-ai/claude-code 或官方安裝器），再重跑" } }; if (-not (Test-Path $cli)) { throw "找不到 Claude Code CLI：請先安裝並登入（npm i -g @anthropic-ai/claude-code 或官方安裝器），再重跑" }
 $name = 'day02-write'
 $dir = Join-Path $root $name
 if (Test-Path (Join-Path $dir 'trace.jsonl')) { $dir = "$dir-rerun-$(Get-Date -Format yyyyMMdd-HHmmss)" }  # 既有 run 不覆寫

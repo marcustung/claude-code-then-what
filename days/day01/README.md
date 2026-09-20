@@ -10,5 +10,6 @@
 | 範本 | [five-layers-ledger.md](../../templates/five-layers-ledger.md) |
 | 原件 | 本篇為歷史案例，只有範本 |
 | 界線 | 使用報表與 git 署名都不是成效；不含公司數字 |
+| 最近試跑 | 2026-09-20 14:12（E1）OK：在讀者自己的 git repo 執行；本 repo 副本不是 git repo 時會報 not a git repository，屬預期；見 [VERIFIED.md](../../VERIFIED.md) |
 
 [回 30 天索引](../../README.md)

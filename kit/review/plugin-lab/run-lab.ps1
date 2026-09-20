@@ -1,9 +1,9 @@
-# Day 4 lab: does the review-pr skill add anything over a plain review? G0 = no plugin; S = plugin loaded via --plugin-dir.
+﻿# Day 4 lab: does the review-pr skill add anything over a plain review? G0 = no plugin; S = plugin loaded via --plugin-dir.
 # A = PR without rule sources (should be OWNER_REQUIRED / NEEDS_EVIDENCE); B = PR with Owner-confirmed rules (should PASS or at most ask).
 $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
 $utf8 = [Text.UTF8Encoding]::new($false)
-$cli = '<HOME>\.local\bin\claude.exe'
+$cli = (Get-Command claude.exe, claude.cmd -ErrorAction SilentlyContinue | Select-Object -First 1).Source; if (-not $cli) { $cli = (Get-Command claude.exe, claude.cmd -ErrorAction SilentlyContinue | Select-Object -First 1).Source; if (-not $cli) { $cli = "$env:USERPROFILE\.local\bin\claude.exe" }; if (-not (Test-Path $cli)) { throw "找不到 Claude Code CLI：請先安裝並登入（npm i -g @anthropic-ai/claude-code 或官方安裝器），再重跑" } }; if (-not (Test-Path $cli)) { throw "找不到 Claude Code CLI：請先安裝並登入（npm i -g @anthropic-ai/claude-code 或官方安裝器），再重跑" }
 $plugin = (Resolve-Path (Join-Path $root '..\plugin\review-kit')).Path
 $plain = @'
 Review the pull request in the current directory. Files: PR.md (author's description), ticket.md (requirement), diff.patch (the change), Program.cs (tests). Read only; do not modify or run anything.
@@ -14,7 +14,7 @@ Use the review-kit:review-pr skill (invoke it with the Skill tool) to review the
 '@
 function Run($name, $fixture, $prompt, $withPlugin) {
     $dir = Join-Path $root "runs\$name"
-    if (Test-Path $dir) { Remove-Item $dir -Recurse -Force }
+    if (Test-Path $dir) { $dir = "$dir-rerun-$(Get-Date -Format yyyyMMdd-HHmmss)" }  # 既有 run 不覆寫
     Copy-Item (Join-Path $root "fixtures\$fixture") $dir -Recurse
     $p = $prompt -replace "`r`n", "`n"
     [IO.File]::WriteAllText((Join-Path $dir 'prompt.txt'), $p, $utf8)
