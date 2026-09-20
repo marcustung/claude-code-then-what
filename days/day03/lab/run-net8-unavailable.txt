@@ -1,0 +1,18 @@
+
+You must install or update .NET to run this application.
+
+App: C:\<AUTHOR>\
+Framework: 'Microsoft.NETCore.App', version '8.0.0' (x64)
+.NET location: C:\Program Files\dotnet
+
+The following frameworks were found:
+  9.0.16 at [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  10.0.11 at [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=8.0.0&arch=x64&rid=win-x64&os=win10
+
+exit=2147516566

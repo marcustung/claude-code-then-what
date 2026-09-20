@@ -1,0 +1,10 @@
+{
+    "fixture":  "pr-B",
+    "arguments":  "-p --model sonnet --effort low --strict-mcp-config --no-session-persistence --output-format stream-json --verbose --setting-sources \"\" --plugin-dir \"<REPO>\\examples\\kit-review\\plugin\\review-kit\" --tools Read,Grep,Glob,Skill --allowedTools Read,Grep,Glob,Skill ",
+    "prompt_sha256":  "2FE70BA3973E2DA154503A1C5EE95ABADEF0E9C5C80534638415D52ED44F7089",
+    "name":  "S-B",
+    "exit_code":  0,
+    "started_utc":  "2026-09-15T14:45:53.3851303Z",
+    "plugin":  true,
+    "ended_utc":  "2026-09-15T14:46:30.4038040Z"
+}

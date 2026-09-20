@@ -1,0 +1,16 @@
+{
+ "run": "G0-A",
+ "num_turns": 5,
+ "cost_usd": 0.0627,
+ "duration_ms": 24967,
+ "tools": [
+  "Read",
+  "Read",
+  "Read",
+  "Read"
+ ],
+ "skill_launched": false,
+ "verdict": "OWNER_REQUIRED",
+ "findings": 6,
+ "json_repaired": true
+}

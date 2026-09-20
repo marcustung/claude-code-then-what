@@ -1,0 +1,27 @@
+{
+ "verdict": "NEEDS_EVIDENCE",
+ "findings": [
+  {
+   "claim": "`dotnet run` 7 組情境 18 個斷言 PASS（.NET 9.0.104，2026-09-16，CI job #8812）",
+   "source": "PR.md:11",
+   "missing": "No CI log, test output, or link to job #8812 is included in the PR materials; this is read-only review and the claim cannot be independently executed or verified from the given files alone.",
+   "severity": "ask"
+  },
+  {
+   "claim": "R-02、R-05、R-07 由訂單 Owner（@order-owners）於 2026-09-16 在 ORD-142 留言確認",
+   "source": "PR.md:15",
+   "missing": "No excerpt or link to the actual Owner comment/approval thread is included; ticket.md only shows the rules text attributed to the Owner, not a verifiable confirmation record.",
+   "severity": "ask"
+  },
+  {
+   "claim": "程式碼與測試邏輯與 R-02/R-05/R-07 及 Program.cs 斷言一致",
+   "source": "diff.patch:13-31 and Program.cs:22-87",
+   "missing": "None — logic traced and consistent: shipped orders are never cancelled/mutated (R-02, no exception thrown per ticket), already-cancelled orders return unchanged with no duplicate refund (R-05), and RefundRequested is set to Paid only on first successful cancellation of an unshipped order (R-07). Test count (7 scenarios, 18 assertions) matches the PR's stated numbers exactly.",
+   "severity": "note"
+  }
+ ],
+ "owner_questions": [
+  "Can you attach or link the actual CI run (job #8812) or paste its console output so the 7-scenario/18-assertion PASS claim can be verified independently?",
+  "Can you link or paste the Owner's actual comment on ORD-142 confirming R-02/R-05/R-07, rather than relying on the ticket.md restatement?"
+ ]
+}

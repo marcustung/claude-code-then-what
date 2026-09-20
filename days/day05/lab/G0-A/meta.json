@@ -1,0 +1,10 @@
+{
+    "fixture":  "pr-A",
+    "arguments":  "-p --model sonnet --effort low --strict-mcp-config --no-session-persistence --output-format stream-json --verbose --setting-sources \"\" --tools Read,Grep,Glob --allowedTools Read,Grep,Glob ",
+    "prompt_sha256":  "93E3CC2CBD09E4E1FFDFB10AF84C638C9C65CB53813CEB47FC962E3C1AF2E01F",
+    "name":  "G0-A",
+    "exit_code":  0,
+    "started_utc":  "2026-09-15T14:41:51.8718090Z",
+    "plugin":  false,
+    "ended_utc":  "2026-09-15T14:42:18.6468165Z"
+}

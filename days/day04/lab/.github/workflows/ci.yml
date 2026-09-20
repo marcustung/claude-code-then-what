@@ -1,0 +1,15 @@
+name: dotnet-poc
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - run: dotnet build --configuration Release
+      - run: dotnet run --no-build --configuration Release -- author-v1 v1
+      - run: dotnet run --no-build --configuration Release -- acceptance-v2 v2

@@ -1,0 +1,23 @@
+PASS: Unshipped+unpaid: Cancelled becomes true
+PASS: Unshipped+unpaid: no refund requested
+PASS: Unshipped+unpaid: Shipped unchanged (false)
+PASS: Unshipped+unpaid: Paid unchanged (false)
+PASS: Unshipped+paid: Cancelled becomes true
+PASS: Unshipped+paid: refund requested
+PASS: Unshipped+paid: Paid unchanged (true)
+PASS: Shipped: Cancelled remains false
+PASS: Shipped: no refund requested
+PASS: Shipped: order reference/values unchanged
+PASS: Shipped+unpaid: Cancelled remains false
+PASS: Shipped+unpaid: no refund requested
+PASS: Already cancelled: stays cancelled
+PASS: Already cancelled: no refund requested (avoid double refund)
+PASS: Already cancelled: order unchanged
+PASS: Already cancelled+unpaid: stays cancelled
+PASS: Already cancelled+unpaid: no refund requested
+PASS: Null order throws ArgumentNullException
+
+ALL TESTS PASSED
+
+
+exit=0

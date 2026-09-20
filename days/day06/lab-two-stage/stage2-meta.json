@@ -1,0 +1,29 @@
+{
+  "start": "2026-09-18T09:10:55.575171+00:00",
+  "end": "2026-09-18T09:11:22.650682+00:00",
+  "exit": 0,
+  "args": [
+    "<HOME>\\.local\\bin\\claude.exe",
+    "-p",
+    "讀取 spec.md、previous-draft.md 與 decision.md。依新增決策修訂驗收草稿，列出來源、具體 Given/When/Then 案例、相對前稿的變更與仍未決事項。保留決策的教學性質。只交草稿，不實作、不執行測試，也不要宣稱真實 Owner 已批准。",
+    "--model",
+    "sonnet",
+    "--effort",
+    "low",
+    "--safe-mode",
+    "--tools",
+    "Read",
+    "--allowedTools",
+    "Read",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--no-session-persistence",
+    "--max-budget-usd",
+    "1"
+  ],
+  "prompt_sha256": "c05af59dc05efb5f2014d70778443e675e97857f72eeb3c647e3942a5eb9e6b1"
+}

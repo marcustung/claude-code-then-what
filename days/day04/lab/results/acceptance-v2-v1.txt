@@ -1,0 +1,60 @@
+{
+  "suite": "acceptance-v2",
+  "implementation": "v1",
+  "total": 10,
+  "passed": 6,
+  "failed": 4,
+  "results": [
+    {
+      "Id": "R01-pending",
+      "Expected": true,
+      "Actual": true
+    },
+    {
+      "Id": "R02-rejected",
+      "Expected": false,
+      "Actual": false
+    },
+    {
+      "Id": "already-interviewing",
+      "Expected": false,
+      "Actual": false
+    },
+    {
+      "Id": "not-reopened",
+      "Expected": false,
+      "Actual": false
+    },
+    {
+      "Id": "not-authorized",
+      "Expected": false,
+      "Actual": false
+    },
+    {
+      "Id": "R03-valid",
+      "Expected": true,
+      "Actual": true
+    },
+    {
+      "Id": "R03-no-role",
+      "Expected": false,
+      "Actual": true
+    },
+    {
+      "Id": "R03-wrong-role",
+      "Expected": false,
+      "Actual": true
+    },
+    {
+      "Id": "R03-no-reason",
+      "Expected": false,
+      "Actual": true
+    },
+    {
+      "Id": "R03-whitespace",
+      "Expected": false,
+      "Actual": true
+    }
+  ]
+}
+

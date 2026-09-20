@@ -1,0 +1,11 @@
+{
+    "plugin":  false,
+    "prompt_sha256":  "93E3CC2CBD09E4E1FFDFB10AF84C638C9C65CB53813CEB47FC962E3C1AF2E01F",
+    "ended_utc":  "2026-09-17T20:37:48.7195492Z",
+    "fixture":  "pr-A",
+    "purpose":  "2026-09-18 re-run to verify Day 4 text",
+    "started_utc":  "2026-09-17T20:37:26.8267358Z",
+    "name":  "V-G0-A",
+    "arguments":  "-p --model sonnet --effort low --strict-mcp-config --no-session-persistence --output-format stream-json --verbose --setting-sources \"\" --tools Read,Grep,Glob --allowedTools Read,Grep,Glob ",
+    "exit_code":  0
+}

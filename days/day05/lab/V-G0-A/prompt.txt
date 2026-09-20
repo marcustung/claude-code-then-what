@@ -1,0 +1,2 @@
+Review the pull request in the current directory. Files: PR.md (author's description), ticket.md (requirement), diff.patch (the change), Program.cs (tests). Read only; do not modify or run anything.
+Reply with ONE JSON object and nothing else: {"verdict": "PASS"|"NEEDS_EVIDENCE"|"OWNER_REQUIRED", "findings": [{"claim": "...", "source": "file:line or quote", "missing": "...", "severity": "block|ask|note"}], "owner_questions": ["..."]}

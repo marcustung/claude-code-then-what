@@ -1,0 +1,41 @@
+{
+ "verdict": "OWNER_REQUIRED",
+ "findings": [
+  {
+   "claim": "作者自評判級為 low，且勾選「以上皆非」而非「狀態轉換規則」",
+   "source": "PR.md:25 (觸及：[x] 以上皆非)",
+   "missing": "此變更明顯是訂單狀態轉換邏輯（Shipped/Paid/Cancelled 三個布林狀態的轉換與 RefundRequested 判斷），與『狀態轉換規則』類別直接相關，自評分類與實際變更不符，需 owner 重新確認風險等級",
+   "severity": "block"
+  },
+  {
+   "claim": "規則位置（驗收依據）未填寫",
+   "source": "PR.md:6 (規則位置：)",
+   "missing": "未指出 ticket.md 中對應的具體規則條文或行號，ticket.md 本身也只有一句需求全文，未定義 Cancelled 訂單再次取消、已出貨訂單取消行為、退款判斷規則等細節",
+   "severity": "ask"
+  },
+  {
+   "claim": "驗收預期的規則依據未填寫",
+   "source": "PR.md:10 (驗收預期的規則依據：)",
+   "missing": "未說明測試案例是依據何種驗收標準設計，7 組情境的覆蓋是否對應到真實驗收條件缺乏獨立佐證",
+   "severity": "ask"
+  },
+  {
+   "claim": "新增假設『已出貨時不丟例外，且已取消再取消為 no-op』未經確認",
+   "source": "PR.md:14-15 (新增的假設 / 已確認／待確認 為空)",
+   "missing": "ticket.md 未定義已出貨訂單取消時的行為（靜默失敗 vs 拋出例外）、已取消訂單重複取消的行為、退款判斷規則（RefundRequested=Paid），這些屬於業務規則假設，應由需求方（owner）確認，而非工程師自行假設",
+   "severity": "block"
+  },
+  {
+   "claim": "呼叫端與尚未驗證的路徑未填寫",
+   "source": "PR.md:18-19",
+   "missing": "未說明此方法目前被哪些呼叫端使用、是否有其他狀態組合（例如同時 Shipped 且 Cancelled）未被測試或考慮，例如 Shipped=true, Cancelled=true 的組合完全未被測試覆蓋",
+   "severity": "ask"
+  },
+  {
+   "claim": "『dotnet run 7 組情境 18 個斷言 PASS』作為唯一驗證證據",
+   "source": "PR.md:11",
+   "missing": "僅有作者自報執行結果，未附實際執行輸出或 CI 記錄佐證，且測試由 AI 與程式碼同時產生（PR.md:26 AI 產生的部分：[x]程式 [x]測試），測試與實作出自同一來源，可能無法獨立驗證業務規則正確性",
+   "severity": "ask"
+  }
+ ]
+}

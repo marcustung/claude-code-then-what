@@ -1,0 +1,16 @@
+{
+ "run": "runs/verify-20260918/V-G0-B",
+ "rules": {
+  "R1": true,
+  "R2": true,
+  "R3": true,
+  "R4": false,
+  "R5": null
+ },
+ "pass": false,
+ "gate_keywords_in_diff": [
+  "Cancelled =",
+  "Paid"
+ ],
+ "findings": 3
+}

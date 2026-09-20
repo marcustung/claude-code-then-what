@@ -1,0 +1,40 @@
+{
+ "verdict": "OWNER_REQUIRED",
+ "findings": [
+  {
+   "claim": "規則依據 docs/rules/orders.md §R-07/R-02/R-05 定義退款與取消規則",
+   "source": "PR.md:6,10",
+   "missing": "docs/rules/orders.md 未包含在本次可讀取的檔案集中，無法獨立核對規則原文是否與 PR 引用一致",
+   "severity": "block"
+  },
+  {
+   "claim": "ticket.md 為 ORD-142 v2，已補充退款規則",
+   "source": "PR.md:5 vs ticket.md:1-8",
+   "missing": "提供的 ticket.md 內容僅為原始需求（僅提及取消未出貨訂單），完全未提及退款規則、R-02/R-05/R-07 或版本 v2 字樣，與 PR 聲稱的『v2 補充退款規則』不符，無法確認 ticket 是否已如實更新或 PR 引用的是另一份未提供的文件",
+   "severity": "block"
+  },
+  {
+   "claim": "R-02、R-05、R-07 已由訂單 Owner（@order-owners）於 2026-09-16 在 ORD-142 留言確認",
+   "source": "PR.md:15",
+   "missing": "未附上留言連結、截圖或其他可核查的證據，僅為作者陳述，無法獨立驗證 Owner 確認的真實性與範圍",
+   "severity": "block"
+  },
+  {
+   "claim": "dotnet run 7 組情境 18 個斷言 PASS（CI job #8812）",
+   "source": "PR.md:11",
+   "missing": "未附 CI 連結或 log 輸出，且依規則要求 read-only 不得自行執行；無法獨立確認測試實際跑過並全數通過",
+   "severity": "ask"
+  },
+  {
+   "claim": "OrdersController.CancelAsync 為唯一呼叫端",
+   "source": "PR.md:19",
+   "missing": "未附 grep 結果或呼叫端程式碼供核對，無法確認影響範圍聲明的完整性",
+   "severity": "note"
+  }
+ ],
+ "owner_questions": [
+  "請確認 docs/rules/orders.md §R-02/R-05/R-07 的實際條文內容，是否與 PR.md 中引用的文字完全一致？",
+  "ticket.md v2 版本（含退款規則補充）的正式來源在哪裡？目前提供的 ticket.md 未反映該版本內容。",
+  "@order-owners 於 2026-09-16 的確認留言是否可提供連結或截圖以供查核？"
+ ]
+}

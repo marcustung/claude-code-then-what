@@ -1,0 +1,15 @@
+```json
+{
+  "code": "using System;\n\npublic static class Guard\n{\n    public static bool CanEnterInterview(bool rejected, bool reopenRequested, bool authorized)\n    {\n        if (rejected && !(reopenRequested && authorized))\n            return false;\n\n        return true;\n    }\n}\n",
+  "test": "using System;\n\nint pass = 0;\nint fail = 0;\n\nvoid Check(string name, bool actual, bool expected)\n{\n    if (actual == expected)\n    {\n        Console.WriteLine($\"PASS: {name}\");\n        pass++;\n    }\n    else\n    {\n        Console.WriteLine($\"FAIL: {name} (expected {expected}, got {actual})\");\n        fail++;\n    }\n}\n\n// Not rejected: always allowed regardless of other flags.\nCheck(\"NotRejected_NoReopen_NoAuth\", Guard.CanEnterInterview(false, false, false), true);\nCheck(\"NotRejected_Reopen_Auth\", Guard.CanEnterInterview(false, true, true), true);\n\n// Rejected, no reopen requested: blocked regardless of authorization.\nCheck(\"Rejected_NoReopen_NoAuth\", Guard.CanEnterInterview(true, false, false), false);\nCheck(\"Rejected_NoReopen_Auth\", Guard.CanEnterInterview(true, false, true), false);\n\n// Rejected, reopen requested but not authorized: blocked.\nCheck(\"Rejected_Reopen_NoAuth\", Guard.CanEnterInterview(true, true, false), false);\n\n// Rejected, reopen requested and authorized: allowed (explicit reversal path).\nCheck(\"Rejected_Reopen_Auth\", Guard.CanEnterInterview(true, true, true), true);\n\nConsole.WriteLine($\"\\n{pass} passed, {fail} failed\");\nreturn fail == 0 ? 0 : 1;\n",
+  "explanation": "The guard blocks direct re-entry into Interviewing for a rejected candidate. A rejected candidate is only allowed back into Interviewing if there is both an explicit reopen request and authorization for that reopen — representing a deliberate, sanctioned exception process rather than an automatic/direct transition. Non-rejected candidates are unaffected by reopenRequested/authorized and always pass.",
+  "assumptions": [
+    "'Must not go directly back to Interviewing' implies there is an indirect/exception path via reopenRequested + authorized; the ticket does not explicitly describe such a path but the wording 'directly' implies one exists.",
+    "Both reopenRequested AND authorized are required together to override the rejection block — authorization alone without an explicit reopen request is not treated as sufficient, and vice versa.",
+    "If the candidate is not rejected, reopenRequested and authorized are irrelevant and entry is always allowed (the ticket only constrains the rejected case).",
+    "There is no time-based, role-based, or count-based (e.g., max reopen attempts) restriction — the flags given are the only inputs considered.",
+    "Authorization is treated as a boolean already validated by the caller (e.g., from a manager approval step) rather than something this guard verifies further.",
+    "'Interviewing' here is a single state; no distinction between different interview stages/rounds is made."
+  ]
+}
+```

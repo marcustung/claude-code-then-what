@@ -1,0 +1,7 @@
+﻿{
+    "ended_utc":  "2026-09-18T09:03:27.2306942Z",
+    "arguments":  "-p --model sonnet --effort low --strict-mcp-config --no-session-persistence --output-format stream-json --verbose --setting-sources \"\" --tools Read,Grep,Glob --allowedTools Read,Grep,Glob --permission-mode bypassPermissions ",
+    "started_utc":  "2026-09-18T09:02:45.6591517Z",
+    "name":  "draft",
+    "exit_code":  0
+}

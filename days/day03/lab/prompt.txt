@@ -1,0 +1,7 @@
+Implement a public synthetic C# order-cancellation example. This is not a real company system.
+Ticket (entire requirement): Let users cancel orders that have not shipped yet.
+Existing interface:
+public record Order(bool Shipped, bool Paid, bool Cancelled);
+public record CancellationResult(Order Order, bool RefundRequested);
+public static class Cancellation { public static CancellationResult Cancel(Order order) => throw new System.NotImplementedException(); }
+Preserve signatures. No dependencies, network, files, payments, or other side effects. RefundRequested is only an in-memory flag. Return only JSON keys code (complete Cancellation.cs), test (Program.cs console checks with PASS/FAIL and nonzero exit on failure), assumptions (list of unstated business rules), questions (unresolved requirements), explanation. You may identify missing requirements and choose a conservative implementation. No tools available; do not claim execution. Host will inspect and run the code.

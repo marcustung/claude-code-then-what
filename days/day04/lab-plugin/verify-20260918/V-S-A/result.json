@@ -1,0 +1,66 @@
+{
+ "skill": "review-kit:review-pr@0.1.0",
+ "verdict": "OWNER_REQUIRED",
+ "gate_hits": [
+  "Cancelled =: diff.patch:27 (`var cancelledOrder = order with { Cancelled = true };`) — state-transition rule (Cancelled flag assignment)",
+  "Paid: diff.patch:28 (`var refundRequested = order.Paid;`) — payment-related field drives refund decision"
+ ],
+ "contract": {
+  "1_traceability": "filled: ORD-142 cited, files listed; '規則位置' (rule location) left blank in PR.md:6",
+  "2_evidence": "missing: PR.md:10 '驗收預期的規則依據' is blank; only self-reported execution output given (PR.md:11), no independent rule basis cited",
+  "3_boundary": "filled but unconfirmed: assumptions listed in PR.md:14, but PR.md:15 '已確認／待確認' is blank — no one has confirmed them",
+  "4_impact": "missing: PR.md:18 '呼叫端' (callers) blank, PR.md:19 '尚未驗證的路徑' (unverified paths) blank",
+  "5_explainability": "missing: PR.md:21 explicitly left for reviewer, not yet filled"
+ },
+ "findings": [
+  {
+   "claim": "Author marked this PR as 判級 low and 觸及 '以上皆非' (none of: money/auth/state-transition)",
+   "source": "PR.md:24-25",
+   "evidence": "diff.patch:27 assigns `Cancelled = true` (state-transition) and diff.patch:28 reads `order.Paid` to decide `RefundRequested` (payment-adjacent)",
+   "missing": "Correct self-classification; the change does touch state-transition and payment-adjacent logic per ticket.md:6-8",
+   "next": "Owner must re-classify risk level; author's 'low/none' self-assessment cannot be relied on",
+   "severity": "block"
+  },
+  {
+   "claim": "'dotnet run 7 組情境 18 個斷言 PASS（.NET 9，本機）'",
+   "source": "PR.md:11",
+   "evidence": "tests/Program.cs:20-100 contains 7 scenario blocks with matching Check() calls",
+   "missing": "No captured command output/log attached; test count and scenario shapes match the described structure but actual PASS run is unverified by this review (read-only, no tests executed)",
+   "next": "Owner or CI should attach actual run output/log as evidence, not just author's summary",
+   "severity": "ask"
+  },
+  {
+   "claim": "'已出貨不可取消；已取消再取消為 no-op；已付款取消時 RefundRequested=true；已出貨時不丟例外' (assumptions)",
+   "source": "PR.md:14",
+   "evidence": "ticket.md:3 only states 'Let users cancel orders that have not shipped yet.' — no mention of refund behaviour, no-op semantics, or exception policy",
+   "missing": "Ticket does not specify RefundRequested semantics or idempotency rule; these are author/model-invented assumptions with no confirmation recorded (PR.md:15 blank)",
+   "next": "Owner must confirm or reject each unstated assumption before merge",
+   "severity": "block"
+  },
+  {
+   "claim": "Implicit claim: partial payment / partial refund is out of scope",
+   "source": "diff.patch:28 `var refundRequested = order.Paid;`",
+   "evidence": "Order record only has `bool Paid` (ticket.md:6) — no partial payment concept exists in the given interface",
+   "missing": "Confirmation that bool Paid is sufficient for the real payment/refund model (business reality may have partial payments not representable here)",
+   "next": "Owner to confirm bool Paid/RefundRequested contract is adequate for downstream refund processing",
+   "severity": "ask"
+  }
+ ],
+ "deep_dive": {
+  "1_state_machine": "Diff adds transition Cancelled:false→true guarded by !Shipped && !Cancelled (diff.patch:17-27). It blocks cancellation when Shipped=true (returns unchanged order, diff.patch:19) and treats already-Cancelled as no-op (diff.patch:24). Ticket only requires blocking cancel-after-ship (ticket.md:3); the no-op-on-recancel rule is an added, unconfirmed transition rule not in the ticket.",
+  "2_side_effects": "Cancellation.Cancel returns a CancellationResult with RefundRequested=true when Paid && !Shipped && !Cancelled (diff.patch:27-30); the function does not itself trigger a refund — responsibility ends at signaling RefundRequested=true. Actual refund execution/side effect owner is unknown — not present in this diff.",
+  "3_boundaries": "Calling Cancel twice on the same already-cancelled+paid order returns RefundRequested=false the second time (tests/Program.cs:58-65), preventing double-refund signaling. Stale state (e.g. order mutated concurrently) is not addressed — Cancel is a pure function taking a snapshot Order, so caller must handle concurrency; unknown whether callers do.",
+  "4_errors": "Errors signalled via exception only for null order (ArgumentNullException, diff.patch:15). Shipped and already-cancelled 'blocked' cases return normally with RefundRequested=false and unchanged order (diff.patch:19,24) — callers cannot distinguish 'successfully cancelled' from 'blocked because already shipped/cancelled' since CancellationResult has no status/error field. This is a silent-return pattern.",
+  "5_types": "CancellationResult only carries Order and bool RefundRequested (ticket.md:7); there is no field indicating whether cancellation actually succeeded vs was blocked. Caller must infer from `result.Order.Cancelled` diffing against the input order, which is fragile and unstated in the contract.",
+  "6_tests": "tests/Program.cs assertions (e.g. lines 62-64 'avoid double refund', lines 45-47 'order reference/values unchanged') encode the same assumptions listed in PR.md:14, which derive from the author/model, not from ticket.md or an independent rule document — ticket.md contains no refund or idempotency rule.",
+  "7_unstated": "PR.md:15 '已確認／待確認' is blank — no human acceptance is cited for any of the four listed assumptions (no-cancel-if-shipped extension to no-op-if-already-cancelled, refund-on-paid-cancel, no-exception-on-blocked-cancel).",
+  "8_diagrams": "None attached. PR.md contains no diagram section and none referenced in diff.patch or ticket.md."
+ },
+ "owner_questions": [
+  "Is 'cancel an already-cancelled order' really required to be a silent no-op, or should it throw/signal an error, per ORD-142?",
+  "Should RefundRequested=true actually trigger a refund elsewhere, and who owns that side effect?",
+  "Is bool Paid sufficient to gate RefundRequested, or can partial/split payments exist in production data?",
+  "Should CancellationResult expose whether cancellation was blocked (shipped/already-cancelled) vs succeeded, for caller error handling?"
+ ],
+ "not_my_call": "Whether the added no-op-on-recancel and refund-signal rules are acceptable business behavior, and whether silent (non-exception) blocking on Shipped/Cancelled is an acceptable API contract, must be decided by the ticket owner — this review can only flag that they are unconfirmed."
+}

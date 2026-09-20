@@ -1,0 +1,6 @@
+--- before/Guard.cs
++++ after/Guard.cs
+@@ -1,2 +1,2 @@
+ bool CanEnterInterview(bool rejected, bool reopenRequested, bool authorized)
+-    => !rejected;
++    => !rejected || (reopenRequested && authorized);

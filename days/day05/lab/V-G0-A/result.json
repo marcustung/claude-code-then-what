@@ -1,0 +1,41 @@
+{
+ "verdict": "NEEDS_EVIDENCE",
+ "findings": [
+  {
+   "claim": "規則位置未填",
+   "source": "PR.md:6",
+   "missing": "PR.md 未指出對應 ticket.md 的具體規則段落（ticket.md 本身也僅有一句話需求，未定義 refund/idempotent 行為）",
+   "severity": "ask"
+  },
+  {
+   "claim": "驗收預期的規則依據未填",
+   "source": "PR.md:10",
+   "missing": "未說明 refund-on-paid-cancel 與 cancelled-is-idempotent-no-op 這兩條規則的依據來源，這些是作者自行新增的假設（PR.md:14）而非 ticket 明文要求",
+   "severity": "block"
+  },
+  {
+   "claim": "已確認／待確認 未填",
+   "source": "PR.md:15",
+   "missing": "作者列出的假設（已出貨不可取消／已取消再取消為no-op／已付款時RefundRequested=true／已出貨時不丟例外）均未標示是否已與需求方確認",
+   "severity": "ask"
+  },
+  {
+   "claim": "呼叫端與尚未驗證的路徑未填",
+   "source": "PR.md:18-19",
+   "missing": "未說明此方法的呼叫端如何使用回傳的 CancellationResult（例如誰負責真正觸發退款），無法確認 RefundRequested=true 是否已被呼叫端正確處理",
+   "severity": "ask"
+  },
+  {
+   "claim": "dotnet run 7組情境18個斷言PASS",
+   "source": "PR.md:11",
+   "missing": "未提供實際執行輸出（log/CI連結），僅為文字聲稱，無法獨立驗證",
+   "severity": "note"
+  },
+  {
+   "claim": "已出貨訂單取消時保持物件不變（引用相等）",
+   "source": "Program.cs:47,64",
+   "missing": "ticket.md 未提及物件是否應保持同一參照，測試以 == 比較 record 值相等性（非參照），此斷言其實測的是值相等非參照相等，命名具誤導性但不影響通過與否",
+   "severity": "note"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+Use the review-kit:review-pr skill (invoke it with the Skill tool) to review the pull request in the current directory. Files: PR.md, ticket.md, diff.patch, Program.cs. Follow the skill's output format exactly: reply with ONE JSON object and nothing else.

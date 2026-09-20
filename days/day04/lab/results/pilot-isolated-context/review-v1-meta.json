@@ -1,0 +1,1 @@
+{"start":"2026-09-12T18:16:18.912Z","end":"2026-09-12T18:16:26.287Z","exit":0,"args":["-p","--output-format","json","--model","sonnet","--effort","low","--tools","","--strict-mcp-config","--disable-slash-commands","--no-session-persistence"]}

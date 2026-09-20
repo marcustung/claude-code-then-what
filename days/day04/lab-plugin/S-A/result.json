@@ -1,0 +1,67 @@
+{
+ "skill": "review-kit:review-pr@0.1.0",
+ "verdict": "OWNER_REQUIRED",
+ "gate_hits": [
+  "state-transition: Cancelled = : diff.patch:27 (`order with { Cancelled = true }`)",
+  "payment: Paid : diff.patch:28 (`var refundRequested = order.Paid;`)",
+  "payment: Refund : diff.patch:8,28,30 (`RefundRequested`)"
+ ],
+ "contract": {
+  "1_traceability": "filled: PR.md:5-7 lists ORD-142 and changed files, but '規則位置' (rule location) is left blank — PR.md:6",
+  "2_evidence": "missing: '驗收預期的規則依據' (rule basis for expected behaviour) is blank — PR.md:10; only self-reported test run output is given (PR.md:11), no independent rule source",
+  "3_boundary": "filled but unconfirmed: assumptions listed (PR.md:14) — 'already shipped cannot cancel', 'already cancelled cancel is no-op', 'paid cancellation sets RefundRequested=true', 'shipped case does not throw' — but '已確認／待確認' (confirmed/unconfirmed by whom) is blank — PR.md:15",
+  "4_impact": "missing: '呼叫端' (callers) and '尚未驗證的路徑' (unverified paths) are both blank — PR.md:18-19",
+  "5_explainability": "missing: section explicitly marked '(Reviewer 填)' and left empty — PR.md:21"
+ },
+ "findings": [
+  {
+   "claim": "'dotnet run 7 組情境 18 個斷言 PASS（.NET 9，本機）'",
+   "source": "PR.md:11",
+   "evidence": "tests/Program.cs contains 7 scenario blocks with Check() assertions matching the described counts (Program.cs:22-87)",
+   "missing": "no captured command output/log attached, only a restated claim; environment claim (.NET 9) not verifiable from repo files given",
+   "next": "author or reviewer re-runs `dotnet run` and attaches console output to PR.md",
+   "severity": "ask"
+  },
+  {
+   "claim": "'已出貨不可取消' (shipped orders cannot be cancelled) is the correct business rule",
+   "source": "PR.md:14; ticket.md:3 ('cancel orders that have not shipped yet')",
+   "evidence": "ticket.md:3 supports this as the stated requirement",
+   "missing": "no rule document/version cited beyond the one-line ticket text; ticket.md itself has no rule location or version reference (PR.md:6 rule location is blank)",
+   "next": "owner confirms ticket.md sentence is the full authoritative rule with no additional constraints",
+   "severity": "note"
+  },
+  {
+   "claim": "已付款取消時 RefundRequested=true (paid cancellations set RefundRequested=true), and this is sufficient for the business need",
+   "source": "diff.patch:28-30; PR.md:14",
+   "evidence": "code sets `refundRequested = order.Paid` and test 'Unshipped+paid: refund requested' (Program.cs:37) checks it",
+   "missing": "ticket.md says nothing about refund behaviour at all — this is an unstated requirement invented by the author/AI, not derived from ticket.md; no confirmation of acceptance by a human is recorded (PR.md:15 blank)",
+   "next": "owner must confirm RefundRequested semantics (e.g., does downstream payment system treat this boolean as 'refund issued' vs 'refund needed', partial payment handling) before merge",
+   "severity": "block"
+  },
+  {
+   "claim": "Already-cancelled order cancel is a no-op that avoids double refund",
+   "source": "diff.patch:22-25; Program.cs:63 ('avoid double refund')",
+   "evidence": "code returns `new CancellationResult(order, false)` when order.Cancelled is true, i.e. RefundRequested=false on repeat calls",
+   "missing": "ticket.md does not mention repeat-cancel behavior or refund idempotency; this is an assumption not verified against any refund/payment rule document",
+   "next": "owner to confirm whether idempotent no-refund-on-repeat is the correct contract with the payment/refund system",
+   "severity": "block"
+  }
+ ],
+ "deep_dive": {
+  "1_state_machine": "Diff adds transitions: unshipped+uncancelled -> Cancelled=true (with RefundRequested = order.Paid); shipped -> no transition (order returned unchanged, RefundRequested=false); already-cancelled -> no transition (unchanged, RefundRequested=false). Ticket.md only specifies 'let users cancel orders that have not shipped yet' — it does not define behaviour for already-cancelled or paid orders, so those transitions/blocks are additions beyond the literal ticket text (diff.patch:17-30, ticket.md:3).",
+  "2_side_effects": "Cancel() returns a new Order/CancellationResult; it does not mutate the input order (record `with` expression, diff.patch:27) and does not perform the actual refund or notify any payment system — RefundRequested is only a signal. Where that signal is consumed (payment/refund processing) is outside this diff; responsibility ends at returning the flag. Source: diff.patch:13-31.",
+  "3_boundaries": "Calling Cancel() twice on an already-cancelled order is explicitly handled (returns original order, RefundRequested=false) per diff.patch:22-25 and tested at Program.cs:60-65. No stale-state issue visible since the function is pure/stateless.",
+  "4_errors": "Null order throws ArgumentNullException (diff.patch:15, tested Program.cs:76-87). Shipped or already-cancelled orders do NOT throw and DO NOT signal failure via return code — caller must inspect `result.Order.Cancelled` to know whether cancellation actually happened; there is no explicit 'rejected' flag. This matches PR.md:14 ('已出貨時不丟例外') but means callers can silently treat a rejected cancellation as success if they don't check state.",
+  "5_types": "CancellationResult only exposes `Order` (with bool Cancelled) and `RefundRequested` (bool) — no distinction between 'cancellation succeeded' vs 'cancellation rejected because shipped' vs 'no-op because already cancelled'; caller must diff Cancelled before/after to know the outcome. RefundRequested as bool cannot represent partial refunds or refund amount — ticket.md gives no requirement here so unknown whether this is sufficient.",
+  "6_tests": "Tests (Program.cs) assert exactly the behaviours the author/AI assumed (PR.md:14), not behaviours traced to ticket.md, which only states the shipped/unshipped rule. The paid/refund and idempotency assertions (Program.cs:33-39, 58-73) are author-assumption-derived, unconfirmed by a rule document.",
+  "7_unstated": "Unstated requirements accepted by a human: none found — PR.md:15 '已確認／待確認' is blank, so no assumption in PR.md:14 has a recorded human acceptance.",
+  "8_diagrams": "unknown — no diagram or state-transition table was provided in PR.md, ticket.md, or diff.patch."
+ },
+ "owner_questions": [
+  "Is 'RefundRequested = order.Paid' (i.e., any paid order gets a refund on cancellation, with no partial/amount handling) the correct business rule, and where is that documented?",
+  "Should cancelling an already-cancelled order ever re-trigger RefundRequested (e.g., if the first refund failed), or is 'no-op, no refund' always correct?",
+  "Should Cancel() signal rejection (shipped / already-cancelled) explicitly to callers instead of relying on callers diffing Order.Cancelled?",
+  "Is ticket.md's one-line requirement the complete and current rule, or is there a fuller policy document that should be cited in PR.md '規則位置'?"
+ ],
+ "not_my_call": "This review cannot approve, merge, or waive the payment/refund and state-transition gate hits — those require sign-off from an owner with authority over refund and cancellation business rules."
+}

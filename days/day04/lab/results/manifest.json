@@ -1,0 +1,63 @@
+{
+  "runs": [
+    {
+      "name": "build",
+      "args": [
+        "build",
+        "--configuration",
+        "Release"
+      ],
+      "start": "2026-09-12T18:14:50.716Z",
+      "exit": 0
+    },
+    {
+      "name": "author-v1-v1",
+      "args": [
+        "run",
+        "--no-build",
+        "--configuration",
+        "Release",
+        "--",
+        "author-v1",
+        "v1"
+      ],
+      "start": "2026-09-12T18:14:54.355Z",
+      "exit": 0
+    },
+    {
+      "name": "acceptance-v2-v1",
+      "args": [
+        "run",
+        "--no-build",
+        "--configuration",
+        "Release",
+        "--",
+        "acceptance-v2",
+        "v1"
+      ],
+      "start": "2026-09-12T18:14:55.234Z",
+      "exit": 1
+    },
+    {
+      "name": "acceptance-v2-v2",
+      "args": [
+        "run",
+        "--no-build",
+        "--configuration",
+        "Release",
+        "--",
+        "acceptance-v2",
+        "v2"
+      ],
+      "start": "2026-09-12T18:14:55.900Z",
+      "exit": 0
+    }
+  ],
+  "hashes": {
+    "src/Domain/Transition.cs": "72212ce320080e4b579528dda95faf652d5cb4876395b4411cca6c51fdd42b7f",
+    "Program.cs": "1acd7b9bf1a011f26b8ea5566ad158e20bb40e91430d9c3275384b00e8c6cdc1",
+    "docs/rules-v1.md": "122c6da605a16212a4f6b9a9e9b1c604d5ef04cdba5cfb02aec2a70f101af545",
+    "docs/rules-v2.md": "71ce188f52a4523614fcd7abc6875549bbcff70a76b96a942eff2bc85b7ed4fe",
+    "docs/review-contract.md": "d4b1abb4d7ebc67e360d312913e7ea4f5ac7d28098e54346fccd9324220884eb"
+  }
+}

@@ -1,0 +1,18 @@
+{
+ "verdict": "NEEDS_EVIDENCE",
+ "findings": [
+  {
+   "claim": "PR.md 聲稱『dotnet run 7 組情境 18 個斷言 PASS（CI job #8812，2026-09-16）』",
+   "source": "PR.md:11",
+   "missing": "未附實際執行輸出或 CI job 連結／日誌，僅為作者自述文字，無法在唯讀審查下獨立驗證測試確實通過",
+   "severity": "ask"
+  },
+  {
+   "claim": "R-02／R-05／R-07 已由訂單 Owner 於 ORD-142 留言確認",
+   "source": "PR.md:15, ticket.md:5",
+   "missing": "ticket.md 已含 Owner 補充規則作為佐證，可視為已滿足，但未附留言連結／截圖佐證，屬次要缺口",
+   "severity": "note"
+  }
+ ],
+ "owner_questions": []
+}

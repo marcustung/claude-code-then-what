@@ -1,0 +1,7 @@
+# 路徑只是線索：要在 branch protection 開「Require review from Code Owners」才會擋合併
+# 核心規則所在路徑 → 指定 Owner（用團隊，不用個人）
+/src/Orders/Cancellation*      @org/order-owners
+/src/Payments/**               @org/payment-owners @org/order-owners
+/src/Auth/**                   @org/security-owners
+/db/migrations/**              @org/data-owners
+# 其餘路徑不指定：走一般流程（第一層工具＋第二層 AI 材料＋人確認）

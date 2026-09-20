@@ -1,0 +1,111 @@
+{
+  "duration_api_ms": 25214,
+  "stop_reason": "end_turn",
+  "session_id": "aaa98ec1-4665-4178-ae13-604cdc1a79c6",
+  "total_cost_usd": 0.03556179999999999,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3007,
+    "cache_read_input_tokens": 11969,
+    "output_tokens": 2006,
+    "output_tokens_details": {
+      "thinking_tokens": 160
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3007,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1700,
+        "cache_read_input_tokens": 6340,
+        "cache_creation_input_tokens": 2296,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2296
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1002,
+      "outputTokens": 14,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001072,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-sonnet-5": {
+      "inputTokens": 4,
+      "outputTokens": 2006,
+      "cacheReadInputTokens": 11969,
+      "cacheCreationInputTokens": 3007,
+      "webSearchRequests": 0,
+      "costUSD": 0.034489799999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 160,
+      "canonicalModel": "claude-sonnet-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 4,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "# 驗收草稿 v2（僅整理，未實作、未執行測試）\n\n## 需求來源與版本\n- `spec.md`：`SYNTHETIC spec v1`（公開合成教學題目，非公司實際政策，spec.md:5）\n- `decision.md`：`DEMO-DECISION-01`（**純教學假設決策，非公司政策、非真實 Owner 核准**）\n- `previous-draft.md`：前版驗收草稿，作為本次修訂基準\n\n## 本次新增決策內容（DEMO-DECISION-01）\n適用範圍：**已付款（Paid=true）、未出貨（Shipped=false）、尚未取消（Cancelled=false）** 的訂單。\n\n決策內容：\n1. 取消功能只將 `Cancelled` 設為 `true`\n2. `RefundRequested` 固定回傳 `false`（退款交由另一流程決定，本功能不處理）\n3. 不得呼叫付款服務（呼應 LIMIT-01，無新增例外）\n4. 除此情境外，其他行為（已出貨取消、未付款取消、重複取消等）**仍未決，不代答**\n\n> 再次強調：此決策為教學示範用途，用於示範「如何在未決問題中局部收斂驗收範圍」，並非真實業務規則核准。\n\n## 具體驗收案例（Given/When/Then）\n\n### 案例 A（新增，依 DEMO-DECISION-01）\n- **Given** 訂單狀態為 `Shipped=false, Paid=true, Cancelled=false`\n- **When** 使用者執行取消操作\n- **Then**\n  - 回傳 `CancellationResult.Order.Cancelled == true`\n  - 回傳 `CancellationResult.RefundRequested == false`\n  - 過程中未觸發任何付款服務呼叫、網路、檔案等副作用（LIMIT-01）\n\n### 案例 B（沿用前稿，明示行為）\n- **Given** 訂單狀態為 `Shipped=false`（付款狀態未指定）\n- **When** 使用者執行取消操作\n- **Then** 回傳的 `Order.Cancelled == true`（spec.md REQ-01 明示允許取消未出貨訂單）\n\n## 相對前稿的變更\n| 項目 | 前稿 | 本稿 |\n|---|---|---|\n| 未付款狀態下的 `RefundRequested` 規則（問題 2） | 待確認 | **已由 DEMO-DECISION-01 局部收斂**：僅針對「已付款、未出貨、未取消」情境，`RefundRequested` 固定為 `false` |\n| 是否呼叫付款服務 | 屬 LIMIT-01 一般限制 | 決策重申此情境下不得呼叫付款服務，無新增例外 |\n| 驗收案例 | 僅 1 個明示情境 | 新增案例 A，共 2 個明示情境 |\n| 適用範圍界定 | 未區分 Paid/Cancelled 狀態 | 新增決策明確限定於 `Paid=true, Shipped=false, Cancelled=false` 這一狀態組合 |\n\n## 仍未決事項（沿用前稿，未被本次決策涵蓋）\n1. 已出貨訂單（`Shipped=true`）取消時的行為與是否需要 Success/Error 欄位\n2. 已付款訂單取消**成功後**，若非「未取消」初始狀態（如重複取消）的 `RefundRequested` 規則\n3. 未付款（`Paid=false`）訂單取消時 `RefundRequested` 應為何值\n4. 已取消訂單重複取消是否冪等\n5. `Order` 為 null / 非法狀態組合（如 `Shipped=true, Paid=false`）的處理\n6. 回傳 `Order` 是否需為新物件（immutable）\n7. 實際方法簽章、參數順序、靜態/實例方法\n\n## 建議確認角色（沿用前稿）\n- **Product Owner**：確認問題 1、2、3、4（業務規則）\n- **Tech Lead**：確認問題 5、6、7（技術介面設計）\n\n## 受阻範圍\n- 除 DEMO-DECISION-01 已收斂的單一狀態組合外，其餘 7 項未決事項仍**無法**實作或撰寫對應測試\n- 本草稿僅完成新增決策的整理與案例補充，**未修改、未實作、未執行任何程式或測試**，且**未主張任何真實 Owner 已核准**上述規則",
+  "ttft_ms": 2156,
+  "type": "result",
+  "duration_ms": 24339,
+  "uuid": "5d0953c5-cb3a-4234-9f55-4af943000d1f",
+  "ttft_stream_ms": 1577,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 1578,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

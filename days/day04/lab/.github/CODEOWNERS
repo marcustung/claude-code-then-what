@@ -1,0 +1,3 @@
+/src/Domain/ @your-org/domain-owners
+/docs/ @your-org/domain-owners
+/.github/ @your-org/review-maintainers

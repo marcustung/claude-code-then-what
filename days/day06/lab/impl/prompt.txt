@@ -1,0 +1,6 @@
+先讀 spec.md 與 decisions.md。
+依已確認的驗收條件實作 Cancellation.cs，逐項標出需求或決策來源（以程式註解）。
+為可自動驗證的條件在 Program.cs 加入測試（Console PASS/FAIL，失敗回傳非零），不自行改變預期結果。
+尚未確認的行為列出受阻範圍，不宣稱已完成，也不要為它寫測試預期。
+若環境允許，執行 dotnet run --project Demo.csproj 並附實際結果；未執行就明確標示。
+最後交付一段整理：驗收條件、修改位置、驗證方式、結果與未決事項。

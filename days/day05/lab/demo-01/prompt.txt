@@ -1,0 +1,1 @@
+讀取 PR.md、ticket.md、diff.patch、Program.cs，僅審查，不修改檔案。用三句話說明這份 PR 缺什麼依據。

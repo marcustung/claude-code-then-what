@@ -1,0 +1,40 @@
+{
+  "suite": "author-v1",
+  "implementation": "v1",
+  "total": 6,
+  "passed": 6,
+  "failed": 0,
+  "results": [
+    {
+      "Id": "R01-pending",
+      "Expected": true,
+      "Actual": true
+    },
+    {
+      "Id": "R02-rejected",
+      "Expected": false,
+      "Actual": false
+    },
+    {
+      "Id": "already-interviewing",
+      "Expected": false,
+      "Actual": false
+    },
+    {
+      "Id": "not-reopened",
+      "Expected": false,
+      "Actual": false
+    },
+    {
+      "Id": "not-authorized",
+      "Expected": false,
+      "Actual": false
+    },
+    {
+      "Id": "assumed-exception",
+      "Expected": true,
+      "Actual": true
+    }
+  ]
+}
+

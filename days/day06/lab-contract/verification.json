@@ -1,0 +1,10 @@
+{
+  "executedAt": "2026-09-12T10:46:02.058578+00:00",
+  "command": "dotnet run --project Demo.csproj --no-restore",
+  "exitCode": 0,
+  "modelCalls": 0,
+  "validatorUnchanged": true,
+  "validatorSha256": "52500f52746923b1a373a35b229fdcf4dcc25c7dd0c98d2873b7a33f9d22ac91",
+  "sourceSha256": "ed7e758411cf1393d8026ca38edc29ae677f718d978d1fef9aaa8a93469bc9e5",
+  "historicalSourceSha256": "71f06b834d7ce86e70e9c50d066df88be16225ce03dabd9dbc5320a3999c7c1a"
+}

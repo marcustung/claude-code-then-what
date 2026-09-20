@@ -1,0 +1,17 @@
+{
+ "run": "verify-20260918/V-G0-B",
+ "num_turns": 6,
+ "cost_usd": 0.0737,
+ "duration_ms": 22619,
+ "tools": [
+  "Read",
+  "Read",
+  "Read",
+  "Read",
+  "Read"
+ ],
+ "skill_launched": false,
+ "verdict": "NEEDS_EVIDENCE",
+ "findings": 3,
+ "json_repaired": false
+}

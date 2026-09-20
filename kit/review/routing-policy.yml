@@ -1,0 +1,30 @@
+# 判級規則：確定性閘門先跑；命中任一 owner_required 規則就送第三層，AI 判級只當第二意見
+# 由 CI／Danger／reviewdog 讀取；先用 label 手動標也可以
+version: 1
+owner_required:
+  paths:
+    - "src/Orders/Cancellation*"
+    - "src/Payments/**"
+    - "src/Auth/**"
+    - "db/migrations/**"
+  keywords_in_diff:          # 出現在新增行即命中
+    - "Refund"
+    - "Paid"
+    - "authorized"
+    - "Cancelled ="
+    - "DROP TABLE"
+  diff_lines_over: 400
+low_risk:                    # 只有政策明列的才走簡化程序
+  allow_paths:
+    - "docs/**"
+    - "**/*.md"
+  require_checks_pass: true
+  max_diff_lines: 50
+unclear: escalate            # 分類不明一律升級；diff 小不等於安全
+ai_review:
+  role: second_opinion       # 可補影響範圍與升級理由，不能解除 owner_required
+  must_cite_source: true     # 每則發現附檔案:行或規格段落；找不到寫「不知道」
+  keep_false_positives: true # 誤報留檔，季度校準用
+calibration:
+  every: quarterly
+  signals: [rejection_rate, revert_rate, incidents, ai_comment_acted_rate, ai_false_positive_rate]

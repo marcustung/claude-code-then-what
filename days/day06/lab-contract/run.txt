@@ -1,0 +1,6 @@
+PASS empty evidence rejected
+PASS declared blocker rejects ready
+PASS blocked with reason is structurally valid
+PASS fixture evidence file is absent
+PASS nonexistent evidence still passes structure
+SYNTHETIC structure_errors=0; evidence_exists=False

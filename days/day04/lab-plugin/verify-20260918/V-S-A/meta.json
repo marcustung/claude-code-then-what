@@ -1,0 +1,11 @@
+{
+    "plugin":  true,
+    "prompt_sha256":  "2FE70BA3973E2DA154503A1C5EE95ABADEF0E9C5C80534638415D52ED44F7089",
+    "ended_utc":  "2026-09-17T20:38:59.8102143Z",
+    "fixture":  "pr-A",
+    "purpose":  "2026-09-18 re-run to verify Day 4 text",
+    "started_utc":  "2026-09-17T20:38:14.5957597Z",
+    "name":  "V-S-A",
+    "arguments":  "-p --model sonnet --effort low --strict-mcp-config --no-session-persistence --output-format stream-json --verbose --setting-sources \"\" --plugin-dir \"<REPO>\\examples\\kit-review\\plugin\\review-kit\" --tools Read,Grep,Glob,Skill --allowedTools Read,Grep,Glob,Skill ",
+    "exit_code":  0
+}

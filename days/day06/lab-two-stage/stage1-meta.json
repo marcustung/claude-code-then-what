@@ -1,0 +1,29 @@
+{
+  "start": "2026-09-18T09:10:29.015400+00:00",
+  "end": "2026-09-18T09:10:55.455764+00:00",
+  "exit": 0,
+  "args": [
+    "<HOME>\\.local\\bin\\claude.exe",
+    "-p",
+    "讀取 spec.md，不修改程式。以繁體中文整理驗收草稿：需求來源與版本、已明示行為及具體情境、未明示但會影響實作或驗收的問題、建議確認角色、確認後的驗證方式。區分需求明示、推論、待確認；不要替需求補答案。標明受阻範圍，先交草稿，不實作、不執行測試。",
+    "--model",
+    "sonnet",
+    "--effort",
+    "low",
+    "--safe-mode",
+    "--tools",
+    "Read",
+    "--allowedTools",
+    "Read",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--no-session-persistence",
+    "--max-budget-usd",
+    "1"
+  ],
+  "prompt_sha256": "fcf99ce2b58565e0481100895972df69fa2cac69f7441fd705e50c536d50853f"
+}

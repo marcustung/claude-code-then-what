@@ -1,0 +1,6 @@
+C:\Program Files\dotnet\sdk\9.0.314\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.TargetFrameworkInference.targets(166,5): error NETSDK1045: 目前的 .NET SDK 不支援將 .NET 10.0 設定為目標。請將 .NET 9.0 或更低版本設定為目標，或是使用支援 .NET 10.0 的 .NET SDK 版本。若要下載 .NET SDK，請至 https://aka.ms/dotnet/download [<REPO>\writing\labs\2026-09-15-order-cancel\Demo.csproj]
+
+
+建置失敗。請修正建置錯誤後，再執行一次。
+
+exit=1

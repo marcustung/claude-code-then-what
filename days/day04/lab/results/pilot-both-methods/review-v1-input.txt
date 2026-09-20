@@ -1,0 +1,24 @@
+依五問審查所附規格與程式：可追溯、獨立證據、語意邊界、影響範圍、可解釋。每個發現附檔案／行號與規則依據，列缺件與未知。不得假稱測試已執行。不得合併或核准。回覆繁體中文；沒有發現也如實說明。
+
+本次只審查 Transition.V1；另一方法是對照版本，不當作本次實作。
+規則：docs/rules-v1.md
+# 合成規則 v1
+R-01：待審申請可以進入面試中。
+R-02：已拒絕申請不可直接回到面試中。
+未定義重開例外、授權角色與必要條件。
+
+程式：src/Domain/Transition.cs
+1: namespace ReviewPoc;
+2: public enum Status { Pending, Rejected, Interviewing }
+3: public enum Role { None, Recruiter, HiringLead }
+4: public record Application(Status Status, bool Reopened = false, bool Authorized = false, Role Role = Role.None, string? Reason = null);
+5: public static class Transition
+6: {
+7:     public static bool V1(Application a) => a.Status == Status.Pending
+8:         || (a.Status == Status.Rejected && a.Reopened && a.Authorized);
+9:     public static bool V2(Application a) => a.Status == Status.Pending
+10:         || (a.Status == Status.Rejected && a.Reopened && a.Authorized
+11:             && a.Role == Role.HiringLead && !string.IsNullOrWhiteSpace(a.Reason));
+12: }
+13: 
+只根據所附材料；未提供執行紀錄，不推論測試通過。

@@ -1,0 +1,17 @@
+sequenceDiagram
+    autonumber
+    participant U as 使用者
+    participant S as Cancellation.Cancel
+    participant P as 付款服務（不存在）
+    U->>S: Cancel(order)
+    alt order.Shipped
+        S-->>U: 原訂單，RefundRequested=false（不丟錯）
+    else order.Cancelled
+        S-->>U: 原訂單，RefundRequested=false（冪等）
+    else 未出貨、未取消
+        S->>S: Cancelled = true
+        S->>S: RefundRequested = order.Paid
+        Note over S,P: 需求沒提退款；程式把 Paid 直接接成 RefundRequested
+        S-xP: （沒有呼叫）
+        S-->>U: 取消後訂單，RefundRequested
+    end

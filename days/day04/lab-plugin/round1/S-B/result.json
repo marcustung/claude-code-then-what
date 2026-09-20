@@ -1,0 +1,75 @@
+{
+ "skill": "review-kit:review-pr@0.1.0",
+ "verdict": "OWNER_REQUIRED",
+ "gate_hits": [
+  "Paid: diff.patch:28 (var refundRequested = order.Paid;)",
+  "Refund: diff.patch:19,24,28,30 (RefundRequested / refundRequested)",
+  "Cancelled =: diff.patch:27 (order with { Cancelled = true })"
+ ],
+ "contract": {
+  "1_traceability": "filled: PR.md:5-7 cites ORD-142 v2, docs/rules/orders.md §R-07, and files changed (src/Orders/Cancellation.cs, tests/Program.cs)",
+  "2_evidence": "filled: PR.md:10-11 cites rule basis (R-07/R-02/R-05) and claims 'dotnet run 7組情境18個斷言 PASS (.NET 9.0.104, 2026-09-16, CI job #8812)', but no log/artifact for CI job #8812 is present in this reviewed directory — claim only",
+  "3_boundary": "filled: PR.md:14-16 states no new assumptions, partial payment explicitly excluded, R-02/R-05/R-07 confirmed by @order-owners on 2026-09-16 in ORD-142",
+  "4_impact": "filled: PR.md:19-21 names OrdersController.CancelAsync as sole caller ('見 grep 結果附於 ORD-142'), no permission/data source change, no unverified paths claimed — but the grep result itself is not attached here",
+  "5_explainability": "filled by author (PR.md:23-25), though item 5 is labelled '(Reviewer 填)' in the template — author pre-filling the reviewer's own field is itself worth flagging"
+ },
+ "findings": [
+  {
+   "claim": "RefundRequested only marks a refund request; actual refund execution belongs to the payment service per R-07",
+   "source": "PR.md:6 quoted rule text",
+   "evidence": "diff.patch:28 sets refundRequested = order.Paid and returns it in CancellationResult, matching the documented rule",
+   "missing": "nothing — code matches the stated rule",
+   "next": "n/a",
+   "severity": "note"
+  },
+  {
+   "claim": "dotnet run 7 scenarios / 18 assertions PASS, CI job #8812",
+   "source": "PR.md:11",
+   "evidence": "Program.cs contains 7 scenario blocks totalling 18 Check() calls (4+3+3+2+3+2+1), internally consistent with the claim",
+   "missing": "no CI log, console output, or job link attached in this directory to independently verify job #8812 ran and passed",
+   "next": "author/CI to attach the actual run output or a link to job #8812",
+   "severity": "ask"
+  },
+  {
+   "claim": "R-02, R-05, R-07 were confirmed by @order-owners on 2026-09-16 in an ORD-142 comment",
+   "source": "PR.md:15",
+   "evidence": "none in this directory — no screenshot, comment link, or export of the ORD-142 thread is present",
+   "missing": "link/screenshot of the actual owner comment",
+   "next": "author to attach the ORD-142 comment reference",
+   "severity": "ask"
+  },
+  {
+   "claim": "OrdersController.CancelAsync is the sole caller of Cancellation.Cancel",
+   "source": "PR.md:19",
+   "evidence": "none in this directory — grep result referenced but not attached",
+   "missing": "grep output or equivalent caller inventory",
+   "next": "author to attach grep result to ORD-142 or PR",
+   "severity": "note"
+  },
+  {
+   "claim": "Already-cancelled orders are handled idempotently",
+   "source": "Program.cs:58-73 (test names 'Already cancelled...')",
+   "evidence": "tests cover Cancelled=true with Paid=true and Paid=false, both unshipped; diff.patch:22-25 returns unchanged order with RefundRequested=false when order.Cancelled is true",
+   "missing": "no test for Shipped=true && Cancelled=true combination",
+   "next": "author to confirm whether that combination is reachable/needs a test",
+   "severity": "note"
+  }
+ ],
+ "deep_dive": {
+  "1_state_machine": "Diff adds: unshipped+unpaid→Cancelled=true,RefundRequested=false; unshipped+paid→Cancelled=true,RefundRequested=true; shipped(any Paid)→blocked, order returned unchanged (diff.patch:17-20); already-cancelled→idempotent no-op (diff.patch:22-25). Matches R-02/R-05/R-07 per PR.md:10. Shipped+Cancelled=true transition is not exercised by any test (Program.cs has no such case).",
+  "2_side_effects": "Cancellation.Cancel's responsibility ends at returning RefundRequested=true; PR.md:6 states actual refund execution is owned by the payment service per R-07, not this function.",
+  "3_boundaries": "Repeat-cancel tested via 'Already cancelled' scenarios (Program.cs:58-73), which return the same order reference (result.Order == order, Program.cs:64) and no refund — matches R-05 idempotency cited in PR.md:10.",
+  "4_errors": "Null order throws ArgumentNullException (diff.patch:15, tested Program.cs:76-86). Shipped/already-cancelled 'blocked' cases are silent returns with no exception and no error code — caller must inspect result.Order.Cancelled to know nothing changed (PR.md:15: '呼叫端以 Order.Cancelled 未改變判斷', accepted by owner per that line).",
+  "5_types": "RefundRequested is bool; PR.md:14 explicitly states partial payment is out of scope for this ticket ('依 Owner 決定排除'), so a bool is treated as sufficient by that stated exclusion — not independently verified here.",
+  "6_tests": "Test comments in Program.cs (e.g. lines 22, 32, 41, 50, 58, 67) describe expected behavior per scenario but do not cite rule IDs directly; traceability of expected values to R-02/R-05/R-07 exists only in PR.md:10, not embedded in the test file itself.",
+  "7_unstated": "PR.md:14-15 states no new assumptions were introduced and that R-02/R-05/R-07 were confirmed by @order-owners on 2026-09-16 in ORD-142 — acceptance is asserted but the underlying artifact (comment) is not present in this directory (see findings above).",
+  "8_diagrams": "unknown — no diagram or sequence/state chart is referenced anywhere in PR.md, ticket.md, or the diff."
+ },
+ "owner_questions": [
+  "Please attach the actual ORD-142 owner comment (link or screenshot) confirming R-02/R-05/R-07, since only a paraphrase appears in PR.md:15.",
+  "Please attach the CI job #8812 log or raw dotnet run output referenced in PR.md:11.",
+  "Please attach the grep result referenced in PR.md:19 showing OrdersController.CancelAsync is the sole caller.",
+  "Is the Shipped=true && Cancelled=true combination reachable in production, and if so should it be tested explicitly?"
+ ],
+ "not_my_call": "Whether the author's documented (but unattached-in-this-directory) owner approval of R-02/R-05/R-07 is sufficient to merge this payment/state-transition change is an owner decision, not something this review can verify or authorize."
+}

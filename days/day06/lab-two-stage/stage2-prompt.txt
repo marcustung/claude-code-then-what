@@ -1,0 +1,1 @@
+讀取 spec.md、previous-draft.md 與 decision.md。依新增決策修訂驗收草稿，列出來源、具體 Given/When/Then 案例、相對前稿的變更與仍未決事項。保留決策的教學性質。只交草稿，不實作、不執行測試，也不要宣稱真實 Owner 已批准。

@@ -1,0 +1,23 @@
+SYNTHETIC before_effort=70; after_effort=70; before_elapsed=240; after_elapsed=180
+PASS faster elapsed is not lower human effort
+PASS ready requires evidence
+PASS missing evidence rejected
+PASS unknown prevents ready
+PASS blocked can be valid but is not accepted
+PASS unknown status rejected
+{"Revision":"demo-v1","Status":"ready_for_review","Rules":["RULE-01"],"Evidence":["run.txt"],"Unknowns":[]}
+BEFORE direct return forbidden: PASS
+PASS AFTER direct return forbidden
+BEFORE request without authority forbidden: PASS
+PASS AFTER request without authority forbidden
+BEFORE authority without explicit request forbidden: PASS
+PASS AFTER authority without explicit request forbidden
+BEFORE authorized explicit reopen allowed: FAIL
+PASS AFTER authorized explicit reopen allowed
+BEFORE non-rejected outside this guard: PASS
+PASS AFTER non-rejected outside this guard
+PASS regression reproduces old bug
+PASS B differs only by specified reason
+PROMPT_A=Task: review proposed code return !rejected; and decide whether each input may pass this guard. Inputs (rejected,reopenRequested,authorized): (true,false,false), (true,true,false), (true,false,true), (true,true,true), (false,false,false). Rule RULE-01: direct return is forbidden; explicit authorized reopening is allowed. Non-rejected states are outside this guard. Output per-input decision, rule_id, unknowns. Do not invent other system rules.
+PROMPT_B=Task: review proposed code return !rejected; and decide whether each input may pass this guard. Inputs (rejected,reopenRequested,authorized): (true,false,false), (true,true,false), (true,false,true), (true,true,true), (false,false,false). Rule RULE-01: direct return is forbidden; explicit authorized reopening is allowed. Non-rejected states are outside this guard. Output per-input decision, rule_id, unknowns. Do not invent other system rules. Reason: direct return bypasses the rejection decision; explicit authorized reopening records a deliberate exception.
+MODEL_RESULTS=NOT_RUN; no superiority claim

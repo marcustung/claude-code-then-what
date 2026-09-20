@@ -1,0 +1,18 @@
+{
+ "run": "S-B",
+ "num_turns": 10,
+ "cost_usd": 0.1328,
+ "duration_ms": 48656,
+ "tools": [
+  "Skill:review-kit:review-pr",
+  "Read",
+  "Read",
+  "Read",
+  "Read",
+  "Skill:review-kit:review-pr"
+ ],
+ "skill_launched": true,
+ "verdict": "OWNER_REQUIRED",
+ "findings": 5,
+ "json_repaired": false
+}

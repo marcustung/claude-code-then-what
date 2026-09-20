@@ -1,0 +1,1 @@
+DEMO-DECISION-01: 純教學假設，非公司政策、非真實 Owner 核准。對已付款、未出貨、尚未取消的訂單：取消功能只將 Cancelled 設為 true；退款交另一流程決定，本功能 RefundRequested=false。不得呼叫付款服務。其他行為仍須另行確認。

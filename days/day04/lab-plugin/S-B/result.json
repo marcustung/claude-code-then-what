@@ -1,0 +1,65 @@
+{
+ "skill": "review-kit:review-pr@0.1.0",
+ "verdict": "OWNER_REQUIRED",
+ "gate_hits": [
+  "Cancelled =: diff.patch:27",
+  "Paid: diff.patch:28"
+ ],
+ "contract": {
+  "1_traceability": "filled: PR.md:4-7 cites ORD-142 v2, docs/rules/orders.md §R-07, files src/Orders/Cancellation.cs, tests/Program.cs",
+  "2_evidence": "filled: PR.md:10-11 cites R-07/R-02/R-05 and claims 'dotnet run 7 組情境 18 個斷言 PASS (.NET 9.0.104, 2026-09-16, CI job #8812)' — but no CI log/output artifact attached to this review, so execution claim is unverified by this reviewer (see findings)",
+  "3_boundary": "filled: PR.md:14-16 states no new assumptions, R-02/R-05/R-07 confirmed by @order-owners on 2026-09-16 in ORD-142 comment (not directly viewable here), partial payment explicitly out of scope",
+  "4_impact": "filled: PR.md:19-21 names OrdersController.CancelAsync as sole caller (via grep, not shown here), no permission/data source changes",
+  "5_explainability": "filled: PR.md:24-25 accepts full scope, assigns rule ownership to order Owner, fix to author, judgement to Reviewer"
+ },
+ "findings": [
+  {
+   "claim": "'dotnet run 7 組情境 18 個斷言 PASS（.NET 9.0.104，2026-09-16，CI job #8812）'",
+   "source": "PR.md:11",
+   "evidence": "tests/Program.cs contains 7 scenarios / matching assertion count consistent with the description",
+   "missing": "No actual CI job #8812 log or console output provided in the reviewed directory; this reviewer did not run tests (per skill rule: do not run tests)",
+   "next": "author/CI to attach the job #8812 log or link as an artifact",
+   "severity": "ask"
+  },
+  {
+   "claim": "R-02/R-05/R-07 已由訂單 Owner（@order-owners）於 2026-09-16 在 ORD-142 留言確認",
+   "source": "PR.md:15",
+   "evidence": "ticket.md:5 shows the v2 supplement is attributed to @order-owners dated 2026-09-16, consistent with the claim",
+   "missing": "The actual ORD-142 comment thread is not included in this directory, so independent confirmation of the sign-off is unverified",
+   "next": "owner to confirm the sign-off link is accessible to reviewers",
+   "severity": "note"
+  },
+  {
+   "claim": "唯一呼叫端：OrdersController.CancelAsync",
+   "source": "PR.md:19",
+   "evidence": "PR.md states 'grep 結果附於 ORD-142'",
+   "missing": "grep result not present in this directory; OrdersController.cs not included in review files",
+   "next": "attach grep output or the caller file for independent verification",
+   "severity": "ask"
+  },
+  {
+   "claim": "Already-cancelled path returns unchanged order with RefundRequested=false, satisfying idempotency (R-05)",
+   "source": "src/Orders/Cancellation.cs (diff.patch:22-25)",
+   "evidence": "tests/Program.cs:58-73 exercise Cancelled=true+Paid=true and Cancelled=true+Paid=false and assert no refund requested",
+   "missing": "No test covers an order that was already cancelled with a refund already granted, then a second call — code returns RefundRequested=false in all already-cancelled cases, which matches R-05 as stated, but there's no distinct 'was refund already issued' state modeled (Order has no RefundRequested field), so it can't be verified against real state",
+   "next": "owner to confirm no separate refund-issued tracking is needed beyond the CancellationResult return value",
+   "severity": "note"
+  }
+ ],
+ "deep_dive": {
+  "1_state_machine": "Diff adds transitions: unshipped→cancelled (with/without refund flag based on Paid), and a no-op branch for Shipped=true and for already-Cancelled=true (both return early without mutating state). Shipped orders are correctly blocked from cancellation per ticket.md:6 (R-02). Diff does not add any transition that violates R-02/R-05/R-07 as stated in ticket.md.",
+  "2_side_effects": "Cancellation.Cancel only returns a new CancellationResult; it does not call the payment service itself (ticket.md:8 says '實際退款由付款服務處理'). Responsibility ends at setting RefundRequested=true; actual refund execution is out of this function's scope per ticket.md:8.",
+  "3_boundaries": "Repeated/idempotent call handled: diff.patch:22-25 short-circuits when order.Cancelled is already true, returning the same order and RefundRequested=false, matching tests/Program.cs:58-73 and R-05 (ticket.md:7).",
+  "4_errors": "Blocked cancellation (Shipped=true) is signaled only via CancellationResult.Order.Cancelled remaining false — no exception, no explicit error code (diff.patch:17-20). PR.md:15 states this is intentional and Owner-approved ('已出貨取消不丟例外由 Owner 同意（呼叫端檢查 Cancelled）'). Callers must inspect the returned Cancelled flag to detect failure; this is a silent-return pattern, confirmed acceptable by ticket.md:6.",
+  "5_types": "CancellationResult.RefundRequested is bool, only capturing full-refund-or-none. ticket.md:8 explicitly excludes partial payment from scope ('部分付款不在本工單範圍'), so the boolean is sufficient for the current, narrowed contract — but would be insufficient if partial-payment scope were later added.",
+  "6_tests": "tests/Program.cs derives expectations directly from R-02 (Shipped blocks cancel, lines 41-56), R-05 (idempotent, no double refund, lines 58-73), and R-07 (Paid→refund requested, unpaid→no refund, lines 22-39) as stated in ticket.md:6-8, not from unstated author assumptions.",
+  "7_unstated": "PR.md:14 states no new assumptions were added; all six original assumptions map to R-02/R-05/R-07 or were explicitly excluded (partial payment) per Owner decision, per PR.md:14 — acceptance is attributed to @order-owners on 2026-09-16 (ticket.md:5) but the acceptance record itself is not present in this directory.",
+  "8_diagrams": "unknown — no diagram or state-machine visual is included in PR.md, ticket.md, or diff.patch."
+ },
+ "owner_questions": [
+  "Can you attach or link the actual ORD-142 comment thread confirming Owner sign-off on R-02/R-05/R-07, since it's referenced but not included here?",
+  "Can you attach the CI job #8812 log or the grep result for OrdersController.CancelAsync referenced in PR.md, for independent verification?",
+  "Given the diff touches Paid and Cancelled state assignments (gate-triggering fields), do you want to reconfirm sign-off explicitly on this specific diff (not just the general rule text)?"
+ ],
+ "not_my_call": "Whether the Owner's prior sign-off on R-02/R-05/R-07 (referenced but not attached in this directory) is sufficient to merge a diff touching payment/state-transition fields is an owner-required decision this review cannot make."
+}

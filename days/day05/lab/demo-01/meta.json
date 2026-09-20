@@ -1,0 +1,19 @@
+{
+ "name": "demo-01",
+ "fixture": "pr-A",
+ "plugin": false,
+ "purpose": "Day 5 讀者示範：唯讀、無 plugin、--output-format json 的單次執行，取 run record 欄位",
+ "arguments": "-p <prompt> --model sonnet --effort low --strict-mcp-config --no-session-persistence --setting-sources \"\" --tools Read,Grep,Glob --allowedTools Read,Grep,Glob --output-format json",
+ "started_local": "2026-09-17T12:01:49+08:00",
+ "ended_local": "2026-09-17T12:02:09+08:00",
+ "exit_code": 0,
+ "models_in_modelUsage": [
+  "claude-haiku-4-5-20251001",
+  "claude-sonnet-5"
+ ],
+ "session_id": "fac9cf10-76ba-4aa0-b763-f7e27de7c83e",
+ "num_turns": 5,
+ "duration_ms": 11705,
+ "total_cost_usd": 0.047351000000000004,
+ "note": "run.json 為 CLI 原始回傳；起訖取自作者本機 SessionStart/SessionEnd hook 的 sessions.jsonl（該筆 session_id 為空，非互動呼叫 stdin 未帶 JSON）。"
+}
