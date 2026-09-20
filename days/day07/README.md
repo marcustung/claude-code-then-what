@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10414658) |
 | 今天練習 | 挑一條你最常對 Claude 重複講的限制，寫成七欄理由卡，埋一個只有卡片裡有的標記，要求它回傳 |
 | 需要什麼 | Claude Code CLI |
 | 跑什麼 | `cd days/day07/lab; powershell -NoProfile -File run-day07-repeat.ps1; powershell -NoProfile -File run-day07-notools.ps1` |
