@@ -43,14 +43,14 @@ VERIFIED.md          讀者視角試跑紀錄
 
 ## 30 天索引
 
-| Day | 題目 | 文章 | Claude Code 機制 | 技術關鍵字 | 這裡能跑什麼 | 範本 |
-|---|---|---|---|---|---|---|
-| [1](days/day01/) | 買了 Claude Code，然後呢？ | [文章](https://ithelp.ithome.com.tw/articles/10411197) | —（問題篇：五層問題、AI 使用報表的分母） | `git log` 署名統計、DORA、SPACE、使用報表分母 | —（歷史案例：使用報表；本篇只有問題與五層表） | [five-layers-ledger.md](templates/five-layers-ledger.md) |
-| [2](days/day02/) | 這件事，真的需要 AI 嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10412002) | —（拆問題篇：分工卡、衡量口徑） | Jira 工單、Retro、ADR、Teams hook 提醒（既有系統） | days/day02/lab/day02-write：一句需求→程式＋測試＋假設 | [problem-first-card.md](templates/problem-first-card.md) |
-| [3](days/day03/) | AI 寫程式很快，但為什麼我還是不敢 Approve | [文章](https://ithelp.ithome.com.tw/articles/10412647) | `claude -p` 唯讀審查交回程式＋假設清單；三層判級（工具→AI→Owner） | .NET 9 斷言 runner、`CODEOWNERS`、CI、PR 交接契約、三層判級路由 | days/day03/lab：一句需求→程式＋測試＋假設；kit/review：PR 範本、CODEOWNERS、判級規則、深挖清單、退件單、mermaid 圖 | [review-grade-handoff.md](templates/review-grade-handoff.md) |
-| [4](days/day04/) | 退件之後，我改了什麼？ | [文章](https://ithelp.ithome.com.tw/articles/10412968) | `claude -p --plugin-dir`、`plugin.json`／`SKILL.md`、Skill 工具、`--tools Read,Grep,Glob`、`--strict-mcp-config`、`CLAUDE.md` 不變條件、判級 R1–R5 | .NET 9、PowerShell runner、`CODEOWNERS`、GitHub Actions／Azure Repos 管線、JSON verdict schema、diff／patch fixture | days/day04/lab、lab-dotnet、lab-plugin：退件後重跑、plugin 六次 run | [rejection-note.md](templates/rejection-note.md) |
-| [5](days/day05/) | 先把尺放好，才知道工作有沒有變好 | [文章](https://ithelp.ithome.com.tw/articles/10413509) | `--output-format json`（`session_id`／`duration_ms`／`num_turns`／`total_cost_usd`）、`/cost`、`SessionStart`／`SessionEnd` hook、`--setting-sources ""` 關掉 hook、`--safe-mode` | JSONL 記錄器、DORA 價值流、METR RCT、SPACE／DevEx、基線卡、Retro | days/day05/lab：G0-A 原始審查、V-G0-A 重跑、demo-01 練習；`claude -p --output-format json` 四欄 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
-| [6](days/day06/) | 別再猜我要什麼，先約好怎樣才算完成 | [文章](https://ithelp.ithome.com.tw/articles/10414144) | `--tools Read --allowedTools Read`、`stream-json` trace 讀檔核對、`--allowedTools` 分段放權（Write／Edit／Bash）、`intent.md`／`spec.md`／`plan.md` | Mermaid 狀態圖、Given／When／Then 驗收案例、.NET `dotnet run` 三測試、`NotImplementedException` 骨架 | days/day06/lab：intent／spec 核對、不指名實驗、驗收草稿、實作與觀察；lab-contract：契約檢查 | [problem-first-card.md](templates/problem-first-card.md) |
+| Day | 題目 | 文章 | 關鍵詞 | 這裡能跑什麼 | 範本 |
+|---|---|---|---|---|---|
+| [1](days/day01/) | 買了 Claude Code，然後呢？ | [文章](https://ithelp.ithome.com.tw/articles/10411197) | 五層問題、AI 使用報表、`git log` 署名統計、DORA、SPACE | —（歷史案例：使用報表；本篇只有問題與五層表） | [five-layers-ledger.md](templates/five-layers-ledger.md) |
+| [2](days/day02/) | 這件事，真的需要 AI 嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10412002) | 問題先於工具、分工卡、衡量口徑、Jira、Retro、ADR | days/day02/lab/day02-write：一句需求→程式＋測試＋假設 | [problem-first-card.md](templates/problem-first-card.md) |
+| [3](days/day03/) | AI 寫程式很快，但為什麼我還是不敢 Approve | [文章](https://ithelp.ithome.com.tw/articles/10412647) | `claude -p` 唯讀審查、假設清單、三層判級（工具→AI→Owner）、.NET 9 斷言 runner、`CODEOWNERS`、CI、PR 交接契約 | days/day03/lab：一句需求→程式＋測試＋假設；kit/review：PR 範本、CODEOWNERS、判級規則、深挖清單、退件單、mermaid 圖 | [review-grade-handoff.md](templates/review-grade-handoff.md) |
+| [4](days/day04/) | 退件之後，我改了什麼？ | [文章](https://ithelp.ithome.com.tw/articles/10412968) | `--plugin-dir`、`plugin.json`、`SKILL.md`、Skill 工具、`--tools Read,Grep,Glob`、`--strict-mcp-config`、`CLAUDE.md`、判級 R1–R5、PowerShell runner、GitHub Actions／Azure Repos 管線 | days/day04/lab、lab-dotnet、lab-plugin：退件後重跑、plugin 六次 run | [rejection-note.md](templates/rejection-note.md) |
+| [5](days/day05/) | 先把尺放好，才知道工作有沒有變好 | [文章](https://ithelp.ithome.com.tw/articles/10413509) | `--output-format json`、`session_id`／`duration_ms`／`num_turns`／`total_cost_usd`、`/cost`、`SessionStart`／`SessionEnd` hook、`--setting-sources ""`、JSONL 記錄器、基線卡、DORA 價值流、METR、SPACE／DevEx | days/day05/lab：G0-A 原始審查、V-G0-A 重跑、demo-01 練習；`claude -p --output-format json` 四欄 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
+| [6](days/day06/) | 別再猜我要什麼，先約好怎樣才算完成 | [文章](https://ithelp.ithome.com.tw/articles/10414144) | `--tools Read --allowedTools Read`、`stream-json` trace、`--allowedTools` 分段放權、`intent.md`／`spec.md`／`plan.md`、Mermaid 狀態圖、Given／When／Then、`dotnet run` | days/day06/lab：intent／spec 核對、不指名實驗、驗收草稿、實作與觀察；lab-contract：契約檢查 | [problem-first-card.md](templates/problem-first-card.md) |
 
 ## 怎麼核對一次 run
 
