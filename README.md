@@ -45,7 +45,7 @@ VERIFIED.md          讀者視角試跑紀錄
 
 | Day | 題目 | 文章 | 關鍵詞 | 這裡能跑什麼 | 範本 |
 |---|---|---|---|---|---|
-| [1](days/day01/) | 買了 Claude Code，然後呢？ | [文章](https://ithelp.ithome.com.tw/articles/10411197) | 五層問題、AI 使用報表、`git log` 署名統計、DORA、SPACE | —（歷史案例：使用報表；本篇只有問題與五層表） | [five-layers-ledger.md](templates/five-layers-ledger.md) |
+| [1](days/day01/) | 買了 Claude Code，然後呢？ | [文章](https://ithelp.ithome.com.tw/articles/10411197) | 五層問題、AI 使用報表、`git log` 署名統計、DORA、SPACE | 無實驗：歷史案例（使用報表），本篇留下問題與五層表 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
 | [2](days/day02/) | 這件事，真的需要 AI 嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10412002) | 問題先於工具、分工卡、衡量口徑、Jira、Retro、ADR | days/day02/lab/day02-write：一句需求→程式＋測試＋假設 | [problem-first-card.md](templates/problem-first-card.md) |
 | [3](days/day03/) | AI 寫程式很快，但為什麼我還是不敢 Approve | [文章](https://ithelp.ithome.com.tw/articles/10412647) | `claude -p` 唯讀審查、假設清單、三層判級（工具→AI→Owner）、.NET 9 斷言 runner、`CODEOWNERS`、CI、PR 交接契約 | days/day03/lab：一句需求→程式＋測試＋假設；kit/review：PR 範本、CODEOWNERS、判級規則、深挖清單、退件單、mermaid 圖 | [review-grade-handoff.md](templates/review-grade-handoff.md) |
 | [4](days/day04/) | 退件之後，我改了什麼？ | [文章](https://ithelp.ithome.com.tw/articles/10412968) | `--plugin-dir`、`plugin.json`、`SKILL.md`、Skill 工具、`--tools Read,Grep,Glob`、`--strict-mcp-config`、`CLAUDE.md`、判級 R1–R5、PowerShell runner、GitHub Actions／Azure Repos 管線 | days/day04/lab、lab-dotnet、lab-plugin：退件後重跑、plugin 六次 run | [rejection-note.md](templates/rejection-note.md) |
