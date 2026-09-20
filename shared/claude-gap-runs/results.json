@@ -1,0 +1,131 @@
+[
+    {
+        "run":  "day07",
+        "models":  [
+                       "claude-sonnet-5"
+                   ],
+        "decisions_correct":  5,
+        "rule_id":  "RULE-01",
+        "marker":  "RULE-CONTEXT-7-KITE-0911",
+        "tool_names":  [
+                           "Read"
+                       ],
+        "bug":  null,
+        "unknowns":  "Actual authorization source, audit storage, API and other state rules are not provided; not invented.",
+        "reason_applied":  "For rejected=true, direct return to interview is forbidden unless both reopenRequested and authorized are true, since only that combination records a deliberate, explicit authorized exception rather than an unrecorded bypass. When rejected=false, the guard doesn\u0027t apply, so the transition is allowed by default."
+    },
+    {
+        "run":  "day09-A1",
+        "models":  [
+                       "claude-sonnet-5"
+                   ],
+        "decisions_correct":  4,
+        "rule_id":  "RULE-01",
+        "marker":  null,
+        "tool_names":  [
+                           null
+                       ],
+        "bug":  "return !rejected returns true whenever rejected is false regardless of authorized, and returns false for any rejected case including authorized reopening, violating the rule that explicit authorized reopening should be allowed",
+        "unknowns":  [
+                         "exact expected behavior for rejected=true,authorized=true,reopenRequested=false"
+                     ],
+        "reason_applied":  null
+    },
+    {
+        "run":  "day09-B1",
+        "models":  [
+                       "claude-sonnet-5"
+                   ],
+        "decisions_correct":  5,
+        "rule_id":  "RULE-01",
+        "marker":  null,
+        "tool_names":  [
+                           null
+                       ],
+        "bug":  "return !rejected directly derives the result from rejected without checking authorized, so reopening (even when authorized) is never granted and rejected states can only ever yield false, violating the requirement that authorized reopening be an explicit allowed exception",
+        "unknowns":  [
+                         "Whether reopenRequested must also be true alongside authorized for reopening to be granted, or authorized alone suffices",
+                         "Expected behavior definition for non-rejected states (outside guard scope) beyond the case (false,false,false)"
+                     ],
+        "reason_applied":  null
+    },
+    {
+        "run":  "day09-B2",
+        "models":  [
+                       "claude-sonnet-5"
+                   ],
+        "decisions_correct":  4,
+        "rule_id":  "RULE-01",
+        "marker":  null,
+        "tool_names":  [
+                           null
+                       ],
+        "bug":  "return !rejected performs a direct negation from rejected without checking authorized, so reopening succeeds even when authorized is false as long as reopenRequested is true; it fails to require explicit authorization for the rejection override",
+        "unknowns":  [
+                         "Whether reopenRequested without authorized should be rejected outright or merely ignored",
+                         "Behavior expected when rejected is false but reopenRequested/authorized are true"
+                     ],
+        "reason_applied":  null
+    },
+    {
+        "run":  "day09-A2",
+        "models":  [
+                       "claude-sonnet-5"
+                   ],
+        "decisions_correct":  5,
+        "rule_id":  "RULE-01",
+        "marker":  null,
+        "tool_names":  [
+                           null
+                       ],
+        "bug":  "return !rejected allows rejected states to pass whenever reopenRequested is true, without checking authorized; it only requires authorized when reopenRequested is also true incidentally through inversion, but actually the code never checks authorized at all, so reopening without authorization would incorrectly be denied/allowed inconsistently with the rule",
+        "unknowns":  [
+                         "Whether non-rejected states require reopenRequested/authorized to be false or are unconditionally true"
+                     ],
+        "reason_applied":  null
+    },
+    {
+        "run":  "day09-A3",
+        "models":  [
+                       "claude-sonnet-5"
+                   ],
+        "decisions_correct":  4,
+        "rule_id":  "RULE-01",
+        "marker":  null,
+        "tool_names":  [
+                           null
+                       ],
+        "bug":  "return !rejected allows reopening whenever rejected is false regardless of authorized, and does not require explicit authorized reopening when rejected is true and reopenRequested is true without checking authorized correctly",
+        "unknowns":  [
+                         "expected behavior for non-rejected states beyond guard scope"
+                     ],
+        "reason_applied":  null
+    },
+    {
+        "run":  "day09-B3",
+        "models":  [
+                       "claude-sonnet-5"
+                   ],
+        "decisions_correct":  4,
+        "rule_id":  "RULE-01",
+        "marker":  null,
+        "tool_names":  [
+                           null
+                       ],
+        "bug":  "return !rejected allows reopening whenever rejected is true regardless of authorized, and does not gate on reopenRequested/authorized explicitly, violating the requirement that only explicit authorized reopening bypasses rejection",
+        "unknowns":  [
+
+                     ],
+        "reason_applied":  null
+    },
+    {
+        "run":  "day10",
+        "models":  [
+                       "claude-sonnet-5"
+                   ],
+        "explanation":  "Removed the direct \u0027!rejected\u0027 bypass and replaced it with a rule that only allows entry when not rejected, or when rejected but explicitly reopened with authorization (both reopenRequested and authorized true). Non-rejected states remain unaffected as required.",
+        "tool_names":  [
+                           null
+                       ]
+    }
+]

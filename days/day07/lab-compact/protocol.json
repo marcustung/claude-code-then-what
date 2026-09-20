@@ -1,0 +1,33 @@
+{
+  "question": "Does compact wording preserve observed behavior on the same five scenarios?",
+  "order": [
+    "original-1",
+    "compact-1",
+    "compact-2",
+    "original-2",
+    "original-3",
+    "compact-3"
+  ],
+  "expected": [
+    false,
+    false,
+    false,
+    true,
+    true
+  ],
+  "model": "claude-sonnet-5",
+  "effort": "low",
+  "cli": "2.1.277",
+  "limits": [
+    "Three runs per variant are descriptive only",
+    "Not a reason/no-reason comparison",
+    "Not a CLAUDE.md automatic loading test; safe-mode disables customizations",
+    "Original has no source field; provenance recorded here, not added to model inputs",
+    "Both use same demo-v2 semantic rule version; filenames identify wording versions"
+  ],
+  "source": "Historical teaching example, not company policy",
+  "characters": {
+    "original": 537,
+    "compact": 416
+  }
+}

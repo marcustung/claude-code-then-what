@@ -1,6 +1,6 @@
 {
- "files": 316,
- "binary": 16,
+ "files": 397,
+ "binary": 17,
  "scrubbed": [
   "days\\day02\\lab\\day02-write\\trace.jsonl",
   "days\\day03\\lab\\meta.json",
@@ -30,9 +30,28 @@
   "days\\day06\\lab-two-stage\\stage1-meta.json",
   "days\\day06\\lab-two-stage\\stage1-trace.jsonl",
   "days\\day06\\lab-two-stage\\stage2-meta.json",
-  "days\\day06\\lab-two-stage\\stage2-trace.jsonl"
+  "days\\day06\\lab-two-stage\\stage2-trace.jsonl",
+  "days\\day07\\lab\\day07\\trace.jsonl",
+  "days\\day07\\lab\\day07-r2\\trace.jsonl",
+  "days\\day07\\lab\\day07-r3\\trace.jsonl",
+  "days\\day07\\lab\\day07-sandbox-failed\\trace.jsonl",
+  "days\\day07\\lab\\day07-notools-1\\trace.jsonl",
+  "days\\day07\\lab\\day07-notools-2\\trace.jsonl",
+  "days\\day07\\lab-compact\\results.json",
+  "days\\day07\\lab-compact\\compact-1\\meta.json",
+  "days\\day07\\lab-compact\\compact-1\\trace.jsonl",
+  "days\\day07\\lab-compact\\compact-2\\meta.json",
+  "days\\day07\\lab-compact\\compact-2\\trace.jsonl",
+  "days\\day07\\lab-compact\\compact-3\\meta.json",
+  "days\\day07\\lab-compact\\compact-3\\trace.jsonl",
+  "days\\day07\\lab-compact\\original-1\\meta.json",
+  "days\\day07\\lab-compact\\original-1\\trace.jsonl",
+  "days\\day07\\lab-compact\\original-2\\meta.json",
+  "days\\day07\\lab-compact\\original-2\\trace.jsonl",
+  "days\\day07\\lab-compact\\original-3\\meta.json",
+  "days\\day07\\lab-compact\\original-3\\trace.jsonl"
  ],
  "forbidden": [],
  "figures": 42,
- "bytes": 52649825
+ "bytes": 56037300
 }

@@ -1,0 +1,13 @@
+{
+ "marker": "RULE-CONTEXT-7-KITE-0911",
+ "rule_id": "RULE-01",
+ "decisions": [
+  false,
+  false,
+  false,
+  true,
+  true
+ ],
+ "reason_applied": "For rejected=true cases, direct return from rejected is forbidden unless both reopenRequested and authorized are true, since that combination records a deliberate, explicit authorized exception rather than a bypass. For rejected=false, the guard doesn't apply, so it's allowed.",
+ "unknowns": "Actual authorization source, audit storage, API and other state rules are not provided; not invented."
+}

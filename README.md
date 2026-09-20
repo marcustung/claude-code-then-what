@@ -3,7 +3,7 @@
 **2026 iThome 鐵人賽・Claude AI 組・三十天系列的配套 repo。** 文章談的是一個工程團隊導入 Claude Code 之後，怎麼把「程式寫得更快」接回需求、審查、驗收與成效判斷；這裡放的是文章裡每一個實驗的原件——提示、trace、輸出、判準與重跑腳本——讓每一句「我試過」都能被打開來看。
 
 - 系列文章：[iThome 系列頁](https://ithelp.ithome.com.tw/users/20162577/ironman/9862)（每日一篇，2026-09-15 起）
-- 目前開放：Day 1–6（索引隨發文節奏開放，未發布的日子只有空資料夾）
+- 目前開放：Day 1–7（索引隨發文節奏開放，未發布的日子只有空資料夾）
 - 試跑紀錄：[VERIFIED.md](VERIFIED.md)（每一天的練習都在乾淨副本裡照 README 跑過，含時間、環境、修過的問題）
 
 ## 這個 repo 是什麼、不是什麼
@@ -51,6 +51,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [4](days/day04/) | 退件之後，我改了什麼？ | [文章](https://ithelp.ithome.com.tw/articles/10412968) | Plugin、Skill、工具白名單、CLAUDE.md 不變條件、判級規則 R1–R5、審查 runner、GitHub Actions／Azure Repos 管線 | days/day04/lab、lab-dotnet、lab-plugin：退件後重跑、plugin 六次 run | [rejection-note.md](templates/rejection-note.md) |
 | [5](days/day05/) | 先把尺放好，才知道工作有沒有變好 | [文章](https://ithelp.ithome.com.tw/articles/10413509) | JSON 輸出四欄（session、時間、回合、費用）、`/cost`、Session hook、設定隔離、JSONL 記錄器、基線卡、價值流、METR、SPACE／DevEx | days/day05/lab：G0-A 原始審查、V-G0-A 重跑、demo-01 練習；`claude -p --output-format json` 四欄 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
 | [6](days/day06/) | 別再猜我要什麼，先約好怎樣才算完成 | [文章](https://ithelp.ithome.com.tw/articles/10414144) | Spec 先於程式、intent／spec／plan、唯讀核對、分段放權、trace 讀檔核對、Mermaid 狀態圖、Given／When／Then 驗收 | days/day06/lab：intent／spec 核對、不指名實驗、驗收草稿、實作與觀察；lab-contract：契約檢查 | [problem-first-card.md](templates/problem-first-card.md) |
+| [7](days/day07/) | 把老工程師腦中的「為什麼」交給 Claude | 未發 | 理由卡、辨識標記、trace 交叉核對、負對照（無工具）、安全模式、CLAUDE.md 與 rules、`/context`、`/init`、exit code 不等於完成 | days/day07/lab：讀規則卡三次 | 無 |
 
 ## 怎麼核對一次 run
 

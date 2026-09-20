@@ -1,0 +1,1 @@
+Read rule-card.md with the Read tool. Return ONLY JSON with keys marker, rule_id, decisions (boolean array in input order), reason_applied, unknowns. Inputs (rejected,reopenRequested,authorized): (true,false,false),(true,true,false),(true,false,true),(true,true,true),(false,false,false). Explain briefly how the reason affects your decision. Do not inspect any other files.

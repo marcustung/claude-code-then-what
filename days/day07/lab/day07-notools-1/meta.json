@@ -1,0 +1,8 @@
+﻿{
+    "exit_code":  0,
+    "name":  "day07-notools-1",
+    "purpose":  "2026-09-19 negative control: same card and prompt, no tools",
+    "arguments":  "-p --model sonnet --effort low --safe-mode --strict-mcp-config --no-session-persistence --output-format stream-json --verbose --tools \"\"",
+    "started_utc":  "2026-09-19T14:50:12.4656874Z",
+    "ended_utc":  "2026-09-19T14:50:16.0460240Z"
+}

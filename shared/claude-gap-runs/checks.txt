@@ -1,0 +1,9 @@
+PASS compiled Guard.cs SHA256 equals Claude proposed source
+PASS B differs only by predeclared reason
+PASS A inputs identical across three runs
+PASS B inputs identical across three runs
+PASS A decisions 13/15
+PASS B decisions 13/15
+PASS all model identifiers match: claude-sonnet-5
+PASS Day7 tool_result contains original marker and full rule
+PASS A/B and repair init tool/MCP lists empty

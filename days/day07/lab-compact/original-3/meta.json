@@ -1,0 +1,23 @@
+{
+  "exit_code": 0,
+  "started_unix": 1789871489.2302754,
+  "wall_seconds": 8.828859806060791,
+  "args": [
+    "<HOME>\\.local\\bin\\claude.exe",
+    "-p",
+    "--model",
+    "claude-sonnet-5",
+    "--effort",
+    "low",
+    "--safe-mode",
+    "--strict-mcp-config",
+    "--no-session-persistence",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--tools",
+    "Read",
+    "--allowedTools",
+    "Read"
+  ]
+}

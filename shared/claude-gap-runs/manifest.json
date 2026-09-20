@@ -1,0 +1,400 @@
+[
+    {
+        "file": "checks.txt",
+        "sha256": "0905AF30D50C4D1C15D86BDDA1E8C4BF5A8231B2DC13A5D2DA918F298A61A09F"
+    },
+    {
+        "file": "inspect.ps1",
+        "sha256": "0E1CC05ACE49CF1935BA97680C3537786D0E0F6CA7DAA2C75C2E9D4447DC7E27",
+        "sha256_private_original": "C70C927765C93A871690F0A0BDF5DAB009EC6B1E0099E0AEB2BAEE7CBA5BC22C"
+    },
+    {
+        "file": "protocol.md",
+        "sha256": "468E18B7BD3122321A6C11E3BF381A23D6B00BC87EE185C65D644DF1FF316105",
+        "sha256_private_original": "E36BC8DEB5D545B3848083A5A7702D94A5CA5DE7A1C035F582A8617FDCC2D0BD"
+    },
+    {
+        "file": "README.md",
+        "sha256": "DD2F2282E15F0C5442E9C508B2ECE977BB4967E6AC1C3F8595F877064DB47B24",
+        "sha256_private_original": "FD5958BEC5D6AB6AF6BB3FD20F47A76E2B45E8049F6FF9CB47B6BC9DF1BB1003"
+    },
+    {
+        "file": "results.json",
+        "sha256": "8E7A777B3276298402C32953E1B635606D2ED1D80315BA8A95B70443CAAE39C4",
+        "sha256_private_original": "5BC610693FD2C075DE8FF43CDB22C1806FDF898C4C98FCCE08D7D6142464AB0F"
+    },
+    {
+        "file": "rule-card.md",
+        "sha256": "8A38B619D36A90423A5D26048280D5623720CD08A87200043EB3C84D270F8CBF"
+    },
+    {
+        "file": "run.ps1",
+        "sha256": "DCC07582C8BB68F13F960731566503BC2CDD2EB2DD94480EC3D7ED1232C6DAFB",
+        "sha256_private_original": "86644C99412201A7724D97E8DB0D24998507DB5FDA0B0219B1F9F509CC99FAEC"
+    },
+    {
+        "file": "day07\\answer.json",
+        "sha256": "7979B73098E70986A821831FB0DA1FD7A95243609957DA192BA3235CC3D11ABC",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day07\\meta.json",
+        "sha256": "2E92BDA6AA1C5DD6F3156B42139A9597668A07376330405FD4A1D0B8E460CF5E",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day07\\prompt.txt",
+        "sha256": "722CBCEE7848E29489617B205236A73A94D8674CA9B4A1CC0C3C824B0B8A45BF",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day07\\response.txt",
+        "sha256": "32001AB587D7F76F528659213AA4FC4F45AE97362FD47CA90EFEC9B68057F2BD",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day07\\rule-card.md",
+        "sha256": "8A38B619D36A90423A5D26048280D5623720CD08A87200043EB3C84D270F8CBF",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day07\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day07\\trace.jsonl",
+        "sha256": "561EA07355F6986D444D62329BE772967A01C7FE6B1FC4C0357EA6CAB3B6FEC7",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day07-sandbox-failed\\meta.json",
+        "sha256": "69E9618992AC0123A2DD623EF39861F1AB4D6A75C484E487F89323805B84B7A4",
+        "note": "not exported"
+    },
+    {
+        "file": "day07-sandbox-failed\\prompt.txt",
+        "sha256": "722CBCEE7848E29489617B205236A73A94D8674CA9B4A1CC0C3C824B0B8A45BF",
+        "note": "not exported"
+    },
+    {
+        "file": "day07-sandbox-failed\\rule-card.md",
+        "sha256": "8A38B619D36A90423A5D26048280D5623720CD08A87200043EB3C84D270F8CBF",
+        "note": "not exported"
+    },
+    {
+        "file": "day07-sandbox-failed\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "not exported"
+    },
+    {
+        "file": "day07-sandbox-failed\\trace.jsonl",
+        "sha256": "6D335E8E25F4A0909DFF034700C74278F2EA9C4A8D70326F5DD108F91C3D775A",
+        "note": "not exported"
+    },
+    {
+        "file": "day09-A1\\answer.json",
+        "sha256": "F0CB8FFC5BA313493873C1EACC1E02577B28F804C1EBD4D2B0B27A8297ED7E13",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A1\\meta.json",
+        "sha256": "489A94131E8B888B0056062FF47CA995D71C46C7D115008DA949CB39ABF980AC",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A1\\prompt.txt",
+        "sha256": "04E150F4B789B99939E05B1E443451AD282BA93E865BDEAA9DBF299800EF9DBA",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A1\\response.txt",
+        "sha256": "3E7435A3E846B9F7C2B2DB7CE839F119C19B1EA45B071B51CA9B0C8A6E13FF03",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A1\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A1\\trace.jsonl",
+        "sha256": "D4DD96D0C16A7744AD6CE61DA7027857159181303E547C9809C33677CEBB1FDD",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A2\\answer.json",
+        "sha256": "5667D2EF479CAEB420D6AD7C988B4AE8C3C9FB8F3C92E630BFEF907D47A03C97",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A2\\meta.json",
+        "sha256": "D56EC089BE2C6F81E88EF96169F8E8C359BC32FD6EE9B4C173BEF3DD1467D11B",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A2\\prompt.txt",
+        "sha256": "04E150F4B789B99939E05B1E443451AD282BA93E865BDEAA9DBF299800EF9DBA",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A2\\response.txt",
+        "sha256": "ED0EB13046CEE5FBEF31D024D470A5FF01868AC08F93285307C02CB913211304",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A2\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A2\\trace.jsonl",
+        "sha256": "A890B0A42261626C2F5BE4D359A72A233FDB220B3C6A149883AB93BA94901A8F",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A3\\answer.json",
+        "sha256": "2AF212713F09BD72B6C26E7FF0792DC8E830E36056AEE645CF93872D155A45F3",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A3\\meta.json",
+        "sha256": "DDD71BDEDDD1BF6E1817A43CAA9C9A17904AB0FEB142DACF564AFFB7D9B2AE11",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A3\\prompt.txt",
+        "sha256": "04E150F4B789B99939E05B1E443451AD282BA93E865BDEAA9DBF299800EF9DBA",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A3\\response.txt",
+        "sha256": "699D9BC4F087179AA55FA910A4E79FAA64D5619D683F3D1CD47A9CA5053853A8",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A3\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-A3\\trace.jsonl",
+        "sha256": "DB18C4A40949813A0FB4AE65589B8BE313B7607DCB2A070DB7F48DCA22603907",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B1\\answer.json",
+        "sha256": "41C3B1AF785112434743614C277DB72BE54D6A273A7D3DB59A8961B0D893015B",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B1\\meta.json",
+        "sha256": "FE6E4014B4F51BED43AC496A790638B21ED6A6F123D88167B921EC21436796A5",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B1\\prompt.txt",
+        "sha256": "21CB056C0B0D239456CF1D6CC7254857E89D20E938031C0F07FD0383F49BE5FC",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B1\\response.txt",
+        "sha256": "3C1F7D650A04B8F4D9F6C9408BFD4CA74D7F971106F126C75B0B01B1F5E92519",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B1\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B1\\trace.jsonl",
+        "sha256": "8E0FFCC8DDA029F7746843E9DA470F425268494F5B99F5B5D0F7F10E4D30F386",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B2\\answer.json",
+        "sha256": "2E72707A7A397CDCD866E6656C13504E900803F79BA592BD397DAE00F311596A",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B2\\meta.json",
+        "sha256": "1BE6F7A9A888E2D42DCD8DD71EA1D4BCCA37D1021AFD5C06400EA4F612AA02C2",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B2\\prompt.txt",
+        "sha256": "21CB056C0B0D239456CF1D6CC7254857E89D20E938031C0F07FD0383F49BE5FC",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B2\\response.txt",
+        "sha256": "5AE2691593F0B97323C3FCC1F81B344319F8C05208A9424F6D6E8B6A11CF183B",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B2\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B2\\trace.jsonl",
+        "sha256": "451C3759F804F6EEA5E36A0D080CB4CDDE6D2D87946000796C3C06F3B31CF18F",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B3\\answer.json",
+        "sha256": "F7F4BEC9C7FEE0D171ED7AE6B9B6032947631C5B722DDB3A9E5AEFE03A533B7F",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B3\\meta.json",
+        "sha256": "B8F297591F83ACE809785E1734CD6423D0BD5D0A2482C8EC0B6C31A342E3B3CD",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B3\\prompt.txt",
+        "sha256": "21CB056C0B0D239456CF1D6CC7254857E89D20E938031C0F07FD0383F49BE5FC",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B3\\response.txt",
+        "sha256": "54AC937EB19A9B3F25F3DBA02D54DAD237A6B24892299E7D17D3BF64D44C9572",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B3\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day09-B3\\trace.jsonl",
+        "sha256": "75B2CAA1890C8EC5F7CB54E939305176551C9C46BAE66FE4DD1DE8D6A59B9DF6",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10\\answer.json",
+        "sha256": "3269FB6E5948734AEE60F5EEAFE4E0E26AD2994FA4202179AD9447597A1BCEE2",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10\\Guard.proposed.cs",
+        "sha256": "DCBF6099CA3A413ED49952870578C880EDD4F9B4CFF8DB96082C12B7C56FE2EF",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10\\meta.json",
+        "sha256": "09F055E4A193320F93FB17FD22103A15B598B310FB8CDE18182C2CE6781FAE46",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10\\prompt.txt",
+        "sha256": "1F88439DD49AEA76D94CE73D2B2F23D48CE8ED1D681F8BF806CA846600A64EED",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10\\response.txt",
+        "sha256": "C9DC1F2ECD13F6C1AA154229C0E37E96C244944F9BF51450AF4A69A689BD28C4",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10\\stderr.txt",
+        "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10\\trace.jsonl",
+        "sha256": "3BAD7E56F5BA3FBAC77D8E5C82595747F0F22F880C3CEB1F48342DBDFB83AAF6",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10-check\\after.txt",
+        "sha256": "B111BF08F415ED2671149EFDFEB0C80AED659C62997B00A9FAF5C77BCA2A79CE",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10-check\\before.txt",
+        "sha256": "70086AE75AF24AC1BC0BA28E4198DEF9F8339AD5C661E1710AD6D3941BB9E2FB",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10-check\\Demo.csproj",
+        "sha256": "AA3DA919042EE1851869FA21071E2E2CF070DAE2AC0FB9A63FC6CBE96049D8BB",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10-check\\fix.diff",
+        "sha256": "84FA6754C5AFB8CA17E9B619336E028F57C5B3D81413634D585EEC39F256C98C",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10-check\\Guard.before.txt",
+        "sha256": "287EA3E084B079E053B7CCC2DDA9336D13E877D0F3C684F29C969E71A6B97D53",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10-check\\Guard.cs",
+        "sha256": "DCBF6099CA3A413ED49952870578C880EDD4F9B4CFF8DB96082C12B7C56FE2EF",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day10-check\\Program.cs",
+        "sha256": "6050DF881F341EF412F945CFF3ABA5EC8C9C528750DB85641326AC741C624B53",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "run-day02.ps1",
+        "sha256": "B53EFB651F7ECC8658334A327A738C4B232413D17BC5D6C7F1BE5716819E0371",
+        "note": "not exported"
+    },
+    {
+        "file": "day02-write/prompt.txt",
+        "sha256": "127B130075A8D0C680C4CA8015C6FF0111DBF315E35987772ADAF66156DB9CB3",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/trace.jsonl",
+        "sha256": "AA4142D0AB79F81203D497E37165B8A240C9687931159A211DD109F1F62AFD32",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/response.txt",
+        "sha256": "F07EA1AA8A5809B1B42A3692E82B1DF333D606E95E71F46DFAA8B4993414EB39",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/answer.json",
+        "sha256": "0B6F9ED9A7795F1C40B8F0811F309B1BF085E1AF82F3725E6104CA869CBC4C65",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/Guard.cs",
+        "sha256": "47D1C33C4C8C808FFCE0F71923DFCBCDB5A51D887D9FAF48FF9BA7C3CA28D6CF",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/Program.cs",
+        "sha256": "7E330C189239E965A7505D8B7F19784354AFA4E8D60FC36CBE23BEBEEA0132CF",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/meta.json",
+        "sha256": "EA43DB37414A7C1A6D1E3B814D28F86C676237231FF58DBA3A46EF25CEA88056",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/hashes.txt",
+        "sha256": "5B69739AAA3BB2853F5988968675A700C54919436F9372DC4B2F8903BA3AF209",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/check/run.txt",
+        "sha256": "BDDD5B6FB0743BDD06C4AED84509090999A898416DFFD4A3FA3F2338F58C8B2F",
+        "note": "moved to per-day folder in the public layout"
+    },
+    {
+        "file": "day02-write/check/Demo.csproj",
+        "sha256": "AA3DA919042EE1851869FA21071E2E2CF070DAE2AC0FB9A63FC6CBE96049D8BB",
+        "note": "moved to per-day folder in the public layout"
+    }
+]

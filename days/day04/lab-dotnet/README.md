@@ -15,6 +15,7 @@ dotnet run --project Demo.csproj -- context
 - Day 4：`bug` 配合再交付紀錄，展示缺少例外的修正。
 - Day 5：`baseline`，合成人分鐘／經過分鐘分開。不能當公司效果。
 - Day 6：`contract`，五種交付狀態與缺件檢查。只查欄位關係，不查檔案存在或內容真偽。
+- Day 7：`rule-card.md`。沒有宣稱 Claude 自動載入或新執行。
 
 `run.txt` 保存實際工具輸出；`verification.md` 保存時間、指令、exit 與限制；`manifest.json` 保存本輪來源檔案 SHA-256，不包含自己。
 
