@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10415265) |
 | 今天練習 | 對一份你自己出的考卷做反向核對：讓 Claude 追呼叫鏈、每個結論附檔案:行號，再用 check_citations.py 抽驗 |
 | 需要什麼 | Claude Code CLI；Python 3 |
 | 跑什麼 | `cd days/day08/lab; powershell -NoProfile -File run.ps1 r4; python check_citations.py r4` |

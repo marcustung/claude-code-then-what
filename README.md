@@ -52,7 +52,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [5](days/day05/) | 先把尺放好，才知道工作有沒有變好 | [文章](https://ithelp.ithome.com.tw/articles/10413509) | JSON 輸出四欄（session、時間、回合、費用）、`/cost`、Session hook、設定隔離、JSONL 記錄器、基線卡、價值流、METR、SPACE／DevEx | days/day05/lab：G0-A 原始審查、V-G0-A 重跑、demo-01 練習；`claude -p --output-format json` 四欄 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
 | [6](days/day06/) | 別再猜我要什麼，先約好怎樣才算完成 | [文章](https://ithelp.ithome.com.tw/articles/10414144) | Spec 先於程式、intent／spec／plan、唯讀核對、分段放權、trace 讀檔核對、Mermaid 狀態圖、Given／When／Then 驗收 | days/day06/lab：intent／spec 核對、不指名實驗、驗收草稿、實作與觀察；lab-contract：契約檢查 | [problem-first-card.md](templates/problem-first-card.md) |
 | [7](days/day07/) | 把老工程師腦中的「為什麼」交給 Claude | [文章](https://ithelp.ithome.com.tw/articles/10414658) | 理由卡、辨識標記、trace 交叉核對、負對照（無工具）、安全模式、CLAUDE.md 與 rules、`/context`、`/init`、exit code 不等於完成 | days/day07/lab：讀規則卡三次 | 無 |
-| [8](days/day08/) | 我替 AI 出了考卷，結果錯的是我的答案 | 未發 | 引用抽驗、工具回傳自帶行號、幻覺引用一票否決、答案卷更正、C# 呼叫鏈、SQL／LINQ、off-by-one | days/day08/lab：合成 repo 追呼叫鏈、引用抽驗三次（歷史更正紀錄不公開） | [grading-table.md](templates/grading-table.md) |
+| [8](days/day08/) | 我替 AI 出了考卷，結果錯的是我的答案 | [文章](https://ithelp.ithome.com.tw/articles/10415265) | 引用抽驗、工具回傳自帶行號、幻覺引用一票否決、答案卷更正、C# 呼叫鏈、SQL／LINQ、off-by-one | days/day08/lab：合成 repo 追呼叫鏈、引用抽驗三次（歷史更正紀錄不公開） | [grading-table.md](templates/grading-table.md) |
 
 ## 怎麼核對一次 run
 

@@ -1,5 +1,5 @@
 {
- "files": 435,
+ "files": 436,
  "binary": 18,
  "scrubbed": [
   "days\\day02\\lab\\day02-write\\trace.jsonl",
@@ -66,6 +66,6 @@
   "days\\day08\\lab\\runs\\r3\\trace.jsonl"
  ],
  "forbidden": [],
- "figures": 42,
- "bytes": 56733306
+ "figures": 43,
+ "bytes": 58381865
 }
