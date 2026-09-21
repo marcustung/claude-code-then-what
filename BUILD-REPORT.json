@@ -1,6 +1,6 @@
 {
- "files": 397,
- "binary": 17,
+ "files": 435,
+ "binary": 18,
  "scrubbed": [
   "days\\day02\\lab\\day02-write\\trace.jsonl",
   "days\\day03\\lab\\meta.json",
@@ -49,9 +49,23 @@
   "days\\day07\\lab-compact\\original-2\\meta.json",
   "days\\day07\\lab-compact\\original-2\\trace.jsonl",
   "days\\day07\\lab-compact\\original-3\\meta.json",
-  "days\\day07\\lab-compact\\original-3\\trace.jsonl"
+  "days\\day07\\lab-compact\\original-3\\trace.jsonl",
+  "days\\day08\\lab\\runs\\guess-1\\meta.json",
+  "days\\day08\\lab\\runs\\guess-1\\trace.jsonl",
+  "days\\day08\\lab\\runs\\guess-2\\meta.json",
+  "days\\day08\\lab\\runs\\guess-2\\trace.jsonl",
+  "days\\day08\\lab\\runs\\notools-1\\meta.json",
+  "days\\day08\\lab\\runs\\notools-1\\trace.jsonl",
+  "days\\day08\\lab\\runs\\notools-2\\meta.json",
+  "days\\day08\\lab\\runs\\notools-2\\trace.jsonl",
+  "days\\day08\\lab\\runs\\r1\\meta.json",
+  "days\\day08\\lab\\runs\\r1\\trace.jsonl",
+  "days\\day08\\lab\\runs\\r2\\meta.json",
+  "days\\day08\\lab\\runs\\r2\\trace.jsonl",
+  "days\\day08\\lab\\runs\\r3\\meta.json",
+  "days\\day08\\lab\\runs\\r3\\trace.jsonl"
  ],
  "forbidden": [],
  "figures": 42,
- "bytes": 56072207
+ "bytes": 56733306
 }

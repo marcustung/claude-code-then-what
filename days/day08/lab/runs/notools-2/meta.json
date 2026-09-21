@@ -1,0 +1,9 @@
+{
+    "prompt_sha256":  "5D063412BD0FEF870667A03E69C9A566FD510EBDCBFE1A99A669ECAD91EB23CC",
+    "ended_utc":  "2026-09-20T04:22:46.5964253Z",
+    "cwd":  "<REPO>\\writing\\labs\\2026-09-19-day08-citation-check\\repo",
+    "started_utc":  "2026-09-20T04:22:41.7191568Z",
+    "name":  "notools-2",
+    "arguments":  "-p --model sonnet --effort low --strict-mcp-config --no-session-persistence --setting-sources \"\" --output-format stream-json --verbose --tools \"\"",
+    "exit_code":  0
+}

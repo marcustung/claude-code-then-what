@@ -1,0 +1,25 @@
+你在一個薪資系統的合成教學 repo（目前工作目錄）裡排查兩個客服症狀。只讀取，不修改任何檔案。
+
+症狀 A：某分公司結算月薪時，下個月才生效的扶養親屬被算進當月個人所得稅。
+症狀 B：下載扶養親屬報表，報表裡的人數也同樣提前累計。
+
+請追實際的呼叫鏈回答：
+1. 報表入口（Reports/）下載時，實際呼叫的是 DependentRepository 的哪一支方法？那支方法的 SQL 有沒有任何日期條件？
+2. 報表的人數是怎麼算出來的？計數時有沒有看生效日？
+3. 計薪端（Payroll/MonthlyTaxCalculator）用的是哪一支方法？症狀 A 的根因在哪一行？
+4. 症狀 A 與症狀 B 是否共用同一段過濾程式碼？修好計薪端之後，報表會不會跟著好？
+5. 有日期條件的那支方法還被哪些地方呼叫？如果為了修報表去改它的 SQL，會影響誰？
+
+規則：每一個結論都要附「檔案路徑:行號」，行號必須是你實際讀到的那一行；讀不到就寫「未讀到」，不要猜。
+只回傳一個 JSON 物件，不要有其他文字：
+{
+  "report_query_method": {"answer": "...", "file": "...", "line": 0},
+  "report_query_has_date_filter": {"answer": true/false, "file": "...", "line": 0},
+  "report_count_checks_dates": {"answer": true/false, "file": "...", "line": 0},
+  "payroll_method": {"answer": "...", "file": "...", "line": 0},
+  "symptom_a_root_cause": {"answer": "...", "file": "...", "line": 0},
+  "shares_filter_code": {"answer": true/false, "evidence": [{"file": "...", "line": 0}]},
+  "fixing_payroll_fixes_report": {"answer": true/false, "reason": "..."},
+  "period_query_callers": [{"file": "...", "line": 0}],
+  "unknowns": ["..."]
+}
