@@ -43,16 +43,16 @@ VERIFIED.md          讀者視角試跑紀錄
 
 ## 30 天索引
 
-| Day | 題目 | 文章 | 關鍵詞 | 這裡能跑什麼 | 範本 |
-|---|---|---|---|---|---|
-| [1](days/day01/) | 買了 Claude Code，然後呢？ | [文章](https://ithelp.ithome.com.tw/articles/10411197) | 五層成效問題、AI 使用報表、git 署名統計、DORA、SPACE | 無實驗：歷史案例（使用報表），本篇留下問題與五層表 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
-| [2](days/day02/) | 這件事，真的需要 AI 嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10412002) | 問題先於工具、人／程式／AI 分工卡、衡量口徑、Jira、Retro、ADR | days/day02/lab/day02-write：一句需求→程式＋測試＋假設 | [problem-first-card.md](templates/problem-first-card.md) |
-| [3](days/day03/) | AI 寫程式很快，但為什麼我還是不敢 Approve | [文章](https://ithelp.ithome.com.tw/articles/10412647) | Headless 唯讀審查、假設清單、三層判級（工具→AI→Owner）、.NET 斷言測試、CODEOWNERS、CI、PR 交接契約 | days/day03/lab：一句需求→程式＋測試＋假設；kit/review：PR 範本、CODEOWNERS、判級規則、深挖清單、退件單、mermaid 圖 | [review-grade-handoff.md](templates/review-grade-handoff.md) |
-| [4](days/day04/) | 退件之後，我改了什麼？ | [文章](https://ithelp.ithome.com.tw/articles/10412968) | Plugin、Skill、工具白名單、CLAUDE.md 不變條件、判級規則 R1–R5、審查 runner、GitHub Actions／Azure Repos 管線 | days/day04/lab、lab-dotnet、lab-plugin：退件後重跑、plugin 六次 run | [rejection-note.md](templates/rejection-note.md) |
-| [5](days/day05/) | 先把尺放好，才知道工作有沒有變好 | [文章](https://ithelp.ithome.com.tw/articles/10413509) | JSON 輸出四欄（session、時間、回合、費用）、`/cost`、Session hook、設定隔離、JSONL 記錄器、基線卡、價值流、METR、SPACE／DevEx | days/day05/lab：G0-A 原始審查、V-G0-A 重跑、demo-01 練習；`claude -p --output-format json` 四欄 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
-| [6](days/day06/) | 別再猜我要什麼，先約好怎樣才算完成 | [文章](https://ithelp.ithome.com.tw/articles/10414144) | Spec 先於程式、intent／spec／plan、唯讀核對、分段放權、trace 讀檔核對、Mermaid 狀態圖、Given／When／Then 驗收 | days/day06/lab：intent／spec 核對、不指名實驗、驗收草稿、實作與觀察；lab-contract：契約檢查 | [problem-first-card.md](templates/problem-first-card.md) |
-| [7](days/day07/) | 把老工程師腦中的「為什麼」交給 Claude | [文章](https://ithelp.ithome.com.tw/articles/10414658) | 理由卡、辨識標記、trace 交叉核對、負對照（無工具）、安全模式、CLAUDE.md 與 rules、`/context`、`/init`、exit code 不等於完成 | days/day07/lab：讀規則卡三次 | 無 |
-| [8](days/day08/) | 我替 AI 出了考卷，結果錯的是我的答案 | [文章](https://ithelp.ithome.com.tw/articles/10415265) | 引用抽驗、工具回傳自帶行號、幻覺引用一票否決、答案卷更正、C# 呼叫鏈、SQL／LINQ、off-by-one | days/day08/lab：合成 repo 追呼叫鏈、引用抽驗三次（歷史更正紀錄不公開） | [grading-table.md](templates/grading-table.md) |
+| Day | 題目 | 文章 | 這裡能跑什麼 | 範本 |
+|---|---|---|---|---|
+| [1](days/day01/) | 買了 Claude Code，然後呢？ | [文章](https://ithelp.ithome.com.tw/articles/10411197) | 無實驗：歷史案例（使用報表），本篇留下問題與五層表 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
+| [2](days/day02/) | 這件事，真的需要 AI 嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10412002) | days/day02/lab/day02-write：一句需求→程式＋測試＋假設 | [problem-first-card.md](templates/problem-first-card.md) |
+| [3](days/day03/) | AI 寫程式很快，但為什麼我還是不敢 Approve | [文章](https://ithelp.ithome.com.tw/articles/10412647) | days/day03/lab：一句需求→程式＋測試＋假設；kit/review：PR 範本、CODEOWNERS、判級規則、深挖清單、退件單、mermaid 圖 | [review-grade-handoff.md](templates/review-grade-handoff.md) |
+| [4](days/day04/) | 退件之後，我改了什麼？ | [文章](https://ithelp.ithome.com.tw/articles/10412968) | days/day04/lab、lab-dotnet、lab-plugin：退件後重跑、plugin 六次 run | [rejection-note.md](templates/rejection-note.md) |
+| [5](days/day05/) | 先把尺放好，才知道工作有沒有變好 | [文章](https://ithelp.ithome.com.tw/articles/10413509) | days/day05/lab：G0-A 原始審查、V-G0-A 重跑、demo-01 練習；`claude -p --output-format json` 四欄 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
+| [6](days/day06/) | 別再猜我要什麼，先約好怎樣才算完成 | [文章](https://ithelp.ithome.com.tw/articles/10414144) | days/day06/lab：intent／spec 核對、不指名實驗、驗收草稿、實作與觀察；lab-contract：契約檢查 | [problem-first-card.md](templates/problem-first-card.md) |
+| [7](days/day07/) | 把老工程師腦中的「為什麼」交給 Claude | [文章](https://ithelp.ithome.com.tw/articles/10414658) | days/day07/lab：讀規則卡三次 | 無 |
+| [8](days/day08/) | 我替 AI 出了考卷，結果錯的是我的答案 | [文章](https://ithelp.ithome.com.tw/articles/10415265) | days/day08/lab：合成 repo 追呼叫鏈、引用抽驗三次（歷史更正紀錄不公開） | [grading-table.md](templates/grading-table.md) |
 
 ## 怎麼核對一次 run
 
