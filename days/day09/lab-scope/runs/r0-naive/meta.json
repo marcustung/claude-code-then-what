@@ -1,0 +1,168 @@
+{
+  "started_utc": "2026-09-22T04:53:05.019589+00:00",
+  "args": [
+    "<HOME>\\.local\\bin\\claude.EXE",
+    "-p",
+    "--model",
+    "sonnet",
+    "--effort",
+    "medium",
+    "--safe-mode",
+    "--tools",
+    "Read,Grep,Glob",
+    "--allowedTools",
+    "Read,Grep,Glob",
+    "--no-session-persistence",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "prompt_file": "prompt-naive.txt",
+  "actor": "Claude Code (author session) invoked Claude Code CLI; AI-operated",
+  "purpose": "naive baseline: PM two sentences only, no packet, no spec pointers",
+  "input_sha256": {
+    "prompt-naive.txt": "b8732e3ea41ee73928804f694b501ccdd6f05e362142069aeb68ad362812712e",
+    "src/Domain/Cancellation.cs": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6",
+    "tests/DomainTests/Program.cs": "86806d3b6d10a0b4281dd898ac30ff86df626bd17a43b32c2037304aa88cbb29",
+    "specs/decisions-v1.md": "da9d043833dfb0234370c2ffc07659f656c6c93c9e14d3beb8100471314c8e31",
+    "specs/decisions-v2.1.md": "c160f91d0815d84205a9c542f8c554386f7c9556d0d1af8be604ac5c7b955775",
+    "specs/notification-contract-v2.1.md": "b811f53d19e856427beae4b72c6e799f61e987d6c4d937b43f41d542987cea78",
+    "specs/rules-v2.md": "85083d7e8ae499700ac11d140f1ba4700e8ec85e2c727d97cf9e6c8e8b5a28a9"
+  },
+  "exit_code": 0,
+  "ended_utc": "2026-09-22T04:53:22.787735+00:00",
+  "result": {
+    "duration_api_ms": 15003,
+    "stop_reason": "end_turn",
+    "session_id": "cb96a568-9168-4878-b790-b1939a92fe28",
+    "total_cost_usd": 0.04526380000000001,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 6026,
+      "cache_read_input_tokens": 42249,
+      "output_tokens": 1269,
+      "output_tokens_details": {
+        "thinking_tokens": 127
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6026,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 684,
+          "cache_read_input_tokens": 10278,
+          "cache_creation_input_tokens": 2127,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2127
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-sonnet-5": {
+        "inputTokens": 10,
+        "outputTokens": 1269,
+        "cacheReadInputTokens": 42249,
+        "cacheCreationInputTokens": 6026,
+        "webSearchRequests": 0,
+        "costUSD": 0.04526380000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 127,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 7,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 1491,
+    "type": "result",
+    "duration_ms": 15342,
+    "uuid": "3b3e3267-b19d-4e13-96fa-95d70488dfba",
+    "ttft_stream_ms": 878,
+    "time_to_request_ms": 60,
+    "first_content_frame_ms": 878,
+    "queued_turn_count": 0,
+    "result_index": 0
+  },
+  "tool_calls": [
+    {
+      "name": "Glob",
+      "input": {
+        "pattern": "**/*.{js,ts,jsx,tsx}"
+      }
+    },
+    {
+      "name": "Glob",
+      "input": {
+        "pattern": "**/*"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "<REPO>\\examples\\day09-scope-lab\\src\\Domain\\Cancellation.cs"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "<REPO>\\examples\\day09-scope-lab\\tests\\DomainTests\\Program.cs"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "<REPO>\\examples\\day09-scope-lab\\specs\\decisions-v2.1.md"
+      }
+    },
+    {
+      "name": "Read",
+      "input": {
+        "file_path": "<REPO>\\examples\\day09-scope-lab\\specs\\rules-v2.md"
+      }
+    }
+  ]
+}

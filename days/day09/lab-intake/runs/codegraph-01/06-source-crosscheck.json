@@ -1,0 +1,22 @@
+[
+  {
+    "file": "tests/DomainTests/Program.cs",
+    "line": 11,
+    "text": "Check(\"v1-1\", \"尚未出貨可取消\", () => Cancellation.Cancel(new Order(false, false, false)).Order.Cancelled);"
+  },
+  {
+    "file": "tests/DomainTests/Program.cs",
+    "line": 12,
+    "text": "Check(\"v1-2\", \"已出貨不可取消\", () => { var o = new Order(true, false, false); return Cancellation.Cancel(o).Order == o; });"
+  },
+  {
+    "file": "tests/DomainTests/Program.cs",
+    "line": 13,
+    "text": "Check(\"v1-3\", \"已付款取消不要求退款\", () => { var r = Cancellation.Cancel(new Order(false, true, false)); return r.Order.Cancelled && !r.RefundRequested; });"
+  },
+  {
+    "file": "src/Api/Program.cs",
+    "line": 69,
+    "text": "var result = Cancellation.Cancel(before);"
+  }
+]

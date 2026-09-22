@@ -1,0 +1,131 @@
+{
+  "input_hashes": [
+    {
+      "file": "src/Domain/Cancellation.cs",
+      "unchanged": true
+    },
+    {
+      "file": "tests/DomainTests/Program.cs",
+      "unchanged": true
+    },
+    {
+      "file": "specs/decisions-v1.md",
+      "unchanged": true
+    },
+    {
+      "file": "specs/rules-v2.md",
+      "unchanged": true
+    },
+    {
+      "file": "specs/notification-contract-v2.1.md",
+      "unchanged": true
+    },
+    {
+      "file": "specs/decisions-v2.1.md",
+      "unchanged": true
+    }
+  ],
+  "predicate_rows": [
+    {
+      "shipped": false,
+      "cancelled": false,
+      "paid": false,
+      "guard": false,
+      "expression": false,
+      "naive": false,
+      "equivalent": true
+    },
+    {
+      "shipped": false,
+      "cancelled": false,
+      "paid": true,
+      "guard": true,
+      "expression": true,
+      "naive": true,
+      "equivalent": true
+    },
+    {
+      "shipped": false,
+      "cancelled": true,
+      "paid": false,
+      "guard": false,
+      "expression": false,
+      "naive": false,
+      "equivalent": true
+    },
+    {
+      "shipped": false,
+      "cancelled": true,
+      "paid": true,
+      "guard": false,
+      "expression": false,
+      "naive": true,
+      "equivalent": true
+    },
+    {
+      "shipped": true,
+      "cancelled": false,
+      "paid": false,
+      "guard": false,
+      "expression": false,
+      "naive": false,
+      "equivalent": true
+    },
+    {
+      "shipped": true,
+      "cancelled": false,
+      "paid": true,
+      "guard": false,
+      "expression": false,
+      "naive": false,
+      "equivalent": true
+    },
+    {
+      "shipped": true,
+      "cancelled": true,
+      "paid": false,
+      "guard": false,
+      "expression": false,
+      "naive": false,
+      "equivalent": true
+    },
+    {
+      "shipped": true,
+      "cancelled": true,
+      "paid": true,
+      "guard": false,
+      "expression": false,
+      "naive": false,
+      "equivalent": true
+    }
+  ],
+  "runs": [
+    {
+      "run": "r1",
+      "tool_names": [
+        "Glob",
+        "Read"
+      ],
+      "tool_calls": 7,
+      "allowed_only": true,
+      "model_ids": [
+        "claude-sonnet-5"
+      ],
+      "completed": true
+    },
+    {
+      "run": "r2",
+      "tool_names": [
+        "Glob",
+        "Read"
+      ],
+      "tool_calls": 12,
+      "allowed_only": true,
+      "model_ids": [
+        "claude-sonnet-5"
+      ],
+      "completed": true
+    }
+  ],
+  "limits": "Predicate illustration only; not execution of .NET, not semantic verification of model report, not business approval."
+}

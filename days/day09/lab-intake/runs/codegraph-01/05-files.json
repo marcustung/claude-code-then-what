@@ -1,0 +1,20 @@
+[
+  {
+    "path": "src/Api/Program.cs",
+    "language": "csharp",
+    "nodeCount": 60,
+    "size": 16322
+  },
+  {
+    "path": "src/Domain/Cancellation.cs",
+    "language": "csharp",
+    "nodeCount": 7,
+    "size": 1373
+  },
+  {
+    "path": "tests/DomainTests/Program.cs",
+    "language": "csharp",
+    "nodeCount": 2,
+    "size": 904
+  }
+]

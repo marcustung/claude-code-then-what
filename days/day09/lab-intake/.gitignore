@@ -1,0 +1,4 @@
+codegraph-tool/node_modules/
+graph-project/.codegraph/
+**/bin/
+**/obj/

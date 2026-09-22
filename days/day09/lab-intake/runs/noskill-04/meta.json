@@ -1,0 +1,130 @@
+{
+  "started_utc": "2026-09-22T07:48:56.035452+00:00",
+  "args": [
+    "<HOME>\\.local\\bin\\claude.EXE",
+    "-p",
+    "--model",
+    "sonnet",
+    "--effort",
+    "medium",
+    "--no-session-persistence",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--safe-mode",
+    "--tools",
+    "Read,Grep,Glob",
+    "--allowedTools",
+    "Read,Grep,Glob"
+  ],
+  "cwd": "runs/noskill-04/work (clean copy)",
+  "actor": "Claude Code (author session) invoked Claude Code CLI; AI-operated",
+  "purpose": "repeat of noskill-02 control",
+  "exit_code": 0,
+  "ended_utc": "2026-09-22T07:49:51.344028+00:00",
+  "result": {
+    "duration_api_ms": 51566,
+    "stop_reason": "end_turn",
+    "session_id": "cb7201ef-44e7-45ba-917f-151dfa24734f",
+    "total_cost_usd": 0.09901299999999999,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 10885,
+      "cache_read_input_tokens": 51015,
+      "output_tokens": 4525,
+      "output_tokens_details": {
+        "thinking_tokens": 2454
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 10885,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 3562,
+          "cache_read_input_tokens": 17949,
+          "cache_creation_input_tokens": 465,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 465
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-sonnet-5": {
+        "inputTokens": 10,
+        "outputTokens": 4525,
+        "cacheReadInputTokens": 51015,
+        "cacheCreationInputTokens": 10885,
+        "webSearchRequests": 0,
+        "costUSD": 0.09901299999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 2454,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 8,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 1198,
+    "type": "result",
+    "duration_ms": 52271,
+    "uuid": "56956987-adc5-456f-a353-dee3c20aa981",
+    "ttft_stream_ms": 1031,
+    "time_to_request_ms": 250,
+    "first_content_frame_ms": 1032,
+    "queued_turn_count": 0,
+    "result_index": 0
+  },
+  "tool_calls": [
+    "Glob",
+    "Read",
+    "Glob",
+    "Read",
+    "Read",
+    "Read",
+    "Glob"
+  ]
+}

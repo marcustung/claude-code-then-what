@@ -1,0 +1,7 @@
+{
+  "upstream_skill": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/grilling/SKILL.md",
+  "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+  "skill_sha256": "10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2",
+  "source_code": "../sdlc-development/baseline (885e521)",
+  "scenario": "New incomplete teaching spec; not rewrite of rules-v2; no human answers"
+}

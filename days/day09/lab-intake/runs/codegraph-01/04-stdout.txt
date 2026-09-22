@@ -1,0 +1,20 @@
+{
+  "symbol": "Cancel",
+  "depth": 2,
+  "nodeCount": 2,
+  "edgeCount": 1,
+  "affected": [
+    {
+      "name": "Cancel",
+      "kind": "method",
+      "filePath": "src/Domain/Cancellation.cs",
+      "startLine": 8
+    },
+    {
+      "name": "Program.cs",
+      "kind": "file",
+      "filePath": "tests/DomainTests/Program.cs",
+      "startLine": 1
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "started_utc": "2026-09-21T23:03:55.003281+00:00",
+  "args": [
+    "<HOME>\\.local\\bin\\claude.exe",
+    "-p",
+    "--model",
+    "sonnet",
+    "--effort",
+    "medium",
+    "--safe-mode",
+    "--tools",
+    "Read,Grep,Glob",
+    "--allowedTools",
+    "Read,Grep,Glob",
+    "--no-session-persistence",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "prompt_file": "reader-prompt.txt",
+  "input_sha256": {
+    "reader-prompt.txt": "0f60576a9972b63e6a0ac7cfb029a87dc2c4a60b3b80ec155ca6ba292e91bd94",
+    "packet-context.md": "86019c5f10bb0e7f821ded63d7963552eef15babb9086ae2f6d6e110dc561e32",
+    "manifest.json": "748dfc46271fe7671227b6c1d7309e17b26c5b5e86f4a0fef28f19fe5e69c301",
+    "specs/decisions-v1.md": "da9d043833dfb0234370c2ffc07659f656c6c93c9e14d3beb8100471314c8e31",
+    "specs/decisions-v2.1.md": "c160f91d0815d84205a9c542f8c554386f7c9556d0d1af8be604ac5c7b955775",
+    "specs/notification-contract-v2.1.md": "b811f53d19e856427beae4b72c6e799f61e987d6c4d937b43f41d542987cea78",
+    "specs/rules-v2.md": "85083d7e8ae499700ac11d140f1ba4700e8ec85e2c727d97cf9e6c8e8b5a28a9",
+    "src/Domain/Cancellation.cs": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6",
+    "tests/DomainTests/Program.cs": "86806d3b6d10a0b4281dd898ac30ff86df626bd17a43b32c2037304aa88cbb29"
+  },
+  "actor": "automated reader demonstration; not evidence of personal or team adoption",
+  "exit_code": 0,
+  "ended_utc": "2026-09-21T23:05:01.427246+00:00",
+  "result": {
+    "duration_api_ms": 63229,
+    "stop_reason": "end_turn",
+    "session_id": "fd427134-9eeb-4360-83a4-4d14d038d886",
+    "total_cost_usd": 0.0969462,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 7789,
+      "cache_read_input_tokens": 27191,
+      "output_tokens": 6034,
+      "output_tokens_details": {
+        "thinking_tokens": 1761
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7789,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 5175,
+          "cache_read_input_tokens": 11267,
+          "cache_creation_input_tokens": 4051,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4051
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-sonnet-5": {
+        "inputTokens": 6,
+        "outputTokens": 6034,
+        "cacheReadInputTokens": 27191,
+        "cacheCreationInputTokens": 7789,
+        "webSearchRequests": 0,
+        "costUSD": 0.0969462,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 1761,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 10,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 1475,
+    "type": "result",
+    "duration_ms": 63441,
+    "uuid": "635bd533-a0be-4121-b80b-6aaa3912a644",
+    "ttft_stream_ms": 1177,
+    "time_to_request_ms": 124,
+    "first_content_frame_ms": 1177,
+    "queued_turn_count": 0,
+    "result_index": 0
+  },
+  "inputs_unchanged": true
+}

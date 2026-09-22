@@ -1,0 +1,133 @@
+{
+  "args": [
+    "<HOME>\\.local\\bin\\claude.exe",
+    "-p",
+    "--model",
+    "sonnet",
+    "--effort",
+    "medium",
+    "--setting-sources",
+    "project",
+    "--plugin-dir",
+    "<REPO>\\examples\\day09-intake-lab\\interview-plugin",
+    "--tools",
+    "Read,Grep,Glob,Skill",
+    "--allowedTools",
+    "Read,Grep,Glob,Skill",
+    "--no-session-persistence",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "exit_code": 0,
+  "inputs": {
+    "src\\Api\\Api.csproj": "53221be216a76a5608d588d2518a5cb5bd188486f754b00d1aca3b1d74ac8db8",
+    "src\\Api\\Program.cs": "03ae8ae968f83c873a8351a02c2377f439ec5badedbe383a5fb818938b8b60cb",
+    "src\\Domain\\Cancellation.cs": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6",
+    "src\\Domain\\Domain.csproj": "489dc7ac07da11ca0bf21f8d6bc2acc183fff159b1c671a8df33f76ebf7c293f",
+    "tests\\DomainTests\\DomainTests.csproj": "275c0fe33bcf30843e28ac706562850f2af601e7a26bd6d69976a227836c3555",
+    "tests\\DomainTests\\Program.cs": "86806d3b6d10a0b4281dd898ac30ff86df626bd17a43b32c2037304aa88cbb29",
+    "interview-plugin\\LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+    "interview-plugin\\.claude-plugin\\plugin.json": "db5e4a467e76655720b3e104582f96931e9354a3613f3e95c44b69b2211e6807",
+    "interview-plugin\\skills\\grilling\\SKILL.md": "10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2",
+    "spec.md": "98e18c89f7653fe0d55b5eebd4adc6836dffa0be10dbe18b19b8a84c20b35717"
+  },
+  "inputs_unchanged": true,
+  "human_answers": 0,
+  "result": {
+    "duration_api_ms": 81150,
+    "stop_reason": "end_turn",
+    "session_id": "a79ab597-e750-423f-9581-1fa1cd36b48d",
+    "total_cost_usd": 0.24075919999999998,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 44128,
+      "cache_read_input_tokens": 19476,
+      "output_tokens": 6034,
+      "output_tokens_details": {
+        "thinking_tokens": 3120
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 44128,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 5496,
+          "cache_read_input_tokens": 19476,
+          "cache_creation_input_tokens": 9345,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 9345
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-sonnet-5": {
+        "inputTokens": 6,
+        "outputTokens": 6034,
+        "cacheReadInputTokens": 19476,
+        "cacheCreationInputTokens": 44128,
+        "webSearchRequests": 0,
+        "costUSD": 0.24075919999999998,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 3120,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 8,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2296,
+    "type": "result",
+    "duration_ms": 81478,
+    "uuid": "f700be33-94b6-4b7b-bb4b-e797a5bd566f",
+    "ttft_stream_ms": 1931,
+    "time_to_request_ms": 140,
+    "first_content_frame_ms": 1932,
+    "queued_turn_count": 0,
+    "result_index": 0
+  }
+}

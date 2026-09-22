@@ -1,0 +1,11 @@
+{
+  "symbol": "Cancel",
+  "callers": [
+    {
+      "name": "Program.cs",
+      "kind": "file",
+      "filePath": "tests/DomainTests/Program.cs",
+      "startLine": 1
+    }
+  ]
+}

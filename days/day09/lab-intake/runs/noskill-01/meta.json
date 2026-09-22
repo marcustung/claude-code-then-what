@@ -1,0 +1,188 @@
+{
+  "started_utc": "2026-09-22T07:43:33.633313+00:00",
+  "args": [
+    "<HOME>\\.local\\bin\\claude.EXE",
+    "-p",
+    "--model",
+    "sonnet",
+    "--effort",
+    "medium",
+    "--safe-mode",
+    "--tools",
+    "Read,Grep,Glob",
+    "--allowedTools",
+    "Read,Grep,Glob",
+    "--no-session-persistence",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "actor": "Claude Code (author session) invoked Claude Code CLI; AI-operated",
+  "purpose": "control for interview-01: same materials (spec.md, src incl. Api, tests), no grilling skill, plan-style ask",
+  "input_sha256": {
+    "spec.md": "98e18c89f7653fe0d55b5eebd4adc6836dffa0be10dbe18b19b8a84c20b35717",
+    "src/Api/Api.csproj": "53221be216a76a5608d588d2518a5cb5bd188486f754b00d1aca3b1d74ac8db8",
+    "src/Api/Program.cs": "03ae8ae968f83c873a8351a02c2377f439ec5badedbe383a5fb818938b8b60cb",
+    "src/Domain/Cancellation.cs": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6",
+    "src/Domain/Domain.csproj": "489dc7ac07da11ca0bf21f8d6bc2acc183fff159b1c671a8df33f76ebf7c293f",
+    "tests/DomainTests/DomainTests.csproj": "275c0fe33bcf30843e28ac706562850f2af601e7a26bd6d69976a227836c3555",
+    "tests/DomainTests/Program.cs": "86806d3b6d10a0b4281dd898ac30ff86df626bd17a43b32c2037304aa88cbb29"
+  },
+  "exit_code": 0,
+  "ended_utc": "2026-09-22T07:44:29.310026+00:00",
+  "result": {
+    "duration_api_ms": 45685,
+    "stop_reason": "end_turn",
+    "session_id": "4d824e1f-295a-4015-9390-30080a6ba412",
+    "total_cost_usd": 0.15855160000000001,
+    "usage": {
+      "input_tokens": 18,
+      "cache_creation_input_tokens": 21324,
+      "cache_read_input_tokens": 161248,
+      "output_tokens": 4097,
+      "output_tokens_details": {
+        "thinking_tokens": 1126
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 21324,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2482,
+          "cache_read_input_tokens": 25558,
+          "cache_creation_input_tokens": 3295,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3295
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-sonnet-5": {
+        "inputTokens": 18,
+        "outputTokens": 4097,
+        "cacheReadInputTokens": 161248,
+        "cacheCreationInputTokens": 21324,
+        "webSearchRequests": 0,
+        "costUSD": 0.15855160000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 1126,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 15,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 1460,
+    "type": "result",
+    "duration_ms": 53077,
+    "uuid": "e98887c3-ec4b-4a5a-a603-1c074fbec59f",
+    "ttft_stream_ms": 999,
+    "time_to_request_ms": 120,
+    "first_content_frame_ms": 999,
+    "queued_turn_count": 0,
+    "result_index": 0
+  },
+  "tool_calls": [
+    [
+      "Glob",
+      "**/*"
+    ],
+    [
+      "Read",
+      "an2026\\examples\\day09-intake-lab\\spec.md"
+    ],
+    [
+      "Read",
+      "09-intake-lab\\src\\Domain\\Cancellation.cs"
+    ],
+    [
+      "Read",
+      "-intake-lab\\tests\\DomainTests\\Program.cs"
+    ],
+    [
+      "Read",
+      "ples\\day09-intake-lab\\src\\Api\\Program.cs"
+    ],
+    [
+      "Read",
+      "graph-project\\src\\Domain\\Cancellation.cs"
+    ],
+    [
+      "Read",
+      "aph-project\\tests\\DomainTests\\Program.cs"
+    ],
+    [
+      "Glob",
+      "decisions.md"
+    ],
+    [
+      "Grep",
+      "graph-project"
+    ],
+    [
+      "Read",
+      "2026\\examples\\day09-intake-lab\\README.md"
+    ],
+    [
+      "Glob",
+      "audit.md"
+    ],
+    [
+      "Glob",
+      "runs/interview-01/*"
+    ],
+    [
+      "Read",
+      "n2026\\examples\\day09-intake-lab\\audit.md"
+    ],
+    [
+      "Read",
+      "9-intake-lab\\runs\\interview-01\\result.md"
+    ]
+  ],
+  "invalid": "contaminated: cwd was the lab root, model read runs/interview-01/result.md and audit.md; superseded by noskill-02 (clean copy)"
+}

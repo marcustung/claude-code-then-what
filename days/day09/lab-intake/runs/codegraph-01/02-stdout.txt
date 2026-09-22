@@ -1,0 +1,109 @@
+[
+  {
+    "node": {
+      "id": "class:7205e2c1544397b4f61a6b2278c18247",
+      "kind": "class",
+      "name": "Cancellation",
+      "qualifiedName": "OrderCancel.Domain::Cancellation",
+      "filePath": "src/Domain/Cancellation.cs",
+      "language": "csharp",
+      "startLine": 6,
+      "endLine": 26,
+      "startColumn": 0,
+      "endColumn": 1,
+      "visibility": "public",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false,
+      "isAbstract": false,
+      "updatedAt": 1790046668831
+    },
+    "score": 106.23179093745377
+  },
+  {
+    "node": {
+      "id": "class:1042f2e0ce722a90dceeea41bcc01e78",
+      "kind": "class",
+      "name": "CancellationResult",
+      "qualifiedName": "OrderCancel.Domain::CancellationResult",
+      "filePath": "src/Domain/Cancellation.cs",
+      "language": "csharp",
+      "startLine": 4,
+      "endLine": 4,
+      "startColumn": 0,
+      "endColumn": 68,
+      "visibility": "public",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false,
+      "isAbstract": false,
+      "updatedAt": 1790046668831
+    },
+    "score": 56.231790937453766
+  },
+  {
+    "node": {
+      "id": "file:src/Domain/Cancellation.cs",
+      "kind": "file",
+      "name": "Cancellation.cs",
+      "qualifiedName": "src/Domain/Cancellation.cs",
+      "filePath": "src/Domain/Cancellation.cs",
+      "language": "csharp",
+      "startLine": 1,
+      "endLine": 27,
+      "startColumn": 0,
+      "endColumn": 0,
+      "visibility": null,
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": false,
+      "isAbstract": false,
+      "updatedAt": 1790046668831
+    },
+    "score": 52.13567066301769
+  },
+  {
+    "node": {
+      "id": "method:44ae967559ac8ba6acb5079f190bb9ce",
+      "kind": "method",
+      "name": "Cancel",
+      "qualifiedName": "OrderCancel.Domain::Cancellation::Cancel",
+      "filePath": "src/Domain/Cancellation.cs",
+      "language": "csharp",
+      "startLine": 8,
+      "endLine": 22,
+      "startColumn": 4,
+      "endColumn": 5,
+      "visibility": "public",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": true,
+      "isAbstract": false,
+      "returnType": "CancellationResult",
+      "updatedAt": 1790046668831
+    },
+    "score": 27.530004617602515
+  },
+  {
+    "node": {
+      "id": "method:3f1461d0f2252273e9afc0275f79e6e3",
+      "kind": "method",
+      "name": "Transitioned",
+      "qualifiedName": "OrderCancel.Domain::Cancellation::Transitioned",
+      "filePath": "src/Domain/Cancellation.cs",
+      "language": "csharp",
+      "startLine": 25,
+      "endLine": 25,
+      "startColumn": 4,
+      "endColumn": 122,
+      "docstring": "這次呼叫有沒有真的把狀態從未取消改成已取消（通知的分母；非業務規則）。",
+      "visibility": "public",
+      "isExported": false,
+      "isAsync": false,
+      "isStatic": true,
+      "isAbstract": false,
+      "updatedAt": 1790046668831
+    },
+    "score": 27.31998051281707
+  }
+]

@@ -1,0 +1,15 @@
+T  Initializing CodeGraph
+|
+*  Initialized in <REPO>\examples\day09-intake-lab\graph-project
+|
+Scanning files...
+Parsing code...
+Resolving refs...
+Linking dynamic dispatch...
+|
+*  Indexed 3 files
+|
+•  69 nodes, 143 edges in 2.3s
+|
+—  Done
+

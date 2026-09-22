@@ -1,0 +1,46 @@
+[
+  {
+    "args": [
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "args": [
+      "init",
+      "<REPO>\\examples\\day09-intake-lab\\graph-project",
+      "--yes"
+    ],
+    "exit_code": 0
+  },
+  {
+    "args": [
+      "query",
+      "Cancellation",
+      "--path",
+      "<REPO>\\examples\\day09-intake-lab\\graph-project",
+      "--json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "args": [
+      "callers",
+      "Cancel",
+      "--path",
+      "<REPO>\\examples\\day09-intake-lab\\graph-project",
+      "--json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "args": [
+      "impact",
+      "Cancel",
+      "--path",
+      "<REPO>\\examples\\day09-intake-lab\\graph-project",
+      "--json"
+    ],
+    "exit_code": 0
+  }
+]
