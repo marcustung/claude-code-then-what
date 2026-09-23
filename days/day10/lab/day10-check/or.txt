@@ -1,0 +1,9 @@
+﻿PASS rejected=False request=False auth=False expected=True actual=True
+PASS rejected=False request=False auth=True expected=True actual=True
+PASS rejected=False request=True auth=False expected=True actual=True
+PASS rejected=False request=True auth=True expected=True actual=True
+PASS rejected=True request=False auth=False expected=False actual=False
+FAIL rejected=True request=False auth=True expected=False actual=True
+FAIL rejected=True request=True auth=False expected=False actual=True
+PASS rejected=True request=True auth=True expected=True actual=True
+cases=8 failures=2

@@ -1,0 +1,4 @@
+Repair this public synthetic C# guard. Return ONLY JSON with keys code (complete compilable Guard.cs source), explanation, tests_to_run. Do not claim to execute anything. No tools are available.
+Current Guard.cs:
+public static class Guard { public static bool CanEnterInterview(bool rejected, bool reopenRequested, bool authorized) => !rejected; }
+RULE-01: direct return from rejected is forbidden. Explicit authorized reopening is allowed only when BOTH reopenRequested and authorized are true. Non-rejected states are outside this guard. Preserve class and signature. Do not add dependencies, I/O, API, auth systems or unrelated changes. Host will compile your returned code and run independent checks.

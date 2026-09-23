@@ -1,0 +1,34 @@
+{
+  "src/Domain/Cancellation.cs": {
+    "source": "order-cancel-lifecycle@885e521:src/Domain/Cancellation.cs",
+    "sha256": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6"
+  },
+  "src/Api/Program.cs": {
+    "source": "order-cancel-lifecycle@885e521:src/Api/Program.cs",
+    "sha256": "03ae8ae968f83c873a8351a02c2377f439ec5badedbe383a5fb818938b8b60cb"
+  },
+  "src/FakeSink/Program.cs": {
+    "source": "order-cancel-lifecycle@885e521:src/FakeSink/Program.cs",
+    "sha256": "9a5f75da5de5b90976554424d39aa9303944b24d35b5848eb48c6ae492fdddfd"
+  },
+  "tests/DomainTests/Program.cs": {
+    "source": "order-cancel-lifecycle@885e521:tests/DomainTests/Program.cs",
+    "sha256": "86806d3b6d10a0b4281dd898ac30ff86df626bd17a43b32c2037304aa88cbb29"
+  },
+  "specs/rules-v2.md": {
+    "source": "day09-scope-lab/specs/rules-v2.md",
+    "sha256": "85083d7e8ae499700ac11d140f1ba4700e8ec85e2c727d97cf9e6c8e8b5a28a9"
+  },
+  "specs/notification-contract-v2.1.md": {
+    "source": "day09-scope-lab/specs/notification-contract-v2.1.md",
+    "sha256": "b811f53d19e856427beae4b72c6e799f61e987d6c4d937b43f41d542987cea78"
+  },
+  "specs/decisions-v2.1.md": {
+    "source": "day09-scope-lab/specs/decisions-v2.1.md",
+    "sha256": "c160f91d0815d84205a9c542f8c554386f7c9556d0d1af8be604ac5c7b955775"
+  },
+  "scope-handoff.md": {
+    "source": "day09-scope-lab/scope-handoff.md",
+    "sha256": "8487dcb7ba7de2befde47dfe15ef318f28e1fcff8df8a72706f59658e9da7dd9"
+  }
+}

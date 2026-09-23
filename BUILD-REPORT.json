@@ -1,5 +1,5 @@
 {
- "files": 575,
+ "files": 641,
  "binary": 22,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
@@ -35,6 +35,20 @@
   "days\\day09\\lab-intake\\runs\\noskill-03\\trace.jsonl",
   "days\\day09\\lab-intake\\runs\\noskill-04\\meta.json",
   "days\\day09\\lab-intake\\runs\\noskill-04\\trace.jsonl",
+  "days\\day10\\lab-design\\runs\\design-01\\meta.json",
+  "days\\day10\\lab-design\\runs\\design-01\\result.md",
+  "days\\day10\\lab-design\\runs\\design-01\\trace.jsonl",
+  "days\\day10\\lab-design\\runs\\design-02\\meta.json",
+  "days\\day10\\lab-design\\runs\\design-02\\trace.jsonl",
+  "days\\day10\\lab-design\\runs\\design-03\\meta.json",
+  "days\\day10\\lab-design\\runs\\design-03\\trace.jsonl",
+  "days\\day10\\lab-design\\runs\\seqcheck-01\\meta.json",
+  "days\\day10\\lab-design\\runs\\seqcheck-01\\trace.jsonl",
+  "days\\day10\\lab-design\\runs\\seqcheck-02\\meta.json",
+  "days\\day10\\lab-design\\runs\\seqcheck-02\\trace.jsonl",
+  "days\\day10\\lab-design\\runs\\seqcheck-03\\meta.json",
+  "days\\day10\\lab-design\\runs\\seqcheck-03\\trace.jsonl",
+  "days\\day10\\lab-design\\specs\\notification-contract-v2.1.md",
   "days\\day02\\lab\\day02-write\\trace.jsonl",
   "days\\day03\\lab\\meta.json",
   "days\\day03\\lab\\run-net10-sdk-unavailable.txt",
@@ -97,9 +111,10 @@
   "days\\day08\\lab\\runs\\r2\\meta.json",
   "days\\day08\\lab\\runs\\r2\\trace.jsonl",
   "days\\day08\\lab\\runs\\r3\\meta.json",
-  "days\\day08\\lab\\runs\\r3\\trace.jsonl"
+  "days\\day08\\lab\\runs\\r3\\trace.jsonl",
+  "days\\day10\\lab\\day10\\trace.jsonl"
  ],
  "forbidden": [],
- "figures": 39,
- "bytes": 63279364
+ "figures": 42,
+ "bytes": 71688391
 }

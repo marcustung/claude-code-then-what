@@ -8,7 +8,7 @@ HEAD, T, OUT = g.HEAD, g.T, g.OUT
 FIG = dict(title='Day 4 退件單怎麼變成團隊的工具', h=780, seed=4, svg='\n'.join([
  T(600,56,'退件單 → 專案規則 → skill → plugin → repo → Action：每一步誰批准、怎麼驗',28,bold=True,anchor='middle'),
  *sum([[T(x,150,k,17,bold=True,anchor='middle'), T(x,176,v,12,'#2B4C7E',anchor='middle'), T(x,198,w,12,'#7A8399',anchor='middle')] for k,v,w,x in [
-   ('退件單','缺哪個依據・誰補・怎麼判','一次一案',120),('CLAUDE.md','驗收條件寫進專案','Day 12：文字靠遵守',330),('skill','/review-pr 四步固定','載入要看 trace',540),('plugin','版本・manifest','v0.1.0',750),('repo／Action','kit/review・只准評論','擋合併靠 protection',970)]],[]),
+   ('退件單','缺哪個依據・誰補・怎麼判','一次一案',120),('CLAUDE.md','驗收條件寫進專案','後續會談：文字靠遵守',330),('skill','/review-pr 四步固定','載入要看 trace',540),('plugin','版本・manifest','v0.1.0',750),('repo／Action','kit/review・只准評論','擋合併靠 protection',970)]],[]),
  T(600,250,'批准的人：作者 → 專案 Owner → 收退者 → 版本維護者 → 團隊；每上一層，錯誤傳得更遠',14,'#F0A35E',anchor='middle'),
  T(90,330,'考卷：同一份 diff，兩份 PR，四個條件',18,bold=True),
  *sum([[T(150,y,a,14,bold=True), T(330,y,b,13), T(520,y,c,13), T(760,y,d,13,'#2B4C7E'), T(940,y,e,13)] for a,b,c,d,e,y in [

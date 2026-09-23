@@ -1,0 +1,23 @@
+下面是一張為 src/Api/Program.cs 的取消端點畫的循序圖（首次取消、非同步通知路徑）。請只讀 src/Api/Program.cs 第 48–92 行與 src/Domain/Cancellation.cs，逐一箭頭核對它跟程式的順序是否一致，每個結論附行號。順序不一致的地方請明確指出是圖錯還是程式有分支。不要改程式，不要執行測試，用繁體中文，簡短。
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant A as Api/Program.cs
+    participant D as Domain/Cancellation
+    participant S as OrderStore
+    participant N as NotificationWorker
+    participant K as FakeSink
+    C->>A: POST /orders/id/cancel
+    A->>S: TryGet(id)
+    S-->>A: before
+    A->>D: Cancel(before)
+    D-->>A: result
+    A->>D: Transitioned(before, result)
+    D-->>A: true
+    A->>S: Put(id, result.Order)
+    A-->>C: 200 {ok:true, transitioned:true, refund_requested:true}
+    A->>N: enqueue Notification
+    N->>K: POST /notify
+    K-->>N: 200
+```

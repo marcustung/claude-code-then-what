@@ -6,6 +6,7 @@
 
 - Day 2（2026-09-12 補跑，`day02-write/`）：只給 ticket 一句需求與空骨架，要求回傳程式、最小測試、說明與「ticket 未寫的假設」。Claude 回傳 `rejected && !(reopenRequested && authorized)` 版本、六個測試、六條假設（第一條明寫例外路徑是由「直接」一字推出）。本機 `dotnet run` 六案全過 exit 0；`hashes.txt` 記錄回傳 source 與被編譯檔案相同。一回合，無工具，`claude-sonnet-5`。此為 Day 2 結尾與 Day 3 開場的實跑材料。
 - Day 7：Read 工具讀取卡片成功；回傳 marker、RULE-01；五項情境全對，理由與未知符合卡片。顯式讀檔，不是自動載入驗證。2026-09-19 同輸入重跑兩次（`day07-r2/`、`day07-r3/`，CLI 2.1.277，`run-day07-repeat.ps1`），皆 2 回合、一筆 Read、15/15。2026-09-19 負對照 `day07-notools-1/`、`-2/`（`run-day07-notools.ps1`，同卡同指令、`--tools ""`）：1 回合、無工具呼叫、無標記、無 JSON，回覆為偽裝的工具呼叫文字；exit 0。
+- Day 10：Claude 回傳修補 source；本機八情境前測 1 失敗 exit 1，後測零失敗 exit 0。模型未自行跑工具，Codex 固定判準、檢視 source 與執行。
 - 成功 run 回報模型 ID `claude-sonnet-5`，CLI 版本 2.1.269，使用 `sonnet` alias 與 low effort。模型名稱依本機 trace 原樣報告，不作外部產品版本推論。
 
 ## 檔案與重跑
@@ -13,6 +14,8 @@
 - `protocol.md`：預先規格；`run.ps1`：實際 runner。
 - `day02-write/`：prompt、trace、回覆、`answer.json`、`Guard.cs`、`Program.cs`、`check/`（csproj 與 `run.txt`）、`hashes.txt`；runner 為 `run-day02.ps1`。
 - `day07/`：prompt、卡片、trace、回覆與 metadata。
+- `day10/`：修補 prompt、trace、原回覆與抽出的 `Guard.proposed.cs`。
+- `day10-check/`：獨立八情境判準、before/after、Claude 原樣 Guard.cs、diff。
 - `inspect.ps1`、`results.json`：解析及機械計數；文字解釋查核另見文章。
 - `day07-sandbox-failed/`：首次 API ConnectionRefused，usage 為零；不納入模型效果分數。
 - `checks.txt`：證據鏈核對；`manifest.json`：來源與輸出 SHA-256。
@@ -20,6 +23,7 @@
 重跑修正版（不呼叫 Claude）：
 
 ```powershell
+dotnet run --project day10-check/Demo.csproj
 ```
 
 重新解析既有輸出（不呼叫模型）：

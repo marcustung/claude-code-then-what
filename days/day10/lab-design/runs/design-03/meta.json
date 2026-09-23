@@ -1,0 +1,146 @@
+{
+  "started_utc": "2026-09-22T11:00:51.473422+00:00",
+  "args": [
+    "<HOME>\\.local\\bin\\claude.EXE",
+    "-p",
+    "--model",
+    "sonnet",
+    "--effort",
+    "medium",
+    "--safe-mode",
+    "--tools",
+    "Read,Grep,Glob",
+    "--allowedTools",
+    "Read,Grep,Glob",
+    "--no-session-persistence",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "cwd": "runs/design-03/work (clean copy of packet)",
+  "actor": "Claude Code (author session) invoked Claude Code CLI; AI-operated",
+  "purpose": "repeat of design-01 to see whether the sequence-diagram ordering error reproduces",
+  "input_sha256": {
+    "manifest.json": "85425768190b1ef86348b9ef4524596d6188b8cd302c6e30e4f8f107604792c9",
+    "packet-context.md": "14d51345a0895511a9716ed6abf5848ef566198665fbb3ac30a4f11c58038415",
+    "scope-handoff.md": "8487dcb7ba7de2befde47dfe15ef318f28e1fcff8df8a72706f59658e9da7dd9",
+    "specs/decisions-v2.1.md": "c160f91d0815d84205a9c542f8c554386f7c9556d0d1af8be604ac5c7b955775",
+    "specs/notification-contract-v2.1.md": "b811f53d19e856427beae4b72c6e799f61e987d6c4d937b43f41d542987cea78",
+    "specs/rules-v2.md": "85083d7e8ae499700ac11d140f1ba4700e8ec85e2c727d97cf9e6c8e8b5a28a9",
+    "src/Api/Program.cs": "03ae8ae968f83c873a8351a02c2377f439ec5badedbe383a5fb818938b8b60cb",
+    "src/Domain/Cancellation.cs": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6",
+    "src/FakeSink/Program.cs": "9a5f75da5de5b90976554424d39aa9303944b24d35b5848eb48c6ae492fdddfd",
+    "tests/DomainTests/Program.cs": "86806d3b6d10a0b4281dd898ac30ff86df626bd17a43b32c2037304aa88cbb29"
+  },
+  "exit_code": 0,
+  "ended_utc": "2026-09-22T11:03:15.515829+00:00",
+  "result": {
+    "duration_api_ms": 141062,
+    "stop_reason": "end_turn",
+    "session_id": "a9a556d9-d6e3-4e76-b9c2-7ecdb2d0d0f2",
+    "total_cost_usd": 0.21409620000000001,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 17222,
+      "cache_read_input_tokens": 50691,
+      "output_tokens": 13505,
+      "output_tokens_details": {
+        "thinking_tokens": 5303
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 17222,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 12461,
+          "cache_read_input_tokens": 14706,
+          "cache_creation_input_tokens": 10045,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 10045
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-sonnet-5": {
+        "inputTokens": 10,
+        "outputTokens": 13505,
+        "cacheReadInputTokens": 50691,
+        "cacheCreationInputTokens": 17222,
+        "webSearchRequests": 0,
+        "costUSD": 0.21409620000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 5303,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 12,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 1433,
+    "type": "result",
+    "duration_ms": 141463,
+    "uuid": "4d2cd5a5-22d7-4108-9451-7bed461137b0",
+    "ttft_stream_ms": 872,
+    "time_to_request_ms": 70,
+    "first_content_frame_ms": 872,
+    "queued_turn_count": 0,
+    "result_index": 0
+  },
+  "tool_calls": [
+    "Glob",
+    "Read",
+    "Read",
+    "Read",
+    "Read",
+    "Read",
+    "Read",
+    "Read",
+    "Read",
+    "Read",
+    "Read"
+  ]
+}

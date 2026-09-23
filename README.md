@@ -3,7 +3,7 @@
 **2026 iThome 鐵人賽・Claude AI 組・三十天系列的配套 repo。** 文章談的是一個工程團隊導入 Claude Code 之後，怎麼把「程式寫得更快」接回需求、審查、驗收與成效判斷；這裡放的是文章裡每一個實驗的原件——提示、trace、輸出、判準與重跑腳本——讓每一句「我試過」都能被打開來看。
 
 - 系列文章：[iThome 系列頁](https://ithelp.ithome.com.tw/users/20162577/ironman/9862)（每日一篇，2026-09-15 起）
-- 目前開放：Day 1–9（索引隨發文節奏開放，未發布的日子只有空資料夾）
+- 目前開放：Day 1–10（索引隨發文節奏開放，未發布的日子只有空資料夾）
 - 試跑紀錄：[VERIFIED.md](VERIFIED.md)（每一天的練習都在乾淨副本裡照 README 跑過，含時間、環境、修過的問題）
 
 ## 這個 repo 是什麼、不是什麼
@@ -54,6 +54,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [7](days/day07/) | 把老工程師腦中的「為什麼」交給 Claude | [文章](https://ithelp.ithome.com.tw/articles/10414658) | days/day07/lab：讀規則卡三次 | 無 |
 | [8](days/day08/) | 我替 AI 出了考卷，結果錯的是我的答案 | [文章](https://ithelp.ithome.com.tw/articles/10415265) | days/day08/lab：合成 repo 追呼叫鏈、引用抽驗三次（歷史更正紀錄不公開） | [grading-table.md](templates/grading-table.md) |
 | [9](days/day09/) | 需求寫好了，Claude 就能開工嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10415774) | days/day09/lab-scope：三組唯讀實跑與範圍交接；lab-intake：訪談與無 skill 對照 | [change-scope-card.md](templates/change-scope-card.md) |
+| [10](days/day10/) | 只改一個欄位，Claude 要先查哪些地方？ | [文章](https://ithelp.ithome.com.tw/articles/10416277) | days/day10/lab-design：呼叫端與設計計畫 | [design-handoff.md](templates/design-handoff.md) |
 
 ## 怎麼核對一次 run
 

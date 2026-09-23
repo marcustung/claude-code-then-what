@@ -1,0 +1,14 @@
+```json
+{
+  "code": "public static class Guard { public static bool CanEnterInterview(bool rejected, bool reopenRequested, bool authorized) => !rejected || (reopenRequested && authorized); }",
+  "explanation": "Removed the direct '!rejected' bypass and replaced it with a rule that only allows entry when not rejected, or when rejected but explicitly reopened with authorization (both reopenRequested and authorized true). Non-rejected states remain unaffected as required.",
+  "tests_to_run": [
+    "CanEnterInterview(false, false, false) == true",
+    "CanEnterInterview(false, true, true) == true",
+    "CanEnterInterview(true, false, false) == false",
+    "CanEnterInterview(true, true, false) == false",
+    "CanEnterInterview(true, false, true) == false",
+    "CanEnterInterview(true, true, true) == true"
+  ]
+}
+```

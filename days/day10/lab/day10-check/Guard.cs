@@ -1,0 +1,1 @@
+public static class Guard { public static bool CanEnterInterview(bool rejected, bool reopenRequested, bool authorized) => !rejected || (reopenRequested && authorized); }

@@ -17,6 +17,7 @@ dotnet run --project Demo.csproj -- context
 - Day 6：`contract`，五種交付狀態與缺件檢查。只查欄位關係，不查檔案存在或內容真偽。
 - Day 7：`rule-card.md`。沒有宣稱 Claude 自動載入或新執行。
 - Day 8：歷史更正另見正文，沒有將這份合成函式當成當時原程式。
+- Day 10：`bug`、`fix.diff` 與 `run.txt`。同一組情境比較修正前後。`BEFORE` 一個預期失敗不算整體執行失敗；修正版或其他 assertion 不符合時 exit 1。
 
 `run.txt` 保存實際工具輸出；`verification.md` 保存時間、指令、exit 與限制；`manifest.json` 保存本輪來源檔案 SHA-256，不包含自己。
 
