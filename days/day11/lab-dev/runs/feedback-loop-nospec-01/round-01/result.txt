@@ -1,0 +1,24 @@
+Looking at the test results and code:
+
+**Analysis:**
+- **SC-03 fails**: "已付款取消要提出退款要求" (Already paid, cancellation should request refund)
+- Current code always returns `RefundRequested: false` (line 21)
+- Test expects: when `Paid=true` and `Shipped=false` and `Cancelled=false`, should return `RefundRequested=true`
+
+**Required fix:**
+1. SC-03 reveals that `RefundRequested` must be determined by whether the order was already `Paid`
+2. SC-06 and SC-07 show already-cancelled orders should return as-is with no refund request (don't retry)
+3. The spec v2 change mentioned in test comment (line 30) confirms this: `RefundRequested` should be `true` when `Paid=true`
+
+The implementation needs to:
+- Check if order is already cancelled → return as-is, no refund
+- Check if order is shipped → return as-is, no refund  
+- Otherwise cancel it → set `RefundRequested = order.Paid`
+
+```json
+{
+  "status": "proposal",
+  "reason": "SC-03 fails because RefundRequested is not determined by Paid status. Minimal fix: check Paid flag when canceling unshipped orders, and handle already-cancelled orders per SC-06/07.",
+  "content": "namespace OrderCancel.Domain;\n\npublic record Order(bool Shipped, bool Paid, bool Cancelled);\npublic record CancellationResult(Order Order, bool RefundRequested);\n\npublic static class Cancellation\n{\n    public static CancellationResult Cancel(Order order)\n    {\n        // 已出貨的訂單不可取消：維持原訂單，Cancelled 不變，不丟例外（decisions.md 第2列）\n        if (order.Shipped)\n        {\n            return new CancellationResult(order, RefundRequested: false);\n        }\n\n        // 已取消的訂單再次取消不重複處理（BR-04）\n        if (order.Cancelled)\n        {\n            return new CancellationResult(order, RefundRequested: false);\n        }\n\n        // 尚未出貨、尚未取消的訂單可以取消，回傳 Cancelled=true\n        // 已付款的訂單取消時提出退款要求（spec v2 BR-03）\n        // 未付款的訂單取消時不提出退款要求（BR-01）\n        var refundRequested = order.Paid;\n        var cancelledOrder = order with { Cancelled = true };\n        return new CancellationResult(cancelledOrder, RefundRequested: refundRequested);\n    }\n\n    /// 這次呼叫有沒有真的把狀態從未取消改成已取消（通知的分母；非業務規則）。\n    public static bool Transitioned(Order before, CancellationResult after) => !before.Cancelled && after.Order.Cancelled;\n}\n"
+}
+```

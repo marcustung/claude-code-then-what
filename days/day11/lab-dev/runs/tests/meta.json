@@ -1,0 +1,157 @@
+{
+  "stage": "tests",
+  "args": [
+    "<HOME>\\.local\\bin\\claude.exe",
+    "-p",
+    "--model",
+    "sonnet",
+    "--effort",
+    "medium",
+    "--setting-sources",
+    "project",
+    "--tools",
+    "Read,Grep,Glob,Edit,Write",
+    "--allowedTools",
+    "Read,Grep,Glob,Edit,Write",
+    "--no-session-persistence",
+    "--output-format",
+    "stream-json",
+    "--verbose"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 67.89997969998512,
+  "changed": [
+    "tests/DomainTests/Program.cs"
+  ],
+  "allowed_file": "tests/DomainTests/Program.cs",
+  "scope_ok": true,
+  "inputs_before": {
+    "src/Api/Api.csproj": "53221be216a76a5608d588d2518a5cb5bd188486f754b00d1aca3b1d74ac8db8",
+    "src/Api/Program.cs": "03ae8ae968f83c873a8351a02c2377f439ec5badedbe383a5fb818938b8b60cb",
+    "src/Domain/Cancellation.cs": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6",
+    "src/Domain/Domain.csproj": "489dc7ac07da11ca0bf21f8d6bc2acc183fff159b1c671a8df33f76ebf7c293f",
+    "tests/DomainTests/DomainTests.csproj": "275c0fe33bcf30843e28ac706562850f2af601e7a26bd6d69976a227836c3555",
+    "tests/DomainTests/Program.cs": "86806d3b6d10a0b4281dd898ac30ff86df626bd17a43b32c2037304aa88cbb29",
+    "specs/decisions-v1.md": "da9d043833dfb0234370c2ffc07659f656c6c93c9e14d3beb8100471314c8e31",
+    "specs/rules-v2.md": "85083d7e8ae499700ac11d140f1ba4700e8ec85e2c727d97cf9e6c8e8b5a28a9",
+    "design-input/design-review.md": "399118a30f9ca16a591e3cbf12eccf17bda3d3c1dfd83960e4e6b11f1faaab40",
+    "design-input/scope-handoff.md": "8487dcb7ba7de2befde47dfe15ef318f28e1fcff8df8a72706f59658e9da7dd9",
+    "CLAUDE.md": "474bc8bbbc0d771ace4d776812e298b92f2d4cc57e696acf5bb89895ecf96bff",
+    "plan.md": "ecca2502689160b58ea35bafb87f5c1c47400cef43f5ec57da4ce8e1772634b5"
+  },
+  "inputs_after": {
+    "src/Api/Api.csproj": "53221be216a76a5608d588d2518a5cb5bd188486f754b00d1aca3b1d74ac8db8",
+    "src/Api/Program.cs": "03ae8ae968f83c873a8351a02c2377f439ec5badedbe383a5fb818938b8b60cb",
+    "src/Domain/Cancellation.cs": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6",
+    "src/Domain/Domain.csproj": "489dc7ac07da11ca0bf21f8d6bc2acc183fff159b1c671a8df33f76ebf7c293f",
+    "tests/DomainTests/DomainTests.csproj": "275c0fe33bcf30843e28ac706562850f2af601e7a26bd6d69976a227836c3555",
+    "tests/DomainTests/Program.cs": "ac1b11d0f9fa5b61a3a7f2582778b011d00958bc96b59a128628c4445ae8f4be",
+    "specs/decisions-v1.md": "da9d043833dfb0234370c2ffc07659f656c6c93c9e14d3beb8100471314c8e31",
+    "specs/rules-v2.md": "85083d7e8ae499700ac11d140f1ba4700e8ec85e2c727d97cf9e6c8e8b5a28a9",
+    "design-input/design-review.md": "399118a30f9ca16a591e3cbf12eccf17bda3d3c1dfd83960e4e6b11f1faaab40",
+    "design-input/scope-handoff.md": "8487dcb7ba7de2befde47dfe15ef318f28e1fcff8df8a72706f59658e9da7dd9",
+    "CLAUDE.md": "474bc8bbbc0d771ace4d776812e298b92f2d4cc57e696acf5bb89895ecf96bff",
+    "plan.md": "ecca2502689160b58ea35bafb87f5c1c47400cef43f5ec57da4ce8e1772634b5"
+  },
+  "human_minutes": null,
+  "actor": "automated Claude Code execution, not human worklog",
+  "model_result": {
+    "duration_api_ms": 64182,
+    "stop_reason": "end_turn",
+    "session_id": "6d89278a-82e8-438f-8525-9996e6b989bd",
+    "total_cost_usd": 0.1803402,
+    "usage": {
+      "input_tokens": 8,
+      "cache_creation_input_tokens": 26376,
+      "cache_read_input_tokens": 58401,
+      "output_tokens": 6314,
+      "output_tokens_details": {
+        "thinking_tokens": 2672
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 26376,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1022,
+          "cache_read_input_tokens": 21665,
+          "cache_creation_input_tokens": 4711,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4711
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-sonnet-5": {
+        "inputTokens": 8,
+        "outputTokens": 6314,
+        "cacheReadInputTokens": 58401,
+        "cacheCreationInputTokens": 26376,
+        "webSearchRequests": 0,
+        "costUSD": 0.1803402,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 2672,
+        "canonicalModel": "claude-sonnet-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 10,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2270,
+    "type": "result",
+    "duration_ms": 64332,
+    "uuid": "6042dc28-9141-4f61-b7c9-f9e7eb348cff",
+    "ttft_stream_ms": 1856,
+    "time_to_request_ms": 64,
+    "first_content_frame_ms": 1856,
+    "queued_turn_count": 0,
+    "result_index": 0
+  },
+  "test_exit": 1,
+  "test_command": "dotnet run --project tests/DomainTests",
+  "tests_executed_by": "outer runner"
+}

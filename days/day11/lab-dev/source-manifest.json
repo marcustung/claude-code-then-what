@@ -1,0 +1,38 @@
+{
+  "src/Domain/Cancellation.cs": {
+    "source": "order-cancel-lifecycle@885e521:src/Domain/Cancellation.cs",
+    "sha256": "858cb0e0f30a9f65ac1daf676c828ae03cf578c08b20b7a359679b93abd4dbe6"
+  },
+  "src/Domain/Domain.csproj": {
+    "source": "order-cancel-lifecycle@885e521:src/Domain/Domain.csproj",
+    "sha256": "489dc7ac07da11ca0bf21f8d6bc2acc183fff159b1c671a8df33f76ebf7c293f"
+  },
+  "src/Api/Program.cs": {
+    "source": "order-cancel-lifecycle@885e521:src/Api/Program.cs",
+    "sha256": "03ae8ae968f83c873a8351a02c2377f439ec5badedbe383a5fb818938b8b60cb"
+  },
+  "src/Api/Api.csproj": {
+    "source": "order-cancel-lifecycle@885e521:src/Api/Api.csproj",
+    "sha256": "53221be216a76a5608d588d2518a5cb5bd188486f754b00d1aca3b1d74ac8db8"
+  },
+  "tests/DomainTests/Program.cs": {
+    "source": "order-cancel-lifecycle@885e521:tests/DomainTests/Program.cs",
+    "sha256": "86806d3b6d10a0b4281dd898ac30ff86df626bd17a43b32c2037304aa88cbb29"
+  },
+  "tests/DomainTests/DomainTests.csproj": {
+    "source": "order-cancel-lifecycle@885e521:tests/DomainTests/DomainTests.csproj",
+    "sha256": "275c0fe33bcf30843e28ac706562850f2af601e7a26bd6d69976a227836c3555"
+  },
+  "VERSION": {
+    "source": "order-cancel-lifecycle@885e521:VERSION",
+    "sha256": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d"
+  },
+  "specs/rules-v2.md": {
+    "source": "order-cancel-lifecycle/specs/rules-v2.md",
+    "sha256": "85083d7e8ae499700ac11d140f1ba4700e8ec85e2c727d97cf9e6c8e8b5a28a9"
+  },
+  "specs/decisions-v1.md": {
+    "source": "order-cancel-lifecycle/specs/decisions-v1.md",
+    "sha256": "da9d043833dfb0234370c2ffc07659f656c6c93c9e14d3beb8100471314c8e31"
+  }
+}

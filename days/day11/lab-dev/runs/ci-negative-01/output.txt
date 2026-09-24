@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\<AUTHOR>\�K�H��\ironman2026\examples\sdlc-development\runs\ci-negative-01\fixture\ci.py", line 6, in <module>
+    out=r/'runs'/a.name;out.mkdir(exist_ok=False);steps=[];start=time.monotonic()
+                        ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<HOME>\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] �t�Χ䤣����w�����|�C: 'C:\\<AUTHOR>\\�K�H��\\ironman2026\\examples\\sdlc-development\\runs\\ci-negative-01\\fixture\\runs\\expected-red'

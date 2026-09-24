@@ -1,0 +1,11 @@
+{
+  "route": "OWNER_REQUIRED",
+  "paths": [
+    "src/Domain/Cancellation.cs"
+  ],
+  "owner_hits": [
+    "src/Domain/Cancellation.cs"
+  ],
+  "accepted": false,
+  "reason": "core path"
+}

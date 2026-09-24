@@ -1,0 +1,6 @@
+{
+  "name": "review-kit",
+  "version": "0.1.0",
+  "description": "Day 3 three-layer code review as a reusable skill: second-opinion reviewer that must cite sources, checks the five-item handoff contract, and flags owner-required changes. Comment-only; never a merge gate.",
+  "author": { "name": "ironman2026 (public synthetic demo)" }
+}

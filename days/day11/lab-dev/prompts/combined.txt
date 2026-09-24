@@ -1,0 +1,1 @@
+請讀 CLAUDE.md、plan.md、design-input/、specs/rules-v2.md、現有 src/Domain/Cancellation.cs 與 tests/DomainTests/Program.cs。先回報 RULES-TOKEN 與不直接連金流的理由。依 specs/rules-v2.md 完成這次修改：可以修改 tests/DomainTests/Program.cs 與 src/Domain/Cancellation.cs。不要改 API、規格或 CLAUDE.md。所有 then 條件都要檢查，避免只測一個欄位。最後說明你改了什麼。無執行工具，不宣稱已跑過測試。

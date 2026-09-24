@@ -1,0 +1,21 @@
+sequenceDiagram
+ participant Client
+ participant API
+ participant Domain
+ participant Store
+ participant Queue
+ participant Worker
+ participant Sink
+ Client->>API: 取消訂單
+ API->>Store: 讀取
+ API->>Domain: Cancel(before)
+ Domain-->>API: Order, RefundRequested
+ alt 首次狀態轉換
+ API->>Store: 寫回
+ API->>Queue: await WriteAsync
+ end
+ Note over API,Sink: 入列完成後可回應；Worker送達與回應無固定先後
+ API-->>Client: transitioned, refund_requested
+ Queue->>Worker: 取工作
+ Worker->>Sink: 通知payload
+ Note over API,Store: 讀判寫不是整體原子；不承諾並行恰好一次

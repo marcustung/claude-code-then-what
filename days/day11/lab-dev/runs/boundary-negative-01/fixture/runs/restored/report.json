@@ -1,0 +1,23 @@
+{
+  "checks": [
+    {
+      "name": "build",
+      "pass": false,
+      "detail": 1
+    },
+    {
+      "name": "runner",
+      "pass": false,
+      "detail": "RuntimeError: build failed"
+    }
+  ],
+  "pass": false,
+  "elapsed_seconds": 2.5686629000119865,
+  "human_minutes": null,
+  "source_sha256": {
+    "src/Api/Program.cs": "49b03341b28df892155fbac0f4ca5bc1bd95418463e0253910ba31bc3e4a879a",
+    "src/Domain/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  "artifact_sha256": null,
+  "limits": "Loopback, sequential requests, bounded observation. Test receiver captures payload; no real payment, production auth, concurrent exactly-once, restart recovery or remote deployment proof."
+}

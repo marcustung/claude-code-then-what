@@ -1,0 +1,5 @@
+{
+  "exit": 1,
+  "pass": false,
+  "reason": "fixture runs parent missing; did not execute gate. Retained as harness setup failure."
+}

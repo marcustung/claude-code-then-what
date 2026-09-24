@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "5beb66556dc644a9aaf2003adbd5105d",
+    "order_id": "paid",
+    "request_id": "ci-local-01-integration-5",
+    "run_id": "ci-local-01-integration",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "be0df06e3bc7403d9f859b24bc93fe40",
+    "order_id": "unpaid",
+    "request_id": "ci-local-01-integration-7",
+    "run_id": "ci-local-01-integration",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

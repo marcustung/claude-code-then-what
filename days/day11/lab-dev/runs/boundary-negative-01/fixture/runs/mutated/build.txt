@@ -1,0 +1,13 @@
+  正在判斷要還原的專案...
+  已還原 <REPO>\examples\sdlc-development\runs\boundary-negative-01\fixture\src\Api\Api.csproj (96 毫秒 內)。
+  2 項專案中有 1 項在最新狀態，可進行還原。
+  Domain -> <REPO>\examples\sdlc-development\runs\boundary-negative-01\fixture\src\Domain\bin\Debug\net9.0\Domain.dll
+C:\Program Files\dotnet\sdk\9.0.314\Microsoft.Common.CurrentVersion.targets(5394,5): error MSB3030: 無法複製檔案 "<REPO>\examples\sdlc-development\runs\boundary-negative-01\fixture\VERSION"，因為找不到檔案。 [<REPO>\examples\sdlc-development\runs\boundary-negative-01\fixture\src\Api\Api.csproj]
+
+建置失敗。
+
+C:\Program Files\dotnet\sdk\9.0.314\Microsoft.Common.CurrentVersion.targets(5394,5): error MSB3030: 無法複製檔案 "<REPO>\examples\sdlc-development\runs\boundary-negative-01\fixture\VERSION"，因為找不到檔案。 [<REPO>\examples\sdlc-development\runs\boundary-negative-01\fixture\src\Api\Api.csproj]
+    0 個警告
+    1 個錯誤
+
+經過時間 00:00:02.94

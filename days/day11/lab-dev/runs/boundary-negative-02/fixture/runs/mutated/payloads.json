@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "9822d6f1eeac4bfc84673492ef8fd3ea",
+    "order_id": "paid",
+    "request_id": "mutated-5",
+    "run_id": "mutated",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  },
+  {
+    "notification_id": "f0ff5ff91ef04ed1812fcd5a5bf4f69a",
+    "order_id": "unpaid",
+    "request_id": "mutated-7",
+    "run_id": "mutated",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

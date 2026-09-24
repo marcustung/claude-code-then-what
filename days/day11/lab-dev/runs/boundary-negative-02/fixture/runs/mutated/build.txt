@@ -1,0 +1,11 @@
+  正在判斷要還原的專案...
+  已還原 <REPO>\examples\sdlc-development\runs\boundary-negative-02\fixture\src\Api\Api.csproj (77 毫秒 內)。
+  2 項專案中有 1 項在最新狀態，可進行還原。
+  Domain -> <REPO>\examples\sdlc-development\runs\boundary-negative-02\fixture\src\Domain\bin\Debug\net9.0\Domain.dll
+  Api -> <REPO>\examples\sdlc-development\runs\boundary-negative-02\fixture\src\Api\bin\Debug\net9.0\Api.dll
+
+建置成功。
+    0 個警告
+    0 個錯誤
+
+經過時間 00:00:02.13

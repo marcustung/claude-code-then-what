@@ -1,0 +1,22 @@
+# 範本，未在遠端執行；labPath 指向這份教學包所在目錄。
+trigger: none
+parameters:
+- name: labPath
+  type: string
+  default: '.'
+pool:
+  vmImage: ubuntu-latest
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: sdk
+    version: '9.x'
+- script: python3 ci.py ado-$(Build.BuildId)
+  workingDirectory: ${{ parameters.labPath }}
+  displayName: Verify domain and HTTP boundaries
+- task: PublishPipelineArtifact@1
+  condition: always()
+  inputs:
+    targetPath: '${{ parameters.labPath }}/runs'
+    artifact: verification-evidence
+# 這是驗證流水線，不含部署。Owner 必要審查須另在 repo 政策設定。

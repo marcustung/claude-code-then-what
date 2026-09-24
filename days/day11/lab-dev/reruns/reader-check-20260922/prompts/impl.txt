@@ -1,0 +1,1 @@
+先讀 CLAUDE.md、plan.md、規格、design-input/ 及 runs/tests/tests.txt。核對前一步紅燈原因。只修改 src/Domain/Cancellation.cs，符合 specs/rules-v2.md。不得修改測試、API、規格或新增金流。不要求特定分支順序；輸出行為依規格。先回報規則 token 與範圍理由，最後說明改動。你沒有執行工具，外層 runner 會編譯測試，不能宣稱已測通過。

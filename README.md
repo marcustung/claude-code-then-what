@@ -3,7 +3,7 @@
 **2026 iThome 鐵人賽・Claude AI 組・三十天系列的配套 repo。** 文章談的是一個工程團隊導入 Claude Code 之後，怎麼把「程式寫得更快」接回需求、審查、驗收與成效判斷；這裡放的是文章裡每一個實驗的原件——提示、trace、輸出、判準與重跑腳本——讓每一句「我試過」都能被打開來看。
 
 - 系列文章：[iThome 系列頁](https://ithelp.ithome.com.tw/users/20162577/ironman/9862)（每日一篇，2026-09-15 起）
-- 目前開放：Day 1–10（索引隨發文節奏開放，未發布的日子只有空資料夾）
+- 目前開放：Day 1–11（索引隨發文節奏開放，未發布的日子只有空資料夾）
 - 試跑紀錄：[VERIFIED.md](VERIFIED.md)（每一天的練習都在乾淨副本裡照 README 跑過，含時間、環境、修過的問題）
 
 ## 這個 repo 是什麼、不是什麼
@@ -45,16 +45,17 @@ VERIFIED.md          讀者視角試跑紀錄
 
 | Day | 題目 | 文章 | 這裡能跑什麼 | 範本 |
 |---|---|---|---|---|
-| [1](days/day01/) | 買了 Claude Code，然後呢？ | [文章](https://ithelp.ithome.com.tw/articles/10411197) | 無實驗：歷史案例（使用報表），本篇留下問題與五層表 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
-| [2](days/day02/) | 這件事，真的需要 AI 嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10412002) | days/day02/lab/day02-write：一句需求→程式＋測試＋假設 | [problem-first-card.md](templates/problem-first-card.md) |
-| [3](days/day03/) | AI 寫程式很快，但為什麼我還是不敢 Approve | [文章](https://ithelp.ithome.com.tw/articles/10412647) | days/day03/lab：一句需求→程式＋測試＋假設；kit/review：PR 範本、CODEOWNERS、判級規則、深挖清單、退件單、mermaid 圖 | [review-grade-handoff.md](templates/review-grade-handoff.md) |
-| [4](days/day04/) | 退件之後，我改了什麼？ | [文章](https://ithelp.ithome.com.tw/articles/10412968) | days/day04/lab、lab-dotnet、lab-plugin：退件後重跑、plugin 六次 run | [rejection-note.md](templates/rejection-note.md) |
-| [5](days/day05/) | 先把尺放好，才知道工作有沒有變好 | [文章](https://ithelp.ithome.com.tw/articles/10413509) | days/day05/lab：G0-A 原始審查、V-G0-A 重跑、demo-01 練習；`claude -p --output-format json` 四欄 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
-| [6](days/day06/) | 別再猜我要什麼，先約好怎樣才算完成 | [文章](https://ithelp.ithome.com.tw/articles/10414144) | days/day06/lab：intent／spec 核對、不指名實驗、驗收草稿、實作與觀察；lab-contract：契約檢查 | [problem-first-card.md](templates/problem-first-card.md) |
-| [7](days/day07/) | 把老工程師腦中的「為什麼」交給 Claude | [文章](https://ithelp.ithome.com.tw/articles/10414658) | days/day07/lab：讀規則卡三次 | 無 |
-| [8](days/day08/) | 我替 AI 出了考卷，結果錯的是我的答案 | [文章](https://ithelp.ithome.com.tw/articles/10415265) | days/day08/lab：合成 repo 追呼叫鏈、引用抽驗三次（歷史更正紀錄不公開） | [grading-table.md](templates/grading-table.md) |
-| [9](days/day09/) | 需求寫好了，Claude 就能開工嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10415774) | days/day09/lab-scope：三組唯讀實跑與範圍交接；lab-intake：訪談與無 skill 對照 | [change-scope-card.md](templates/change-scope-card.md) |
-| [10](days/day10/) | 只改一個欄位，Claude 要先查哪些地方？ | [文章](https://ithelp.ithome.com.tw/articles/10416277) | days/day10/lab-design：呼叫端與設計計畫 | [design-handoff.md](templates/design-handoff.md) |
+| [1](days/day01/) | 買了 Claude Code，然後呢？ | [文章](https://ithelp.ithome.com.tw/articles/10411197) | 無實驗，只有範本 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
+| [2](days/day02/) | 這件事，真的需要 AI 嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10412002) | day02/lab：一句需求 → 程式＋測試 | [problem-first-card.md](templates/problem-first-card.md) |
+| [3](days/day03/) | AI 寫程式很快，但為什麼我還是不敢 Approve | [文章](https://ithelp.ithome.com.tw/articles/10412647) | day03/lab：一句需求走完；kit/review：PR 範本與判級規則 | [review-grade-handoff.md](templates/review-grade-handoff.md) |
+| [4](days/day04/) | 退件之後，我改了什麼？ | [文章](https://ithelp.ithome.com.tw/articles/10412968) | day04/lab-plugin：plugin 六次 run | [rejection-note.md](templates/rejection-note.md) |
+| [5](days/day05/) | 先把尺放好，才知道工作有沒有變好 | [文章](https://ithelp.ithome.com.tw/articles/10413509) | day05/lab：審查三次；`claude -p --output-format json` 四欄 | [five-layers-ledger.md](templates/five-layers-ledger.md) |
+| [6](days/day06/) | 別再猜我要什麼，先約好怎樣才算完成 | [文章](https://ithelp.ithome.com.tw/articles/10414144) | day06/lab：intent／spec 唯讀核對 | [problem-first-card.md](templates/problem-first-card.md) |
+| [7](days/day07/) | 把老工程師腦中的「為什麼」交給 Claude | [文章](https://ithelp.ithome.com.tw/articles/10414658) | day07/lab：讀規則卡三次 | 無 |
+| [8](days/day08/) | 我替 AI 出了考卷，結果錯的是我的答案 | [文章](https://ithelp.ithome.com.tw/articles/10415265) | day08/lab：追呼叫鏈、引用抽驗三次 | [grading-table.md](templates/grading-table.md) |
+| [9](days/day09/) | 需求寫好了，Claude 就能開工嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10415774) | day09/lab-scope：三組唯讀實跑；lab-intake：訪談對照 | [change-scope-card.md](templates/change-scope-card.md) |
+| [10](days/day10/) | 只改一個欄位，Claude 要先查哪些地方？ | [文章](https://ithelp.ithome.com.tw/articles/10416277) | day10/lab-design：呼叫端與設計計畫 | [design-handoff.md](templates/design-handoff.md) |
+| [11](days/day11/) | 計畫寫好了，怎麼讓 Claude 自己改、自己驗？ | 未發 | day11/lab-dev：回饋迴路四次實跑（含換模型、抽掉規格） | [findings-fixes.md](templates/findings-fixes.md) |
 
 ## 怎麼核對一次 run
 

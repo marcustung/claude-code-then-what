@@ -1,0 +1,6 @@
+{
+  "pass": true,
+  "exit": 1,
+  "checks": "routing succeeded; domain failed SC-03; no integration launched",
+  "main_source_changed": false
+}

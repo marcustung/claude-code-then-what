@@ -1,0 +1,203 @@
+[
+  {
+    "method": "GET",
+    "path": "/ready",
+    "body": null,
+    "status": 200,
+    "response": {
+      "ready": true,
+      "version": "1.2.0"
+    },
+    "request_id": "mutated-1"
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "body": {
+      "id": "paid",
+      "paid": true,
+      "shipped": false
+    },
+    "status": 200,
+    "response": {
+      "id": "paid",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    },
+    "request_id": "mutated-2"
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "body": {
+      "id": "unpaid",
+      "paid": false,
+      "shipped": false
+    },
+    "status": 200,
+    "response": {
+      "id": "unpaid",
+      "order": {
+        "shipped": false,
+        "paid": false,
+        "cancelled": false
+      }
+    },
+    "request_id": "mutated-3"
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "body": {
+      "id": "shipped",
+      "paid": true,
+      "shipped": true
+    },
+    "status": 200,
+    "response": {
+      "id": "shipped",
+      "order": {
+        "shipped": true,
+        "paid": true,
+        "cancelled": false
+      }
+    },
+    "request_id": "mutated-4"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/paid/cancel",
+    "body": null,
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "mutated-5",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    },
+    "request_id": "mutated-5"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/paid/cancel",
+    "body": null,
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "mutated-6",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    },
+    "request_id": "mutated-6"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/unpaid/cancel",
+    "body": null,
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "mutated-7",
+      "order": {
+        "shipped": false,
+        "paid": false,
+        "cancelled": true
+      }
+    },
+    "request_id": "mutated-7"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/shipped/cancel",
+    "body": null,
+    "status": 409,
+    "response": {
+      "ok": false,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": "rejected_shipped",
+      "request_id": "mutated-8",
+      "order": {
+        "shipped": true,
+        "paid": true,
+        "cancelled": false
+      }
+    },
+    "request_id": "mutated-8"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/paid/cancel",
+    "body": null,
+    "status": 401,
+    "response": {
+      "ok": false,
+      "reason": "unauthorized",
+      "request_id": "mutated-9"
+    },
+    "request_id": "mutated-9"
+  },
+  {
+    "method": "GET",
+    "path": "/orders/paid",
+    "body": null,
+    "status": 200,
+    "response": {
+      "id": "paid",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    },
+    "request_id": "mutated-10"
+  },
+  {
+    "method": "GET",
+    "path": "/orders/unpaid",
+    "body": null,
+    "status": 200,
+    "response": {
+      "id": "unpaid",
+      "order": {
+        "shipped": false,
+        "paid": false,
+        "cancelled": true
+      }
+    },
+    "request_id": "mutated-11"
+  },
+  {
+    "method": "GET",
+    "path": "/orders/shipped",
+    "body": null,
+    "status": 200,
+    "response": {
+      "id": "shipped",
+      "order": {
+        "shipped": true,
+        "paid": true,
+        "cancelled": false
+      }
+    },
+    "request_id": "mutated-12"
+  }
+]

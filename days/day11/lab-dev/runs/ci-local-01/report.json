@@ -1,0 +1,37 @@
+{
+  "steps": [
+    {
+      "step": "routing-selftest",
+      "command": [
+        "<HOME>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "route-review.py",
+        "--selftest"
+      ],
+      "exit": 0
+    },
+    {
+      "step": "domain",
+      "command": [
+        "dotnet",
+        "run",
+        "--project",
+        "tests/DomainTests"
+      ],
+      "exit": 0
+    },
+    {
+      "step": "integration",
+      "command": [
+        "<HOME>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "verify-integration.py",
+        "ci-local-01-integration"
+      ],
+      "exit": 0
+    }
+  ],
+  "pass": true,
+  "elapsed_seconds": 5.235428700048942,
+  "human_minutes": null,
+  "remote_ci": false,
+  "business_accepted": false
+}

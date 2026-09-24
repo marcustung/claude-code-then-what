@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "e331c80d70684e34b88938679a4e5aa2",
+    "order_id": "paid",
+    "request_id": "restored-5",
+    "run_id": "restored",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "538b0bca2ef24b058800c0e78d63b11b",
+    "order_id": "unpaid",
+    "request_id": "restored-7",
+    "run_id": "restored",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

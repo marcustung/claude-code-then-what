@@ -1,0 +1,18 @@
+{
+  "mutation": {
+    "old": "\"order_cancelled\", result.RefundRequested);",
+    "new": "\"order_cancelled\", false);"
+  },
+  "domain_exit": 0,
+  "mutated_exit": 1,
+  "restored_exit": 1,
+  "failed_checks": [
+    "build",
+    "runner"
+  ],
+  "restored_checks": 2,
+  "restored_pass": false,
+  "domain_sha256": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a",
+  "scope": "Isolated fixture; no model call; sequential loopback requests; no production claim.",
+  "verified": false
+}

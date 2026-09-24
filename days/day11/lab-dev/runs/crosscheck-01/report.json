@@ -1,0 +1,20 @@
+{
+  "two-round": {
+    "source": "runs/tests/snapshot/tests/DomainTests/Program.cs",
+    "exit": 1,
+    "fail_lines": [
+      "FAIL SC-03 已付款取消要提出退款要求",
+      "FAIL: 1 項條件未通過"
+    ],
+    "note": "tests from this run, executed against the ORIGINAL v1 Domain"
+  },
+  "combined": {
+    "source": "runs/combined-01/work/tests/DomainTests/Program.cs",
+    "exit": 1,
+    "fail_lines": [
+      "FAIL SC-03 已付款取消要求退款",
+      "FAIL: 1 項條件未通過"
+    ],
+    "note": "tests from this run, executed against the ORIGINAL v1 Domain"
+  }
+}

@@ -1,0 +1,10 @@
+round=1 exit=1 protected=True
+round=2 exit=0 protected=True
+round=1 exit=1 protected=True
+round=2 exit=1 protected=True
+round=3 exit=1 protected=True
+....
+----------------------------------------------------------------------
+Ran 4 tests in 22.201s
+
+OK

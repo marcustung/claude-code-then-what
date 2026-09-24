@@ -1,0 +1,195 @@
+{
+  "checks": [
+    {
+      "name": "build",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "paid-response-1",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": true,
+          "refund_requested": true,
+          "reason": null,
+          "request_id": "ci-local-01-integration-5",
+          "order": {
+            "shipped": false,
+            "paid": true,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "paid-response-2",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": null,
+          "request_id": "ci-local-01-integration-6",
+          "order": {
+            "shipped": false,
+            "paid": true,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "unpaid-response-3",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": true,
+          "refund_requested": false,
+          "reason": null,
+          "request_id": "ci-local-01-integration-7",
+          "order": {
+            "shipped": false,
+            "paid": false,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "shipped-response-4",
+      "pass": true,
+      "detail": {
+        "status": 409,
+        "body": {
+          "ok": false,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": "rejected_shipped",
+          "request_id": "ci-local-01-integration-8",
+          "order": {
+            "shipped": true,
+            "paid": true,
+            "cancelled": false
+          }
+        }
+      }
+    },
+    {
+      "name": "no-demo-actor",
+      "pass": true,
+      "detail": 401
+    },
+    {
+      "name": "paid-state",
+      "pass": true,
+      "detail": {
+        "id": "paid",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "unpaid-state",
+      "pass": true,
+      "detail": {
+        "id": "unpaid",
+        "order": {
+          "shipped": false,
+          "paid": false,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "shipped-state",
+      "pass": true,
+      "detail": {
+        "id": "shipped",
+        "order": {
+          "shipped": true,
+          "paid": true,
+          "cancelled": false
+        }
+      }
+    },
+    {
+      "name": "notification-ids-and-flags",
+      "pass": true,
+      "detail": [
+        {
+          "notification_id": "5beb66556dc644a9aaf2003adbd5105d",
+          "order_id": "paid",
+          "request_id": "ci-local-01-integration-5",
+          "run_id": "ci-local-01-integration",
+          "kind": "order_cancelled",
+          "refund_requested": true,
+          "attempt": 0
+        },
+        {
+          "notification_id": "be0df06e3bc7403d9f859b24bc93fe40",
+          "order_id": "unpaid",
+          "request_id": "ci-local-01-integration-7",
+          "run_id": "ci-local-01-integration",
+          "kind": "order_cancelled",
+          "refund_requested": false,
+          "attempt": 0
+        }
+      ]
+    },
+    {
+      "name": "paid-log-first-and-repeat",
+      "pass": true,
+      "detail": [
+        {
+          "level": "INFO",
+          "event": "cancel",
+          "request_id": "ci-local-01-integration-5",
+          "run_id": "ci-local-01-integration",
+          "order_id": "paid",
+          "actor": "demo-reader",
+          "result": "ok",
+          "transitioned": true,
+          "refund_requested": true,
+          "latency_ms": 1.2,
+          "queue_depth": 1,
+          "ts": "2026-09-22T07:28:22.5889939+08:00",
+          "version": "1.2.0"
+        },
+        {
+          "level": "INFO",
+          "event": "cancel",
+          "request_id": "ci-local-01-integration-6",
+          "run_id": "ci-local-01-integration",
+          "order_id": "paid",
+          "actor": "demo-reader",
+          "result": "idempotent",
+          "transitioned": false,
+          "refund_requested": false,
+          "latency_ms": 0,
+          "queue_depth": 0,
+          "ts": "2026-09-22T07:28:22.5924062+08:00",
+          "version": "1.2.0"
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "elapsed_seconds": 3.066413199994713,
+  "human_minutes": null,
+  "source_sha256": {
+    "src/Api/Program.cs": "03ae8ae968f83c873a8351a02c2377f439ec5badedbe383a5fb818938b8b60cb",
+    "src/Domain/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  "artifact_sha256": "fe32502366b2b04f50bd37c11a113f0daf5e61b29c4c1d3a969206875cc3d400",
+  "limits": "Loopback, sequential requests, bounded observation. Test receiver captures payload; no real payment, production auth, concurrent exactly-once, restart recovery or remote deployment proof."
+}
