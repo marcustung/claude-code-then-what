@@ -55,7 +55,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [8](days/day08/) | 我替 AI 出了考卷，結果錯的是我的答案 | [文章](https://ithelp.ithome.com.tw/articles/10415265) | day08/lab：追呼叫鏈、引用抽驗三次 | [grading-table.md](templates/grading-table.md) |
 | [9](days/day09/) | 需求寫好了，Claude 就能開工嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10415774) | day09/lab-scope：三組唯讀實跑；lab-intake：訪談對照 | [change-scope-card.md](templates/change-scope-card.md) |
 | [10](days/day10/) | 只改一個欄位，Claude 要先查哪些地方？ | [文章](https://ithelp.ithome.com.tw/articles/10416277) | day10/lab-design：呼叫端與設計計畫 | [design-handoff.md](templates/design-handoff.md) |
-| [11](days/day11/) | 計畫寫好了，怎麼讓 Claude 自己改、自己驗？ | 未發 | day11/lab-dev：回饋迴路四次實跑（含換模型、抽掉規格） | [findings-fixes.md](templates/findings-fixes.md) |
+| [11](days/day11/) | 計畫寫好了，怎麼讓 Claude 自己改、自己驗？ | [文章](https://ithelp.ithome.com.tw/articles/10416833) | day11/lab-dev：回饋迴路四次實跑（含換模型、抽掉規格） | [findings-fixes.md](templates/findings-fixes.md) |
 
 ## 怎麼核對一次 run
 

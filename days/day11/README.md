@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10416833) |
 | 今天練習 | 找第二個模型（或另開一個 session）審同一份 PR，把兩邊的發現填進 findings／fixes 表，分成「要修」「不修、寫理由」「待 Owner」 |
 | 需要什麼 | Claude Code CLI ×2 session |
 | 跑什麼 | 本篇不需執行指令 |
