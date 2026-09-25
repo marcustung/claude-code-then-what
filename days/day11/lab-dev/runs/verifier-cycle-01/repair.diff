@@ -1,0 +1,11 @@
+--- before/Program.cs
++++ after/Program.cs
+@@ -76,7 +76,7 @@
+     if (transitioned)
+     {
+         metrics.Inc("transitions_total");
+-        var n = new Notification(Guid.NewGuid().ToString("N"), id, rid, runId, "order_cancelled", false);
++        var n = new Notification(Guid.NewGuid().ToString("N"), id, rid, runId, "order_cancelled", result.RefundRequested);
+         metrics.Inc("notify_enqueued_total");
+         if (faults.SyncNotify)
+             await NotificationWorker.SendOnce(n, metrics, log, Environment.GetEnvironmentVariable("OC_SINK_URL") ?? "http://127.0.0.1:5081/notify");   // 演練注入：在請求路徑上同步等接收端

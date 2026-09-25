@@ -1,0 +1,1 @@
+Fixed `src/Api/Program.cs:79` — the `Notification` now forwards `result.RefundRequested` instead of a hardcoded `false`, matching the value already used in the HTTP response and log line 88. No other files touched; a fresh verifier can now re-run `dotnet run --project tests/DomainTests` and `verify-integration.py` to confirm.

@@ -1,0 +1,195 @@
+{
+  "checks": [
+    {
+      "name": "build",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "paid-response-1",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": true,
+          "refund_requested": true,
+          "reason": null,
+          "request_id": "verifier-green-5",
+          "order": {
+            "shipped": false,
+            "paid": true,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "paid-response-2",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": null,
+          "request_id": "verifier-green-6",
+          "order": {
+            "shipped": false,
+            "paid": true,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "unpaid-response-3",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": true,
+          "refund_requested": false,
+          "reason": null,
+          "request_id": "verifier-green-7",
+          "order": {
+            "shipped": false,
+            "paid": false,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "shipped-response-4",
+      "pass": true,
+      "detail": {
+        "status": 409,
+        "body": {
+          "ok": false,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": "rejected_shipped",
+          "request_id": "verifier-green-8",
+          "order": {
+            "shipped": true,
+            "paid": true,
+            "cancelled": false
+          }
+        }
+      }
+    },
+    {
+      "name": "no-demo-actor",
+      "pass": true,
+      "detail": 401
+    },
+    {
+      "name": "paid-state",
+      "pass": true,
+      "detail": {
+        "id": "paid",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "unpaid-state",
+      "pass": true,
+      "detail": {
+        "id": "unpaid",
+        "order": {
+          "shipped": false,
+          "paid": false,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "shipped-state",
+      "pass": true,
+      "detail": {
+        "id": "shipped",
+        "order": {
+          "shipped": true,
+          "paid": true,
+          "cancelled": false
+        }
+      }
+    },
+    {
+      "name": "notification-ids-and-flags",
+      "pass": true,
+      "detail": [
+        {
+          "notification_id": "23167d2585c8497aa60304004b9f5657",
+          "order_id": "paid",
+          "request_id": "verifier-green-5",
+          "run_id": "verifier-green",
+          "kind": "order_cancelled",
+          "refund_requested": true,
+          "attempt": 0
+        },
+        {
+          "notification_id": "acbe8d5e0af1425ab179bc32abd52840",
+          "order_id": "unpaid",
+          "request_id": "verifier-green-7",
+          "run_id": "verifier-green",
+          "kind": "order_cancelled",
+          "refund_requested": false,
+          "attempt": 0
+        }
+      ]
+    },
+    {
+      "name": "paid-log-first-and-repeat",
+      "pass": true,
+      "detail": [
+        {
+          "level": "INFO",
+          "event": "cancel",
+          "request_id": "verifier-green-5",
+          "run_id": "verifier-green",
+          "order_id": "paid",
+          "actor": "demo-reader",
+          "result": "ok",
+          "transitioned": true,
+          "refund_requested": true,
+          "latency_ms": 2.1,
+          "queue_depth": 1,
+          "ts": "2026-09-25T21:12:58.8844545+08:00",
+          "version": "1.2.0"
+        },
+        {
+          "level": "INFO",
+          "event": "cancel",
+          "request_id": "verifier-green-6",
+          "run_id": "verifier-green",
+          "order_id": "paid",
+          "actor": "demo-reader",
+          "result": "idempotent",
+          "transitioned": false,
+          "refund_requested": false,
+          "latency_ms": 0.1,
+          "queue_depth": 0,
+          "ts": "2026-09-25T21:12:58.8925870+08:00",
+          "version": "1.2.0"
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "elapsed_seconds": 7.886377100017853,
+  "human_minutes": null,
+  "source_sha256": {
+    "src/Api/Program.cs": "49b03341b28df892155fbac0f4ca5bc1bd95418463e0253910ba31bc3e4a879a",
+    "src/Domain/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  "artifact_sha256": "d6456b96b8ab75d54aac36cbbed03170e036a22813f85e5c43fd687f8dbef387",
+  "limits": "Loopback, sequential requests, bounded observation. Test receiver captures payload; no real payment, production auth, concurrent exactly-once, restart recovery or remote deployment proof."
+}

@@ -71,6 +71,16 @@ python test-feedback-loop.py
 - 此 runner 用本機教學程式，不是 OS 沙箱；不要把不可信模型產出的程式直接放到有正式憑證的環境執行。未驗 API／通知／並行／人工接受。
 
 
-## 後續日次
+## Day 12：通知轉發負對照
 
-（各日的實驗會在該日發布當天補上。）
+在本包根目錄執行 `python run-boundary-negative.py reader-negative-01`。需要 Python 3 與 .NET 9 SDK，不呼叫模型；名稱不得重複。建立隔離 fixture，僅把通知組裝的旗標固定 false，先跑 Domain，再跑整合；還原後再跑整合。`report.json` 的 verified 表示 Domain 通過、錯誤版僅 notification-ids-and-flags 失敗、還原版通過。原始輸出在各 run 與 fixture/runs 下。
+
+`boundary-negative-01` 因副本缺 VERSION 建置失敗；`boundary-negative-02` 補齊後取得有效結果。兩次均保留。沒有模型自行修復、正式 E2E 或並行恰好一次的證據。
+
+## Day 12：Claude 執行驗證、修正、新上下文重驗
+
+執行 `python run-verifier-cycle.py reader-verifier-01`，需要 Python 3、.NET 9 SDK、已安裝並登入的 Claude Code，會消耗模型用量。使用全新 run 名，保留歷史。
+
+建立獨立 workspace，故意把通知旗標固定 false；三次 CLI 呼叫依序驗證、修正、重驗。驗證者 Read/Grep/Glob/Bash，修正者 Read/Grep/Glob/Edit；修正只接受 API 檔案變動，測試與規格前後 hash 不變。不是 OS 沙箱，也不保證中途未改又還原。
+
+`runs/verifier-cycle-01/report.json` 記錄 VERIFIED：七項 Domain 全過，整合先僅 notification-ids-and-flags 失敗，API 一行修復後十一項全過。各階段 trace、回答、修正 diff、workspace/runs 的實際輸出均保留。重驗附加查版本命令被拒，必要測試已完成。模型三段約219秒、US$0.527，人工分鐘 null；只證明本輪指定錯誤可被找到並修復。

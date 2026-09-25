@@ -1,0 +1,55 @@
+{
+  "model": "sonnet",
+  "mutation": "notification flag forced false by host, not a model error",
+  "stages": [
+    {
+      "stage": "verify-red",
+      "exit": 0,
+      "elapsed_seconds": 117.44,
+      "turns": 16,
+      "cost_usd": 0.19566,
+      "changed": [],
+      "result_error": false,
+      "permission_denials": []
+    },
+    {
+      "stage": "repair",
+      "exit": 0,
+      "elapsed_seconds": 18.71,
+      "turns": 7,
+      "cost_usd": 0.1085036,
+      "changed": [
+        "src/Api/Program.cs"
+      ],
+      "result_error": false,
+      "permission_denials": []
+    },
+    {
+      "stage": "verify-green",
+      "exit": 0,
+      "elapsed_seconds": 83.32,
+      "turns": 22,
+      "cost_usd": 0.22288500000000003,
+      "changed": [],
+      "result_error": false,
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01BgzcF6YMo99MckTKViagfg",
+          "tool_input": {
+            "command": "cd \"<REPO>\\examples\\sdlc-development\\runs\\verifier-cycle-01\\workspace\" && dotnet --version && python --version",
+            "description": "Record tool versions for report"
+          }
+        }
+      ]
+    }
+  ],
+  "human_minutes": null,
+  "status": "VERIFIED",
+  "failed_checks_before": [
+    "notification-ids-and-flags"
+  ],
+  "green_checks": 11,
+  "green_pass": true,
+  "protected_unchanged": true
+}

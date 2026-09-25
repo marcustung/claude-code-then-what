@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "23167d2585c8497aa60304004b9f5657",
+    "order_id": "paid",
+    "request_id": "verifier-green-5",
+    "run_id": "verifier-green",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "acbe8d5e0af1425ab179bc32abd52840",
+    "order_id": "unpaid",
+    "request_id": "verifier-green-7",
+    "run_id": "verifier-green",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

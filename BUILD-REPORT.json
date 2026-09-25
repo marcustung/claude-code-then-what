@@ -1,6 +1,6 @@
 {
- "files": 994,
- "binary": 42,
+ "files": 1024,
+ "binary": 43,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
   "days\\day09\\lab-scope\\runs\\r0-naive\\trace.jsonl",
@@ -49,7 +49,6 @@
   "days\\day10\\lab-design\\runs\\seqcheck-03\\meta.json",
   "days\\day10\\lab-design\\runs\\seqcheck-03\\trace.jsonl",
   "days\\day10\\lab-design\\specs\\notification-contract-v2.1.md",
-  "days\\day11\\lab-dev\\README.md",
   "days\\day11\\lab-dev\\runs\\boundary-01\\meta.json",
   "days\\day11\\lab-dev\\runs\\boundary-01\\trace.jsonl",
   "days\\day11\\lab-dev\\runs\\boundary-negative-01\\fixture\\runs\\mutated\\build.txt",
@@ -77,10 +76,15 @@
   "days\\day11\\lab-dev\\runs\\integration-01\\build.txt",
   "days\\day11\\lab-dev\\runs\\package-01\\meta.json",
   "days\\day11\\lab-dev\\runs\\package-01\\trace.jsonl",
-  "days\\day11\\lab-dev\\runs\\plugin-review-01\\trace.jsonl",
-  "days\\day11\\lab-dev\\runs\\plugin-review-02\\trace.jsonl",
   "days\\day11\\lab-dev\\runs\\tests\\meta.json",
   "days\\day11\\lab-dev\\runs\\tests\\trace.jsonl",
+  "days\\day11\\lab-dev\\runs\\verifier-cycle-01\\report.json",
+  "days\\day11\\lab-dev\\runs\\verifier-cycle-01\\repair\\trace.jsonl",
+  "days\\day11\\lab-dev\\runs\\verifier-cycle-01\\verify-green\\result.md",
+  "days\\day11\\lab-dev\\runs\\verifier-cycle-01\\verify-green\\trace.jsonl",
+  "days\\day11\\lab-dev\\runs\\verifier-cycle-01\\verify-red\\trace.jsonl",
+  "days\\day11\\lab-dev\\runs\\verifier-cycle-01\\workspace\\runs\\verifier-green\\build.txt",
+  "days\\day11\\lab-dev\\runs\\verifier-cycle-01\\workspace\\runs\\verifier-red\\build.txt",
   "days\\day02\\lab\\day02-write\\trace.jsonl",
   "days\\day03\\lab\\meta.json",
   "days\\day03\\lab\\run-net10-sdk-unavailable.txt",
@@ -147,6 +151,12 @@
   "days\\day10\\lab\\day10\\trace.jsonl"
  ],
  "forbidden": [],
- "figures": 45,
- "bytes": 86685892
+ "deferred": [
+  "examples\\sdlc-development\\route-review.py",
+  "examples\\sdlc-development\\routing-policy.json",
+  "examples\\sdlc-development\\runs\\ci-negative-01\\fixture\\route-review.py",
+  "examples\\sdlc-development\\runs\\ci-negative-01\\fixture\\routing-policy.json"
+ ],
+ "figures": 46,
+ "bytes": 89630672
 }

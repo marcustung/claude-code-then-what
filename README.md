@@ -3,7 +3,7 @@
 **2026 iThome 鐵人賽・Claude AI 組・三十天系列的配套 repo。** 文章談的是一個工程團隊導入 Claude Code 之後，怎麼把「程式寫得更快」接回需求、審查、驗收與成效判斷；這裡放的是文章裡每一個實驗的原件——提示、trace、輸出、判準與重跑腳本——讓每一句「我試過」都能被打開來看。
 
 - 系列文章：[iThome 系列頁](https://ithelp.ithome.com.tw/users/20162577/ironman/9862)（每日一篇，2026-09-15 起）
-- 目前開放：Day 1–11（索引隨發文節奏開放，未發布的日子只有空資料夾）
+- 目前開放：Day 1–12（索引隨發文節奏開放，未發布的日子只有空資料夾）
 - 試跑紀錄：[VERIFIED.md](VERIFIED.md)（每一天的練習都在乾淨副本裡照 README 跑過，含時間、環境、修過的問題）
 
 ## 這個 repo 是什麼、不是什麼
@@ -56,6 +56,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [9](days/day09/) | 需求寫好了，Claude 就能開工嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10415774) | day09/lab-scope：三組唯讀實跑；lab-intake：訪談對照 | [change-scope-card.md](templates/change-scope-card.md) |
 | [10](days/day10/) | 只改一個欄位，Claude 要先查哪些地方？ | [文章](https://ithelp.ithome.com.tw/articles/10416277) | day10/lab-design：呼叫端與設計計畫 | [design-handoff.md](templates/design-handoff.md) |
 | [11](days/day11/) | 計畫寫好了，怎麼讓 Claude 自己改、自己驗？ | [文章](https://ithelp.ithome.com.tw/articles/10416833) | day11/lab-dev：回饋迴路四次實跑（含換模型、抽掉規格） | [findings-fixes.md](templates/findings-fixes.md) |
+| [12](days/day12/) | Claude 寫的程式通過單元測試，API 也接對了嗎？ | 未發 | day11/lab-dev：驗證者→修正→新上下文重驗（與 Day 11 共用開發包） | 無 |
 
 ## 怎麼核對一次 run
 

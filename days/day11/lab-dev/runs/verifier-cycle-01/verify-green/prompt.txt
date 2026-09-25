@@ -1,0 +1,1 @@
+Independently verify current code against plan.md and specs/rules-v2.md. Run dotnet run --project tests/DomainTests and python verify-integration.py verifier-green. Read the generated report and raw requests, payloads, logs. Report the outcome and untested scope. Do not modify source or tests. Do not rely on old runs. Reply in Traditional Chinese.

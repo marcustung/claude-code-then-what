@@ -1,0 +1,1 @@
+Verify paid/unpaid/shipped cancellation and sequential repeat through API. Domain computes refund flag; API response and notification must forward the same result. Diagnose failures; change no test or rule. Scope: local sequential integration, not concurrency or real authorization.
