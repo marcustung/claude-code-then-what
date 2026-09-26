@@ -1,5 +1,5 @@
 {
- "files": 1024,
+ "files": 1040,
  "binary": 43,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
@@ -76,6 +76,8 @@
   "days\\day11\\lab-dev\\runs\\integration-01\\build.txt",
   "days\\day11\\lab-dev\\runs\\package-01\\meta.json",
   "days\\day11\\lab-dev\\runs\\package-01\\trace.jsonl",
+  "days\\day11\\lab-dev\\runs\\plugin-review-01\\trace.jsonl",
+  "days\\day11\\lab-dev\\runs\\plugin-review-02\\trace.jsonl",
   "days\\day11\\lab-dev\\runs\\tests\\meta.json",
   "days\\day11\\lab-dev\\runs\\tests\\trace.jsonl",
   "days\\day11\\lab-dev\\runs\\verifier-cycle-01\\report.json",
@@ -151,12 +153,6 @@
   "days\\day10\\lab\\day10\\trace.jsonl"
  ],
  "forbidden": [],
- "deferred": [
-  "examples\\sdlc-development\\route-review.py",
-  "examples\\sdlc-development\\routing-policy.json",
-  "examples\\sdlc-development\\runs\\ci-negative-01\\fixture\\route-review.py",
-  "examples\\sdlc-development\\runs\\ci-negative-01\\fixture\\routing-policy.json"
- ],
- "figures": 46,
- "bytes": 89630672
+ "figures": 47,
+ "bytes": 81710420
 }

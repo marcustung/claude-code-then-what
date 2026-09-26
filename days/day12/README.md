@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10417304) |
 | 今天練習 | 跑一次驗證者→實作者→新驗證的完整週期：外層先在隔離副本故意接錯一個通知欄位，讓 Claude 用 verifier 角色跑測試找出來，換一個修正呼叫只改該處，再用新上下文重新驗證同一套檢查 |
 | 需要什麼 | Python 3；.NET 9 SDK；重跑 Claude 分析需 Claude Code CLI 並已登入 |
 | 跑什麼 | `cd days/day11/lab-dev; python verify-integration.py reader-integration-02; python run-verifier-cycle.py reader-verifier-01` |

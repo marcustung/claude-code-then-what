@@ -1,0 +1,1 @@
+請使用 Skill 工具載入 review-kit:review-pr，審查本資料夾 PR.md、ticket.md、diff.patch 與 tests/DomainTests/Program.cs，讀相關執行輸出及 plan.md 核對。這是 Day4 的同一 plugin 用在本次取消規則改版；先實際載入 skill，不能只模仿它的名字。唯讀，不改檔、不執行測試、不批准；回覆依 skill JSON 契約，保留 Owner 必要條件与真實缺件。
