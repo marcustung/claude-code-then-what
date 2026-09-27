@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "03af80d6c6bf41e28eeb77e82d6a05e4",
+    "order_id": "paid",
+    "request_id": "smoke-5",
+    "run_id": "smoke",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "e83abc6784b34e6598aa54e835beb598",
+    "order_id": "unpaid",
+    "request_id": "smoke-7",
+    "run_id": "smoke",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "Api.deps.json": "19cd2cd975749e18a8b58d3d5e6128bba12de4e1f4b2ec511c1e0c95a5b1b907",
+  "Api.dll": "d8f6f1306aa093ca17ad7a1af2fe00b1b7951e0f063afd738c8124deda8e1de1",
+  "Api.exe": "091e3f3c3fa3f9a838c77edc26107f8e21551b5e17fc41a27f86cc63717894cb",
+  "Api.pdb": "4bbdbeef5336c0e87bac3c2440b7731b26f4b1a44cdcc36e10fac973732b5722",
+  "Api.runtimeconfig.json": "4044375fcab816ed4ec7938f8e825f2292205adc48892551d70347857eab0226",
+  "Api.staticwebassets.endpoints.json": "c1686417e8d5c31bba969f12b6f3d2b35e6609adb5ca42f212261a3a02771aac",
+  "Domain.dll": "51fb8800113561c0eaa543688bad6c6d06b3c67f162b6e11485f88f8d86d4016",
+  "Domain.pdb": "740adb4c36bff81e67ca2dedc6ffe81b69a7d617371c37fcf2ffc020cb2d8523",
+  "VERSION": "1a67e1c3b2d074fd01a5fe93347a12e35e272ceb9a454d6f31d94e7ab1622241",
+  "web.config": "fc1bb0fc4de9da298d847efc0df60a72f422d14dbdc591549dd1c5ca55dbc3cd"
+}

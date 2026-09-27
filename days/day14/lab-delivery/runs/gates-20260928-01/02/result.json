@@ -1,0 +1,20 @@
+{
+  "id": "02",
+  "scenario": "rule-error",
+  "expected_block": "domain",
+  "actual_block": "domain",
+  "matches": true,
+  "steps": [
+    {
+      "stage": "build",
+      "exit": 0
+    },
+    {
+      "stage": "domain",
+      "exit": 1
+    }
+  ],
+  "package_created": false,
+  "ready_for_load": false,
+  "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+}

@@ -1,0 +1,1 @@
+{"run": "rejected-concurrent-ci-integration", "checks": 11, "pass": true}

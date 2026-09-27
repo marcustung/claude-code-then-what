@@ -1,0 +1,242 @@
+[
+  {
+    "payload": {
+      "notification_id": "a5483794ae4c4ace8183922e94517c7b",
+      "order_id": "order-00",
+      "request_id": "candidate-checked-concurrency-00-01",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "77ee20db19c048e29e5379cbdea234f2",
+      "order_id": "order-01",
+      "request_id": "candidate-checked-concurrency-01-04",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "93d3116b2a4d45d69574f88bd3b76f92",
+      "order_id": "order-02",
+      "request_id": "candidate-checked-concurrency-02-07",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "62a8ac7c5b4f4392994fbc3518f31cd6",
+      "order_id": "order-03",
+      "request_id": "candidate-checked-concurrency-03-05",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "3e939aa8a883457bab89ead2111dd9cd",
+      "order_id": "order-04",
+      "request_id": "candidate-checked-concurrency-04-07",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "ecc5504d7612455bbbf1756ca56681df",
+      "order_id": "order-05",
+      "request_id": "candidate-checked-concurrency-05-06",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "127febfb5bb14b8f8d1f5d0af0073846",
+      "order_id": "order-06",
+      "request_id": "candidate-checked-concurrency-06-07",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "7e9fa84c09ab4fd6911bddbedd916a8c",
+      "order_id": "order-07",
+      "request_id": "candidate-checked-concurrency-07-01",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "0b719694c3154401b0b62ff95926e41f",
+      "order_id": "order-08",
+      "request_id": "candidate-checked-concurrency-08-03",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "fda0225656424345a729b3b2f07355dd",
+      "order_id": "order-09",
+      "request_id": "candidate-checked-concurrency-09-01",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "cf172a9da95f4ed08c647852373c7dcc",
+      "order_id": "order-10",
+      "request_id": "candidate-checked-concurrency-10-04",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "4bff5859d3454fb7910d24f8b48fdb73",
+      "order_id": "order-11",
+      "request_id": "candidate-checked-concurrency-11-07",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "3e560a88e6ee482eae9915a64121beb9",
+      "order_id": "order-12",
+      "request_id": "candidate-checked-concurrency-12-03",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "e902a2e7c6cc4084b40646702b58b15b",
+      "order_id": "order-13",
+      "request_id": "candidate-checked-concurrency-13-03",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "698e3871ac4a4f27a4143c166808dbfc",
+      "order_id": "order-14",
+      "request_id": "candidate-checked-concurrency-14-00",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "4c288aba7d6a49d3805b669583e6d116",
+      "order_id": "order-15",
+      "request_id": "candidate-checked-concurrency-15-02",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "682e1c4e0a014e68b80c9d3876daf5e8",
+      "order_id": "order-16",
+      "request_id": "candidate-checked-concurrency-16-00",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "8a6fbca889e547558002bc9ca83c4b10",
+      "order_id": "order-17",
+      "request_id": "candidate-checked-concurrency-17-04",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "07e2b1854f734325aab968471d1aca0f",
+      "order_id": "order-18",
+      "request_id": "candidate-checked-concurrency-18-01",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  },
+  {
+    "payload": {
+      "notification_id": "26f007b70f894acfb903d54897d8d7e9",
+      "order_id": "order-19",
+      "request_id": "candidate-checked-concurrency-19-07",
+      "run_id": "candidate-checked-concurrency",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "06",
+  "scenario": "broken-package",
+  "expected_block": "smoke",
+  "actual_block": "smoke",
+  "matches": true,
+  "steps": [
+    {
+      "stage": "build",
+      "exit": 0
+    },
+    {
+      "stage": "domain",
+      "exit": 0
+    },
+    {
+      "stage": "integration",
+      "exit": 0
+    },
+    {
+      "stage": "publish",
+      "exit": 0
+    },
+    {
+      "stage": "smoke",
+      "exit": 1
+    }
+  ],
+  "package_created": true,
+  "ready_for_load": false,
+  "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+}

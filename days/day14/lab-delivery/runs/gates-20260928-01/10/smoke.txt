@@ -1,0 +1,1 @@
+{"run": "smoke", "checks": 10, "pass": true}

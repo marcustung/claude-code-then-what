@@ -1,0 +1,201 @@
+{
+  "checks": [
+    {
+      "name": "build",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "paid-response-1",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": true,
+          "refund_requested": true,
+          "reason": null,
+          "request_id": "integration-5",
+          "notification_id": "4d3721c24ae0484ea8bded2a3b447ad1",
+          "order": {
+            "shipped": false,
+            "paid": true,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "paid-response-2",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": null,
+          "request_id": "integration-6",
+          "notification_id": null,
+          "order": {
+            "shipped": false,
+            "paid": true,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "unpaid-response-3",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": true,
+          "refund_requested": false,
+          "reason": null,
+          "request_id": "integration-7",
+          "notification_id": "4f5acb0e3b92481b887bb6eedd262f22",
+          "order": {
+            "shipped": false,
+            "paid": false,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "shipped-response-4",
+      "pass": true,
+      "detail": {
+        "status": 409,
+        "body": {
+          "ok": false,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": "rejected_shipped",
+          "request_id": "integration-8",
+          "notification_id": null,
+          "order": {
+            "shipped": true,
+            "paid": true,
+            "cancelled": false
+          }
+        }
+      }
+    },
+    {
+      "name": "no-demo-actor",
+      "pass": true,
+      "detail": 401
+    },
+    {
+      "name": "paid-state",
+      "pass": true,
+      "detail": {
+        "id": "paid",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "unpaid-state",
+      "pass": true,
+      "detail": {
+        "id": "unpaid",
+        "order": {
+          "shipped": false,
+          "paid": false,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "shipped-state",
+      "pass": true,
+      "detail": {
+        "id": "shipped",
+        "order": {
+          "shipped": true,
+          "paid": true,
+          "cancelled": false
+        }
+      }
+    },
+    {
+      "name": "notification-ids-and-flags",
+      "pass": true,
+      "detail": [
+        {
+          "notification_id": "4d3721c24ae0484ea8bded2a3b447ad1",
+          "order_id": "paid",
+          "request_id": "integration-5",
+          "run_id": "integration",
+          "kind": "order_cancelled",
+          "refund_requested": true,
+          "attempt": 0
+        },
+        {
+          "notification_id": "4f5acb0e3b92481b887bb6eedd262f22",
+          "order_id": "unpaid",
+          "request_id": "integration-7",
+          "run_id": "integration",
+          "kind": "order_cancelled",
+          "refund_requested": false,
+          "attempt": 0
+        }
+      ]
+    },
+    {
+      "name": "paid-log-first-and-repeat",
+      "pass": true,
+      "detail": [
+        {
+          "level": "INFO",
+          "event": "cancel",
+          "request_id": "integration-5",
+          "run_id": "integration",
+          "order_id": "paid",
+          "actor": "demo-reader",
+          "notification_id": "4d3721c24ae0484ea8bded2a3b447ad1",
+          "result": "ok",
+          "transitioned": true,
+          "refund_requested": true,
+          "latency_ms": 0.9,
+          "queue_depth": 1,
+          "ts": "2026-09-28T03:37:08.9834633+08:00",
+          "version": "delivery-hardening-local-r1"
+        },
+        {
+          "level": "INFO",
+          "event": "cancel",
+          "request_id": "integration-6",
+          "run_id": "integration",
+          "order_id": "paid",
+          "actor": "demo-reader",
+          "notification_id": null,
+          "result": "idempotent",
+          "transitioned": false,
+          "refund_requested": false,
+          "latency_ms": 0,
+          "queue_depth": 0,
+          "ts": "2026-09-28T03:37:09.0059786+08:00",
+          "version": "delivery-hardening-local-r1"
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "elapsed_seconds": 3.300341699970886,
+  "human_minutes": null,
+  "source_sha256": {
+    "src/Api/Program.cs": "00e5ec2cf033b7abba6f1fff976677fa0f3da1de80661c3b5b19289ce8b26dca",
+    "src/Domain/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  "artifact_sha256": "d12c9ba5d83c562f3f294f60bfb49c939836b792a4a0c05ce149ba505207396c",
+  "limits": "Loopback, sequential requests, bounded observation. Test receiver captures payload; no real payment, production auth, concurrent exactly-once, restart recovery or remote deployment proof."
+}

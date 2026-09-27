@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "name": "paid-response-0",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": true,
+          "refund_requested": true,
+          "reason": null,
+          "request_id": "candidate-before-smoke-5",
+          "order": {
+            "shipped": false,
+            "paid": true,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "paid-response-1",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": null,
+          "request_id": "candidate-before-smoke-6",
+          "order": {
+            "shipped": false,
+            "paid": true,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "unpaid-response-2",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "body": {
+          "ok": true,
+          "transitioned": true,
+          "refund_requested": false,
+          "reason": null,
+          "request_id": "candidate-before-smoke-7",
+          "order": {
+            "shipped": false,
+            "paid": false,
+            "cancelled": true
+          }
+        }
+      }
+    },
+    {
+      "name": "shipped-response-3",
+      "pass": true,
+      "detail": {
+        "status": 409,
+        "body": {
+          "ok": false,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": "rejected_shipped",
+          "request_id": "candidate-before-smoke-8",
+          "order": {
+            "shipped": true,
+            "paid": true,
+            "cancelled": false
+          }
+        }
+      }
+    },
+    {
+      "name": "no-demo-actor",
+      "pass": true,
+      "detail": 401
+    },
+    {
+      "name": "paid-state",
+      "pass": true,
+      "detail": {
+        "id": "paid",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "unpaid-state",
+      "pass": true,
+      "detail": {
+        "id": "unpaid",
+        "order": {
+          "shipped": false,
+          "paid": false,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "shipped-state",
+      "pass": true,
+      "detail": {
+        "id": "shipped",
+        "order": {
+          "shipped": true,
+          "paid": true,
+          "cancelled": false
+        }
+      }
+    },
+    {
+      "name": "notification-ids-and-flags",
+      "pass": true,
+      "detail": [
+        {
+          "notification_id": "ed34747be3d94f5fbac424a64b185f4c",
+          "order_id": "paid",
+          "request_id": "candidate-before-smoke-5",
+          "run_id": "candidate-before-smoke",
+          "kind": "order_cancelled",
+          "refund_requested": true,
+          "attempt": 0
+        },
+        {
+          "notification_id": "dc9de862249c4c43a9c9f0effa5a4e1b",
+          "order_id": "unpaid",
+          "request_id": "candidate-before-smoke-7",
+          "run_id": "candidate-before-smoke",
+          "kind": "order_cancelled",
+          "refund_requested": false,
+          "attempt": 0
+        }
+      ]
+    },
+    {
+      "name": "paid-log-first-and-repeat",
+      "pass": true,
+      "detail": [
+        {
+          "level": "INFO",
+          "event": "cancel",
+          "request_id": "candidate-before-smoke-5",
+          "run_id": "candidate-before-smoke",
+          "order_id": "paid",
+          "actor": "demo-reader",
+          "result": "ok",
+          "transitioned": true,
+          "refund_requested": true,
+          "latency_ms": 0.8,
+          "queue_depth": 1,
+          "ts": "2026-09-27T18:49:09.3369207+08:00",
+          "version": "1.2.0"
+        },
+        {
+          "level": "INFO",
+          "event": "cancel",
+          "request_id": "candidate-before-smoke-6",
+          "run_id": "candidate-before-smoke",
+          "order_id": "paid",
+          "actor": "demo-reader",
+          "result": "idempotent",
+          "transitioned": false,
+          "refund_requested": false,
+          "latency_ms": 0,
+          "queue_depth": 0,
+          "ts": "2026-09-27T18:49:09.3417568+08:00",
+          "version": "1.2.0"
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "elapsed_seconds": 1.708065600018017,
+  "human_minutes": null,
+  "source_sha256": {
+    "src/Api/Program.cs": "0ac99eef9ac83abec130a95afdaf95cd6adfcd4d841adee8542821cc75c7985c",
+    "src/Domain/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  "artifact_sha256": "9f627f2fd2bcd21259c3882a4380005185c44e7842d9fd2d7390389d0cfcabd5",
+  "limits": "Loopback, sequential requests, bounded observation. Test receiver captures payload; no real payment, production auth, concurrent exactly-once, restart recovery or remote deployment proof."
+}

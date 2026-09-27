@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "80042bb3619148e6a925bc0727496513",
+    "order_id": "paid",
+    "request_id": "integration-5",
+    "run_id": "integration",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "6e82a62f25334267b5dd0fc84621b4aa",
+    "order_id": "unpaid",
+    "request_id": "integration-7",
+    "run_id": "integration",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

@@ -1,0 +1,1 @@
+{"run": "candidate-checked-concurrency", "passed": true, "checks": 81, "failures": 0}

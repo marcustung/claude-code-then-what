@@ -1,0 +1,20 @@
+{
+  "steps": [
+    {
+      "step": "ci",
+      "exit": 0
+    },
+    {
+      "step": "concurrency",
+      "exit": 1
+    }
+  ],
+  "passed": false,
+  "remote_deployed": false,
+  "owner_accepted": false,
+  "diagnosis": {
+    "status": "completed",
+    "exit": 0,
+    "delivery_stays_failed": true
+  }
+}

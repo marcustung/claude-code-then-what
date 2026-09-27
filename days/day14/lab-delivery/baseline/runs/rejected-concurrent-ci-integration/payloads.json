@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "95cb92e735ee43739fc25b1fb1edaa12",
+    "order_id": "paid",
+    "request_id": "rejected-concurrent-ci-integration-5",
+    "run_id": "rejected-concurrent-ci-integration",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "d566701559d943e4b9348fc3f8ab6dd7",
+    "order_id": "unpaid",
+    "request_id": "rejected-concurrent-ci-integration-7",
+    "run_id": "rejected-concurrent-ci-integration",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

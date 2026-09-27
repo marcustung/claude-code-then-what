@@ -1,0 +1,2 @@
+Failed to parse file [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\06\package\Api.runtimeconfig.json]. JSON parsing exception: Missing a name for object member. [offset 2: line 1, column 3]
+Invalid runtimeconfig.json [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\06\package\Api.runtimeconfig.json] [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\06\package\Api.runtimeconfig.dev.json]

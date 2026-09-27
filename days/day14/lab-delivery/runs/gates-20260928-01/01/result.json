@@ -1,0 +1,16 @@
+{
+  "id": "01",
+  "scenario": "build-error",
+  "expected_block": "build",
+  "actual_block": "build",
+  "matches": true,
+  "steps": [
+    {
+      "stage": "build",
+      "exit": 1
+    }
+  ],
+  "package_created": false,
+  "ready_for_load": false,
+  "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+}

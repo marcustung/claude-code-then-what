@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "ed34747be3d94f5fbac424a64b185f4c",
+    "order_id": "paid",
+    "request_id": "candidate-before-smoke-5",
+    "run_id": "candidate-before-smoke",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "dc9de862249c4c43a9c9f0effa5a4e1b",
+    "order_id": "unpaid",
+    "request_id": "candidate-before-smoke-7",
+    "run_id": "candidate-before-smoke",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

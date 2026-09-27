@@ -1,0 +1,69 @@
+using OrderCancel.Domain;
+
+// SC-01～07（specs/rules-v2.md ORD-142 v2）；exit code = 失敗數。
+// 每個 Check 覆核 spec 表格 Then 欄列出的「全部」條件，不只挑其中一個欄位。
+int failures = 0;
+void Check(string sc, string name, Func<bool> f)
+{
+    bool ok; try { ok = f(); } catch (Exception e) { ok = false; name += $" (threw {e.GetType().Name})"; }
+    Console.WriteLine($"{(ok ? "PASS" : "FAIL")} {sc} {name}");
+    if (!ok) failures++;
+}
+
+// SC-01｜BR-01｜Given 未出貨、未付款、未取消｜Then Cancelled=true、RefundRequested=false
+Check("SC-01", "未出貨可取消，不要求退款", () =>
+{
+    var r = Cancellation.Cancel(new Order(Shipped: false, Paid: false, Cancelled: false));
+    return r.Order.Cancelled && !r.RefundRequested;
+});
+
+// SC-02｜BR-02｜Given 已出貨、未取消｜Then 回傳原訂單（同一個 record 值）、不丟例外
+Check("SC-02", "已出貨不可取消，回傳原訂單", () =>
+{
+    var o = new Order(Shipped: true, Paid: false, Cancelled: false);
+    var r = Cancellation.Cancel(o);
+    return r.Order == o;
+});
+
+// SC-03｜BR-03（改）｜Given 已付款、未出貨、未取消｜Then Cancelled=true、RefundRequested=true
+// 來源：specs/rules-v2.md BR-03、SC-03。與舊 v1-3 預期（RefundRequested=false）相反，
+// 因 Owner 於 v2 推翻 v1 第 3 列決定（design-input/scope-handoff.md「要改」第1點）。
+Check("SC-03", "已付款取消要提出退款要求", () =>
+{
+    var r = Cancellation.Cancel(new Order(Shipped: false, Paid: true, Cancelled: false));
+    return r.Order.Cancelled && r.RefundRequested;
+});
+
+// SC-04｜BR-03｜Given 未付款、未出貨、未取消｜Then RefundRequested=false
+Check("SC-04", "未付款取消不要求退款", () =>
+{
+    var r = Cancellation.Cancel(new Order(Shipped: false, Paid: false, Cancelled: false));
+    return !r.RefundRequested;
+});
+
+// SC-05｜BR-02｜Given 已出貨、已付款｜Then 回傳原訂單、RefundRequested=false
+Check("SC-05", "已出貨已付款不可取消，不要求退款", () =>
+{
+    var o = new Order(Shipped: true, Paid: true, Cancelled: false);
+    var r = Cancellation.Cancel(o);
+    return r.Order == o && !r.RefundRequested;
+});
+
+// SC-06｜BR-04（新）｜Given 未出貨、已取消、未付款｜Then 原訂單、RefundRequested=false、不丟例外
+Check("SC-06", "已取消再次取消維持原狀（未付款）", () =>
+{
+    var o = new Order(Shipped: false, Paid: false, Cancelled: true);
+    var r = Cancellation.Cancel(o);
+    return r.Order == o && !r.RefundRequested;
+});
+
+// SC-07｜BR-04（新）｜Given 未出貨、已取消、已付款｜Then 原訂單、RefundRequested=false（不重複退款）
+Check("SC-07", "已取消再次取消不重複退款（已付款）", () =>
+{
+    var o = new Order(Shipped: false, Paid: true, Cancelled: true);
+    var r = Cancellation.Cancel(o);
+    return r.Order == o && !r.RefundRequested;
+});
+
+Console.WriteLine(failures == 0 ? "PASS: 全部條件通過" : $"FAIL: {failures} 項條件未通過");
+return failures;

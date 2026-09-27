@@ -1,0 +1,16 @@
+{
+  "review": {
+    "fixture": true,
+    "revision": "604c7a6d6299454ec0d00a822e8e1f3fa4e42cebb7e6769590a0475ab8267b7f",
+    "status": "completed",
+    "important": 0,
+    "nits": 0
+  },
+  "approval": {
+    "fixture": true,
+    "revision": "604c7a6d6299454ec0d00a822e8e1f3fa4e42cebb7e6769590a0475ab8267b7f",
+    "role": "domain-owner",
+    "accepted": true
+  },
+  "domain_change": true
+}

@@ -1,0 +1,23 @@
+# Azure Repos: connect this pipeline through target-branch Build validation.
+# This runs the local gate regression suite; it does NOT implement PR approval.
+# Six expected rejections inside the suite are test successes, so the suite exits 0
+# only when all ten expected outcomes match. Do not use this as the sole product CI.
+trigger: none
+pool:
+  vmImage: ubuntu-latest
+steps:
+  - checkout: self
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.12'
+  - task: UseDotNet@2
+    inputs:
+      packageType: sdk
+      version: '9.0.x'
+  - script: python examples/sdlc-delivery/verify-delivery-gates.py ci-gates-$(Build.BuildId)
+    displayName: Verify ten delivery-gate scenarios
+  - task: PublishPipelineArtifact@1
+    condition: always()
+    inputs:
+      targetPath: examples/sdlc-delivery/runs/ci-gates-$(Build.BuildId)
+      artifact: delivery-gate-evidence

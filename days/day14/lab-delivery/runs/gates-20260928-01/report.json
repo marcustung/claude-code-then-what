@@ -1,0 +1,276 @@
+{
+  "scope": "local executable checks plus synthetic review/approval fixtures; not remote CI or merge protection",
+  "cases": [
+    {
+      "id": "01",
+      "scenario": "build-error",
+      "expected_block": "build",
+      "actual_block": "build",
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 1
+        }
+      ],
+      "package_created": false,
+      "ready_for_load": false,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "02",
+      "scenario": "rule-error",
+      "expected_block": "domain",
+      "actual_block": "domain",
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 1
+        }
+      ],
+      "package_created": false,
+      "ready_for_load": false,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "03",
+      "scenario": "api-error",
+      "expected_block": "integration",
+      "actual_block": "integration",
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 0
+        },
+        {
+          "stage": "integration",
+          "exit": 1
+        }
+      ],
+      "package_created": false,
+      "ready_for_load": false,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "04",
+      "scenario": "review-unavailable",
+      "expected_block": "review",
+      "actual_block": "review",
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 0
+        },
+        {
+          "stage": "integration",
+          "exit": 0
+        }
+      ],
+      "package_created": false,
+      "ready_for_load": false,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "05",
+      "scenario": "owner-missing",
+      "expected_block": "owner",
+      "actual_block": "owner",
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 0
+        },
+        {
+          "stage": "integration",
+          "exit": 0
+        }
+      ],
+      "package_created": false,
+      "ready_for_load": false,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "06",
+      "scenario": "broken-package",
+      "expected_block": "smoke",
+      "actual_block": "smoke",
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 0
+        },
+        {
+          "stage": "integration",
+          "exit": 0
+        },
+        {
+          "stage": "publish",
+          "exit": 0
+        },
+        {
+          "stage": "smoke",
+          "exit": 1
+        }
+      ],
+      "package_created": true,
+      "ready_for_load": false,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "07",
+      "scenario": "ordinary-change",
+      "expected_block": null,
+      "actual_block": null,
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 0
+        },
+        {
+          "stage": "integration",
+          "exit": 0
+        },
+        {
+          "stage": "publish",
+          "exit": 0
+        },
+        {
+          "stage": "smoke",
+          "exit": 0
+        }
+      ],
+      "package_created": true,
+      "ready_for_load": true,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "08",
+      "scenario": "domain-approved",
+      "expected_block": null,
+      "actual_block": null,
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 0
+        },
+        {
+          "stage": "integration",
+          "exit": 0
+        },
+        {
+          "stage": "publish",
+          "exit": 0
+        },
+        {
+          "stage": "smoke",
+          "exit": 0
+        }
+      ],
+      "package_created": true,
+      "ready_for_load": true,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "09",
+      "scenario": "review-nit",
+      "expected_block": null,
+      "actual_block": null,
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 0
+        },
+        {
+          "stage": "integration",
+          "exit": 0
+        },
+        {
+          "stage": "publish",
+          "exit": 0
+        },
+        {
+          "stage": "smoke",
+          "exit": 0
+        }
+      ],
+      "package_created": true,
+      "ready_for_load": true,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    },
+    {
+      "id": "10",
+      "scenario": "rule-repaired",
+      "expected_block": null,
+      "actual_block": null,
+      "matches": true,
+      "steps": [
+        {
+          "stage": "build",
+          "exit": 0
+        },
+        {
+          "stage": "domain",
+          "exit": 0
+        },
+        {
+          "stage": "integration",
+          "exit": 0
+        },
+        {
+          "stage": "publish",
+          "exit": 0
+        },
+        {
+          "stage": "smoke",
+          "exit": 0
+        }
+      ],
+      "package_created": true,
+      "ready_for_load": true,
+      "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+    }
+  ],
+  "matched": 10,
+  "blocked": 6,
+  "ready": 4
+}

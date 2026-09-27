@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "57734390f07840efbef9d38a1e3c94c7",
+    "order_id": "paid",
+    "request_id": "candidate-after-ci-integration-5",
+    "run_id": "candidate-after-ci-integration",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "aa9a441e14c44ea0bd531b1951ff1c6b",
+    "order_id": "unpaid",
+    "request_id": "candidate-after-ci-integration-7",
+    "run_id": "candidate-after-ci-integration",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

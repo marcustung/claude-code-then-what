@@ -1,0 +1,61 @@
+--- baseline/src/Api/Program.cs
++++ fixed/src/Api/Program.cs
+@@ -60,7 +60,7 @@
+         log.Write(new { level = "WARN", @event = "cancel", request_id = rid, run_id = runId, order_id = id, result = "unauthorized" });
+         return Results.Json(new { ok = false, reason = "unauthorized", request_id = rid }, statusCode: 401);
+     }
+-    if (!store.TryGet(id, out var before))
++    if (!store.TryCancel(id, out var before, out var result))
+     {
+         metrics.Inc("cancel_requests_total", "not_found");
+         log.Write(new { level = "WARN", @event = "cancel", request_id = rid, run_id = runId, order_id = id, result = "not_found" });
+@@ -68,17 +68,18 @@
+     }
+     // Teaching scheduler: disabled by default; widens the existing race window.
+     if (int.TryParse(Environment.GetEnvironmentVariable("OC_TEST_DELAY_MS"), out var waitMs) && waitMs > 0) await Task.Delay(Math.Min(waitMs, 100));
+-    var result = Cancellation.Cancel(before);
+     bool transitioned = Cancellation.Transitioned(before, result);
+     string outcome; int status;
+     if (before.Shipped) { outcome = "rejected_shipped"; status = 409; }          // BR-02，不通知（NC-03）
+-    else if (transitioned) { outcome = "ok"; status = 200; store.Put(id, result.Order); }
++    else if (transitioned) { outcome = "ok"; status = 200; }
+     else { outcome = "idempotent"; status = 200; }                               // BR-04／NC-02，不通知
+     metrics.Inc("cancel_requests_total", outcome);
++    string? notificationId = null;
+     if (transitioned)
+     {
+         metrics.Inc("transitions_total");
+         var n = new Notification(Guid.NewGuid().ToString("N"), id, rid, runId, "order_cancelled", result.RefundRequested);
++        notificationId = n.NotificationId;
+         metrics.Inc("notify_enqueued_total");
+         if (faults.SyncNotify)
+             await NotificationWorker.SendOnce(n, metrics, log, Environment.GetEnvironmentVariable("OC_SINK_URL") ?? "http://127.0.0.1:5081/notify");   // 演練注入：在請求路徑上同步等接收端
+@@ -87,8 +88,8 @@
+     }
+     var lat = (DateTime.UtcNow - t0).TotalMilliseconds;
+     metrics.ObserveLatency(lat);
+-    log.Write(new { level = status == 200 ? "INFO" : "WARN", @event = "cancel", request_id = rid, run_id = runId, order_id = id, actor, result = outcome, transitioned, refund_requested = result.RefundRequested, latency_ms = Math.Round(lat, 1), queue_depth = channel.Reader.Count });
+-    return Results.Json(new { ok = status == 200, transitioned, refund_requested = result.RefundRequested, reason = status == 200 ? null : outcome, request_id = rid, order = status == 200 ? result.Order : before }, statusCode: status);
++    log.Write(new { level = status == 200 ? "INFO" : "WARN", @event = "cancel", request_id = rid, run_id = runId, order_id = id, actor, notification_id = notificationId, result = outcome, transitioned, refund_requested = result.RefundRequested, latency_ms = Math.Round(lat, 1), queue_depth = channel.Reader.Count });
++    return Results.Json(new { ok = status == 200, transitioned, refund_requested = result.RefundRequested, reason = status == 200 ? null : outcome, request_id = rid, notification_id = notificationId, order = status == 200 ? result.Order : before }, statusCode: status);
+ });
+ app.MapGet("/metrics", () => Results.Text(metrics.Render(channel.Reader.Count, version), "text/plain"));
+ app.Run();
+@@ -100,6 +101,17 @@
+     readonly Dictionary<string, Order> _d = new(); readonly object _g = new();
+     public void Put(string id, Order o) { lock (_g) _d[id] = o; }
+     public bool TryGet(string id, out Order o) { lock (_g) return _d.TryGetValue(id, out o!); }
++    public bool TryCancel(string id, out Order before, out CancellationResult result)
++    {
++        lock (_g)
++        {
++            if (!_d.TryGetValue(id, out before!)) { result = null!; return false; }
++            result = Cancellation.Cancel(before);
++            _d[id] = result.Order;
++            return true;
++        }
++    }
++
+ }
+ 
+ sealed class Metrics

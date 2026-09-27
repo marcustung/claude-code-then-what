@@ -1,0 +1,32 @@
+{
+  "id": "09",
+  "scenario": "review-nit",
+  "expected_block": null,
+  "actual_block": null,
+  "matches": true,
+  "steps": [
+    {
+      "stage": "build",
+      "exit": 0
+    },
+    {
+      "stage": "domain",
+      "exit": 0
+    },
+    {
+      "stage": "integration",
+      "exit": 0
+    },
+    {
+      "stage": "publish",
+      "exit": 0
+    },
+    {
+      "stage": "smoke",
+      "exit": 0
+    }
+  ],
+  "package_created": true,
+  "ready_for_load": true,
+  "policy_inputs": "synthetic fixtures, no real reviewer or model invocation"
+}

@@ -1,0 +1,5 @@
+  正在判斷要還原的專案...
+  所有專案都在最新狀態，可進行還原。
+  Domain -> <REPO>\examples\sdlc-delivery\runs\gates-20260928-01\06\source\src\Domain\bin\Release\net9.0\Domain.dll
+  Api -> <REPO>\examples\sdlc-delivery\runs\gates-20260928-01\06\source\src\Api\bin\Release\net9.0\Api.dll
+  Api -> <REPO>\examples\sdlc-delivery\runs\gates-20260928-01\06\package\

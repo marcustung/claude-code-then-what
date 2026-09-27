@@ -1,0 +1,18 @@
+  正在判斷要還原的專案...
+  已還原 <REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj (68 毫秒 內)。
+  已還原 <REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Api\Api.csproj (71 毫秒 內)。
+<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Cancellation.cs(26,1): error CS1519: 成員宣告中的語彙基元 '}' 無效 [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj]
+<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Cancellation.cs(28,16): error CS1002: 必須是 ; [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj]
+<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Cancellation.cs(28,16): error CS1022: 必須是類型或命名空間定義，或檔案結尾 [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj]
+<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Cancellation.cs(28,17): error CS1513: 必須是 } [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj]
+
+建置失敗。
+
+<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Cancellation.cs(26,1): error CS1519: 成員宣告中的語彙基元 '}' 無效 [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj]
+<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Cancellation.cs(28,16): error CS1002: 必須是 ; [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj]
+<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Cancellation.cs(28,16): error CS1022: 必須是類型或命名空間定義，或檔案結尾 [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj]
+<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Cancellation.cs(28,17): error CS1513: 必須是 } [<REPO>\examples\sdlc-delivery\runs\gates-20260928-01\01\source\src\Domain\Domain.csproj]
+    0 個警告
+    4 個錯誤
+
+經過時間 00:00:02.43

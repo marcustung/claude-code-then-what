@@ -1,0 +1,1 @@
+{"run": "candidate-before-ci-integration", "checks": 11, "pass": true}

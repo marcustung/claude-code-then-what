@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "owner_paths": [
+    "src/Domain/"
+  ],
+  "unknown_diff": "OWNER_REQUIRED",
+  "owner_required_is_not_approval": true
+}
