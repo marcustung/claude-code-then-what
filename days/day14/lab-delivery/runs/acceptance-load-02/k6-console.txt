@@ -1,0 +1,117 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: <REPO>\examples\sdlc-delivery\load-candidate.js
+        output: json (<REPO>\examples\sdlc-delivery\runs\acceptance-load-02\k6-samples.json)
+
+     scenarios: (100.00%) 1 scenario, 10 max VUs, 48s max duration (incl. graceful stop):
+              * default: Up to 10 looping VUs for 18s over 4 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+running (01.0s), 01/10 VUs, 16 complete and 0 interrupted iterations
+default   [   6% ] 01/10 VUs  01.0s/18.0s
+
+running (02.0s), 01/10 VUs, 32 complete and 0 interrupted iterations
+default   [  11% ] 01/10 VUs  02.0s/18.0s
+
+running (03.0s), 01/10 VUs, 47 complete and 0 interrupted iterations
+default   [  17% ] 01/10 VUs  03.0s/18.0s
+
+running (04.0s), 01/10 VUs, 65 complete and 0 interrupted iterations
+default   [  22% ] 01/10 VUs  04.0s/18.0s
+
+running (05.0s), 01/10 VUs, 83 complete and 0 interrupted iterations
+default   [  28% ] 01/10 VUs  05.0s/18.0s
+
+running (06.0s), 01/10 VUs, 100 complete and 0 interrupted iterations
+default   [  33% ] 01/10 VUs  06.0s/18.0s
+
+running (07.0s), 02/10 VUs, 131 complete and 0 interrupted iterations
+default   [  39% ] 02/10 VUs  07.0s/18.0s
+
+running (08.0s), 03/10 VUs, 175 complete and 0 interrupted iterations
+default   [  44% ] 03/10 VUs  08.0s/18.0s
+
+running (09.0s), 04/10 VUs, 230 complete and 0 interrupted iterations
+default   [  50% ] 04/10 VUs  09.0s/18.0s
+
+running (10.0s), 04/10 VUs, 305 complete and 0 interrupted iterations
+default   [  56% ] 04/10 VUs  10.0s/18.0s
+
+running (11.0s), 05/10 VUs, 394 complete and 0 interrupted iterations
+default   [  61% ] 05/10 VUs  11.0s/18.0s
+
+running (12.0s), 06/10 VUs, 504 complete and 0 interrupted iterations
+default   [  67% ] 06/10 VUs  12.0s/18.0s
+
+running (13.0s), 07/10 VUs, 633 complete and 0 interrupted iterations
+default   [  72% ] 07/10 VUs  13.0s/18.0s
+
+running (14.0s), 08/10 VUs, 777 complete and 0 interrupted iterations
+default   [  78% ] 08/10 VUs  14.0s/18.0s
+
+running (15.0s), 09/10 VUs, 947 complete and 0 interrupted iterations
+default   [  83% ] 09/10 VUs  15.0s/18.0s
+
+running (16.0s), 07/10 VUs, 1110 complete and 0 interrupted iterations
+default   [  89% ] 07/10 VUs  16.0s/18.0s
+
+running (17.0s), 04/10 VUs, 1216 complete and 0 interrupted iterations
+default   [  94% ] 04/10 VUs  17.0s/18.0s
+
+running (18.0s), 01/10 VUs, 1260 complete and 0 interrupted iterations
+default   [ 100% ] 01/10 VUs  18.0s/18.0s
+
+
+  █ THRESHOLDS 
+
+    cancel_ms
+    ✓ 'p(95)<250' p(95)=3.22ms
+
+    checks
+    ✓ 'rate==1' rate=100.00%
+
+    http_req_failed
+    ✓ 'rate==0' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 5048    279.73333/s
+    checks_succeeded...: 100.00% 5048 out of 5048
+    checks_failed......: 0.00%   0 out of 5048
+
+    ✓ create succeeds
+    ✓ first transitions and requests refund
+    ✓ repeat has no side effect
+    ✓ state is cancelled
+
+    CUSTOM
+    cancel_ms......................: avg=1.35ms   min=0s      med=1.06ms   max=43.92ms  p(90)=2.22ms  p(95)=3.22ms 
+
+    HTTP
+    http_req_duration..............: avg=940.93µs min=0s      med=569.45µs max=43.92ms  p(90)=1.77ms  p(95)=2.56ms 
+      { expected_response:true }...: avg=940.93µs min=0s      med=569.45µs max=43.92ms  p(90)=1.77ms  p(95)=2.56ms 
+    http_req_failed................: 0.00%  0 out of 5048
+    http_reqs......................: 5048   279.73333/s
+
+    EXECUTION
+    iteration_duration.............: avg=54.89ms  min=51.29ms med=53.88ms  max=142.04ms p(90)=57.44ms p(95)=59.54ms
+    iterations.....................: 1262   69.933332/s
+    vus............................: 1      min=1         max=9 
+    vus_max........................: 10     min=10        max=10
+
+    NETWORK
+    data_received..................: 1.5 MB 81 kB/s
+    data_sent......................: 1.1 MB 63 kB/s
+
+
+
+
+running (18.0s), 00/10 VUs, 1262 complete and 0 interrupted iterations
+default ✓ [ 100% ] 00/10 VUs  18s

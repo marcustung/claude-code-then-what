@@ -1,0 +1,55 @@
+{
+  "stages": [
+    {
+      "stage": "0-1",
+      "samples": 84,
+      "p95_ms": 4.931,
+      "max_ms": 43.925
+    },
+    {
+      "stage": "1-5",
+      "samples": 226,
+      "p95_ms": 4.686,
+      "max_ms": 6.991
+    },
+    {
+      "stage": "5-10",
+      "samples": 646,
+      "p95_ms": 3.106,
+      "max_ms": 12.57
+    },
+    {
+      "stage": "10-0",
+      "samples": 306,
+      "p95_ms": 2.261,
+      "max_ms": 9.943
+    }
+  ],
+  "resource_observations": {
+    "oc_notify_queue_depth": {
+      "min": 0.0,
+      "max": 3.0,
+      "first": 0.0,
+      "last": 0.0
+    },
+    "oc_gc_heap_bytes": {
+      "min": 1559528.0,
+      "max": 5626208.0,
+      "first": 1607240.0,
+      "last": 2697024.0
+    },
+    "oc_working_set_bytes": {
+      "min": 60227584.0,
+      "max": 75042816.0,
+      "first": 60227584.0,
+      "last": 73576448.0
+    },
+    "oc_gc_collections_gen2": {
+      "min": 0.0,
+      "max": 0.0,
+      "first": 0.0,
+      "last": 0.0
+    }
+  },
+  "limits": "stage tag at cancellation completion; .5s resource sampling can miss peaks; no CPU or server-side distributed tracing"
+}

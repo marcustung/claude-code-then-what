@@ -1,0 +1,14 @@
+{
+  "skill_commit": "99e22125a780dae3cbf74c2e1a130b1062a61305",
+  "skill_url": "https://raw.githubusercontent.com/grafana/xk6-subcommand-agent/99e22125a780dae3cbf74c2e1a130b1062a61305/agents/skills/k6-test-planner/SKILL.md",
+  "skill_sha256": "ee049cadde8560421fb0d90de7853cb1f014eb4ee4706bfc4226ff848a78f0a1",
+  "mode": "local plugin wrapper, explicit Skill tool; no MCP; independent planning not full official end-to-end workflow",
+  "inputs": {
+    "brief.md": "d20fb27d9f25cfd496a7b23223de9f2c38e789cf320248dc328cb12fb1f3f9cf",
+    "src\\Api\\Program.cs": "00e5ec2cf033b7abba6f1fff976677fa0f3da1de80661c3b5b19289ce8b26dca",
+    "src\\Domain\\Cancellation.cs": "13d70cbfeb6f12c4b885cb748a3564c4c9e6c5240e2824edb7d7c72f7ef3cf59",
+    "plugin\\.claude-plugin\\plugin.json": "039831bd3292332b97d28ccefa883f7f4c6dba3aa80e44083f41a667ee37f9d4",
+    "plugin\\skills\\k6-test-planner\\SKILL.md": "ee049cadde8560421fb0d90de7853cb1f014eb4ee4706bfc4226ff848a78f0a1"
+  },
+  "original_plan_sha256": "443486f9c5f63830e3a15dd728413d82befb98f47e65e0a86fc28a30d20e755c"
+}

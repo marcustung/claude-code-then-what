@@ -1,0 +1,1 @@
+You've hit your session limit · resets 10:30pm (Asia/Taipei)

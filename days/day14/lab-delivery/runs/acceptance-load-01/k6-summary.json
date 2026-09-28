@@ -1,0 +1,165 @@
+{
+    "metrics": {
+        "http_req_duration": {
+            "p(95)": 2.714325,
+            "avg": 0.9235945015822788,
+            "min": 0,
+            "med": 0.583,
+            "max": 22.9041,
+            "p(90)": 1.9579
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 9
+        },
+        "vus_max": {
+            "min": 10,
+            "max": 10,
+            "value": 10
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_sending": {
+            "med": 0,
+            "max": 5.9284,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.016053837025316462,
+            "min": 0
+        },
+        "cancel_ms": {
+            "p(90)": 2.4729600000000014,
+            "p(95)": 3.282339999999999,
+            "avg": 1.3727211234177186,
+            "min": 0,
+            "med": 1.0792,
+            "max": 21.9494,
+            "thresholds": {
+                "p(95)<250": false
+            }
+        },
+        "http_reqs": {
+            "count": 5056,
+            "rate": 280.68081396414584
+        },
+        "iteration_duration": {
+            "min": 50.5639,
+            "med": 53.98025,
+            "max": 100.2643,
+            "p(90)": 57.72197,
+            "p(95)": 59.7267,
+            "avg": 54.7614732594937
+        },
+        "http_req_waiting": {
+            "avg": 0.8212856012658238,
+            "min": 0,
+            "med": 0.535,
+            "max": 22.9041,
+            "p(90)": 1.7642,
+            "p(95)": 2.5368250000000003
+        },
+        "data_sent": {
+            "rate": 63544.004528465164,
+            "count": 1144640
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 5056,
+            "thresholds": {
+                "rate==0": false
+            },
+            "value": 0
+        },
+        "data_received": {
+            "count": 1466600,
+            "rate": 81417.42123414087
+        },
+        "http_req_blocked": {
+            "p(95)": 0,
+            "avg": 0.004853837025316456,
+            "min": 0,
+            "med": 0,
+            "max": 5.4026,
+            "p(90)": 0
+        },
+        "http_req_connecting": {
+            "avg": 0.002386649525316456,
+            "min": 0,
+            "med": 0,
+            "max": 4.8955,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "checks": {
+            "passes": 5056,
+            "fails": 0,
+            "thresholds": {
+                "rate==1": false
+            },
+            "value": 1
+        },
+        "iterations": {
+            "count": 1264,
+            "rate": 70.17020349103646
+        },
+        "http_req_duration{expected_response:true}": {
+            "max": 22.9041,
+            "p(90)": 1.9579,
+            "p(95)": 2.714325,
+            "avg": 0.9235945015822788,
+            "min": 0,
+            "med": 0.583
+        },
+        "http_req_receiving": {
+            "min": 0,
+            "med": 0,
+            "max": 6.6341,
+            "p(90)": 0.5045,
+            "p(95)": 0.557975,
+            "avg": 0.08625506329113933
+        }
+    },
+    "root_group": {
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "create succeeds": {
+                    "name": "create succeeds",
+                    "path": "::create succeeds",
+                    "id": "dc291843bcf678efd028972f25ff8398",
+                    "passes": 1264,
+                    "fails": 0
+                },
+                "first transitions and requests refund": {
+                    "name": "first transitions and requests refund",
+                    "path": "::first transitions and requests refund",
+                    "id": "d092a2ced09a59b7c5c9ea61c3d6a588",
+                    "passes": 1264,
+                    "fails": 0
+                },
+                "repeat has no side effect": {
+                    "fails": 0,
+                    "name": "repeat has no side effect",
+                    "path": "::repeat has no side effect",
+                    "id": "e5af5ee898419b96caf4e9be23ac8fad",
+                    "passes": 1264
+                },
+                "state is cancelled": {
+                    "name": "state is cancelled",
+                    "path": "::state is cancelled",
+                    "id": "d75c31f91efa7c6e4cc310c5b6a6561f",
+                    "passes": 1264,
+                    "fails": 0
+                }
+            },
+        "name": "",
+        "path": ""
+    }
+}

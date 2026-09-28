@@ -1,0 +1,128 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: <REPO>\examples\sdlc-delivery\day15-skill-lab\load.js
+        output: json (<REPO>\examples\sdlc-delivery\runs\day15-skill-slow-01\k6-samples.json)
+
+     scenarios: (100.00%) 1 scenario, 50 max VUs, 50s max duration (incl. graceful stop):
+              * first: 10.00 iterations/s for 20s (maxVUs: 10-50, gracefulStop: 30s)
+
+
+running (01.0s), 00/10 VUs, 10 complete and 0 interrupted iterations
+first   [   5% ] 00/10 VUs  00.9s/20s  10.00 iters/s
+
+running (02.0s), 00/10 VUs, 20 complete and 0 interrupted iterations
+first   [  10% ] 00/10 VUs  01.9s/20s  10.00 iters/s
+
+running (03.0s), 00/10 VUs, 30 complete and 0 interrupted iterations
+first   [  15% ] 00/10 VUs  02.9s/20s  10.00 iters/s
+
+running (04.0s), 00/10 VUs, 40 complete and 0 interrupted iterations
+first   [  20% ] 00/10 VUs  03.9s/20s  10.00 iters/s
+
+running (05.0s), 00/10 VUs, 50 complete and 0 interrupted iterations
+first   [  25% ] 00/10 VUs  04.9s/20s  10.00 iters/s
+
+running (06.0s), 00/10 VUs, 60 complete and 0 interrupted iterations
+first   [  30% ] 00/10 VUs  05.9s/20s  10.00 iters/s
+
+running (07.0s), 00/10 VUs, 70 complete and 0 interrupted iterations
+first   [  35% ] 00/10 VUs  06.9s/20s  10.00 iters/s
+
+running (08.0s), 00/10 VUs, 80 complete and 0 interrupted iterations
+first   [  40% ] 00/10 VUs  07.9s/20s  10.00 iters/s
+
+running (09.0s), 00/10 VUs, 90 complete and 0 interrupted iterations
+first   [  45% ] 00/10 VUs  08.9s/20s  10.00 iters/s
+
+running (10.0s), 00/10 VUs, 100 complete and 0 interrupted iterations
+first   [  50% ] 00/10 VUs  09.9s/20s  10.00 iters/s
+
+running (11.0s), 00/10 VUs, 110 complete and 0 interrupted iterations
+first   [  55% ] 00/10 VUs  10.9s/20s  10.00 iters/s
+
+running (12.0s), 00/10 VUs, 120 complete and 0 interrupted iterations
+first   [  60% ] 00/10 VUs  11.9s/20s  10.00 iters/s
+
+running (13.0s), 00/10 VUs, 130 complete and 0 interrupted iterations
+first   [  65% ] 00/10 VUs  12.9s/20s  10.00 iters/s
+
+running (14.0s), 00/10 VUs, 140 complete and 0 interrupted iterations
+first   [  70% ] 00/10 VUs  13.9s/20s  10.00 iters/s
+
+running (15.0s), 00/10 VUs, 150 complete and 0 interrupted iterations
+first   [  75% ] 00/10 VUs  14.9s/20s  10.00 iters/s
+
+running (16.0s), 00/10 VUs, 160 complete and 0 interrupted iterations
+first   [  80% ] 00/10 VUs  15.9s/20s  10.00 iters/s
+
+running (17.0s), 00/10 VUs, 170 complete and 0 interrupted iterations
+first   [  85% ] 00/10 VUs  16.9s/20s  10.00 iters/s
+
+running (18.0s), 00/10 VUs, 180 complete and 0 interrupted iterations
+first   [  90% ] 00/10 VUs  17.9s/20s  10.00 iters/s
+
+running (19.0s), 00/10 VUs, 190 complete and 0 interrupted iterations
+first   [  95% ] 00/10 VUs  18.9s/20s  10.00 iters/s
+
+running (20.0s), 00/10 VUs, 200 complete and 0 interrupted iterations
+first   [ 100% ] 00/10 VUs  19.9s/20s  10.00 iters/s
+
+
+  █ THRESHOLDS 
+
+    cancel_ms
+    ✓ 'p(95)<250' p(95)=13.36ms
+
+    checks
+    ✓ 'rate==1' rate=100.00%
+
+    dropped_iterations
+    ✓ 'count==0' count=0
+
+    http_req_failed
+    ✓ 'rate==0' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 1014    50.515185/s
+    checks_succeeded...: 100.00% 1014 out of 1014
+    checks_failed......: 0.00%   0 out of 1014
+
+    ✓ seed succeeds
+    ✓ status 200
+    ✓ transitioned
+    ✓ refund flag
+    ✓ notification id
+
+    CUSTOM
+    cancel_ms......................: avg=3.77ms min=0s max=88.09ms p(95)=13.36ms p(99)=42.23ms
+
+    HTTP
+    http_req_duration..............: avg=1.97ms min=0s max=88.09ms p(95)=6.98ms  p(99)=33.58ms
+      { expected_response:true }...: avg=1.97ms min=0s max=88.09ms p(95)=6.98ms  p(99)=33.58ms
+    http_req_failed................: 0.00%  0 out of 411
+    http_reqs......................: 411    20.47509/s
+
+    EXECUTION
+    dropped_iterations.............: 0      0/s
+    iteration_duration.............: avg=4.46ms min=0s max=92.09ms p(95)=13.93ms p(99)=56.18ms
+    iterations.....................: 201    10.013365/s
+    vus............................: 0      min=0        max=0 
+    vus_max........................: 10     min=10       max=10
+
+    NETWORK
+    data_received..................: 125 kB 6.2 kB/s
+    data_sent......................: 94 kB  4.7 kB/s
+
+
+
+
+running (20.1s), 00/10 VUs, 201 complete and 0 interrupted iterations
+first ✓ [ 100% ] 00/10 VUs  20s  10.00 iters/s

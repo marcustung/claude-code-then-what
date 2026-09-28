@@ -1,0 +1,48 @@
+{
+  "passed": false,
+  "candidate": "candidate-checked",
+  "before_sha256": {
+    "Api.deps.json": "19cd2cd975749e18a8b58d3d5e6128bba12de4e1f4b2ec511c1e0c95a5b1b907",
+    "Api.dll": "0172f51ab12871f36e08c0df80b983e0c51fe8e100d7e76fd8a06c95625acc46",
+    "Api.exe": "091e3f3c3fa3f9a838c77edc26107f8e21551b5e17fc41a27f86cc63717894cb",
+    "Api.pdb": "d06d2e2453466326ce3045545a7e8c848ab9bfbb7439e2fb324b2d2e6cc22a4e",
+    "Api.runtimeconfig.json": "4044375fcab816ed4ec7938f8e825f2292205adc48892551d70347857eab0226",
+    "Api.staticwebassets.endpoints.json": "c1686417e8d5c31bba969f12b6f3d2b35e6609adb5ca42f212261a3a02771aac",
+    "Domain.dll": "e32fc9c80b9aae24c57f05b1d64e3b7c558f748904103028340558c55beb6686",
+    "Domain.pdb": "982b9b3ec6283099f31cb85dc4f4a7beae67c662988d5fe25a77682d0517e4dd",
+    "VERSION": "1a67e1c3b2d074fd01a5fe93347a12e35e272ceb9a454d6f31d94e7ab1622241",
+    "web.config": "fc1bb0fc4de9da298d847efc0df60a72f422d14dbdc591549dd1c5ca55dbc3cd"
+  },
+  "profile": "slow",
+  "scope": "preseeded first cancellation only; local teaching; 20s load and 20s drain; not production/SLA",
+  "sink_delay_ms": 300,
+  "health": {
+    "ok": true,
+    "version": "delivery-hardening-local-r1"
+  },
+  "k6_exit": 0,
+  "checks": {
+    "manifest_unchanged": true,
+    "load_passed": true,
+    "has_transitions": true,
+    "one_transition_per_order": true,
+    "notification_identity_complete": true,
+    "receipts_match_transitions_once": false,
+    "sent_matches_receipts": true
+  },
+  "transitions": 201,
+  "receipts": 127,
+  "sent": 127,
+  "after_sha256": {
+    "Api.deps.json": "19cd2cd975749e18a8b58d3d5e6128bba12de4e1f4b2ec511c1e0c95a5b1b907",
+    "Api.dll": "0172f51ab12871f36e08c0df80b983e0c51fe8e100d7e76fd8a06c95625acc46",
+    "Api.exe": "091e3f3c3fa3f9a838c77edc26107f8e21551b5e17fc41a27f86cc63717894cb",
+    "Api.pdb": "d06d2e2453466326ce3045545a7e8c848ab9bfbb7439e2fb324b2d2e6cc22a4e",
+    "Api.runtimeconfig.json": "4044375fcab816ed4ec7938f8e825f2292205adc48892551d70347857eab0226",
+    "Api.staticwebassets.endpoints.json": "c1686417e8d5c31bba969f12b6f3d2b35e6609adb5ca42f212261a3a02771aac",
+    "Domain.dll": "e32fc9c80b9aae24c57f05b1d64e3b7c558f748904103028340558c55beb6686",
+    "Domain.pdb": "982b9b3ec6283099f31cb85dc4f4a7beae67c662988d5fe25a77682d0517e4dd",
+    "VERSION": "1a67e1c3b2d074fd01a5fe93347a12e35e272ceb9a454d6f31d94e7ab1622241",
+    "web.config": "fc1bb0fc4de9da298d847efc0df60a72f422d14dbdc591549dd1c5ca55dbc3cd"
+  }
+}

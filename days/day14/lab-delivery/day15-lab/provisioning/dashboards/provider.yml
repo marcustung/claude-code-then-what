@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: Day15
+    folder: Day15 local teaching
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

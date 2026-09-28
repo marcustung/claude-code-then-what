@@ -1,0 +1,74 @@
+{
+  "iterations": {
+    "count": 683,
+    "rate": 9.740182083277606
+  },
+  "http_reqs": {
+    "rate": 38.960728333110424,
+    "count": 2732
+  },
+  "cancel_ms": {
+    "p(90)": 8.392520000000003,
+    "p(95)": 18.059839999999998,
+    "p(99)": 42.478847999999935,
+    "avg": 3.746663689604682,
+    "min": 0,
+    "med": 1.2276,
+    "max": 132.5805,
+    "thresholds": {
+      "p(95)<250": false
+    }
+  },
+  "checks": {
+    "passes": 10928,
+    "fails": 0,
+    "thresholds": {
+      "rate==1": false
+    },
+    "value": 1
+  },
+  "dropped_iterations": {
+    "count": 0,
+    "rate": 0,
+    "thresholds": {
+      "count==0": false
+    }
+  },
+  "http_req_failed": {
+    "passes": 0,
+    "fails": 2732,
+    "thresholds": {
+      "rate==0": false,
+      "rate<0.05": false
+    },
+    "value": 0
+  },
+  "report": {
+    "passed": true,
+    "transitions": 683,
+    "receipts": 683,
+    "sent": 683
+  },
+  "ranges": {
+    "oc_notify_enqueued_total": [
+      1.0,
+      683.0
+    ],
+    "oc_notify_queue_depth": [
+      0.0,
+      0.0
+    ],
+    "oc_gc_heap_bytes": [
+      1477504.0,
+      4690376.0
+    ],
+    "oc_working_set_bytes": [
+      60526592.0,
+      74956800.0
+    ],
+    "oc_gc_collections_gen2": [
+      0.0,
+      0.0
+    ]
+  }
+}

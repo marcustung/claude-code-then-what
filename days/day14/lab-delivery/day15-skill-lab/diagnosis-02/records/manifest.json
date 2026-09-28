@@ -1,0 +1,13 @@
+{
+  "plan.md": "8688e210eb8f165c9e384e5dd2c79eac9fef18289e73ad4ae5b4b43013413795",
+  "control\\k6-summary.json": "472b950eb62d1fb3b8f8784fc2fec2014140bb6ae3021ae4dc4098980286e71f",
+  "control\\logs.jsonl": "d7625070f14703f633dbcaf86a3834cee32905a0c524f4b480f662b54fbee206",
+  "control\\receipts.json": "b3a73a8804e9dad38bb026fca14c096eca3c87ac6997fd06fc1c8960ea3ee371",
+  "control\\report.json": "af5d82913028efb6f76f42aa90cf25177681207867182a14f7b9a099bf7bbe43",
+  "slow\\k6-summary.json": "6e4652c39c6c7244ac004f22c06b1a8688b5466e4b00217de0b3b209c72c217f",
+  "slow\\logs.jsonl": "0438ca2b330fe29fe6dcbfa1abc5c317c69e8ab0adbf56f3828c0c6d2ec70dad",
+  "slow\\receipts.json": "02e224da9cc45be0273569571d63f535755fe96375ef96f33f88a3e4e4f9d3ea",
+  "slow\\report.json": "63fd6e1a23f8decffae86f02d8acc12ceee325fd623ef1f0b8e7f1835616b884",
+  "src\\Api\\Program.cs": "00e5ec2cf033b7abba6f1fff976677fa0f3da1de80661c3b5b19289ce8b26dca",
+  "src\\Domain\\Cancellation.cs": "13d70cbfeb6f12c4b885cb748a3564c4c9e6c5240e2824edb7d7c72f7ef3cf59"
+}

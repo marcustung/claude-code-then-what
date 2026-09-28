@@ -3,7 +3,7 @@
 **2026 iThome 鐵人賽・Claude AI 組・三十天系列的配套 repo。** 文章談的是一個工程團隊導入 Claude Code 之後，怎麼把「程式寫得更快」接回需求、審查、驗收與成效判斷；這裡放的是文章裡每一個實驗的原件——提示、trace、輸出、判準與重跑腳本——讓每一句「我試過」都能被打開來看。
 
 - 系列文章：[iThome 系列頁](https://ithelp.ithome.com.tw/users/20162577/ironman/9862)（每日一篇，2026-09-15 起）
-- 目前開放：Day 1–14（索引隨發文節奏開放，未發布的日子只有空資料夾）
+- 目前開放：Day 1–15（索引隨發文節奏開放，未發布的日子只有空資料夾）
 - 試跑紀錄：[VERIFIED.md](VERIFIED.md)（每一天的練習都在乾淨副本裡照 README 跑過，含時間、環境、修過的問題）
 
 ## 這個 repo 是什麼、不是什麼
@@ -59,6 +59,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [12](days/day12/) | Claude 寫的程式通過單元測試，API 也接對了嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10417304) | day11/lab-dev：驗證者→修正→新上下文重驗（與 Day 11 共用開發包） | 無 |
 | [13](days/day13/) | Claude 審過、測試也過，為什麼還要找 Owner？ | [文章](https://ithelp.ithome.com.tw/articles/10417738) | day11/lab-dev：review-kit 兩輪審查與路徑政策（與 Day 11 共用開發包） | 無 |
 | [14](days/day14/) | Claude 寫好了，怎麼交成一個能跑的版本？ | [文章](https://ithelp.ithome.com.tw/articles/10418159) | day14/lab-delivery：交付入口、失敗自動診斷與四步通過的候選包 | 無 |
+| [15](days/day15/) | Claude 協助驗的功能，大家一起用還正常嗎？ | 未發 | day14/lab-delivery：三輪負載與慢下游對照（201／127 通知接收紀錄） | 無 |
 
 ## 怎麼核對一次 run
 

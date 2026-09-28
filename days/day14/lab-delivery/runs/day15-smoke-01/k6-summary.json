@@ -1,0 +1,267 @@
+{
+    "root_group": {
+        "checks": {
+            "create: status 200": {
+                "path": "::create: status 200",
+                "id": "e4c4f8e95182c90dca352f646b416171",
+                "passes": 21,
+                "fails": 0,
+                "name": "create: status 200"
+            },
+            "create: valid JSON body": {
+                "name": "create: valid JSON body",
+                "path": "::create: valid JSON body",
+                "id": "049564032e7c455a8e8f5ffc33a3bcc5",
+                "passes": 21,
+                "fails": 0
+            },
+            "create: id echoed": {
+                "passes": 21,
+                "fails": 0,
+                "name": "create: id echoed",
+                "path": "::create: id echoed",
+                "id": "7252b14ce8917f4ebf136a004de93fa2"
+            },
+            "cancel#1: status 200": {
+                "name": "cancel#1: status 200",
+                "path": "::cancel#1: status 200",
+                "id": "5344a53f9d80c3432dfe11ebc4a42040",
+                "passes": 21,
+                "fails": 0
+            },
+            "cancel#1: valid JSON body": {
+                "name": "cancel#1: valid JSON body",
+                "path": "::cancel#1: valid JSON body",
+                "id": "bca1f9969a2653fee0267901a5db1e5e",
+                "passes": 21,
+                "fails": 0
+            },
+            "cancel#1: transitioned true": {
+                "name": "cancel#1: transitioned true",
+                "path": "::cancel#1: transitioned true",
+                "id": "860deb4cf4f4e219bfa05e42919f2f3c",
+                "passes": 21,
+                "fails": 0
+            },
+            "cancel#1: refund_requested true": {
+                "path": "::cancel#1: refund_requested true",
+                "id": "b233e89f04e5f525bc948046767ce7e6",
+                "passes": 21,
+                "fails": 0,
+                "name": "cancel#1: refund_requested true"
+            },
+            "cancel#1: notification_id present": {
+                "name": "cancel#1: notification_id present",
+                "path": "::cancel#1: notification_id present",
+                "id": "dddc894cd574554439196d0d867d0d66",
+                "passes": 21,
+                "fails": 0
+            },
+            "cancel#2: status 200": {
+                "passes": 21,
+                "fails": 0,
+                "name": "cancel#2: status 200",
+                "path": "::cancel#2: status 200",
+                "id": "4128d85d55f98c3b3991822946985eaf"
+            },
+            "cancel#2: valid JSON body": {
+                "name": "cancel#2: valid JSON body",
+                "path": "::cancel#2: valid JSON body",
+                "id": "f23d41b5dac832324630cb49b756aa5b",
+                "passes": 21,
+                "fails": 0
+            },
+            "cancel#2: transitioned false": {
+                "fails": 0,
+                "name": "cancel#2: transitioned false",
+                "path": "::cancel#2: transitioned false",
+                "id": "dc9843edd4a0799c0fbf004d2b300e4b",
+                "passes": 21
+            },
+            "cancel#2: refund_requested false": {
+                "passes": 21,
+                "fails": 0,
+                "name": "cancel#2: refund_requested false",
+                "path": "::cancel#2: refund_requested false",
+                "id": "85fd1e2e08b6a730817f31177d7df355"
+            },
+            "cancel#2: notification_id null": {
+                "path": "::cancel#2: notification_id null",
+                "id": "ef93b24c2a4d6b820e49d0aed5d7d842",
+                "passes": 21,
+                "fails": 0,
+                "name": "cancel#2: notification_id null"
+            },
+            "get: status 200": {
+                "fails": 0,
+                "name": "get: status 200",
+                "path": "::get: status 200",
+                "id": "24935846ed4a649a28b3ecb8a4ac830d",
+                "passes": 21
+            },
+            "get: valid JSON body": {
+                "name": "get: valid JSON body",
+                "path": "::get: valid JSON body",
+                "id": "f6d8069fa06ddb9604267e5b87973816",
+                "passes": 21,
+                "fails": 0
+            },
+            "get: order.cancelled true": {
+                "fails": 0,
+                "name": "get: order.cancelled true",
+                "path": "::get: order.cancelled true",
+                "id": "e14ad64be4d99aa478436071e1be3b23",
+                "passes": 21
+            }
+        },
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {}
+    },
+    "metrics": {
+        "http_req_duration{expected_response:true}": {
+            "med": 3.0332999999999997,
+            "max": 49.2338,
+            "p(90)": 28.28501000000001,
+            "p(95)": 35.092025,
+            "p(99)": 48.342629,
+            "avg": 8.738245238095239,
+            "min": 0
+        },
+        "dropped_iterations": {
+            "rate": 0,
+            "count": 0,
+            "thresholds": {
+                "count==0": false
+            }
+        },
+        "http_req_duration": {
+            "med": 3.0332999999999997,
+            "max": 49.2338,
+            "p(90)": 28.28501000000001,
+            "p(95)": 35.092025,
+            "p(99)": 48.342629,
+            "avg": 8.738245238095239,
+            "min": 0
+        },
+        "http_req_waiting": {
+            "p(90)": 28.16702000000001,
+            "p(95)": 34.88739499999999,
+            "p(99)": 48.342629,
+            "avg": 8.508483333333336,
+            "min": 0,
+            "med": 2.9457,
+            "max": 49.2338
+        },
+        "cancel_ms": {
+            "med": 3.6564,
+            "max": 35.1563,
+            "p(90)": 25.6634,
+            "p(95)": 26.1344,
+            "p(99)": 33.35192000000001,
+            "avg": 8.974790476190478,
+            "min": 0.4623,
+            "thresholds": {
+                "p(95)<250": false
+            }
+        },
+        "http_reqs": {
+            "count": 84,
+            "rate": 4.195721790319283
+        },
+        "checks": {
+            "passes": 336,
+            "fails": 0,
+            "thresholds": {
+                "rate==1": false
+            },
+            "value": 1
+        },
+        "http_req_sending": {
+            "avg": 0.08352261904761903,
+            "min": 0,
+            "med": 0,
+            "max": 2.0055,
+            "p(90)": 0.4370400000000002,
+            "p(95)": 0.5153549999999999,
+            "p(99)": 1.1764960000000015
+        },
+        "data_received": {
+            "count": 25943,
+            "rate": 1295.8286953125375
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 84,
+            "thresholds": {
+                "rate==0": false,
+                "rate<0.05": false
+            },
+            "value": 0
+        },
+        "data_sent": {
+            "count": 21730,
+            "rate": 1085.3932679004527
+        },
+        "http_req_blocked": {
+            "med": 0,
+            "max": 11.4764,
+            "p(90)": 1.0101500000000008,
+            "p(95)": 2.153894999999999,
+            "p(99)": 6.414313000000011,
+            "avg": 0.43263452380952383,
+            "min": 0
+        },
+        "iteration_duration": {
+            "min": 5.4349,
+            "med": 33.7623,
+            "max": 98.2318,
+            "p(90)": 84.8008,
+            "p(95)": 97.1696,
+            "p(99)": 98.01936,
+            "avg": 40.41502857142857
+        },
+        "http_req_connecting": {
+            "avg": 0.3381380952380953,
+            "min": 0,
+            "med": 0,
+            "max": 11.4764,
+            "p(90)": 0.5889400000000011,
+            "p(95)": 1.9741999999999984,
+            "p(99)": 6.414313000000011
+        },
+        "http_req_receiving": {
+            "avg": 0.1462392857142857,
+            "min": 0,
+            "med": 0,
+            "max": 2.5401,
+            "p(90)": 0.6331900000000003,
+            "p(95)": 1.00029,
+            "p(99)": 2.0977100000000006
+        },
+        "iterations": {
+            "count": 21,
+            "rate": 1.0489304475798207
+        },
+        "vus": {
+            "value": 0,
+            "min": 0,
+            "max": 1
+        },
+        "vus_max": {
+            "value": 10,
+            "min": 10,
+            "max": 10
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0
+        }
+    }
+}

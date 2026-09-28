@@ -1,0 +1,1 @@
+唯讀分析本目錄的教學訂單服務。讀 plan.md、兩組 report.json 與 k6-summary.json、receipts.json 和 logs.jsonl，以及 src/Api/Program.cs、src/Domain/Cancellation.cs。追出取消回應到通知接收的呼叫路徑，附檔名與精確行號。分開列已確認事實、推論、尚缺量測。解釋為何 API 門檻全過而 slow 組截止未完成，確認通知處理是否串行、是否等待 HTTP。300ms 是人為注入，20秒是教學觀察期限，不能宣稱發現未知Production根因或永久遺失。用通知ID核對摘要時注意截止快照與關閉後日誌的時間邊界。提出下一個查核，不修改、不執行、不宣稱修復。輸出繁體中文，最多1000字。

@@ -1,0 +1,434 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: <REPO>\examples\sdlc-delivery\day15-lab\load.js
+        output: json (<REPO>\examples\sdlc-delivery\runs\day15-spike-01\k6-samples.json), Prometheus remote write (http://127.0.0.1:19095/api/v1/write)
+
+     scenarios: (100.00%) 3 scenarios, 100 max VUs, 1m40s max duration (incl. graceful stop):
+              * spike_warmup: 2.00 iterations/s for 20s (maxVUs: 10-50, gracefulStop: 30s)
+              * spike_peak: 20.00 iterations/s for 30s (maxVUs: 10-50, startTime: 20s, gracefulStop: 30s)
+              * spike_recovery: 2.00 iterations/s for 20s (maxVUs: 10-50, startTime: 50s, gracefulStop: 30s)
+
+
+running (0m01.0s), 000/020 VUs, 2 complete and 0 interrupted iterations
+spike_warmup     [   5% ] 00/10 VUs  01.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    19.0s     
+spike_recovery • [   0% ] waiting    49.0s     
+
+running (0m02.0s), 000/020 VUs, 4 complete and 0 interrupted iterations
+spike_warmup     [  10% ] 00/10 VUs  02.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    18.0s     
+spike_recovery • [   0% ] waiting    48.0s     
+
+running (0m03.0s), 000/020 VUs, 6 complete and 0 interrupted iterations
+spike_warmup     [  15% ] 00/10 VUs  03.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    17.0s     
+spike_recovery • [   0% ] waiting    47.0s     
+
+running (0m04.0s), 000/020 VUs, 8 complete and 0 interrupted iterations
+spike_warmup     [  20% ] 00/10 VUs  04.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    16.0s     
+spike_recovery • [   0% ] waiting    46.0s     
+
+running (0m05.0s), 000/020 VUs, 10 complete and 0 interrupted iterations
+spike_warmup     [  25% ] 00/10 VUs  05.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    15.0s     
+spike_recovery • [   0% ] waiting    45.0s     
+
+running (0m06.0s), 000/020 VUs, 12 complete and 0 interrupted iterations
+spike_warmup     [  30% ] 00/10 VUs  06.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    14.0s     
+spike_recovery • [   0% ] waiting    44.0s     
+
+running (0m07.0s), 000/020 VUs, 14 complete and 0 interrupted iterations
+spike_warmup     [  35% ] 00/10 VUs  07.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    13.0s     
+spike_recovery • [   0% ] waiting    43.0s     
+
+running (0m08.0s), 000/020 VUs, 16 complete and 0 interrupted iterations
+spike_warmup     [  40% ] 00/10 VUs  08.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    12.0s     
+spike_recovery • [   0% ] waiting    42.0s     
+
+running (0m09.0s), 000/020 VUs, 18 complete and 0 interrupted iterations
+spike_warmup     [  45% ] 00/10 VUs  09.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    11.0s     
+spike_recovery • [   0% ] waiting    41.0s     
+
+running (0m10.0s), 000/020 VUs, 20 complete and 0 interrupted iterations
+spike_warmup     [  50% ] 00/10 VUs  10.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    10.0s     
+spike_recovery • [   0% ] waiting    40.0s     
+
+running (0m11.0s), 000/020 VUs, 22 complete and 0 interrupted iterations
+spike_warmup     [  55% ] 00/10 VUs  11.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    09.0s     
+spike_recovery • [   0% ] waiting    39.0s     
+
+running (0m12.0s), 000/020 VUs, 24 complete and 0 interrupted iterations
+spike_warmup     [  60% ] 00/10 VUs  12.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    08.0s     
+spike_recovery • [   0% ] waiting    38.0s     
+
+running (0m13.0s), 000/020 VUs, 26 complete and 0 interrupted iterations
+spike_warmup     [  65% ] 00/10 VUs  13.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    07.0s     
+spike_recovery • [   0% ] waiting    37.0s     
+
+running (0m14.0s), 000/020 VUs, 28 complete and 0 interrupted iterations
+spike_warmup     [  70% ] 00/10 VUs  14.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    06.0s     
+spike_recovery • [   0% ] waiting    36.0s     
+
+running (0m15.0s), 000/020 VUs, 30 complete and 0 interrupted iterations
+spike_warmup     [  75% ] 00/10 VUs  15.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    05.0s     
+spike_recovery • [   0% ] waiting    35.0s     
+
+running (0m16.0s), 000/020 VUs, 32 complete and 0 interrupted iterations
+spike_warmup     [  80% ] 00/10 VUs  16.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    04.0s     
+spike_recovery • [   0% ] waiting    34.0s     
+
+running (0m17.0s), 000/020 VUs, 34 complete and 0 interrupted iterations
+spike_warmup     [  85% ] 00/10 VUs  17.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    03.0s     
+spike_recovery • [   0% ] waiting    33.0s     
+
+running (0m18.0s), 000/020 VUs, 36 complete and 0 interrupted iterations
+spike_warmup     [  90% ] 00/10 VUs  18.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    02.0s     
+spike_recovery • [   0% ] waiting    32.0s     
+
+running (0m19.0s), 000/020 VUs, 38 complete and 0 interrupted iterations
+spike_warmup     [  95% ] 00/10 VUs  19.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    01.0s     
+spike_recovery • [   0% ] waiting    31.0s     
+
+running (0m20.0s), 000/020 VUs, 40 complete and 0 interrupted iterations
+spike_warmup     [ 100% ] 00/10 VUs  20.0s/20s  2.00 iters/s
+spike_peak     • [   0% ] waiting    00.0s     
+spike_recovery • [   0% ] waiting    30.0s     
+
+running (0m21.0s), 000/020 VUs, 61 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [   3% ] 00/10 VUs  01.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    29.0s     
+
+running (0m22.0s), 001/020 VUs, 81 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [   7% ] 01/10 VUs  02.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    28.0s     
+
+running (0m23.0s), 000/020 VUs, 101 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  10% ] 00/10 VUs  03.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    27.0s     
+
+running (0m24.0s), 000/020 VUs, 121 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  13% ] 00/10 VUs  04.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    26.0s     
+
+running (0m25.0s), 000/020 VUs, 141 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  17% ] 00/10 VUs  05.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    25.0s     
+
+running (0m26.0s), 000/020 VUs, 161 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  20% ] 00/10 VUs  06.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    24.0s     
+
+running (0m27.0s), 000/020 VUs, 181 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  23% ] 00/10 VUs  07.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    23.0s     
+
+running (0m28.0s), 000/020 VUs, 201 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  27% ] 00/10 VUs  08.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    22.0s     
+
+running (0m29.0s), 000/020 VUs, 221 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  30% ] 00/10 VUs  09.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    21.0s     
+
+running (0m30.0s), 000/020 VUs, 241 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  33% ] 00/10 VUs  10.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    20.0s     
+
+running (0m31.0s), 000/020 VUs, 261 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  37% ] 00/10 VUs  11.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    19.0s     
+
+running (0m32.0s), 000/020 VUs, 281 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  40% ] 00/10 VUs  12.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    18.0s     
+
+running (0m33.0s), 000/020 VUs, 301 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  43% ] 00/10 VUs  13.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    17.0s     
+
+running (0m34.0s), 000/020 VUs, 321 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  47% ] 00/10 VUs  14.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    16.0s     
+
+running (0m35.0s), 000/020 VUs, 341 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  50% ] 00/10 VUs  15.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    15.0s     
+
+running (0m36.0s), 000/020 VUs, 361 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  53% ] 00/10 VUs  16.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    14.0s     
+
+running (0m37.0s), 000/020 VUs, 381 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  57% ] 00/10 VUs  17.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    13.0s     
+
+running (0m38.0s), 000/020 VUs, 401 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  60% ] 00/10 VUs  18.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    12.0s     
+
+running (0m39.0s), 000/020 VUs, 421 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  63% ] 00/10 VUs  19.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    11.0s     
+
+running (0m40.0s), 000/020 VUs, 441 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  67% ] 00/10 VUs  20.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    10.0s     
+
+running (0m41.0s), 000/020 VUs, 461 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  70% ] 00/10 VUs  21.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    09.0s     
+
+running (0m42.0s), 000/020 VUs, 481 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  73% ] 00/10 VUs  22.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    08.0s     
+
+running (0m43.0s), 000/020 VUs, 501 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  77% ] 00/10 VUs  23.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    07.0s     
+
+running (0m44.0s), 000/020 VUs, 521 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  80% ] 00/10 VUs  24.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    06.0s     
+
+running (0m45.0s), 000/020 VUs, 541 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  83% ] 00/10 VUs  25.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    05.0s     
+
+running (0m46.0s), 000/020 VUs, 561 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  87% ] 00/10 VUs  26.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    04.0s     
+
+running (0m47.0s), 000/020 VUs, 581 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  90% ] 00/10 VUs  27.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    03.0s     
+
+running (0m48.0s), 000/020 VUs, 601 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  93% ] 00/10 VUs  28.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    02.0s     
+
+running (0m49.0s), 001/020 VUs, 620 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [  97% ] 01/10 VUs  29.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    01.0s     
+
+running (0m50.0s), 000/020 VUs, 641 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak       [ 100% ] 00/10 VUs  30.0s/30s  20.00 iters/s
+spike_recovery • [   0% ] waiting    00.0s     
+
+running (0m51.0s), 000/020 VUs, 644 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [   5% ] 00/10 VUs  01.0s/20s  2.00 iters/s
+
+running (0m52.0s), 000/020 VUs, 646 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  10% ] 00/10 VUs  02.0s/20s  2.00 iters/s
+
+running (0m53.0s), 000/020 VUs, 648 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  15% ] 00/10 VUs  03.0s/20s  2.00 iters/s
+
+running (0m54.0s), 000/020 VUs, 650 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  20% ] 00/10 VUs  04.0s/20s  2.00 iters/s
+
+running (0m55.0s), 000/020 VUs, 652 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  25% ] 00/10 VUs  05.0s/20s  2.00 iters/s
+
+running (0m56.0s), 000/020 VUs, 654 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  30% ] 00/10 VUs  06.0s/20s  2.00 iters/s
+
+running (0m57.0s), 000/020 VUs, 656 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  35% ] 00/10 VUs  07.0s/20s  2.00 iters/s
+
+running (0m58.0s), 000/020 VUs, 658 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  40% ] 00/10 VUs  08.0s/20s  2.00 iters/s
+
+running (0m59.0s), 000/020 VUs, 660 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  45% ] 00/10 VUs  09.0s/20s  2.00 iters/s
+
+running (1m00.0s), 000/020 VUs, 662 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  50% ] 00/10 VUs  10.0s/20s  2.00 iters/s
+
+running (1m01.0s), 000/020 VUs, 664 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  55% ] 00/10 VUs  11.0s/20s  2.00 iters/s
+
+running (1m02.0s), 000/020 VUs, 666 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  60% ] 00/10 VUs  12.0s/20s  2.00 iters/s
+
+running (1m03.0s), 000/020 VUs, 668 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  65% ] 00/10 VUs  13.0s/20s  2.00 iters/s
+
+running (1m04.0s), 000/020 VUs, 670 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  70% ] 00/10 VUs  14.0s/20s  2.00 iters/s
+
+running (1m05.0s), 000/020 VUs, 672 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  75% ] 00/10 VUs  15.0s/20s  2.00 iters/s
+
+running (1m06.0s), 000/020 VUs, 674 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  80% ] 00/10 VUs  16.0s/20s  2.00 iters/s
+
+running (1m07.0s), 000/020 VUs, 676 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  85% ] 00/10 VUs  17.0s/20s  2.00 iters/s
+
+running (1m08.0s), 000/020 VUs, 678 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  90% ] 00/10 VUs  18.0s/20s  2.00 iters/s
+
+running (1m09.0s), 000/020 VUs, 680 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [  95% ] 00/10 VUs  19.0s/20s  2.00 iters/s
+
+running (1m10.0s), 000/020 VUs, 682 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s        2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s        20.00 iters/s
+spike_recovery   [ 100% ] 00/10 VUs  20.0s/20s  2.00 iters/s
+
+
+  █ THRESHOLDS 
+
+    cancel_ms
+    ✓ 'p(95)<250' p(95)=18.05ms
+
+    checks
+    ✓ 'rate==1' rate=100.00%
+
+    dropped_iterations
+    ✓ 'count==0' count=0
+
+    http_req_failed
+    ✓ 'rate==0' rate=0.00%
+    ✓ 'rate<0.05' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 10928   155.842913/s
+    checks_succeeded...: 100.00% 10928 out of 10928
+    checks_failed......: 0.00%   0 out of 10928
+
+    ✓ create: status 200
+    ✓ create: valid JSON body
+    ✓ create: id echoed
+    ✓ cancel#1: status 200
+    ✓ cancel#1: valid JSON body
+    ✓ cancel#1: transitioned true
+    ✓ cancel#1: refund_requested true
+    ✓ cancel#1: notification_id present
+    ✓ cancel#2: status 200
+    ✓ cancel#2: valid JSON body
+    ✓ cancel#2: transitioned false
+    ✓ cancel#2: refund_requested false
+    ✓ cancel#2: notification_id null
+    ✓ get: status 200
+    ✓ get: valid JSON body
+    ✓ get: order.cancelled true
+
+    CUSTOM
+    cancel_ms......................: avg=3.74ms  min=0s     med=1.22ms max=132.58ms p(90)=8.39ms  p(95)=18.05ms p(99)=42.47ms
+
+    HTTP
+    http_req_duration..............: avg=2.76ms  min=0s     med=1.01ms max=132.58ms p(90)=5.98ms  p(95)=12.82ms p(99)=32.5ms 
+      { expected_response:true }...: avg=2.76ms  min=0s     med=1.01ms max=132.58ms p(90)=5.98ms  p(95)=12.82ms p(99)=32.5ms 
+    http_req_failed................: 0.00%  0 out of 2732
+    http_reqs......................: 2732   38.960728/s
+
+    EXECUTION
+    dropped_iterations.............: 0      0/s
+    iteration_duration.............: avg=11.96ms min=1.01ms med=4.64ms max=178.18ms p(90)=31.64ms p(95)=52.33ms p(99)=97.69ms
+    iterations.....................: 683    9.740182/s
+    vus............................: 1      min=0         max=1 
+    vus_max........................: 20     min=20        max=20
+
+    NETWORK
+    data_received..................: 862 kB 12 kB/s
+    data_sent......................: 744 kB 11 kB/s
+
+
+
+
+running (1m10.1s), 000/020 VUs, 683 complete and 0 interrupted iterations
+spike_warmup   ✓ [ 100% ] 00/10 VUs  20s  2.00 iters/s
+spike_peak     ✓ [ 100% ] 00/10 VUs  30s  20.00 iters/s
+spike_recovery ✓ [ 100% ] 00/10 VUs  20s  2.00 iters/s
