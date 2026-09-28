@@ -1,6 +1,6 @@
 {
  "files": 1649,
- "binary": 99,
+ "binary": 100,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
   "days\\day09\\lab-scope\\runs\\r0-naive\\trace.jsonl",
@@ -168,6 +168,7 @@
   "days\\day06\\lab\\impl\\trace.jsonl",
   "days\\day06\\lab\\intent\\trace.jsonl",
   "days\\day06\\lab\\noname\\trace.jsonl",
+  "days\\day06\\lab-contract\\README.md",
   "days\\day06\\lab-two-stage\\stage1-meta.json",
   "days\\day06\\lab-two-stage\\stage1-trace.jsonl",
   "days\\day06\\lab-two-stage\\stage2-meta.json",
@@ -217,5 +218,5 @@
   "examples\\sdlc-delivery\\trace-order.py"
  ],
  "figures": 51,
- "bytes": 163297246
+ "bytes": 165295847
 }

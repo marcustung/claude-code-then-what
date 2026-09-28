@@ -1,6 +1,6 @@
 # Day 6｜欄位檢查的能力邊界
 
-D-199 改稿新增的公開合成 .NET 測試，沒有呼叫模型。原始 Validate 函式從 [舊附件](../../v11/day04-10-dotnet/README.md)逐字複製；原附件及舊結果不改。
+D-199 改稿新增的公開合成 .NET 測試，沒有呼叫模型。原始 Validate 函式從 [舊附件](../../day04/lab-dotnet/README.md)逐字複製；原附件及舊結果不改。
 
 在本目錄執行 `dotnet run --project Demo.csproj`。首次需要 .NET 9 SDK 與套件還原。不要建立 deliberately-nonexistent-evidence.txt；測試會先確認其不存在。
 
