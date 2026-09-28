@@ -1,6 +1,6 @@
 # Day15 操作附件：同包壓測與本機 Grafana
 
-正文見 Day15。以下為本機教學環境，不操作 Production。需要 Windows、Python 3、.NET 9、k6 1.3.0、Docker Desktop（Linux containers）；本次用 Prometheus 3.1.0、Grafana 12.0.2。
+正文見 [Day15](https://ithelp.ithome.com.tw/articles/10418556)。以下為本機教學環境，不操作 Production。需要 Windows、Python 3、.NET 9、k6 1.3.0、Docker Desktop（Linux containers）；本次用 Prometheus 3.1.0、Grafana 12.0.2。
 
 ## 1. 先確認輸入
 

@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10418556) |
 | 今天練習 | 拿 Day 14 的同一份發布包跑負載，再把假接收端改成延遲 300ms 跑第二次：API 門檻兩次都過，通知接收紀錄卻不一樣 |
 | 需要什麼 | Python 3；.NET 9 SDK；k6；Docker（Prometheus／Grafana 可選） |
 | 跑什麼 | `cd days/day14/lab-delivery; python day15-lab/run-load.py my-sustain --profile sustain --k6 k6` |

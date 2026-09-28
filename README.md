@@ -59,7 +59,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [12](days/day12/) | Claude 寫的程式通過單元測試，API 也接對了嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10417304) | day11/lab-dev：驗證者→修正→新上下文重驗（與 Day 11 共用開發包） | 無 |
 | [13](days/day13/) | Claude 審過、測試也過，為什麼還要找 Owner？ | [文章](https://ithelp.ithome.com.tw/articles/10417738) | day11/lab-dev：review-kit 兩輪審查與路徑政策（與 Day 11 共用開發包） | 無 |
 | [14](days/day14/) | Claude 寫好了，怎麼交成一個能跑的版本？ | [文章](https://ithelp.ithome.com.tw/articles/10418159) | day14/lab-delivery：交付入口、失敗自動診斷與四步通過的候選包 | 無 |
-| [15](days/day15/) | Claude 協助驗的功能，大家一起用還正常嗎？ | 未發 | day14/lab-delivery：三輪負載與慢下游對照（201／127 通知接收紀錄） | 無 |
+| [15](days/day15/) | Claude 協助驗的功能，大家一起用還正常嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10418556) | day14/lab-delivery：三輪負載與慢下游對照（201／127 通知接收紀錄） | 無 |
 
 ## 怎麼核對一次 run
 
