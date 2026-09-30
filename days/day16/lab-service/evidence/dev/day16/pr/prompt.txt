@@ -1,0 +1,2 @@
+產生 PR.md（寫到專案根目錄 PR.md）：標題、動機（v1→v2 哪幾條規則變了）、BR→SC→測試名→src 行號的追溯表、測試前後輸出（引用 evidence/dev/day16/ 底下的原文，不要重寫數字）、範圍外未做、風險與需要 Owner 決定的事。
+不要 commit、不要 push。回 JSON：{"pr_file": "PR.md", "traceability_rows": N, "open_questions": ["..."]}

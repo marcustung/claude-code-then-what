@@ -1,0 +1,5 @@
+依 specs/rules-v2.md 的 SC-01～SC-07，改 tests/DomainTests/Program.cs：
+- 保留 Check(...) 的寫法與 exit code 規則；
+- SC-03 是「改既有測試預期」（v1-3 那格），不是新增；SC-06、SC-07 是新增；其餘補齊；
+- 改完執行 `dotnet run --project tests/DomainTests`，把輸出原文貼回來。
+不要改 src/ 底下任何檔案。最後回 JSON：{"tests_changed": [...], "tests_added": [...], "run_output": "原文", "fail_count": N, "which_fail": ["SC-.."]}

@@ -1,0 +1,21 @@
+flowchart LR
+    subgraph P1["① 舊包 r1・接收端 200"]
+      A1[建 before-update<br/>取消 200] --> A2[notify_sent<br/>收據 1 筆]
+    end
+    subgraph P2["② 新包 r2・503 注入"]
+      B0[查 before-update<br/>→ 404<br/>停程序就不在了] --> B1[建 during-update<br/>取消 200]
+      B1 --> B2[通知 4 次<br/>全 503]
+      B2 --> B3[notify_dead_letter<br/>沒有重投佇列]
+    end
+    subgraph P3["③ 回復 r1・接收端 200"]
+      C0[查 during-update<br/>→ 404<br/>退版沒帶回訂單] --> C1[建 after-rollback<br/>取消 200]
+      C1 --> C2[notify_sent<br/>新訂單能工作]
+      C2 --> C3[during-update<br/>仍然沒人處理]
+    end
+    P1 --> P2 --> P3
+    style A2 fill:#d9ead3,stroke:#3d7a5a
+    style B0 fill:#fde9c9,stroke:#c8562f
+    style B3 fill:#f6d5d5,stroke:#a83a3a
+    style C0 fill:#f6d5d5,stroke:#a83a3a
+    style C2 fill:#d9ead3,stroke:#3d7a5a
+    style C3 fill:#f6d5d5,stroke:#a83a3a

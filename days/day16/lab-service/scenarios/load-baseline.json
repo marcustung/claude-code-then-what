@@ -1,0 +1,23 @@
+{
+  "scenario": "load-baseline",
+  "mode": "load",
+  "description": "壓力對照：600 張訂單、每張取消 4 次（後 3 次為重複取消）、併發 32、每筆 64 KB 附註；無注入；服務要活著、p95 ≤ 250 ms、heap 成長 ≤ 64 MB、通知對帳成立",
+  "faults": null,
+  "env": {
+    "DOTNET_GCHeapHardLimit": "0x8000000"
+  },
+  "load": {
+    "orders": 600,
+    "concurrency": 32,
+    "payload_bytes": 65536,
+    "repeat": 4,
+    "seed": 7
+  },
+  "expected": {
+    "p95_ms_max": 250,
+    "heap_growth_mb_max": 64
+  },
+  "wait": {
+    "timeout_seconds": 180
+  }
+}

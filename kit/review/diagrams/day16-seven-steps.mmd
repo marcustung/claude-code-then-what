@@ -1,0 +1,12 @@
+flowchart TD
+    P[plan 唯讀<br/>差異表：SC-03 改預期<br/>預測只有 SC-03 會紅] --> T[tests 只改測試<br/>紅：SC-03 FAIL<br/>其餘 6 PASS]
+    T --> I[impl 只改 Cancellation.cs<br/>兩處 diff<br/>綠：7／7]
+    I --> X[trap 放 freeze.json<br/>「順便打退款到付款服務」<br/>依 CLAUDE.md 拒絕・hook 未觸發]
+    X --> R1[review 用 Task subagent<br/>主 session 不等就結束<br/>子代理自跑測試 → 作廢]
+    R1 --> R2[reviewdirect 直接開唯讀 session<br/>BR-01–04 全對到測試行號<br/>verdict PASS]
+    R2 --> PR[PR.md<br/>7 列追溯表 BR→SC→測試行→src 行<br/>Owner 待決 4 項]
+    style T fill:#f6d5d5,stroke:#a83a3a
+    style I fill:#d9ead3,stroke:#3d7a5a
+    style X fill:#fde9c9,stroke:#c8562f
+    style R1 fill:#eeeeee,stroke:#888,stroke-dasharray: 4 3
+    style R2 fill:#d9ead3,stroke:#3d7a5a

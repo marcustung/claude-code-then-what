@@ -1,0 +1,22 @@
+{
+  "design-input/design-review.md": "399118a30f9ca16a591e3cbf12eccf17bda3d3c1dfd83960e4e6b11f1faaab40",
+  "design-input/scope-handoff.md": "8487dcb7ba7de2befde47dfe15ef318f28e1fcff8df8a72706f59658e9da7dd9",
+  "runs/acceptance-rollback-01/before/deployment.json": "6c587e5c093c3a39956829669ba830d91ce871bb9c9530bd424ae0a7c242e5a6",
+  "runs/acceptance-rollback-01/before/logs.jsonl": "7e343e90d7fb1674b2af5ce684adc329417c5d90cf0231f08b497515d55e6964",
+  "runs/acceptance-rollback-01/before/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/before/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/incident.json": "f607d875c29478011069299923a59abf3aa8563dd182b1e52c485e94ee925e96",
+  "runs/acceptance-rollback-01/receipts.json": "7c56f10e3c617fcfc3c2c835eff3c99ee92fba5a73b8af5432aa75b283fbb671",
+  "runs/acceptance-rollback-01/report.json": "176609c2ef15269ca8fcad6dac6872b3a2bbd772d89a3ad6a18c8bab3f6643b1",
+  "runs/acceptance-rollback-01/requests.json": "46d755149a35a08b1f04e8d875cc0bb70abe05bd795037d003b12ebcf7967311",
+  "runs/acceptance-rollback-01/rolled-back/deployment.json": "6c587e5c093c3a39956829669ba830d91ce871bb9c9530bd424ae0a7c242e5a6",
+  "runs/acceptance-rollback-01/rolled-back/logs.jsonl": "f19cd90c7823bbf39628852cbf14272f22abe5cb77f6c6eb38607012cd5e6267",
+  "runs/acceptance-rollback-01/rolled-back/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/rolled-back/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/updated/deployment.json": "47ad798c6e6eea1a06a15e6aed9af486122741106b8a4deeda52824a33575b01",
+  "runs/acceptance-rollback-01/updated/logs.jsonl": "6a7a333ca96ae774fc71328d869c9fa84d432d395cd0f493fd1a84d0273a1aa3",
+  "runs/acceptance-rollback-01/updated/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/updated/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "src/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a",
+  "src/Program.cs": "da2c152cf96a115ff8df9d30eed65d8ff72d7a55f0ff3601c0907d406d1d32ca"
+}

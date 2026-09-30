@@ -1,0 +1,40 @@
+{
+ "result": "FAIL",
+ "findings": [
+  "ok   客戶端 p95=36 ms（門檻 250）；p50=15 p99=44 n=300",
+  "ok   GC heap 起 1.4 MB → 末 4.8 MB（峰 4.8 MB，6 個取樣）；成長 3.4 MB，門檻 64 MB",
+  "FAIL 通知對帳：成功轉換 259／接收端收據 12"
+ ],
+ "summary": {
+  "status": "terminal",
+  "api_exit_code": null,
+  "requests": 300,
+  "by_status": {
+   "200": 259,
+   "409": 41
+  },
+  "p50_ms": 14.6,
+  "p95_ms": 36.1,
+  "p99_ms": 44.4,
+  "heap_first_mb": 1.4,
+  "heap_last_mb": 4.8,
+  "heap_peak_mb": 4.8,
+  "transitions": 259,
+  "receipts_unique": 12,
+  "load": {
+   "orders": 300,
+   "repeat": 1,
+   "total_requests": 300,
+   "completed": 300,
+   "by_status": {
+    "200": 259,
+    "409": 41
+   },
+   "concurrency": 32,
+   "payload_bytes": 0,
+   "elapsed_s": 0.24,
+   "aborted_on_connection_error": false
+  },
+  "version": "1.2.0"
+ }
+}

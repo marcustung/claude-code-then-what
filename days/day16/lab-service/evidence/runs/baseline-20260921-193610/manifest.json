@@ -1,0 +1,37 @@
+﻿{
+    "domain_sha256":  "F8CD1D0F801A9E8C5D6337D8C764D65E4AA2089421AE7D0149228344E43362AB",
+    "last_queue_depth":  0,
+    "sink_port":  5081,
+    "run_id":  "baseline-20260921-193610",
+    "status":  "terminal",
+    "wait":  {
+                 "terminal":  "receipts \u003e= expected.notifications_received and queue_depth == 0",
+                 "timeout_seconds":  20
+             },
+    "faults_sha256":  null,
+    "scenario_sha256":  "F41D0A54AFBF72C3857DBD4C2F085F960FC6723E68C91A4498C0B123D200D26A",
+    "scenario":  "baseline",
+    "faults_file":  null,
+    "api_port":  5080,
+    "version":  "1.0.0",
+    "expected":  {
+                     "transitions":  9,
+                     "idempotent":  6,
+                     "rejected_shipped":  3,
+                     "not_found":  1,
+                     "unauthorized":  1,
+                     "notifications_received":  9,
+                     "refund_requested_true":  5
+                 },
+    "started":  "2026-09-21T19:36:14.9380890+08:00",
+    "human":  {
+                  "note":  "人工欄位由作者填；null＝未記錄，不是零",
+                  "review_min":  null,
+                  "prepare_min":  null,
+                  "wait_min":  null,
+                  "rework_min":  null,
+                  "operate_min":  null
+              },
+    "api_sha256":  "E04A23471FF795A2EA1D1B77AF164987ABB3CD89638BD59AE4300F9FEDBFA971",
+    "ended":  "2026-09-21T19:36:18.5793785+08:00"
+}

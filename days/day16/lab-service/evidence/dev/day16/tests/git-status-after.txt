@@ -1,0 +1,3 @@
+﻿ M tests/DomainTests/Program.cs
+?? evidence/dev/
+?? tools/dev-session.ps1

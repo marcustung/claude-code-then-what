@@ -1,0 +1,14 @@
+{
+ "orders": 200,
+ "repeat": 2,
+ "total_requests": 400,
+ "completed": 400,
+ "by_status": {
+  "409": 54,
+  "200": 346
+ },
+ "concurrency": 12,
+ "payload_bytes": 0,
+ "elapsed_s": 2.81,
+ "aborted_on_connection_error": false
+}

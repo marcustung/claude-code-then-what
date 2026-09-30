@@ -1,0 +1,6 @@
+你是第二位審查者（唯讀）。把目前的 `git diff` 對 specs/rules-v2.md 審一次。只回報：
+1. 每條 BR（BR-01～04）有沒有對應測試：SC 編號 → 測試名 → tests/DomainTests/Program.cs 行號；缺的列出。
+2. diff 有沒有改到範圍外：三個型別簽名、無關檔案、付款／外部呼叫、src/Api/。
+3. 每則發現附 file:line；找不到來源寫 unknown。
+不得修改檔案、不得執行測試（不要跑 dotnet）、不評風格。
+回 JSON：{"br_coverage": [{"br": "BR-01", "sc": ["SC-01"], "tests": ["測試名 @ file:line"], "status": "covered|missing"}], "out_of_scope_changes": ["..."], "findings": [{"severity": "block|ask|note", "claim": "...", "source": "file:line", "missing": "..."}], "verdict": "PASS|NEEDS_EVIDENCE|OWNER_REQUIRED", "not_my_call": "..."}

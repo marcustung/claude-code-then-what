@@ -1,0 +1,45 @@
+{
+  "label": "incident",
+  "start_epoch": 1790163211.2143114,
+  "end_epoch": 1790163262.6639063,
+  "start_iso": "2026-09-23T11:33:31Z",
+  "end_iso": "2026-09-23T11:34:22Z",
+  "rounds": [
+    {
+      "round": 1,
+      "at": 1790163215.7959073,
+      "stdout_tail": "{\"orders\": 200, \"repeat\": 2, \"total_requests\": 400, \"completed\": 400, \"by_status\": {\"409\": 30, \"200\": 370}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 2.96, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 2,
+      "at": 1790163224.8876913,
+      "stdout_tail": "{\"orders\": 200, \"repeat\": 2, \"total_requests\": 400, \"completed\": 400, \"by_status\": {\"409\": 60, \"200\": 340}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 2.69, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 3,
+      "at": 1790163234.390996,
+      "stdout_tail": "{\"orders\": 200, \"repeat\": 2, \"total_requests\": 400, \"completed\": 400, \"by_status\": {\"200\": 360, \"409\": 40}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 3.1, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 4,
+      "at": 1790163243.7413075,
+      "stdout_tail": "{\"orders\": 200, \"repeat\": 2, \"total_requests\": 400, \"completed\": 400, \"by_status\": {\"409\": 40, \"200\": 360}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 2.79, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 5,
+      "at": 1790163253.290584,
+      "stdout_tail": "{\"orders\": 200, \"repeat\": 2, \"total_requests\": 400, \"completed\": 400, \"by_status\": {\"409\": 36, \"200\": 364}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 2.92, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 6,
+      "at": 1790163262.6639006,
+      "stdout_tail": "{\"orders\": 200, \"repeat\": 2, \"total_requests\": 400, \"completed\": 400, \"by_status\": {\"409\": 54, \"200\": 346}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 2.81, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    }
+  ]
+}

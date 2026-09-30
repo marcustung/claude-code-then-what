@@ -1,0 +1,52 @@
+{
+ "result": "PASS",
+ "findings": [
+  "ok   transitions：觀察 9／期待 9",
+  "ok   idempotent：觀察 6／期待 6",
+  "ok   rejected_shipped：觀察 3／期待 3",
+  "ok   not_found：觀察 1／期待 1",
+  "ok   unauthorized：觀察 1／期待 1",
+  "ok   refund_requested_true：觀察 5／期待 5",
+  "ok   enqueued == transitions == 9",
+  "ok   接收端收據 == 成功轉換 == 9（送達以收據為準）",
+  "ok   服務 sent_total == 收據 == 9",
+  "info notify_deferred 且重排 45 次（壓力下延後，未丟失）",
+  "ok   每則收據都對得回客戶端 request（9）"
+ ],
+ "summary": {
+  "transitions": 9,
+  "unique_orders": 9,
+  "outcomes": {
+   "ok": 9,
+   "rejected_shipped": 3,
+   "idempotent": 6,
+   "not_found": 1,
+   "unauthorized": 1
+  },
+  "http_status": {
+   "200": 15,
+   "409": 3,
+   "404": 1,
+   "401": 1
+  },
+  "enqueued": 9,
+  "sent_claimed": 9,
+  "receipts_unique": 9,
+  "receipts_dup": 0,
+  "dead_letter": 0,
+  "deferred_lost": 0,
+  "deferred_requeued": 45,
+  "refund_requested_true": 5,
+  "expected": {
+   "transitions": 9,
+   "idempotent": 6,
+   "rejected_shipped": 3,
+   "not_found": 1,
+   "unauthorized": 1,
+   "notifications_received": 9,
+   "refund_requested_true": 5
+  },
+  "status": "terminal",
+  "version": "1.2.0"
+ }
+}

@@ -1,0 +1,3 @@
+現在讓 tests/DomainTests 全部 PASS：只改 src/Domain/Cancellation.cs，最小 diff，三個型別簽名不可改，不加依賴。
+改完執行 `dotnet run --project tests/DomainTests` 與 `git diff -- src/Domain/Cancellation.cs`，把兩者原文貼回來。
+回 JSON：{"diff": "git diff 原文", "run_output": "原文", "changed_lines": ["檔案:行號 …"], "notes": "..."}

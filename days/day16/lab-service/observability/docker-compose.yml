@@ -1,0 +1,38 @@
+# 本機觀測堆疊：Prometheus 抓訂單服務的 /metrics，Grafana 讀 Prometheus。
+# 用途：讓 Claude Code 透過 gcx 對真實時間序列取證（後續），不使用任何公司環境或資料。
+#
+#   docker compose -f observability/docker-compose.yml up -d
+#   Grafana  http://localhost:3000 （admin / admin，僅本機教學用）
+#   Prom     http://localhost:9090
+#
+# 前提：訂單服務在**主機**上以 5080 執行（tools/run.ps1 或手動啟動）。
+# 容器透過 host.docker.internal 回連主機，這是 Docker Desktop 的既定行為。
+services:
+  prometheus:
+    image: prom/prometheus:v3.1.0
+    container_name: oc-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.retention.time=7d
+      - --web.enable-lifecycle
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:12.0.2
+    container_name: oc-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_FEATURE_TOGGLES_ENABLE: ""
+    volumes:
+      - ./grafana-datasources.yml:/etc/grafana/provisioning/datasources/oc.yml:ro
+    depends_on:
+      - prometheus

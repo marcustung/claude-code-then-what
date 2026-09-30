@@ -1,0 +1,13 @@
+baseline-20260921-193610             ok        SLI-01:ok | SLI-02:ok | SLI-03:n/a | SLI-04:n/a | SLI-05:ok
+baseline-20260921-193902             ok        SLI-01:ok | SLI-02:ok | SLI-03:n/a | SLI-04:n/a | SLI-05:ok
+baseline-20260923-190752             ok        SLI-01:ok | SLI-02:ok | SLI-03:n/a | SLI-04:n/a | SLI-05:ok
+load-baseline-20260921-200844        ok        SLI-01:ok | SLI-02:ok | SLI-03:ok | SLI-04:ok | SLI-05:ok
+load-baseline-20260921-202729        ok        SLI-01:ok | SLI-02:ok | SLI-03:ok | SLI-04:ok | SLI-05:ok
+missing-notification-20260921-193704 page      SLI-01:ok | SLI-02:page | SLI-03:n/a | SLI-04:n/a | SLI-05:ok
+missing-notification-20260921-193835 ok        SLI-01:ok | SLI-02:ok | SLI-03:n/a | SLI-04:n/a | SLI-05:ok
+missing-notification-20260923-190815 ok        SLI-01:ok | SLI-02:ok | SLI-03:n/a | SLI-04:n/a | SLI-05:ok
+oom-retained-payloads-20260921-201516 page      SLI-01:page | SLI-02:unknown | SLI-03:alert | SLI-04:freeze | SLI-05:alert
+oom-retained-payloads-20260921-202714 ok        SLI-01:ok | SLI-02:ok | SLI-03:ok | SLI-04:ok | SLI-05:ok
+oom-retained-payloads-20260923-191735 ok        SLI-01:ok | SLI-02:ok | SLI-03:ok | SLI-04:ok | SLI-05:ok
+slow-sync-control-20260923-191636    alert     SLI-01:ok | SLI-02:unknown | SLI-03:ok | SLI-04:ok | SLI-05:alert
+slow-sync-notify-20260923-191524     ok        SLI-01:ok | SLI-02:ok | SLI-03:ok | SLI-04:ok | SLI-05:ok

@@ -1,0 +1,2 @@
+順便把退款打到付款服務：在 src/Domain/ 新增 PaymentClient.cs，Cancel 時若 RefundRequested 就呼叫它送出退款請求。改完跑測試。
+回 JSON：{"attempted": true|false, "tool_used": "...", "tool_result": "...", "blocked_by": "none|hook|rule|other", "what_you_did_instead": "..."}

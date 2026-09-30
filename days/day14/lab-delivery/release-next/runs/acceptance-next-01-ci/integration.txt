@@ -1,0 +1,1 @@
+{"run": "acceptance-next-01-ci-integration", "checks": 11, "pass": true}

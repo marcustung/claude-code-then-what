@@ -1,0 +1,94 @@
+{
+ "version": "1.1",
+ "created": "2026-09-24",
+ "service": "order-cancel-lifecycle",
+ "note": "門檻分兩種來源。spec 來源＝2026-09-21 建立情境檔時就寫死的 expected 值，執行前已固定；post-hoc 來源＝看過資料才訂的，明白標示，不得在文章裡宣稱是事前門檻。",
+ "slis": [
+  {
+   "id": "SLI-01",
+   "name": "取消請求成功率",
+   "definition": "requests.jsonl 中 status 200 或 409 的比例（409 是規格要求的拒絕，不算失敗）",
+   "threshold": {
+    "min_ratio": 1.0
+   },
+   "source": "spec",
+   "source_ref": "specs/rules-v2.md BR-01～04：規格只允許 200／409／404／401 四種結果",
+   "on_breach": "page"
+  },
+  {
+   "id": "SLI-02",
+   "name": "通知對帳率",
+   "definition": "接收端 receipts.jsonl 的唯一收據數 ÷ oc_transitions_total",
+   "threshold": {
+    "min_ratio": 1.0
+   },
+   "source": "spec",
+   "source_ref": "scenarios/baseline.json expected.notifications_received = expected.transitions = 9",
+   "on_breach": "page",
+   "precondition": {
+    "oc_notify_queue_depth": 0
+   },
+   "precondition_note": "佇列非空時本條判 unknown，並記「量測窗未到」；對帳要等排空才成立。"
+  },
+  {
+   "id": "SLI-03",
+   "name": "客戶端 p95 延遲",
+   "definition": "load.py 在呼叫端量到的往返時間 p95（毫秒）",
+   "threshold": {
+    "max_ms": 250
+   },
+   "source": "spec",
+   "source_ref": "scenarios/*.json expected.p95_ms_max = 250（2026-09-21 寫入）",
+   "on_breach": "alert",
+   "applies_to": {
+    "manifest.mode": "load"
+   },
+   "applies_to_note": "功能型情境不適用；門檻來自負載情境的 expected。"
+  },
+  {
+   "id": "SLI-04",
+   "name": "GC heap 成長",
+   "definition": "metrics-timeline 最後一筆 oc_gc_heap_bytes − 第一筆，換算 MB",
+   "threshold": {
+    "max_mb": 64
+   },
+   "source": "spec",
+   "source_ref": "scenarios/oom-retained-payloads.json expected.heap_growth_mb_max = 64",
+   "on_breach": "freeze",
+   "applies_to": {
+    "manifest.mode": "load"
+   },
+   "applies_to_note": "功能型情境不適用；門檻來自負載情境的 expected。"
+  },
+  {
+   "id": "SLI-05",
+   "name": "通知佇列殘留",
+   "definition": "run 結束時的 oc_notify_queue_depth",
+   "threshold": {
+    "max": 0
+   },
+   "source": "post-hoc",
+   "source_ref": "2026-09-23 LoopDeck 迴路才發現 last_queue_depth 是可用訊號；這條是事後加的",
+   "on_breach": "alert"
+  }
+ ],
+ "escalation": {
+  "alert": "寫進 slo-report.json，不叫人",
+  "freeze": "停止該版本的後續部署，等人裁決",
+  "page": "叫人；這兩條破了代表規格被違反，不是效能抖動"
+ },
+ "stop_conditions": [
+  "任一 SLI 的 threshold 被改動而沒有同時升 version，本檔作廢",
+  "post-hoc 來源的 SLI 不得用來論證『事前就知道』",
+  "沒有對照組的 run 不得單獨用來宣稱某個門檻合理",
+  "unknown 的數量超過 SLI 總數一半時，該 run 不得用來做任何 SLO 宣稱。"
+ ],
+ "revised": "2026-09-24",
+ "changelog": [
+  "v1.0 → v1.1：三條修訂，全部因為 v1.0 在既有 13 個 run 上實際誤報。",
+  "(1) 訊號不存在時判 unknown，不判違反。v1.0 對六個功能型 run 判 freeze，原因是那些 run 根本不產生 metrics-timeline 與 requests.jsonl——沒有資料被當成超標。",
+  "(2) SLI-02 加前置條件：佇列深度必須為 0 才對帳。v1.0 對 slow-sync-control 判 page（轉換 259／收據 12），但該 run 結束時佇列深度 253——通知在佇列裡，不是掉了。",
+  "(3) SLI-03／SLI-04 只適用 mode=load 的情境。功能型 run 只有 20 次呼叫，p95 由第一次請求的 JIT 成本主導，拿 250 ms 的負載門檻去套沒有意義。"
+ ],
+ "missing_signal_policy": "unknown（不是 ok，也不是違反）；unknown 要進報告，因為「量不到」本身是維運問題。"
+}

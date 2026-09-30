@@ -1,0 +1,6 @@
+﻿{"oc_gc_collections_gen2":0,"oc_request_latency_ms_count":0,"ts":"2026-09-23T19:16:46.7810240+08:00","oc_working_set_bytes":53174272,"oc_request_latency_ms_sum":0,"oc_gc_heap_bytes":1467016,"oc_notify_queue_depth":0}
+{"oc_gc_collections_gen2":0,"oc_request_latency_ms_count":0,"ts":"2026-09-23T19:16:47.3041451+08:00","oc_working_set_bytes":55848960,"oc_request_latency_ms_sum":0,"oc_gc_heap_bytes":1438304,"oc_notify_queue_depth":0}
+{"oc_gc_collections_gen2":0,"oc_request_latency_ms_count":0,"ts":"2026-09-23T19:16:47.8349647+08:00","oc_working_set_bytes":56487936,"oc_request_latency_ms_sum":0,"oc_gc_heap_bytes":2162344,"oc_notify_queue_depth":0}
+{"oc_gc_collections_gen2":0,"oc_request_latency_ms_count":0,"ts":"2026-09-23T19:16:48.3532206+08:00","oc_working_set_bytes":57663488,"oc_request_latency_ms_sum":0,"oc_gc_heap_bytes":2873128,"oc_notify_queue_depth":0}
+{"oc_gc_collections_gen2":0,"oc_request_latency_ms_count":0,"ts":"2026-09-23T19:16:48.8953343+08:00","oc_working_set_bytes":58966016,"oc_request_latency_ms_sum":0,"oc_gc_heap_bytes":3560824,"oc_notify_queue_depth":0}
+{"oc_gc_collections_gen2":0,"oc_request_latency_ms_count":299,"ts":"2026-09-23T19:16:49.4415132+08:00","oc_working_set_bytes":67411968,"oc_request_latency_ms_sum":12.3,"oc_gc_heap_bytes":5060080,"oc_notify_queue_depth":257}

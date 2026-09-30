@@ -1,0 +1,110 @@
+[
+  {
+    "at": 1790646010.786992,
+    "phase": "r2-healthy",
+    "method": "GET",
+    "path": "/health",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "version": "delivery-hardening-local-r2"
+    }
+  },
+  {
+    "at": 1790646010.8033237,
+    "phase": "r2-healthy",
+    "method": "GET",
+    "path": "/version",
+    "status": 200,
+    "response": {
+      "version": "delivery-hardening-local-r2",
+      "notification_mode": "async",
+      "storage": "in-memory"
+    }
+  },
+  {
+    "at": 1790646010.8094985,
+    "phase": "r2-healthy",
+    "method": "POST",
+    "path": "/orders",
+    "status": 200,
+    "response": {
+      "id": "r2-healthy-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "at": 1790646010.823663,
+    "phase": "r2-healthy",
+    "method": "POST",
+    "path": "/orders/r2-healthy-01/cancel",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "r2-healthy-request",
+      "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "at": 1790646010.8821378,
+    "phase": "r2-healthy",
+    "method": "GET",
+    "path": "/orders/r2-healthy-01",
+    "status": 200,
+    "response": {
+      "id": "r2-healthy-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "at": 1790646010.8863711,
+    "phase": "r2-healthy",
+    "method": "POST",
+    "path": "/orders",
+    "status": 200,
+    "response": {
+      "id": "r2-shipped-01",
+      "order": {
+        "shipped": true,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "at": 1790646010.8924289,
+    "phase": "r2-healthy",
+    "method": "POST",
+    "path": "/orders/r2-shipped-01/cancel",
+    "status": 409,
+    "response": {
+      "ok": false,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": "rejected_shipped",
+      "request_id": "r2-healthy-request",
+      "notification_id": null,
+      "order": {
+        "shipped": true,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  }
+]

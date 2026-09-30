@@ -1,0 +1,12 @@
+{
+    "exit_code":  0,
+    "git_head_before":  "885e5219ddc81410896cf12a84871aa5dc2ae68d",
+    "ended_utc":  "2026-09-21T13:32:36.6260205Z",
+    "arguments":  "-p --model sonnet --effort medium --strict-mcp-config --no-session-persistence --setting-sources project --permission-mode bypassPermissions --output-format stream-json --verbose --tools Read,Grep,Glob,Edit,Write,Bash --allowedTools Read,Grep,Glob,Edit,Write,Bash",
+    "prompt_sha256":  "527331E3B28E15AB18855136316B86B200643A781070BD44051B415402F2F905",
+    "cwd":  "<REPO>\\examples\\order-cancel-lifecycle",
+    "tests_exit_after":  0,
+    "step":  "trap",
+    "started_utc":  "2026-09-21T13:32:23.0507578Z",
+    "actor":  "claude-code (AI); 作者未操作"
+}

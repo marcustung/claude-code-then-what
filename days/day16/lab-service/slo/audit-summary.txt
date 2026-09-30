@@ -1,0 +1,14 @@
+run                                    ver    hist_p95 client_p95 低估x     首桶%      v1.0→v1.1
+baseline-20260921-193610               1.0.0  None     None      None    None     freeze→ok
+baseline-20260921-193902               1.1.0  None     None      None    None     freeze→ok
+baseline-20260923-190752               1.2.0  4.75     None      None    100.0    freeze→ok
+load-baseline-20260921-200844          1.1.0  18.73    66.9      3.6     67.29    ok→ok
+load-baseline-20260921-202729          1.2.0  8.88     50.0      5.6     87.62    ok→ok
+missing-notification-20260921-193704   1.0.0  None     None      None    None     page→page
+missing-notification-20260921-193835   1.1.0  None     None      None    None     freeze→ok
+missing-notification-20260923-190815   1.2.0  4.75     None      None    100.0    freeze→ok
+oom-retained-payloads-20260921-201516  1.1.0  22.72    616.7     27.1    61.11    page→page
+oom-retained-payloads-20260921-202714  1.2.0  8.99     81.4      9.1     87.92    ok→ok
+oom-retained-payloads-20260923-191735  1.2.0  7.53     34.1      4.5     91.33    ok→ok
+slow-sync-control-20260923-191636      1.2.0  4.75     36.1      7.6     100.0    page→alert
+slow-sync-notify-20260923-191524       1.2.0  244.66   240.9     1.0     13.67    ok→ok

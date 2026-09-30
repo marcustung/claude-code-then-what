@@ -1,0 +1,157 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "before-package",
+      "passed": true,
+      "detail": "candidate-checked"
+    },
+    {
+      "name": "before-version",
+      "passed": true,
+      "detail": {
+        "ok": true,
+        "version": "delivery-hardening-local-r1"
+      }
+    },
+    {
+      "name": "before-cancel",
+      "passed": true,
+      "detail": {
+        "ok": true,
+        "transitioned": true,
+        "refund_requested": true,
+        "reason": null,
+        "request_id": "before-request",
+        "notification_id": "470184dbbfb64920b7654fdc59018591",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "before-sent",
+      "passed": true,
+      "detail": "470184dbbfb64920b7654fdc59018591"
+    },
+    {
+      "name": "updated-package",
+      "passed": true,
+      "detail": "acceptance-next-01"
+    },
+    {
+      "name": "updated-version",
+      "passed": true,
+      "detail": {
+        "ok": true,
+        "version": "delivery-hardening-local-r2"
+      }
+    },
+    {
+      "name": "new-endpoint",
+      "passed": true,
+      "detail": {
+        "version": "delivery-hardening-local-r2",
+        "notification_mode": "async",
+        "storage": "in-memory"
+      }
+    },
+    {
+      "name": "update-loses-memory-state",
+      "passed": true,
+      "detail": 404
+    },
+    {
+      "name": "updated-cancel",
+      "passed": true,
+      "detail": {
+        "ok": true,
+        "transitioned": true,
+        "refund_requested": true,
+        "reason": null,
+        "request_id": "updated-request",
+        "notification_id": "d0e39019500e489cb21d391c3f303b05",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "failure-detected",
+      "passed": true,
+      "detail": {
+        "level": "ERROR",
+        "event": "notify_dead_letter",
+        "notification_id": "d0e39019500e489cb21d391c3f303b05",
+        "order_id": "during-update",
+        "request_id": "updated-request",
+        "run_id": "acceptance-rollback-01",
+        "attempts": 4,
+        "ts": "2026-09-27T22:54:10.5064287+08:00",
+        "version": "delivery-hardening-local-r2"
+      }
+    },
+    {
+      "name": "failure-four-attempts",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "name": "rolled-back-package",
+      "passed": true,
+      "detail": "candidate-checked"
+    },
+    {
+      "name": "rolled-back-version",
+      "passed": true,
+      "detail": {
+        "ok": true,
+        "version": "delivery-hardening-local-r1"
+      }
+    },
+    {
+      "name": "old-endpoint-restored",
+      "passed": true,
+      "detail": 404
+    },
+    {
+      "name": "rollback-does-not-restore-orders",
+      "passed": true,
+      "detail": 404
+    },
+    {
+      "name": "rolled-back-cancel",
+      "passed": true,
+      "detail": {
+        "ok": true,
+        "transitioned": true,
+        "refund_requested": true,
+        "reason": null,
+        "request_id": "rolled-back-request",
+        "notification_id": "dd2345d3d20f4f45b44ce7e39c4c1f9a",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "restored-sent",
+      "passed": true,
+      "detail": "dd2345d3d20f4f45b44ce7e39c4c1f9a"
+    },
+    {
+      "name": "failed-order-not-replayed",
+      "passed": true,
+      "detail": "no automatic replay"
+    }
+  ],
+  "old_candidate": "candidate-checked",
+  "new_candidate": "acceptance-next-01",
+  "limits": "author-operated local rehearsal, no production deployment; receiver failure injected; in-memory state lost; failed business event unresolved"
+}

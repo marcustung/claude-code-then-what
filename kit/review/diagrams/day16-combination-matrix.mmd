@@ -1,0 +1,18 @@
+flowchart LR
+    subgraph OLD["舊包 r1"]
+      direction TB
+      G1["接收端 200<br/>演練階段 ①③<br/>notify_sent"]
+      G3["接收端 503<br/>演練沒走過<br/>仍未驗"]
+      G1 ~~~ G3
+    end
+    subgraph NEW["新包 r2"]
+      direction TB
+      G2["接收端 200<br/>演練沒走過<br/>唯讀判讀指出這一格<br/>補測 10 項全過"]
+      G4["接收端 503<br/>演練階段 ②<br/>dead_letter"]
+      G2 ~~~ G4
+    end
+    OLD ~~~ NEW
+    style G1 fill:#d9ead3,stroke:#3d7a5a
+    style G2 fill:#cfe2f3,stroke:#2f6fa8,stroke-width:2px
+    style G3 fill:#eeeeee,stroke:#888,stroke-dasharray: 4 3
+    style G4 fill:#f6d5d5,stroke:#a83a3a

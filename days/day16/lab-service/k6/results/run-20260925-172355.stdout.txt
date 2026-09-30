@@ -1,0 +1,449 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: k6/prelaunch-load.js
+        output: json (k6/results/run-20260925-172355.json)
+
+     scenarios: (100.00%) 1 scenario, 400 max VUs, 2m15s max duration (incl. graceful stop):
+              * ramp: Up to 400 looping VUs for 2m10s over 7 stages (gracefulRampDown: 5s, gracefulStop: 30s)
+
+
+running (0m00.9s), 000/400 VUs, 0 complete and 0 interrupted iterations
+ramp   [   1% ] 000/400 VUs  0m00.9s/2m10.0s
+
+running (0m01.9s), 000/400 VUs, 0 complete and 0 interrupted iterations
+ramp   [   1% ] 000/400 VUs  0m01.9s/2m10.0s
+
+running (0m02.9s), 001/400 VUs, 80 complete and 0 interrupted iterations
+ramp   [   2% ] 001/400 VUs  0m02.9s/2m10.0s
+
+running (0m03.9s), 001/400 VUs, 349 complete and 0 interrupted iterations
+ramp   [   3% ] 001/400 VUs  0m03.9s/2m10.0s
+
+running (0m04.9s), 002/400 VUs, 1281 complete and 0 interrupted iterations
+ramp   [   4% ] 002/400 VUs  0m04.9s/2m10.0s
+
+running (0m05.9s), 002/400 VUs, 2296 complete and 0 interrupted iterations
+ramp   [   5% ] 002/400 VUs  0m05.9s/2m10.0s
+
+running (0m06.9s), 003/400 VUs, 3829 complete and 0 interrupted iterations
+ramp   [   5% ] 003/400 VUs  0m06.9s/2m10.0s
+
+running (0m07.9s), 003/400 VUs, 5386 complete and 0 interrupted iterations
+ramp   [   6% ] 003/400 VUs  0m07.9s/2m10.0s
+
+running (0m08.9s), 004/400 VUs, 7135 complete and 0 interrupted iterations
+ramp   [   7% ] 004/400 VUs  0m08.9s/2m10.0s
+
+running (0m09.9s), 004/400 VUs, 8816 complete and 0 interrupted iterations
+ramp   [   8% ] 004/400 VUs  0m09.9s/2m10.0s
+
+running (0m10.9s), 005/400 VUs, 10496 complete and 0 interrupted iterations
+ramp   [   8% ] 005/400 VUs  0m10.9s/2m10.0s
+time="2026-09-25T17:24:07+08:00" level=warning msg="The test has generated metrics with 100610 unique time series, which is higher than the suggested limit of 100000 and could cause high memory usage. Consider not using high-cardinality values like unique IDs as metric tags or, if you need them in the URL, use the name metric tag or URL grouping. See https://grafana.com/docs/k6/latest/using-k6/tags-and-groups/ for details." component=metrics-engine-ingester
+
+running (0m11.9s), 005/400 VUs, 12160 complete and 0 interrupted iterations
+ramp   [   9% ] 005/400 VUs  0m11.9s/2m10.0s
+
+running (0m12.9s), 006/400 VUs, 13840 complete and 0 interrupted iterations
+ramp   [  10% ] 006/400 VUs  0m12.9s/2m10.0s
+
+running (0m13.9s), 006/400 VUs, 15552 complete and 0 interrupted iterations
+ramp   [  11% ] 006/400 VUs  0m13.9s/2m10.0s
+
+running (0m14.9s), 007/400 VUs, 17205 complete and 0 interrupted iterations
+ramp   [  11% ] 007/400 VUs  0m14.9s/2m10.0s
+
+running (0m15.9s), 007/400 VUs, 18791 complete and 0 interrupted iterations
+ramp   [  12% ] 007/400 VUs  0m15.9s/2m10.0s
+
+running (0m16.9s), 008/400 VUs, 20369 complete and 0 interrupted iterations
+ramp   [  13% ] 008/400 VUs  0m16.9s/2m10.0s
+
+running (0m17.9s), 008/400 VUs, 21825 complete and 0 interrupted iterations
+ramp   [  14% ] 008/400 VUs  0m17.9s/2m10.0s
+time="2026-09-25T17:24:14+08:00" level=warning msg="The test has generated metrics with 200348 unique time series, which is higher than the suggested limit of 100000 and could cause high memory usage. Consider not using high-cardinality values like unique IDs as metric tags or, if you need them in the URL, use the name metric tag or URL grouping. See https://grafana.com/docs/k6/latest/using-k6/tags-and-groups/ for details." component=metrics-engine-ingester
+
+running (0m18.9s), 009/400 VUs, 23475 complete and 0 interrupted iterations
+ramp   [  15% ] 009/400 VUs  0m18.9s/2m10.0s
+
+running (0m19.9s), 009/400 VUs, 25071 complete and 0 interrupted iterations
+ramp   [  15% ] 009/400 VUs  0m19.9s/2m10.0s
+
+running (0m20.9s), 010/400 VUs, 26687 complete and 0 interrupted iterations
+ramp   [  16% ] 010/400 VUs  0m20.9s/2m10.0s
+
+running (0m21.9s), 011/400 VUs, 28331 complete and 0 interrupted iterations
+ramp   [  17% ] 011/400 VUs  0m21.9s/2m10.0s
+
+running (0m22.9s), 012/400 VUs, 29972 complete and 0 interrupted iterations
+ramp   [  18% ] 012/400 VUs  0m22.9s/2m10.0s
+
+running (0m23.9s), 012/400 VUs, 31542 complete and 0 interrupted iterations
+ramp   [  18% ] 012/400 VUs  0m23.9s/2m10.0s
+
+running (0m24.9s), 013/400 VUs, 33144 complete and 0 interrupted iterations
+ramp   [  19% ] 013/400 VUs  0m24.9s/2m10.0s
+
+running (0m25.9s), 014/400 VUs, 34742 complete and 0 interrupted iterations
+ramp   [  20% ] 014/400 VUs  0m25.9s/2m10.0s
+
+running (0m26.9s), 015/400 VUs, 36352 complete and 0 interrupted iterations
+ramp   [  21% ] 015/400 VUs  0m26.9s/2m10.0s
+
+running (0m27.9s), 015/400 VUs, 37841 complete and 0 interrupted iterations
+ramp   [  21% ] 015/400 VUs  0m27.9s/2m10.0s
+
+running (0m28.9s), 016/400 VUs, 39313 complete and 0 interrupted iterations
+ramp   [  22% ] 016/400 VUs  0m28.9s/2m10.0s
+
+running (0m29.9s), 017/400 VUs, 40722 complete and 0 interrupted iterations
+ramp   [  23% ] 017/400 VUs  0m29.9s/2m10.0s
+
+running (0m30.9s), 018/400 VUs, 42231 complete and 0 interrupted iterations
+ramp   [  24% ] 018/400 VUs  0m30.9s/2m10.0s
+
+running (0m31.9s), 018/400 VUs, 43664 complete and 0 interrupted iterations
+ramp   [  25% ] 018/400 VUs  0m31.9s/2m10.0s
+time="2026-09-25T17:24:28+08:00" level=warning msg="The test has generated metrics with 400715 unique time series, which is higher than the suggested limit of 100000 and could cause high memory usage. Consider not using high-cardinality values like unique IDs as metric tags or, if you need them in the URL, use the name metric tag or URL grouping. See https://grafana.com/docs/k6/latest/using-k6/tags-and-groups/ for details." component=metrics-engine-ingester
+
+running (0m32.9s), 019/400 VUs, 45102 complete and 0 interrupted iterations
+ramp   [  25% ] 019/400 VUs  0m32.9s/2m10.0s
+
+running (0m33.9s), 020/400 VUs, 46555 complete and 0 interrupted iterations
+ramp   [  26% ] 020/400 VUs  0m33.9s/2m10.0s
+
+running (0m34.9s), 021/400 VUs, 47995 complete and 0 interrupted iterations
+ramp   [  27% ] 021/400 VUs  0m34.9s/2m10.0s
+
+running (0m35.9s), 021/400 VUs, 49476 complete and 0 interrupted iterations
+ramp   [  28% ] 021/400 VUs  0m35.9s/2m10.0s
+
+running (0m36.9s), 022/400 VUs, 50897 complete and 0 interrupted iterations
+ramp   [  28% ] 022/400 VUs  0m36.9s/2m10.0s
+
+running (0m37.9s), 023/400 VUs, 52368 complete and 0 interrupted iterations
+ramp   [  29% ] 023/400 VUs  0m37.9s/2m10.0s
+
+running (0m38.9s), 024/400 VUs, 53850 complete and 0 interrupted iterations
+ramp   [  30% ] 024/400 VUs  0m38.9s/2m10.0s
+
+running (0m39.9s), 024/400 VUs, 55144 complete and 0 interrupted iterations
+ramp   [  31% ] 024/400 VUs  0m39.9s/2m10.0s
+
+running (0m40.9s), 026/400 VUs, 56598 complete and 0 interrupted iterations
+ramp   [  31% ] 026/400 VUs  0m40.9s/2m10.0s
+
+running (0m41.9s), 027/400 VUs, 58022 complete and 0 interrupted iterations
+ramp   [  32% ] 027/400 VUs  0m41.9s/2m10.0s
+
+running (0m42.9s), 028/400 VUs, 59398 complete and 0 interrupted iterations
+ramp   [  33% ] 028/400 VUs  0m42.9s/2m10.0s
+
+running (0m43.9s), 029/400 VUs, 60736 complete and 0 interrupted iterations
+ramp   [  34% ] 029/400 VUs  0m43.9s/2m10.0s
+
+running (0m44.9s), 031/400 VUs, 62221 complete and 0 interrupted iterations
+ramp   [  35% ] 031/400 VUs  0m44.9s/2m10.0s
+
+running (0m45.9s), 032/400 VUs, 63522 complete and 0 interrupted iterations
+ramp   [  35% ] 032/400 VUs  0m45.9s/2m10.0s
+
+running (0m46.9s), 033/400 VUs, 64847 complete and 0 interrupted iterations
+ramp   [  36% ] 033/400 VUs  0m46.9s/2m10.0s
+
+running (0m47.9s), 034/400 VUs, 66204 complete and 0 interrupted iterations
+ramp   [  37% ] 034/400 VUs  0m47.9s/2m10.0s
+
+running (0m48.9s), 036/400 VUs, 67609 complete and 0 interrupted iterations
+ramp   [  38% ] 036/400 VUs  0m48.9s/2m10.0s
+
+running (0m49.9s), 037/400 VUs, 69088 complete and 0 interrupted iterations
+ramp   [  38% ] 037/400 VUs  0m49.9s/2m10.0s
+
+running (0m50.9s), 038/400 VUs, 70492 complete and 0 interrupted iterations
+ramp   [  39% ] 038/400 VUs  0m50.9s/2m10.0s
+
+running (0m51.9s), 039/400 VUs, 71924 complete and 0 interrupted iterations
+ramp   [  40% ] 039/400 VUs  0m51.9s/2m10.0s
+
+running (0m52.9s), 041/400 VUs, 73275 complete and 0 interrupted iterations
+ramp   [  41% ] 041/400 VUs  0m52.9s/2m10.0s
+
+running (0m53.9s), 042/400 VUs, 74528 complete and 0 interrupted iterations
+ramp   [  41% ] 042/400 VUs  0m53.9s/2m10.0s
+
+running (0m54.9s), 043/400 VUs, 75956 complete and 0 interrupted iterations
+ramp   [  42% ] 043/400 VUs  0m54.9s/2m10.0s
+
+running (0m55.9s), 044/400 VUs, 77427 complete and 0 interrupted iterations
+ramp   [  43% ] 044/400 VUs  0m55.9s/2m10.0s
+
+running (0m56.9s), 046/400 VUs, 78916 complete and 0 interrupted iterations
+ramp   [  44% ] 046/400 VUs  0m56.9s/2m10.0s
+
+running (0m57.9s), 047/400 VUs, 80350 complete and 0 interrupted iterations
+ramp   [  45% ] 047/400 VUs  0m57.9s/2m10.0s
+
+running (0m58.9s), 048/400 VUs, 81797 complete and 0 interrupted iterations
+ramp   [  45% ] 048/400 VUs  0m58.9s/2m10.0s
+
+running (0m59.9s), 049/400 VUs, 83279 complete and 0 interrupted iterations
+ramp   [  46% ] 049/400 VUs  0m59.9s/2m10.0s
+
+running (1m00.9s), 052/400 VUs, 84680 complete and 0 interrupted iterations
+ramp   [  47% ] 052/400 VUs  1m00.9s/2m10.0s
+
+running (1m01.9s), 054/400 VUs, 86208 complete and 0 interrupted iterations
+ramp   [  48% ] 054/400 VUs  1m01.9s/2m10.0s
+
+running (1m02.9s), 057/400 VUs, 87550 complete and 0 interrupted iterations
+ramp   [  48% ] 057/400 VUs  1m02.9s/2m10.0s
+
+running (1m03.9s), 059/400 VUs, 88970 complete and 0 interrupted iterations
+ramp   [  49% ] 059/400 VUs  1m03.9s/2m10.0s
+time="2026-09-25T17:25:00+08:00" level=warning msg="The test has generated metrics with 801251 unique time series, which is higher than the suggested limit of 100000 and could cause high memory usage. Consider not using high-cardinality values like unique IDs as metric tags or, if you need them in the URL, use the name metric tag or URL grouping. See https://grafana.com/docs/k6/latest/using-k6/tags-and-groups/ for details." component=metrics-engine-ingester
+
+running (1m04.9s), 062/400 VUs, 90434 complete and 0 interrupted iterations
+ramp   [  50% ] 062/400 VUs  1m04.9s/2m10.0s
+
+running (1m05.9s), 064/400 VUs, 91883 complete and 0 interrupted iterations
+ramp   [  51% ] 064/400 VUs  1m05.9s/2m10.0s
+
+running (1m06.9s), 067/400 VUs, 93343 complete and 0 interrupted iterations
+ramp   [  51% ] 067/400 VUs  1m06.9s/2m10.0s
+
+running (1m07.9s), 069/400 VUs, 94763 complete and 0 interrupted iterations
+ramp   [  52% ] 069/400 VUs  1m07.9s/2m10.0s
+
+running (1m08.9s), 072/400 VUs, 96250 complete and 0 interrupted iterations
+ramp   [  53% ] 072/400 VUs  1m08.9s/2m10.0s
+
+running (1m09.9s), 074/400 VUs, 97674 complete and 0 interrupted iterations
+ramp   [  54% ] 074/400 VUs  1m09.9s/2m10.0s
+
+running (1m10.9s), 077/400 VUs, 99104 complete and 0 interrupted iterations
+ramp   [  55% ] 077/400 VUs  1m10.9s/2m10.0s
+
+running (1m11.9s), 079/400 VUs, 100573 complete and 0 interrupted iterations
+ramp   [  55% ] 079/400 VUs  1m11.9s/2m10.0s
+
+running (1m12.9s), 082/400 VUs, 101831 complete and 0 interrupted iterations
+ramp   [  56% ] 082/400 VUs  1m12.9s/2m10.0s
+
+running (1m13.9s), 084/400 VUs, 103254 complete and 0 interrupted iterations
+ramp   [  57% ] 084/400 VUs  1m13.9s/2m10.0s
+
+running (1m14.9s), 087/400 VUs, 104696 complete and 0 interrupted iterations
+ramp   [  58% ] 087/400 VUs  1m14.9s/2m10.0s
+
+running (1m15.9s), 089/400 VUs, 106126 complete and 0 interrupted iterations
+ramp   [  58% ] 089/400 VUs  1m15.9s/2m10.0s
+
+running (1m16.9s), 092/400 VUs, 107595 complete and 0 interrupted iterations
+ramp   [  59% ] 092/400 VUs  1m16.9s/2m10.0s
+
+running (1m17.9s), 094/400 VUs, 109021 complete and 0 interrupted iterations
+ramp   [  60% ] 094/400 VUs  1m17.9s/2m10.0s
+
+running (1m18.9s), 097/400 VUs, 110441 complete and 0 interrupted iterations
+ramp   [  61% ] 097/400 VUs  1m18.9s/2m10.0s
+
+running (1m19.9s), 099/400 VUs, 111868 complete and 0 interrupted iterations
+ramp   [  61% ] 099/400 VUs  1m19.9s/2m10.0s
+
+running (1m20.9s), 104/400 VUs, 113252 complete and 0 interrupted iterations
+ramp   [  62% ] 104/400 VUs  1m20.9s/2m10.0s
+
+running (1m21.9s), 109/400 VUs, 114635 complete and 0 interrupted iterations
+ramp   [  63% ] 109/400 VUs  1m21.9s/2m10.0s
+
+running (1m22.9s), 114/400 VUs, 116018 complete and 0 interrupted iterations
+ramp   [  64% ] 114/400 VUs  1m22.9s/2m10.0s
+
+running (1m23.9s), 119/400 VUs, 117471 complete and 0 interrupted iterations
+ramp   [  65% ] 119/400 VUs  1m23.9s/2m10.0s
+
+running (1m24.9s), 124/400 VUs, 118457 complete and 0 interrupted iterations
+ramp   [  65% ] 124/400 VUs  1m24.9s/2m10.0s
+
+running (1m25.9s), 129/400 VUs, 119901 complete and 0 interrupted iterations
+ramp   [  66% ] 129/400 VUs  1m25.9s/2m10.0s
+
+running (1m26.9s), 134/400 VUs, 121240 complete and 0 interrupted iterations
+ramp   [  67% ] 134/400 VUs  1m26.9s/2m10.0s
+
+running (1m27.9s), 139/400 VUs, 122746 complete and 0 interrupted iterations
+ramp   [  68% ] 139/400 VUs  1m27.9s/2m10.0s
+
+running (1m28.9s), 144/400 VUs, 124185 complete and 0 interrupted iterations
+ramp   [  68% ] 144/400 VUs  1m28.9s/2m10.0s
+
+running (1m29.9s), 149/400 VUs, 125656 complete and 0 interrupted iterations
+ramp   [  69% ] 149/400 VUs  1m29.9s/2m10.0s
+
+running (1m30.9s), 154/400 VUs, 127083 complete and 0 interrupted iterations
+ramp   [  70% ] 154/400 VUs  1m30.9s/2m10.0s
+
+running (1m31.9s), 159/400 VUs, 128520 complete and 0 interrupted iterations
+ramp   [  71% ] 159/400 VUs  1m31.9s/2m10.0s
+
+running (1m32.9s), 164/400 VUs, 129929 complete and 0 interrupted iterations
+ramp   [  71% ] 164/400 VUs  1m32.9s/2m10.0s
+
+running (1m33.9s), 169/400 VUs, 131361 complete and 0 interrupted iterations
+ramp   [  72% ] 169/400 VUs  1m33.9s/2m10.0s
+
+running (1m34.9s), 174/400 VUs, 132730 complete and 0 interrupted iterations
+ramp   [  73% ] 174/400 VUs  1m34.9s/2m10.0s
+
+running (1m35.9s), 179/400 VUs, 134009 complete and 0 interrupted iterations
+ramp   [  74% ] 179/400 VUs  1m35.9s/2m10.0s
+
+running (1m36.9s), 184/400 VUs, 135436 complete and 0 interrupted iterations
+ramp   [  75% ] 184/400 VUs  1m36.9s/2m10.0s
+
+running (1m37.9s), 189/400 VUs, 136806 complete and 0 interrupted iterations
+ramp   [  75% ] 189/400 VUs  1m37.9s/2m10.0s
+
+running (1m38.9s), 194/400 VUs, 138073 complete and 0 interrupted iterations
+ramp   [  76% ] 194/400 VUs  1m38.9s/2m10.0s
+
+running (1m39.9s), 199/400 VUs, 139368 complete and 0 interrupted iterations
+ramp   [  77% ] 199/400 VUs  1m39.9s/2m10.0s
+
+running (1m40.9s), 209/400 VUs, 140812 complete and 0 interrupted iterations
+ramp   [  78% ] 209/400 VUs  1m40.9s/2m10.0s
+
+running (1m41.9s), 219/400 VUs, 142271 complete and 0 interrupted iterations
+ramp   [  78% ] 219/400 VUs  1m41.9s/2m10.0s
+
+running (1m42.9s), 229/400 VUs, 143638 complete and 0 interrupted iterations
+ramp   [  79% ] 229/400 VUs  1m42.9s/2m10.0s
+
+running (1m43.9s), 239/400 VUs, 145079 complete and 0 interrupted iterations
+ramp   [  80% ] 239/400 VUs  1m43.9s/2m10.0s
+
+running (1m44.9s), 249/400 VUs, 146486 complete and 0 interrupted iterations
+ramp   [  81% ] 249/400 VUs  1m44.9s/2m10.0s
+
+running (1m45.9s), 259/400 VUs, 147885 complete and 0 interrupted iterations
+ramp   [  81% ] 259/400 VUs  1m45.9s/2m10.0s
+
+running (1m46.9s), 269/400 VUs, 149248 complete and 0 interrupted iterations
+ramp   [  82% ] 269/400 VUs  1m46.9s/2m10.0s
+
+running (1m47.9s), 279/400 VUs, 150556 complete and 0 interrupted iterations
+ramp   [  83% ] 279/400 VUs  1m47.9s/2m10.0s
+
+running (1m48.9s), 289/400 VUs, 151913 complete and 0 interrupted iterations
+ramp   [  84% ] 289/400 VUs  1m48.9s/2m10.0s
+
+running (1m49.9s), 299/400 VUs, 153345 complete and 0 interrupted iterations
+ramp   [  85% ] 299/400 VUs  1m49.9s/2m10.0s
+
+running (1m50.9s), 309/400 VUs, 154662 complete and 0 interrupted iterations
+ramp   [  85% ] 309/400 VUs  1m50.9s/2m10.0s
+
+running (1m51.9s), 319/400 VUs, 156034 complete and 0 interrupted iterations
+ramp   [  86% ] 319/400 VUs  1m51.9s/2m10.0s
+
+running (1m52.9s), 329/400 VUs, 157342 complete and 0 interrupted iterations
+ramp   [  87% ] 329/400 VUs  1m52.9s/2m10.0s
+
+running (1m53.9s), 339/400 VUs, 158711 complete and 0 interrupted iterations
+ramp   [  88% ] 339/400 VUs  1m53.9s/2m10.0s
+
+running (1m54.9s), 349/400 VUs, 160132 complete and 0 interrupted iterations
+ramp   [  88% ] 349/400 VUs  1m54.9s/2m10.0s
+
+running (1m55.9s), 359/400 VUs, 161307 complete and 0 interrupted iterations
+ramp   [  89% ] 359/400 VUs  1m55.9s/2m10.0s
+
+running (1m56.9s), 369/400 VUs, 162412 complete and 0 interrupted iterations
+ramp   [  90% ] 369/400 VUs  1m56.9s/2m10.0s
+
+running (1m57.9s), 379/400 VUs, 163847 complete and 0 interrupted iterations
+ramp   [  91% ] 379/400 VUs  1m57.9s/2m10.0s
+
+running (1m58.9s), 389/400 VUs, 165128 complete and 0 interrupted iterations
+ramp   [  91% ] 389/400 VUs  1m58.9s/2m10.0s
+
+running (1m59.9s), 399/400 VUs, 166545 complete and 0 interrupted iterations
+ramp   [  92% ] 399/400 VUs  1m59.9s/2m10.0s
+
+running (2m00.9s), 367/400 VUs, 167910 complete and 0 interrupted iterations
+ramp   [  93% ] 367/400 VUs  2m00.9s/2m10.0s
+
+running (2m01.9s), 327/400 VUs, 169278 complete and 0 interrupted iterations
+ramp   [  94% ] 327/400 VUs  2m01.9s/2m10.0s
+
+running (2m02.9s), 289/400 VUs, 170667 complete and 0 interrupted iterations
+ramp   [  95% ] 289/400 VUs  2m02.9s/2m10.0s
+
+running (2m03.9s), 248/400 VUs, 172002 complete and 0 interrupted iterations
+ramp   [  95% ] 248/400 VUs  2m03.9s/2m10.0s
+
+running (2m04.9s), 206/400 VUs, 173393 complete and 0 interrupted iterations
+ramp   [  96% ] 206/400 VUs  2m04.9s/2m10.0s
+
+running (2m05.9s), 165/400 VUs, 174790 complete and 0 interrupted iterations
+ramp   [  97% ] 165/400 VUs  2m05.9s/2m10.0s
+
+running (2m06.9s), 126/400 VUs, 176168 complete and 0 interrupted iterations
+ramp   [  98% ] 126/400 VUs  2m06.9s/2m10.0s
+
+running (2m07.9s), 087/400 VUs, 177506 complete and 0 interrupted iterations
+ramp   [  98% ] 087/400 VUs  2m07.9s/2m10.0s
+time="2026-09-25T17:26:04+08:00" level=warning msg="The test has generated metrics with 1600271 unique time series, which is higher than the suggested limit of 100000 and could cause high memory usage. Consider not using high-cardinality values like unique IDs as metric tags or, if you need them in the URL, use the name metric tag or URL grouping. See https://grafana.com/docs/k6/latest/using-k6/tags-and-groups/ for details." component=metrics-engine-ingester
+
+running (2m08.9s), 045/400 VUs, 178915 complete and 0 interrupted iterations
+ramp   [  99% ] 045/400 VUs  2m08.9s/2m10.0s
+
+running (2m09.9s), 004/400 VUs, 180239 complete and 0 interrupted iterations
+ramp   [ 100% ] 004/400 VUs  2m09.9s/2m10.0s
+
+
+  █ THRESHOLDS 
+
+    cancel_latency_ms
+    ✓ 'p(95)<250' p(95)=136ms
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 180316  1387.028114/s
+    checks_succeeded...: 100.00% 180316 out of 180316
+    checks_failed......: 0.00%   0 out of 180316
+
+    ✓ cancel 200
+
+    CUSTOM
+    cancel_latency_ms..............: avg=41.6ms  min=0s med=24ms    max=371ms    p(90)=109ms    p(95)=136ms   
+
+    HTTP
+    http_req_duration..............: avg=37.75ms min=0s med=20.31ms max=370.77ms p(90)=103.72ms p(95)=129.89ms
+      { expected_response:true }...: avg=37.75ms min=0s med=20.31ms max=370.77ms p(90)=103.72ms p(95)=129.89ms
+    http_req_failed................: 0.00%  0 out of 360632
+    http_reqs......................: 360632 2774.056228/s
+
+    EXECUTION
+    iteration_duration.............: avg=75.81ms min=0s med=39.67ms max=534.35ms p(90)=213.83ms p(95)=252.95ms
+    iterations.....................: 180316 1387.028114/s
+    vus............................: 4      min=0           max=399
+    vus_max........................: 400    min=400         max=400
+
+    NETWORK
+    data_received..................: 101 MB 780 kB/s
+    data_sent......................: 68 MB  524 kB/s
+
+
+
+
+running (2m10.0s), 000/400 VUs, 180316 complete and 0 interrupted iterations
+ramp ✓ [ 100% ] 000/400 VUs  2m10s

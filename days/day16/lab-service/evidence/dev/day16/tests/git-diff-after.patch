@@ -1,0 +1,20 @@
+﻿diff --git a/tests/DomainTests/Program.cs b/tests/DomainTests/Program.cs
+index 567d981..70f002c 100644
+--- a/tests/DomainTests/Program.cs
++++ b/tests/DomainTests/Program.cs
+@@ -8,8 +8,12 @@ void Check(string sc, string name, Func<bool> f)
+     Console.WriteLine($"{(ok ? "PASS" : "FAIL")} {sc} {name}");
+     if (!ok) failures++;
+ }
+-Check("v1-1", "撠?箄疏?臬?瘨?, () => Cancellation.Cancel(new Order(false, false, false)).Order.Cancelled);
+-Check("v1-2", "撌脣鞎其??臬?瘨?, () => { var o = new Order(true, false, false); return Cancellation.Cancel(o).Order == o; });
+-Check("v1-3", "撌脖?甈曉?瘨?閬??甈?, () => { var r = Cancellation.Cancel(new Order(false, true, false)); return r.Order.Cancelled && !r.RefundRequested; });
++Check("SC-01", "?芸鞎典??", () => { var r = Cancellation.Cancel(new Order(false, false, false)); return r.Order.Cancelled && !r.RefundRequested; });
++Check("SC-02", "撌脣鞎其??臬?瘨?, () => { var o = new Order(true, false, false); return Cancellation.Cancel(o).Order == o; });
++Check("SC-03", "撌脖?甈曉?瘨?瘙甈?, () => { var r = Cancellation.Cancel(new Order(false, true, false)); return r.Order.Cancelled && r.RefundRequested; });
++Check("SC-04", "?芯?甈曉?瘨?閬??甈?, () => { var r = Cancellation.Cancel(new Order(false, false, false)); return !r.RefundRequested; });
++Check("SC-05", "撌脣鞎典歇隞狡????桐??甈?, () => { var o = new Order(true, true, false); var r = Cancellation.Cancel(o); return r.Order == o && !r.RefundRequested; });
++Check("SC-06", "撌脣?瘨隞狡?活??蝬剜???銝甈?, () => { var o = new Order(false, false, true); var r = Cancellation.Cancel(o); return r.Order == o && !r.RefundRequested; });
++Check("SC-07", "撌脣?瘨歇隞狡?活??銝?銴甈?, () => { var o = new Order(false, true, true); var r = Cancellation.Cancel(o); return r.Order == o && !r.RefundRequested; });
+ Console.WriteLine(failures == 0 ? "PASS: ?券璇辣??" : $"FAIL: {failures} ??隞嗆??");
+ return failures;

@@ -1,0 +1,16 @@
+# 只抓一個目標：主機上的訂單取消服務。
+# 服務未啟動時這個 target 會是 down，這是正確行為——不要為了畫面好看把它拿掉。
+global:
+  scrape_interval: 5s
+  evaluation_interval: 15s
+  external_labels:
+    env: local-teaching
+
+scrape_configs:
+  - job_name: order-cancel-api
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["host.docker.internal:5080"]
+        labels:
+          service: order-cancel
+          component: api

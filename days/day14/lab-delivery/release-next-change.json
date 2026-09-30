@@ -1,0 +1,6 @@
+{
+  "from": "fixed",
+  "to": "release-next",
+  "change": "Add GET /version returning release and runtime characteristics; business cancellation logic unchanged",
+  "source_sha256": "da2c152cf96a115ff8df9d30eed65d8ff72d7a55f0ff3601c0907d406d1d32ca"
+}

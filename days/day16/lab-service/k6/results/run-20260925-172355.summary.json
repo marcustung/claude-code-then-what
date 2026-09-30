@@ -1,0 +1,87 @@
+{
+ "run_id": "run-20260925-172355",
+ "purpose": "上線前壓測（後續）：健康服務、無故障注入，找 p95 越過 250ms（後續 定的門檻）的那一點",
+ "tool": "k6 v1.3.0",
+ "service_version": "1.2.0",
+ "target": "http://127.0.0.1:5080/orders/{id}/cancel",
+ "profile": "ramping-vus 0→10→25→50→100→200→400→0，每階 20 秒（收尾 10 秒），每次迭代建一張新訂單再取消",
+ "total_iterations": 180316,
+ "total_http_reqs": 360632,
+ "http_req_failed_pct": 0.0,
+ "overall": {
+  "avg_ms": 41.6,
+  "p50_ms": 24,
+  "p90_ms": 109,
+  "p95_ms": 136,
+  "max_ms": 371
+ },
+ "per_stage": [
+  {
+   "stage": "0→10 VU",
+   "n": 28555,
+   "p50_ms": 3,
+   "p95_ms": 7,
+   "p99_ms": 9
+  },
+  {
+   "stage": "10→25 VU",
+   "n": 29648,
+   "p50_ms": 11,
+   "p95_ms": 17,
+   "p99_ms": 24
+  },
+  {
+   "stage": "25→50 VU",
+   "n": 28213,
+   "p50_ms": 18,
+   "p95_ms": 28,
+   "p99_ms": 36
+  },
+  {
+   "stage": "50→100 VU",
+   "n": 28369,
+   "p50_ms": 31,
+   "p95_ms": 50,
+   "p99_ms": 61
+  },
+  {
+   "stage": "100→200 VU",
+   "n": 27661,
+   "p50_ms": 59,
+   "p95_ms": 89,
+   "p99_ms": 117
+  },
+  {
+   "stage": "200→400 VU",
+   "n": 27013,
+   "p50_ms": 119,
+   "p95_ms": 173,
+   "p99_ms": 233
+  },
+  {
+   "stage": "400→0 VU（收尾）",
+   "n": 10857,
+   "p50_ms": 64,
+   "p95_ms": 123,
+   "p99_ms": 137
+  }
+ ],
+ "threshold_check": {
+  "metric": "cancel_latency_ms p(95)",
+  "threshold_ms": 250,
+  "result": "PASS（overall p95=136ms；最高單一階段 p95=173ms，200→400 VU 那段）"
+ },
+ "over_threshold_samples": {
+  "count": 130,
+  "total_samples": 180316,
+  "note": "全部 130 筆集中在單一 100ms 視窗（t=114.3s，落在 200→400 VU 加壓階段），不是分散在整段測試裡的漸進劣化。",
+  "confirmed": false,
+  "plausible_cause": "run 結束時 oc_gc_collections_gen2=8；單次 Gen2 GC 停頓會同時卡住當下所有在途請求，時間分布吻合，但沒有逐次 GC 的時間戳可以對照，這是未確認的假說，不是證明的根因。"
+ },
+ "gc_after_run": {
+  "oc_gc_heap_bytes": 87582752,
+  "oc_working_set_bytes": 178475008,
+  "oc_gc_collections_gen2": 8
+ },
+ "boundary": "Windows 開發機、Kestrel 單程序、記憶體內儲存；沒有隔離 CPU／網路，跟同機其他負載共用資源；這是這台機器這次的結果，不是雲端生產環境的容量規劃。"
+}

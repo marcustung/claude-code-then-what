@@ -1,0 +1,207 @@
+[
+  {
+    "method": "GET",
+    "path": "/ready",
+    "body": null,
+    "status": 200,
+    "response": {
+      "ready": true,
+      "version": "delivery-hardening-local-r2"
+    },
+    "request_id": "acceptance-next-01-ci-integration-1"
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "body": {
+      "id": "paid",
+      "paid": true,
+      "shipped": false
+    },
+    "status": 200,
+    "response": {
+      "id": "paid",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-2"
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "body": {
+      "id": "unpaid",
+      "paid": false,
+      "shipped": false
+    },
+    "status": 200,
+    "response": {
+      "id": "unpaid",
+      "order": {
+        "shipped": false,
+        "paid": false,
+        "cancelled": false
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-3"
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "body": {
+      "id": "shipped",
+      "paid": true,
+      "shipped": true
+    },
+    "status": 200,
+    "response": {
+      "id": "shipped",
+      "order": {
+        "shipped": true,
+        "paid": true,
+        "cancelled": false
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-4"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/paid/cancel",
+    "body": null,
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "acceptance-next-01-ci-integration-5",
+      "notification_id": "f740294678e646da826fea43bbbba551",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-5"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/paid/cancel",
+    "body": null,
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "acceptance-next-01-ci-integration-6",
+      "notification_id": null,
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-6"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/unpaid/cancel",
+    "body": null,
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "acceptance-next-01-ci-integration-7",
+      "notification_id": "f1e416f1d88948e788cbec6a935290ce",
+      "order": {
+        "shipped": false,
+        "paid": false,
+        "cancelled": true
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-7"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/shipped/cancel",
+    "body": null,
+    "status": 409,
+    "response": {
+      "ok": false,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": "rejected_shipped",
+      "request_id": "acceptance-next-01-ci-integration-8",
+      "notification_id": null,
+      "order": {
+        "shipped": true,
+        "paid": true,
+        "cancelled": false
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-8"
+  },
+  {
+    "method": "POST",
+    "path": "/orders/paid/cancel",
+    "body": null,
+    "status": 401,
+    "response": {
+      "ok": false,
+      "reason": "unauthorized",
+      "request_id": "acceptance-next-01-ci-integration-9"
+    },
+    "request_id": "acceptance-next-01-ci-integration-9"
+  },
+  {
+    "method": "GET",
+    "path": "/orders/paid",
+    "body": null,
+    "status": 200,
+    "response": {
+      "id": "paid",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-10"
+  },
+  {
+    "method": "GET",
+    "path": "/orders/unpaid",
+    "body": null,
+    "status": 200,
+    "response": {
+      "id": "unpaid",
+      "order": {
+        "shipped": false,
+        "paid": false,
+        "cancelled": true
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-11"
+  },
+  {
+    "method": "GET",
+    "path": "/orders/shipped",
+    "body": null,
+    "status": 200,
+    "response": {
+      "id": "shipped",
+      "order": {
+        "shipped": true,
+        "paid": true,
+        "cancelled": false
+      }
+    },
+    "request_id": "acceptance-next-01-ci-integration-12"
+  }
+]

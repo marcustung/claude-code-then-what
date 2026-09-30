@@ -1,0 +1,5 @@
+﻿ M src/Domain/Cancellation.cs
+ M tests/DomainTests/Program.cs
+?? PR.md
+?? evidence/dev/
+?? tools/dev-session.ps1

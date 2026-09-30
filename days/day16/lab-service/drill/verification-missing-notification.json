@@ -1,0 +1,142 @@
+{
+ "drill": "missing-notification",
+ "run_id": "missing-notification-20260921-193704",
+ "service_version": "1.0.0",
+ "api_sha256": "E04A23471FF795A2EA1D1B77AF164987ABB3CD89638BD59AE4300F9FEDBFA971",
+ "faults_file": "scenarios/faults/missing-notification.json",
+ "fault_config": {
+  "notify_delay_ms": 400,
+  "notify_drop_over_queue": 2
+ },
+ "performed": "2026-09-24（揭露故障設定後，對 2026-09-21 的既有 run 逐筆追蹤）",
+ "dashboard_says": {
+  "oc_transitions_total": "9",
+  "oc_notify_enqueued_total": "9",
+  "oc_notify_sent_total": "9",
+  "oc_notify_queue_depth": "0",
+  "oc_notify_dead_letter_total": "0（未輸出）",
+  "reading": "九次轉換、九則入列、九則送出、佇列清空、零死信——服務自己的每一個數字都說一切正常。"
+ },
+ "sink_says": {
+  "unique_receipts": 3,
+  "reading": "接收端只有三則收據。六張已取消的訂單，對方不知道。"
+ },
+ "root_cause": {
+  "file": "src/Api/Program.cs",
+  "version": "1.0.0",
+  "lines": "146–150（git 71e57b8）",
+  "code": "if (_f.DropOverQueue is int q && _ch.Reader.Count > q) { /* 故障：假裝送了 */ _m.Inc(\"notify_sent_total\"); _log.Write(... event = \"notify_deferred\" ...); continue; }",
+  "why_invisible": [
+   "notify_sent_total 在「丟掉」的那一條路徑上被加一——計數器記的是「我決定不送」，不是「對方收到」。",
+   "continue 之後沒有重新入列，所以佇列深度一路降到 0，看起來像排空，其實是丟完了。",
+   "唯一的痕跡是 notify_deferred，級別 INFO——和正常訊息混在一起，不會觸發任何告警。",
+   "沒有進 dead_letter，所以 NC-05 的「不得安靜丟失」在指標上看不出被違反。"
+  ]
+ },
+ "why_the_last_three_survived": "判斷式用的是 _ch.Reader.Count，也就是「取出這一則之後還剩幾則」，不是入列當下的深度。九則入列後，worker 每取一則就看剩餘量：剩 7、7、6、5、4、3 時都 > 2，全部丟掉；剩 2 以下才走正常送出。所以存活的必然是最後三則（r013／r014／r015），而不是最早的三則——這一點光看指標永遠推不出來，要逐筆對 queue_depth 才看得到。",
+ "contract_violations": [
+  "NC-01（每次轉換恰好一則通知）",
+  "NC-04（送達以接收端收據為準）",
+  "NC-05（不得安靜丟失）"
+ ],
+ "fixed_in": {
+  "version": "1.1.0",
+  "commit": "fe980e5",
+  "change": "壓力下改為重排到隊尾（最多 MaxDeferrals 次）並另計 notify_deferred_total；notify_sent_total 改成只在接收端 ack 之後才加。",
+  "verification": "missing-notification-20260921-193835（v1.1.0）與 -20260923-190815（v1.2.0）的 SLI-02 皆為 ok：轉換數與唯一收據數相等。"
+ },
+ "lesson": "服務自己記的「已送出」不是送達證據。這一條在 observability/design-card.md §2 是設計原則，在這次演練裡是 six 張訂單的實際後果。",
+ "per_notification_trace": [
+  {
+   "request_id": "missing-notification-r001",
+   "order_id": "o-01",
+   "notification_id": "adb413f734ed4b0f8adea9bc7e8b5618",
+   "service_event": "notify_deferred",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": 7,
+   "receipt_at_sink": false,
+   "verdict": "靜默丟失，但服務記成已送出"
+  },
+  {
+   "request_id": "missing-notification-r002",
+   "order_id": "o-02",
+   "notification_id": "cba06e3d4ba44fbdb604c6b5b5399a72",
+   "service_event": "notify_deferred",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": 7,
+   "receipt_at_sink": false,
+   "verdict": "靜默丟失，但服務記成已送出"
+  },
+  {
+   "request_id": "missing-notification-r004",
+   "order_id": "o-04",
+   "notification_id": "bf6ab2fc0b8f48c3909bb78ec9cbd242",
+   "service_event": "notify_deferred",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": 6,
+   "receipt_at_sink": false,
+   "verdict": "靜默丟失，但服務記成已送出"
+  },
+  {
+   "request_id": "missing-notification-r006",
+   "order_id": "o-05",
+   "notification_id": "f9277350ce304fd3b0c19d80c8ef4763",
+   "service_event": "notify_deferred",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": 5,
+   "receipt_at_sink": false,
+   "verdict": "靜默丟失，但服務記成已送出"
+  },
+  {
+   "request_id": "missing-notification-r008",
+   "order_id": "o-07",
+   "notification_id": "252109d8c2cc4b6aa2dfbbcad449c27d",
+   "service_event": "notify_deferred",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": 4,
+   "receipt_at_sink": false,
+   "verdict": "靜默丟失，但服務記成已送出"
+  },
+  {
+   "request_id": "missing-notification-r010",
+   "order_id": "o-08",
+   "notification_id": "129fb17661eb46f8bf065e069d28ac62",
+   "service_event": "notify_deferred",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": 3,
+   "receipt_at_sink": false,
+   "verdict": "靜默丟失，但服務記成已送出"
+  },
+  {
+   "request_id": "missing-notification-r013",
+   "order_id": "o-09",
+   "notification_id": "54584bbfffd746c7a49f2335cf522e3e",
+   "service_event": "notify_sent",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": null,
+   "receipt_at_sink": true,
+   "verdict": "送達"
+  },
+  {
+   "request_id": "missing-notification-r014",
+   "order_id": "o-10",
+   "notification_id": "ba9e4eaa459d47048f2219ce32ba50cd",
+   "service_event": "notify_sent",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": null,
+   "receipt_at_sink": true,
+   "verdict": "送達"
+  },
+  {
+   "request_id": "missing-notification-r015",
+   "order_id": "o-11",
+   "notification_id": "915910bf58c6445a9928b6be1f2fc0b2",
+   "service_event": "notify_sent",
+   "service_log_level": "INFO",
+   "queue_depth_at_dequeue": null,
+   "receipt_at_sink": true,
+   "verdict": "送達"
+  }
+ ],
+ "lost_count": 6
+}

@@ -1,0 +1,54 @@
+{
+ "run_id": "oom-retained-payloads-20260923-191735",
+ "version": "1.2.0",
+ "scenario": "oom-retained-payloads",
+ "mode": "load",
+ "rules_version": "1.2",
+ "verdict": "ok",
+ "findings": [
+  {
+   "id": "SLI-01",
+   "name": "取消請求成功率",
+   "source": "spec",
+   "level": "ok",
+   "detail": "2400 筆請求，狀態分布 {200: 2104, 409: 296}，規格外狀態 0 筆"
+  },
+  {
+   "id": "SLI-02",
+   "name": "通知對帳率",
+   "source": "spec",
+   "level": "ok",
+   "detail": "轉換 526.0／唯一收據 526"
+  },
+  {
+   "id": "SLI-03",
+   "name": "客戶端 p95 延遲",
+   "source": "spec",
+   "level": "ok",
+   "detail": "客戶端 p95=34.1 ms（門檻 250）"
+  },
+  {
+   "id": "SLI-04",
+   "name": "GC heap 成長",
+   "source": "spec",
+   "level": "ok",
+   "detail": "heap 成長 8.9 MB（門檻 64，13 個取樣）"
+  },
+  {
+   "id": "SLI-05",
+   "name": "通知佇列殘留",
+   "source": "post-hoc",
+   "level": "ok",
+   "detail": "run 結束時佇列深度 0.0"
+  }
+ ],
+ "dashboard_vs_client": {
+  "histogram_p50_ms": 2.74,
+  "client_p50_ms": 12.2,
+  "histogram_p95_ms": 7.53,
+  "client_p95_ms": 34.1,
+  "first_bucket_le_ms": 5.0,
+  "pct_samples_in_first_bucket": 91.33,
+  "note": "伺服器直方圖與客戶端量到的是不同東西：直方圖只含 handler 內部，客戶端含連線、排隊與序列化。落在第一個桶裡的比例越高，histogram_quantile 的結果越接近純內插。"
+ }
+}

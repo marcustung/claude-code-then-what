@@ -1,0 +1,2 @@
+用 reviewer subagent（Task 工具，subagent_type=reviewer）審目前的 git diff 對 specs/rules-v2.md。把 reviewer 的完整回報原文貼回來，再加上你自己的一句判斷。
+回 JSON：{"reviewer_report": "原文", "gaps": ["..."], "my_take": "..."}

@@ -1,0 +1,24 @@
+{
+  "scenario": "slow-sync-control",
+  "mode": "load",
+  "description": "slow-sync-notify 的負對照：同一組負載與同樣的接收端延遲（OC_SINK_DELAY_MS=150），但不注入 sync_notify。用來把「接收端慢」與「取消請求同步等接收端」分開——前者不該影響客戶端延遲，後者才會。新增於 2026-09-23，不改動既有場景。",
+  "faults": null,
+  "env": {
+    "DOTNET_GCHeapHardLimit": "0x8000000",
+    "OC_SINK_DELAY_MS": "150"
+  },
+  "load": {
+    "orders": 300,
+    "concurrency": 32,
+    "payload_bytes": 0,
+    "repeat": 1,
+    "seed": 7
+  },
+  "expected": {
+    "p95_ms_max": 250,
+    "heap_growth_mb_max": 64
+  },
+  "wait": {
+    "timeout_seconds": 180
+  }
+}

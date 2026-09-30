@@ -1,0 +1,20 @@
+[
+  {
+    "notification_id": "f740294678e646da826fea43bbbba551",
+    "order_id": "paid",
+    "request_id": "acceptance-next-01-ci-integration-5",
+    "run_id": "acceptance-next-01-ci-integration",
+    "kind": "order_cancelled",
+    "refund_requested": true,
+    "attempt": 0
+  },
+  {
+    "notification_id": "f1e416f1d88948e788cbec6a935290ce",
+    "order_id": "unpaid",
+    "request_id": "acceptance-next-01-ci-integration-7",
+    "run_id": "acceptance-next-01-ci-integration",
+    "kind": "order_cancelled",
+    "refund_requested": false,
+    "attempt": 0
+  }
+]

@@ -9,4 +9,4 @@
 停止：腳本timeout整輪180秒、服務退出、錯誤率>5%持續評估（起始10秒後abortOnFail）、通知排空20秒仍不齊則判失敗。模式未明拒跑。
 架構（待Claude核對程式）：API→OrderStore.TryCancel全域鎖→Domain→Channel→NotificationWorker→FakeSink；回應前入列，送達不固定先後。請核對圖與程式差異，勿僅憑圖下根因。
 量測：k6 latency/error/checks/dropped；程序/metrics queue/working set/heap/GC；原始通知收據。CPU如未提供不編造。Memory內訂單增加不是直接等於leak。
-決策：先驗實驗是否可用；不達門檻查原因。即使通過，auth、durability、backup、環境差異仍未驗，不准正式上線。Day27才從線上issue重現與修法出發。
+決策：先驗實驗是否可用；不達門檻查原因。即使通過，auth、durability、backup、環境差異仍未驗，不准正式上線。後續才從線上issue重現與修法出發。

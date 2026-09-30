@@ -1,0 +1,86 @@
+[
+  {
+    "at": 1790520848.2929893,
+    "phase": "before",
+    "status": 200,
+    "payload": {
+      "notification_id": "470184dbbfb64920b7654fdc59018591",
+      "order_id": "before-update",
+      "request_id": "before-request",
+      "run_id": "acceptance-rollback-01",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    }
+  },
+  {
+    "at": 1790520849.0606658,
+    "phase": "updated",
+    "status": 503,
+    "payload": {
+      "notification_id": "d0e39019500e489cb21d391c3f303b05",
+      "order_id": "during-update",
+      "request_id": "updated-request",
+      "run_id": "acceptance-rollback-01",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    }
+  },
+  {
+    "at": 1790520849.2759018,
+    "phase": "updated",
+    "status": 503,
+    "payload": {
+      "notification_id": "d0e39019500e489cb21d391c3f303b05",
+      "order_id": "during-update",
+      "request_id": "updated-request",
+      "run_id": "acceptance-rollback-01",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 1
+    }
+  },
+  {
+    "at": 1790520849.6886942,
+    "phase": "updated",
+    "status": 503,
+    "payload": {
+      "notification_id": "d0e39019500e489cb21d391c3f303b05",
+      "order_id": "during-update",
+      "request_id": "updated-request",
+      "run_id": "acceptance-rollback-01",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 2
+    }
+  },
+  {
+    "at": 1790520850.492504,
+    "phase": "updated",
+    "status": 503,
+    "payload": {
+      "notification_id": "d0e39019500e489cb21d391c3f303b05",
+      "order_id": "during-update",
+      "request_id": "updated-request",
+      "run_id": "acceptance-rollback-01",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 3
+    }
+  },
+  {
+    "at": 1790520851.2459993,
+    "phase": "rolled-back",
+    "status": 200,
+    "payload": {
+      "notification_id": "dd2345d3d20f4f45b44ce7e39c4c1f9a",
+      "order_id": "after-rollback",
+      "request_id": "rolled-back-request",
+      "run_id": "acceptance-rollback-01",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    }
+  }
+]

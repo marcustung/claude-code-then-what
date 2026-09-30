@@ -1,0 +1,63 @@
+{
+  "label": "healthy",
+  "start_epoch": 1790163074.3105314,
+  "end_epoch": 1790163158.7675526,
+  "start_iso": "2026-09-23T11:31:14Z",
+  "end_iso": "2026-09-23T11:32:38Z",
+  "rounds": [
+    {
+      "round": 1,
+      "at": 1790163076.7117577,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 558, \"409\": 42}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.4, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 2,
+      "at": 1790163087.5020323,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 506, \"409\": 94}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.46, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 3,
+      "at": 1790163097.403087,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 530, \"409\": 70}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.41, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 4,
+      "at": 1790163107.318879,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 548, \"409\": 52}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.36, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 5,
+      "at": 1790163117.496239,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 554, \"409\": 46}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.35, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 6,
+      "at": 1790163127.6804378,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 532, \"409\": 68}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.44, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 7,
+      "at": 1790163137.912923,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 538, \"409\": 62}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.37, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 8,
+      "at": 1790163148.3698716,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 548, \"409\": 52}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.41, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    },
+    {
+      "round": 9,
+      "at": 1790163158.767545,
+      "stdout_tail": "{\"orders\": 300, \"repeat\": 2, \"total_requests\": 600, \"completed\": 600, \"by_status\": {\"200\": 542, \"409\": 58}, \"concurrency\": 12, \"payload_bytes\": 0, \"elapsed_s\": 0.4, \"aborted_on_connection_error\": false}",
+      "exit": 0
+    }
+  ]
+}

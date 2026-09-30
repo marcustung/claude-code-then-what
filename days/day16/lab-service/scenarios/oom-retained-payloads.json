@@ -1,0 +1,23 @@
+{
+  "scenario": "oom-retained-payloads",
+  "mode": "load",
+  "description": "演練：注入 retain_payloads（每筆 request body 留在記憶體、無上限）＋ GC heap 硬上限 128 MB；同一批負載下服務預期會 OutOfMemory 崩潰。故障為刻意注入，heap 上限是演練用的縮小環境，不是自然事故。",
+  "faults": "scenarios/faults/oom-retained-payloads.json",
+  "env": {
+    "DOTNET_GCHeapHardLimit": "0x8000000"
+  },
+  "load": {
+    "orders": 600,
+    "concurrency": 32,
+    "payload_bytes": 65536,
+    "repeat": 4,
+    "seed": 7
+  },
+  "expected": {
+    "p95_ms_max": 250,
+    "heap_growth_mb_max": 64
+  },
+  "wait": {
+    "timeout_seconds": 180
+  }
+}

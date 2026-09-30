@@ -1,0 +1,24 @@
+{
+  "scenario": "slow-sync-notify",
+  "mode": "load",
+  "description": "演練：注入 sync_notify（取消請求在路徑上同步等接收端）＋接收端每則延遲；同一批負載下 p95 預期超門檻。故障為刻意注入。",
+  "faults": "scenarios/faults/slow-sync-notify.json",
+  "env": {
+    "DOTNET_GCHeapHardLimit": "0x8000000",
+    "OC_SINK_DELAY_MS": "150"
+  },
+  "load": {
+    "orders": 300,
+    "concurrency": 32,
+    "payload_bytes": 0,
+    "repeat": 1,
+    "seed": 7
+  },
+  "expected": {
+    "p95_ms_max": 250,
+    "heap_growth_mb_max": 64
+  },
+  "wait": {
+    "timeout_seconds": 180
+  }
+}

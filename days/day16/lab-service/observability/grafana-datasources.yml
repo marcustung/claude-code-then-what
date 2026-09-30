@@ -1,0 +1,13 @@
+# Grafana 開機即帶好 Prometheus datasource，省掉手動點設定。
+apiVersion: 1
+
+datasources:
+  - name: oc-prometheus
+    uid: oc-prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false
+    jsonData:
+      timeInterval: 5s

@@ -1,0 +1,7 @@
+你是這個 .NET 專案的開發者。先讀 CLAUDE.md、specs/rules-v2.md、specs/decisions-v1.md、src/Domain/Cancellation.cs、tests/DomainTests/Program.cs。
+不要改任何檔案。回一個 JSON：
+{"rules_token": "CLAUDE.md 裡的 RULES-TOKEN 值",
+ "v1_to_v2_diff": [{"sc": "SC-03", "kind": "改既有測試預期|新增測試|不變", "existing_test": "測試名或 null", "reason": "..."}],
+ "expected_red_after_tests": ["哪些 SC 在改完測試、還沒改程式時會 FAIL，並說為什麼（引用 src/Domain/Cancellation.cs 行號）"],
+ "impl_plan": "要改 Cancellation.cs 哪幾行、怎麼改（最小 diff）",
+ "out_of_scope": ["這次不做的事"]}

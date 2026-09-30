@@ -1,0 +1,163 @@
+{
+  "scenario": "baseline",
+  "description": "正常對照：12 張訂單、20 次呼叫；含重複取消、已出貨、不存在、未授權；期待 9 則通知（唯一成功轉換數）",
+  "faults": null,
+  "orders": [
+    {
+      "id": "o-01",
+      "shipped": false,
+      "paid": false
+    },
+    {
+      "id": "o-02",
+      "shipped": false,
+      "paid": true
+    },
+    {
+      "id": "o-03",
+      "shipped": true,
+      "paid": false
+    },
+    {
+      "id": "o-04",
+      "shipped": false,
+      "paid": true
+    },
+    {
+      "id": "o-05",
+      "shipped": false,
+      "paid": false
+    },
+    {
+      "id": "o-06",
+      "shipped": true,
+      "paid": true
+    },
+    {
+      "id": "o-07",
+      "shipped": false,
+      "paid": true
+    },
+    {
+      "id": "o-08",
+      "shipped": false,
+      "paid": false
+    },
+    {
+      "id": "o-09",
+      "shipped": false,
+      "paid": true
+    },
+    {
+      "id": "o-10",
+      "shipped": false,
+      "paid": false
+    },
+    {
+      "id": "o-11",
+      "shipped": false,
+      "paid": true
+    },
+    {
+      "id": "o-12",
+      "shipped": true,
+      "paid": false
+    }
+  ],
+  "operations": [
+    {
+      "op": "cancel",
+      "id": "o-01"
+    },
+    {
+      "op": "cancel",
+      "id": "o-02"
+    },
+    {
+      "op": "cancel",
+      "id": "o-03"
+    },
+    {
+      "op": "cancel",
+      "id": "o-04"
+    },
+    {
+      "op": "cancel",
+      "id": "o-01"
+    },
+    {
+      "op": "cancel",
+      "id": "o-05"
+    },
+    {
+      "op": "cancel",
+      "id": "o-06"
+    },
+    {
+      "op": "cancel",
+      "id": "o-07"
+    },
+    {
+      "op": "cancel",
+      "id": "o-02"
+    },
+    {
+      "op": "cancel",
+      "id": "o-08"
+    },
+    {
+      "op": "cancel",
+      "id": "o-99"
+    },
+    {
+      "op": "cancel",
+      "id": "o-09",
+      "actor": ""
+    },
+    {
+      "op": "cancel",
+      "id": "o-09"
+    },
+    {
+      "op": "cancel",
+      "id": "o-10"
+    },
+    {
+      "op": "cancel",
+      "id": "o-11"
+    },
+    {
+      "op": "cancel",
+      "id": "o-12"
+    },
+    {
+      "op": "cancel",
+      "id": "o-04"
+    },
+    {
+      "op": "cancel",
+      "id": "o-07"
+    },
+    {
+      "op": "cancel",
+      "id": "o-10"
+    },
+    {
+      "op": "cancel",
+      "id": "o-11"
+    }
+  ],
+  "expected": {
+    "transitions": 9,
+    "idempotent": 6,
+    "rejected_shipped": 3,
+    "not_found": 1,
+    "unauthorized": 1,
+    "notifications_received": 9,
+    "refund_requested_true": 5
+  },
+  "wait": {
+    "terminal": "receipts >= expected.notifications_received and queue_depth == 0",
+    "timeout_seconds": 20
+  }
+}

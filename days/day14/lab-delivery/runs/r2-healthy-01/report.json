@@ -1,0 +1,117 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "r2-healthy-package",
+      "passed": true,
+      "detail": "acceptance-next-01"
+    },
+    {
+      "name": "r2-healthy-version",
+      "passed": true,
+      "detail": {
+        "ok": true,
+        "version": "delivery-hardening-local-r2"
+      }
+    },
+    {
+      "name": "r2-new-endpoint",
+      "passed": true,
+      "detail": {
+        "version": "delivery-hardening-local-r2",
+        "notification_mode": "async",
+        "storage": "in-memory"
+      }
+    },
+    {
+      "name": "r2-cancel",
+      "passed": true,
+      "detail": {
+        "ok": true,
+        "transitioned": true,
+        "refund_requested": true,
+        "reason": null,
+        "request_id": "r2-healthy-request",
+        "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "r2-notify-sent",
+      "passed": true,
+      "detail": {
+        "level": "INFO",
+        "event": "notify_sent",
+        "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+        "order_id": "r2-healthy-01",
+        "request_id": "r2-healthy-request",
+        "run_id": "r2-healthy-01",
+        "ts": "2026-09-29T09:40:10.8612684+08:00",
+        "version": "delivery-hardening-local-r2"
+      }
+    },
+    {
+      "name": "r2-first-attempt-succeeded",
+      "passed": true,
+      "detail": {
+        "receipts": 1,
+        "attempt": 0
+      }
+    },
+    {
+      "name": "r2-refund-flag-in-payload",
+      "passed": true,
+      "detail": {
+        "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+        "order_id": "r2-healthy-01",
+        "request_id": "r2-healthy-request",
+        "run_id": "r2-healthy-01",
+        "kind": "order_cancelled",
+        "refund_requested": true,
+        "attempt": 0
+      }
+    },
+    {
+      "name": "r2-order-queryable-while-running",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "design-item3-shipped-rejected",
+      "passed": true,
+      "detail": {
+        "status": 409,
+        "response": {
+          "ok": false,
+          "transitioned": false,
+          "refund_requested": false,
+          "reason": "rejected_shipped",
+          "request_id": "r2-healthy-request",
+          "notification_id": null,
+          "order": {
+            "shipped": true,
+            "paid": true,
+            "cancelled": false
+          }
+        }
+      }
+    },
+    {
+      "name": "design-item3-shipped-sends-no-notification",
+      "passed": true,
+      "detail": {
+        "receipts_before": 1,
+        "receipts_after": 1
+      }
+    }
+  ],
+  "candidate": "acceptance-next-01",
+  "combination": "new package (r2) with healthy fake receiver (200)",
+  "why": "acceptance-rollback-01 restored package and receiver together; this combination was never exercised",
+  "closes_design_item": "design-review.md item 3 (shipped order rejected, no notification)",
+  "limits": "author-operated local rehearsal, no production deployment; in-memory storage; short single-request check, not load or long-run; does not re-send the earlier failed notification"
+}
