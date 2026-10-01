@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 26508,
+  "stop_reason": "end_turn",
+  "session_id": "4d0664b9-ada4-484c-acc1-9fc4f0277683",
+  "total_cost_usd": 0.10500140000000001,
+  "usage": {
+    "input_tokens": 14,
+    "cache_creation_input_tokens": 13313,
+    "cache_read_input_tokens": 121807,
+    "output_tokens": 2736,
+    "output_tokens_details": {
+      "thinking_tokens": 52
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 13313,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1393,
+        "cache_read_input_tokens": 24526,
+        "cache_creation_input_tokens": 725,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 725
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 2736,
+      "cacheReadInputTokens": 121807,
+      "cacheCreationInputTokens": 13313,
+      "webSearchRequests": 0,
+      "costUSD": 0.10500140000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 52,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 12,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "## 查核結果：order_id `live-20261001-02-complete`\n\n**範圍**：datasource `day17-loki`、`lab_case=\"complete\"`、時間 2026-09-30T19:26:22Z～19:26:24Z。版本 `delivery-hardening-local-r2`，環境為本機 Docker 教學 lab。所有查詢都只用這個範圍，沒有擴大。\n\n### 1. 程式與設計\n- **`src/Program.cs:79-88`**：取消狀態有轉換（transitioned）時，API 建立 Notification 並寫入 Channel，再由 NotificationWorker 非同步 POST 到接收端。\n- **`src/Program.cs:257-261`**：只有 POST 回應成功，worker 才寫 `notify_sent`。所以 `notify_sent` 只代表發送端收到成功回應。\n- **`design/design-review.md` 第 7 點**：「本輪未跑 .NET」是當時的說明。我沒拿它當作這次服務的執行情況。\n\n### 2. API 與發送端（查詢 1）\n- **查詢**：`{lab_case=\"complete\", service_name=\"order-api\"} |= \"live-20261001-02-complete\"`\n- **來源**：`/logs/complete/api/logs.jsonl`\n- **結果**：回傳 2 筆。\n  - `event=cancel`：時間 `2026-10-01T03:26:23.229+08:00`，`result=ok`、`transitioned=true`、`refund_requested=true`、`notification_id=3b30d36ba5a64e7c9ea01ea02cc61074`。\n  - `event=notify_sent`：時間 `03:26:23.279+08:00`，`notification_id` 與上一筆相同。\n- **判讀**：sender_status 是 confirmed，因為找到相符的發送成功紀錄。\n\n### 3. 接收端（查詢 2，獨立查詢）\n- **查詢**：`{lab_case=\"complete\", service_name=\"notification-receiver\"} |= \"3b30d36ba5a64e7c9ea01ea02cc61074\"`\n- **來源**：`/logs/complete/receiver/logs.jsonl`\n- **結果**：回傳 1 筆 `notification_received`。\n  - 時間 `2026-09-30T19:26:23.275Z`。\n  - `notification_id`、`order_id`、`request_id`、`run_id` 都與發送端一致。\n  - `kind=order_cancelled`、`refund_requested=true`、`attempt=0`。\n- **判讀**：receiver_status 是 confirmed，因為有獨立的接收端紀錄，且 notification_id 相同。\n\n### 4. 對照\n- 接收端時間 19:26:23.275Z，早於發送端 `notify_sent` 的 19:26:23.279Z（換算成 UTC）。這符合「接收端收到並回應後，發送端才記成功」。\n- 接收端的 `refund_requested=true`，與 API 結果相同。\n- 只有 1 筆接收紀錄，`attempt=0`，沒有重試或重複。這只限於這個時間窗內的查詢結果。\n- 時間窗內沒有 `notify_dead_letter`、`notify_attempt_failed`、`notify_deferred`。不過我只用 order_id 和 notification_id 過濾，沒有另外查這些事件名稱。\n\n### 5. 限制與未知\n- 兩次查詢都成功，沒有工具錯誤。\n- 我沒有查 Loki 以外的來源，也沒有查其他事件。\n- 這份結論只證明接收端 Log 有收到，不代表下游已處理退款。這超出 task.json 的範圍，我標為未查。\n- 我沒有補送、修改檔案或結案。\n\n```json\n{\n  \"order_id\": \"live-20261001-02-complete\",\n  \"sender_status\": \"confirmed\",\n  \"receiver_status\": \"confirmed\",\n  \"missing_sources\": [],\n  \"next_action\": \"無需補送。交由負責人依此證據決定是否結案；如需確認退款已處理，需另行提供下游退款系統的來源。\"\n}\n```",
+  "ttft_ms": 2006,
+  "type": "result",
+  "duration_ms": 26821,
+  "uuid": "9541b7a8-c643-4aa8-abc6-c10a35d6f2da",
+  "ttft_stream_ms": 1319,
+  "time_to_request_ms": 75,
+  "first_content_frame_ms": 1321,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

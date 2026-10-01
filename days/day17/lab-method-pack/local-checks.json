@@ -1,0 +1,30 @@
+[
+  {
+    "name": "完整資料串起取消與背景送達兩筆事件",
+    "passed": true
+  },
+  {
+    "name": "接收端對上同一訂單一筆紀錄",
+    "passed": true
+  },
+  {
+    "name": "缺接收端資料有明確缺件",
+    "passed": true
+  },
+  {
+    "name": "缺接收端仍保留發送端兩筆事件",
+    "passed": true
+  },
+  {
+    "name": "空集合不等於檔案缺失",
+    "passed": true
+  },
+  {
+    "name": "格式錯誤獨立回報",
+    "passed": true
+  },
+  {
+    "name": "不混入其他訂單事件",
+    "passed": true
+  }
+]

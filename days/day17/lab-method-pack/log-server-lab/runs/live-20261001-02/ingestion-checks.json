@@ -1,0 +1,1205 @@
+[
+  {
+    "case": "complete",
+    "service": "order-api",
+    "query": "{service_name=\"order-api\",lab_case=\"complete\"} | json | order_id=\"live-20261001-02-complete\"",
+    "expected_lines": 2,
+    "actual_lines": 2,
+    "passed": true,
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "streams",
+        "result": [
+          {
+            "stream": {
+              "actor": "day17-lab",
+              "detected_level": "info",
+              "event": "cancel",
+              "filename": "/logs/complete/api/logs.jsonl",
+              "lab_case": "complete",
+              "latency_ms": "1.8",
+              "level": "INFO",
+              "notification_id": "3b30d36ba5a64e7c9ea01ea02cc61074",
+              "order_id": "live-20261001-02-complete",
+              "queue_depth": "1",
+              "refund_requested": "true",
+              "request_id": "live-20261001-02-complete",
+              "result": "ok",
+              "run_id": "live-20261001-02",
+              "service_name": "order-api",
+              "transitioned": "true",
+              "ts": "2026-10-01T03:26:23.2290891+08:00",
+              "version": "delivery-hardening-local-r2"
+            },
+            "values": [
+              [
+                "1790796383229089100",
+                "{\"level\":\"INFO\",\"event\":\"cancel\",\"request_id\":\"live-20261001-02-complete\",\"run_id\":\"live-20261001-02\",\"order_id\":\"live-20261001-02-complete\",\"actor\":\"day17-lab\",\"notification_id\":\"3b30d36ba5a64e7c9ea01ea02cc61074\",\"result\":\"ok\",\"transitioned\":true,\"refund_requested\":true,\"latency_ms\":1.8,\"queue_depth\":1,\"ts\":\"2026-10-01T03:26:23.2290891\\u002B08:00\",\"version\":\"delivery-hardening-local-r2\"}"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "detected_level": "info",
+              "event": "notify_sent",
+              "filename": "/logs/complete/api/logs.jsonl",
+              "lab_case": "complete",
+              "level": "INFO",
+              "notification_id": "3b30d36ba5a64e7c9ea01ea02cc61074",
+              "order_id": "live-20261001-02-complete",
+              "request_id": "live-20261001-02-complete",
+              "run_id": "live-20261001-02",
+              "service_name": "order-api",
+              "ts": "2026-10-01T03:26:23.2796842+08:00",
+              "version": "delivery-hardening-local-r2"
+            },
+            "values": [
+              [
+                "1790796383279684200",
+                "{\"level\":\"INFO\",\"event\":\"notify_sent\",\"notification_id\":\"3b30d36ba5a64e7c9ea01ea02cc61074\",\"order_id\":\"live-20261001-02-complete\",\"request_id\":\"live-20261001-02-complete\",\"run_id\":\"live-20261001-02\",\"ts\":\"2026-10-01T03:26:23.2796842\\u002B08:00\",\"version\":\"delivery-hardening-local-r2\"}"
+              ]
+            ]
+          }
+        ],
+        "stats": {
+          "summary": {
+            "bytesProcessedPerSecond": 89273,
+            "linesProcessedPerSecond": 303,
+            "totalBytesProcessed": 881,
+            "totalLinesProcessed": 3,
+            "execTime": 0.009869,
+            "queueTime": 0.000365,
+            "subqueries": 0,
+            "totalEntriesReturned": 2,
+            "splits": 0,
+            "shards": 1,
+            "totalPostFilterLines": 2,
+            "totalStructuredMetadataBytesProcessed": 24
+          },
+          "querier": {
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 0,
+                "headChunkLines": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 0,
+                "headChunkStructuredMetadataBytes": 0,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 0,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "ingester": {
+            "totalReached": 1,
+            "totalChunksMatched": 1,
+            "totalBatches": 2,
+            "totalLinesSent": 2,
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 881,
+                "headChunkLines": 3,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 2,
+                "headChunkStructuredMetadataBytes": 24,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 179333,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "cache": {
+            "chunk": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "index": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "result": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "statsResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "volumeResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "seriesResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "labelResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "instantMetricResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            }
+          },
+          "index": {
+            "totalChunks": 0,
+            "postFilterChunks": 0,
+            "shardsDuration": 0,
+            "usedBloomFilters": false
+          }
+        }
+      }
+    }
+  },
+  {
+    "case": "complete",
+    "service": "notification-receiver",
+    "query": "{service_name=\"notification-receiver\",lab_case=\"complete\"} | json | order_id=\"live-20261001-02-complete\"",
+    "expected_lines": 1,
+    "actual_lines": 1,
+    "passed": true,
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "streams",
+        "result": [
+          {
+            "stream": {
+              "attempt": "0",
+              "detected_level": "unknown",
+              "event": "notification_received",
+              "filename": "/logs/complete/receiver/logs.jsonl",
+              "kind": "order_cancelled",
+              "lab_case": "complete",
+              "notification_id": "3b30d36ba5a64e7c9ea01ea02cc61074",
+              "order_id": "live-20261001-02-complete",
+              "refund_requested": "true",
+              "request_id": "live-20261001-02-complete",
+              "run_id": "live-20261001-02",
+              "service_name": "notification-receiver",
+              "ts": "2026-09-30T19:26:23.275625Z"
+            },
+            "values": [
+              [
+                "1790796383275625000",
+                "{\"ts\": \"2026-09-30T19:26:23.275625Z\", \"event\": \"notification_received\", \"notification_id\": \"3b30d36ba5a64e7c9ea01ea02cc61074\", \"order_id\": \"live-20261001-02-complete\", \"request_id\": \"live-20261001-02-complete\", \"run_id\": \"live-20261001-02\", \"kind\": \"order_cancelled\", \"refund_requested\": true, \"attempt\": 0}\r"
+              ]
+            ]
+          }
+        ],
+        "stats": {
+          "summary": {
+            "bytesProcessedPerSecond": 48291,
+            "linesProcessedPerSecond": 152,
+            "totalBytesProcessed": 316,
+            "totalLinesProcessed": 1,
+            "execTime": 0.006544,
+            "queueTime": 0.000913,
+            "subqueries": 0,
+            "totalEntriesReturned": 1,
+            "splits": 0,
+            "shards": 1,
+            "totalPostFilterLines": 1,
+            "totalStructuredMetadataBytesProcessed": 8
+          },
+          "querier": {
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 0,
+                "headChunkLines": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 0,
+                "headChunkStructuredMetadataBytes": 0,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 0,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "ingester": {
+            "totalReached": 1,
+            "totalChunksMatched": 1,
+            "totalBatches": 2,
+            "totalLinesSent": 1,
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 316,
+                "headChunkLines": 1,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 1,
+                "headChunkStructuredMetadataBytes": 8,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 232715,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "cache": {
+            "chunk": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "index": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "result": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "statsResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "volumeResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "seriesResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "labelResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "instantMetricResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            }
+          },
+          "index": {
+            "totalChunks": 0,
+            "postFilterChunks": 0,
+            "shardsDuration": 0,
+            "usedBloomFilters": false
+          }
+        }
+      }
+    }
+  },
+  {
+    "case": "missing-receipts",
+    "service": "order-api",
+    "query": "{service_name=\"order-api\",lab_case=\"missing-receipts\"} | json | order_id=\"live-20261001-02-missing-receipts\"",
+    "expected_lines": 2,
+    "actual_lines": 2,
+    "passed": true,
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "streams",
+        "result": [
+          {
+            "stream": {
+              "actor": "day17-lab",
+              "detected_level": "info",
+              "event": "cancel",
+              "filename": "/logs/missing-receipts/api/logs.jsonl",
+              "lab_case": "missing-receipts",
+              "latency_ms": "1",
+              "level": "INFO",
+              "notification_id": "bda1a73ba5f84cb1abcc6d0f265e1e95",
+              "order_id": "live-20261001-02-missing-receipts",
+              "queue_depth": "0",
+              "refund_requested": "true",
+              "request_id": "live-20261001-02-missing-receipts",
+              "result": "ok",
+              "run_id": "live-20261001-02",
+              "service_name": "order-api",
+              "transitioned": "true",
+              "ts": "2026-10-01T03:26:24.4355167+08:00",
+              "version": "delivery-hardening-local-r2"
+            },
+            "values": [
+              [
+                "1790796384435516700",
+                "{\"level\":\"INFO\",\"event\":\"cancel\",\"request_id\":\"live-20261001-02-missing-receipts\",\"run_id\":\"live-20261001-02\",\"order_id\":\"live-20261001-02-missing-receipts\",\"actor\":\"day17-lab\",\"notification_id\":\"bda1a73ba5f84cb1abcc6d0f265e1e95\",\"result\":\"ok\",\"transitioned\":true,\"refund_requested\":true,\"latency_ms\":1,\"queue_depth\":0,\"ts\":\"2026-10-01T03:26:24.4355167\\u002B08:00\",\"version\":\"delivery-hardening-local-r2\"}"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "detected_level": "info",
+              "event": "notify_sent",
+              "filename": "/logs/missing-receipts/api/logs.jsonl",
+              "lab_case": "missing-receipts",
+              "level": "INFO",
+              "notification_id": "bda1a73ba5f84cb1abcc6d0f265e1e95",
+              "order_id": "live-20261001-02-missing-receipts",
+              "request_id": "live-20261001-02-missing-receipts",
+              "run_id": "live-20261001-02",
+              "service_name": "order-api",
+              "ts": "2026-10-01T03:26:24.4726606+08:00",
+              "version": "delivery-hardening-local-r2"
+            },
+            "values": [
+              [
+                "1790796384472660600",
+                "{\"level\":\"INFO\",\"event\":\"notify_sent\",\"notification_id\":\"bda1a73ba5f84cb1abcc6d0f265e1e95\",\"order_id\":\"live-20261001-02-missing-receipts\",\"request_id\":\"live-20261001-02-missing-receipts\",\"run_id\":\"live-20261001-02\",\"ts\":\"2026-10-01T03:26:24.4726606\\u002B08:00\",\"version\":\"delivery-hardening-local-r2\"}"
+              ]
+            ]
+          }
+        ],
+        "stats": {
+          "summary": {
+            "bytesProcessedPerSecond": 187950,
+            "linesProcessedPerSecond": 618,
+            "totalBytesProcessed": 911,
+            "totalLinesProcessed": 3,
+            "execTime": 0.004847,
+            "queueTime": 0.000433,
+            "subqueries": 0,
+            "totalEntriesReturned": 2,
+            "splits": 0,
+            "shards": 1,
+            "totalPostFilterLines": 2,
+            "totalStructuredMetadataBytesProcessed": 24
+          },
+          "querier": {
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 0,
+                "headChunkLines": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 0,
+                "headChunkStructuredMetadataBytes": 0,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 0,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "ingester": {
+            "totalReached": 1,
+            "totalChunksMatched": 1,
+            "totalBatches": 2,
+            "totalLinesSent": 2,
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 911,
+                "headChunkLines": 3,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 2,
+                "headChunkStructuredMetadataBytes": 24,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 173393,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "cache": {
+            "chunk": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "index": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "result": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "statsResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "volumeResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "seriesResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "labelResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "instantMetricResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            }
+          },
+          "index": {
+            "totalChunks": 0,
+            "postFilterChunks": 0,
+            "shardsDuration": 0,
+            "usedBloomFilters": false
+          }
+        }
+      }
+    }
+  },
+  {
+    "case": "missing-receipts",
+    "service": "notification-receiver",
+    "query": "{service_name=\"notification-receiver\",lab_case=\"missing-receipts\"} | json | order_id=\"live-20261001-02-missing-receipts\"",
+    "expected_lines": 0,
+    "actual_lines": 0,
+    "passed": true,
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "streams",
+        "result": [],
+        "stats": {
+          "summary": {
+            "bytesProcessedPerSecond": 0,
+            "linesProcessedPerSecond": 0,
+            "totalBytesProcessed": 0,
+            "totalLinesProcessed": 0,
+            "execTime": 0.003944,
+            "queueTime": 0.00024,
+            "subqueries": 0,
+            "totalEntriesReturned": 0,
+            "splits": 0,
+            "shards": 1,
+            "totalPostFilterLines": 0,
+            "totalStructuredMetadataBytesProcessed": 0
+          },
+          "querier": {
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 0,
+                "headChunkLines": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 0,
+                "headChunkStructuredMetadataBytes": 0,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 0,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "ingester": {
+            "totalReached": 1,
+            "totalChunksMatched": 0,
+            "totalBatches": 1,
+            "totalLinesSent": 0,
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 0,
+                "headChunkLines": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 0,
+                "headChunkStructuredMetadataBytes": 0,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 118448,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "cache": {
+            "chunk": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "index": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "result": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "statsResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "volumeResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "seriesResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "labelResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "instantMetricResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            }
+          },
+          "index": {
+            "totalChunks": 0,
+            "postFilterChunks": 0,
+            "shardsDuration": 0,
+            "usedBloomFilters": false
+          }
+        }
+      }
+    }
+  },
+  {
+    "case": "query-failure",
+    "service": "order-api",
+    "query": "{service_name=\"order-api\",lab_case=\"query-failure\"} | json | order_id=\"live-20261001-02-query-failure\"",
+    "expected_lines": 2,
+    "actual_lines": 2,
+    "passed": true,
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "streams",
+        "result": [
+          {
+            "stream": {
+              "actor": "day17-lab",
+              "detected_level": "info",
+              "event": "cancel",
+              "filename": "/logs/query-failure/api/logs.jsonl",
+              "lab_case": "query-failure",
+              "latency_ms": "1.5",
+              "level": "INFO",
+              "notification_id": "8cc6f042ba2a46a4867283b2911effc0",
+              "order_id": "live-20261001-02-query-failure",
+              "queue_depth": "1",
+              "refund_requested": "true",
+              "request_id": "live-20261001-02-query-failure",
+              "result": "ok",
+              "run_id": "live-20261001-02",
+              "service_name": "order-api",
+              "transitioned": "true",
+              "ts": "2026-10-01T03:26:25.7189174+08:00",
+              "version": "delivery-hardening-local-r2"
+            },
+            "values": [
+              [
+                "1790796385718917400",
+                "{\"level\":\"INFO\",\"event\":\"cancel\",\"request_id\":\"live-20261001-02-query-failure\",\"run_id\":\"live-20261001-02\",\"order_id\":\"live-20261001-02-query-failure\",\"actor\":\"day17-lab\",\"notification_id\":\"8cc6f042ba2a46a4867283b2911effc0\",\"result\":\"ok\",\"transitioned\":true,\"refund_requested\":true,\"latency_ms\":1.5,\"queue_depth\":1,\"ts\":\"2026-10-01T03:26:25.7189174\\u002B08:00\",\"version\":\"delivery-hardening-local-r2\"}"
+              ]
+            ]
+          },
+          {
+            "stream": {
+              "detected_level": "info",
+              "event": "notify_sent",
+              "filename": "/logs/query-failure/api/logs.jsonl",
+              "lab_case": "query-failure",
+              "level": "INFO",
+              "notification_id": "8cc6f042ba2a46a4867283b2911effc0",
+              "order_id": "live-20261001-02-query-failure",
+              "request_id": "live-20261001-02-query-failure",
+              "run_id": "live-20261001-02",
+              "service_name": "order-api",
+              "ts": "2026-10-01T03:26:25.7516834+08:00",
+              "version": "delivery-hardening-local-r2"
+            },
+            "values": [
+              [
+                "1790796385751683400",
+                "{\"level\":\"INFO\",\"event\":\"notify_sent\",\"notification_id\":\"8cc6f042ba2a46a4867283b2911effc0\",\"order_id\":\"live-20261001-02-query-failure\",\"request_id\":\"live-20261001-02-query-failure\",\"run_id\":\"live-20261001-02\",\"ts\":\"2026-10-01T03:26:25.7516834\\u002B08:00\",\"version\":\"delivery-hardening-local-r2\"}"
+              ]
+            ]
+          }
+        ],
+        "stats": {
+          "summary": {
+            "bytesProcessedPerSecond": 274400,
+            "linesProcessedPerSecond": 913,
+            "totalBytesProcessed": 901,
+            "totalLinesProcessed": 3,
+            "execTime": 0.003284,
+            "queueTime": 0.000341,
+            "subqueries": 0,
+            "totalEntriesReturned": 2,
+            "splits": 0,
+            "shards": 1,
+            "totalPostFilterLines": 2,
+            "totalStructuredMetadataBytesProcessed": 24
+          },
+          "querier": {
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 0,
+                "headChunkLines": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 0,
+                "headChunkStructuredMetadataBytes": 0,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 0,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "ingester": {
+            "totalReached": 1,
+            "totalChunksMatched": 1,
+            "totalBatches": 2,
+            "totalLinesSent": 2,
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 901,
+                "headChunkLines": 3,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 2,
+                "headChunkStructuredMetadataBytes": 24,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 92960,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "cache": {
+            "chunk": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "index": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "result": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "statsResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "volumeResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "seriesResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "labelResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "instantMetricResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            }
+          },
+          "index": {
+            "totalChunks": 0,
+            "postFilterChunks": 0,
+            "shardsDuration": 0,
+            "usedBloomFilters": false
+          }
+        }
+      }
+    }
+  },
+  {
+    "case": "query-failure",
+    "service": "notification-receiver",
+    "query": "{service_name=\"notification-receiver\",lab_case=\"query-failure\"} | json | order_id=\"live-20261001-02-query-failure\"",
+    "expected_lines": 1,
+    "actual_lines": 1,
+    "passed": true,
+    "response": {
+      "status": "success",
+      "data": {
+        "resultType": "streams",
+        "result": [
+          {
+            "stream": {
+              "attempt": "0",
+              "detected_level": "unknown",
+              "event": "notification_received",
+              "filename": "/logs/query-failure/receiver/logs.jsonl",
+              "kind": "order_cancelled",
+              "lab_case": "query-failure",
+              "notification_id": "8cc6f042ba2a46a4867283b2911effc0",
+              "order_id": "live-20261001-02-query-failure",
+              "refund_requested": "true",
+              "request_id": "live-20261001-02-query-failure",
+              "run_id": "live-20261001-02",
+              "service_name": "notification-receiver",
+              "ts": "2026-09-30T19:26:25.747644Z"
+            },
+            "values": [
+              [
+                "1790796385747644000",
+                "{\"ts\": \"2026-09-30T19:26:25.747644Z\", \"event\": \"notification_received\", \"notification_id\": \"8cc6f042ba2a46a4867283b2911effc0\", \"order_id\": \"live-20261001-02-query-failure\", \"request_id\": \"live-20261001-02-query-failure\", \"run_id\": \"live-20261001-02\", \"kind\": \"order_cancelled\", \"refund_requested\": true, \"attempt\": 0}\r"
+              ]
+            ]
+          }
+        ],
+        "stats": {
+          "summary": {
+            "bytesProcessedPerSecond": 81236,
+            "linesProcessedPerSecond": 249,
+            "totalBytesProcessed": 326,
+            "totalLinesProcessed": 1,
+            "execTime": 0.004013,
+            "queueTime": 0.000701,
+            "subqueries": 0,
+            "totalEntriesReturned": 1,
+            "splits": 0,
+            "shards": 1,
+            "totalPostFilterLines": 1,
+            "totalStructuredMetadataBytesProcessed": 8
+          },
+          "querier": {
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 0,
+                "headChunkLines": 0,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 0,
+                "headChunkStructuredMetadataBytes": 0,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 0,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "ingester": {
+            "totalReached": 1,
+            "totalChunksMatched": 1,
+            "totalBatches": 2,
+            "totalLinesSent": 1,
+            "store": {
+              "totalChunksRef": 0,
+              "totalChunksDownloaded": 0,
+              "chunksDownloadTime": 0,
+              "queryReferencedStructuredMetadata": false,
+              "chunk": {
+                "headChunkBytes": 326,
+                "headChunkLines": 1,
+                "decompressedBytes": 0,
+                "decompressedLines": 0,
+                "compressedBytes": 0,
+                "totalDuplicates": 0,
+                "postFilterLines": 1,
+                "headChunkStructuredMetadataBytes": 8,
+                "decompressedStructuredMetadataBytes": 0
+              },
+              "chunkRefsFetchTime": 82638,
+              "congestionControlLatency": 0,
+              "pipelineWrapperFilteredLines": 0
+            }
+          },
+          "cache": {
+            "chunk": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "index": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "result": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "statsResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "volumeResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "seriesResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "labelResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            },
+            "instantMetricResult": {
+              "entriesFound": 0,
+              "entriesRequested": 0,
+              "entriesStored": 0,
+              "bytesReceived": 0,
+              "bytesSent": 0,
+              "requests": 0,
+              "downloadTime": 0,
+              "queryLengthServed": 0
+            }
+          },
+          "index": {
+            "totalChunks": 0,
+            "postFilterChunks": 0,
+            "shardsDuration": 0,
+            "usedBloomFilters": false
+          }
+        }
+      }
+    }
+  }
+]

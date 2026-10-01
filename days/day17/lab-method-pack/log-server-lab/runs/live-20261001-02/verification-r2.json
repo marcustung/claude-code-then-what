@@ -1,0 +1,256 @@
+{
+  "run": "live-20261001-02",
+  "attempt": "r2",
+  "passed": true,
+  "passed_checks": 36,
+  "total_checks": 36,
+  "cases": [
+    {
+      "case": "complete",
+      "receiver_status": "confirmed",
+      "sender_status": "confirmed",
+      "log_queries": 2,
+      "cost_usd": 0.10500140000000001,
+      "turns": 12
+    },
+    {
+      "case": "missing-receipts",
+      "receiver_status": "unknown",
+      "sender_status": "confirmed",
+      "log_queries": 3,
+      "cost_usd": 0.12189900000000002,
+      "turns": 13
+    },
+    {
+      "case": "query-failure",
+      "receiver_status": "unknown",
+      "sender_status": "unknown",
+      "log_queries": 2,
+      "cost_usd": 0.09310959999999999,
+      "turns": 11
+    }
+  ],
+  "checks": [
+    {
+      "case": "complete",
+      "check": "model_completed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "complete",
+      "check": "skill_loaded_successfully",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "complete",
+      "check": "mcp_log_query_called",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "case": "complete",
+      "check": "query_scope_matches_task",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "complete",
+      "check": "read_only_tools_only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "complete",
+      "check": "workspace_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "complete",
+      "check": "receiver_status",
+      "passed": true,
+      "detail": "confirmed"
+    },
+    {
+      "case": "complete",
+      "check": "sender_status",
+      "passed": true,
+      "detail": "confirmed"
+    },
+    {
+      "case": "complete",
+      "check": "output_contract",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "complete",
+      "check": "independent_receiver_query_by_notification_id",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "complete",
+      "check": "receiver_query_success",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "complete",
+      "check": "actual_receiver_evidence_matches_id",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "model_completed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "skill_loaded_successfully",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "mcp_log_query_called",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "missing-receipts",
+      "check": "query_scope_matches_task",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "read_only_tools_only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "workspace_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "receiver_status",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "case": "missing-receipts",
+      "check": "sender_status",
+      "passed": true,
+      "detail": "confirmed"
+    },
+    {
+      "case": "missing-receipts",
+      "check": "output_contract",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "independent_receiver_query_by_notification_id",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "receiver_query_success",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "missing-receipts",
+      "check": "successful_empty_result_not_delivery_failure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "model_completed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "skill_loaded_successfully",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "mcp_log_query_called",
+      "passed": true,
+      "detail": 2
+    },
+    {
+      "case": "query-failure",
+      "check": "query_scope_matches_task",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "read_only_tools_only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "workspace_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "receiver_status",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "case": "query-failure",
+      "check": "sender_status",
+      "passed": true,
+      "detail": "unknown"
+    },
+    {
+      "case": "query-failure",
+      "check": "output_contract",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "actual_backend_error_not_empty_result",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "no_successful_log_response",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "case": "query-failure",
+      "check": "failure_retained_in_output",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "limits": [
+    "program checks do not validate every semantic sentence",
+    "one run per case per version",
+    "no production or team savings claim"
+  ]
+}

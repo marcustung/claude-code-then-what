@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 34220,
+  "stop_reason": "end_turn",
+  "session_id": "21bde4c9-eb15-485d-813f-b3b237a98af8",
+  "total_cost_usd": 0.12189900000000002,
+  "usage": {
+    "input_tokens": 16,
+    "cache_creation_input_tokens": 14285,
+    "cache_read_input_tokens": 159735,
+    "output_tokens": 3278,
+    "output_tokens_details": {
+      "thinking_tokens": 80
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 14285,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1506,
+        "cache_read_input_tokens": 25916,
+        "cache_creation_input_tokens": 311,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 311
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 16,
+      "outputTokens": 3278,
+      "cacheReadInputTokens": 159735,
+      "cacheCreationInputTokens": 14285,
+      "webSearchRequests": 0,
+      "costUSD": 0.12189900000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 80,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "## 查核結果(order_id `live-20261001-02-missing-receipts`)\n\n**結論:** 發送端有 `notify_sent` 紀錄。接收端在指定窗內沒有任何資料,所以接收端只能標 unknown,不能寫成「未送達」。\n\n### 程式與設計(部署版本 `delivery-hardening-local-r2`)\n- `src/Program.cs:79-88`:取消狀態轉換成功時建立通知。正常路徑是 `channel.Writer.WriteAsync`,由 Worker 非同步送出。\n- `src/Program.cs:257-261`:`notify_sent` 只在 sink 回應 `IsSuccessStatusCode` 後才寫。\n- 這代表 HTTP 成功是發送端觀察。接收端是否留下紀錄,仍需接收端 Log 佐證。\n- `design/design-review.md` 第 2 點也說,FakeSink 單看收據不足以下結論。其中「本輪未跑 .NET」是當時的說明,我沒有當成本次執行情況。\n\n### Log 查詢(datasource `day17-loki`,窗口 2026-09-30T19:26:23Z ~ 19:26:25Z)\n1. `{lab_case=\"missing-receipts\", service=\"order-api\"} |= \"<order_id>\"`:0 筆。原因是標籤名稱用錯。\n2. `list_loki_label_names`:實際標籤是 `filename`、`lab_case`、`service_name`,沒有 `service`。\n3. `{lab_case=\"missing-receipts\", service_name=\"order-api\"} |= \"<order_id>\"`:2 筆,來源 `/logs/missing-receipts/api/logs.jsonl`。\n   - `cancel` 事件:`result=ok`、`transitioned=true`、`refund_requested=true`、`queue_depth=0`,`notification_id=bda1a73ba5f84cb1abcc6d0f265e1e95`。\n   - `notify_sent` 事件:`notification_id` 相同,時間約在 `cancel` 事件後 37 ms。\n   - 兩筆的 `version` 都是 `delivery-hardening-local-r2`,與 task.json 一致。\n4. 獨立接收端查詢:`{lab_case=\"missing-receipts\", service_name=\"notification-receiver\"} |= \"bda1a73ba5f84cb1abcc6d0f265e1e95\"`:0 筆(查詢成功,無符合資料)。\n5. `query_loki_stats`,同一接收端選擇器:streams=0、chunks=0、entries=0。窗內根本沒有 `notification-receiver` 的串流。統計只能輔助判斷,不能代替實際 Log。\n\n### 判讀與未知\n- **API 結果:** 取消成功並建立通知,已確認。\n- **發送端:** 找到相符的 `notify_sent`,可見 Worker 收到 sink 成功回應。\n- **接收端:** 查詢成功但無資料。可能是接收端 Log 沒被收進 Loki,也可能是標籤不同,或接收端確實沒收到。這三種可能我目前無法區分。\n- 我沒有擴大時間窗,也沒有換資料來源,因為範圍限定在 task.json 指定的窗口與 lab_case。\n\n### 下一步(最小補查,需操作者決定)\n1. 請確認 `notification-receiver` 的 Log 是否有被收進 Loki,以及它使用的標籤名稱。\n2. 若要查時間偏移,需要操作者授權後,才能用同一個 `notification_id` 在同一 lab_case 加寬時間窗重查。\n3. 我不會補送、恢復資料或結案。\n\n```json\n{\n  \"order_id\": \"live-20261001-02-missing-receipts\",\n  \"sender_status\": \"confirmed\",\n  \"receiver_status\": \"unknown\",\n  \"missing_sources\": [\n    \"notification-receiver logs for lab_case=missing-receipts in 2026-09-30T19:26:23Z~19:26:25Z (query returned 0 lines; stats streams=0)\"\n  ],\n  \"next_action\": \"請操作者確認 notification-receiver 的 Log 是否已收進 day17-loki 及其標籤;取得後用 notification_id bda1a73ba5f84cb1abcc6d0f265e1e95 重做接收端查詢。在有接收端證據前不判定未送達,也不補送或結案。\"\n}\n```",
+  "ttft_ms": 1740,
+  "type": "result",
+  "duration_ms": 34785,
+  "uuid": "633e8a94-d21e-494d-b362-c277bd954932",
+  "ttft_stream_ms": 1361,
+  "time_to_request_ms": 280,
+  "first_content_frame_ms": 1362,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

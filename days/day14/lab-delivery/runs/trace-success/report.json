@@ -1,0 +1,91 @@
+{
+  "version": "fixed",
+  "mode": "trace",
+  "delay_ms": 0,
+  "sink_status": 200,
+  "checks": [
+    {
+      "name": "build",
+      "pass_": true,
+      "detail": 0
+    },
+    {
+      "name": "order-00-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 1
+      }
+    },
+    {
+      "name": "order-00-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-00",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-00-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "trace-success-00-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-00-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "correlation",
+      "pass_": true,
+      "detail": {
+        "request_id": "trace-success-00-00",
+        "notification_id": "f24a275d73b846d69759cddd107d0866",
+        "terminal": [
+          {
+            "level": "INFO",
+            "event": "notify_sent",
+            "notification_id": "f24a275d73b846d69759cddd107d0866",
+            "order_id": "order-00",
+            "request_id": "trace-success-00-00",
+            "run_id": "trace-success",
+            "ts": "2026-09-27T18:47:58.4786876+08:00",
+            "version": "delivery-hardening-local-r1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "attempts",
+      "pass_": true,
+      "detail": 1
+    }
+  ],
+  "passed": true,
+  "elapsed_seconds": 2.7749605999561027,
+  "source_sha256": {
+    "src\\Api\\Program.cs": "00e5ec2cf033b7abba6f1fff976677fa0f3da1de80661c3b5b19289ce8b26dca",
+    "src\\Domain\\Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  "limits": "single process, memory store, loopback, bounded observation; no crash recovery, real auth/payment, throughput SLA or exactly-once guarantee"
+}

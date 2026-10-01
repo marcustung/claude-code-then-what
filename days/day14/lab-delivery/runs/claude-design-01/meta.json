@@ -1,0 +1,10 @@
+{
+  "exit": 0,
+  "elapsed_seconds": 69.10407270002179,
+  "tools": [],
+  "authorized_files": [
+    "baseline/src/Api/Program.cs",
+    "baseline/src/Domain/Cancellation.cs"
+  ],
+  "timing": "analysis requested after local patch prepared; not historical cause of patch"
+}

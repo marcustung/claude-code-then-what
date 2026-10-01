@@ -1,0 +1,26 @@
+{
+  "grafana/loki:3.5.0": {
+    "id": "sha256:4c431d2e6b9b38718694b31c5d56be7c80dc69c513215fde1aeb5b02cd4e2665",
+    "repo_digests": [
+      "grafana/loki@sha256:4c431d2e6b9b38718694b31c5d56be7c80dc69c513215fde1aeb5b02cd4e2665"
+    ]
+  },
+  "grafana/grafana:12.0.2": {
+    "id": "sha256:b5b59bfc7561634c2d7b136c4543d702ebcc94a3da477f21ff26f89ffd4214fa",
+    "repo_digests": [
+      "grafana/grafana@sha256:b5b59bfc7561634c2d7b136c4543d702ebcc94a3da477f21ff26f89ffd4214fa"
+    ]
+  },
+  "grafana/alloy:v1.8.3": {
+    "id": "sha256:ab04df3936e4d71d31b6f55e0c58a7e749091f59635dd8c2bc731ba1b6c93701",
+    "repo_digests": [
+      "grafana/alloy@sha256:ab04df3936e4d71d31b6f55e0c58a7e749091f59635dd8c2bc731ba1b6c93701"
+    ]
+  },
+  "grafana/mcp-grafana:latest": {
+    "id": "sha256:f21a19cebbfa7c3a76ef1746171e5ffc3601064e432f593e7c6cb526e5216e5f",
+    "repo_digests": [
+      "grafana/mcp-grafana@sha256:f21a19cebbfa7c3a76ef1746171e5ffc3601064e432f593e7c6cb526e5216e5f"
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+請使用 day17-trace:trace-notification Skill，查核 task.json 指定的通知事件。先載入 Skill，再讀本次任務與部署版本的程式、設計。
+Log 只能透過提供的 Grafana MCP 查詢。依 task.json 的 datasource_uid、lab_case、服務與時間窗查詢；先用 order_id 找 notification_id，再核對接收端。不要查其他資料來源或其他事件。
+逐項附查詢條件與來源，最後依 Skill 輸出 JSON。唯讀，不修改檔案，不執行 shell，不補送、不結案。工具失敗時保留實際錯誤與下一步，不自行擴大範圍。繁體中文，最多 900 字。

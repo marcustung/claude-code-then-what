@@ -1,0 +1,139 @@
+{
+  "request": [
+    {
+      "method": "POST",
+      "path": "/orders/order-00/cancel",
+      "request_id": "trace-failure-00-00",
+      "status": 200,
+      "response": {
+        "ok": true,
+        "transitioned": true,
+        "refund_requested": true,
+        "reason": null,
+        "request_id": "trace-failure-00-00",
+        "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "level": "INFO",
+      "event": "cancel",
+      "request_id": "trace-failure-00-00",
+      "run_id": "trace-failure",
+      "order_id": "order-00",
+      "actor": "teaching-test",
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "result": "ok",
+      "transitioned": true,
+      "refund_requested": true,
+      "latency_ms": 1.3,
+      "queue_depth": 1,
+      "ts": "2026-09-27T18:48:01.4898222+08:00",
+      "version": "delivery-hardening-local-r1"
+    },
+    {
+      "level": "WARN",
+      "event": "notify_attempt_failed",
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "attempt": 0,
+      "status": 503,
+      "ts": "2026-09-27T18:48:01.5337226+08:00",
+      "version": "delivery-hardening-local-r1"
+    },
+    {
+      "level": "WARN",
+      "event": "notify_attempt_failed",
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "attempt": 1,
+      "status": 503,
+      "ts": "2026-09-27T18:48:01.7491655+08:00",
+      "version": "delivery-hardening-local-r1"
+    },
+    {
+      "level": "WARN",
+      "event": "notify_attempt_failed",
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "attempt": 2,
+      "status": 503,
+      "ts": "2026-09-27T18:48:02.1603113+08:00",
+      "version": "delivery-hardening-local-r1"
+    },
+    {
+      "level": "WARN",
+      "event": "notify_attempt_failed",
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "attempt": 3,
+      "status": 503,
+      "ts": "2026-09-27T18:48:02.9768646+08:00",
+      "version": "delivery-hardening-local-r1"
+    },
+    {
+      "level": "ERROR",
+      "event": "notify_dead_letter",
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "order_id": "order-00",
+      "request_id": "trace-failure-00-00",
+      "run_id": "trace-failure",
+      "attempts": 4,
+      "ts": "2026-09-27T18:48:02.9790962+08:00",
+      "version": "delivery-hardening-local-r1"
+    }
+  ],
+  "receiver_attempts": [
+    {
+      "payload": {
+        "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+        "order_id": "order-00",
+        "request_id": "trace-failure-00-00",
+        "run_id": "trace-failure",
+        "kind": "order_cancelled",
+        "refund_requested": true,
+        "attempt": 0
+      },
+      "status": 503
+    },
+    {
+      "payload": {
+        "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+        "order_id": "order-00",
+        "request_id": "trace-failure-00-00",
+        "run_id": "trace-failure",
+        "kind": "order_cancelled",
+        "refund_requested": true,
+        "attempt": 1
+      },
+      "status": 503
+    },
+    {
+      "payload": {
+        "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+        "order_id": "order-00",
+        "request_id": "trace-failure-00-00",
+        "run_id": "trace-failure",
+        "kind": "order_cancelled",
+        "refund_requested": true,
+        "attempt": 2
+      },
+      "status": 503
+    },
+    {
+      "payload": {
+        "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+        "order_id": "order-00",
+        "request_id": "trace-failure-00-00",
+        "run_id": "trace-failure",
+        "kind": "order_cancelled",
+        "refund_requested": true,
+        "attempt": 3
+      },
+      "status": 503
+    }
+  ],
+  "note": "Empty results mean not found in this saved run, not proof that delivery never happened."
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "payload": {
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "order_id": "order-00",
+      "request_id": "trace-failure-00-00",
+      "run_id": "trace-failure",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 503
+  },
+  {
+    "payload": {
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "order_id": "order-00",
+      "request_id": "trace-failure-00-00",
+      "run_id": "trace-failure",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 1
+    },
+    "status": 503
+  },
+  {
+    "payload": {
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "order_id": "order-00",
+      "request_id": "trace-failure-00-00",
+      "run_id": "trace-failure",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 2
+    },
+    "status": 503
+  },
+  {
+    "payload": {
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "order_id": "order-00",
+      "request_id": "trace-failure-00-00",
+      "run_id": "trace-failure",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 3
+    },
+    "status": 503
+  }
+]

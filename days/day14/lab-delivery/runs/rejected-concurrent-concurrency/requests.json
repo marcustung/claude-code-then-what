@@ -1,0 +1,3812 @@
+[
+  {
+    "method": "GET",
+    "path": "/ready",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "ready": true,
+      "version": "1.2.0"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-00",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "rejected-concurrent-concurrency-00-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-00-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-01",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-01/cancel",
+    "request_id": "rejected-concurrent-concurrency-01-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-01-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-02",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-02/cancel",
+    "request_id": "rejected-concurrent-concurrency-02-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-02-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-03",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-03/cancel",
+    "request_id": "rejected-concurrent-concurrency-03-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-03-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-04",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-04/cancel",
+    "request_id": "rejected-concurrent-concurrency-04-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-04-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-05",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-05/cancel",
+    "request_id": "rejected-concurrent-concurrency-05-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-05-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-06",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-06/cancel",
+    "request_id": "rejected-concurrent-concurrency-06-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-06-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-07",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-07/cancel",
+    "request_id": "rejected-concurrent-concurrency-07-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-07-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-08",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-08",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-08",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-08/cancel",
+    "request_id": "rejected-concurrent-concurrency-08-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-08-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-09",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-09",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-09",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-09/cancel",
+    "request_id": "rejected-concurrent-concurrency-09-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-09-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-10",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-10",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-10",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-10/cancel",
+    "request_id": "rejected-concurrent-concurrency-10-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-10-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-11",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-11",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-11",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-11/cancel",
+    "request_id": "rejected-concurrent-concurrency-11-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-11-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-12",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-12",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-12",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-12/cancel",
+    "request_id": "rejected-concurrent-concurrency-12-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-12-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-13",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-13",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-13",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-13/cancel",
+    "request_id": "rejected-concurrent-concurrency-13-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-13-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-14",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-14",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-14",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-14/cancel",
+    "request_id": "rejected-concurrent-concurrency-14-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-14-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-15",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-15",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-15",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-15/cancel",
+    "request_id": "rejected-concurrent-concurrency-15-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-15-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-16",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-16",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-16",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-16/cancel",
+    "request_id": "rejected-concurrent-concurrency-16-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-16-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-17",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-17",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-17",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-17/cancel",
+    "request_id": "rejected-concurrent-concurrency-17-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-17-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-18",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-18",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-18",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-18/cancel",
+    "request_id": "rejected-concurrent-concurrency-18-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-18-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-19",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-03",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-03",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-04",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-04",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-05",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-06",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-06",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-02",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-02",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-07",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-07",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-01",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-01",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-19",
+    "request_id": "rejected-concurrent-concurrency-setup",
+    "status": 200,
+    "response": {
+      "id": "order-19",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-19/cancel",
+    "request_id": "rejected-concurrent-concurrency-19-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "rejected-concurrent-concurrency-19-repeat",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  }
+]

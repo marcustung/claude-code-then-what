@@ -1,0 +1,17 @@
+{
+  "order_id": "live-20261001-02-query-failure",
+  "version": "delivery-hardening-local-r2",
+  "environment": "local Docker teaching lab",
+  "time_start": "2026-09-30T19:26:25.016660Z",
+  "time_end": "2026-09-30T19:26:26.247363Z",
+  "datasource_uid": "day17-unavailable",
+  "labels": {
+    "lab_case": "query-failure"
+  },
+  "services": [
+    "order-api",
+    "notification-receiver"
+  ],
+  "log_access": "Grafana MCP only; raw logs and ground truth are outside this workspace",
+  "scope": "Use only the assigned datasource and lab_case; do not switch sources when a query fails."
+}

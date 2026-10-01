@@ -1,0 +1,2 @@
+time=2026-09-30T19:27:43.112Z level=ERROR msg="SECURITY: serving on a non-loopback address with NO caller authentication. Anyone who can reach this address can invoke MCP tools and use any Grafana credentials the server is configured with. This will become a startup error in a future release: set --server-auth-token (or MCP_GRAFANA_SERVER_TOKEN) to require a bearer token." address=0.0.0.0:8000
+time=2026-09-30T19:27:43.117Z level=INFO msg="Starting Grafana MCP server using SSE transport" version=(devel) address=0.0.0.0:8000 basePath=/ metrics=false

@@ -1,0 +1,10 @@
+{
+  ".claude/skills/trace-notification/SKILL.md": "11a96798c3e6e65dea596de986a8d2bf5edbd7a7c437c186fb80cf837193d2f0",
+  "design/design-review.md": "399118a30f9ca16a591e3cbf12eccf17bda3d3c1dfd83960e4e6b11f1faaab40",
+  "mcp.json": "5ef8fbb9c52a6431a1a595f006f49a8cdb470bea837149084e8cbeb8cfcee243",
+  "plugin/.claude-plugin/plugin.json": "80d8dfb92bdccb1f2c0191031c5ba66014cbe298f7fb8f114f701d931fdbdcf8",
+  "plugin/skills/trace-notification/SKILL.md": "039b7f8b1c1d5d54a54e958cad2384e47255777f3b28c81f693e0444036ff6a1",
+  "src/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a",
+  "src/Program.cs": "da2c152cf96a115ff8df9d30eed65d8ff72d7a55f0ff3601c0907d406d1d32ca",
+  "task.json": "6a59d6d9f04465c4a4d112b5d011637da8df62b904b1e99f6ebf54e54cd47101"
+}

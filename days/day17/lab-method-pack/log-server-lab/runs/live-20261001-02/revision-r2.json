@@ -1,0 +1,11 @@
+{
+  "changes": [
+    "explicit stdio and plugin",
+    "whole-second declared time window",
+    "permit read-only Loki labels/stats",
+    "v0.1.1 requires independent notification_id receiver query",
+    "sender_status enum made explicit"
+  ],
+  "data_regenerated": false,
+  "old_results_kept": true
+}

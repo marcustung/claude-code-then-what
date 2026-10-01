@@ -1,0 +1,17 @@
+{
+  "exit": 0,
+  "seconds": 36.99,
+  "turns": 13,
+  "cost_usd": 0.12189900000000002,
+  "changed": [],
+  "skill_calls": 1,
+  "query_calls": 3,
+  "tool_names": [
+    "Glob",
+    "Read",
+    "Skill",
+    "mcp__grafana__list_loki_label_names",
+    "mcp__grafana__query_loki_logs",
+    "mcp__grafana__query_loki_stats"
+  ]
+}

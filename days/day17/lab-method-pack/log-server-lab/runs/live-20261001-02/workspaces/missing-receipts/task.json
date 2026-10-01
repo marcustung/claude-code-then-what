@@ -1,0 +1,18 @@
+{
+  "order_id": "live-20261001-02-missing-receipts",
+  "version": "delivery-hardening-local-r2",
+  "environment": "local Docker teaching lab",
+  "time_start": "2026-09-30T19:26:23Z",
+  "time_end": "2026-09-30T19:26:25Z",
+  "datasource_uid": "day17-loki",
+  "labels": {
+    "lab_case": "missing-receipts"
+  },
+  "services": [
+    "order-api",
+    "notification-receiver"
+  ],
+  "log_access": "Grafana MCP only; raw logs and ground truth are outside this workspace",
+  "scope": "Use only the assigned datasource and lab_case; do not switch sources when a query fails.",
+  "time_window_note": "Declared whole-second window enclosing the generated event; lab_case and event ID remain required."
+}

@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "grafana": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--network",
+        "ironman-day17-log",
+        "-e",
+        "GRAFANA_URL=http://grafana:3000",
+        "grafana/mcp-grafana@sha256:f21a19cebbfa7c3a76ef1746171e5ffc3601064e432f593e7c6cb526e5216e5f",
+        "--disable-write",
+        "--enabled-tools",
+        "datasource,loki",
+        "--max-loki-log-limit",
+        "30",
+        "--transport",
+        "stdio"
+      ]
+    }
+  }
+}

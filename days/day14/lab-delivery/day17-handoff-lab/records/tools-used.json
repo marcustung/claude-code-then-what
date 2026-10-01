@@ -1,0 +1,19 @@
+{
+ "calls": [
+  "Glob",
+  "Read",
+  "Read",
+  "Read",
+  "Read",
+  "Read",
+  "Read",
+  "Read",
+  "Read",
+  "Read"
+ ],
+ "distinct": [
+  "Glob",
+  "Read"
+ ],
+ "asked_a_human": false
+}

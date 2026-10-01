@@ -1,0 +1,1 @@
+{"ts": "2026-09-30T19:26:25.747644Z", "event": "notification_received", "notification_id": "8cc6f042ba2a46a4867283b2911effc0", "order_id": "live-20261001-02-query-failure", "request_id": "live-20261001-02-query-failure", "run_id": "live-20261001-02", "kind": "order_cancelled", "refund_requested": true, "attempt": 0}

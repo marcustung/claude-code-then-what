@@ -1,0 +1,49 @@
+{
+  "order_id": "live-20261001-02-complete",
+  "created": [
+    200,
+    {
+      "id": "live-20261001-02-complete",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  ],
+  "cancelled": [
+    200,
+    {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "live-20261001-02-complete",
+      "notification_id": "3b30d36ba5a64e7c9ea01ea02cc61074",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  ],
+  "receiver_ground_truth": [
+    {
+      "ts": "2026-09-30T19:26:23.275625Z",
+      "event": "notification_received",
+      "notification_id": "3b30d36ba5a64e7c9ea01ea02cc61074",
+      "order_id": "live-20261001-02-complete",
+      "request_id": "live-20261001-02-complete",
+      "run_id": "live-20261001-02",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    }
+  ],
+  "version_response": {
+    "version": "delivery-hardening-local-r2",
+    "notification_mode": "async",
+    "storage": "in-memory"
+  },
+  "receiver_collection_enabled": true
+}

@@ -1,0 +1,92 @@
+{
+  "version": "fixed",
+  "mode": "trace",
+  "delay_ms": 0,
+  "sink_status": 503,
+  "checks": [
+    {
+      "name": "build",
+      "pass_": true,
+      "detail": 0
+    },
+    {
+      "name": "order-00-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 1
+      }
+    },
+    {
+      "name": "order-00-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-00",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-00-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "trace-failure-00-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-00-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 4
+      }
+    },
+    {
+      "name": "correlation",
+      "pass_": true,
+      "detail": {
+        "request_id": "trace-failure-00-00",
+        "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+        "terminal": [
+          {
+            "level": "ERROR",
+            "event": "notify_dead_letter",
+            "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+            "order_id": "order-00",
+            "request_id": "trace-failure-00-00",
+            "run_id": "trace-failure",
+            "attempts": 4,
+            "ts": "2026-09-27T18:48:02.9790962+08:00",
+            "version": "delivery-hardening-local-r1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "attempts",
+      "pass_": true,
+      "detail": 4
+    }
+  ],
+  "passed": true,
+  "elapsed_seconds": 4.226137800025754,
+  "source_sha256": {
+    "src\\Api\\Program.cs": "00e5ec2cf033b7abba6f1fff976677fa0f3da1de80661c3b5b19289ce8b26dca",
+    "src\\Domain\\Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  "limits": "single process, memory store, loopback, bounded observation; no crash recovery, real auth/payment, throughput SLA or exactly-once guarantee"
+}

@@ -1,0 +1,10 @@
+{
+  ".claude/skills/trace-notification/scripts/collect.py": "74b44b3bc3263c4de48d8a286abe27aee24d1d1b81da5f761ac639719211710d",
+  ".claude/skills/trace-notification/SKILL.md": "f77fefb4f65a86c0c5c49cb82920a7d09e4e060a4c24f11cc231072f8193778f",
+  "data/logs.jsonl": "6e87031e609fc5ad2492e2cd2c1797a72f9a26066ff3b08ee39b0dab8911b5ce",
+  "design/design-review.md": "399118a30f9ca16a591e3cbf12eccf17bda3d3c1dfd83960e4e6b11f1faaab40",
+  "evidence.json": "7a997cb89c2693bcf08a7d529fe1e24899955b1ceda673698e31570573c0507c",
+  "src/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a",
+  "src/Program.cs": "da2c152cf96a115ff8df9d30eed65d8ff72d7a55f0ff3601c0907d406d1d32ca",
+  "task.json": "4822e2aabe70d71a69d534cc1fa02717100cd5227c7ca4b6f41bd655e8a3d1ba"
+}

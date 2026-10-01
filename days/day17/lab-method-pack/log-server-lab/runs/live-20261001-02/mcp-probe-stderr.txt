@@ -1,0 +1,5 @@
+time=2026-09-30T19:29:58.475Z level=INFO msg="Using Grafana configuration" url=http://grafana:3000 api_key_set=false basic_auth_set=false org_id=0 extra_headers_count=0
+time=2026-09-30T19:29:58.510Z level=INFO msg="Fetched public URL from Grafana frontend settings" public_url=http://localhost:3000
+time=2026-09-30T19:29:58.516Z level=INFO msg="no MCP datasources discovered"
+time=2026-09-30T19:29:58.516Z level=INFO msg="Starting Grafana MCP server using stdio transport" version=(devel)
+time=2026-09-30T19:29:58.517Z level=INFO msg="Using Grafana configuration" url=http://grafana:3000 api_key_set=false basic_auth_set=false org_id=0 extra_headers_count=0

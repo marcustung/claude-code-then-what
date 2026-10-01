@@ -1,0 +1,14 @@
+{
+  "exit": 0,
+  "seconds": 53.51,
+  "turns": 12,
+  "cost_usd": 0.09936020000000001,
+  "changed": [],
+  "used_skill": true,
+  "query_calls": 0,
+  "tool_names": [
+    "Glob",
+    "Read",
+    "Skill"
+  ]
+}

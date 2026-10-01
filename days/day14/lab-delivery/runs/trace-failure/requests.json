@@ -1,0 +1,78 @@
+[
+  {
+    "method": "GET",
+    "path": "/ready",
+    "request_id": "trace-failure-setup",
+    "status": 200,
+    "response": {
+      "ready": true,
+      "version": "delivery-hardening-local-r1"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders",
+    "request_id": "trace-failure-setup",
+    "status": 200,
+    "response": {
+      "id": "order-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "trace-failure-00-00",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "trace-failure-00-00",
+      "notification_id": "a002568e34804d92b93c2f4a24f2ecb0",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/orders/order-00",
+    "request_id": "trace-failure-setup",
+    "status": 200,
+    "response": {
+      "id": "order-00",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/orders/order-00/cancel",
+    "request_id": "trace-failure-00-repeat",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": false,
+      "refund_requested": false,
+      "reason": null,
+      "request_id": "trace-failure-00-repeat",
+      "notification_id": null,
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  }
+]

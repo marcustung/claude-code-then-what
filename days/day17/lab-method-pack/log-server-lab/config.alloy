@@ -1,0 +1,26 @@
+local.file_match "demo" {
+  path_targets = [
+    {__path__ = "/logs/complete/api/logs.jsonl", service_name = "order-api", lab_case = "complete"},
+    {__path__ = "/logs/complete/receiver/logs.jsonl", service_name = "notification-receiver", lab_case = "complete"},
+    {__path__ = "/logs/missing-receipts/api/logs.jsonl", service_name = "order-api", lab_case = "missing-receipts"},
+    {__path__ = "/logs/missing-receipts/receiver/logs.jsonl", service_name = "notification-receiver", lab_case = "missing-receipts"},
+    {__path__ = "/logs/query-failure/api/logs.jsonl", service_name = "order-api", lab_case = "query-failure"},
+    {__path__ = "/logs/query-failure/receiver/logs.jsonl", service_name = "notification-receiver", lab_case = "query-failure"},
+  ]
+  sync_period = "1s"
+}
+loki.source.file "demo" {
+  targets = local.file_match.demo.targets
+  forward_to = [loki.process.demo.receiver]
+}
+loki.process "demo" {
+  stage.json { expressions = {ts = "ts"} }
+  stage.timestamp {
+    source = "ts"
+    format = "RFC3339Nano"
+  }
+  forward_to = [loki.write.local.receiver]
+}
+loki.write "local" {
+  endpoint { url = "http://loki:3100/loki/api/v1/push" }
+}

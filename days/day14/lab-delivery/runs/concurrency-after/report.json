@@ -1,0 +1,940 @@
+{
+  "version": "fixed",
+  "mode": "concurrent",
+  "delay_ms": 50,
+  "sink_status": 200,
+  "checks": [
+    {
+      "name": "build",
+      "pass_": true,
+      "detail": 0
+    },
+    {
+      "name": "order-00-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-00-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-00",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-00-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-00-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-01-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-01-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-01",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-01-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-01-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-02-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-02-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-02",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-02-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-02-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-03-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-03-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-03",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-03-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-03-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-04-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-04-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-04",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-04-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-04-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-05-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-05-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-05",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-05-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-05-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-06-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-06-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-06",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-06-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-06-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-07-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-07-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-07",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-07-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-07-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-08-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-08-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-08",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-08-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-08-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-09-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-09-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-09",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-09-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-09-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-10-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-10-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-10",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-10-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-10-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-11-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-11-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-11",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-11-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-11-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-12-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-12-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-12",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-12-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-12-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-13-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-13-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-13",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-13-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-13-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-14-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-14-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-14",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-14-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-14-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-15-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-15-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-15",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-15-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-15-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-16-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-16-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-16",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-16-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-16-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-17-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-17-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-17",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-17-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-17-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-18-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-18-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-18",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-18-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-18-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-19-transitions",
+      "pass_": true,
+      "detail": {
+        "changed": 1,
+        "refunds": 1,
+        "requests": 8
+      }
+    },
+    {
+      "name": "order-19-state",
+      "pass_": true,
+      "detail": {
+        "id": "order-19",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-19-repeat",
+      "pass_": true,
+      "detail": {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "concurrency-after-19-repeat",
+        "notification_id": null,
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    },
+    {
+      "name": "order-00-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-01-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-02-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-03-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-04-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-05-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-06-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-07-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-08-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-09-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-10-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-11-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-12-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-13-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-14-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-15-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-16-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-17-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-18-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    },
+    {
+      "name": "order-19-one-notification",
+      "pass_": true,
+      "detail": {
+        "distinct_notifications": 1,
+        "http_attempts": 1
+      }
+    }
+  ],
+  "passed": true,
+  "elapsed_seconds": 6.98456430004444,
+  "source_sha256": {
+    "src\\Api\\Program.cs": "00e5ec2cf033b7abba6f1fff976677fa0f3da1de80661c3b5b19289ce8b26dca",
+    "src\\Domain\\Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  "limits": "single process, memory store, loopback, bounded observation; no crash recovery, real auth/payment, throughput SLA or exactly-once guarantee"
+}

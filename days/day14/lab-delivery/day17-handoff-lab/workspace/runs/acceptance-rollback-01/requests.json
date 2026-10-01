@@ -1,0 +1,176 @@
+[
+  {
+    "at": 1790520848.193208,
+    "phase": "before",
+    "method": "GET",
+    "path": "/health",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "version": "delivery-hardening-local-r1"
+    }
+  },
+  {
+    "at": 1790520848.2288861,
+    "phase": "before",
+    "method": "POST",
+    "path": "/orders",
+    "status": 200,
+    "response": {
+      "id": "before-update",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "at": 1790520848.2701166,
+    "phase": "before",
+    "method": "POST",
+    "path": "/orders/before-update/cancel",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "before-request",
+      "notification_id": "470184dbbfb64920b7654fdc59018591",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "at": 1790520848.9932523,
+    "phase": "updated",
+    "method": "GET",
+    "path": "/health",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "version": "delivery-hardening-local-r2"
+    }
+  },
+  {
+    "at": 1790520848.99998,
+    "phase": "updated",
+    "method": "GET",
+    "path": "/version",
+    "status": 200,
+    "response": {
+      "version": "delivery-hardening-local-r2",
+      "notification_mode": "async",
+      "storage": "in-memory"
+    }
+  },
+  {
+    "at": 1790520849.0038068,
+    "phase": "updated",
+    "method": "GET",
+    "path": "/orders/before-update",
+    "status": 404,
+    "response": ""
+  },
+  {
+    "at": 1790520849.0242274,
+    "phase": "updated",
+    "method": "POST",
+    "path": "/orders",
+    "status": 200,
+    "response": {
+      "id": "during-update",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "at": 1790520849.0382621,
+    "phase": "updated",
+    "method": "POST",
+    "path": "/orders/during-update/cancel",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "updated-request",
+      "notification_id": "d0e39019500e489cb21d391c3f303b05",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  },
+  {
+    "at": 1790520851.1682074,
+    "phase": "rolled-back",
+    "method": "GET",
+    "path": "/health",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "version": "delivery-hardening-local-r1"
+    }
+  },
+  {
+    "at": 1790520851.1724365,
+    "phase": "rolled-back",
+    "method": "GET",
+    "path": "/version",
+    "status": 404,
+    "response": ""
+  },
+  {
+    "at": 1790520851.1743853,
+    "phase": "rolled-back",
+    "method": "GET",
+    "path": "/orders/during-update",
+    "status": 404,
+    "response": ""
+  },
+  {
+    "at": 1790520851.190774,
+    "phase": "rolled-back",
+    "method": "POST",
+    "path": "/orders",
+    "status": 200,
+    "response": {
+      "id": "after-rollback",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  },
+  {
+    "at": 1790520851.220184,
+    "phase": "rolled-back",
+    "method": "POST",
+    "path": "/orders/after-rollback/cancel",
+    "status": 200,
+    "response": {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "rolled-back-request",
+      "notification_id": "dd2345d3d20f4f45b44ce7e39c4c1f9a",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  }
+]

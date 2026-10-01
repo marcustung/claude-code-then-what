@@ -1,0 +1,49 @@
+{
+  "order_id": "live-20261001-02-missing-receipts",
+  "created": [
+    200,
+    {
+      "id": "live-20261001-02-missing-receipts",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": false
+      }
+    }
+  ],
+  "cancelled": [
+    200,
+    {
+      "ok": true,
+      "transitioned": true,
+      "refund_requested": true,
+      "reason": null,
+      "request_id": "live-20261001-02-missing-receipts",
+      "notification_id": "bda1a73ba5f84cb1abcc6d0f265e1e95",
+      "order": {
+        "shipped": false,
+        "paid": true,
+        "cancelled": true
+      }
+    }
+  ],
+  "receiver_ground_truth": [
+    {
+      "ts": "2026-09-30T19:26:24.468948Z",
+      "event": "notification_received",
+      "notification_id": "bda1a73ba5f84cb1abcc6d0f265e1e95",
+      "order_id": "live-20261001-02-missing-receipts",
+      "request_id": "live-20261001-02-missing-receipts",
+      "run_id": "live-20261001-02",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    }
+  ],
+  "version_response": {
+    "version": "delivery-hardening-local-r2",
+    "notification_mode": "async",
+    "storage": "in-memory"
+  },
+  "receiver_collection_enabled": false
+}

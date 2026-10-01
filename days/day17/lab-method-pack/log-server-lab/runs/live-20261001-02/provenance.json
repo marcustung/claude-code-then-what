@@ -1,0 +1,10 @@
+{
+  "run": "live-20261001-02",
+  "started_at": "2026-09-30T19:26:22.525875Z",
+  "package_version": "delivery-hardening-local-r2",
+  "package_source": "sdlc-delivery/runs/acceptance-next-01/package",
+  "live_requests": true,
+  "replayed_historical_logs": false,
+  "originals_modified": false,
+  "model_runs_complete": false
+}

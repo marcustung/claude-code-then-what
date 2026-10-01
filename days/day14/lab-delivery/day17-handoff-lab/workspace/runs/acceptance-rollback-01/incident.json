@@ -1,0 +1,24 @@
+{
+  "event": "notification_delivery_failed",
+  "notification_id": "d0e39019500e489cb21d391c3f303b05",
+  "order_id": "during-update",
+  "candidate": "acceptance-next-01",
+  "observed": {
+    "level": "ERROR",
+    "event": "notify_dead_letter",
+    "notification_id": "d0e39019500e489cb21d391c3f303b05",
+    "order_id": "during-update",
+    "request_id": "updated-request",
+    "run_id": "acceptance-rollback-01",
+    "attempts": 4,
+    "ts": "2026-09-27T22:54:10.5064287+08:00",
+    "version": "delivery-hardening-local-r2"
+  },
+  "attempts": 4,
+  "api_cancel_status": 200,
+  "receiver_status": 503,
+  "cause": "deliberately injected fake receiver failure, not a newly discovered program defect",
+  "action": "stop update and restore previous package plus healthy receiver; do not replay failed order",
+  "owner": "author performing local operator role",
+  "acceptance": "service restored and unresolved order explicitly retained"
+}

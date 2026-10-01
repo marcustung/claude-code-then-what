@@ -1,0 +1,15 @@
+{
+  "complete": {
+    "data/logs.jsonl": "examples\\sdlc-delivery\\runs\\r2-healthy-01\\r2-healthy\\logs.jsonl",
+    "src/Program.cs": "examples\\sdlc-delivery\\day16-design-trace-01\\workspace\\src\\Program.cs",
+    "src/Cancellation.cs": "examples\\sdlc-delivery\\day16-design-trace-01\\workspace\\src\\Cancellation.cs",
+    "design/design-review.md": "examples\\sdlc-delivery\\day16-design-trace-01\\workspace\\design-input\\design-review.md",
+    "data/receipts.json": "examples\\sdlc-delivery\\runs\\r2-healthy-01\\receipts.json"
+  },
+  "missing-receipts": {
+    "data/logs.jsonl": "examples\\sdlc-delivery\\runs\\r2-healthy-01\\r2-healthy\\logs.jsonl",
+    "src/Program.cs": "examples\\sdlc-delivery\\day16-design-trace-01\\workspace\\src\\Program.cs",
+    "src/Cancellation.cs": "examples\\sdlc-delivery\\day16-design-trace-01\\workspace\\src\\Cancellation.cs",
+    "design/design-review.md": "examples\\sdlc-delivery\\day16-design-trace-01\\workspace\\design-input\\design-review.md"
+  }
+}

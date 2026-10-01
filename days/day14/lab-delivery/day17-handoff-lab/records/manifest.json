@@ -1,0 +1,21 @@
+{
+  "prepare-handoff.py": "b752e72d877f067bf78e96ddb4b58425a63380a318db7fbca6d49ff196d48ae8",
+  "runs/acceptance-handoff-escalate/handoff.json": "27c6a14a2e0b8d7e0ec509c65cb20f2de08ad7429d8a790ea0003c176a36bf3a",
+  "runs/acceptance-handoff-wait/handoff.json": "03ff19596f61e6830093998e0b9115fd85edafcb6320057f0028aa38711e3adc",
+  "runs/acceptance-rollback-01/before/deployment.json": "6c587e5c093c3a39956829669ba830d91ce871bb9c9530bd424ae0a7c242e5a6",
+  "runs/acceptance-rollback-01/before/logs.jsonl": "7e343e90d7fb1674b2af5ce684adc329417c5d90cf0231f08b497515d55e6964",
+  "runs/acceptance-rollback-01/before/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/before/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/incident.json": "f607d875c29478011069299923a59abf3aa8563dd182b1e52c485e94ee925e96",
+  "runs/acceptance-rollback-01/receipts.json": "7c56f10e3c617fcfc3c2c835eff3c99ee92fba5a73b8af5432aa75b283fbb671",
+  "runs/acceptance-rollback-01/report.json": "176609c2ef15269ca8fcad6dac6872b3a2bbd772d89a3ad6a18c8bab3f6643b1",
+  "runs/acceptance-rollback-01/requests.json": "46d755149a35a08b1f04e8d875cc0bb70abe05bd795037d003b12ebcf7967311",
+  "runs/acceptance-rollback-01/rolled-back/deployment.json": "6c587e5c093c3a39956829669ba830d91ce871bb9c9530bd424ae0a7c242e5a6",
+  "runs/acceptance-rollback-01/rolled-back/logs.jsonl": "f19cd90c7823bbf39628852cbf14272f22abe5cb77f6c6eb38607012cd5e6267",
+  "runs/acceptance-rollback-01/rolled-back/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/rolled-back/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/updated/deployment.json": "47ad798c6e6eea1a06a15e6aed9af486122741106b8a4deeda52824a33575b01",
+  "runs/acceptance-rollback-01/updated/logs.jsonl": "6a7a333ca96ae774fc71328d869c9fa84d432d395cd0f493fd1a84d0273a1aa3",
+  "runs/acceptance-rollback-01/updated/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "runs/acceptance-rollback-01/updated/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

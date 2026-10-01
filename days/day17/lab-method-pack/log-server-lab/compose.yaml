@@ -1,0 +1,35 @@
+name: ironman-day17-logs
+services:
+  loki:
+    image: grafana/loki:3.5.0
+    command: ["-config.file=/etc/loki/local-config.yaml"]
+    ports: ["127.0.0.1:3117:3100"]
+    volumes:
+      - ./loki.yaml:/etc/loki/local-config.yaml:ro
+      - loki-data:/loki
+    networks: [lab]
+  grafana:
+    image: grafana/grafana:12.0.2
+    ports: ["127.0.0.1:3217:3000"]
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_AUTH_DISABLE_LOGIN_FORM: "true"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_SECURITY_ADMIN_PASSWORD: ${DAY17_ADMIN_PASSWORD:?set random local admin password}
+    volumes:
+      - ./provisioning:/etc/grafana/provisioning:ro
+    networks: [lab]
+  alloy:
+    image: grafana/alloy:v1.8.3
+    command: ["run", "--server.http.listen-addr=0.0.0.0:12345", "/etc/alloy/config.alloy"]
+    volumes:
+      - ./config.alloy:/etc/alloy/config.alloy:ro
+      - ${DAY17_FEED:?set run feed folder}:/logs:ro
+    networks: [lab]
+networks:
+  lab:
+    name: ironman-day17-log
+volumes:
+  loki-data:

@@ -1,0 +1,14 @@
+[
+  {
+    "payload": {
+      "notification_id": "f24a275d73b846d69759cddd107d0866",
+      "order_id": "order-00",
+      "request_id": "trace-success-00-00",
+      "run_id": "trace-success",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    },
+    "status": 200
+  }
+]

@@ -1,0 +1,14 @@
+使用 trace-notification 這個 Skill（在 .claude/skills/trace-notification/SKILL.md），照它的查核迴圈與輸出格式做。
+
+這次事件（見 task.json）：
+- order_id: r2-healthy-01
+- 部署版本: delivery-hardening-local-r2
+- 環境: 本機教學封存，非正式環境
+- 可用資料都在本目錄：data/（logs.jsonl、若有 receipts.json）、src/（Program.cs、Cancellation.cs）、design/（design-review.md）
+- 沒有連到 Log server，用本目錄的封存資料查。
+
+沿 API 與背景通知查核：先對程式與版本，再用 order_id 從 log 找 notification_id，串起發送端與接收端。
+分開 API 結果、發送端觀察、接收端佐證。接收端只有在有對應收據來源時才可標 confirmed；
+查不到接收端資料標 unknown，不要寫成一定未送達。最後照 SKILL 要求輸出 JSON。
+
+只查詢與分析，不修改檔案、不執行指令、不補送、不結案。輸出繁體中文，最多 1000 字。

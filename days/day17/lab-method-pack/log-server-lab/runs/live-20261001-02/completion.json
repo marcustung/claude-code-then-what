@@ -1,0 +1,8 @@
+{
+  "completed_at": "2026-09-30T19:43:28.290968+00:00",
+  "model_runs_complete": true,
+  "accepted_attempt": "r2",
+  "verification": "verification-r2.json",
+  "manual_review": "../../RESULTS.md",
+  "historical_provenance_preserved": true
+}

@@ -1,0 +1,34 @@
+{
+  "declared_before_model_runs": true,
+  "scope": "local teaching r2; live requests; no production or team adoption claim",
+  "cases": {
+    "complete": {
+      "sender_status": "confirmed",
+      "receiver_status": "confirmed",
+      "required": "match actual receiver notification_id via Loki"
+    },
+    "missing-receipts": {
+      "sender_status": "confirmed",
+      "receiver_status": "unknown",
+      "required": "successful query with no matching receiver record; not proof of non-delivery"
+    },
+    "query-failure": {
+      "sender_status": "unknown",
+      "receiver_status": "unknown",
+      "required": "tool/backend error distinguished from no matches; no datasource switching"
+    }
+  },
+  "common": [
+    "Skill actually loaded",
+    "only scoped read tools",
+    "correct datasource/case/time/order and notification identity",
+    "saved tool calls and responses",
+    "no claim of resend or closure"
+  ],
+  "no_claim": [
+    "statistical improvement",
+    "human time saved",
+    "authorization failure tested",
+    "remote production tested"
+  ]
+}
