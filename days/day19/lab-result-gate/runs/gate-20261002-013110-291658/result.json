@@ -1,0 +1,19 @@
+{
+  "input_hashes": {
+    "02-missing-receiver.json": "4b093ca7fdb288fb7df95f5f3736f53a7c3e6b514b55305e9e7ae8b18ce76687",
+    "task.json": "ea47491ce22d5dfea630f65e11dd784012c2ddd6bb52df5777ca02565287597b",
+    "evidence.json": "31f846dfd03f6ddb4632901c98d3e91e3bbe19a08f83d2efd35087b8000b9747"
+  },
+  "check": {
+    "state": "RETURN_FOR_EVIDENCE",
+    "contract_passed": false,
+    "errors": [
+      "RECEIVER_EVIDENCE_REQUIRED"
+    ],
+    "approved": false,
+    "action_executed": false
+  },
+  "checker_exit": 1,
+  "next_queue": null,
+  "external_dispatch": false
+}

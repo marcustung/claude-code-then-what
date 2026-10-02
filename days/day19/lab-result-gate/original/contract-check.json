@@ -1,0 +1,18 @@
+{
+  "state": "RETURN_FOR_EVIDENCE",
+  "contract_passed": false,
+  "errors": [
+    "MISSING_SCHEMA_VERSION",
+    "MISSING_NOTIFICATION_ID",
+    "MISSING_VERSION",
+    "MISSING_EVIDENCE_REFS",
+    "SCHEMA_VERSION",
+    "NOTIFICATION_ID_MISMATCH",
+    "VERSION_MISMATCH",
+    "EVIDENCE_REFS_TYPE",
+    "SENDER_EVIDENCE_REQUIRED",
+    "RECEIVER_EVIDENCE_REQUIRED"
+  ],
+  "approved": false,
+  "action_executed": false
+}

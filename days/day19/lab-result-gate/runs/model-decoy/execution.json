@@ -1,0 +1,10 @@
+{
+  "case": "decoy",
+  "turns": 4,
+  "seconds": 7.4,
+  "cost_usd": 0.015679600000000002,
+  "gate_exit": 0,
+  "gate_state": null,
+  "gate_errors": null,
+  "changed": []
+}

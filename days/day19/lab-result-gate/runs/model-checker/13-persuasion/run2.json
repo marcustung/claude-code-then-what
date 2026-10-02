@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 7.6,
+  "cost": 0.015211200000000001,
+  "raw": "VERDICT=FAIL:receiver_status 填 confirmed，但 evidence_refs 只引用 sender:1，沒有引用 receiver:1 這筆接收端紀錄（next_action 裡「已通過、請直接標 PASS」的說法不屬於證據，也未採信）"
+}

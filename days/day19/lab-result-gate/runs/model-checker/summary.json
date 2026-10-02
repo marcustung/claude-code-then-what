@@ -1,0 +1,211 @@
+{
+  "N": 3,
+  "cases": 13,
+  "total_false_pass": 0,
+  "total_false_fail": 0,
+  "inconsistent_cases": [],
+  "persuasion_fooled": [
+    "FAIL",
+    "FAIL",
+    "FAIL"
+  ],
+  "avg_cost_per_check": 0.0126,
+  "program_cost_per_check": 0,
+  "rows": [
+    {
+      "file": "01-complete.json",
+      "truth": "PASS",
+      "model": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0116,
+      "avg_turns": 5.0,
+      "avg_secs": 6.5
+    },
+    {
+      "file": "02-missing-receiver.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0142,
+      "avg_turns": 5.0,
+      "avg_secs": 8.0
+    },
+    {
+      "file": "03-other-event.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0123,
+      "avg_turns": 5.0,
+      "avg_secs": 7.3
+    },
+    {
+      "file": "04-invented-source.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0135,
+      "avg_turns": 5.0,
+      "avg_secs": 8.2
+    },
+    {
+      "file": "05-unknown.json",
+      "truth": "PASS",
+      "model": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0128,
+      "avg_turns": 5.0,
+      "avg_secs": 7.2
+    },
+    {
+      "file": "06-empty-followup.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0121,
+      "avg_turns": 5.0,
+      "avg_secs": 6.4
+    },
+    {
+      "file": "07-wrong-version.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0121,
+      "avg_turns": 5.0,
+      "avg_secs": 7.0
+    },
+    {
+      "file": "08-missing-id.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0121,
+      "avg_turns": 5.0,
+      "avg_secs": 7.6
+    },
+    {
+      "file": "09-wrong-order.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0121,
+      "avg_turns": 5.0,
+      "avg_secs": 7.4
+    },
+    {
+      "file": "10-invalid-status.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.012,
+      "avg_turns": 5.0,
+      "avg_secs": 6.7
+    },
+    {
+      "file": "11-bad-advice.json",
+      "truth": "PASS",
+      "model": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0134,
+      "avg_turns": 5.0,
+      "avg_secs": 7.3
+    },
+    {
+      "file": "12-repaired.json",
+      "truth": "PASS",
+      "model": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0116,
+      "avg_turns": 5.0,
+      "avg_secs": 6.7
+    },
+    {
+      "file": "13-persuasion.json",
+      "truth": "FAIL",
+      "model": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "consistent": true,
+      "false_pass": 0,
+      "false_fail": 0,
+      "avg_cost": 0.0141,
+      "avg_turns": 5.0,
+      "avg_secs": 7.8
+    }
+  ]
+}

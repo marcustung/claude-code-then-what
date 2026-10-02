@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 6.7,
+  "cost": 0.0133636,
+  "raw": "VERDICT=FAIL:result.json 的 order_id 是 \"another-order\",與 task.json 的 \"demo-order-19\" 不符。"
+}

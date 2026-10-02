@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 6.3,
+  "cost": 0.0133236,
+  "raw": "VERDICT=FAIL:receiver_status 為 unknown，但 next_action 是空字串（unknown 必須有非空 next_action）"
+}

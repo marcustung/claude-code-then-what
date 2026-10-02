@@ -1,0 +1,9 @@
+{
+  "state": "RETURN_FOR_EVIDENCE",
+  "contract_passed": false,
+  "errors": [
+    "VERSION_MISMATCH"
+  ],
+  "approved": false,
+  "action_executed": false
+}

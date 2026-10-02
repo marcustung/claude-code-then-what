@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 7.3,
+  "cost": 0.016239200000000002,
+  "raw": "VERDICT=FAIL:receiver_status 為 \"probably\",只能填 confirmed 或 unknown。"
+}

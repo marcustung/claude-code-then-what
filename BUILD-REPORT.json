@@ -1,5 +1,5 @@
 {
- "files": 2645,
+ "files": 2819,
  "binary": 138,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
@@ -333,5 +333,5 @@
   ]
  ],
  "figures": 50,
- "bytes": 234512990
+ "bytes": 236586509
 }

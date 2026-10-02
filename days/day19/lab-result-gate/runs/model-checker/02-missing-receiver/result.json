@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "order_id": "demo-order-19",
+  "notification_id": "demo-notify-19",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "sender:1"
+  ],
+  "missing_sources": [],
+  "next_action": "交給 Owner 核對，不執行補送或結案。"
+}

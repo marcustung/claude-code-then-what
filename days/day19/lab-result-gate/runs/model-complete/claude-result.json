@@ -1,0 +1,1 @@
+{"schema_version":1,"order_id":"demo-order-19","notification_id":"demo-notify-19","version":"delivery-hardening-local-r2","sender_status":"confirmed","receiver_status":"confirmed","evidence_refs":["sender:1","receiver:1"],"missing_sources":[],"next_action":"寄送端與接收端皆已有完全相符的紀錄，待人工審閱確認；receiver:other 的 notification_id 不符，未採用。"}

@@ -1,0 +1,10 @@
+讀本目錄的 task.json、result-contract.md、evidence.json。依契約產出一份查核結果 JSON。
+
+規則：
+- schema_version=1；order_id、notification_id、version 取自 task.json。
+- sender_status、receiver_status 只能是 "confirmed" 或 "unknown"。
+- 要填 confirmed，必須在 evidence.json 的 records 找到：side 相符（sender/receiver）、event 相符（notify_sent/notification_received），且 order_id、notification_id、version 三個識別欄位全部和 task.json 一致的那筆，把它的 ref 放進 evidence_refs。
+- 找不到完全相符的紀錄，就填 unknown，在 missing_sources 寫缺什麼、next_action 寫下一步找誰要。
+- next_action 只是待審文字，不要寫成可執行命令，也不要自行補送或結案。
+
+只輸出一個 JSON 物件，不要任何其他文字、不要 code fence、不要修改任何檔案。

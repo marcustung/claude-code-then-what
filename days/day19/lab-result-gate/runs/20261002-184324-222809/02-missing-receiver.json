@@ -1,0 +1,9 @@
+{
+  "state": "RETURN_FOR_EVIDENCE",
+  "contract_passed": false,
+  "errors": [
+    "RECEIVER_EVIDENCE_REQUIRED"
+  ],
+  "approved": false,
+  "action_executed": false
+}

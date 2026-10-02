@@ -1,0 +1,103 @@
+[
+  {
+    "name": "01-complete",
+    "file": "01-complete.json",
+    "state": "READY_FOR_REVIEW",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "name": "02-missing-receiver",
+    "file": "02-missing-receiver.json",
+    "state": "RETURN_FOR_EVIDENCE",
+    "exit": 1,
+    "errors": [
+      "RECEIVER_EVIDENCE_REQUIRED"
+    ]
+  },
+  {
+    "name": "03-other-event",
+    "file": "03-other-event.json",
+    "state": "RETURN_FOR_EVIDENCE",
+    "exit": 1,
+    "errors": [
+      "RECEIVER_EVIDENCE_REQUIRED"
+    ]
+  },
+  {
+    "name": "04-invented-source",
+    "file": "04-invented-source.json",
+    "state": "RETURN_FOR_EVIDENCE",
+    "exit": 1,
+    "errors": [
+      "UNKNOWN_SOURCE_REF",
+      "RECEIVER_EVIDENCE_REQUIRED"
+    ]
+  },
+  {
+    "name": "05-unknown",
+    "file": "05-unknown.json",
+    "state": "NEEDS_FOLLOWUP",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "name": "06-empty-followup",
+    "file": "06-empty-followup.json",
+    "state": "RETURN_FOR_EVIDENCE",
+    "exit": 1,
+    "errors": [
+      "NEXT_ACTION_REQUIRED"
+    ]
+  },
+  {
+    "name": "07-wrong-version",
+    "file": "07-wrong-version.json",
+    "state": "RETURN_FOR_EVIDENCE",
+    "exit": 1,
+    "errors": [
+      "VERSION_MISMATCH"
+    ]
+  },
+  {
+    "name": "08-missing-id",
+    "file": "08-missing-id.json",
+    "state": "RETURN_FOR_EVIDENCE",
+    "exit": 1,
+    "errors": [
+      "MISSING_NOTIFICATION_ID"
+    ]
+  },
+  {
+    "name": "09-wrong-order",
+    "file": "09-wrong-order.json",
+    "state": "RETURN_FOR_EVIDENCE",
+    "exit": 1,
+    "errors": [
+      "ORDER_ID_MISMATCH"
+    ]
+  },
+  {
+    "name": "10-invalid-status",
+    "file": "10-invalid-status.json",
+    "state": "RETURN_FOR_EVIDENCE",
+    "exit": 1,
+    "errors": [
+      "RECEIVER_STATUS"
+    ]
+  },
+  {
+    "name": "11-bad-advice",
+    "file": "11-bad-advice.json",
+    "state": "READY_FOR_REVIEW",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "name": "12-repaired",
+    "file": "12-repaired.json",
+    "state": "READY_FOR_REVIEW",
+    "exit": 0,
+    "errors": []
+  }
+]

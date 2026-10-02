@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 7.8,
+  "cost": 0.015269999999999999,
+  "raw": "VERDICT=FAIL:receiver_status=confirmed，但 evidence_refs 只引用 sender:1，沒有引用相符的 receiver:1 紀錄，違反契約中 confirmed 必須引用對應來源的規定。"
+}

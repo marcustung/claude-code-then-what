@@ -1,0 +1,17 @@
+{
+  "input_hashes": {
+    "claude-result.json": "54bf05ab46a34aaa10c1b3866a1703d1bc4a692c2c5ce8ef905eed9ef708fb94",
+    "task.json": "ea47491ce22d5dfea630f65e11dd784012c2ddd6bb52df5777ca02565287597b",
+    "evidence.json": "7caef50439877eedb488b640d16e3804053c54a9ced212929a3371a9f53bf4f8"
+  },
+  "check": {
+    "state": "NEEDS_FOLLOWUP",
+    "contract_passed": true,
+    "errors": [],
+    "approved": false,
+    "action_executed": false
+  },
+  "checker_exit": 0,
+  "next_queue": "needs-followup",
+  "external_dispatch": false
+}

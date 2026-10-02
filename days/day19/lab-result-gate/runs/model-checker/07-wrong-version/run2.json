@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 6.9,
+  "cost": 0.013319600000000001,
+  "raw": "VERDICT=FAIL:result.json 的 version（older-version）與 task.json 的 delivery-hardening-local-r2 不符"
+}

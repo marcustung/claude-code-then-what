@@ -1,0 +1,252 @@
+{
+  "type": "deterministic teaching fixtures, not model evaluation",
+  "rows": [
+    {
+      "name": "01-complete",
+      "file": "01-complete.json",
+      "state": "READY_FOR_REVIEW",
+      "exit": 0,
+      "errors": [],
+      "actual_exit": 0,
+      "actual": {
+        "state": "READY_FOR_REVIEW",
+        "contract_passed": true,
+        "errors": [],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "02-missing-receiver",
+      "file": "02-missing-receiver.json",
+      "state": "RETURN_FOR_EVIDENCE",
+      "exit": 1,
+      "errors": [
+        "RECEIVER_EVIDENCE_REQUIRED"
+      ],
+      "actual_exit": 1,
+      "actual": {
+        "state": "RETURN_FOR_EVIDENCE",
+        "contract_passed": false,
+        "errors": [
+          "RECEIVER_EVIDENCE_REQUIRED"
+        ],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "03-other-event",
+      "file": "03-other-event.json",
+      "state": "RETURN_FOR_EVIDENCE",
+      "exit": 1,
+      "errors": [
+        "RECEIVER_EVIDENCE_REQUIRED"
+      ],
+      "actual_exit": 1,
+      "actual": {
+        "state": "RETURN_FOR_EVIDENCE",
+        "contract_passed": false,
+        "errors": [
+          "RECEIVER_EVIDENCE_REQUIRED"
+        ],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "04-invented-source",
+      "file": "04-invented-source.json",
+      "state": "RETURN_FOR_EVIDENCE",
+      "exit": 1,
+      "errors": [
+        "UNKNOWN_SOURCE_REF",
+        "RECEIVER_EVIDENCE_REQUIRED"
+      ],
+      "actual_exit": 1,
+      "actual": {
+        "state": "RETURN_FOR_EVIDENCE",
+        "contract_passed": false,
+        "errors": [
+          "UNKNOWN_SOURCE_REF",
+          "RECEIVER_EVIDENCE_REQUIRED"
+        ],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "05-unknown",
+      "file": "05-unknown.json",
+      "state": "NEEDS_FOLLOWUP",
+      "exit": 0,
+      "errors": [],
+      "actual_exit": 0,
+      "actual": {
+        "state": "NEEDS_FOLLOWUP",
+        "contract_passed": true,
+        "errors": [],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "06-empty-followup",
+      "file": "06-empty-followup.json",
+      "state": "RETURN_FOR_EVIDENCE",
+      "exit": 1,
+      "errors": [
+        "NEXT_ACTION_REQUIRED"
+      ],
+      "actual_exit": 1,
+      "actual": {
+        "state": "RETURN_FOR_EVIDENCE",
+        "contract_passed": false,
+        "errors": [
+          "NEXT_ACTION_REQUIRED"
+        ],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "07-wrong-version",
+      "file": "07-wrong-version.json",
+      "state": "RETURN_FOR_EVIDENCE",
+      "exit": 1,
+      "errors": [
+        "VERSION_MISMATCH"
+      ],
+      "actual_exit": 1,
+      "actual": {
+        "state": "RETURN_FOR_EVIDENCE",
+        "contract_passed": false,
+        "errors": [
+          "VERSION_MISMATCH"
+        ],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "08-missing-id",
+      "file": "08-missing-id.json",
+      "state": "RETURN_FOR_EVIDENCE",
+      "exit": 1,
+      "errors": [
+        "MISSING_NOTIFICATION_ID"
+      ],
+      "actual_exit": 1,
+      "actual": {
+        "state": "RETURN_FOR_EVIDENCE",
+        "contract_passed": false,
+        "errors": [
+          "MISSING_NOTIFICATION_ID",
+          "NOTIFICATION_ID_MISMATCH"
+        ],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "09-wrong-order",
+      "file": "09-wrong-order.json",
+      "state": "RETURN_FOR_EVIDENCE",
+      "exit": 1,
+      "errors": [
+        "ORDER_ID_MISMATCH"
+      ],
+      "actual_exit": 1,
+      "actual": {
+        "state": "RETURN_FOR_EVIDENCE",
+        "contract_passed": false,
+        "errors": [
+          "ORDER_ID_MISMATCH"
+        ],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "10-invalid-status",
+      "file": "10-invalid-status.json",
+      "state": "RETURN_FOR_EVIDENCE",
+      "exit": 1,
+      "errors": [
+        "RECEIVER_STATUS"
+      ],
+      "actual_exit": 1,
+      "actual": {
+        "state": "RETURN_FOR_EVIDENCE",
+        "contract_passed": false,
+        "errors": [
+          "RECEIVER_STATUS"
+        ],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "11-bad-advice",
+      "file": "11-bad-advice.json",
+      "state": "READY_FOR_REVIEW",
+      "exit": 0,
+      "errors": [],
+      "actual_exit": 0,
+      "actual": {
+        "state": "READY_FOR_REVIEW",
+        "contract_passed": true,
+        "errors": [],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    },
+    {
+      "name": "12-repaired",
+      "file": "12-repaired.json",
+      "state": "READY_FOR_REVIEW",
+      "exit": 0,
+      "errors": [],
+      "actual_exit": 0,
+      "actual": {
+        "state": "READY_FOR_REVIEW",
+        "contract_passed": true,
+        "errors": [],
+        "approved": false,
+        "action_executed": false
+      },
+      "matches_expected": true
+    }
+  ],
+  "all_expected": true,
+  "input_hashes": {
+    "check_result.py": "b185dd15c74e5a1dfbce8e5a64f15be531b9c7b1a875f4aa1d8964fa55e13a86",
+    "cases.json": "a2bd81f8045adb003a2c7ec36d9ea48ee4274440148087f9859f83cdd1698573",
+    "task.json": "ea47491ce22d5dfea630f65e11dd784012c2ddd6bb52df5777ca02565287597b",
+    "evidence.json": "31f846dfd03f6ddb4632901c98d3e91e3bbe19a08f83d2efd35087b8000b9747",
+    "fixtures\\01-complete.json": "6b96adf6681ade8ec0209f83da8df9930f2658cd5996ecf63cbc35ad6892148f",
+    "fixtures\\02-missing-receiver.json": "4b093ca7fdb288fb7df95f5f3736f53a7c3e6b514b55305e9e7ae8b18ce76687",
+    "fixtures\\03-other-event.json": "3a69616308f4054503dc0ea8a912db1ee2e94d487dacd63652bb8e8f6139696a",
+    "fixtures\\04-invented-source.json": "50676ec99dcb971483a88321e264f0806afbc0e7972561095f9eeddbfd94755a",
+    "fixtures\\05-unknown.json": "f68b1463f44eb59f88bc96e2757130f32848c3d319fa6184c9fc057537a9af3e",
+    "fixtures\\06-empty-followup.json": "1d18d3e2d2a4bc82d6f18bff5f338865c4ecc6ff3b8930b32e28c6a7a12b8ca4",
+    "fixtures\\07-wrong-version.json": "4d5ab86018fa42be67419b17b31384203885904ca352e619c2f867bd01ba3b42",
+    "fixtures\\08-missing-id.json": "99e403fd99ad6076dd5d4b79ee7aba2324a4a4e7c4139839f0388ffd987215f0",
+    "fixtures\\09-wrong-order.json": "5f13d0350002fa171a503c9e7bcf22f7a98be920efb3897d8d73095c6aa59696",
+    "fixtures\\10-invalid-status.json": "d8cbc7f4dc1c2e0b294f2aaabd8109ff41cb2057ff9579a2900470eb912bf3a8",
+    "fixtures\\11-bad-advice.json": "15a412ecb87b101b33a1190784a90e6fa2cf851953c738d9d066105da89f9e6f",
+    "fixtures\\12-repaired.json": "6b96adf6681ade8ec0209f83da8df9930f2658cd5996ecf63cbc35ad6892148f",
+    "fixtures\\13-persuasion.json": "d08f5f2746618c63939123ef3ec62cd71260180dbbfb17323666ab15aa2c589a"
+  }
+}

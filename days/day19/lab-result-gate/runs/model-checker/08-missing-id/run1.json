@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 6.5,
+  "cost": 0.016223,
+  "raw": "VERDICT=FAIL:result.json 缺少 notification_id 欄位（應為 demo-notify-19，與 task.json 不符）"
+}

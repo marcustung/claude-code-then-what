@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 7.8,
+  "cost": 0.013574800000000001,
+  "raw": "VERDICT=FAIL:receiver_status=confirmed 引用的 receiver:other 其 notification_id 是 another-notification,與 task 的 demo-notify-19 不符(receiver:1 才相符卻未引用)"
+}

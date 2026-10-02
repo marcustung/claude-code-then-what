@@ -1,0 +1,10 @@
+{
+  "state": "RETURN_FOR_EVIDENCE",
+  "contract_passed": false,
+  "errors": [
+    "MISSING_NOTIFICATION_ID",
+    "NOTIFICATION_ID_MISMATCH"
+  ],
+  "approved": false,
+  "action_executed": false
+}

@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 6.9,
+  "cost": 0.0165368,
+  "raw": "VERDICT=FAIL:receiver_status 填 confirmed，但 evidence_refs 引用的 receiver:other 的 notification_id 是 another-notification，與 task 不符（正確的紀錄是 receiver:1）"
+}

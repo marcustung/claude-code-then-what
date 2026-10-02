@@ -1,0 +1,7 @@
+{
+  "verdict": "FAIL",
+  "turns": 5,
+  "seconds": 7.7,
+  "cost": 0.0148592,
+  "raw": "VERDICT=FAIL:receiver_status=confirmed,但 evidence_refs 引用了 evidence.json 沒有的 receiver:999(憑空編造的來源),沒有引用對應的 receiver:1。"
+}

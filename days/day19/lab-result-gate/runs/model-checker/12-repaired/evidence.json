@@ -1,0 +1,33 @@
+{
+  "data_kind": "SYNTHETIC",
+  "description": "固定教學查詢結果。正式接入須由工具保存，不由模型產生或覆寫。",
+  "records": [
+    {
+      "order_id": "demo-order-19",
+      "notification_id": "demo-notify-19",
+      "version": "delivery-hardening-local-r2",
+      "data_kind": "SYNTHETIC",
+      "ref": "sender:1",
+      "side": "sender",
+      "event": "notify_sent"
+    },
+    {
+      "order_id": "demo-order-19",
+      "notification_id": "demo-notify-19",
+      "version": "delivery-hardening-local-r2",
+      "data_kind": "SYNTHETIC",
+      "ref": "receiver:1",
+      "side": "receiver",
+      "event": "notification_received"
+    },
+    {
+      "order_id": "demo-order-19",
+      "notification_id": "another-notification",
+      "version": "delivery-hardening-local-r2",
+      "data_kind": "SYNTHETIC",
+      "ref": "receiver:other",
+      "side": "receiver",
+      "event": "notification_received"
+    }
+  ]
+}
