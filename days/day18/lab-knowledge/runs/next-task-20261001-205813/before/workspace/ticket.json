@@ -1,0 +1,12 @@
+{
+  "kind": "SYNTHETIC teaching ticket, not production incident",
+  "request": "使用者說取消訂單後沒有收到通知；API 回200，已有 notify_sent。請判斷是否需要補送，交給下一位RD接著處理。",
+  "order_id": "demo-order-18",
+  "notification_id": "demo-notify-18",
+  "reported_version": "delivery-hardening-local-r2",
+  "provided_code_version": "delivery-hardening-local-r2",
+  "time_window": "2026-10-01T00:00:00Z/2026-10-01T00:05:00Z",
+  "environment": "synthetic local exercise",
+  "available": "sender event only; receiver logs, deployed configuration proof, resend contract and named Owner not provided",
+  "permission": "read-only; no live tools or actions"
+}

@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 21293,
+  "stop_reason": "end_turn",
+  "session_id": "9e8d6357-c0a0-47ba-9388-fe90ef5b8719",
+  "total_cost_usd": 0.062295600000000007,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 7610,
+    "cache_read_input_tokens": 32028,
+    "output_tokens": 2543,
+    "output_tokens_details": {
+      "thinking_tokens": 48
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7610,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1250,
+        "cache_read_input_tokens": 9957,
+        "cache_creation_input_tokens": 1493,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1493
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 2543,
+      "cacheReadInputTokens": 32028,
+      "cacheCreationInputTokens": 7610,
+      "webSearchRequests": 0,
+      "costUSD": 0.062295600000000007,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 48,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**結論：目前不建議補送。** 補送的前提是接收端沒收到，這點還沒確認。\n\n**已確認**\n- 這是合成教學工單，只有發送端事件。`demo-notify-18` 的 `notify_sent` 帶 `sync:true`（sender-event.json）。\n- 程式版本與回報版本相同，都是 delivery-hardening-local-r2（ticket.json）。\n- `sync:true` 代表走 `sync_notify` 同步分支：`SendOnce` 在請求路徑上送出，收到 `IsSuccessStatusCode` 才寫 `notify_sent`（Program.cs:85-86、217、222）。\n- 通知只在 `transitioned` 為真時建立（Program.cs:79-83），所以這筆是真的完成了取消。\n- 這個事件只證明發送端看到 HTTP 成功。接收端是否 confirmed，另需相同 `notification_id` 的接收紀錄，也沒驗退款（wiki/notification.md:15）。\n- 失敗路徑會寫 `notify_dead_letter`（Program.cs:223）。目前沒有證據顯示這筆走到那裡。\n- 程式裡沒有補送 API 或補送契約，我只 grep 到發送與重試，沒有補送入口。\n\n**尚缺**\n- 接收端紀錄：ticket.json 的 `available` 欄位寫明沒提供。\n- 部署設定證明：目前無法確認實際是否開了 `sync_notify`，以及 `OC_SINK_URL` 指向哪裡。只能說事件形狀符合同步分支。\n- 補送契約，以及具名 Owner。\n- 事件本身是「shaped after」的合成資料，不是真實擷取的 log（sender-event.json）。\n- 訂單與 Channel 都在記憶體，程序重啟後的狀態無法推定（notification.md:17）。\n\n**下一步查哪裡、用什麼條件**（依 wiki/log-query.md，需有可用的 log 查詢權限；目前 mcp.json 的 `mcpServers` 是空的，本次沒有可用工具）\n1. 接收端：`service_name=\"notification-receiver\"`，時間窗 `2026-10-01T00:00:00Z/00:05:00Z`，用 JSON 內容比對 `notification_id=demo-notify-18`。\n2. 發送端：`service_name=\"order-api\"`，同一時間窗，找 `demo-order-18` 的 `cancel` 事件、同一個 `notification_id`，以及是否有 `notify_attempt_failed` 或 `notify_dead_letter`。\n3. 先核對標籤與時間窗，再判讀零筆結果。工具錯誤和成功的空結果要分開記。\n4. 部署設定要向有權限的人索取，不從 wiki 猜。\n\n**能否補送**\n- 接收端若有同 ID 紀錄，就不用補送，問題轉向使用者端或通知內容。\n- 接收端若確定沒有，才有補送理由。但目前沒有補送契約，也沒有授權與冪等保證。重送時 `notification_id` 是否沿用、接收端是否去重，都沒有來源可證。所以現在不能直接補送。\n- 只查到「沒有紀錄」時只能記為 unknown，不能判定未送達（log-query.md:12）。\n\n**需要誰決定**\n- 服務 Owner：確認補送行為、接受條件與授權。ticket 沒有指定具名人選，需要工單方指派（notification.md:19-21）。\n- 接收端維護者：確認去重與重送是否安全。來源沒有提到這個角色，是我的建議。",
+  "ttft_ms": 1773,
+  "type": "result",
+  "duration_ms": 21638,
+  "uuid": "ac807969-6322-4dcb-8c06-3df6c376a6d5",
+  "ttft_stream_ms": 1098,
+  "time_to_request_ms": 166,
+  "first_content_frame_ms": 1099,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

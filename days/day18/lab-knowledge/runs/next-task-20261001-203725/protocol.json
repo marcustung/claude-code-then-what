@@ -1,0 +1,16 @@
+{
+  "fixture": "synthetic ticket and sender event, not live service execution",
+  "cases": [
+    "before",
+    "after"
+  ],
+  "constant": "same ticket, event, prompt, r2 code, model/tools; new applicability page plus index entry only",
+  "expectations": [
+    "read code and wiki",
+    "identify sync SendOnce path",
+    "receiver outcome unknown",
+    "do not authorize resend or use repeated cancel as resend",
+    "next step identifies notification_id, required evidence and decision role"
+  ],
+  "sample": "one each; no accuracy or time savings estimate"
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "file": "sources/Program.cs",
+    "source": "examples/day17-method-pack/log-server-lab/runs/live-20261001-02/workspaces/complete/src/Program.cs",
+    "sha256": "da2c152cf96a115ff8df9d30eed65d8ff72d7a55f0ff3601c0907d406d1d32ca"
+  },
+  {
+    "file": "sources/Cancellation.cs",
+    "source": "examples/day17-method-pack/log-server-lab/runs/live-20261001-02/workspaces/complete/src/Cancellation.cs",
+    "sha256": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a"
+  },
+  {
+    "file": "sources/design-review.md",
+    "source": "examples/day17-method-pack/log-server-lab/runs/live-20261001-02/workspaces/complete/design/design-review.md",
+    "sha256": "399118a30f9ca16a591e3cbf12eccf17bda3d3c1dfd83960e4e6b11f1faaab40"
+  },
+  {
+    "file": "sources/config.alloy",
+    "source": "examples/day17-method-pack/log-server-lab/config.alloy",
+    "sha256": "1cabb372584285eaa30643ca362b733158ff4c2b30fd14e577175b14c0c29660"
+  },
+  {
+    "file": "sources/claude-answer.md",
+    "source": "examples/day17-method-pack/log-server-lab/runs/live-20261001-02/model/r2/complete/answer.md",
+    "sha256": "9e2ec295adaf88b68b0207dbd4405fa7adb36987826ad878e000eddd3697312b"
+  }
+]

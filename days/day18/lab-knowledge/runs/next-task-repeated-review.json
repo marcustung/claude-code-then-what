@@ -1,0 +1,90 @@
+{
+  "method": "human reading of six answers; targeted conditions, not overall model accuracy",
+  "retrospective": "two extra pairs after first discrepancy; not preregistered independent replication",
+  "rows": [
+    {
+      "repeat": 1,
+      "case": "before",
+      "run": "next-task-20261001-203725",
+      "complete": true,
+      "unchanged": true,
+      "answer_sha256": "d3d331a31982f7bd2b5ca8131ba6f555bb32aada3910be409e025e4a25d181f5",
+      "human_review": {
+        "unsupported_resend_id_rule": true,
+        "receiver_unknown": true,
+        "no_current_resend_authorization": true
+      },
+      "read_applicability": false
+    },
+    {
+      "repeat": 1,
+      "case": "after",
+      "run": "next-task-20261001-203725",
+      "complete": true,
+      "unchanged": true,
+      "answer_sha256": "628c753799be00248e6f6782a1e888c6b0599d87e1d5fd0ac2a1d70eaf1157a5",
+      "human_review": {
+        "unsupported_resend_id_rule": false,
+        "receiver_unknown": true,
+        "no_current_resend_authorization": true
+      },
+      "read_applicability": true
+    },
+    {
+      "repeat": 2,
+      "case": "before",
+      "run": "next-task-20261001-205729",
+      "complete": true,
+      "unchanged": true,
+      "answer_sha256": "dc16cd29d379ac0092e12c2baacfbe6c2405e2e3af1f5c8a4ffb02fe1a929c5a",
+      "human_review": {
+        "unsupported_resend_id_rule": false,
+        "receiver_unknown": true,
+        "no_current_resend_authorization": true
+      },
+      "read_applicability": false
+    },
+    {
+      "repeat": 2,
+      "case": "after",
+      "run": "next-task-20261001-205729",
+      "complete": true,
+      "unchanged": true,
+      "answer_sha256": "59aedd55b3e56a5325b288b2337f3dcb3beaee0c86c57779a788994fbad4aaa4",
+      "human_review": {
+        "unsupported_resend_id_rule": false,
+        "receiver_unknown": true,
+        "no_current_resend_authorization": true
+      },
+      "read_applicability": true
+    },
+    {
+      "repeat": 3,
+      "case": "before",
+      "run": "next-task-20261001-205813",
+      "complete": true,
+      "unchanged": true,
+      "answer_sha256": "2386271fae427a380e2eb96bcf8868909d229094a40c27cfa5577708845195a7",
+      "human_review": {
+        "unsupported_resend_id_rule": false,
+        "receiver_unknown": true,
+        "no_current_resend_authorization": true
+      },
+      "read_applicability": false
+    },
+    {
+      "repeat": 3,
+      "case": "after",
+      "run": "next-task-20261001-205813",
+      "complete": true,
+      "unchanged": true,
+      "answer_sha256": "4df812e262f66d93115009fce04b3aa396435465693d38953bc17219b398faad",
+      "human_review": {
+        "unsupported_resend_id_rule": false,
+        "receiver_unknown": true,
+        "no_current_resend_authorization": true
+      },
+      "read_applicability": true
+    }
+  ]
+}

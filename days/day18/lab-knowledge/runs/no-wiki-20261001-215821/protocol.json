@@ -1,0 +1,17 @@
+{
+  "fixture": "synthetic ticket and sender event, not live service execution",
+  "cases": [
+    "no-wiki-1",
+    "no-wiki-2",
+    "no-wiki-3"
+  ],
+  "constant": "same frozen ticket, event, prompt, r2 code and tool/model settings as run-next-task.py; all wiki files withheld; comparison to previous runs is sequential, not randomized",
+  "expectations": [
+    "read code and wiki",
+    "identify sync SendOnce path",
+    "receiver outcome unknown",
+    "do not authorize resend or use repeated cancel as resend",
+    "next step identifies notification_id, required evidence and decision role"
+  ],
+  "sample": "three fresh sessions without wiki; no accuracy or time savings estimate"
+}

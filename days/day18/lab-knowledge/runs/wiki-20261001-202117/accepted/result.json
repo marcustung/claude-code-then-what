@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 28617,
+  "stop_reason": "end_turn",
+  "session_id": "3c00e3ca-e264-406b-a001-95b25fb35417",
+  "total_cost_usd": 0.0892484,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 12609,
+    "cache_read_input_tokens": 20732,
+    "output_tokens": 3465,
+    "output_tokens_details": {
+      "thinking_tokens": 1041
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 12609,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2569,
+        "cache_read_input_tokens": 7156,
+        "cache_creation_input_tokens": 9293,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 9293
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3465,
+      "cacheReadInputTokens": 20732,
+      "cacheCreationInputTokens": 12609,
+      "webSearchRequests": 0,
+      "costUSD": 0.0892484,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1041,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**結論（版本 delivery-hardening-local-r2）：** `notification.md` 大致可保留，另有三處建議補充。我只讀檔，沒有執行程式。`sources` 內沒有 VERSION 檔，版本是否為 r2 只能靠 task.json 與 INDEX 的宣告，無法從程式驗證。\n\n**逐項核對**\n\n1. 「TryCancel 在同一 lock 內取得、取消、寫回」\n   - 來源：Program.cs:105-114，Cancellation.cs:8-22。\n   - 判定：**保留**。\n   - 理由：程式與說法一致。\n   - 範圍：同程序、同一 OrderStore，不含通知。\n\n2. 「通知建立與入列在 TryCancel 之後，非同一交易」\n   - 來源：Program.cs:64、79-88。\n   - 判定：**保留**。\n   - 理由：兩者都在 lock 之外。\n   - 範圍：不能推到跨程序或 exactly-once。\n\n3. 「舊說法：個別 lock 不保證並行取消安全」（design-review 第 4 點）\n   - 判定：**修訂（已修）**。\n   - 理由：r2 的讀、判斷、寫在同一 lock 內。`transitioned` 由 before 與 result 推出，重複取消只有一次為 true。這是我讀程式的推論，沒有並行實測。\n   - 範圍：僅限 lock 內三步。\n\n4. 「notify_sent 只由 worker 寫入」\n   - 來源：Program.cs:85-86、222、257-260。\n   - 判定：**修訂（已修）**。\n   - 理由：sync_notify 時由 SendOnce 寫入，並帶 `sync=true`。\n   - 範圍：僅限故障注入設定。\n\n5. 「notify_sent 只證明發送端見到成功，沒驗退款」\n   - 來源：Program.cs:217、248。\n   - 判定：**保留**。\n   - 理由：成功判斷只看 `IsSuccessStatusCode`，payload 只帶 `refund_requested` 旗標。\n   - 範圍：「接收端 confirmed」依賴的 sink 不在 sources，無法核對。\n\n6. 「訂單與 Channel 在記憶體」\n   - 來源：Program.cs:15、18、37。\n   - 判定：**保留**。\n   - 理由：程式與說法一致。\n   - 範圍：log 檔不在此限。\n\n7. design-review 第 1 點的行號（69、79、84、88、89）\n   - 判定：**修訂**。\n   - 理由：與現行 Program.cs 對不上，現在是 64、82、88、92、93。「入列在回應前」仍成立。\n   - 範圍：引用時改用方法或事件名稱，不用行號。\n\n8. 「本輪未跑 .NET」（design-review 第 7 點）\n   - 判定：**保留為歷史界線**。\n   - 理由：本次我也沒執行，所以只能說「未實測」，不能說「已驗證」。\n\n**未知，不補寫：** SLA、正式接收端、補送授權、值班 Owner；sink 如何保存收據；r2 與程式註解中 v1.1.0 / v1.2.0 的對應關係。\n\n**notification.md 修訂草稿（只加有來源的內容）**\n\n> 新增「失敗與分支」：\n> - worker 與 SendOnce 都是首次加 3 次重試（間隔 200／400／800 ms，共 4 次）。全失敗寫 `notify_dead_letter`（Program.cs:203、223、262-266）。\n> - sync_notify 下，SendOnce 失敗不會丟例外，請求仍可回 200。通知結果要看 log，不能看 HTTP 狀態（Program.cs:85-93）。\n> - `notify_enqueued_total` 在 sync 路徑也會累加（Program.cs:84），不等於「進入 Channel」。\n> - `/version` 的 `notification_mode` 固定為 \"async\"，不反映 sync_notify（Program.cs:37），不能用它判斷模式。\n> - 已出貨回 409、重複取消回 200，這兩種都不通知（Program.cs:74-79）。\n> - notify_drop_over_queue 會把通知重排最多 5 次，超限後改走一般送出（Program.cs:230-240）。僅限演練注入。\n\n**待確認：** 若要宣稱「此程式就是 r2」，需提供 VERSION 或版本對照。",
+  "ttft_ms": 2170,
+  "type": "result",
+  "duration_ms": 29020,
+  "uuid": "f57b8e2f-7939-48c0-b7a7-65fe7f4d5c62",
+  "ttft_stream_ms": 1254,
+  "time_to_request_ms": 176,
+  "first_content_frame_ms": 1254,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

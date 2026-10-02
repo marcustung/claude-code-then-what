@@ -1,0 +1,44 @@
+{
+  "runs": [
+    {
+      "case": "before",
+      "returncode": 0,
+      "seconds": 20.99,
+      "unchanged": true,
+      "is_error": false,
+      "cost_usd": 0.0749042,
+      "num_turns": 9,
+      "read_index": true,
+      "read_program": true,
+      "read_applicability": false,
+      "queried_program": true
+    },
+    {
+      "case": "after",
+      "returncode": 0,
+      "seconds": 19.8,
+      "unchanged": true,
+      "is_error": false,
+      "cost_usd": 0.05013,
+      "num_turns": 10,
+      "read_index": true,
+      "read_program": false,
+      "read_applicability": true,
+      "queried_program": true
+    }
+  ],
+  "same_inputs": {
+    "ticket.json": true,
+    "sender-event.json": true,
+    "sources/Program.cs": true,
+    "sources/Cancellation.cs": true
+  },
+  "human_review": {
+    "both": "identify sync path, receiver unknown, no authorized resend; no claim new wiki uniquely enables correct diagnosis",
+    "before_unaccepted": "unqualified instruction to reuse notification_id on resend; internal retry uses same object but manual resend contract missing",
+    "after": "does not prescribe resend ID; calls out repeated cancellation is not resend; requests resend method/dedup/authorization",
+    "remaining": "log-query config source omitted, labels are unverified suggestions; empty receiver query alone cannot authorize resend",
+    "source_access": "before used Read on Program.cs; after used Grep(content) on Program.cs; neither establishes deployment or business approval"
+  },
+  "scope": "one each; synthetic fixtures, no live Log query, no actual resend, not accuracy or effort improvement"
+}

@@ -1,0 +1,47 @@
+{
+  "cases": [
+    {
+      "case": "no-wiki-1",
+      "complete": true,
+      "input_unchanged": true,
+      "answer_sha256": "35fc783994f517d308ef567e8d190964c349b306cf82e915dfd48ee43b6c134b",
+      "human_review": {
+        "acknowledged_missing_wiki": true,
+        "identified_sync_path": true,
+        "withheld_current_resend": true,
+        "proposed_local_logs_jsonl": true,
+        "provided_logserver_service_labels": false
+      },
+      "scope": "targeted observations, not whole-answer correctness"
+    },
+    {
+      "case": "no-wiki-2",
+      "complete": true,
+      "input_unchanged": true,
+      "answer_sha256": "f09d39a59798b58eb70d7a1a76f7da9f76aa66bf0d3f9387500f29c16c46d412",
+      "human_review": {
+        "acknowledged_missing_wiki": true,
+        "identified_sync_path": true,
+        "withheld_current_resend": true,
+        "proposed_local_logs_jsonl": true,
+        "provided_logserver_service_labels": false
+      },
+      "scope": "targeted observations, not whole-answer correctness"
+    },
+    {
+      "case": "no-wiki-3",
+      "complete": true,
+      "input_unchanged": true,
+      "answer_sha256": "abc735d142772c3faa774b29ae1daebd82fe17addab2bac54a4a19efa767bca6",
+      "human_review": {
+        "acknowledged_missing_wiki": true,
+        "identified_sync_path": true,
+        "withheld_current_resend": true,
+        "proposed_local_logs_jsonl": true,
+        "provided_logserver_service_labels": false
+      },
+      "scope": "targeted observations, not whole-answer correctness"
+    }
+  ],
+  "comparison": "sequential supplemental control, same prompt still requests wiki/INDEX.md; missing wiki was deliberate; not randomized and not accuracy estimate"
+}

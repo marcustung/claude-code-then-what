@@ -1,0 +1,7 @@
+{
+  "fixture": "SYNTHETIC shaped after Program.cs event; not actual captured log",
+  "event": "notify_sent",
+  "order_id": "demo-order-18",
+  "notification_id": "demo-notify-18",
+  "sync": true
+}

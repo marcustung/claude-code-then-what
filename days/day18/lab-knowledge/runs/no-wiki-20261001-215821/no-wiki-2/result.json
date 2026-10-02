@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 19685,
+  "stop_reason": "end_turn",
+  "session_id": "f59f87d1-2fda-4275-9441-a307ed95a31a",
+  "total_cost_usd": 0.0718438,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 11217,
+    "cache_read_input_tokens": 19599,
+    "output_tokens": 2304,
+    "output_tokens_details": {
+      "thinking_tokens": 436
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 11217,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1450,
+        "cache_read_input_tokens": 5746,
+        "cache_creation_input_tokens": 9311,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 9311
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2304,
+      "cacheReadInputTokens": 19599,
+      "cacheCreationInputTokens": 11217,
+      "webSearchRequests": 0,
+      "costUSD": 0.0718438,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 436,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**結論：目前不建議補送，也不能判定漏送。**\n\n**注意：** `wiki/INDEX.md` 不存在，所以沒有 wiki 可選。我改讀 `sources/` 的原始碼，結論全部來自 `Program.cs`、`Cancellation.cs`、`design-review.md` 和兩個 JSON。\n\n**已確認**\n- 事件 `notify_sent` 帶 `sync:true`（`sender-event.json`）。程式裡只有 `SendOnce` 會寫這個欄位（`Program.cs:222`）。\n- `SendOnce` 只在 `faults.SyncNotify` 為真時被呼叫（`Program.cs:85-86`），這個旗標來自 `OC_FAULTS` 檔（`Program.cs:190`）。\n- `notify_sent` 只代表接收端回了 2xx（`Program.cs:217,222`），不代表使用者收到。\n- 事件有 `notification_id`，表示這次取消確實發生了狀態轉換（`Program.cs:79-83`、`Cancellation.cs:25`）。\n- 重複取消和已出貨都不會通知（`Program.cs:74-76`）。\n- `fixture` 欄位標明事件是「SYNTHETIC」，並非實際擷取的 log（`sender-event.json`）。\n\n**尚缺**\n- 接收端 log 和部署設定證明（`ticket.json` 的 `available`）。\n- 實際生效的 `OC_FAULTS` 和 `OC_SINK_URL`，所以無法證明部署是否走同步路徑。\n- `/version` 固定回 `notification_mode=\"async\"`（`Program.cs:37`），不能拿來當設定證據。\n- 補送契約和具名 Owner（`ticket.json`）。\n- `design-review.md:9` 說本輪沒跑 .NET，行為未實測。\n\n**下一步查哪裡、用什麼條件**\n1. 查接收端 log：`notification_id=demo-notify-18`，並用 `order_id=demo-order-18` 交叉比對，時間窗 `2026-10-01T00:00:00Z/00:05:00Z`。有收據就問題在接收端之後；沒有收據才是接收端缺漏。\n2. 查寄件端 `logs.jsonl`：同一個 `notification_id` 是否有 `notify_attempt_failed` 或 `notify_dead_letter`。\n3. 確認部署的 `OC_SINK_URL` 是否指向真實接收端還是 fake sink，以及版本是否為 `delivery-hardening-local-r2`。\n\n**是否可補送**\n不可以。接收端沒有確認缺漏，也沒有補送契約。程式碼裡沒有補送入口，也沒有去重保證，貿然重送可能造成重複通知。\n\n**需要誰決定**\n需要「補送契約的 Owner」。工單沒有指名，我不替任何人猜測。請先請工單提出者指定。",
+  "ttft_ms": 1828,
+  "type": "result",
+  "duration_ms": 20069,
+  "uuid": "047259e0-f54c-4585-b8b6-4c21452d4aff",
+  "ttft_stream_ms": 1153,
+  "time_to_request_ms": 205,
+  "first_content_frame_ms": 1154,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

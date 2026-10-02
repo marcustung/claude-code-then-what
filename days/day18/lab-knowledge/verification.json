@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "sources/Program.cs",
+      "passed": true
+    },
+    {
+      "check": "sources/Cancellation.cs",
+      "passed": true
+    },
+    {
+      "check": "sources/design-review.md",
+      "passed": true
+    },
+    {
+      "check": "sources/config.alloy",
+      "passed": true
+    },
+    {
+      "check": "sources/claude-answer.md",
+      "passed": true
+    },
+    {
+      "check": "applicability.md -> ../sources/Program.cs",
+      "passed": true
+    },
+    {
+      "check": "applicability.md -> ../sources/Cancellation.cs",
+      "passed": true
+    },
+    {
+      "check": "INDEX.md -> notification.md",
+      "passed": true
+    },
+    {
+      "check": "INDEX.md -> log-query.md",
+      "passed": true
+    },
+    {
+      "check": "INDEX.md -> changes.md",
+      "passed": true
+    },
+    {
+      "check": "INDEX.md -> applicability.md",
+      "passed": true
+    },
+    {
+      "check": "log-query.md -> ../sources/config.alloy",
+      "passed": true
+    },
+    {
+      "check": "notification.md -> ../sources/Program.cs",
+      "passed": true
+    },
+    {
+      "check": "notification.md -> ../sources/claude-answer.md",
+      "passed": true
+    },
+    {
+      "check": "TryCancel lock encloses ordered operations",
+      "passed": true
+    },
+    {
+      "check": "API notification outside store method",
+      "passed": true
+    },
+    {
+      "check": "service_name configured",
+      "passed": true
+    }
+  ],
+  "scope": "snapshot hashes, links and static anchors; not behavior, concurrency or model evaluation"
+}

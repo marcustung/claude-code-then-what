@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 19819,
+  "stop_reason": "end_turn",
+  "session_id": "c27f56ed-93f9-46f7-ac54-dc39f7bd05ec",
+  "total_cost_usd": 0.0614922,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 7604,
+    "cache_read_input_tokens": 33031,
+    "output_tokens": 2445,
+    "output_tokens_details": {
+      "thinking_tokens": 22
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7604,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1172,
+        "cache_read_input_tokens": 9977,
+        "cache_creation_input_tokens": 1467,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1467
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 2445,
+      "cacheReadInputTokens": 33031,
+      "cacheCreationInputTokens": 7604,
+      "webSearchRequests": 0,
+      "costUSD": 0.0614922,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 22,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 11,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**結論：目前不能判定要補送，也不能判定已送達。** 這張工單缺少接收端證據。\n\n**已確認**\n- 發送端事件 `notify_sent`，order_id=demo-order-18、notification_id=demo-notify-18，帶 `sync:true`。來源：sender-event.json。\n- 這個事件只代表發送端收到 HTTP 成功。程式在 `resp.IsSuccessStatusCode` 為真時才寫入，SendOnce 在 Program.cs:217、222，worker 在 248、259–260。它不代表接收端處理完成，也不代表使用者收到。來源：wiki/notification.md、applicability.md。\n- `sync:true` 對應 `faults.SyncNotify` 分支，通知由請求路徑的 `SendOnce` 同步送出（Program.cs:85–86、222）。但設定是否真的開啟，現有資料無法證明。\n- 通知只在 `transitioned` 為真時建立（Program.cs:79–83）。重複取消走 idempotent 分支，不會建通知（Program.cs:76），所以重送取消不能當補送入口。來源：applicability.md 第 3 列。\n- 版本一致：ticket 回報與提供的程式都是 delivery-hardening-local-r2。來源：ticket.json。\n- 訂單與 Channel 都在記憶體，程序重啟後不能假設資料還在。來源：notification.md。\n\n**尚缺**\n- 接收端 log、部署設定證明、補送契約、具名 Owner。來源：ticket.json 的 `available`。\n- 本次 `sync_notify` 的實際設定來源。\n- 「API 回 200」只是請求紀錄的說法，沒有對應的 cancel 事件可核對。ticket 與 sender-event 都只是合成資料（SYNTHETIC），不是實際擷取的 log。\n\n**下一步查哪裡、用什麼條件**\n1. 查接收端 log：`service_name=notification-receiver`，用 notification_id=`demo-notify-18` 串接，時間窗 2026-10-01T00:00:00Z 至 00:05:00Z。來源：log-query.md、ticket.json。\n2. 同時查發送端 `service_name=order-api` 的 `cancel` 事件，用 order_id 關聯，確認 transitioned=true 與 notification_id 一致。\n3. 零筆結果時，先核對標籤、服務名稱和時間窗，並分清是工具錯誤還是成功但為空。來源：log-query.md。\n4. 查當次的部署與設定來源，確認 `sync_notify`。datasource 由 task.json 提供，目前工作目錄沒有這個檔案，所以未知。\n\n**能否補送**\n- 目前不可以。證據有三種可能：查到接收紀錄、確認沒有接收紀錄，或查不到任何資料（只能記為 unknown）。補送契約與去重規則也沒有，所以補送授權不成立。來源：applicability.md「缺件與決策」。\n- 補送前至少要有：接收端確認未收到、獨立的補送方法，以及接收端去重契約。\n\n**需要誰決定**\n- 服務維護者（Owner 未指名，不編造人名）：確認查詢來源與部署版本。\n- 有權接受重複通知風險的人：決定補送條件。\n- 以上是教學包建議的分工，不是公司已採用的規範。來源：applicability.md。",
+  "ttft_ms": 1587,
+  "type": "result",
+  "duration_ms": 20296,
+  "uuid": "24836ace-b618-47a7-8331-32470d86d5e5",
+  "ttft_stream_ms": 914,
+  "time_to_request_ms": 160,
+  "first_content_frame_ms": 915,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

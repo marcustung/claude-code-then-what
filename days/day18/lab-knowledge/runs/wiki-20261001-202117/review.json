@@ -1,0 +1,145 @@
+{
+  "execution_checks": [
+    {
+      "case": "old",
+      "check": "completed",
+      "passed": true
+    },
+    {
+      "case": "old",
+      "check": "inputs unchanged",
+      "passed": true
+    },
+    {
+      "case": "old",
+      "check": "read index",
+      "passed": true
+    },
+    {
+      "case": "old",
+      "check": "read code",
+      "passed": true
+    },
+    {
+      "case": "updated",
+      "check": "completed",
+      "passed": true
+    },
+    {
+      "case": "updated",
+      "check": "inputs unchanged",
+      "passed": true
+    },
+    {
+      "case": "updated",
+      "check": "read index",
+      "passed": true
+    },
+    {
+      "case": "updated",
+      "check": "read code",
+      "passed": true
+    },
+    {
+      "case": "unknown-version",
+      "check": "completed",
+      "passed": true
+    },
+    {
+      "case": "unknown-version",
+      "check": "inputs unchanged",
+      "passed": true
+    },
+    {
+      "case": "unknown-version",
+      "check": "read index",
+      "passed": true
+    },
+    {
+      "case": "unknown-version",
+      "check": "read code",
+      "passed": true
+    },
+    {
+      "case": "accepted",
+      "check": "completed",
+      "passed": true
+    },
+    {
+      "case": "accepted",
+      "check": "inputs unchanged",
+      "passed": true
+    },
+    {
+      "case": "accepted",
+      "check": "read index",
+      "passed": true
+    },
+    {
+      "case": "accepted",
+      "check": "read code",
+      "passed": true
+    }
+  ],
+  "runs": [
+    {
+      "case": "old",
+      "returncode": 0,
+      "seconds": 26.78,
+      "unchanged": true,
+      "cost_usd": 0.0794442,
+      "num_turns": 8,
+      "is_error": false,
+      "tool_calls": 7,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "case": "updated",
+      "returncode": 0,
+      "seconds": 34.29,
+      "unchanged": true,
+      "cost_usd": 0.0928928,
+      "num_turns": 9,
+      "is_error": false,
+      "tool_calls": 8,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "case": "unknown-version",
+      "returncode": 0,
+      "seconds": 25.3,
+      "unchanged": true,
+      "cost_usd": 0.0812354,
+      "num_turns": 9,
+      "is_error": false,
+      "tool_calls": 8,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    },
+    {
+      "case": "accepted",
+      "returncode": 0,
+      "seconds": 30.73,
+      "unchanged": true,
+      "cost_usd": 0.0892484,
+      "num_turns": 9,
+      "is_error": false,
+      "tool_calls": 8,
+      "models": [
+        "claude-sonnet-5-5"
+      ]
+    }
+  ],
+  "human_adjudication": {
+    "old": "correctly repairs stale lock claim; not evidence new wiki increases accuracy",
+    "updated": "confirms lock scope and finds missing sync_notify branch",
+    "unknown-version": "r3 remains unknown; r2 observations explicitly bounded",
+    "accepted": "reads accepted revision, identifies SendOnce and sync=true; notes absent independent VERSION evidence"
+  },
+  "scope": "single observation each, not statistical Eval; model suggestions not all accepted"
+}

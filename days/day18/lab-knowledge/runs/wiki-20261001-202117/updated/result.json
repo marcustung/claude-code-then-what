@@ -1,0 +1,98 @@
+{
+  "duration_api_ms": 32393,
+  "stop_reason": "end_turn",
+  "session_id": "f9d99c7f-a1de-4ca9-9a5d-c1d8dc72facf",
+  "total_cost_usd": 0.0928928,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 12372,
+    "cache_read_input_tokens": 20494,
+    "output_tokens": 3929,
+    "output_tokens_details": {
+      "thinking_tokens": 1336
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 12372,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3041,
+        "cache_read_input_tokens": 6922,
+        "cache_creation_input_tokens": 9290,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 9290
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3929,
+      "cacheReadInputTokens": 20494,
+      "cacheCreationInputTokens": 12372,
+      "webSearchRequests": 0,
+      "costUSD": 0.0928928,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1336,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**範圍**：task.json 要求與提供版本皆為 delivery-hardening-local-r2。sources 內沒有 VERSION 檔，所以只能靠標示確認版本。我只讀檔，沒有執行程式。\n\n**逐項核對**\n\n| # | 原說法 | 來源定位 | 判定 | 理由與範圍 |\n|---|---|---|---|---|\n| 1 | TryCancel 在同一 lock 內讀、判斷、寫 | Program.cs:105-114 | 保留 | 僅限同程序、同一 store instance。 |\n| 2 | 通知建立與入列在 lock 外 | Program.cs:79-88 | 保留 | 不是持久化交易，也不是跨程序 exactly-once。 |\n| 3 | 正常路徑為非同步，sync_notify 走 SendOnce | Program.cs:85-88、208 | 保留並補充 | 另有 notify_delay_ms 和 notify_drop_over_queue 注入（Program.cs:187-188、230）。後者的延後會重排到隊尾，所以不保證順序。 |\n| 4 | notify_sent 由 worker 在 HTTP 成功後寫入 | Program.cs:247-260 | 修訂 | sync_notify 時由請求路徑的 SendOnce 寫入，帶 sync=true（:222）。另有重試與 dead_letter 沒寫進 Wiki。 |\n| 5 | confirmed 需接收端同 notification_id 的紀錄 | sources 無接收端 | 未知 | sources 沒有接收端程式。此為定義，無法由 sources 核對。 |\n| 6 | 沒驗退款完成 | Program.cs:215 | 保留 | 程式只傳 refund_requested 旗標。 |\n| 7 | 訂單與 Channel 在記憶體 | Program.cs:15、18、102 | 保留 | 檔案日誌不等於記憶體，不能說重啟必然消失。 |\n| 8 | 舊設計「個別 lock 不保證並行取消安全」 | design-review.md 第 4 點 | 修訂（changes.md 已處理） | 它描述的是舊狀態，r2 已被 TryCancel 取代。 |\n| 9 | 「本輪未跑 .NET」 | design-review.md 第 7 點 | 限定範圍 | 只指當時查核，不代表本次未執行。 |\n| 10 | design-review 第 1 點的行號（69/79/84/88/89） | design-review.md 第 1 點 | 修訂 | 行號與現行 Program.cs 不符。現行入列在 :88，回應在 :93。 |\n\n**Wiki 尚未記載、程式可見的行為**\n- 已出貨（409）與重複取消（idempotent）不通知，見 Program.cs:74-79。\n- 只有 `Transitioned` 為真才建立通知，見 Cancellation.cs:25。\n- 同程序內並行取消，依程式推論最多一次轉換、一則通知。這是推論，沒有測試。\n- 失敗最多送 4 次（200/400/800ms 退避），之後進 dead_letter。\n- 重送使用同一個 notification_id。接收端若已處理但回應遺失，可能收到重複通知。這是由程式推導，沒有實測。\n- 缺 X-Actor 回 401。這是實作行為，沒有設計理由的來源。\n\n**未知，不補造**\n- 公司 SLA、正式接收端、補送授權、值班 Owner。\n- NC-02、NC-03、BR-xx 規格文件不在 sources，程式註解只能當指標。\n- r2 與註解中 v1.1.0、v1.2.0 的對應關係。\n- 通知順序與回應先後的業務要求。\n\n**notification.md 修訂草稿**\n\n```\n## 可核對的實作（補充）\n- notify_sent：非同步路徑由 worker 寫入；sync_notify 由請求路徑 SendOnce 寫入（sync=true）。皆只代表發送端見到 HTTP 成功。\n- 失敗最多送 4 次（200/400/800ms），之後記 notify_dead_letter。重送沿用同一 notification_id；接收端是否去重沒有來源，未知。\n- 只有狀態真正轉換才通知；已出貨（409）與重複取消不通知（Program.cs:74-79，Cancellation.cs:25）。規格 NC-02/NC-03 不在 sources，僅依程式說明。\n- 演練注入還有 notify_delay_ms、notify_drop_over_queue；後者的延後會重排到隊尾，不保證順序。\n- 同程序並行取消最多產生一則通知，這是程式推論，未測試。\n\n## 未取得\nsources 無 VERSION 檔與接收端程式；r2 與程式註解版本號（v1.1.0／v1.2.0）的對應未知。\n```\n\n另外建議在 changes.md 註明 design-review 第 1 點的行號已過時。",
+  "ttft_ms": 2133,
+  "type": "result",
+  "duration_ms": 32703,
+  "uuid": "a627ca61-2e32-4802-8bbe-e4318a471af8",
+  "ttft_stream_ms": 1214,
+  "time_to_request_ms": 162,
+  "first_content_frame_ms": 1215,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

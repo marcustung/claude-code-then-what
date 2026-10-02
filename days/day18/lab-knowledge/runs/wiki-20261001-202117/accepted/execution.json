@@ -1,0 +1,9 @@
+{
+  "returncode": 0,
+  "seconds": 30.73,
+  "unchanged": true,
+  "cost_usd": 0.0892484,
+  "num_turns": 9,
+  "is_error": false,
+  "tool_calls": 8
+}

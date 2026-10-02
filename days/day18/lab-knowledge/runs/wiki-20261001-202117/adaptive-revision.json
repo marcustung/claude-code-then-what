@@ -1,0 +1,8 @@
+{
+  "after": "updated and unknown-version",
+  "reason": "models independently identified sync_notify path missing from author wiki",
+  "accepted_change": "scope notify_sent by async versus sync_notify",
+  "source": "Program.cs lines85-86,222,257-260",
+  "new_test": "accepted fresh session",
+  "not_predeclared": "this fourth run follows observed finding; initial three-case protocol unchanged"
+}
