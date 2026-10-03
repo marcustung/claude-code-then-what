@@ -1,0 +1,20 @@
+{
+  "extraKnownMarketplaces": {
+    "d20-team": {
+      "source": {
+        "source": "directory",
+        "path": "C:\\<AUTHOR>\\d20runs\\mkt-20261003-232727"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "trace-notification@d20-team": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python *collect.py *)",
+      "Bash(python *gate.py *)",
+      "Bash(python *selftest.py *)"
+    ]
+  }
+}

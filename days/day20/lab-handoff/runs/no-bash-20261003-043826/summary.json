@@ -1,0 +1,67 @@
+{
+  "scenario": "no-bash",
+  "case": "complete",
+  "work_dir": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826",
+  "selftest_exit": 0,
+  "claude_exit": 0,
+  "seconds": 34.6,
+  "turns": 12,
+  "cost_usd": 0.1408112,
+  "tool_calls": [
+    {
+      "tool": "Skill",
+      "arg": "trace-notification"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826\\task.json"
+    },
+    {
+      "tool": "Glob",
+      "arg": "**/*"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826\\data\\logs.jsonl"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826\\data\\receipts.json"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826\\design\\design-review.md"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826\\src\\Program.cs"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826\\.claude\\skills\\trace-notification\\scripts\\collect.py"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826\\.claude\\skills\\trace-notification\\scripts\\check_result.py"
+    },
+    {
+      "tool": "Write",
+      "arg": "C:\\<AUTHOR>\\d20runs\\no-bash-20261003-043826\\out\\result.json"
+    }
+  ],
+  "permission_denials": [],
+  "changed_files": [
+    "out/result.json"
+  ],
+  "outer_gate_exit": 0,
+  "outer_gate": {
+    "cmd": [
+      "<HOME>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      ".claude/skills/trace-notification/scripts/gate.py",
+      "."
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"case\": \"\",\n  \"result_file\": \"result.json\",\n  \"result_sha256\": \"4dab97fa53581ec781d4b78f5dc9373094a0c058c9dcfea7e2c121c385b1d951\",\n  \"task_sha256\": \"4822e2aabe70d71a69d534cc1fa02717100cd5227c7ca4b6f41bd655e8a3d1ba\",\n  \"checker_sha256\": \"b185dd15c74e5a1dfbce8e5a64f15be531b9c7b1a875f4aa1d8964fa55e13a86\",\n  \"notification_ids_from_tool\": [\n    \"7e746d20853d48b9b3948c1fe92319c1\"\n  ],\n  \"state\": \"READY_FOR_REVIEW\",\n  \"contract_passed\": true,\n  \"errors\": [],\n  \"approved\": false,\n  \"action_executed\": false\n}\n",
+    "stderr": ""
+  }
+}

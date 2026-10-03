@@ -1,0 +1,2 @@
+請用 trace-notification 這個 Skill 查核本目錄的通知事件（任務在 task.json，資料在 data/、src/、design/，沒有連 Log server）。
+照 Skill 的查核迴圈與輸出步驟交出結果。只查詢與分析，不補送、不結案。繁體中文，最多 800 字。

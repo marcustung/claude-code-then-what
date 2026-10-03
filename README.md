@@ -3,7 +3,7 @@
 **2026 iThome 鐵人賽・Claude AI 組・三十天系列的配套 repo。** 文章談的是一個工程團隊導入 Claude Code 之後，怎麼把「程式寫得更快」接回需求、審查、驗收與成效判斷；這裡放的是文章裡每一個實驗的原件——提示、trace、輸出、判準與重跑腳本——讓每一句「我試過」都能被打開來看。
 
 - 系列文章：[iThome 系列頁](https://ithelp.ithome.com.tw/users/20162577/ironman/9862)（每日一篇，2026-09-15 起）
-- 目前開放：Day 1–19（索引隨發文節奏開放，未發布的日子只有空資料夾）
+- 目前開放：Day 1–20（索引隨發文節奏開放，未發布的日子只有空資料夾）
 - 試跑紀錄：[VERIFIED.md](VERIFIED.md)（每一天的練習都在乾淨副本裡照 README 跑過，含時間、環境、修過的問題）
 
 ## 這個 repo 是什麼、不是什麼
@@ -64,6 +64,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [17](days/day17/) | 這次 Claude 查對了，下次還要重新教嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10419500) | 無實驗，只有範本 | [handoff-card.md](templates/handoff-card.md) |
 | [18](days/day18/) | 每次都要重新解釋專案？讓 Claude 有份 Wiki 可以查 | [文章](https://ithelp.ithome.com.tw/articles/10420106) | day18/lab-knowledge：版本化知識 wiki 與 14 項靜態核對 | 無 |
 | [19](days/day19/) | 讓 Claude 專心判斷，把固定檢查交給程式 | [文章](https://ithelp.ithome.com.tw/articles/10420353) | day19/lab-result-gate：查核結果固定檢查、兩次 Claude 實跑與 39 次模型檢查 | 無 |
+| [20](days/day20/) | 我能跑，別人拿到也能跑嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10420719) | day20/lab-handoff：查核工具組、十次乾淨環境實跑與隱藏依賴（權限）對照 | 無 |
 
 ## 怎麼核對一次 run
 

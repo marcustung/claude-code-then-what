@@ -1,0 +1,87 @@
+{
+  "order_id": "r2-healthy-01",
+  "expected_version": "delivery-hardening-local-r2",
+  "sources": {
+    "logs.jsonl": "present",
+    "receipts.json": "present"
+  },
+  "missing_sources": [],
+  "errors": [],
+  "events": [
+    {
+      "source": "data/logs.jsonl:2",
+      "record": {
+        "level": "INFO",
+        "event": "cancel",
+        "request_id": "r2-healthy-request",
+        "run_id": "r2-healthy-01",
+        "order_id": "r2-healthy-01",
+        "actor": "rehearsal-author",
+        "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+        "result": "ok",
+        "transitioned": true,
+        "refund_requested": true,
+        "latency_ms": 0.8,
+        "queue_depth": 1,
+        "ts": "2026-09-29T09:40:10.8208978+08:00",
+        "version": "delivery-hardening-local-r2"
+      }
+    },
+    {
+      "source": "data/logs.jsonl:3",
+      "record": {
+        "level": "INFO",
+        "event": "notify_sent",
+        "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+        "order_id": "r2-healthy-01",
+        "request_id": "r2-healthy-request",
+        "run_id": "r2-healthy-01",
+        "ts": "2026-09-29T09:40:10.8612684+08:00",
+        "version": "delivery-hardening-local-r2"
+      }
+    }
+  ],
+  "receipts": [
+    {
+      "source": "data/receipts.json item 0",
+      "record": {
+        "at": 1790646010.8577874,
+        "phase": "r2-healthy",
+        "status": 200,
+        "payload": {
+          "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+          "order_id": "r2-healthy-01",
+          "request_id": "r2-healthy-request",
+          "run_id": "r2-healthy-01",
+          "kind": "order_cancelled",
+          "refund_requested": true,
+          "attempt": 0
+        }
+      }
+    }
+  ],
+  "records": [
+    {
+      "ref": "log:3",
+      "side": "sender",
+      "event": "notify_sent",
+      "order_id": "r2-healthy-01",
+      "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+      "version": "delivery-hardening-local-r2",
+      "source": "data/logs.jsonl:3"
+    },
+    {
+      "ref": "receipt:0",
+      "side": "receiver",
+      "event": "notification_received",
+      "order_id": "r2-healthy-01",
+      "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+      "version": "delivery-hardening-local-r2",
+      "version_source": "inherited-from-notify_sent",
+      "source": "data/receipts.json item 0"
+    }
+  ],
+  "notification_ids": [
+    "7e746d20853d48b9b3948c1fe92319c1"
+  ]
+}

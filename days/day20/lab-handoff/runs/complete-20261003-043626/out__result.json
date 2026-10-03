@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": [],
+  "next_action": "交人核對；本機教學環境，未跑 .NET、未查正式 Log server"
+}

@@ -1,0 +1,88 @@
+{
+  "scenario": "marketplace-authorized",
+  "case": "complete",
+  "work_dir": "C:\\<AUTHOR>\\d20runs\\marketplace-authorized-20261004-043435",
+  "selftest_exit": 0,
+  "claude_exit": 0,
+  "seconds": 36.1,
+  "turns": 11,
+  "cost_usd": 0.13675879999999999,
+  "tool_calls": [
+    {
+      "tool": "Skill",
+      "arg": "trace-notification:trace-notification"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cd C:/<AUTHOR>/d20runs/marketplace-authorized-20261004-043435 && cat task.json && ls -R data src design out 2>&1 | head -50 && python C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts/collect.py ."
+    },
+    {
+      "tool": "Bash",
+      "arg": "cd C:/<AUTHOR>/d20runs/marketplace-authorized-20261004-043435 && cat data/logs.jsonl data/receipts.json design/design-review.md; cat src/Cancellation.cs src/Program.cs | head -120"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cd C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts && ls && cat collect.py"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts/collect.py"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cd C:/<AUTHOR>/d20runs/marketplace-authorized-20261004-043435 && mkdir -p out && cat > out/result.json <<'E'\n{\"schema_version\":1,\"order_id\":\"r2-healthy-01\",\"notification_id\":\"7e746d20853d48b9b3948c1fe92319c1\",\"version\":\"delivery-hardening-local-r2\",\"sender_status\":\"confirmed\",\"receiver_status\":\"confirmed\",\"evidence_refs\":[\"log:3\",\"receipt:0\"],\"missing_sources\":[],\"next_action\":\"交人核對：本地教學fixture，發送與接收紀錄一致；接收端版本為沿用發送端，未獨立佐證。不補送、不結案。\"}\nE\npython C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+    },
+    {
+      "tool": "Write",
+      "arg": "C:/<AUTHOR>/d20runs/marketplace-authorized-20261004-043435/out/result.json"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cd C:/<AUTHOR>/d20runs/marketplace-authorized-20261004-043435 && python C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+    },
+    {
+      "tool": "Bash",
+      "arg": "python C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts/gate.py C:/<AUTHOR>/d20runs/marketplace-authorized-20261004-043435"
+    }
+  ],
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01RURyF4vcZ1ukrdM8qjLtcL",
+      "tool_input": {
+        "command": "cd C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts && ls && cat collect.py"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01H6hePyPo752pNy2YGpKD2c",
+      "tool_input": {
+        "command": "cd C:/<AUTHOR>/d20runs/marketplace-authorized-20261004-043435 && mkdir -p out && cat > out/result.json <<'E'\n{\"schema_version\":1,\"order_id\":\"r2-healthy-01\",\"notification_id\":\"7e746d20853d48b9b3948c1fe92319c1\",\"version\":\"delivery-hardening-local-r2\",\"sender_status\":\"confirmed\",\"receiver_status\":\"confirmed\",\"evidence_refs\":[\"log:3\",\"receipt:0\"],\"missing_sources\":[],\"next_action\":\"交人核對：本地教學fixture，發送與接收紀錄一致；接收端版本為沿用發送端，未獨立佐證。不補送、不結案。\"}\nE\npython C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01L9Fkaxv3AKycSqk5i9xp31",
+      "tool_input": {
+        "command": "cd C:/<AUTHOR>/d20runs/marketplace-authorized-20261004-043435 && python C:/<AUTHOR>/d20runs/mkt-20261004-043435/plugins/trace-notification/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+      }
+    }
+  ],
+  "changed_files": [
+    "evidence.json",
+    "out/evidence.tool.json",
+    "out/gate.json",
+    "out/result.json"
+  ],
+  "outer_gate_exit": 0,
+  "outer_gate": {
+    "cmd": [
+      "<HOME>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "C:\\<AUTHOR>\\d20runs\\mkt-20261004-043435\\plugins\\trace-notification\\skills\\trace-notification\\scripts\\gate.py",
+      "."
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"case\": \"\",\n  \"result_file\": \"result.json\",\n  \"result_sha256\": \"b786c55bc095f1054a017dec917f7cbb73c2fe27d9ac1ef74e4f2cfac2faee53\",\n  \"task_sha256\": \"4822e2aabe70d71a69d534cc1fa02717100cd5227c7ca4b6f41bd655e8a3d1ba\",\n  \"checker_sha256\": \"b185dd15c74e5a1dfbce8e5a64f15be531b9c7b1a875f4aa1d8964fa55e13a86\",\n  \"notification_ids_from_tool\": [\n    \"7e746d20853d48b9b3948c1fe92319c1\"\n  ],\n  \"state\": \"READY_FOR_REVIEW\",\n  \"contract_passed\": true,\n  \"errors\": [],\n  \"approved\": false,\n  \"action_executed\": false\n}\n",
+    "stderr": ""
+  }
+}

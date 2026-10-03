@@ -1,0 +1,19 @@
+{
+  "_說明": "團隊 repo 的 .claude/settings.json 範本。<...> 換成自己的值後 commit；以 _ 開頭的欄位是說明，複製時刪掉。permissions 在 2026-10-04 的非互動測試中沒有生效（見 INSTALL.md「權限」），互動使用時第一次執行請核准。",
+  "extraKnownMarketplaces": {
+    "<marketplace 名稱>": {
+      "source": { "source": "github", "repo": "<你的組織>/<marketplace repo>" }
+    }
+  },
+  "enabledPlugins": {
+    "trace-notification@<marketplace 名稱>": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(python *collect.py *)",
+      "Bash(python *gate.py *)",
+      "Bash(python *selftest.py *)",
+      "Write(out/**)"
+    ]
+  }
+}

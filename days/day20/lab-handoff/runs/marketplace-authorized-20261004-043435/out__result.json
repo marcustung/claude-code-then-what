@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": [],
+  "next_action": "交人核對：本地教學 fixture，發送與接收紀錄一致；接收端版本為沿用發送端，未獨立佐證。不補送、不結案。"
+}

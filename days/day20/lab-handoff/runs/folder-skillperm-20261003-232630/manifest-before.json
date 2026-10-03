@@ -1,0 +1,15 @@
+{
+  ".claude/skills/trace-notification/CHANGELOG.md": "98b58bb1576eff72468cb44b83bbc5c6b39a140ad92a61144e7e25cced5f86f4",
+  ".claude/skills/trace-notification/scripts/check_result.py": "b185dd15c74e5a1dfbce8e5a64f15be531b9c7b1a875f4aa1d8964fa55e13a86",
+  ".claude/skills/trace-notification/scripts/collect.py": "0c368148f1c121a87ff0a56e2daae8c2ba0a104d8e2e2214918ebf50e21b594c",
+  ".claude/skills/trace-notification/scripts/gate.py": "834d84838c7367891006d7ab543a3128c15b0fd3d57f2fcf47fd53ef2fb5725a",
+  ".claude/skills/trace-notification/scripts/selftest.py": "d4190fe2443444a8deda2ec0d5a09b651d7fb0aeee78f3a7b173fc1199913731",
+  ".claude/skills/trace-notification/SKILL.md": "16f50faafae2d20098199a1827a6419b43ca3ada56137875505a152b2525f64b",
+  ".claude/skills/trace-notification/VERSION": "80910f23cc5c4794e747edbdc782a995a3e9078d8a78afe6f8fa7a5733dfae6d",
+  "data/logs.jsonl": "6e87031e609fc5ad2492e2cd2c1797a72f9a26066ff3b08ee39b0dab8911b5ce",
+  "data/receipts.json": "348360c0106641ad86cdad33cae45d156de8a668cac29226cb6292e5335fc485",
+  "design/design-review.md": "399118a30f9ca16a591e3cbf12eccf17bda3d3c1dfd83960e4e6b11f1faaab40",
+  "src/Cancellation.cs": "46de39fe996d4848010c77ecd09f9d0e0f9f5f093b5684c94ac284e6911ceb3a",
+  "src/Program.cs": "da2c152cf96a115ff8df9d30eed65d8ff72d7a55f0ff3601c0907d406d1d32ca",
+  "task.json": "4822e2aabe70d71a69d534cc1fa02717100cd5227c7ca4b6f41bd655e8a3d1ba"
+}

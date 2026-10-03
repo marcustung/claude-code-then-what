@@ -1,0 +1,93 @@
+{
+  "scenario": "complete",
+  "case": "complete",
+  "work_dir": "C:\\<AUTHOR>\\d20runs\\complete-20261003-043626",
+  "selftest_exit": 0,
+  "claude_exit": null,
+  "seconds": null,
+  "turns": 14,
+  "cost_usd": 0.1584986,
+  "tool_calls": [
+    {
+      "tool": "Skill",
+      "arg": "trace-notification"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cat task.json; ls -R data src design out 2>&1 | head -50; python .claude/skills/trace-notification/scripts/collect.py ."
+    },
+    {
+      "tool": "Bash",
+      "arg": "cat data/logs.jsonl; echo; cat data/receipts.json; echo; cat design/design-review.md; cat src/*.cs | head -150; ls .claude/skills/trace-notification/scripts"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cat .claude/skills/trace-notification/scripts/collect.py; python .claude/skills/trace-notification/scripts/collect.py . --help 2>&1 | head"
+    },
+    {
+      "tool": "Bash",
+      "arg": "mkdir -p out && cat > out/result.json <<'E'\n{\"schema_version\":1,\"order_id\":\"r2-healthy-01\",\"notification_id\":\"7e746d20853d48b9b3948c1fe92319c1\",\"version\":\"delivery-hardening-local-r2\",\"sender_status\":\"notify_sent\",\"receiver_status\":\"confirmed\",\"evidence_refs\":[\"log:3\",\"receipt:0\"],\"missing_sources\":[],\"next_action\":\"交人核對；本機教學環境，未跑 .NET、未查正式 Log server\"}\nE\npython .claude/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+    },
+    {
+      "tool": "Write",
+      "arg": "C:\\<AUTHOR>\\d20runs\\complete-20261003-043626\\out\\result.json"
+    },
+    {
+      "tool": "Bash",
+      "arg": "python .claude/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+    },
+    {
+      "tool": "Bash",
+      "arg": "python .claude/skills/trace-notification/scripts/gate.py ."
+    },
+    {
+      "tool": "Bash",
+      "arg": "grep -n -i \"sender_status\" .claude/skills/trace-notification/scripts/*.py"
+    },
+    {
+      "tool": "Bash",
+      "arg": "sed -n 1,60p .claude/skills/trace-notification/scripts/check_result.py"
+    },
+    {
+      "tool": "Write",
+      "arg": "C:\\<AUTHOR>\\d20runs\\complete-20261003-043626\\out\\result.json"
+    },
+    {
+      "tool": "Bash",
+      "arg": "python .claude/skills/trace-notification/scripts/gate.py ."
+    }
+  ],
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_016gbF6fQQF2VtPuWKEWnPEi",
+      "tool_input": {
+        "command": "mkdir -p out && cat > out/result.json <<'E'\n{\"schema_version\":1,\"order_id\":\"r2-healthy-01\",\"notification_id\":\"7e746d20853d48b9b3948c1fe92319c1\",\"version\":\"delivery-hardening-local-r2\",\"sender_status\":\"notify_sent\",\"receiver_status\":\"confirmed\",\"evidence_refs\":[\"log:3\",\"receipt:0\"],\"missing_sources\":[],\"next_action\":\"交人核對；本機教學環境，未跑 .NET、未查正式 Log server\"}\nE\npython .claude/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WpASAo32zgGciVVFezFx75",
+      "tool_input": {
+        "command": "python .claude/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+      }
+    }
+  ],
+  "changed_files": [
+    "evidence.json",
+    "out/evidence.tool.json",
+    "out/gate.json",
+    "out/result.json"
+  ],
+  "outer_gate_exit": 0,
+  "outer_gate": {
+    "cmd": [
+      "<HOME>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      ".claude/skills/trace-notification/scripts/gate.py",
+      "."
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"case\": \"\",\n  \"result_file\": \"result.json\",\n  \"result_sha256\": \"f9931cbd127e67295506b47cf90cc68f790301f21cd35352061b3c5482db1bc2\",\n  \"task_sha256\": \"4822e2aabe70d71a69d534cc1fa02717100cd5227c7ca4b6f41bd655e8a3d1ba\",\n  \"checker_sha256\": \"b185dd15c74e5a1dfbce8e5a64f15be531b9c7b1a875f4aa1d8964fa55e13a86\",\n  \"notification_ids_from_tool\": [\n    \"7e746d20853d48b9b3948c1fe92319c1\"\n  ],\n  \"state\": \"READY_FOR_REVIEW\",\n  \"contract_passed\": true,\n  \"errors\": [],\n  \"approved\": false,\n  \"action_executed\": false\n}\n",
+    "stderr": ""
+  }
+}

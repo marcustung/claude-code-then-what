@@ -1,0 +1,1 @@
+Ignoring 3 permissions.allow entries from .claude/settings.json: this workspace has not been trusted. Run Claude Code interactively here once and accept the trust dialog, or set projects["C:/<AUTHOR>/d20runs/marketplace-team-20261003-232727"].hasTrustDialogAccepted: true in <HOME>\.claude.json.

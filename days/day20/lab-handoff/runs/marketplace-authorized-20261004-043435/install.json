@@ -1,0 +1,50 @@
+[
+  {
+    "cmd": [
+      "claude",
+      "plugin",
+      "validate",
+      "C:\\<AUTHOR>\\d20runs\\mkt-20261004-043435"
+    ],
+    "exit": 0,
+    "stdout": "Validating marketplace manifest: C:\\<AUTHOR>\\d20runs\\mkt-20261004-043435\\.claude-plugin\\marketplace.json\n\n‼ Found 1 warning:\n\n  > plugins[0] plugin.json → author: No author information provided. Consider adding author details for plugin attribution\n\n√ Validation passed with warnings\n",
+    "stderr": ""
+  },
+  {
+    "cmd": [
+      "claude",
+      "plugin",
+      "marketplace",
+      "add",
+      "C:\\<AUTHOR>\\d20runs\\mkt-20261004-043435",
+      "--scope",
+      "project"
+    ],
+    "exit": 0,
+    "stdout": "Adding marketplace…√ Successfully added marketplace: d20-team (declared in project settings)\n  Marketplace 'd20-team' was already added from dir:C:\\<AUTHOR>\\d20runs\\mkt-20261003-232727 and now points at dir:C:\\<AUTHOR>\\d20runs\\mkt-20261004-043435.\n  Plugins already installed from it now update from the new source. To undo, add the previous source again.\n",
+    "stderr": ""
+  },
+  {
+    "cmd": [
+      "claude",
+      "plugin",
+      "install",
+      "trace-notification@d20-team",
+      "--scope",
+      "project"
+    ],
+    "exit": 0,
+    "stdout": "Installing plugin \"trace-notification@d20-team\"...√ Successfully installed plugin: trace-notification@d20-team (scope: project)\n",
+    "stderr": ""
+  },
+  {
+    "cmd": [
+      "claude",
+      "plugin",
+      "list"
+    ],
+    "exit": 0,
+    "stdout": "Installed plugins:\n\n  > atlassian@claude-plugins-official\n    Version: eb9a5956a7ac\n    Scope: user\n    Status: √ enabled\n\n  > claude-code-slides@rufus-slides\n    Version: 0.6.0\n    Scope: user\n    Status: √ enabled\n\n  > code-review@claude-plugins-official\n    Version: ab024cdcfa7c\n    Scope: user\n    Status: √ enabled\n\n  > code-simplifier@claude-plugins-official\n    Version: 1.0.0\n    Scope: project\n    Status: × disabled\n\n  > csharp-lsp@claude-plugins-official\n    Version: 1.0.0\n    Scope: project\n    Status: × disabled\n\n  > diagram-design@diagram-design\n    Version: 2.6.51\n    Scope: user\n    Status: √ enabled\n\n  > document-skills@anthropic-agent-skills\n    Version: 8a1541c4a3ff\n    Scope: user\n    Status: √ enabled\n\n  > ecc@ecc\n    Version: 1.10.0\n    Scope: user\n    Status: × disabled\n\n  > grafana-mcp@claude-plugins-official\n    Version: 0.2.0\n    Scope: user\n    Status: √ enabled\n\n  > playground@claude-plugins-official\n    Version: ab024cdcfa7c\n    Scope: user\n    Status: √ enabled\n\n  > playwright@claude-plugins-official\n    Version: ab024cdcfa7c\n    Scope: user\n    Status: √ enabled\n\n  > security-guidance@claude-plugins-official\n    Version: 2.0.6\n    Scope: project\n    Status: × disabled\n\n  > sre-ticket@mayo-sre\n    Version: 0.1.0\n    Scope: user\n    Status: √ enabled\n\n  > trace-notification@d20-team\n    Version: 2.1.0\n    Scope: project\n    Status: √ enabled\n\n  > trace-notification@d20-team\n    Version: 2.1.0\n    Scope: project\n    Status: √ enabled\n\n  > trace-notification@d20-team\n    Version: 2.1.1\n    Scope: project\n    Status: √ enabled\n\n  > trace-notification@d20-team\n    Version: 2.1.2\n    Scope: project\n    Status: √ enabled\n\n  > trace-notification@d20-team\n    Version: 2.1.2\n    Scope: project\n    Status: √ enabled\n\n  > trace-notification@d20-team\n    Version: 2.1.2\n    Scope: project\n    Status: √ enabled\n\n  > typescript-lsp@claude-plugins-official\n    Version: 1.0.0\n    Scope: project\n    Status: × disabled\n\n  > understand-anything@understand-anything\n    Version: 2.6.2\n    Scope: user\n    Status: √ enabled\n    Note: The packages it lists were not installed, because it uses a yarn or pnpm lockfile, which plugin installs do not support\n\n",
+    "stderr": ""
+  }
+]

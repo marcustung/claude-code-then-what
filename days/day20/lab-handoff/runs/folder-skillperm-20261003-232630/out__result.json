@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "unknown",
+  "evidence_refs": [],
+  "missing_sources": ["collect.py 未獲執行權限，無法產生 records[].ref"],
+  "next_action": "固定檢查未執行；請授權執行 collect.py 與 gate.py 後，以 records 的 log:3、receipt:0 重新核對並更新本檔。人工閱讀 data/ 的結果見回覆說明，尚未經檢查器驗證。"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "unknown",
+  "evidence_refs": [],
+  "missing_sources": [
+    "collect.py 未執行（需核准被擋），無法取得合法的 records[].ref",
+    "gate.py 固定檢查未執行",
+    "未跑 .NET，未重現實際執行；僅有本機教學 fixture 的靜態檔案"
+  ],
+  "next_action": "核准執行 collect.py 與 gate.py 後，依 records[].ref 引用 logs.jsonl 第3行（notify_sent）與 receipts.json[0]，再重算狀態；人工核對前不結案、不補送。"
+}

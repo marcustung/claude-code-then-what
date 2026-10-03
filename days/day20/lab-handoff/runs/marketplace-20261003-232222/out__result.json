@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "unknown",
+  "evidence_refs": [],
+  "missing_sources": ["collect.py 未獲執行授權，無法取得 records[].ref", "gate.py 未執行", "正式環境 Log server（本次未連線）"],
+  "next_action": "由有權限者執行 collect.py 取得 ref 後，將 sender/receiver 依 data/logs.jsonl 與 data/receipts.json 更新並跑 gate.py；本次不補送、不結案"
+}

@@ -1,0 +1,77 @@
+{
+  "scenario": "missing",
+  "case": "missing-receipts",
+  "work_dir": "C:\\<AUTHOR>\\d20runs\\missing-20261003-043750",
+  "selftest_exit": 0,
+  "claude_exit": 0,
+  "seconds": 34.5,
+  "turns": 10,
+  "cost_usd": 0.13536800000000002,
+  "tool_calls": [
+    {
+      "tool": "Skill",
+      "arg": "trace-notification"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cat task.json && ls -R data src design out 2>&1 | head -50 && python .claude/skills/trace-notification/scripts/collect.py ."
+    },
+    {
+      "tool": "Bash",
+      "arg": "cat data/logs.jsonl; cat design/design-review.md; cat src/*.cs; ls .claude/skills/trace-notification/scripts"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cat .claude/skills/trace-notification/scripts/collect.py; sed -n 1,80p .claude/skills/trace-notification/scripts/gate.py"
+    },
+    {
+      "tool": "Bash",
+      "arg": "mkdir -p out && cat > out/result.json <<'E'\n{\"schema_version\":1,\"order_id\":\"r2-healthy-01\",\"notification_id\":\"7e746d20853d48b9b3948c1fe92319c1\",\"version\":\"delivery-hardening-local-r2\",\"sender_status\":\"confirmed\",\"receiver_status\":\"unknown\",\"evidence_refs\":[\"log:3\"],\"missing_sources\":[\"receipts.json\"],\"next_action\":\"取得接收端收據 data/receipts.json（fake sink 紀錄）後，比對 notification_id 與 payload；在此之前不補送、不結案。\"}\nE\npython .claude/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+    },
+    {
+      "tool": "Write",
+      "arg": "C:\\<AUTHOR>\\d20runs\\missing-20261003-043750\\out\\result.json"
+    },
+    {
+      "tool": "Bash",
+      "arg": "python .claude/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+    },
+    {
+      "tool": "Bash",
+      "arg": "python .claude/skills/trace-notification/scripts/gate.py ."
+    }
+  ],
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01XUrVtU1qzNnQQwbvQdg9FL",
+      "tool_input": {
+        "command": "mkdir -p out && cat > out/result.json <<'E'\n{\"schema_version\":1,\"order_id\":\"r2-healthy-01\",\"notification_id\":\"7e746d20853d48b9b3948c1fe92319c1\",\"version\":\"delivery-hardening-local-r2\",\"sender_status\":\"confirmed\",\"receiver_status\":\"unknown\",\"evidence_refs\":[\"log:3\"],\"missing_sources\":[\"receipts.json\"],\"next_action\":\"取得接收端收據 data/receipts.json（fake sink 紀錄）後，比對 notification_id 與 payload；在此之前不補送、不結案。\"}\nE\npython .claude/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01195vBGfKwPf1VT4nCiXtfb",
+      "tool_input": {
+        "command": "python .claude/skills/trace-notification/scripts/gate.py .; echo exit=$?"
+      }
+    }
+  ],
+  "changed_files": [
+    "evidence.json",
+    "out/evidence.tool.json",
+    "out/gate.json",
+    "out/result.json"
+  ],
+  "outer_gate_exit": 0,
+  "outer_gate": {
+    "cmd": [
+      "<HOME>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      ".claude/skills/trace-notification/scripts/gate.py",
+      "."
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"case\": \"\",\n  \"result_file\": \"result.json\",\n  \"result_sha256\": \"857742811028eba179866423b71abba5e2185aa8f0fe580bb8956a8290b81c10\",\n  \"task_sha256\": \"4822e2aabe70d71a69d534cc1fa02717100cd5227c7ca4b6f41bd655e8a3d1ba\",\n  \"checker_sha256\": \"b185dd15c74e5a1dfbce8e5a64f15be531b9c7b1a875f4aa1d8964fa55e13a86\",\n  \"notification_ids_from_tool\": [\n    \"7e746d20853d48b9b3948c1fe92319c1\"\n  ],\n  \"state\": \"NEEDS_FOLLOWUP\",\n  \"contract_passed\": true,\n  \"errors\": [],\n  \"approved\": false,\n  \"action_executed\": false\n}\n",
+    "stderr": ""
+  }
+}

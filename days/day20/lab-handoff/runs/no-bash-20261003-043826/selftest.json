@@ -1,0 +1,9 @@
+{
+  "cmd": [
+    "<HOME>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    ".claude/skills/trace-notification/scripts/selftest.py"
+  ],
+  "exit": 0,
+  "stdout": "PASS Python ≥ 3.8\nPASS 檔案 SKILL.md\nPASS 檔案 scripts/collect.py\nPASS 檔案 scripts/check_result.py\nPASS 檔案 scripts/gate.py\nPASS 正例：來源齊全應通過（退出碼 0）\nPASS 反例：缺接收端來源應退回（退出碼 1）\n\n7/7 PASS\n",
+  "stderr": ""
+}

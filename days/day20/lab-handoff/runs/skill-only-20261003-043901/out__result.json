@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "unknown",
+  "evidence_refs": [],
+  "missing_sources": ["scripts/collect.py", "scripts/gate.py", "records[].ref"],
+  "next_action": "補齊 collect.py 與 gate.py 後重跑 collect 取得 records[].ref，再依 data/logs.jsonl 與 data/receipts.json 更新狀態並執行固定檢查；人工核對後再決定是否結案。"
+}

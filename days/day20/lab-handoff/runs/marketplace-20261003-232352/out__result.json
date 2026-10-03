@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "unknown",
+  "evidence_refs": [],
+  "missing_sources": ["collect.py 未執行，無法取得合法 records[].ref", "gate.py 固定檢查未執行", "src/Program.cs、src/Cancellation.cs 未核對"],
+  "next_action": "由有權限者執行 collect.py 與 gate.py 後，依 records[].ref 補上證據並重新判定；不補送、不結案。"
+}

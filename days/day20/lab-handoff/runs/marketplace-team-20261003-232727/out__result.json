@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "unknown",
+  "evidence_refs": [],
+  "missing_sources": [
+    "collect.py 未能執行（需要核准），無法取得合法的 records[].ref",
+    "gate.py 固定檢查未執行"
+  ],
+  "next_action": "核准執行 collect.py 與 gate.py 後，依 records[].ref 補上 evidence_refs 並重新判定 sender/receiver 狀態；人工核對 receipts.json 與 logs.jsonl"
+}

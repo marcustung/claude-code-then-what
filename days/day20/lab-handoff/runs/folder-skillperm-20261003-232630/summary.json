@@ -1,0 +1,97 @@
+{
+  "scenario": "folder-skillperm",
+  "case": "complete",
+  "work_dir": "C:\\<AUTHOR>\\d20runs\\folder-skillperm-20261003-232630",
+  "selftest_exit": 0,
+  "claude_exit": 0,
+  "seconds": 39.9,
+  "turns": 14,
+  "cost_usd": 0.13759259999999998,
+  "tool_calls": [
+    {
+      "tool": "Skill",
+      "arg": "trace-notification"
+    },
+    {
+      "tool": "Bash",
+      "arg": "cd C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630 && cat task.json && ls -R data src design out 2>&1 | head -50 && python .claude/skills/trace-notification/scripts/collect.py ."
+    },
+    {
+      "tool": "Read",
+      "arg": "C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/task.json"
+    },
+    {
+      "tool": "Glob",
+      "arg": "**/*"
+    },
+    {
+      "tool": "Bash",
+      "arg": "python C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/.claude/skills/trace-notification/scripts/collect.py ."
+    },
+    {
+      "tool": "Read",
+      "arg": "C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/design/design-review.md"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/src/Program.cs"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/data/logs.jsonl"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/data/receipts.json"
+    },
+    {
+      "tool": "Read",
+      "arg": "C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/.claude/skills/trace-notification/scripts/collect.py"
+    },
+    {
+      "tool": "Bash",
+      "arg": "python C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/.claude/skills/trace-notification/scripts/collect.py C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630"
+    },
+    {
+      "tool": "Write",
+      "arg": "C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/out/result.json"
+    }
+  ],
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Le99K1mjFG5LaMtpzcscYe",
+      "tool_input": {
+        "command": "cd C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630 && cat task.json && ls -R data src design out 2>&1 | head -50 && python .claude/skills/trace-notification/scripts/collect.py ."
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01VEBq4AXDXQGpEe9zS2yvq3",
+      "tool_input": {
+        "command": "python C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/.claude/skills/trace-notification/scripts/collect.py ."
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01ABSa3ZUYmnSBJUP1Cuztwr",
+      "tool_input": {
+        "command": "python C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630/.claude/skills/trace-notification/scripts/collect.py C:/<AUTHOR>/d20runs/folder-skillperm-20261003-232630"
+      }
+    }
+  ],
+  "changed_files": [
+    "out/result.json"
+  ],
+  "outer_gate_exit": 0,
+  "outer_gate": {
+    "cmd": [
+      "<HOME>\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "C:\\<AUTHOR>\\d20runs\\folder-skillperm-20261003-232630\\.claude\\skills\\trace-notification\\scripts\\gate.py",
+      "."
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"case\": \"\",\n  \"result_file\": \"result.json\",\n  \"result_sha256\": \"d3f3a548b7fee231439b0f04bc9e73b87d66a8ce6fe3a44079fe335b3b2632d2\",\n  \"task_sha256\": \"4822e2aabe70d71a69d534cc1fa02717100cd5227c7ca4b6f41bd655e8a3d1ba\",\n  \"checker_sha256\": \"b185dd15c74e5a1dfbce8e5a64f15be531b9c7b1a875f4aa1d8964fa55e13a86\",\n  \"notification_ids_from_tool\": [\n    \"7e746d20853d48b9b3948c1fe92319c1\"\n  ],\n  \"state\": \"NEEDS_FOLLOWUP\",\n  \"contract_passed\": true,\n  \"errors\": [],\n  \"approved\": false,\n  \"action_executed\": false\n}\n",
+    "stderr": ""
+  }
+}

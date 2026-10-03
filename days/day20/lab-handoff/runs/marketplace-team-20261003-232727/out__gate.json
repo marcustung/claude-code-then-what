@@ -1,0 +1,15 @@
+{
+  "case": "",
+  "result_file": "result.json",
+  "result_sha256": "5da712d9dbd8e6046bd0842bc82b6d93e24a0d9a84273f05f25c276e406708c2",
+  "task_sha256": "4822e2aabe70d71a69d534cc1fa02717100cd5227c7ca4b6f41bd655e8a3d1ba",
+  "checker_sha256": "b185dd15c74e5a1dfbce8e5a64f15be531b9c7b1a875f4aa1d8964fa55e13a86",
+  "notification_ids_from_tool": [
+    "7e746d20853d48b9b3948c1fe92319c1"
+  ],
+  "state": "NEEDS_FOLLOWUP",
+  "contract_passed": true,
+  "errors": [],
+  "approved": false,
+  "action_executed": false
+}

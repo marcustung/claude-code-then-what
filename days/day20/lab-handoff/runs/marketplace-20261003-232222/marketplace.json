@@ -1,0 +1,14 @@
+{
+  "name": "d20-team",
+  "description": "Day 20 團隊 marketplace（本機）",
+  "owner": {
+    "name": "<AUTHOR>"
+  },
+  "plugins": [
+    {
+      "name": "trace-notification",
+      "source": "./plugins/trace-notification",
+      "description": "查核訂單通知"
+    }
+  ]
+}
