@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel, result=ok, transitioned=true, notification_id=7e746d20..., 2026-09-29T09:40:10.82+08:00)",
+    "data/logs.jsonl:3 (notify_sent, 同 notification_id、order_id、request_id, 09:40:10.86+08:00)",
+    "data/logs.jsonl:1 (startup, faults_loaded=false, 版本相符)",
+    "src/Program.cs NotificationWorker.ExecuteAsync (notify_sent 僅在 sink POST 回傳成功狀態碼後記錄)",
+    "design/design-review.md 第2點 (FakeSink 收據不足以證明 payload；需接收端觀察)"
+  ],
+  "missing_sources": [
+    "接收端(fake sink)收據或 payload 紀錄，未見於本包",
+    "sink 端以 notification_id 查得的接收紀錄",
+    "/metrics 的 notify_sent_total、notify_dead_letter_total 快照"
+  ],
+  "next_action": "只讀補查：向操作者取得 sink 端以 notification_id 7e746d20853d48b9b3948c1fe92319c1 的接收紀錄（含 refund_requested=true 的 payload）；取得前接收端維持 unknown。不補送、不結案。"
+}

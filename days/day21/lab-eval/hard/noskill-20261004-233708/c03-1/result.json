@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": [
+    "data/logs.jsonl:2 cancel result=ok transitioned=true refund_requested=true notification_id=7e74...",
+    "data/logs.jsonl:3 notify_sent（同一 notification_id，無 notify_attempt_failed／dead_letter）",
+    "src/Program.cs:248-260 僅在 IsSuccessStatusCode 時才寫 notify_sent",
+    "data/receipts.json[0] 接收端收據 status=500、attempt=0，僅此一筆",
+    "design/design-review.md 第2、7點：收據不足以證明 payload；本輪未執行 .NET 測試"
+  ],
+  "missing_sources": [
+    "Log server／接收端（sink）自身的處理日誌與回應內容",
+    "Worker 實際收到的 HTTP 回應碼紀錄",
+    "本地 .NET 單元／HTTP 重送測試結果"
+  ],
+  "next_action": "唯讀釐清：向接收端負責人或其本地日誌確認 7e74... 是否已處理，並對照 notify_sent 與收據 500 的矛盾（可能是收據記錄方式或不同階段）。在取得接收端證據前不補送、不結案。"
+}

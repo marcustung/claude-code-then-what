@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": ["接收端對 HTTP 500 的處理紀錄／sink 端日誌", "notify_attempt_failed 或重試紀錄（logs.jsonl 內無）", "實際執行的 .NET 程式輸出（本輪未跑）"],
+  "next_action": "請人工調查：收據顯示 sink 回 500，但發送端記 notify_sent（程式僅在 2xx 時才記）。請取得 sink 端日誌與同一時間窗 attempt>0 的收據，確認是否真有 2xx 接收。不補送、不結案。"
+}

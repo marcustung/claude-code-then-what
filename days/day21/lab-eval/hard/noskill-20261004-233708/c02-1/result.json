@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": [
+    "data/logs.jsonl:2 cancel ok, transitioned=true, notification_id=7e746d20853d48b9b3948c1fe92319c1",
+    "data/logs.jsonl:3 notify_sent notification_id=7e746d20853d48b9b3948c1fe92319c1",
+    "data/receipts.json[0] 同一 order_id/request_id/run_id，但 notification_id=3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b，與寄件端不符",
+    "src/Program.cs NotificationWorker：notify_sent 只在接收端回應成功後才記錄"
+  ],
+  "missing_sources": [
+    "接收端(sink)自身日誌，或含 notification_id=7e746d20... 的收據",
+    "/metrics 快照（notify_sent_total、enqueued、dead_letter 計數）",
+    "receipts.json 中 3f1c9a7e... 的來源說明（是否為另一次發送或測試資料）",
+    "實際執行紀錄（本輪未跑 .NET）"
+  ],
+  "next_action": "只讀：向接收端取得 notification_id=7e746d20... 的收據或日誌，並釐清 3f1c9a7e... 的來源；在比對一致前不補送、不結案。"
+}

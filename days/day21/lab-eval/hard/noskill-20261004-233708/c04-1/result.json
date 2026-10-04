@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel ok, transitioned=true, 已入列)",
+    "data/logs.jsonl:4-8 (notify_attempt_failed attempt 0-3 與 notify_dead_letter，attempts=4)",
+    "data/receipts.json[0] (status 200，notification_id/order_id 相符，refund_requested=true，attempt=0)",
+    "data/logs.jsonl:3 (r2-shipped-01 rejected_shipped，notification_id=null，不通知，符合預期)",
+    "src/Program.cs NotificationWorker (成功才寫 notify_sent；重試 200/400/800ms 後才 dead_letter)"
+  ],
+  "missing_sources": [
+    "notify_sent 日誌（logs.jsonl 無此事件）",
+    "/metrics 的 notify_sent_total、notify_dead_letter_total",
+    "接收端（sink）自身日誌與完整收據清單（確認是否重複收到、是否為同一程序）",
+    "Log server（本次未連線）",
+    "實際執行 .NET 重現（本輪未跑）"
+  ],
+  "next_action": "只讀後續：先調取 /metrics 與 sink 端日誌，釐清為何送端記 4 次失敗＋dead_letter，接收端卻有 attempt=0 的 200 收據，並查證 logs 時間戳是否被改寫或來自不同程序。在矛盾釐清前不補送、不結案。"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": ["接收端實際 payload 的獨立觀察（應用測試尚待執行）", "receipts.json 無版本欄位，版本沿用 notify_sent"],
+  "next_action": "人工核對 refund_requested 不一致：cancel 日誌（第2行）為 true，接收端 receipt:0 payload 為 false；需查 payload 組成程式與接收端實際內容後再判斷接收端狀態。不補送、不結案。"
+}

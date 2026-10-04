@@ -1,0 +1,28 @@
+{
+  "prompt": "查核本目錄的訂單通知事件（任務在 task.json，資料在 data/、src/、design/，沒有連 Log server）。若本目錄有可用的 Skill，就使用它。\n把結論寫成 out/result.json，欄位：schema_version（=1）、order_id、notification_id、version、sender_status、receiver_status（兩者只能 confirmed 或 unknown）、evidence_refs（字串陣列）、missing_sources（字串陣列）、next_action（文字）。\n只查詢與分析，不補送、不結案。繁體中文說明，最多 500 字。",
+  "tools": "Read,Grep,Glob,Skill,Write,Bash",
+  "allow": "Read,Grep,Glob,Skill,Write(out/**),Edit(out/**),Bash(python .claude/skills/trace-notification/scripts/gate.py:*),Bash(python .claude/skills/trace-notification/scripts/collect.py:*),Bash(python .claude/skills/trace-notification/scripts/selftest.py:*)",
+  "expected": {
+    "complete": {
+      "sender_status": "confirmed",
+      "receiver_status": "confirmed"
+    },
+    "missing-receipts": {
+      "sender_status": "confirmed",
+      "receiver_status": "unknown"
+    },
+    "decoy-receipt": {
+      "sender_status": "confirmed",
+      "receiver_status": "unknown"
+    }
+  },
+  "model": "sonnet",
+  "effort": "medium",
+  "skill_sha": {
+    "none": null,
+    "v1": "75f1a0de805b7402d737399e3746fd8b344d9e83b328275191cb84ae8f56c9ac",
+    "v2": "5f94b9e4c30523a324ff19a2caf103849bbe8527eee8c34a5816581eea5bc53b"
+  },
+  "gate_sha": "834d84838c7367891006d7ab543a3128c15b0fd3d57f2fcf47fd53ef2fb5725a",
+  "order": "rep → case → cond（輪替，避免同條件連跑）"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": ["接收端中對應 notification_id 7e746d20853d48b9b3948c1fe92319c1 的收據"],
+  "next_action": "請接收端或 FakeSink 依 notification_id 7e746d20853d48b9b3948c1fe92319c1 補查原始收據，並說明 receipts.json 的 3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b 為何與發送紀錄不同；在此之前不補送、不結案。"
+}

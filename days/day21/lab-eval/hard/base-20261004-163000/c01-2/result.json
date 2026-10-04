@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": [],
+  "next_action": "交人工核對；本次僅查詢分析，不補送、不結案。範圍限本機教學 fixture（未連 Log server、非正式環境），不可延伸為正式環境結論。"
+}

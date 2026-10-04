@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 cancel result=ok transitioned=true refund_requested=true notification_id=7e746d20...",
+    "data/logs.jsonl:3 notify_sent notification_id=7e746d20... order_id=r2-healthy-01",
+    "data/receipts.json[0] status=200 payload.notification_id=7e746d20... order_id=r2-healthy-01 attempt=0 refund_requested=true",
+    "src/Program.cs NotificationWorker: notify_sent 只在接收端回成功狀態後才記錄"
+  ],
+  "missing_sources": [
+    "/metrics 快照（notify_enqueued/sent/dead_letter 計數）",
+    "接收端（sink）原始存取紀錄，僅有 receipts.json 一份收據",
+    "即時 Log server（本次未連線）",
+    "本輪未執行 .NET，行為僅由程式碼與既有紀錄推論"
+  ],
+  "next_action": "無需補送或結案。若要更高把握，可另取 /metrics 與 sink 原始紀錄交叉核對計數；本次僅查詢與分析。"
+}

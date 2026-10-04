@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel result=ok, transitioned=true, refund_requested=true, notification_id=7e74...)",
+    "data/logs.jsonl:3 (notify_sent, 同一 notification_id、order_id)",
+    "data/receipts.json[0] (status 200, 同一 notification_id/order_id, kind=order_cancelled, refund_requested=true, attempt=0)",
+    "data/logs.jsonl:4 (r2-shipped-01 rejected_shipped，notification_id=null，符合 NC-03 不通知)",
+    "src/Program.cs (notify_sent 僅在接收端回成功狀態後記錄)"
+  ],
+  "missing_sources": [
+    "Log server（本次未連線，僅用本地 data/logs.jsonl）",
+    "/metrics 快照（notify_enqueued/sent/dead_letter 計數無法交叉比對）",
+    "接收端自身日誌（僅有 receipts.json 收據）",
+    "未執行 .NET 程式，未重現"
+  ],
+  "next_action": "無需補送或結案動作。若要提高信心，待可連線時以 notification_id 比對 Log server 與 /metrics 計數；本地教學環境，非正式環境。"
+}

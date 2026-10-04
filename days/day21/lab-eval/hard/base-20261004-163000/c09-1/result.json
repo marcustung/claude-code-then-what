@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": ["log:3"],
+  "missing_sources": ["receipts.json"],
+  "next_action": "取得接收端（FakeSink）收據 data/receipts.json 後，比對 notification_id 與 payload；在此之前接收端維持 unknown。不補送、不結案。"
+}

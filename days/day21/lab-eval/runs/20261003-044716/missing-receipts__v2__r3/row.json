@@ -1,0 +1,18 @@
+{
+  "case": "missing-receipts",
+  "cond": "v2",
+  "rep": 3,
+  "claude_exit": 0,
+  "seconds": 29.1,
+  "turns": 9,
+  "cost_usd": 0.1048228,
+  "used_skill_tool": true,
+  "ran_bash": true,
+  "result_file": true,
+  "sender_ok": true,
+  "receiver_ok": true,
+  "false_confirm": false,
+  "outer_gate": "NEEDS_FOLLOWUP",
+  "gate_errors": [],
+  "skill_sha": "5f94b9e4c30523a324ff19a2caf103849bbe8527eee8c34a5816581eea5bc53b"
+}

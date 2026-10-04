@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel ok, transitioned=true, refund_requested=true, 含 notification_id)",
+    "data/logs.jsonl:3 (notify_sent, 同一 notification_id)",
+    "data/receipts.json[0] (status 200, notification_id/order_id/request_id 相符)",
+    "data/receipts.json[1] (與[0]完全相同的重複收據，at 相同、attempt=0)",
+    "src/Program.cs (notify_sent 僅在接收端回成功狀態後記錄)"
+  ],
+  "missing_sources": [
+    "Log server / 集中式日誌（本次未連線）",
+    "/metrics 快照（notify_sent_total、dead_letter、queue_depth）",
+    "接收端（FakeSink）自身的處理與去重紀錄",
+    "未實跑 .NET（design-review 第7點），無執行期佐證"
+  ],
+  "next_action": "不補送、不結案。請調閱接收端去重紀錄與 /metrics，確認 receipts.json 的兩筆相同收據是 fixture 重複寫入，還是接收端真的收到兩次；若確為重複投遞，需確認接收端以 notification_id 去重。"
+}

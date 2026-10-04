@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel ok, transitioned=true, notification_id=7e746d20...)",
+    "data/logs.jsonl:3 (notify_sent, 同 notification_id, ts 09:40:10.861+08:00)",
+    "data/receipts.json[0] (收據 notification_id=3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b，與發送端 ID 不符)",
+    "src/Program.cs:105-114,283-287 (入列後由 worker 送出，HTTP 2xx 才記 notify_sent)"
+  ],
+  "missing_sources": [
+    "接收端(sink)中與 notification_id 7e746d20853d48b9b3948c1fe92319c1 對應的收據",
+    "收據 3f1c9a7e... 與發送端 ID 差異的說明(sink 端日誌或 ID 重寫紀錄)"
+  ],
+  "next_action": "只讀查詢：向接收端/FakeSink 擁有者取得 7e746d20... 的收據或 sink 日誌，並釐清 3f1c9a7e... 的來源；不補送、不結案。"
+}

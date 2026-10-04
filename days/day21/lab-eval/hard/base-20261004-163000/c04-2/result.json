@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": null,
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["receipt:0"],
+  "missing_sources": [
+    "data/logs.jsonl 無此訂單的 notify_sent 紀錄（僅有 notify_attempt_failed x4 與 notify_dead_letter）",
+    "接收端（sink）自身日誌與時間戳校時資料",
+    "正式 Log server（本次未連線）"
+  ],
+  "next_action": "收據 receipt:0 的通知 ID 為 7e746d20853d48b9b3948c1fe92319c1，但 collect 工具在發送端找不到唯一通知 ID，故 notification_id 留空。發送端日誌記 dead_letter，收據卻有同 ID（status 200），兩者矛盾；請人工查 sink 日誌與重試時序。不補送、不結案。"
+}

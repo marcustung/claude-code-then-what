@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel, result=ok, transitioned=true, notification_id=7e746d20...)",
+    "data/logs.jsonl:3 (notify_sent, 同 notification_id, 09:40:10.861+08:00)",
+    "data/receipts.json[0] (接收端 sink 收據 status=200, 同 notification_id/order_id/request_id, attempt=0)",
+    "src/Program.cs (worker 僅在 sink 回成功碼後才記 notify_sent；cancel 只在 transitioned 時建通知)",
+    "design/design-review.md 第1、2點 (送達與回應順序不固定；收據未存 refund_requested)"
+  ],
+  "missing_sources": [
+    "遠端 Log server（本次未連線，僅離線資料包）",
+    "獨立的接收端原始日誌（receipts.json 僅單筆收據）",
+    "實際執行 .NET 測試結果（設計文件稱本輪未跑）"
+  ],
+  "next_action": "僅查詢分析，未補送、未結案。建議操作者確認 receipts.json 確為接收端 sink 所存；若需更強佐證，取接收端原始日誌或執行 payload 測試，確認 refund_requested=true 與 cancel 日誌一致。"
+}

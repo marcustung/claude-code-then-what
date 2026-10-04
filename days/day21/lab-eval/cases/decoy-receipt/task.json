@@ -1,0 +1,5 @@
+{
+  "order_id": "r2-healthy-01",
+  "version": "delivery-hardening-local-r2",
+  "environment": "local teaching fixture, not production"
+}

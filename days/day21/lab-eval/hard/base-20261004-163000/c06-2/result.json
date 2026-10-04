@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["log:3", "receipt:0", "receipt:1"],
+  "missing_sources": [],
+  "next_action": "交人核對：receipt:0 與 receipt:1 為同一通知 ID 的重複收據（時間戳與內容完全相同），請確認是 FakeSink 重複記錄或實際重送。限制：未連 Log server、receipts.json 無版本欄位（版本沿用 notify_sent）、未執行 .NET 測試。不補送、不結案。"
+}

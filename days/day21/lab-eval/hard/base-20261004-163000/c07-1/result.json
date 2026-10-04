@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["receipt:0"],
+  "missing_sources": ["logs.jsonl 中沒有此通知的 notify_sent 發送端紀錄（worker 發送/ack 日誌）"],
+  "next_action": "請人工向保存 NotificationWorker 日誌的來源補取 notify_sent（notification_id=7e746d20853d48b9b3948c1fe92319c1）後再判定發送端。不補送、不結案。"
+}

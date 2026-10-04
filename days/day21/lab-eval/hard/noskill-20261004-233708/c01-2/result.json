@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel, result=ok, transitioned=true, refund_requested=true, 含 notification_id)",
+    "data/logs.jsonl:3 (notify_sent, 同 notification_id)",
+    "data/receipts.json[0] (status=200, 同 notification_id/order_id/request_id, attempt=0, kind=order_cancelled)",
+    "src/Program.cs (transitioned 才建立通知；ack 成功後才記 notify_sent)"
+  ],
+  "missing_sources": [
+    "真實 Log server（本次未連線）",
+    "/metrics 計數（notify_sent_total、dead_letter）快照",
+    "接收端獨立日誌（目前只有 FakeSink 收據）"
+  ],
+  "next_action": "無需補送或結案；若要升級為正式結論，建議補取 /metrics 與接收端獨立日誌交叉比對。"
+}

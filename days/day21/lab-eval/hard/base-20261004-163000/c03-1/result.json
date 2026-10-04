@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": ["接收端應用層的 payload 觀察紀錄", "attempt>0 的重送收據", "sink 回 500 的原因紀錄", "遠端 Log server（本次未連線）"],
+  "next_action": "唯讀查 sink 端日誌，確認收據為何是 500、是否有 attempt>0 的成功收據；是否重送由人決定，本查核不補送、不結案。"
+}

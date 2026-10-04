@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel ok, transitioned=true, refund_requested=true, notification_id=7e746d20…, queue_depth=1)",
+    "data/receipts.json[0] (sink 收到相同 notification_id、order_id=r2-healthy-01、kind=order_cancelled、attempt=0、status 200)",
+    "src/Program.cs:208-216,242-247 (worker 以相同欄位 POST 到 sink)"
+  ],
+  "missing_sources": [
+    "notify_sent 日誌事件（logs.jsonl 內沒有，無法由寄送端日誌直接確認送出成功）",
+    "notify_sent_total／dead_letter 等 metrics",
+    "Log server（本次未連線）",
+    "接收端自身日誌（只有 FakeSink 收據）"
+  ],
+  "next_action": "不補送、不結案。若需更強佐證，調取 notify_sent 日誌或 metrics 與收據比對；否則此事件可視為正常送達。"
+}

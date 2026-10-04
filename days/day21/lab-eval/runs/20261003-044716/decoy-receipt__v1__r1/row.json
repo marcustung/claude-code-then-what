@@ -1,0 +1,21 @@
+{
+  "case": "decoy-receipt",
+  "cond": "v1",
+  "rep": 1,
+  "claude_exit": 0,
+  "seconds": 26.1,
+  "turns": 7,
+  "cost_usd": 0.11026659999999999,
+  "used_skill_tool": true,
+  "ran_bash": true,
+  "result_file": true,
+  "sender_ok": true,
+  "receiver_ok": true,
+  "false_confirm": false,
+  "outer_gate": "RETURN_FOR_EVIDENCE",
+  "gate_errors": [
+    "UNKNOWN_SOURCE_REF",
+    "SENDER_EVIDENCE_REQUIRED"
+  ],
+  "skill_sha": "75f1a0de805b7402d737399e3746fd8b344d9e83b328275191cb84ae8f56c9ac"
+}

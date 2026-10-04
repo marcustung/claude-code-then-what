@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel ok, transitioned=true, notification_id=7e746d20…, version 吻合)",
+    "data/logs.jsonl:3 (notify_sent, notification_id=7e746d20…)",
+    "data/receipts.json item 0 (同訂單收據，notification_id=3f1c9a7e…，與發送紀錄不同)",
+    "src/Program.cs (notify_sent 僅代表 sink 回應成功；通知ID由 Guid.NewGuid 產生)",
+    "design/design-review.md 第1、2點"
+  ],
+  "missing_sources": [
+    "接收端中 notification_id=7e746d20853d48b9b3948c1fe92319c1 的收據或接收端 Log",
+    "收據 3f1c9a7e… 對應的發送端紀錄（logs.jsonl 無此ID）",
+    "真實 Log server 查詢（本次為離線）"
+  ],
+  "next_action": "向接收端（sink）查詢 notification_id=7e746d20… 是否有收據，並查 3f1c9a7e… 的來源（是否為其他請求或測試資料）。取得對應收據前，接收端維持 unknown。本次不補送、不結案。"
+}

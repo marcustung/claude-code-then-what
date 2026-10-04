@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:line2 cancel result=ok transitioned=true refund_requested=true notification_id=7e746d20...",
+    "data/logs.jsonl:line3 notify_sent notification_id=7e746d20... (無 notify_dead_letter／notify_attempt_failed)",
+    "data/receipts.json[0] status=200 payload.notification_id=7e746d20... order_id=r2-healthy-01 attempt=0 refund_requested=true",
+    "data/logs.jsonl:line1 startup faults_loaded=false",
+    "data/logs.jsonl:line4 r2-shipped-01 rejected_shipped 無 notification_id（符合不通知設計）",
+    "src/Program.cs NotificationWorker：notify_sent 僅在 sink 回成功狀態後記錄"
+  ],
+  "missing_sources": [
+    "Log server（本次未連線，僅用本機 data/logs.jsonl）",
+    "/metrics 計數（notify_sent_total、dead_letter_total）",
+    "接收端自身的獨立日誌（現有只有 receipts.json 收據）",
+    "實際執行 .NET 的結果（未重跑）"
+  ],
+  "next_action": "無需補送或結案。如需更強佐證，可取得 /metrics 與接收端日誌比對；本次僅做查詢分析，未做任何變更。"
+}

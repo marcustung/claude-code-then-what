@@ -1,0 +1,18 @@
+{
+  "case": "complete",
+  "cond": "v2",
+  "rep": 1,
+  "claude_exit": 0,
+  "seconds": 47.5,
+  "turns": 10,
+  "cost_usd": 0.12599380000000002,
+  "used_skill_tool": true,
+  "ran_bash": true,
+  "result_file": true,
+  "sender_ok": true,
+  "receiver_ok": true,
+  "false_confirm": false,
+  "outer_gate": "READY_FOR_REVIEW",
+  "gate_errors": [],
+  "skill_sha": "5f94b9e4c30523a324ff19a2caf103849bbe8527eee8c34a5816581eea5bc53b"
+}

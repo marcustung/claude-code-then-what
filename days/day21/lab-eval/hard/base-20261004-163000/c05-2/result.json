@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": [],
+  "next_action": "交人工核對。結論僅限本機教學環境；未連 Log server，且 payload 內容（如 refund_requested）的接收端測試設計文件稱尚待執行，需要時由有權限者另行執行。不補送、不結案。"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": [
+    "data/logs.jsonl:2 cancel result=ok transitioned=true refund_requested=true notification_id=7e746d20...",
+    "data/logs.jsonl:3 notify_sent notification_id=7e746d20...",
+    "data/receipts.json[0] status=500 attempt=0 notification_id=7e746d20...（接收端只有這一筆，且為 500）",
+    "src/Program.cs NotificationWorker: sent 只在 IsSuccessStatusCode 時為 true，失敗會記 notify_attempt_failed 並重試",
+    "design/design-review.md 第2點：收據不足以證明 payload；第7點：本輪未跑 .NET"
+  ],
+  "missing_sources": [
+    "接收端（sink）實際日誌與回應內容，無法解釋收據 status=500",
+    "服務 /metrics（notify_sent_total、notify_failed_total、dead_letter）",
+    "是否有 notify_attempt_failed／重試的日誌與第二筆收據",
+    "Log server（本次未連線）"
+  ],
+  "next_action": "唯讀釐清：向 sink 端取得 notification_id 7e746d20... 的處理紀錄與 500 的原因；調閱 /metrics 與完整日誌確認有無重試。在確認接收端收到 2xx 或有成功收據前，不宣告送達；不補送、不結案。"
+}

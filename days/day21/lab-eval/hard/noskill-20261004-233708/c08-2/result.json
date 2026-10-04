@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 cancel result=ok transitioned=true notification_id=7e746d20...",
+    "data/logs.jsonl:3 notify_sent notification_id=7e746d20... 09:40:10.861+08",
+    "data/receipts.json[0] status=200 notification_id=7e746d20... order_id=r2-healthy-01 attempt=0 (at=1790646010.857，早於 notify_sent 約 4ms)",
+    "data/logs.jsonl:2 refund_requested=true 與 data/receipts.json[0].payload.refund_requested=false 不一致",
+    "design/design-review.md 第2點：收據不等於應用程式送出/接收端觀察到的 payload"
+  ],
+  "missing_sources": [
+    "/metrics 快照（notify_sent_total、dead_letter、queue_depth）",
+    "FakeSink 原始請求紀錄／應用測試接收端實際觀察到的 payload",
+    "建單紀錄（r2-healthy-01 的 paid 值，用以判斷 refund_requested 應為 true 或 false）",
+    "實際 Log server（本次未連線）；本輪也未執行 .NET"
+  ],
+  "next_action": "送達本身已由兩端佐證，無需補送。請調閱 FakeSink 原始請求與建單時的 paid 值，釐清 refund_requested 在日誌(true)與收據(false)不一致的原因（可能是收據序列化/保存問題，或 payload 實際被改動）。確認前不結案、不補送。"
+}

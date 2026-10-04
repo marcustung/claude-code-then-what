@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel ok, transitioned=true, refund_requested=true, notification_id=7e746d20...)",
+    "data/logs.jsonl:3 (notify_sent, 同 notification_id)",
+    "data/receipts.json[0] (sink 回 200, kind=order_cancelled, attempt=0)",
+    "data/receipts.json[1] (同 notification_id、同時間戳、同 attempt=0 的重複收據)",
+    "src/Program.cs (notify_sent 僅在 sink 回成功碼後才記錄)"
+  ],
+  "missing_sources": [
+    "/metrics 計數（notify_sent_total、dead_letter、queue_depth）",
+    "接收端（sink）原始日誌，無法確認 receipts.json 重複兩筆的原因",
+    "Log server（本次未連線）",
+    "本輪未實際執行 .NET 服務"
+  ],
+  "next_action": "不補送、不結案。建議向接收端負責人確認 receipts.json 為何同一 notification_id 出現兩筆相同 attempt=0 的收據（疑似 sink 重複記錄或測試資料），並確認接收端以 notification_id 做冪等去重；另可補取 /metrics 與 sink 原始日誌交叉比對。"
+}

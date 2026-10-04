@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": [],
+  "next_action": "交人核對：本地演練資料中發送端與接收端一致，無需補送。設計文件註明本輪未跑 .NET，payload 與順序重送測試仍待執行；本結論不涵蓋正式環境。"
+}

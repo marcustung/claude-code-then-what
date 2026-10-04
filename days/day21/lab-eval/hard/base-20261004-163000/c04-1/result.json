@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "confirmed",
+  "evidence_refs": ["receipt:0"],
+  "missing_sources": ["data/logs.jsonl 無 notify_sent 紀錄（僅有 4 次 notify_attempt_failed 與 notify_dead_letter）", "發送端與接收端矛盾的解釋來源（sink 端日誌、worker 重試時序）", "未連 Log server"],
+  "next_action": "人工核對：為何發送端記 dead_letter、sink 卻有 attempt 0 的 200 收據；調閱 sink 端與 worker 完整日誌確認。不補送、不結案。"
+}

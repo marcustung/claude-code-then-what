@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": ["log:3", "receipt:0"],
+  "missing_sources": ["接收端中與通知ID 7e746d20853d48b9b3948c1fe92319c1 相符的收據", "FakeSink 完整原始收據（receipts.json 只有 1 筆）", "receipts.json 無版本欄位"],
+  "next_action": "唯讀補查：確認接收端/FakeSink 是否另有 ID 7e746d... 的收據，並釐清收據 ID 3f1c9a7e... 的來源。不補送、不結案。"
+}

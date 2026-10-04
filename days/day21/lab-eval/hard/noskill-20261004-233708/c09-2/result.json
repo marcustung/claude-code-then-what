@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "unknown",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel: result=ok, transitioned=true, refund_requested=true, notification_id=7e746d20...)",
+    "data/logs.jsonl:3 (notify_sent，notification_id、order_id、run_id 相符，無 notify_attempt_failed/dead_letter/deferred)",
+    "src/Program.cs (notify_sent 僅在 sink 回 2xx 後才寫入；轉換成功才建立通知)",
+    "design/design-review.md 第2點 (只看收據不足以證明 payload；需接收端觀察)"
+  ],
+  "missing_sources": [
+    "接收端（fake sink）自己的收據或存取日誌",
+    "sink 實際收到的 payload（確認 refund_requested 與 notification_id）",
+    "/metrics 快照（notify_sent_total 與 notify_enqueued_total 對帳）"
+  ],
+  "next_action": "只讀：向接收端取得 notification_id 7e746d20853d48b9b3948c1fe92319c1 的收據與 payload 比對；取得後再把 receiver_status 改為 confirmed。不補送、不結案。"
+}

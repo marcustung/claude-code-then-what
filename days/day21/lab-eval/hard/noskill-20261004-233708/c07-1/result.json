@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel ok, transitioned=true, refund_requested=true, notification_id=7e74..., queue_depth=1)",
+    "data/receipts.json[0] (sink 回 200, payload 的 notification_id/order_id/request_id 相符, attempt=0)",
+    "src/Program.cs (worker 成功後才寫 notify_sent 並累加 notify_sent_total)"
+  ],
+  "missing_sources": [
+    "logs.jsonl 中該 notification_id 的 notify_sent 事件",
+    "/metrics 快照 (notify_sent_total、notify_dead_letter_total、queue depth)",
+    "Log server 完整日誌 (本次未連線)"
+  ],
+  "next_action": "只讀補查：取得該 notification_id 的 notify_sent 日誌與 /metrics 快照，確認送端自身紀錄；不補送、不結案。"
+}

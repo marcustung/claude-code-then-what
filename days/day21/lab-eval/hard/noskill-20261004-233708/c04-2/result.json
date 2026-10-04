@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "unknown",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:line2 cancel ok, transitioned=true, notification_id=7e746d20...",
+    "data/logs.jsonl:line4-7 notify_attempt_failed attempt 0-3 (HttpRequestException)",
+    "data/logs.jsonl:line8 notify_dead_letter attempts=4；全檔無 notify_sent",
+    "data/receipts.json[0] status=200, 同 notification_id/order_id, attempt=0, at=1790646010.8577874",
+    "src/Program.cs NotificationWorker: 只有 ack 後才寫 notify_sent；失敗 4 次寫 dead_letter"
+  ],
+  "missing_sources": [
+    "/metrics 輸出（notify_sent_total、notify_dead_letter_total）",
+    "接收端（sink）自身的存取紀錄與監聽埠 63878 的對應",
+    "完整 logs.jsonl（各次嘗試的真實時間戳；現有嘗試紀錄時間戳與 cancel 完全相同）",
+    "Log server（本次未連線）"
+  ],
+  "next_action": "不補送、不結案。請取得 /metrics 與 sink 端紀錄，確認收據 attempt=0 由哪一次請求產生，以及寄件端為何把 attempt 0 記為失敗；釐清前不要重送，以免重複通知。"
+}

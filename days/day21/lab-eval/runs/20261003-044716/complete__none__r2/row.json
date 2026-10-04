@@ -1,0 +1,23 @@
+{
+  "case": "complete",
+  "cond": "none",
+  "rep": 2,
+  "claude_exit": 0,
+  "seconds": 25.9,
+  "turns": 5,
+  "cost_usd": 0.1035204,
+  "used_skill_tool": false,
+  "ran_bash": true,
+  "result_file": true,
+  "sender_ok": true,
+  "receiver_ok": true,
+  "false_confirm": false,
+  "outer_gate": "RETURN_FOR_EVIDENCE",
+  "gate_errors": [
+    "UNKNOWN_SOURCE_REF",
+    "SENDER_EVIDENCE_REQUIRED",
+    "RECEIVER_EVIDENCE_REQUIRED",
+    "CONFIRMED_WITH_MISSING_SOURCE"
+  ],
+  "skill_sha": null
+}

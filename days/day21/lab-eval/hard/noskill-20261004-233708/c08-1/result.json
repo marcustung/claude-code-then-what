@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "order_id": "r2-healthy-01",
+  "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+  "version": "delivery-hardening-local-r2",
+  "sender_status": "confirmed",
+  "receiver_status": "confirmed",
+  "evidence_refs": [
+    "data/logs.jsonl:2 (cancel：result=ok、transitioned=true、refund_requested=true、notification_id 與本案相同)",
+    "data/logs.jsonl:3 (notify_sent：同 notification_id，無 notify_attempt_failed 或 dead_letter)",
+    "data/receipts.json[0] (status=200、同 notification_id／order_id／request_id、attempt=0，payload.refund_requested=false)",
+    "src/Program.cs (worker 送出 body 帶 n.RefundRequested；log 為 true，與收據 false 不一致)",
+    "design/design-review.md 第2點 (只看收據不足以判斷 payload 是否被改)"
+  ],
+  "missing_sources": [
+    "實際送出的 HTTP request body（log 不記 payload）",
+    "FakeSink／接收端原始程式與其落盤邏輯（無法確認 refund_requested 是否被預設或遺失）",
+    "訂單 r2-healthy-01 建單資料（paid 值），無法獨立驗證 refund_requested 應為 true",
+    "/metrics 計數（notify_enqueued/sent_total）",
+    "Log server（本次未連線）"
+  ],
+  "next_action": "送達本身可信：送出端有 notify_sent，接收端有同 ID 的 200 收據，無重複與遺失。但 refund_requested 在 log（true）與收據（false）不一致，請先取得接收端原始 request 紀錄與 FakeSink 程式，查明是接收端遺失/預設該欄位，還是傳輸中被改動；確認前不要拿此收據證明退款要求已送達。本次只做查核，未補送、未結案。"
+}
