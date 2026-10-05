@@ -1,0 +1,21 @@
+{
+  "source": "Day20 交接實跑 missing",
+  "method_version": "v2.0.x",
+  "gate_state": "NEEDS_FOLLOWUP",
+  "gate_errors": [],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "evidence_refs": [
+      "log:3"
+    ],
+    "missing_sources": [
+      "receipts.json"
+    ],
+    "next_action": "取得接收端收據 data/receipts.json（fake sink 紀錄）後，比對 notification_id 與 payload；在此之前不補送、不結案。"
+  }
+}

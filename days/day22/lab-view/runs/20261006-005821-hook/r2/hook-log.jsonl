@@ -1,0 +1,2 @@
+{"action": "block", "items": ["接收端收據的 notification_id 與發送紀錄不符（receipts.", "接收端收據缺失（receipts.json 不在資料包），接收端狀態無法判定", "正常案例（發送端與接收端一致）等人工核對"]}
+{"action": "pass", "bad_left": [], "stop_hook_active": true}

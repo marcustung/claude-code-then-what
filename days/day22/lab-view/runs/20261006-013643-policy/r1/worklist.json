@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "title": "人工核對：送端、收端皆 confirmed 的通知（本機教學資料）",
+      "next_step": "核對 log:3 與 receipt:0 是否為同一 notification_id，確認後決定是否結案；結論僅限本機環境，未涵蓋正式環境與 .NET 重送測試。",
+      "owner": "服務 Owner",
+      "waiting_for": "Owner 核對並做結案決定（證據已齊，gate 為 READY_FOR_REVIEW）",
+      "merged_ids": ["01", "11", "12", "13"],
+      "do_today": true
+    },
+    {
+      "title": "向接收端取得 receipts.json 收據（收據整份缺漏）",
+      "next_step": "向接收端／FakeSink 取得 data/receipts.json 或 sink 紀錄，以 notification_id 比對 payload（含 refund_requested）；取得前 receiver 維持 unknown，不補送、不結案。",
+      "owner": "查核者",
+      "waiting_for": "接收端收據 receipts.json（缺資料）",
+      "merged_ids": ["02", "23", "24", "25", "26", "27", "28", "29", "30", "31"],
+      "do_today": true
+    },
+    {
+      "title": "收據 notification_id 對不上（3f1c9a7e… ≠ 7e746d20…）",
+      "next_step": "向接收端索取 notification_id 7e746d20853d48b9b3948c1fe92319c1 的對應收據，並查明 3f1c9a7e… 的來源（另一次發送或測試資料）；在此之前 receiver 維持 unknown，不當作已送達。",
+      "owner": "查核者",
+      "waiting_for": "接收端對應 7e746d20… 的收據，以及 3f1c9a7e… 的來源說明（缺資料）",
+      "merged_ids": ["14", "15", "16", "17", "18", "19", "20", "21", "22"],
+      "do_today": true
+    },
+    {
+      "title": "03 號結果：固定檢查（collect.py／gate.py）未執行，證據為人工推得",
+      "next_step": "在可執行 Python 的環境重跑 collect.py 與 gate.py，確認 evidence_refs 後才能併入核對。",
+      "owner": "查核者",
+      "waiting_for": "可執行 Python 的環境",
+      "merged_ids": ["03"],
+      "do_today": true
+    },
+    {
+      "title": "Skill 只有 SKILL.md，缺 collect.py／gate.py，無法執行",
+      "next_step": "把 scripts/collect.py 與 scripts/gate.py 補進 Skill 套件，確認 v2.0.2 可完整跑出 records[].ref。",
+      "owner": "Skill 維護者",
+      "waiting_for": "Skill 套件補齊腳本",
+      "merged_ids": ["04"],
+      "do_today": true
+    },
+    {
+      "title": "舊方法（不帶 Skill／v1）的 confirmed 結論被 gate 退回，改以 v2.0.2 為準",
+      "next_step": "不採用這 6 筆（UNKNOWN_SOURCE_REF 等錯誤，且 confirmed 與 missing_sources 並存）；同資料已由 v2.0.2 的 11–13 取代，待 Owner 核對後直接作廢。",
+      "owner": "查核者",
+      "waiting_for": "Owner 完成「人工核對」那一項",
+      "merged_ids": ["05", "06", "07", "08", "09", "10"],
+      "do_today": false
+    },
+    {
+      "title": "gate 放行了不相符的收據：21、22 把收據 receipt:0 列為證據，但 receiver 是 unknown",
+      "next_step": "檢查 v2.0.2 的 collect／gate 是否驗證收據 notification_id 與送端一致；若沒有，補上規則。",
+      "owner": "Skill 維護者",
+      "waiting_for": "維護者排入修正（不阻擋今天的查核工作）",
+      "merged_ids": ["21", "22"],
+      "do_today": false
+    }
+  ]
+}

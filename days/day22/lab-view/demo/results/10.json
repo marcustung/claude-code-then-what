@@ -1,0 +1,32 @@
+{
+  "source": "Day21 Eval complete r3",
+  "method_version": "v1",
+  "gate_state": "RETURN_FOR_EVIDENCE",
+  "gate_errors": [
+    "UNKNOWN_SOURCE_REF",
+    "SENDER_EVIDENCE_REQUIRED",
+    "RECEIVER_EVIDENCE_REQUIRED",
+    "CONFIRMED_WITH_MISSING_SOURCE"
+  ],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "confirmed",
+    "evidence_refs": [
+      "data/logs.jsonl:2 (cancel result=ok, transitioned=true, refund_requested=true, 帶 notification_id)",
+      "data/logs.jsonl:3 (notify_sent，同 notification_id，ts 09:40:10.861+08:00)",
+      "data/receipts.json[0] (接收端 sink 收據 status=200，notification_id/order_id/request_id 相符，kind=order_cancelled，refund_requested=true，attempt=0，at=1790646010.8578 即 09:40:10.858+08:00)",
+      "src/Program.cs:105-114,251-286 (轉換成功才通知；worker 送出 sink 後才記 notify_sent)",
+      "design/design-review.md (本輪未跑 .NET，設計僅供對照)"
+    ],
+    "missing_sources": [
+      "正式環境 Log server（本次為離線本機演練資料，非正式環境）",
+      "metrics 快照（notify_sent_total、dead_letter）未提供",
+      "sink 端自己的版本/日誌：receipts.json 無 version 欄位，版本僅由發送端 log 佐證"
+    ],
+    "next_action": "無需補送。建議由操作者在正式環境以同一 notification_id 向 Log server 與真實接收端對帳；本查核不補送、不結案。"
+  }
+}

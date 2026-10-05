@@ -1,0 +1,9 @@
+{
+  "name": "work-view",
+  "version": "0.1.0",
+  "description": "Day 22：把工作清單與 hook 的退回紀錄列成看板，看每件事卡在哪一步、缺哪份證據",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "<AUTHOR>"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "title": "收據對不上：receipts.json 只有 notification_id=3f1c9a7e…，沒有 7e746d20… 的收據（接收端維持 unknown）",
+      "next_step": "向接收端／FakeSink 的負責人索取 7e746d20853d48b9b3948c1fe92319c1 的收據或存取紀錄，並查明 3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b 的來源（另一次發送或測試資料）。取得前接收端維持 unknown，不補送、不結案。",
+      "owner": "查核者",
+      "waiting_for": "接收端對 7e746d20… 的收據／sink 日誌，以及 3f1c9a7e… 的來源說明",
+      "merged_results": ["20", "21", "22", "23", "24", "25", "26", "27", "28"],
+      "do_today": true
+    },
+    {
+      "title": "找不到接收端收據：發送端已確認（log:3），接收端 unknown",
+      "next_step": "向接收端／FakeSink 的負責人索取 7e746d20853d48b9b3948c1fe92319c1 的收據（receipts.json 或 sink 保存的 payload），比對 notification_id、order_id 與 refund_requested=true。有對應紀錄才能把接收端改成 confirmed。不補送、不結案。",
+      "owner": "查核者",
+      "waiting_for": "接收端（FakeSink）的收據或 payload 紀錄",
+      "merged_results": ["08", "29", "30", "31", "32", "33", "34", "35", "36", "37"],
+      "do_today": true
+    },
+    {
+      "title": "發送端與接收端一致，已通過固定檢查（READY_FOR_REVIEW），待人工核對",
+      "next_step": "人工核對 log:3 與 receipt:0。注意兩點：receipts.json 沒有版本欄位，接收端版本是沿用發送端，沒有獨立佐證；資料是本機教學 fixture，.NET 測試與 Log server 都沒跑。不補送、不結案。",
+      "owner": "服務 Owner",
+      "waiting_for": "服務 Owner 的核對決定（資料已齊全）",
+      "merged_results": ["01", "06", "17", "18", "19"],
+      "do_today": true
+    },
+    {
+      "title": "Skill 打包缺 scripts/collect.py 與 gate.py（gate NOT_RUNNABLE）",
+      "next_step": "確認發佈的 v2.0.2 包含 scripts/collect.py 與 gate.py，缺的就補齊，再重跑一次確認能產生 records[].ref。",
+      "owner": "Skill 維護者",
+      "waiting_for": "無，維護者可直接確認",
+      "merged_results": ["10"],
+      "do_today": true
+    },
+    {
+      "title": "Day20 因 collect.py／gate.py 未獲執行授權而得到 unknown 的結果（已有授權重跑取代）",
+      "next_step": "不用重跑，同一 fixture 已由 01、06 取代，結論 confirmed。這些 unknown 是權限擋住造成，不是真的查不到。09 的 evidence_refs 是人工推得、gate 沒跑，不要引用。之後可評估預先核准這兩支腳本，避免再被擋。",
+      "owner": "Skill 維護者",
+      "waiting_for": "是否要預先核准 collect.py／gate.py 的決定（沒有急迫性）",
+      "merged_results": ["02", "03", "04", "05", "07", "09"],
+      "do_today": false
+    },
+    {
+      "title": "不帶 Skill 與 v1 的結果被 gate 退回（UNKNOWN_SOURCE_REF 等），v2.0.2 沒有這些錯誤",
+      "next_step": "這些結果不採用，以 v2.0.2 為準。11–16 的結論 confirmed 與 17–19 一致，但同時列了 missing_sources，所以被判 CONFIRMED_WITH_MISSING_SOURCE。其餘的實質結論已併入前兩項。把不帶 Skill／v1 的退回原因整理成方法比較，作為汰除 v1 的依據。",
+      "owner": "Skill 維護者",
+      "waiting_for": "無，不急",
+      "merged_results": ["11", "12", "13", "14", "15", "16"],
+      "do_today": false
+    },
+    {
+      "title": "v2.0.2 的 decoy 結果把不符的收據也列進 evidence_refs（receipt:0）",
+      "next_step": "27、28 的 receipt:0 指向 notification_id 不符的收據，卻被當成佐證引用。請修正為不引用不符的收據；26 只引用 log:3，可作範本。",
+      "owner": "查核者",
+      "waiting_for": "無",
+      "merged_results": ["27", "28"],
+      "do_today": false
+    }
+  ]
+}

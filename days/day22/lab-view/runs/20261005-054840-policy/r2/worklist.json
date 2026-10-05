@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "title": "接收端收據不符：notification 7e746d20… 的收據不在 receipts.json（只有 3f1c9a7e… 這筆）",
+      "next_action": "向接收端／FakeSink 索取 notification_id=7e746d20853d48b9b3948c1fe92319c1 的收據或存取紀錄，並查明收據 3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b 的來源（另一次發送或測試資料）。取得前接收端維持 unknown，不補送、不結案。",
+      "owner": "查核者",
+      "waiting_for": "接收端提供對應 7e746d20… 的收據／存取日誌，以及 3f1c9a7e… 的來源說明",
+      "merged_results": [20, 21, 22, 23, 24, 25, 26, 27, 28],
+      "do_today": true
+    },
+    {
+      "title": "接收端收據缺漏：receipts.json 未提供，發送端已確認、接收端 unknown",
+      "next_action": "向接收端／FakeSink 取得 notification_id=7e746d20853d48b9b3948c1fe92319c1 的收據與 payload，核對 order_id 與 refund_requested=true，並視需要補一份 /metrics 快照。取得前接收端維持 unknown，不補送、不結案。",
+      "owner": "查核者",
+      "waiting_for": "接收端收據（receipts.json 或 sink 紀錄）與 payload",
+      "merged_results": [8, 29, 30, 31, 32, 33, 34, 35, 36, 37],
+      "do_today": true
+    },
+    {
+      "title": "資料齊全的案件：發送端、接收端皆 confirmed（gate 通過 READY_FOR_REVIEW），待人工核對",
+      "next_action": "服務 Owner 依 log:3 與 receipt:0 做人工核對並決定是否結案。核對時注意：接收端版本沿用發送端、未獨立佐證；資料為本機教學 fixture，未跑 .NET、未連正式 Log server，結論不涵蓋正式環境。",
+      "owner": "服務 Owner",
+      "waiting_for": "服務 Owner 的核對與結案決定",
+      "merged_results": [1, 6, 17, 18, 19],
+      "do_today": true
+    },
+    {
+      "title": "固定檢查器（collect.py／gate.py）因執行權限被擋，多筆結果停在 unknown",
+      "next_action": "修正 Skill 的執行授權設定（或在交接說明寫明需預先核准），讓 collect.py／gate.py 能直接執行。#09 的 evidence_refs 是人工推得、未經 gate，需在可執行環境重跑一次。#02–05、#07 沒有取得任何證據，結論已由 #01／#06／#17–19 的通過結果取代，不需另行重查。",
+      "owner": "Skill 維護者",
+      "waiting_for": "執行權限／核准流程修好；修好後才能重跑 #09",
+      "merged_results": [2, 3, 4, 5, 7, 9],
+      "do_today": true
+    },
+    {
+      "title": "Skill-only 套件缺 scripts/collect.py 與 gate.py，NOT_RUNNABLE",
+      "next_action": "確認發佈的 v2.0.2 套件是否應附 scripts；若應附就補齊並重跑一次驗證，若只是對照實驗的刻意設計則記錄後結案。",
+      "owner": "Skill 維護者",
+      "waiting_for": "確認套件內容；補齊後才能重跑 collect 取得 records[].ref",
+      "merged_results": [10],
+      "do_today": false
+    },
+    {
+      "title": "不帶 Skill／v1 的 healthy 對照結果：自報 confirmed，但 gate 皆 RETURN_FOR_EVIDENCE",
+      "next_action": "僅作為版本比較資料：這些結果的 evidence_refs 不是合法 ref（UNKNOWN_SOURCE_REF），且 confirmed 與 missing_sources 並存。不採信其 confirmed 結論，也不併入已通過 gate 的 healthy 案件。排入下一次方法版本檢討。",
+      "owner": "Skill 維護者",
+      "waiting_for": "下一次方法版本檢討，沒有外部依賴",
+      "merged_results": [11, 12, 13, 14, 15, 16],
+      "do_today": false
+    }
+  ]
+}

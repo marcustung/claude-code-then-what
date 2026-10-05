@@ -1,0 +1,2 @@
+{"action": "block", "items": ["接收端收據缺失：receiver 狀態 unknown，需取得 receipts", "收據 notification_id 不符（3f1c9a7e… ≠ 7e746d"]}
+{"action": "pass", "bad_left": [], "stop_hook_active": true}

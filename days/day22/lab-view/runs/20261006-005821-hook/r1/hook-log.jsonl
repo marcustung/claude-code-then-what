@@ -1,0 +1,2 @@
+{"action": "block", "items": ["收據 notification_id 與發送紀錄不符（3f1c9a7e… vs ", "接收端收據缺漏（receipts.json 不在資料包），只有發送端 notif", "healthy 案例：發送端與接收端皆 confirmed，已通過固定檢查（RE"]}
+{"action": "pass", "bad_left": [], "stop_hook_active": true}

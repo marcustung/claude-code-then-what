@@ -1,0 +1,30 @@
+{
+  "source": "Day21 Eval decoy-receipt r1",
+  "method_version": "v1",
+  "gate_state": "RETURN_FOR_EVIDENCE",
+  "gate_errors": [
+    "UNKNOWN_SOURCE_REF",
+    "SENDER_EVIDENCE_REQUIRED"
+  ],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "evidence_refs": [
+      "data/logs.jsonl:2 (cancel ok, transitioned=true, notification_id=7e746d20...)",
+      "data/logs.jsonl:3 (notify_sent, notification_id=7e746d20..., 09:40:10.861+08:00)",
+      "data/receipts.json[0] (order_id/request_id/run_id 相符，但 notification_id=3f1c9a7e...，status 200)",
+      "src/Program.cs (cancel 產生 Guid 通知ID；Worker 送出後才記 notify_sent)",
+      "design/design-review.md 第2點 (收據單看不足以證明 payload)"
+    ],
+    "missing_sources": [
+      "接收端(FakeSink)中 notification_id=7e746d20... 的收據",
+      "接收端實際收到的原始 payload 紀錄",
+      "說明 3f1c9a7e... 來源的紀錄(是否為另一次通知或重送)"
+    ],
+    "next_action": "只做查詢：向接收端/FakeSink 擁有者取得 notification_id=7e746d20... 的收據與原始 payload，並釐清收據中 3f1c9a7e... 的來源。在對上前不補送、不結案。"
+  }
+}

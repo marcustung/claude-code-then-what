@@ -3,7 +3,7 @@
 **2026 iThome 鐵人賽・Claude AI 組・三十天系列的配套 repo。** 文章談的是一個工程團隊導入 Claude Code 之後，怎麼把「程式寫得更快」接回需求、審查、驗收與成效判斷；這裡放的是文章裡每一個實驗的原件——提示、trace、輸出、判準與重跑腳本——讓每一句「我試過」都能被打開來看。
 
 - 系列文章：[iThome 系列頁](https://ithelp.ithome.com.tw/users/20162577/ironman/9862)（每日一篇，2026-09-15 起）
-- 目前開放：Day 1–21（索引隨發文節奏開放，未發布的日子只有空資料夾）
+- 目前開放：Day 1–22（索引隨發文節奏開放，未發布的日子只有空資料夾）
 - 試跑紀錄：[VERIFIED.md](VERIFIED.md)（每一天的練習都在乾淨副本裡照 README 跑過，含時間、環境、修過的問題）
 
 ## 這個 repo 是什麼、不是什麼
@@ -66,6 +66,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [19](days/day19/) | 讓 Claude 專心判斷，把固定檢查交給程式 | [文章](https://ithelp.ithome.com.tw/articles/10420353) | day19/lab-result-gate：查核結果固定檢查、兩次 Claude 實跑與 39 次模型檢查 | 無 |
 | [20](days/day20/) | 我能跑，別人拿到也能跑嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10420719) | day20/lab-handoff：查核工具組、十次乾淨環境實跑與隱藏依賴（權限）對照 | 無 |
 | [21](days/day21/) | Skill 改了，怎麼知道沒改壞？ | [文章](https://ithelp.ithome.com.tw/articles/10421083) | day21/lab-eval：Skill Eval 三條件 27 次 | 無 |
+| [22](days/day22/) | Claude 查完了，團隊知道下一步嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10421518) | day22/lab-view：分工規則從提示到 hook，再用 Mod 看板顯示 | 無 |
 
 ## 怎麼核對一次 run
 

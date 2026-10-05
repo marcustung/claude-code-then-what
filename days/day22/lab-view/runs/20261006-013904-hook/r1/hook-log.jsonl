@@ -1,0 +1,2 @@
+{"action": "block", "items": ["接收端收據與發送紀錄對不上（收據 ID 為 3f1c9a7e…，非 7e746d", "接收端收據檔缺失，receiver 狀態 unknown"]}
+{"action": "pass", "bad_left": [], "stop_hook_active": true}

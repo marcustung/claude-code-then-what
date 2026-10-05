@@ -1,0 +1,2 @@
+{"action": "block", "items": ["收據對不上：receipts.json 只有 notification_id=3", "找不到接收端收據：發送端已確認（log:3），接收端 unknown"]}
+{"action": "pass", "bad_left": ["發送端與接收端一致，已通過固定檢查（READY_FOR_REVIEW），待人工核"], "stop_hook_active": true}

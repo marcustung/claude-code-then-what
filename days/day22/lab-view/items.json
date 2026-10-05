@@ -1,0 +1,411 @@
+{
+  "summary": {
+    "results": 31,
+    "items": 10,
+    "business_items": 3,
+    "business_need_human_today": 1,
+    "unknown_as_work": 2,
+    "machine_seconds_known": 898.6,
+    "model_cost_usd": 3.491,
+    "human_minutes": {
+      "準備": "未知",
+      "查核": "未知",
+      "返工": "未知",
+      "維護": "未知"
+    },
+    "day21_batch": "20261003-044716"
+  },
+  "items": [
+    {
+      "kind": "業務",
+      "title": "通知 7e746d20：資料完整",
+      "state": "READY_FOR_REVIEW",
+      "fact": "兩端紀錄相符",
+      "next": "核對後決定是否結案",
+      "owner": "服務 Owner",
+      "waiting": "等 Owner 核對",
+      "results_merged": 5,
+      "unknown_is_work": false
+    },
+    {
+      "kind": "業務",
+      "title": "通知 7e746d20：缺接收端收據",
+      "state": "NEEDS_FOLLOWUP",
+      "fact": "只有發送端紀錄",
+      "next": "向接收端補查收據",
+      "owner": "查核者",
+      "waiting": "等接收端資料",
+      "results_merged": 4,
+      "unknown_is_work": true
+    },
+    {
+      "kind": "業務",
+      "title": "通知 7e746d20：收據 ID 不符",
+      "state": "NEEDS_FOLLOWUP",
+      "fact": "收據屬於另一則通知 3f1c9a7e",
+      "next": "查明 3f1c9a7e 來源，補查本通知收據",
+      "owner": "查核者",
+      "waiting": "等接收端資料",
+      "results_merged": 3,
+      "unknown_is_work": true
+    },
+    {
+      "kind": "流程",
+      "title": "未用 v2 方法包的結果無法被檢查器驗證",
+      "state": "RETURN_FOR_EVIDENCE",
+      "fact": "條件分布 {'none': 9, 'v1': 9}；判斷本身正確，引用是自由文字",
+      "next": "日常查核一律用 v2.0.2；實驗對照組保留不處理",
+      "owner": "Skill 維護者",
+      "waiting": "無",
+      "results_merged": 18,
+      "unknown_is_work": false
+    },
+    {
+      "kind": "流程",
+      "title": "只交 SKILL.md 時固定檢查無法執行",
+      "state": "NOT_RUNNABLE",
+      "fact": "腳本不存在，Claude 標待查、未自行補寫",
+      "next": "INSTALL.md 第一步改為先跑 selftest",
+      "owner": "Skill 維護者",
+      "waiting": "無",
+      "results_merged": 1,
+      "unknown_is_work": false
+    },
+    {
+      "kind": "維護",
+      "title": "F1 selftest 在 cp950 主控台崩潰（2026-10-03 作者機）",
+      "state": "已修（見 CHANGELOG）",
+      "fact": "Day 20 交接實跑發現",
+      "next": "下次改版重跑 Day 21 的 27 次 Eval",
+      "owner": "Skill 維護者",
+      "waiting": "無",
+      "results_merged": 0,
+      "unknown_is_work": false
+    },
+    {
+      "kind": "維護",
+      "title": "F2 Skill 沒寫清楚 sender_status 允許值（complete-20261003-043626）",
+      "state": "已修（見 CHANGELOG）",
+      "fact": "Day 20 交接實跑發現",
+      "next": "下次改版重跑 Day 21 的 27 次 Eval",
+      "owner": "Skill 維護者",
+      "waiting": "無",
+      "results_merged": 0,
+      "unknown_is_work": false
+    },
+    {
+      "kind": "維護",
+      "title": "F3 Bash 白名單不等於只能跑白名單（同一次）",
+      "state": "已修（見 CHANGELOG）",
+      "fact": "Day 20 交接實跑發現",
+      "next": "下次改版重跑 Day 21 的 27 次 Eval",
+      "owner": "Skill 維護者",
+      "waiting": "無",
+      "results_merged": 0,
+      "unknown_is_work": false
+    },
+    {
+      "kind": "維護",
+      "title": "F4 沒有執行權限時，誠實但多慮（no-bash-20261003-043826）",
+      "state": "已記錄",
+      "fact": "Day 20 交接實跑發現",
+      "next": "下次改版重跑 Day 21 的 27 次 Eval",
+      "owner": "Skill 維護者",
+      "waiting": "無",
+      "results_merged": 0,
+      "unknown_is_work": false
+    },
+    {
+      "kind": "維護",
+      "title": "F5 只交 SKILL.md（skill-only-20261003-043901）",
+      "state": "已記錄",
+      "fact": "Day 20 交接實跑發現",
+      "next": "下次改版重跑 Day 21 的 27 次 Eval",
+      "owner": "Skill 維護者",
+      "waiting": "無",
+      "results_merged": 0,
+      "unknown_is_work": false
+    }
+  ],
+  "results": [
+    {
+      "src": "day20/complete-20261003-043626",
+      "case": "complete",
+      "cond": "v2",
+      "state": "READY_FOR_REVIEW",
+      "seconds": null,
+      "cost": 0.1584986,
+      "scenario": "complete"
+    },
+    {
+      "src": "day20/missing-20261003-043750",
+      "case": "missing-receipts",
+      "cond": "v2",
+      "state": "NEEDS_FOLLOWUP",
+      "seconds": 34.5,
+      "cost": 0.13536800000000002,
+      "scenario": "missing"
+    },
+    {
+      "src": "day20/no-bash-20261003-043826",
+      "case": "complete",
+      "cond": "v2",
+      "state": "READY_FOR_REVIEW",
+      "seconds": 34.6,
+      "cost": 0.1408112,
+      "scenario": "no-bash"
+    },
+    {
+      "src": "day20/skill-only-20261003-043901",
+      "case": "complete",
+      "cond": "v2",
+      "state": "NOT_RUNNABLE",
+      "seconds": 42.0,
+      "cost": 0.098164,
+      "scenario": "skill-only"
+    },
+    {
+      "src": "day21/complete__none__r1",
+      "case": "complete",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 23.9,
+      "cost": 0.10126399999999999,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/complete__none__r2",
+      "case": "complete",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 25.9,
+      "cost": 0.1035204,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/complete__none__r3",
+      "case": "complete",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 27.6,
+      "cost": 0.10487379999999999,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/complete__v1__r1",
+      "case": "complete",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 29.8,
+      "cost": 0.11838960000000001,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/complete__v1__r2",
+      "case": "complete",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 32.2,
+      "cost": 0.11169860000000001,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/complete__v1__r3",
+      "case": "complete",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 30.9,
+      "cost": 0.1200494,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/complete__v2__r1",
+      "case": "complete",
+      "cond": "v2",
+      "state": "READY_FOR_REVIEW",
+      "seconds": 47.5,
+      "cost": 0.12599380000000002,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/complete__v2__r2",
+      "case": "complete",
+      "cond": "v2",
+      "state": "READY_FOR_REVIEW",
+      "seconds": 34.3,
+      "cost": 0.12002760000000001,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/complete__v2__r3",
+      "case": "complete",
+      "cond": "v2",
+      "state": "READY_FOR_REVIEW",
+      "seconds": 32.5,
+      "cost": 0.09528740000000001,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__none__r1",
+      "case": "decoy-receipt",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 29.2,
+      "cost": 0.1026206,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__none__r2",
+      "case": "decoy-receipt",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 24.4,
+      "cost": 0.10226560000000001,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__none__r3",
+      "case": "decoy-receipt",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 25.0,
+      "cost": 0.102995,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__v1__r1",
+      "case": "decoy-receipt",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 26.1,
+      "cost": 0.11026659999999999,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__v1__r2",
+      "case": "decoy-receipt",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 26.7,
+      "cost": 0.1104244,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__v1__r3",
+      "case": "decoy-receipt",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 27.4,
+      "cost": 0.1133388,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__v2__r1",
+      "case": "decoy-receipt",
+      "cond": "v2",
+      "state": "NEEDS_FOLLOWUP",
+      "seconds": 31.2,
+      "cost": 0.11130219999999999,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__v2__r2",
+      "case": "decoy-receipt",
+      "cond": "v2",
+      "state": "NEEDS_FOLLOWUP",
+      "seconds": 28.3,
+      "cost": 0.1323432,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/decoy-receipt__v2__r3",
+      "case": "decoy-receipt",
+      "cond": "v2",
+      "state": "NEEDS_FOLLOWUP",
+      "seconds": 30.1,
+      "cost": 0.12726120000000002,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__none__r1",
+      "case": "missing-receipts",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 28.6,
+      "cost": 0.10014999999999999,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__none__r2",
+      "case": "missing-receipts",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 24.5,
+      "cost": 0.1000462,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__none__r3",
+      "case": "missing-receipts",
+      "cond": "none",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 24.3,
+      "cost": 0.10321539999999998,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__v1__r1",
+      "case": "missing-receipts",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 24.7,
+      "cost": 0.1044346,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__v1__r2",
+      "case": "missing-receipts",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 25.4,
+      "cost": 0.10738840000000001,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__v1__r3",
+      "case": "missing-receipts",
+      "cond": "v1",
+      "state": "RETURN_FOR_EVIDENCE",
+      "seconds": 26.2,
+      "cost": 0.11192279999999999,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__v2__r1",
+      "case": "missing-receipts",
+      "cond": "v2",
+      "state": "NEEDS_FOLLOWUP",
+      "seconds": 35.0,
+      "cost": 0.12198160000000001,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__v2__r2",
+      "case": "missing-receipts",
+      "cond": "v2",
+      "state": "NEEDS_FOLLOWUP",
+      "seconds": 36.7,
+      "cost": 0.0907264,
+      "scenario": "eval"
+    },
+    {
+      "src": "day21/missing-receipts__v2__r3",
+      "case": "missing-receipts",
+      "cond": "v2",
+      "state": "NEEDS_FOLLOWUP",
+      "seconds": 29.1,
+      "cost": 0.1048228,
+      "scenario": "eval"
+    }
+  ]
+}

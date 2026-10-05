@@ -1,0 +1,29 @@
+{
+  "source": "Day21 Eval missing-receipts r1",
+  "method_version": "v1",
+  "gate_state": "RETURN_FOR_EVIDENCE",
+  "gate_errors": [
+    "UNKNOWN_SOURCE_REF",
+    "SENDER_EVIDENCE_REQUIRED"
+  ],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "evidence_refs": [
+      "data/logs.jsonl:2 (cancel ok, transitioned=true, refund_requested=true, notification_id=7e74...)",
+      "data/logs.jsonl:3 (notify_sent，同 notification_id、order_id、request_id)",
+      "data/logs.jsonl:1 (startup faults_loaded=false，無故障注入)",
+      "src/Program.cs NotificationWorker：notify_sent 只在 sink 回應成功狀態碼後才寫",
+      "design/design-review.md 第2點：單看收據不足，需接收端觀察 payload"
+    ],
+    "missing_sources": [
+      "接收端 FakeSink 的收據或 payload 紀錄（127.0.0.1:63878/notify）",
+      "/metrics 計數（notify_sent_total、dead_letter）"
+    ],
+    "next_action": "由操作者取得 FakeSink 對 notification_id 7e746d20853d48b9b3948c1fe92319c1 的收據，比對 order_id 與 refund_requested=true；取得前接收端維持 unknown。本次不補送、不結案。"
+  }
+}

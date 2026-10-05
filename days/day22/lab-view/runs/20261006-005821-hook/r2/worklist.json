@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "title": "接收端收據的 notification_id 與發送紀錄不符（receipts.json 為 3f1c9a7e…，發送為 7e746d20…）",
+      "next_step": "查核者向接收端／FakeSink 的負責人索取 notification_id=7e746d20853d48b9b3948c1fe92319c1 的收據或存取紀錄，並查明收據 3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b 的來源（另一次發送、測試資料或 ID 被改寫）。補齊並重跑檢查前接收端維持 unknown，不補送、不結案；證據齊全後再交服務 Owner 決定。",
+      "owner": "查核者",
+      "waiting_for": "接收端對 7e746d20… 的收據／sink 存取紀錄，以及 3f1c9a7e… 的來源說明",
+      "merged_result_ids": ["20", "21", "22", "23", "24", "25", "26", "27", "28"],
+      "do_today": true
+    },
+    {
+      "title": "接收端收據缺失（receipts.json 不在資料包），接收端狀態無法判定",
+      "next_step": "查核者向操作者取得接收端（FakeSink）以 notification_id=7e746d20853d48b9b3948c1fe92319c1 留下的收據與 payload，比對 order_id 與 refund_requested=true，重跑檢查後才可把 receiver 改為 confirmed。取得前維持 unknown，不判定未送達，也不補送、不結案。",
+      "owner": "查核者",
+      "waiting_for": "接收端 receipts.json 或 sink 保存的收據／payload（選配：/metrics 快照）",
+      "merged_result_ids": ["08", "29", "30", "31", "32", "33", "34", "35", "36", "37"],
+      "do_today": true
+    },
+    {
+      "title": "正常案例（發送端與接收端一致）等人工核對",
+      "next_step": "服務 Owner 核對 log:3 與 receipt:0 是否為同一筆通知，並決定是否結案。核對紀錄要寫明前提：接收端版本沿用發送端、資料為本機教學 fixture、未跑 .NET、未連正式 Log server。第 11～16 筆（不帶 Skill／v1）結論相同但檢查器退回，只當佐證。",
+      "owner": "服務 Owner",
+      "waiting_for": "服務 Owner 對是否結案的決定",
+      "merged_result_ids": ["01", "06", "11", "12", "13", "14", "15", "16", "17", "18", "19"],
+      "do_today": true
+    },
+    {
+      "title": "固定檢查在部分執行環境跑不起來（collect.py 未授權、無 bash、缺 scripts），產出 unknown",
+      "next_step": "確認 Skill 的 collect.py／gate.py 有隨 v2.0.2 一併打包，並在 Skill 設定中預先允許執行；補上『檢查器無法執行時一律回 unknown 且標明原因』的規則。第 09 筆的 evidence_refs 是人工推得、gate 沒跑，不可採信為 READY_FOR_REVIEW。這些結果都不代表服務有問題。",
+      "owner": "Skill 維護者",
+      "waiting_for": "Skill 維護者修正打包與權限設定後重跑（不阻擋服務端工作）",
+      "merged_result_ids": ["02", "03", "04", "05", "07", "09", "10"],
+      "do_today": false
+    }
+  ]
+}

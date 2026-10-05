@@ -1,0 +1,32 @@
+{
+  "source": "Day21 Eval complete r1",
+  "method_version": "v1",
+  "gate_state": "RETURN_FOR_EVIDENCE",
+  "gate_errors": [
+    "UNKNOWN_SOURCE_REF",
+    "SENDER_EVIDENCE_REQUIRED",
+    "RECEIVER_EVIDENCE_REQUIRED",
+    "CONFIRMED_WITH_MISSING_SOURCE"
+  ],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "confirmed",
+    "evidence_refs": [
+      "data/logs.jsonl:2 (cancel, result=ok, transitioned=true, refund_requested=true, notification_id=7e746d20853d48b9b3948c1fe92319c1)",
+      "data/logs.jsonl:3 (notify_sent，同 notification_id、order_id、request_id)",
+      "data/receipts.json item 0 (接收端 status 200，payload 同 notification_id/order_id，kind=order_cancelled，refund_requested=true，attempt=0)",
+      "src/Program.cs:105-114,283-287 (transitioned 才建通知；接收端 ack 後才記 notify_sent)",
+      "data/logs.jsonl:1 (startup，faults_loaded=false，version 與 task.json 相符)"
+    ],
+    "missing_sources": [
+      "遠端 Log server（本次未連線）",
+      "正式環境資料（本資料為本機教學夾具）",
+      "FakeSink 原始存取日誌與 /metrics 快照（僅能以 receipts.json 為接收端依據）"
+    ],
+    "next_action": "無需補送。如需更強佐證，可由操作者取得 FakeSink 原始日誌或 /metrics（notify_sent_total、dead_letter）交叉比對；本查核不補送、不結案。"
+  }
+}

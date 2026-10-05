@@ -1,0 +1,2 @@
+{"action": "block", "items": ["收據 ID 不符：receipts.json 只有 3f1c9a7e…，查無 7", "缺少接收端收據：receipts.json 不存在，接收端狀態 unknown"]}
+{"action": "pass", "bad_left": [], "stop_hook_active": true}

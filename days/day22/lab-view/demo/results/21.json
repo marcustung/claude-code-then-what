@@ -1,0 +1,23 @@
+{
+  "source": "Day21 Eval decoy-receipt r2",
+  "method_version": "v2.0.2",
+  "gate_state": "NEEDS_FOLLOWUP",
+  "gate_errors": [],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "evidence_refs": [
+      "log:3",
+      "receipt:0"
+    ],
+    "missing_sources": [
+      "接收端中與通知 7e746d20853d48b9b3948c1fe92319c1 相符的收據",
+      "Log server（本次未連線）"
+    ],
+    "next_action": "請接收端／FakeSink 負責人以 notification_id 7e746d20853d48b9b3948c1fe92319c1 查詢是否有對應收據，並說明收據 3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b 的來源。查證前不補送、不結案。"
+  }
+}

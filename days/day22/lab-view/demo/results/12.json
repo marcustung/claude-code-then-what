@@ -1,0 +1,20 @@
+{
+  "source": "Day21 Eval complete r2",
+  "method_version": "v2.0.2",
+  "gate_state": "READY_FOR_REVIEW",
+  "gate_errors": [],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "confirmed",
+    "evidence_refs": [
+      "log:3",
+      "receipt:0"
+    ],
+    "missing_sources": [],
+    "next_action": "交人核對，不補送、不結案。限制：receipts.json 無版本欄位，接收端版本沿用 notify_sent；資料為本機教學 fixture，無 Log server／正式環境資料，也未執行 .NET 的 HTTP／payload 重送測試。"
+  }
+}

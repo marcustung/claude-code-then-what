@@ -1,0 +1,20 @@
+{
+  "source": "Day20 交接實跑 no-bash",
+  "method_version": "v2.0.x",
+  "gate_state": "READY_FOR_REVIEW",
+  "gate_errors": [],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "confirmed",
+    "evidence_refs": [
+      "log:3",
+      "receipt:0"
+    ],
+    "missing_sources": [],
+    "next_action": "交人核對：固定檢查（collect.py／gate.py）本次未能執行，evidence_refs 為人工依 collect.py 邏輯推得，請於可執行 Python 的環境重跑 gate.py 後再核對；不補送、不結案。"
+  }
+}

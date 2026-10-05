@@ -1,6 +1,6 @@
 {
- "files": 3188,
- "binary": 134,
+ "files": 3135,
+ "binary": 137,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
   "days\\day09\\lab-scope\\runs\\r0-naive\\trace.jsonl",
@@ -298,12 +298,6 @@
   "days\\day08\\lab\\runs\\r3\\trace.jsonl",
   "days\\day10\\lab\\day10\\trace.jsonl",
   "days\\day16\\lab\\.claude\\settings.json",
-  "days\\day16\\lab-service\\.claude\\settings.json",
-  "days\\day16\\lab-service\\observability\\claude-dashboard-run.py",
-  "days\\day16\\lab-service\\observability\\claude-gcx-run.py",
-  "days\\day16\\lab-service\\slo\\brake-cases.js",
-  "days\\day16\\lab-service\\slo\\run-brake.py",
-  "days\\day16\\lab-service\\specs\\notification-contract-v2.1.md",
   "days\\day20\\lab-handoff\\run-handoff.py",
   "days\\day20\\lab-handoff\\runs\\complete-20261003-043626\\command.json",
   "days\\day20\\lab-handoff\\runs\\complete-20261003-043626\\selftest.json",
@@ -422,23 +416,28 @@
   "days\\day21\\lab-eval\\runs\\20261003-044716\\missing-receipts__v2__r1\\trace.jsonl",
   "days\\day21\\lab-eval\\runs\\20261003-044716\\missing-receipts__v2__r2\\trace.jsonl",
   "days\\day21\\lab-eval\\runs\\20261003-044716\\missing-receipts__v2__r3\\trace.jsonl",
-  "days\\day21\\lab-eval\\runs\\smoke\\decoy-receipt__none__r0\\trace.jsonl"
+  "days\\day21\\lab-eval\\runs\\smoke\\decoy-receipt__none__r0\\trace.jsonl",
+  "days\\day22\\lab-view\\mod\\.claude-plugin\\plugin.json",
+  "days\\day22\\lab-view\\runs\\20261003-052241\\r1\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261003-052241\\r2\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261003-052241\\r3\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261005-054840-policy\\r1\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261005-054840-policy\\r2\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261005-054840-policy\\r3\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-005821-hook\\r1\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-005821-hook\\r2\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-005821-hook\\r3\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-013643-policy\\r1\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-013643-policy\\r2\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-013643-policy\\r3\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-013904-hook\\r1\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-013904-hook\\r2\\trace.jsonl",
+  "days\\day22\\lab-view\\runs\\20261006-013904-hook\\r3\\trace.jsonl"
  ],
  "forbidden": [],
- "oversized": [
-  [
-   "examples\\order-cancel-lifecycle\\k6\\results\\run-20260925-172355.json",
-   1242896030
-  ],
-  [
-   "examples\\order-cancel-lifecycle\\runs\\default\\logs.jsonl",
-   81446487
-  ],
-  [
-   "examples\\order-cancel-lifecycle\\runs\\default\\receipts.jsonl",
-   22945821
-  ]
+ "frozen": [
+  "days/day16/lab-service"
  ],
  "figures": 50,
- "bytes": 244886905
+ "bytes": 261038263
 }

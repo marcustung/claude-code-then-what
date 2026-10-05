@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "title": "healthy 情境：發送端與接收端皆已確認，交人核對（本機教學 fixture）",
+      "next_step": "核對 log:3 與 receipt:0 是否一致，決定是否接受；注意接收端版本沿用發送端、未跑 .NET、未連正式 Log server，結論不涵蓋正式環境",
+      "owner": "服務 Owner",
+      "waiting_on": "服務 Owner 的核對與接受／結案決定（證據已齊，檢查器為 READY_FOR_REVIEW）",
+      "merged_result_ids": ["01", "06", "17", "18", "19"],
+      "do_today": true
+    },
+    {
+      "title": "decoy-receipt 情境：收據的 notification_id（3f1c9a7e…）與發送紀錄（7e746d20…）不符，接收端無對應收據",
+      "next_step": "向接收端／FakeSink 查詢 7e746d20853d48b9b3948c1fe92319c1 是否有收據，並查明 3f1c9a7e… 的來源；取得前接收端維持 unknown，不補送、不結案",
+      "owner": "查核者",
+      "waiting_on": "接收端對應 7e746d20… 的收據或 sink 日誌，以及 3f1c9a7e… 的來源說明",
+      "merged_result_ids": ["20", "21", "22", "23", "24", "25", "26", "27", "28"],
+      "do_today": true
+    },
+    {
+      "title": "missing-receipts 情境：缺接收端收據（receipts.json），接收端狀態 unknown",
+      "next_step": "取得接收端收據或 payload 紀錄（含 refund_requested），以 notification_id 比對；有對應紀錄才能把 receiver 改為 confirmed。可順便取 /metrics 快照。不補送、不結案",
+      "owner": "查核者",
+      "waiting_on": "接收端（FakeSink）收據／payload 紀錄",
+      "merged_result_ids": ["08", "29", "30", "31", "32", "33", "34", "35", "36", "37"],
+      "do_today": true
+    },
+    {
+      "title": "no-bash 那次結果的 evidence_refs 是人工推得，固定檢查沒跑",
+      "next_step": "在能執行 Python 的環境重跑 collect.py 與 gate.py，確認 log:3、receipt:0 後再併入 healthy 項目",
+      "owner": "查核者",
+      "waiting_on": "可執行 Python 的環境與一次 gate.py 結果",
+      "merged_result_ids": ["09"],
+      "do_today": true
+    },
+    {
+      "title": "固定檢查跑不起來：collect.py 無執行授權（5 筆），skill-only 版缺 collect.py／gate.py（1 筆）",
+      "next_step": "確認 Skill 套件含 scripts/collect.py 與 gate.py，並釐清授權／權限設定為何擋住 collect.py；這 6 筆 unknown 是流程失敗，不是服務問題，不重跑，healthy 情境已有 01、06 的實跑結果",
+      "owner": "Skill 維護者",
+      "waiting_on": "無外部依賴，維護者自行補齊套件與權限說明",
+      "merged_result_ids": ["02", "03", "04", "05", "07", "10"],
+      "do_today": true
+    },
+    {
+      "title": "不帶 Skill／v1 的 healthy 結果被檢查器退回（UNKNOWN_SOURCE_REF 等）",
+      "next_step": "結論（confirmed）與 healthy 項目一致，只是 evidence_refs 格式不合 records[].ref，且把 Log server、metrics 當 missing_sources 卻標 confirmed；之後再評估是否要在 Skill 強制 ref 格式。這些不構成服務待辦",
+      "owner": "Skill 維護者",
+      "waiting_on": "無，非阻塞，排在其他事項後",
+      "merged_result_ids": ["11", "12", "13", "14", "15", "16"],
+      "do_today": false
+    }
+  ]
+}

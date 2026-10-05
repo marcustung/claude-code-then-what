@@ -1,0 +1,32 @@
+{
+  "source": "Day21 Eval complete r3",
+  "method_version": "不帶 Skill",
+  "gate_state": "RETURN_FOR_EVIDENCE",
+  "gate_errors": [
+    "UNKNOWN_SOURCE_REF",
+    "SENDER_EVIDENCE_REQUIRED",
+    "RECEIVER_EVIDENCE_REQUIRED",
+    "CONFIRMED_WITH_MISSING_SOURCE"
+  ],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "confirmed",
+    "evidence_refs": [
+      "data/logs.jsonl:2 cancel result=ok transitioned=true refund_requested=true notification_id=7e746d20853d48b9b3948c1fe92319c1",
+      "data/logs.jsonl:3 notify_sent notification_id=7e746d20853d48b9b3948c1fe92319c1 order_id=r2-healthy-01 (2026-09-29T09:40:10.861+08:00)",
+      "data/receipts.json[0] status=200 notification_id=7e746d20853d48b9b3948c1fe92319c1 order_id=r2-healthy-01 kind=order_cancelled refund_requested=true attempt=0 (at 1790646010.858 = 09:40:10.858+08:00)",
+      "src/Program.cs NotificationWorker: notify_sent 只在 sink 回 2xx 後才記錄"
+    ],
+    "missing_sources": [
+      "Log server（本次未連線，僅用本地 data/logs.jsonl）",
+      "/metrics 計數（notify_sent_total、dead_letter）未提供",
+      "接收端獨立日誌（receipts.json 為唯一接收端資料）",
+      "未執行 .NET，未實際重現"
+    ],
+    "next_action": "無需補送或結案。若日後有 Log server，再比對同 notification_id 是否重複送達；本次只做查詢與分析。"
+  }
+}

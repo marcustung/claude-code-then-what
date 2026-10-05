@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python \"days/day22/lab-view/hook/check_worklist.py\"", "timeout": 30 }
+        ]
+      }
+    ]
+  }
+}

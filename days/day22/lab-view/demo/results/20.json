@@ -1,0 +1,21 @@
+{
+  "source": "Day21 Eval decoy-receipt r1",
+  "method_version": "v2.0.2",
+  "gate_state": "NEEDS_FOLLOWUP",
+  "gate_errors": [],
+  "result": {
+    "schema_version": 1,
+    "order_id": "r2-healthy-01",
+    "notification_id": "7e746d20853d48b9b3948c1fe92319c1",
+    "version": "delivery-hardening-local-r2",
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "evidence_refs": [
+      "log:3"
+    ],
+    "missing_sources": [
+      "接收端對應 notification_id 7e746d20853d48b9b3948c1fe92319c1 的收據"
+    ],
+    "next_action": "人工確認 receipts.json 的 notification_id 3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b 與 log 的 7e746d20... 為何不同，並取得接收端對應 7e746d20... 的收據；本次不補送、不結案。"
+  }
+}

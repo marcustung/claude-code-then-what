@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "title": "接收端查無對應收據：取得 notification_id 7e746d20… 的收據，並查明誤植收據 3f1c9a7e… 的來源",
+      "next_step": "向接收端／FakeSink 負責人索取 7e746d20853d48b9b3948c1fe92319c1 的收據或存取紀錄，並釐清 receipts.json 內 3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b 是另一次發送、測試資料或 ID 被改寫。取得前接收端維持 unknown，不補送、不結案。",
+      "owner": "查核者",
+      "waiting_for": "接收端對應 7e746d20… 的收據，以及 3f1c9a7e… 的來源說明",
+      "merged_result_ids": ["14", "15", "16", "17", "18", "19", "20", "21", "22"],
+      "do_today": true
+    },
+    {
+      "title": "收據檔缺失：取得 receipts.json（FakeSink 紀錄）並比對 notification_id 與 payload",
+      "next_step": "向操作者／接收端取得 data/receipts.json 或 sink 保存的 payload，比對 notification_id、order_id 與 refund_requested=true，再更新接收端狀態。取得前接收端維持 unknown，不判定未送達，不補送、不結案。",
+      "owner": "查核者",
+      "waiting_for": "接收端收據檔 receipts.json（或 sink 的接收紀錄與 payload）",
+      "merged_result_ids": ["02", "23", "24", "25", "26", "27", "28", "29", "30", "31"],
+      "do_today": true
+    },
+    {
+      "title": "資料齊全且固定檢查通過（READY_FOR_REVIEW）：人工核對送達結論",
+      "next_step": "核對 log:3 與 receipt:0 的 notification_id、order_id 相符，確認可接受「發送端、接收端皆 confirmed」。結論僅限本機教學資料，未涵蓋正式 Log server，也未跑 .NET payload／順序重送測試；是否結案由 Owner 決定。",
+      "owner": "服務 Owner",
+      "waiting_for": "Owner 的核對與是否結案的決定（證據已齊）",
+      "merged_result_ids": ["01", "11", "12", "13"],
+      "do_today": true
+    },
+    {
+      "title": "no-bash 那次固定檢查（collect.py／gate.py）未執行，evidence_refs 為人工推得",
+      "next_step": "在可執行 Python 的環境重跑 collect.py 與 gate.py，確認 log:3、receipt:0 的引用正確；通過後併入「人工核對送達結論」那件。",
+      "owner": "查核者",
+      "waiting_for": "可執行 Python 的環境與 gate.py 的實際結果",
+      "merged_result_ids": ["03"],
+      "do_today": true
+    },
+    {
+      "title": "skill-only 版本缺 scripts/collect.py 與 gate.py，NOT_RUNNABLE",
+      "next_step": "補齊 collect.py、gate.py 到 Skill 套件（含 records[].ref 的產生），再用同一份資料重跑確認可通過固定檢查。",
+      "owner": "Skill 維護者",
+      "waiting_for": "Skill 套件補上 collect.py／gate.py",
+      "merged_result_ids": ["04"],
+      "do_today": true
+    },
+    {
+      "title": "不帶 Skill／v1 的結果被固定檢查退回（UNKNOWN_SOURCE_REF 等），結論 confirmed 不採用",
+      "next_step": "不另外處理：同一筆通知已有 v2.0.2 通過檢查的結果。這 6 筆只留作方法比較的紀錄，其自由文字引用與 confirmed 結論不納入對外結論。",
+      "owner": "Skill 維護者",
+      "waiting_for": "無；已被 01／11／12／13 取代",
+      "merged_result_ids": ["05", "06", "07", "08", "09", "10"],
+      "do_today": false
+    }
+  ]
+}
