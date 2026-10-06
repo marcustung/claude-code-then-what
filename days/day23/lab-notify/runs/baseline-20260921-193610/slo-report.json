@@ -1,0 +1,54 @@
+{
+ "run_id": "baseline-20260921-193610",
+ "version": "1.0.0",
+ "scenario": "baseline",
+ "mode": "functional",
+ "rules_version": "1.2",
+ "verdict": "ok",
+ "findings": [
+  {
+   "id": "SLI-01",
+   "name": "取消請求成功率",
+   "source": "spec",
+   "level": "ok",
+   "detail": "20 筆請求，狀態分布 {200: 15, 409: 3, 401: 1, 404: 1}，規格外狀態 0 筆"
+  },
+  {
+   "id": "SLI-02",
+   "name": "通知對帳率",
+   "source": "spec",
+   "level": "ok",
+   "detail": "轉換 9.0／唯一收據 9"
+  },
+  {
+   "id": "SLI-03",
+   "name": "客戶端 p95 延遲",
+   "source": "spec",
+   "level": "n/a",
+   "detail": "客戶端 p95=None ms（門檻 250）｜本情境 mode=functional，本條不適用"
+  },
+  {
+   "id": "SLI-04",
+   "name": "GC heap 成長",
+   "source": "spec",
+   "level": "n/a",
+   "detail": "heap 成長 None MB（門檻 64，0 個取樣）｜本情境 mode=functional，本條不適用"
+  },
+  {
+   "id": "SLI-05",
+   "name": "通知佇列殘留",
+   "source": "post-hoc",
+   "level": "ok",
+   "detail": "run 結束時佇列深度 0.0"
+  }
+ ],
+ "dashboard_vs_client": {
+  "histogram_p50_ms": null,
+  "client_p50_ms": null,
+  "histogram_p95_ms": null,
+  "client_p95_ms": null,
+  "first_bucket_le_ms": null,
+  "pct_samples_in_first_bucket": null,
+  "note": "伺服器直方圖與客戶端量到的是不同東西：直方圖只含 handler 內部，客戶端含連線、排隊與序列化。落在第一個桶裡的比例越高，histogram_quantile 的結果越接近純內插。"
+ }
+}
