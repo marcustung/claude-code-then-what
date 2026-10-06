@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10421896) |
 | 今天練習 | 拿修正前後兩版程式與四次執行紀錄，先用固定對帳程式重算 9／3 的落差，再請 Claude 沿同一筆通知對照契約、Log 與程式，找出延後分支為何被記成已送出 |
 | 需要什麼 | Python 3（重算）；Claude Code CLI（對照分析） |
 | 跑什麼 | `cd days/day23/lab-notify; 依 README 複製 runs/ 後執行 python tools/check.py <副本>` |
