@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10422240) |
 | 今天練習 | 從規格決定要留的訊號，用 OpenTelemetry 補排隊時間與跨背景工作的 Trace，再透過唯讀 MCP 呼叫 gcx 讓 Claude 自己查；比較補觀測前後能回答什麼 |
 | 需要什麼 | Windows、Docker Desktop、.NET 9 SDK、Python 3、gcx；最後一步需 Claude Code CLI |
 | 跑什麼 | `cd days/day24/lab-observability; python setup.py; python run.py; python verify.py; python run-claude.py` |

@@ -68,7 +68,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [21](days/day21/) | Skill 改了，怎麼知道沒改壞？ | [文章](https://ithelp.ithome.com.tw/articles/10421083) | day21/lab-eval：Skill Eval 三條件 27 次 | 無 |
 | [22](days/day22/) | Claude 查完了，團隊知道下一步嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10421518) | day22/lab-view：分工規則從提示到 hook，再用 Mod 看板顯示 | 無 |
 | [23](days/day23/) | 上線後都沒報錯，監控真的看得到問題嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10421896) | day23/lab-notify：通知延後分支、修正前後四次對帳與 Claude 唯讀對照 | 無 |
-| [24](days/day24/) | 通知慢在哪？先讓系統說話，Claude 才查得清楚 | 未發 | day24/lab-observability：OTel 補排隊與 Trace，唯讀 MCP＋gcx 讓 Claude 自己查 | 無 |
+| [24](days/day24/) | 通知慢在哪？先讓系統說話，Claude 才查得清楚 | [文章](https://ithelp.ithome.com.tw/articles/10422240) | day24/lab-observability：OTel 補排隊與 Trace，唯讀 MCP＋gcx 讓 Claude 自己查 | 無 |
 
 ## 怎麼核對一次 run
 
