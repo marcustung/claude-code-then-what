@@ -1,0 +1,5 @@
+**/bin/
+**/obj/
+gcx-config-location.txt
+latest-run.txt
+**/mcp.json

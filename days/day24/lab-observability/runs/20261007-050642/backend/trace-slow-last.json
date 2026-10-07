@@ -1,0 +1,323 @@
+{
+  "batches": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "lab.variant",
+            "value": {
+              "stringValue": "after"
+            }
+          },
+          {
+            "key": "service.instance.id",
+            "value": {
+              "stringValue": "d255fb88-8e43-41f5-bf79-96178d677725"
+            }
+          },
+          {
+            "key": "telemetry.sdk.language",
+            "value": {
+              "stringValue": "dotnet"
+            }
+          },
+          {
+            "key": "telemetry.sdk.name",
+            "value": {
+              "stringValue": "opentelemetry"
+            }
+          },
+          {
+            "key": "telemetry.sdk.version",
+            "value": {
+              "stringValue": "1.15.3"
+            }
+          },
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "day24-api-slow"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "Microsoft.AspNetCore"
+          },
+          "spans": [
+            {
+              "traceId": "xHw3mteQA4DlUC8wlbHsbg==",
+              "spanId": "fG7fbRFhZHg=",
+              "name": "POST /orders/{id}/cancel",
+              "kind": "SPAN_KIND_SERVER",
+              "startTimeUnixNano": "1791320838757735800",
+              "endTimeUnixNano": "1791320838759326700",
+              "attributes": [
+                {
+                  "key": "server.port",
+                  "value": {
+                    "intValue": "5124"
+                  }
+                },
+                {
+                  "key": "url.scheme",
+                  "value": {
+                    "stringValue": "http"
+                  }
+                },
+                {
+                  "key": "network.protocol.version",
+                  "value": {
+                    "stringValue": "1.1"
+                  }
+                },
+                {
+                  "key": "user_agent.original",
+                  "value": {
+                    "stringValue": "Python-urllib/3.14"
+                  }
+                },
+                {
+                  "key": "http.response.status_code",
+                  "value": {
+                    "intValue": "200"
+                  }
+                },
+                {
+                  "key": "http.request.method",
+                  "value": {
+                    "stringValue": "POST"
+                  }
+                },
+                {
+                  "key": "url.path",
+                  "value": {
+                    "stringValue": "/orders/after-slow-8/cancel"
+                  }
+                },
+                {
+                  "key": "server.address",
+                  "value": {
+                    "stringValue": "127.0.0.1"
+                  }
+                },
+                {
+                  "key": "http.route",
+                  "value": {
+                    "stringValue": "/orders/{id}/cancel"
+                  }
+                }
+              ],
+              "status": {}
+            }
+          ]
+        },
+        {
+          "scope": {
+            "name": "System.Net.Http"
+          },
+          "spans": [
+            {
+              "traceId": "xHw3mteQA4DlUC8wlbHsbg==",
+              "spanId": "TTf5G8pe1qs=",
+              "parentSpanId": "xl4aV6q+HSs=",
+              "name": "POST",
+              "kind": "SPAN_KIND_CLIENT",
+              "startTimeUnixNano": "1791320840945348900",
+              "endTimeUnixNano": "1791320841211482500",
+              "attributes": [
+                {
+                  "key": "server.port",
+                  "value": {
+                    "intValue": "5125"
+                  }
+                },
+                {
+                  "key": "url.full",
+                  "value": {
+                    "stringValue": "http://127.0.0.1:5125/notify"
+                  }
+                },
+                {
+                  "key": "http.response.status_code",
+                  "value": {
+                    "intValue": "200"
+                  }
+                },
+                {
+                  "key": "network.protocol.version",
+                  "value": {
+                    "stringValue": "1.1"
+                  }
+                },
+                {
+                  "key": "http.request.method",
+                  "value": {
+                    "stringValue": "POST"
+                  }
+                },
+                {
+                  "key": "server.address",
+                  "value": {
+                    "stringValue": "127.0.0.1"
+                  }
+                }
+              ],
+              "status": {}
+            }
+          ]
+        },
+        {
+          "scope": {
+            "name": "Day24.Notifications"
+          },
+          "spans": [
+            {
+              "traceId": "xHw3mteQA4DlUC8wlbHsbg==",
+              "spanId": "xl4aV6q+HSs=",
+              "parentSpanId": "fG7fbRFhZHg=",
+              "name": "notification.process",
+              "kind": "SPAN_KIND_CONSUMER",
+              "startTimeUnixNano": "1791320840944640300",
+              "endTimeUnixNano": "1791320841213601800",
+              "attributes": [
+                {
+                  "key": "notification.id",
+                  "value": {
+                    "stringValue": "60a97ad5a18b4728bf325826cf9cae8a"
+                  }
+                },
+                {
+                  "key": "run.id",
+                  "value": {
+                    "stringValue": "after-slow"
+                  }
+                },
+                {
+                  "key": "queue.wait_ms",
+                  "value": {
+                    "doubleValue": 2186.6189
+                  }
+                }
+              ],
+              "status": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "lab.variant",
+            "value": {
+              "stringValue": "after"
+            }
+          },
+          {
+            "key": "service.instance.id",
+            "value": {
+              "stringValue": "4c543cbc-47ac-4c2f-be5b-c7f4ff217417"
+            }
+          },
+          {
+            "key": "telemetry.sdk.language",
+            "value": {
+              "stringValue": "dotnet"
+            }
+          },
+          {
+            "key": "telemetry.sdk.name",
+            "value": {
+              "stringValue": "opentelemetry"
+            }
+          },
+          {
+            "key": "telemetry.sdk.version",
+            "value": {
+              "stringValue": "1.15.3"
+            }
+          },
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "day24-fakesink-slow"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "Microsoft.AspNetCore"
+          },
+          "spans": [
+            {
+              "traceId": "xHw3mteQA4DlUC8wlbHsbg==",
+              "spanId": "R/xsuKa1HPg=",
+              "parentSpanId": "TTf5G8pe1qs=",
+              "name": "POST /notify",
+              "kind": "SPAN_KIND_SERVER",
+              "startTimeUnixNano": "1791320840951695700",
+              "endTimeUnixNano": "1791320841210454600",
+              "attributes": [
+                {
+                  "key": "server.port",
+                  "value": {
+                    "intValue": "5125"
+                  }
+                },
+                {
+                  "key": "url.scheme",
+                  "value": {
+                    "stringValue": "http"
+                  }
+                },
+                {
+                  "key": "network.protocol.version",
+                  "value": {
+                    "stringValue": "1.1"
+                  }
+                },
+                {
+                  "key": "http.response.status_code",
+                  "value": {
+                    "intValue": "200"
+                  }
+                },
+                {
+                  "key": "http.request.method",
+                  "value": {
+                    "stringValue": "POST"
+                  }
+                },
+                {
+                  "key": "url.path",
+                  "value": {
+                    "stringValue": "/notify"
+                  }
+                },
+                {
+                  "key": "server.address",
+                  "value": {
+                    "stringValue": "127.0.0.1"
+                  }
+                },
+                {
+                  "key": "http.route",
+                  "value": {
+                    "stringValue": "/notify"
+                  }
+                }
+              ],
+              "status": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

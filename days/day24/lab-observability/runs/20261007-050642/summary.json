@@ -1,0 +1,46 @@
+[
+  {
+    "variant": "before",
+    "case": "normal",
+    "start": "2026-10-06T21:06:42.752469+00:00",
+    "end": "2026-10-06T21:06:52.392775+00:00",
+    "sink_delay_ms": 0,
+    "cancellations": 9,
+    "repeat_cancel_transitioned": false,
+    "received": 9,
+    "duplicates": 0
+  },
+  {
+    "variant": "before",
+    "case": "slow",
+    "start": "2026-10-06T21:06:52.442786+00:00",
+    "end": "2026-10-06T21:07:04.299724+00:00",
+    "sink_delay_ms": 250,
+    "cancellations": 9,
+    "repeat_cancel_transitioned": false,
+    "received": 9,
+    "duplicates": 0
+  },
+  {
+    "variant": "after",
+    "case": "normal",
+    "start": "2026-10-06T21:07:04.343743+00:00",
+    "end": "2026-10-06T21:07:17.368724+00:00",
+    "sink_delay_ms": 0,
+    "cancellations": 9,
+    "repeat_cancel_transitioned": false,
+    "received": 9,
+    "duplicates": 0
+  },
+  {
+    "variant": "after",
+    "case": "slow",
+    "start": "2026-10-06T21:07:17.435062+00:00",
+    "end": "2026-10-06T21:07:29.229640+00:00",
+    "sink_delay_ms": 250,
+    "cancellations": 9,
+    "repeat_cancel_transitioned": false,
+    "received": 9,
+    "duplicates": 0
+  }
+]

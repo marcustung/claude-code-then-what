@@ -1,0 +1,8 @@
+{
+  "src\\Api\\Api.csproj": "53221be216a76a5608d588d2518a5cb5bd188486f754b00d1aca3b1d74ac8db8",
+  "src\\Api\\Program.cs": "590a2b16eee6b781ea5a354644d184a098a6ecf784bb8a3fbdbec863f8c92a26",
+  "src\\Domain\\Cancellation.cs": "722b3b5cb5002b327dd2e539532d2daed390dff06e54162b10e64deede02bc59",
+  "src\\Domain\\Domain.csproj": "489dc7ac07da11ca0bf21f8d6bc2acc183fff159b1c671a8df33f76ebf7c293f",
+  "src\\FakeSink\\FakeSink.csproj": "b5ad903c1cd4f746db616fa39a6c75496504a81771f562ef110b53e6a6dad162",
+  "src\\FakeSink\\Program.cs": "9a5f75da5de5b90976554424d39aa9303944b24d35b5848eb48c6ae492fdddfd"
+}

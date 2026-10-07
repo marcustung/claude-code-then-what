@@ -1,0 +1,204 @@
+{
+  "functional_runs": [
+    {
+      "variant": "before",
+      "case": "normal",
+      "start": "2026-10-06T21:06:42.752469+00:00",
+      "end": "2026-10-06T21:06:52.392775+00:00",
+      "sink_delay_ms": 0,
+      "cancellations": 9,
+      "repeat_cancel_transitioned": false,
+      "received": 9,
+      "duplicates": 0
+    },
+    {
+      "variant": "before",
+      "case": "slow",
+      "start": "2026-10-06T21:06:52.442786+00:00",
+      "end": "2026-10-06T21:07:04.299724+00:00",
+      "sink_delay_ms": 250,
+      "cancellations": 9,
+      "repeat_cancel_transitioned": false,
+      "received": 9,
+      "duplicates": 0
+    },
+    {
+      "variant": "after",
+      "case": "normal",
+      "start": "2026-10-06T21:07:04.343743+00:00",
+      "end": "2026-10-06T21:07:17.368724+00:00",
+      "sink_delay_ms": 0,
+      "cancellations": 9,
+      "repeat_cancel_transitioned": false,
+      "received": 9,
+      "duplicates": 0
+    },
+    {
+      "variant": "after",
+      "case": "slow",
+      "start": "2026-10-06T21:07:17.435062+00:00",
+      "end": "2026-10-06T21:07:29.229640+00:00",
+      "sink_delay_ms": 250,
+      "cancellations": 9,
+      "repeat_cancel_transitioned": false,
+      "received": 9,
+      "duplicates": 0
+    }
+  ],
+  "slow_trace_chain": [
+    {
+      "service": "day24-api-slow",
+      "name": "POST /orders/{id}/cancel",
+      "id": "7c6edf6d11616478",
+      "parent": "",
+      "duration_ms": 1.5909,
+      "attributes": {
+        "server.port": {
+          "intValue": "5124"
+        },
+        "url.scheme": {
+          "stringValue": "http"
+        },
+        "network.protocol.version": {
+          "stringValue": "1.1"
+        },
+        "user_agent.original": {
+          "stringValue": "Python-urllib/3.14"
+        },
+        "http.response.status_code": {
+          "intValue": "200"
+        },
+        "http.request.method": {
+          "stringValue": "POST"
+        },
+        "url.path": {
+          "stringValue": "/orders/after-slow-8/cancel"
+        },
+        "server.address": {
+          "stringValue": "127.0.0.1"
+        },
+        "http.route": {
+          "stringValue": "/orders/{id}/cancel"
+        }
+      }
+    },
+    {
+      "service": "day24-api-slow",
+      "name": "POST",
+      "id": "4d37f91bca5ed6ab",
+      "parent": "c65e1a57aabe1d2b",
+      "duration_ms": 266.1336,
+      "attributes": {
+        "server.port": {
+          "intValue": "5125"
+        },
+        "url.full": {
+          "stringValue": "http://127.0.0.1:5125/notify"
+        },
+        "http.response.status_code": {
+          "intValue": "200"
+        },
+        "network.protocol.version": {
+          "stringValue": "1.1"
+        },
+        "http.request.method": {
+          "stringValue": "POST"
+        },
+        "server.address": {
+          "stringValue": "127.0.0.1"
+        }
+      }
+    },
+    {
+      "service": "day24-api-slow",
+      "name": "notification.process",
+      "id": "c65e1a57aabe1d2b",
+      "parent": "7c6edf6d11616478",
+      "duration_ms": 268.9615,
+      "attributes": {
+        "notification.id": {
+          "stringValue": "60a97ad5a18b4728bf325826cf9cae8a"
+        },
+        "run.id": {
+          "stringValue": "after-slow"
+        },
+        "queue.wait_ms": {
+          "doubleValue": 2186.6189
+        }
+      }
+    },
+    {
+      "service": "day24-fakesink-slow",
+      "name": "POST /notify",
+      "id": "47fc6cb8a6b51cf8",
+      "parent": "4d37f91bca5ed6ab",
+      "duration_ms": 258.7589,
+      "attributes": {
+        "server.port": {
+          "intValue": "5125"
+        },
+        "url.scheme": {
+          "stringValue": "http"
+        },
+        "network.protocol.version": {
+          "stringValue": "1.1"
+        },
+        "http.response.status_code": {
+          "intValue": "200"
+        },
+        "http.request.method": {
+          "stringValue": "POST"
+        },
+        "url.path": {
+          "stringValue": "/notify"
+        },
+        "server.address": {
+          "stringValue": "127.0.0.1"
+        },
+        "http.route": {
+          "stringValue": "/notify"
+        }
+      }
+    }
+  ],
+  "async_parent_chain_valid": true,
+  "slow_queue_wait_ms_min": 1.9659,
+  "slow_queue_wait_ms_max": 2186.6189,
+  "backend_event_records": 72,
+  "metric_series": [
+    {
+      "metric": {
+        "__name__": "notification_queue_wait_milliseconds_count",
+        "instance": "38797083-27c0-4970-b263-ebf80af7dfb9",
+        "job": "day24-api-normal",
+        "service_instance_id": "38797083-27c0-4970-b263-ebf80af7dfb9",
+        "service_name": "day24-api-normal"
+      },
+      "value": [
+        1791320900.04,
+        "9"
+      ]
+    },
+    {
+      "metric": {
+        "__name__": "notification_queue_wait_milliseconds_count",
+        "instance": "d255fb88-8e43-41f5-bf79-96178d677725",
+        "job": "day24-api-slow",
+        "service_instance_id": "d255fb88-8e43-41f5-bf79-96178d677725",
+        "service_name": "day24-api-slow"
+      },
+      "value": [
+        1791320900.04,
+        "9"
+      ]
+    }
+  ],
+  "limitations": [
+    "Single local synthetic run per condition",
+    "No measured human effort",
+    "No business logic repair",
+    "Missing datasource test is query failure, not actual delivery failure"
+  ],
+  "receiver_logs_complete_for_both_cases": true,
+  "original_copy_and_domain_unchanged": true
+}

@@ -1,0 +1,6 @@
+{
+  "dotnet": "9.0.314",
+  "claude": "2.1.292 (Claude Code)",
+  "gcx": "FIELD       VALUE\nVersion     1.1.0\nCommit      a94d0b90b2940e6634b7c4b73b3e85b35247f20c\nBuild Date  2026-08-14T10:41:55Z\nGo          go1.26.3\nOS          windows\nArch        amd64",
+  "image": "[\"grafana/otel-lgtm@sha256:d6b20e35890ef2f91d13944805939acdaf1e5d3ffbf9f9aed08586312826c815\"]"
+}

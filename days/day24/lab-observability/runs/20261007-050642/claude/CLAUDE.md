@@ -1,0 +1,1 @@
+Only synthetic teaching materials in this directory. Read only. Use supplied MCP to retrieve telemetry. Do not read parent/home/company files. Distinguish observations, inference, unknown. No changes.

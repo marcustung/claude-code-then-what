@@ -1,0 +1,7 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 52.13,
+  "model": "sonnet",
+  "tools": "Read,Grep,Glob + readonly gcx adapter",
+  "budget_usd": 3
+}

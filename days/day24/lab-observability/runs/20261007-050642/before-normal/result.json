@@ -1,0 +1,11 @@
+{
+  "variant": "before",
+  "case": "normal",
+  "start": "2026-10-06T21:06:42.752469+00:00",
+  "end": "2026-10-06T21:06:52.392775+00:00",
+  "sink_delay_ms": 0,
+  "cancellations": 9,
+  "repeat_cancel_transitioned": false,
+  "received": 9,
+  "duplicates": 0
+}

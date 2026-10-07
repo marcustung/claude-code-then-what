@@ -1,0 +1,110 @@
+[
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-0",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  },
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-1",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  },
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-2",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  },
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-3",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  },
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-4",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  },
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-5",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  },
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-6",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  },
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-7",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  },
+  {
+    "ok": true,
+    "transitioned": true,
+    "refund_requested": false,
+    "reason": null,
+    "request_id": "after-normal-after-normal-8",
+    "order": {
+      "shipped": false,
+      "paid": false,
+      "cancelled": true
+    }
+  }
+]

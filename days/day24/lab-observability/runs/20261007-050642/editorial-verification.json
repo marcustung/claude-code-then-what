@@ -1,0 +1,17 @@
+{
+  "published_equal": true,
+  "all_local_links_exist": true,
+  "image_paths_checked": [
+    "../../assets/covers/v12/day-24/day24-observability-design-r3.png",
+    "../../assets/diagrams/v12/investigation-notes/day24-claude-tool-loop-r2.png",
+    "../../../assets/covers/v12/day-24/day24-observability-design-r3.png",
+    "../../../assets/diagrams/v12/investigation-notes/day24-claude-tool-loop-r2.png"
+  ],
+  "no_double_em_dash": true,
+  "python_syntax": true,
+  "backend_verification": "recheck/result.json",
+  "model_tool_queries": 10,
+  "model_tool_errors": 2,
+  "title_warning": "Retained approved title without Claude/AI",
+  "not_published": true
+}

@@ -1,6 +1,6 @@
 {
- "files": 3217,
- "binary": 139,
+ "files": 3314,
+ "binary": 154,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
   "days\\day09\\lab-scope\\runs\\r0-naive\\trace.jsonl",
@@ -435,12 +435,17 @@
   "days\\day22\\lab-view\\runs\\20261006-013904-hook\\r3\\trace.jsonl",
   "days\\day23\\lab-notify\\claude-run\\first-copy-missing-brace\\r3.json",
   "days\\day23\\lab-notify\\claude-run\\ws\\specs\\notification-contract-v2.1.md",
-  "days\\day23\\lab-notify\\specs\\notification-contract-v2.1.md"
+  "days\\day23\\lab-notify\\specs\\notification-contract-v2.1.md",
+  "days\\day24\\lab-observability\\runs\\20261007-050642\\backend\\logs.json",
+  "days\\day24\\lab-observability\\runs\\20261007-050642\\claude\\mcp.json",
+  "days\\day24\\lab-observability\\runs\\20261007-050642\\claude\\notification-contract.md",
+  "days\\day24\\lab-observability\\runs\\20261007-050642\\claude\\trace.jsonl",
+  "days\\day24\\order-cancel-lifecycle\\specs\\notification-contract-v2.1.md"
  ],
  "forbidden": [],
  "frozen": [
   "days/day16/lab-service"
  ],
  "figures": 50,
- "bytes": 270124073
+ "bytes": 273504397
 }
