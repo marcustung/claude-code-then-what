@@ -46,7 +46,11 @@ python run-claude.py
 
 先在 Grafana Explore 選 Loki，使用 `summary.json` 的起訖時間與對應服務名稱查接收端事件。從事件取 `trace_id`，再到 Tempo 查同一條 Trace。這些 ID 每次會變，不能把文章那一輪的 ID 直接用在新一輪。
 
-## 工具設定：唯讀 MCP 怎麼接
+## 工具設定
+
+兩種接法都實跑過，結果一致，擇一即可：**A. 自訂唯讀 MCP**（文章主線，查詢入口最小）；**B. 官方接法：終端機執行 gcx，加允許清單與 `debug-with-grafana` Skill**（讀者照做最容易）。
+
+### A. 自訂唯讀 MCP
 
 `run-claude.py` 會在本輪工作目錄寫一份 `mcp.json`，以 `--mcp-config` 掛上 `observability` 伺服器（`gcx_readonly_mcp.py`），並用 `--strict-mcp-config` 只載入它：
 
@@ -72,6 +76,33 @@ gcx logs query -d loki --expr '{service_name="day24-fakesink-slow"} |= "notifica
 重點看 `--expr` 那一段：先限定接收端，再找 `notification_received`。`-d` 指定資料來源，`service_name` 限定接收端，時間窗取自本輪執行紀錄。這裡的時間是佔位文字，重跑時要換成自己的時間。取得 Log 中的 `trace_id` 後，再以 `gcx traces get -d tempo <trace_id> --llm` 讀那一條 Trace。
 
 這是自訂介面，不是官方 Grafana MCP server。
+
+### B. 官方接法：Bash 執行 gcx＋允許清單＋Skill
+
+`run-claude-official.py` 不掛 MCP，讓 Claude 用 Bash 直接執行 gcx（gcx 偵測到 Claude Code 會自動進入 agent mode，輸出 JSON）。執行方式：
+
+```powershell
+python run-claude-official.py claude-official-skill
+```
+
+| 限制 | 設定 |
+|---|---|
+| 內建工具 | `--tools Read,Grep,Glob,Bash,Skill` |
+| Bash 允許清單 | 只放行 `gcx datasources list`、`gcx logs query／labels／series`、`gcx metrics query／labels`、`gcx traces query／get／labels`；**不放行 `gcx config`**（可能印出 token），其他指令在 `-p` 模式自動拒絕 |
+| Skill | gcx 附的 `debug-with-grafana`（`gcx agent skills list` 可查）。`--restricted` 會忽略 user／project 設定與其中的 Skill，所以腳本把它包成臨時 plugin，以 `--plugin-dir` 載入 |
+| gcx 設定 | `GCX_CONFIG` 指向 `setup.py` 寫在 TEMP 的私人設定，只有 `day24` context |
+| Grafana 帳號 | Viewer，只讀本機教學環境 |
+| 稽核 | 不另寫稽核檔；`trace.jsonl`（stream-json）已記下每條 Bash 指令與輸出 |
+
+10-08 用同一份保存資料補跑兩組，與 A 比較：
+
+| 接法 | 修改後排隊時間 | 修改前 | 清單外指令 | 費用／耗時 |
+|---|---|---|---|---|
+| A 自訂 MCP | 約 2,187 ms | 未知 | 無法嘗試 | US$0.36／50 秒 |
+| B 不帶 Skill（`runs/.../claude-official`） | 約 2,185 ms | 未知 | 2 次，皆擋下 | US$0.29／57 秒 |
+| B 加 Skill（`runs/.../claude-official-skill`） | 約 2,187 ms | 未知 | 4 次（含 `gcx config view`），皆擋下 | US$0.35／70 秒 |
+
+三組各跑一次，只說明這次結果一致。官方接法可行的前提，是允許清單與 Viewer 帳號都先設好。
 
 ## 怎麼確認工具已準備好
 

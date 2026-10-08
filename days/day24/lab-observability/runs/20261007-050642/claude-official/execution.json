@@ -1,0 +1,23 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 59.91,
+  "model": "sonnet",
+  "tools": "Read,Grep,Glob,Skill + Bash allowlist of gcx query subcommands",
+  "skill": "debug-with-grafana",
+  "allowed": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Skill",
+    "Bash(gcx datasources list:*)",
+    "Bash(gcx logs query:*)",
+    "Bash(gcx logs labels:*)",
+    "Bash(gcx logs series:*)",
+    "Bash(gcx metrics query:*)",
+    "Bash(gcx metrics labels:*)",
+    "Bash(gcx traces query:*)",
+    "Bash(gcx traces get:*)",
+    "Bash(gcx traces labels:*)"
+  ],
+  "budget_usd": 3
+}

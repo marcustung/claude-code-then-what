@@ -21,7 +21,7 @@ for i in range(60):
  except Exception:time.sleep(1)
 else:raise RuntimeError("Grafana not ready")
 account=api("/api/serviceaccounts",{"name":"day24-reader-"+str(int(time.time())),"role":"Viewer"})
-token=api(f'/api/serviceaccounts/{account["id"]}/tokens',{"name":"day24-lab","secondsToLive":86400})["key"]
+token=api(f'/api/serviceaccounts/{account["id"]}/tokens',{"name":"day24-lab-"+str(int(time.time())),"secondsToLive":86400})["key"]
 conf=Path(os.environ.get("TEMP","."))/"day24-gcx-private.yaml"
 r=subprocess.run(["gcx","login","day24","--config",str(conf),"--server","http://127.0.0.1:3224","--token",token,"--yes"],capture_output=True,text=True)
 if r.returncode:raise RuntimeError("gcx login failed; private output withheld")

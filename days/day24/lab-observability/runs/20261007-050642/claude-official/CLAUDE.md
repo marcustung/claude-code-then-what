@@ -1,0 +1,1 @@
+Only synthetic teaching materials in this directory. Read only. Use gcx via Bash to retrieve telemetry (query subcommands only). Do not read parent/home/company files. Distinguish observations, inference, unknown. No changes.

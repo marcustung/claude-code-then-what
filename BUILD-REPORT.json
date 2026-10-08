@@ -1,5 +1,5 @@
 {
- "files": 3314,
+ "files": 3350,
  "binary": 154,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
@@ -440,12 +440,16 @@
   "days\\day24\\lab-observability\\runs\\20261007-050642\\claude\\mcp.json",
   "days\\day24\\lab-observability\\runs\\20261007-050642\\claude\\notification-contract.md",
   "days\\day24\\lab-observability\\runs\\20261007-050642\\claude\\trace.jsonl",
+  "days\\day24\\lab-observability\\runs\\20261007-050642\\claude-official\\notification-contract.md",
+  "days\\day24\\lab-observability\\runs\\20261007-050642\\claude-official\\trace.jsonl",
+  "days\\day24\\lab-observability\\runs\\20261007-050642\\claude-official-skill\\notification-contract.md",
+  "days\\day24\\lab-observability\\runs\\20261007-050642\\claude-official-skill\\trace.jsonl",
   "days\\day24\\order-cancel-lifecycle\\specs\\notification-contract-v2.1.md"
  ],
  "forbidden": [],
  "frozen": [
   "days/day16/lab-service"
  ],
- "figures": 50,
- "bytes": 275416258
+ "figures": 43,
+ "bytes": 276145319
 }
