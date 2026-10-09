@@ -1,0 +1,13 @@
+{
+  "task": "logql-payment-warning-volume",
+  "category": "loki_query",
+  "set": "holdout",
+  "rep": 1,
+  "scenario_time": "2026-10-03T21:32:35Z",
+  "seconds": 47.2,
+  "cost_usd": 0.0944642,
+  "turns": 11,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

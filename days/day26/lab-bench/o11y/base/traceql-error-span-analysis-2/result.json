@@ -1,0 +1,13 @@
+{
+  "task": "traceql-error-span-analysis",
+  "category": "tempo_query",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-03T21:50:46Z",
+  "seconds": 76.9,
+  "cost_usd": 0.1619684,
+  "turns": 20,
+  "score": 0.25,
+  "checks_passed": 0,
+  "rubric_passed": 0
+}

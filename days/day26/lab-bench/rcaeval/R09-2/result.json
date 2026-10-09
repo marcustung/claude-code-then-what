@@ -1,0 +1,20 @@
+{
+  "case": "R09",
+  "suite": "RE3-TT",
+  "set": "design",
+  "rep": 2,
+  "truth_service": "ts-auth-service",
+  "truth_fault": "f2",
+  "seconds": 68.6,
+  "cost_usd": 0.1561156,
+  "turns": 12,
+  "answer": "ts-auth-service",
+  "top3": [
+    "ts-auth-service",
+    "ts-auth-mongo",
+    "ts-ui-dashboard"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

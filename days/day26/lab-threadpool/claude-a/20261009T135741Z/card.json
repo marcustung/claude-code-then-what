@@ -1,0 +1,97 @@
+{
+  "symptom": "負載 384 筆取消、併發 96:321 筆回 200,63 筆沒有 HTTP 狀態碼(status 0)。這 63 筆是 35 筆 WinError 10054 連線被遠端強制關閉,加 28 筆 30 秒逾時。客戶端 p95 約 30009 ms,等於逾時上限。程式設定的外部查詢延遲只有 500 ms(Program.cs:219)。",
+  "hypotheses": [
+    {
+      "rank": 1,
+      "cause": "H1 執行緒集區飢餓:取消 handler 在集區執行緒上同步阻塞(sync-over-async),執行緒被 500ms 的等待佔住。處理器提示為 2,集區只能慢慢增加執行緒,請求在 pending 排隊,於是變慢、逾時或被切斷連線。",
+      "would_refute": "oc_tp_pending 長期接近 0;或 oc_tp_threads 一開始就接近併發量 96;或 stacks 沒有執行緒卡在同步等待的呼叫上;或程式碼裡沒有同步阻塞呼叫。",
+      "checks": [
+        {
+          "tool": "query_observability metrics_range",
+          "query_or_file": "oc_tp_pending{job=\"order-investigation-135741\"},區間全程 1 秒 step",
+          "result": "起初為 0(1791554194–97)。從 1791554198 起快速堆積:5→64→93,之後一路升到 177(1791554242)。這段約 45 秒的 pending 都大於 80,最高 177。收尾時才降回 0。"
+        },
+        {
+          "tool": "query_observability metrics_range",
+          "query_or_file": "oc_tp_threads{job=...},區間全程",
+          "result": "從 1 條開始(1791554193),約 54 秒內才升到 94 條並持平(1791554247 起)。其中 1791554199–1791554242 這段幾乎每秒只加 1 條(24→69)。這是集區緩慢注入執行緒的形狀,不是一開始就有 96 條。"
+        },
+        {
+          "tool": "query_observability metrics_range",
+          "query_or_file": "oc_tp_completed{job=...}(累計)",
+          "result": "1791554199–1791554225 這 27 秒只從 2659 增到 2926,約 10 個項目/秒,吞吐量幾乎停滯。1791554243 之後才大量完成,到 8696。這符合先卡住、之後執行緒數追上才排空。"
+        },
+        {
+          "tool": "read_project",
+          "query_or_file": "src/Api/Program.cs:69, 216-221",
+          "result": "第 69 行 CustomerHistory.Prepare() 在 async handler 內同步呼叫。第 220 行 Prepare() 是 FetchAsync().GetAwaiter().GetResult(),而第 219 行 FetchAsync 只是 await Task.Delay(500)。handler 因此佔住一條集區執行緒 500ms。"
+        },
+        {
+          "tool": "read_project",
+          "query_or_file": "evidence/stacks.txt:27-54、56-89、96-120(只讀前 120/843 行)",
+          "result": "多條集區 worker 執行緒的堆疊停在 Task.SpinThenBlockingWait → InternalWaitCore → Api!CustomerHistory.Prepare() → 取消 handler(Program.cs 的 lambda)。這是同一版程式另一輪診斷取樣,只能當機制佐證,不能拿來跟計時結果比。"
+        }
+      ],
+      "verdict": "支持"
+    },
+    {
+      "rank": 2,
+      "cause": "H2 CPU 飽和:取消邏輯吃 CPU,慢是因為排隊等 CPU。",
+      "would_refute": "集區吃緊的時段,oc_cpu_core_percent 遠低於 100%(單核基準,2 核上限約 200%)。",
+      "checks": [
+        {
+          "tool": "query_observability metrics_range",
+          "query_or_file": "oc_cpu_core_percent{job=...}(相對單核的百分比)",
+          "result": "最慢的時段(1791554199–1791554242,約 44 秒)幾乎全是 0,只有 1791554203 出現 13.6。整段最高 55。遠低於單核 100%,更不到 2 核 200%。"
+        }
+      ],
+      "verdict": "排除"
+    },
+    {
+      "rank": 3,
+      "cause": "H3 GC 或記憶體壓力造成暫停或 OOM。",
+      "would_refute": "oc_gc_heap_bytes 平穩且很小,Loki 沒有 OOM 或 unhandled_exception。",
+      "checks": [
+        {
+          "tool": "query_observability metrics_range",
+          "query_or_file": "oc_gc_heap_bytes{job=...}",
+          "result": "全程只有約 1–18 MB。慢的時段在 3–6 MB 之間緩升,1791554232 有一次下降(6.2→4.5 MB),屬於正常回收。結尾升到 17.7 MB 是排空後大量完成的請求所致。量級完全不構成記憶體壓力。"
+        },
+        {
+          "tool": "query_observability logs",
+          "query_or_file": "{service_name=...} |~ \"ERROR|unhandled|OutOfMemory|WARN\"",
+          "result": "整段只回傳 3 筆 WARN:not_found、unauthorized、rejected_shipped,都是預期的業務結果。其中 rejected_shipped 的 latency_ms 為 516.6,接近 500ms 基線。沒有 unhandled_exception、OOM 或 notify_dead_letter。"
+        }
+      ],
+      "verdict": "排除"
+    },
+    {
+      "rank": 4,
+      "cause": "H4 鎖競爭、通知 worker 或 sink 失敗拖慢請求。",
+      "would_refute": "鎖內工作很短;通知走 Channel 非同步送出;日誌沒有 notify 失敗。",
+      "checks": [
+        {
+          "tool": "read_project",
+          "query_or_file": "src/Api/Program.cs:97-98, 107, 143, 82",
+          "result": "OrderStore、Metrics、JsonlLog 的鎖內只有字典或檔案附加,工作很短。handler 用 await channel.Writer.WriteAsync(第 82 行),不等 sink。上面的 ERROR 過濾查詢也沒有任何 notify_attempt_failed 或 dead_letter。這些都不足以解釋 pending 堆到 177、threads 慢爬。"
+        }
+      ],
+      "verdict": "排除"
+    }
+  ],
+  "conclusion": "最可能原因是 H1,執行緒集區飢餓,證據是 pending、threads 和程式碼三方互相吻合。每個取消請求都在 src/Api/Program.cs:69 呼叫 CustomerHistory.Prepare()。它在 :220 用 .GetAwaiter().GetResult() 同步等 500ms 的 Task.Delay,等於每個請求佔住一條集區執行緒 500ms。處理器提示只有 2,集區最小執行緒數很低,96 個併發一次湧入時,集區只能靠緩慢注入新執行緒。指標印證了這點:threads 從 1 爬到 94 花了約 54 秒;pending 在這段中堆到 80–177;吞吐量在 1791554199–1791554225 之間降到約 10 個/秒;CPU 幾乎為 0,GC 堆只有數 MB。這是等待型阻塞,不是計算型。\n\n客戶端的 35 筆 WinError 10054 和 28 筆逾時,與排隊等待的方向一致:請求在 pending 中排隊超過 30 秒。但連線被重置的直接機制(Kestrel 還是客戶端逾時)我沒有證據釐清,下面列為未知。\n\n次要觀察:RequestAudit(Program.cs:148-153)的 _items 是無上限記憶體清單,長期會增長。本次僅數 MB,不是這次事故的原因。需求要求保留稽核,所以不建議為了這次問題而動它。",
+  "proposed_fix": {
+    "file": "src/Api/Program.cs",
+    "line": 69,
+    "change": "把 `CustomerHistory.Prepare();` 改成 `await CustomerHistory.FetchAsync();`。500ms 延遲完整保留,符合 specs/requirements.md 第 5 行禁止刪除或縮短的規定,只是等待時不再佔用集區執行緒。之後可考慮移除或不再使用第 220 行的同步 Prepare()。這只是建議的最小修法,我沒有修改任何檔案。",
+    "risk": "低。handler 本來就是 async lambda,改成 await 不會改變回應內容、授權和退款規則,500ms 延遲也還在。需要注意:取消流程是先讀 before、再寫 store(第 63–74 行),await 讓更多請求同時交錯,同一個訂單的併發取消可能都讀到未取消狀態,形成競態。第 74 行 store.Put 和 transitioned 判斷不是原子的,因此 NC-01/NC-02(每次真正取消只通知一次、重複取消不再通知)有被重複通知的風險。目前同步阻塞反而因併發度低而不容易暴露。修好後要用同一訂單的併發取消測重複通知。"
+  },
+  "how_to_verify": "專案內沒有提供負載產生器、重跑環境或自動化測試的路徑,我不會編造路徑。我建議這樣驗證,需要先補齊缺件(見未知項):\n1. 用同一個負載(384 筆取消、併發 96、客戶端逾時 30 秒)再跑一輪,保持相同的版本以外條件。\n2. 看 oc_tp_pending:不應再長期堆在 80–177,預期接近 0。\n3. 看 oc_tp_threads:不需要爬到約 94 條。\n4. 看客戶端摘要(evidence/client-summary.json 的同格式輸出):status 0 的 63 筆應歸零,p95 應接近 500ms 加上排隊餘量,不再貼近 30009ms。\n5. 看 oc_tp_completed 的斜率:應該從一開始就穩定上升,不再有約 27 秒的停滯。\n6. 驗證業務正確性:對同一個訂單併發送多次取消,用獨立接收端確認每個真正取消只留下一筆 order_id 通知,不重複(需求第 4 行)。",
+  "unknowns": [
+    "沒有負載產生器、重跑環境或自動化測試的路徑,所以修後驗證只能列步驟,不能代跑。缺件:可重現 384/96 負載的腳本、可部署修正版的環境、獨立通知接收端的紀錄。",
+    "stacks.txt 共 843 行,我只讀了前 120 行。其餘執行緒的堆疊沒讀,不能說明全部執行緒的分布。它也是另一輪診斷取樣,不能拿來跟計時結果混著比。",
+    "35 筆 WinError 10054(連線被重置)的直接機制沒有證據:可能是客戶端或中介在逾時後關閉,也可能是 Kestrel 側的行為。伺服器日誌沒有對應的例外。我只有排隊與逾時的間接一致性。",
+    "第一次查詢全部 Loki 日誌時結果太大被截斷,我沒有讀完整份。改用 ERROR/WARN/unhandled/OOM 過濾後只看到 3 筆 WARN。沒有檢查每筆請求的 latency_ms 分布,所以不能給出伺服器端的延遲百分位。",
+    "最小執行緒數的實際設定值(ThreadPool.SetMinThreads)沒有在 Program.cs 前 240 行看到,也沒讀第 241–247 行。我是依處理器提示 2 與 threads 的爬升曲線推論集區注入緩慢,並非讀到設定值。"
+  ]
+}

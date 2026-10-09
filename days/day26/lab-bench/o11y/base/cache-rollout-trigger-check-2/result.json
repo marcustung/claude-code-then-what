@@ -1,0 +1,13 @@
+{
+  "task": "cache-rollout-trigger-check",
+  "category": "investigation",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-03T22:06:17Z",
+  "seconds": 65.5,
+  "cost_usd": 0.1885388,
+  "turns": 18,
+  "score": 0.85,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

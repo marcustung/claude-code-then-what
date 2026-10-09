@@ -1,0 +1,38 @@
+{
+  "source_repair": "examples/day26-threadpool-lab/claude-b/20261009T135823Z",
+  "validated_run": "examples/day26-threadpool-lab/repair-validation/20261009T140251Z",
+  "files": [
+    {
+      "path": "specs/requirements.md",
+      "sha256": "263975b0b2b4e1ce13a82d0d2dd7bd58c962a86754a4982e334705717a3616b4"
+    },
+    {
+      "path": "src/Api/Api.csproj",
+      "sha256": "53221be216a76a5608d588d2518a5cb5bd188486f754b00d1aca3b1d74ac8db8"
+    },
+    {
+      "path": "src/Api/Program.cs",
+      "sha256": "478337b20183924fd7d4f5c00fca51eee6d05661cee3e3b13943c6cee237053e"
+    },
+    {
+      "path": "src/Domain/Cancellation.cs",
+      "sha256": "f8cd1d0f801a9e8c5d6337d8c764d65e4aa2089421ae7d0149228344e43362ab"
+    },
+    {
+      "path": "src/Domain/Domain.csproj",
+      "sha256": "489dc7ac07da11ca0bf21f8d6bc2acc183fff159b1c671a8df33f76ebf7c293f"
+    },
+    {
+      "path": "src/FakeSink/FakeSink.csproj",
+      "sha256": "b5ad903c1cd4f746db616fa39a6c75496504a81771f562ef110b53e6a6dad162"
+    },
+    {
+      "path": "src/FakeSink/Program.cs",
+      "sha256": "9a5f75da5de5b90976554424d39aa9303944b24d35b5848eb48c6ae492fdddfd"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "3c5b3f34667eaf089c4bdc82f01b98438ade4952d6d5f0f521415f10445d167b"
+    }
+  ]
+}

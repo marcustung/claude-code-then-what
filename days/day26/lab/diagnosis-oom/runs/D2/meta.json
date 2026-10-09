@@ -1,0 +1,10 @@
+{
+    "exit_code":  0,
+    "arguments":  "-p --model sonnet --effort low --strict-mcp-config --no-session-persistence --setting-sources \"\" --output-format stream-json --verbose --tools Read,Grep,Glob --allowedTools Read,Grep,Glob",
+    "prompt_sha256":  "C3306AA9131D661F0A33BB417CBB228445732DEFA39A5427A05FDBDBBFD7D976",
+    "name":  "D2",
+    "cwd":  "<REPO>\\examples\\order-cancel-lifecycle\\diagnosis\\oom\\snapshot",
+    "arm":  "A",
+    "started_utc":  "2026-09-21T12:21:09.3355038Z",
+    "ended_utc":  "2026-09-21T12:21:58.1272929Z"
+}

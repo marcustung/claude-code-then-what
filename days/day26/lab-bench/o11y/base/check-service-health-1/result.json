@@ -1,0 +1,13 @@
+{
+  "task": "check-service-health",
+  "category": "prometheus_query",
+  "set": "design",
+  "rep": 1,
+  "scenario_time": "2026-10-03T21:36:24Z",
+  "seconds": 33.5,
+  "cost_usd": 0.0679138,
+  "turns": 11,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

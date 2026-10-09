@@ -1,0 +1,13 @@
+{
+  "task": "service-degradation-rca",
+  "category": "investigation",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-03T21:33:57Z",
+  "seconds": 49.6,
+  "cost_usd": 0.13378460000000003,
+  "turns": 13,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

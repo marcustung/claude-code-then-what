@@ -1,0 +1,76 @@
+[
+  {
+    "mode": "claude-repair",
+    "diagnostic": false,
+    "request_count": 384,
+    "concurrency": 96,
+    "elapsed_s": 2.274,
+    "p50_ms": 544.1,
+    "p95_ms": 588.2,
+    "max_ms": 602.8,
+    "http_200": 384,
+    "thread_peak": 8,
+    "pending_peak": 72,
+    "cpu_core_percent_mean": 75.8,
+    "heap_peak_mb": 7.3,
+    "receipts": {
+      "received": 387,
+      "duplicates": 0
+    },
+    "checks": {
+      "all_http_200": true,
+      "all_transitioned": true,
+      "refund_preserved": true,
+      "states_cancelled": true,
+      "exact_receiver_order_ids": true,
+      "no_duplicate_notifications": true,
+      "idempotent": true,
+      "shipped_409": true,
+      "unauthorized_401": true,
+      "missing_404": true,
+      "no_extra_receipts": true,
+      "same_order_only_one_transition": true,
+      "same_order_only_one_notification": true
+    },
+    "load_start_epoch": 1791554577.1544611,
+    "load_end_epoch": 1791554579.4284747,
+    "dll_sha256": "e823fb0acbc68acbe78cdd63a84dc615192d10f3d045b37dd2f1262cff91e5a8"
+  },
+  {
+    "mode": "claude-repair",
+    "diagnostic": false,
+    "request_count": 384,
+    "concurrency": 96,
+    "elapsed_s": 2.267,
+    "p50_ms": 544.1,
+    "p95_ms": 573.5,
+    "max_ms": 591.7,
+    "http_200": 384,
+    "thread_peak": 9,
+    "pending_peak": 56,
+    "cpu_core_percent_mean": 65.1,
+    "heap_peak_mb": 9.0,
+    "receipts": {
+      "received": 387,
+      "duplicates": 0
+    },
+    "checks": {
+      "all_http_200": true,
+      "all_transitioned": true,
+      "refund_preserved": true,
+      "states_cancelled": true,
+      "exact_receiver_order_ids": true,
+      "no_duplicate_notifications": true,
+      "idempotent": true,
+      "shipped_409": true,
+      "unauthorized_401": true,
+      "missing_404": true,
+      "no_extra_receipts": true,
+      "same_order_only_one_transition": true,
+      "same_order_only_one_notification": true
+    },
+    "load_start_epoch": 1791554589.789096,
+    "load_end_epoch": 1791554592.0559597,
+    "dll_sha256": "e823fb0acbc68acbe78cdd63a84dc615192d10f3d045b37dd2f1262cff91e5a8"
+  }
+]

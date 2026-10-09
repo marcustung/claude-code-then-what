@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "no_mode_switch": true,
+    "no_prebuilt_fixed_call": true,
+    "no_old_answer_names": true,
+    "runtime_stack_matches_current_source": true,
+    "blocking_stack_present": true,
+    "stack_exit_zero": true
+  },
+  "matching_blocked_stacks": 23,
+  "source_sha256": "57a690ba92499fbd8b936d762a88a47e7cf95fe876f0a11adcdcbfdc5aaa2368",
+  "no_claude_call": true
+}

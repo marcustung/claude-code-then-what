@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "logql-deployment-rollout-events",
+  "category": "loki_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T03:21:45Z",
+  "seconds": 39.3,
+  "cost_usd": 0.082672,
+  "turns": 11,
+  "score": 0.6086956521739131,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

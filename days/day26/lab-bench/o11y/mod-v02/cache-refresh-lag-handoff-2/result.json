@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate"
+  ],
+  "task": "cache-refresh-lag-handoff",
+  "category": "investigation",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-04T01:29:17Z",
+  "seconds": 66.6,
+  "cost_usd": 0.1828242,
+  "turns": 15,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

@@ -1,0 +1,20 @@
+{
+  "case": "R16",
+  "suite": "RE2-SS",
+  "set": "design",
+  "rep": 1,
+  "truth_service": "carts",
+  "truth_fault": "delay",
+  "seconds": 83.1,
+  "cost_usd": 0.2863664,
+  "turns": 17,
+  "answer": "carts",
+  "top3": [
+    "carts",
+    "orders",
+    "front-end"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

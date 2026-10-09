@@ -1,0 +1,247 @@
+{
+  "responses": [
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "21be112b131f",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "feb348c8a54d",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": true,
+        "refund_requested": true,
+        "reason": null,
+        "request_id": "a6231bb4008b",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "768b853ebe51",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "73ee9829b9ff",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "f2768e93f76c",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "eefb228a5036",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "4b9ab5253bda",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "cbd4ea03fff1",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "30988a8a5656",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "d32371b56703",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "9a2a8f2439f7",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "49899ba27009",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "fcef78af6ddc",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "69e5e621e780",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "ok": true,
+        "transitioned": false,
+        "refund_requested": false,
+        "reason": null,
+        "request_id": "5c608d6351e3",
+        "order": {
+          "shipped": false,
+          "paid": true,
+          "cancelled": true
+        }
+      }
+    ]
+  ],
+  "transitions": 1,
+  "receipts": 1,
+  "unique_notification_ids": 1
+}

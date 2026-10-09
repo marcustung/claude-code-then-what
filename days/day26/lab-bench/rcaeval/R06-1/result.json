@@ -1,0 +1,20 @@
+{
+  "case": "R06",
+  "suite": "RE3-SS",
+  "set": "holdout",
+  "rep": 1,
+  "truth_service": "front-end",
+  "truth_fault": "f2",
+  "seconds": 78.0,
+  "cost_usd": 0.2642426,
+  "turns": 15,
+  "answer": "front-end",
+  "top3": [
+    "front-end",
+    "carts",
+    "carts-db"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 2
+}

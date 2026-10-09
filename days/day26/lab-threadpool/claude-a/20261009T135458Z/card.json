@@ -1,0 +1,107 @@
+{
+  "symptom": "384 筆取消、96 併發:321 筆回 200,63 筆 status 0(35 筆連線被遠端強制關閉 WinError 10054、28 筆 timeout),client p95 約 30.0 秒(timeout 30 秒,evidence/client-summary.json:2-13)。處理器提示為 2。",
+  "hypotheses": [
+    {
+      "rank": 1,
+      "cause": "H1 執行緒集區飢餓:cancel 處理器在 async 路徑內同步阻塞(CustomerHistory.Prepare 用 .GetAwaiter().GetResult() 等 500ms 的 Task.Delay),佔住 worker thread。96 併發超過可用執行緒,請求在佇列排隊,尾端逾時或被斷線。",
+      "would_refute": "若 oc_tp_pending 長期接近 0、stacks 沒有執行緒卡在同步等待、或 CPU 飽和(代表是計算瓶頸),則推翻。",
+      "checks": [
+        {
+          "tool": "query_observability",
+          "query_or_file": "metrics_range oc_tp_pending(全區間)",
+          "result": "前 7 秒為 0,之後立即升到 64、87、93,並一路爬到 153~180(13:54:36~13:54:80 左右),尾端才回 0。這是持續性的工作佇列積壓。"
+        },
+        {
+          "tool": "query_observability",
+          "query_or_file": "metrics_range oc_tp_threads",
+          "result": "負載期間從 24 慢慢爬到 69,約每秒加 1 條,符合執行緒集區注入速率限制。對 96 併發來說執行緒補得太慢,尾端時才到 94。"
+        },
+        {
+          "tool": "query_observability",
+          "query_or_file": "metrics_range oc_tp_completed",
+          "result": "累計值,中間有重置(8696→18),不是單調序列,可能是重放接縫。負載中段約每秒只完成 7~25 個工作項,吞吐很低,階段性跳升(2926→3342、3589→4055)可能是堵塞釋放。"
+        },
+        {
+          "tool": "read_project",
+          "query_or_file": "src/Api/Program.cs:69, 217-221",
+          "result": "第 69 行在 cancel 處理器內呼叫 CustomerHistory.Prepare();第 219-220 行 FetchAsync 是 await Task.Delay(500),Prepare 以 .GetAwaiter().GetResult() 同步等待,是 sync-over-async。"
+        },
+        {
+          "tool": "read_project",
+          "query_or_file": "evidence/stacks.txt:27-54, 56-89, 91-120",
+          "result": "多條 worker thread 的 stack 都停在 Task.SpinThenBlockingWait → CustomerHistory.Prepare → cancel handler(b__5)。其中一條(0x810C)是 StreamReader 讀取完成後的 continuation 也卡在 Prepare。stacks 是另一輪診斷取樣,只作為機制證據,不與計時比較。"
+        }
+      ],
+      "verdict": "支持"
+    },
+    {
+      "rank": 2,
+      "cause": "H2 CPU 或 GC 壓力造成暫停。",
+      "would_refute": "若 oc_cpu_core_percent 長期低,且 oc_gc_heap_bytes 小而平穩,則推翻。",
+      "checks": [
+        {
+          "tool": "query_observability",
+          "query_or_file": "metrics_range oc_cpu_core_percent",
+          "result": "最高 95%(單點),其餘多為 0 或 13~31%,絕大多數時間是 0。以單核百分比計,CPU 沒有飽和;在 pending 150 以上時 CPU 也是 0。"
+        },
+        {
+          "tool": "query_observability",
+          "query_or_file": "metrics_range oc_gc_heap_bytes",
+          "result": "負載期間只有 2~7MB,尾端因放行而升到 17MB(接近開頭 17.7MB)。沒有 GC 壓力的跡象。"
+        }
+      ],
+      "verdict": "排除"
+    },
+    {
+      "rank": 3,
+      "cause": "H3 共用鎖或下游通知接收端慢造成卡住。",
+      "would_refute": "若 Loki 沒有通知失敗、dead_letter 或 ERROR,且臨界區只有字典操作,則推翻。",
+      "checks": [
+        {
+          "tool": "query_observability",
+          "query_or_file": "Loki logs 篩 ERROR|unhandled|dead_letter|notify_attempt_failed",
+          "result": "區間內無符合紀錄(掃描 1558 行,結果為空)。沒有通知失敗或未處理例外。"
+        },
+        {
+          "tool": "read_project",
+          "query_or_file": "src/Api/Program.cs:96-98, 103-114, 137-144, 148-152",
+          "result": "OrderStore、Metrics、JsonlLog、RequestAudit 的鎖都只包住很短的字典、計數或寫檔操作。通知走 Channel 由背景 worker 非同步發送,不在 request 路徑上。"
+        }
+      ],
+      "verdict": "排除"
+    },
+    {
+      "rank": 4,
+      "cause": "H4 RequestAudit 無界保留 body 造成記憶體成長。",
+      "would_refute": "若 heap 沒有持續成長,則它不是本事故的主因。",
+      "checks": [
+        {
+          "tool": "read_project",
+          "query_or_file": "src/Api/Program.cs:147-153, 54",
+          "result": "RequestAudit._items 只增不減,每次取消都存 body。這是真實的長期隱患。"
+        },
+        {
+          "tool": "query_observability",
+          "query_or_file": "oc_gc_heap_bytes",
+          "result": "本次只有數 MB,不構成當下症狀。"
+        }
+      ],
+      "verdict": "排除"
+    }
+  ],
+  "conclusion": "最可能原因:src/Api/Program.cs:69 呼叫 CustomerHistory.Prepare(),其在 Program.cs:220 以 .GetAwaiter().GetResult() 同步等待 500ms 的 Task.Delay。每個取消請求都佔住一條 ThreadPool 執行緒。處理器只有 2 個,執行緒注入慢(約每秒 +1),96 併發把集區榨乾,工作佇列積壓到 150~180(oc_tp_pending)。排在後面的請求等超過 30 秒,client 逾時或被連線重置,共 63 筆失敗,p95 約 30 秒。CPU 多數時間是 0、heap 很小,所以不是 CPU 或 GC 問題。這是等待而不是運算。\n\n證據限制:Loki 沒有 ERROR,代表伺服器端沒有紀錄這 63 筆失敗。10054 與 timeout 只有 client 端的紀錄。我沒有直接證明 10054 是由 Kestrel 或 client 的哪一端造成。oc_tp_completed 在序列開頭有重置,可能是重放接縫,所以我沒用它計算吞吐。\n\n次要發現:RequestAudit(Program.cs:148-153)的暫存無上限。這不是本次原因,但長期會吃記憶體。需求只說保留稽核用途,沒有說要放在記憶體裡。",
+  "proposed_fix": {
+    "file": "src/Api/Program.cs",
+    "line": 69,
+    "change": "把 `CustomerHistory.Prepare();` 改成 `await CustomerHistory.FetchAsync();`(FetchAsync 已存在於第 219 行)。保留 500ms 延遲,不刪也不縮短,符合 specs/requirements.md:5。處理器 lambda 本來就是 async,不需其他改動。同時可考慮刪掉第 220 行已無人使用的 Prepare,但這不是必要的最小修法。",
+    "risk": "低。業務規則和回應不變,只是等待期間釋放執行緒。單一請求延遲仍約 500ms 以上。風險是現在每個請求都能同時進入處理流程,下游(通知接收端、log 檔鎖、OrderStore 鎖)的併發會變高。JsonlLog 的同步 File.AppendAllText 可能成為新瓶頸,需觀察。RequestAudit 的無界成長不受此修法影響,應另開議題。"
+  },
+  "how_to_verify": "這個環境沒有提供重跑負載或建置的工具,所以我沒有修改也沒有重跑。缺件:可部署修改版的環境、能重放 384 筆/96 併發的負載腳本、以及修改後的 Grafana 資料。在具備這些之後,用同一組參數重跑,預期:(1) client-summary 裡 status 0 為 0,全部為 200;(2) p95 接近 500ms 加少量排隊時間,遠低於 30 秒;(3) oc_tp_pending 不再升到上百,oc_tp_threads 不需要爬到 60 以上;(4) 每筆真正取消都有對應 order_id 的通知,且不重複(需求第 4 行),可對照獨立接收端的紀錄,該接收端紀錄這裡未提供;(5) 重新取一輪 stacks,確認不再有執行緒停在 CustomerHistory.Prepare。",
+  "unknowns": [
+    "63 筆失敗中 10054 與 timeout 的比例成因:是 Kestrel 或 client 端哪一方關閉連線,沒有伺服器端紀錄可證明。",
+    "oc_tp_completed 序列開頭重置(8696→18)是否是重放接縫,未確認。",
+    "每筆請求的 latency_ms 分佈:Loki 一次回傳過大,只做了篩選查詢;沒有逐筆確認 server 側延遲。",
+    "stacks.txt 只讀了前 120 行(共 843 行),沒有看完整份,不能排除其他位置有別的阻塞點。",
+    "通知接收端是否收齊所有取消通知,未取得該資料。"
+  ]
+}

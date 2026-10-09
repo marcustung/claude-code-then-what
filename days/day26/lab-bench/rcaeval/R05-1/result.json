@@ -1,0 +1,20 @@
+{
+  "case": "R05",
+  "suite": "RE3-SS",
+  "set": "design",
+  "rep": 1,
+  "truth_service": "orders",
+  "truth_fault": "f1",
+  "seconds": 72.8,
+  "cost_usd": 0.17561,
+  "turns": 14,
+  "answer": "orders",
+  "top3": [
+    "orders",
+    "front-end",
+    "orders-db"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

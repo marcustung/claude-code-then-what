@@ -1,0 +1,20 @@
+{
+  "case": "R13",
+  "suite": "RE2-OB",
+  "set": "holdout",
+  "rep": 2,
+  "truth_service": "recommendationservice",
+  "truth_fault": "disk",
+  "seconds": 54.2,
+  "cost_usd": 0.1232896,
+  "turns": 10,
+  "answer": "recommendationservice",
+  "top3": [
+    "recommendationservice",
+    "frontend",
+    "gke-gke-cluster-default-pool-2e1807ce-0e4z (node)"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

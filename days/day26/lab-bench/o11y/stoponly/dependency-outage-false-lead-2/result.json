@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "dependency-outage-false-lead",
+  "category": "investigation",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T02:51:27Z",
+  "seconds": 38.2,
+  "cost_usd": 0.0878214,
+  "turns": 9,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

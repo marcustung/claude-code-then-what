@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "logql-retry-vs-real-errors",
+  "category": "loki_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T03:09:15Z",
+  "seconds": 52.4,
+  "cost_usd": 0.1141818,
+  "turns": 14,
+  "score": 0.5757575757575758,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

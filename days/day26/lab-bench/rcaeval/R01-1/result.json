@@ -1,0 +1,20 @@
+{
+  "case": "R01",
+  "suite": "RE3-OB",
+  "set": "holdout",
+  "rep": 1,
+  "truth_service": "adservice",
+  "truth_fault": "f3",
+  "seconds": 45.6,
+  "cost_usd": 0.0856272,
+  "turns": 9,
+  "answer": "adservice",
+  "top3": [
+    "adservice",
+    "frontend",
+    "shippingservice"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

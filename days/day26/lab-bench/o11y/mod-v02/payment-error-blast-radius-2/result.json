@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate"
+  ],
+  "task": "payment-error-blast-radius",
+  "category": "investigation",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T01:30:57Z",
+  "seconds": 41.9,
+  "cost_usd": 0.09040999999999999,
+  "turns": 11,
+  "score": 0.65,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

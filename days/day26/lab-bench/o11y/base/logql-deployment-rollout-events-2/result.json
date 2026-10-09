@@ -1,0 +1,13 @@
+{
+  "task": "logql-deployment-rollout-events",
+  "category": "loki_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-03T22:03:07Z",
+  "seconds": 44.8,
+  "cost_usd": 0.1220196,
+  "turns": 14,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

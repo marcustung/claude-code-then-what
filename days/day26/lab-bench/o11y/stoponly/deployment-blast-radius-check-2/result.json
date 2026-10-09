@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "deployment-blast-radius-check",
+  "category": "investigation",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T02:43:49Z",
+  "seconds": 39.8,
+  "cost_usd": 0.10069159999999999,
+  "turns": 15,
+  "score": 0.0,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

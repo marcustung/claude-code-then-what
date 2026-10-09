@@ -1,0 +1,14 @@
+{
+  "exit": 0,
+  "seconds": 71.6,
+  "cost_usd": 0.1806298,
+  "turns": 21,
+  "subtype": "success",
+  "model": "sonnet",
+  "window": {
+    "start": "2026-10-09T13:50:15.156554+00:00",
+    "end": "2026-10-09T13:51:15.947117+00:00",
+    "points": 541,
+    "source_run": "blind-runs\\20261009T132017Z"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "slow-path-hotspot-correlation",
+  "category": "investigation",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-04T03:23:06Z",
+  "seconds": 65.4,
+  "cost_usd": 0.1280734,
+  "turns": 18,
+  "score": 0.05,
+  "checks_passed": 0,
+  "rubric_passed": 0
+}

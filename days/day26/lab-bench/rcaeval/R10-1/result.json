@@ -1,0 +1,20 @@
+{
+  "case": "R10",
+  "suite": "RE3-TT",
+  "set": "holdout",
+  "rep": 1,
+  "truth_service": "ts-route-service",
+  "truth_fault": "f2",
+  "seconds": 86.7,
+  "cost_usd": 0.17963099999999999,
+  "turns": 15,
+  "answer": "ts-route-service",
+  "top3": [
+    "ts-route-service",
+    "ts-travel-service",
+    "ts-travel2-service"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

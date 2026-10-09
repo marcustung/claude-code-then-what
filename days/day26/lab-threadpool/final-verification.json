@@ -1,0 +1,143 @@
+{
+  "final_validation": "examples/day26-threadpool-lab/repair-validation/20261009T140251Z",
+  "all_checks_pass_twice": true,
+  "same_order": [
+    {
+      "path": "examples/day26-threadpool-lab/repair-validation/20261009T140251Z/0-claude-repair/same-order.json",
+      "responses": 16,
+      "all_http_200": true,
+      "transitions": 1,
+      "receipts": 1,
+      "unique_notification_ids": 1
+    },
+    {
+      "path": "examples/day26-threadpool-lab/repair-validation/20261009T140251Z/1-claude-repair/same-order.json",
+      "responses": 16,
+      "all_http_200": true,
+      "transitions": 1,
+      "receipts": 1,
+      "unique_notification_ids": 1
+    }
+  ],
+  "claude_cost_usd": {
+    "claude-a": 0.5964115999999999,
+    "claude-b": 0.1861472
+  },
+  "latest_diagnostic_queries": [
+    [
+      "gcx",
+      "metrics",
+      "query",
+      "-d",
+      "prometheus",
+      "oc_tp_threads{job=\"order-investigation-135741\"}",
+      "--from",
+      "2026-10-09T13:56:31.870280+00:00",
+      "--to",
+      "2026-10-09T13:57:32.660843+00:00",
+      "--step",
+      "1s",
+      "-o",
+      "json"
+    ],
+    [
+      "gcx",
+      "metrics",
+      "query",
+      "-d",
+      "prometheus",
+      "oc_tp_pending{job=\"order-investigation-135741\"}",
+      "--from",
+      "2026-10-09T13:56:31.870280+00:00",
+      "--to",
+      "2026-10-09T13:57:32.660843+00:00",
+      "--step",
+      "1s",
+      "-o",
+      "json"
+    ],
+    [
+      "gcx",
+      "metrics",
+      "query",
+      "-d",
+      "prometheus",
+      "oc_tp_completed{job=\"order-investigation-135741\"}",
+      "--from",
+      "2026-10-09T13:56:31.870280+00:00",
+      "--to",
+      "2026-10-09T13:57:32.660843+00:00",
+      "--step",
+      "1s",
+      "-o",
+      "json"
+    ],
+    [
+      "gcx",
+      "metrics",
+      "query",
+      "-d",
+      "prometheus",
+      "oc_cpu_core_percent{job=\"order-investigation-135741\"}",
+      "--from",
+      "2026-10-09T13:56:31.870280+00:00",
+      "--to",
+      "2026-10-09T13:57:32.660843+00:00",
+      "--step",
+      "1s",
+      "-o",
+      "json"
+    ],
+    [
+      "gcx",
+      "metrics",
+      "query",
+      "-d",
+      "prometheus",
+      "oc_gc_heap_bytes{job=\"order-investigation-135741\"}",
+      "--from",
+      "2026-10-09T13:56:31.870280+00:00",
+      "--to",
+      "2026-10-09T13:57:32.660843+00:00",
+      "--step",
+      "1s",
+      "-o",
+      "json"
+    ],
+    [
+      "gcx",
+      "logs",
+      "query",
+      "-d",
+      "loki",
+      "--expr",
+      "{service_name=\"order-investigation-135741\"}",
+      "--limit",
+      "80",
+      "--from",
+      "2026-10-09T13:56:31.870280+00:00",
+      "--to",
+      "2026-10-09T13:57:32.660843+00:00",
+      "-o",
+      "json"
+    ],
+    [
+      "gcx",
+      "logs",
+      "query",
+      "-d",
+      "loki",
+      "--expr",
+      "{service_name=\"order-investigation-135741\"} |~ \"ERROR|unhandled|OutOfMemory|WARN\"",
+      "--limit",
+      "80",
+      "--from",
+      "2026-10-09T13:56:31.870280+00:00",
+      "--to",
+      "2026-10-09T13:57:32.660843+00:00",
+      "-o",
+      "json"
+    ]
+  ],
+  "final_source_manifest": "examples/day26-threadpool-lab/claude-final-source/manifest.json"
+}

@@ -1,0 +1,9 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "sdk": "9.0.314",
+  "runtimes": "Microsoft.AspNetCore.App 9.0.16 [C:\\Program Files\\dotnet\\shared\\Microsoft.AspNetCore.App]\nMicrosoft.NETCore.App 9.0.16 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]\nMicrosoft.NETCore.App 10.0.11 [C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App]\nMicrosoft.WindowsDesktop.App 9.0.16 [C:\\Program Files\\dotnet\\shared\\Microsoft.WindowsDesktop.App]\n",
+  "processor_hint": 2,
+  "actual_cpu_quota": null,
+  "external_claude_called": false,
+  "metadata_error": "After all five runs and cleanup, dotnet --info failed in Windows workload installer. Experiment outputs had already been saved. Recovered metadata with --version / --list-runtimes; no workload rerun."
+}

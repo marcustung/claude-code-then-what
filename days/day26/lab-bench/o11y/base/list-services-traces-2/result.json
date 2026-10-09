@@ -1,0 +1,13 @@
+{
+  "task": "list-services-traces",
+  "category": "tempo_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-03T21:43:06Z",
+  "seconds": 82.6,
+  "cost_usd": 0.1734794,
+  "turns": 30,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

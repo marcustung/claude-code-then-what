@@ -1,0 +1,10 @@
+{
+    "exit_code":  0,
+    "arguments":  "-p --model sonnet --effort low --strict-mcp-config --no-session-persistence --setting-sources \"\" --output-format stream-json --verbose --mcp-config \"<REPO>\\examples\\order-cancel-lifecycle\\diagnosis\\oom\\runs\\M2\\mcp.json\" --tools mcp__codegraph__codegraph_explore,mcp__codegraph__codegraph_search,mcp__codegraph__codegraph_callers,mcp__codegraph__codegraph_callees,mcp__codegraph__codegraph_impact,mcp__codegraph__codegraph_node,mcp__codegraph__codegraph_files,mcp__codegraph__codegraph_status,Read,Grep,Glob --allowedTools mcp__codegraph__codegraph_explore,mcp__codegraph__codegraph_search,mcp__codegraph__codegraph_callers,mcp__codegraph__codegraph_callees,mcp__codegraph__codegraph_impact,mcp__codegraph__codegraph_node,mcp__codegraph__codegraph_files,mcp__codegraph__codegraph_status,Read,Grep,Glob",
+    "prompt_sha256":  "C3306AA9131D661F0A33BB417CBB228445732DEFA39A5427A05FDBDBBFD7D976",
+    "name":  "M2",
+    "cwd":  "<REPO>\\examples\\order-cancel-lifecycle\\diagnosis\\oom\\snapshot",
+    "arm":  "B",
+    "started_utc":  "2026-09-21T12:23:36.6934501Z",
+    "ended_utc":  "2026-09-21T12:24:36.0806043Z"
+}

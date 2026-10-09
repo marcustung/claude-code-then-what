@@ -196,7 +196,7 @@ static class Retained
 sealed class Faults
 {
     public int? DropOverQueue; public int DelayMs; public bool RetainPayloads; public bool SyncNotify;
-    // 演練用回歸開關（預設關閉）：重現已修復 bug 被改回去的情境，供 後續 盲查。
+    // 演練用回歸開關（預設關閉）：重現已修復 bug 被改回去的情境，供後續盲查。
     public bool RegressUnboundedRetain; public bool RegressDeferredDrop;
     // 演練注入，夜間巡查用（預設關閉）：專打可觀測性盲點。
     // 演練注入 metrics_freeze_after_s：啟動 N 秒後 /metrics 回傳凍結的快照（up 仍為 1，counter 不再前進，看起來很平靜）。

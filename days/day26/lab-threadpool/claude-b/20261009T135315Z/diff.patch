@@ -1,0 +1,19 @@
+--- before/src/Api/Program.cs
++++ after/src/Api/Program.cs
+@@ -66,7 +66,7 @@
+         log.Write(new { level = "WARN", @event = "cancel", request_id = rid, run_id = runId, order_id = id, result = "not_found" });
+         return Results.Json(new { ok = false, reason = "not_found", request_id = rid }, statusCode: 404);
+     }
+-    CustomerHistory.Prepare();
++    await CustomerHistory.FetchAsync();
+     var result = Cancellation.Cancel(before);
+     bool transitioned = Cancellation.Transitioned(before, result);
+     string outcome; int status;
+@@ -217,7 +217,6 @@
+ static class CustomerHistory
+ {
+     public static async Task FetchAsync() { await Task.Delay(500); }
+-    public static void Prepare() { FetchAsync().GetAwaiter().GetResult(); }
+ }
+ static class RuntimeSampler
+ {

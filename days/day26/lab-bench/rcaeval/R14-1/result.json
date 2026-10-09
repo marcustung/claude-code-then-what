@@ -1,0 +1,20 @@
+{
+  "case": "R14",
+  "suite": "RE2-OB",
+  "set": "design",
+  "rep": 1,
+  "truth_service": "emailservice",
+  "truth_fault": "loss",
+  "seconds": 47.0,
+  "cost_usd": 0.0991668,
+  "turns": 10,
+  "answer": "emailservice",
+  "top3": [
+    "emailservice",
+    "checkoutservice",
+    "frontend"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

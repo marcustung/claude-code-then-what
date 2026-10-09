@@ -1,0 +1,13 @@
+{
+  "task": "dependency-outage-false-lead",
+  "category": "investigation",
+  "set": "design",
+  "rep": 1,
+  "scenario_time": "2026-10-03T22:04:26Z",
+  "seconds": 58.1,
+  "cost_usd": 0.11308,
+  "turns": 14,
+  "score": 0.7826086956521738,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

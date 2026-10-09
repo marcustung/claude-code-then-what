@@ -1,0 +1,13 @@
+{
+  "task": "traceql-checkout-p99-by-service",
+  "category": "tempo_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-03T21:58:38Z",
+  "seconds": 90.8,
+  "cost_usd": 0.19686240000000002,
+  "turns": 25,
+  "score": 0.5,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

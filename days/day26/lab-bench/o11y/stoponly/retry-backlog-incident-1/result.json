@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "retry-backlog-incident",
+  "category": "investigation",
+  "set": "design",
+  "rep": 1,
+  "scenario_time": "2026-10-04T02:41:39Z",
+  "seconds": 24.7,
+  "cost_usd": 0.0555094,
+  "turns": 7,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

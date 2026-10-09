@@ -1,0 +1,13 @@
+{
+  "task": "payments-path-root-cause",
+  "category": "investigation",
+  "set": "design",
+  "rep": 1,
+  "scenario_time": "2026-10-03T22:08:25Z",
+  "seconds": 60.7,
+  "cost_usd": 0.1757448,
+  "turns": 14,
+  "score": 0.8,
+  "checks_passed": 0,
+  "rubric_passed": 0
+}

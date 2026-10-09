@@ -1,0 +1,5 @@
+{
+  "src\\Api\\Program.cs": "6aec67c6fa2f18c9fc7b90fa2cca29fa22d0c36a15c2bd5f4d073194fa07838f",
+  "src\\Domain\\Cancellation.cs": "f8cd1d0f801a9e8c5d6337d8c764d65e4aa2089421ae7d0149228344e43362ab",
+  "src\\FakeSink\\Program.cs": "9a5f75da5de5b90976554424d39aa9303944b24d35b5848eb48c6ae492fdddfd"
+}

@@ -1,0 +1,13 @@
+{
+  "task": "logql-retry-vs-real-errors",
+  "category": "loki_query",
+  "set": "design",
+  "rep": 1,
+  "scenario_time": "2026-10-03T21:30:46Z",
+  "seconds": 67.2,
+  "cost_usd": 0.171874,
+  "turns": 19,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

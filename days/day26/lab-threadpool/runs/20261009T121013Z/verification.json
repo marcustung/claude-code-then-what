@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "original_source_unchanged": true,
+    "all_runs_same_api_binary": true,
+    "await_functional_checks_all_pass": true,
+    "await_p95_lower_in_both_repetitions": true,
+    "diagnostic_stack_has_blocking_path": true,
+    "independent_receipts_match_all_load_orders": true,
+    "claude_diagnosis_evaluated": false
+  },
+  "stack_blocking_paths": 6,
+  "error_breakdown": [
+    {
+      "run": "0-blocking",
+      "errors": {
+        "connection_reset": 26,
+        "timeout": 19
+      },
+      "client_terminal_p95_ms": 28878.3,
+      "http_200_p95_ms": 28858.880100073293
+    },
+    {
+      "run": "1-async",
+      "errors": {},
+      "client_terminal_p95_ms": 573.3,
+      "http_200_p95_ms": 573.2554000569507
+    },
+    {
+      "run": "2-async",
+      "errors": {},
+      "client_terminal_p95_ms": 574.9,
+      "http_200_p95_ms": 574.8529999982566
+    },
+    {
+      "run": "3-blocking",
+      "errors": {
+        "connection_reset": 46,
+        "timeout": 25
+      },
+      "client_terminal_p95_ms": 30006.1,
+      "http_200_p95_ms": 28388.816299964674
+    },
+    {
+      "run": "4-blocking",
+      "errors": {
+        "connection_reset": 15
+      },
+      "client_terminal_p95_ms": 24317.2,
+      "http_200_p95_ms": 24317.201899946667
+    }
+  ]
+}

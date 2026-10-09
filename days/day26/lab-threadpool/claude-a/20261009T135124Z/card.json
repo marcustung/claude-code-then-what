@@ -1,0 +1,103 @@
+{
+  "symptom": "384筆取消、96併發:321成功、63失敗(35連線被重設10054、28逾時),p95約30秒(等於客戶端30秒逾時上限)。",
+  "hypotheses": [
+    {
+      "rank": 1,
+      "cause": "取消處理器在ThreadPool執行緒上同步阻塞(sync-over-async),造成執行緒池飢餓與排隊",
+      "would_refute": "pending全程接近0;或阻塞碼不在請求路徑上",
+      "checks": [
+        {
+          "tool": "query_observability",
+          "query_or_file": "max_over_time(oc_tp_pending[60s])",
+          "result": "最大180,有排隊"
+        },
+        {
+          "tool": "query_observability",
+          "query_or_file": "max_over_time(oc_tp_threads[60s])",
+          "result": "最大94;處理器提示2,執行緒是慢慢增加"
+        },
+        {
+          "tool": "query_observability",
+          "query_or_file": "max_over_time(oc_tp_completed[60s])",
+          "result": "8696,池子仍在處理,只是慢"
+        },
+        {
+          "tool": "read_project",
+          "query_or_file": "src/Api/Program.cs:69,219-220",
+          "result": "async處理器內呼叫Prepare(),其內是FetchAsync().GetAwaiter().GetResult(),FetchAsync為Task.Delay(500)"
+        },
+        {
+          "tool": "read_project",
+          "query_or_file": "evidence/client-summary.json:3-13",
+          "result": "63筆status 0,p95 30009ms,與30秒逾時吻合"
+        }
+      ],
+      "verdict": "支持"
+    },
+    {
+      "rank": 2,
+      "cause": "CPU飽和或GC壓力",
+      "would_refute": "CPU平均遠低於單核100%,且heap沒有暴增",
+      "checks": [
+        {
+          "tool": "query_observability",
+          "query_or_file": "avg_over_time(oc_cpu_core_percent[60s]) / max_over_time(...)",
+          "result": "平均6.97%,最大120.9%(短暫尖峰)"
+        },
+        {
+          "tool": "query_observability",
+          "query_or_file": "min/max_over_time(oc_gc_heap_bytes[60s])",
+          "result": "1.1MB到17.8MB,無失控"
+        }
+      ],
+      "verdict": "排除"
+    },
+    {
+      "rank": 3,
+      "cause": "通知worker或下游sink拖慢請求",
+      "would_refute": "請求路徑不等待通知",
+      "checks": [
+        {
+          "tool": "read_project",
+          "query_or_file": "src/Api/Program.cs:82,182-213",
+          "result": "請求只寫入Channel,worker非同步處理,請求不等待送出"
+        }
+      ],
+      "verdict": "排除"
+    },
+    {
+      "rank": 4,
+      "cause": "RequestAudit無上限保留請求內容造成記憶體問題",
+      "would_refute": "heap在區間內沒有失控",
+      "checks": [
+        {
+          "tool": "read_project",
+          "query_or_file": "src/Api/Program.cs:54,150-151",
+          "result": "List只增不減,無上限"
+        },
+        {
+          "tool": "query_observability",
+          "query_or_file": "max_over_time(oc_gc_heap_bytes[60s])",
+          "result": "最大17.8MB,本次不是原因"
+        }
+      ],
+      "verdict": "排除"
+    }
+  ],
+  "conclusion": "最可能原因是src/Api/Program.cs:69與:220的同步阻塞(sync-over-async)導致ThreadPool飢餓。每個請求佔住一條執行緒至少500ms,96併發遠超過起始執行緒數,後面的請求排隊到30秒逾時。CPU與heap都不高,不是算力或記憶體問題。35筆連線重設(10054)的直接原因未確認。",
+  "proposed_fix": {
+    "file": "src/Api/Program.cs",
+    "line": 69,
+    "change": "把CustomerHistory.Prepare()改成await CustomerHistory.FetchAsync();處理器已是async lambda,不用改簽名;Prepare()(:220)改為不再使用或移除。保留500ms延遲(規格要求),不要用SetMinThreads掩蓋。",
+    "risk": "每個請求仍至少500ms,延遲不會變成幾十毫秒;Program.cs:63-74的讀取、判斷、寫入不是原子操作,同一筆訂單併發取消可能重複通知(原本就存在,改await後更容易交錯),應另外處理;RequestAudit無上限成長是獨立問題,不屬於最小修法。"
+  },
+  "how_to_verify": "未提供驗證工具,不能宣稱已驗證。缺件:產生384筆取消、96併發的負載腳本;重新建置與部署方式;新一輪Grafana資料。有了之後,驗收標準:oc_tp_pending最大值接近0;執行緒數接近處理器數附近;客戶端p95約0.5到1秒;status 0為0筆;通知接收端筆數等於實際取消筆數且無重複。",
+  "unknowns": [
+    "evidence/stacks.txt共843行、約10萬字元,讀取超出輸出上限,我沒有檔案讀取工具可分段讀,所以沒用堆疊檔交叉驗證",
+    "只拿到聚合值(最大、平均、最小),沒有完整時間序列,看不出飢餓從哪個時間點開始",
+    "第一批單點查詢的時間戳比*_over_time查詢早約60秒(threads=1、completed=0、CPU=0),看起來是時間平移重放造成,只採用*_over_time結果",
+    "35筆連線重設(10054)的直接原因未確認",
+    "Loki只查了60秒計數(779行),沒逐行檢查latency_ms與queue_depth",
+    "沒有查通知接收端的指標,H3只能說請求路徑沒有等它"
+  ]
+}

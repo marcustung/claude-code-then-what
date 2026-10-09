@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "traceql-error-span-analysis",
+  "category": "tempo_query",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-04T03:13:28Z",
+  "seconds": 81.1,
+  "cost_usd": 0.1568966,
+  "turns": 22,
+  "score": 0.25,
+  "checks_passed": 0,
+  "rubric_passed": 0
+}

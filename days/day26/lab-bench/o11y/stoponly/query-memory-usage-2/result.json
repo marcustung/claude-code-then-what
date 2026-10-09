@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "query-memory-usage",
+  "category": "prometheus_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T03:35:13Z",
+  "seconds": 23.2,
+  "cost_usd": 0.0613698,
+  "turns": 8,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

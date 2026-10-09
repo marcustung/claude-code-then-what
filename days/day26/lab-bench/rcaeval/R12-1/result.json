@@ -1,0 +1,20 @@
+{
+  "case": "R12",
+  "suite": "RE2-OB",
+  "set": "holdout",
+  "rep": 1,
+  "truth_service": "emailservice",
+  "truth_fault": "socket",
+  "seconds": 61.0,
+  "cost_usd": 0.1394214,
+  "turns": 13,
+  "answer": "emailservice",
+  "top3": [
+    "emailservice",
+    "checkoutservice",
+    "paymentservice"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

@@ -1,0 +1,14 @@
+{
+    "mcpServers":  {
+                       "codegraph":  {
+                                         "args":  [
+                                                      "serve",
+                                                      "--mcp",
+                                                      "--no-watch",
+                                                      "--path",
+                                                      "<REPO>\\examples\\order-cancel-lifecycle\\diagnosis\\oom\\snapshot"
+                                                  ],
+                                         "command":  "<HOME>\\AppData\\Roaming\\npm\\codegraph.cmd"
+                                     }
+                   }
+}

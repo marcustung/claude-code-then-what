@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate"
+  ],
+  "task": "service-degradation-rca",
+  "category": "investigation",
+  "set": "holdout",
+  "rep": 1,
+  "scenario_time": "2026-10-04T01:15:24Z",
+  "seconds": 53.5,
+  "cost_usd": 0.1330174,
+  "turns": 17,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

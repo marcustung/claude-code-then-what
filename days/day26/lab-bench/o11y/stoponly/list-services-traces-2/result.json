@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "list-services-traces",
+  "category": "tempo_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T02:38:33Z",
+  "seconds": 84.0,
+  "cost_usd": 0.1890282,
+  "turns": 30,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "promql-offset-traffic-compare",
+  "category": "prometheus_query",
+  "set": "holdout",
+  "rep": 1,
+  "scenario_time": "2026-10-04T03:04:30Z",
+  "seconds": 27.6,
+  "cost_usd": 0.0475482,
+  "turns": 7,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

@@ -1,0 +1,13 @@
+{
+  "task": "deployment-blast-radius-check",
+  "category": "investigation",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-03T21:46:15Z",
+  "seconds": 33.4,
+  "cost_usd": 0.08854340000000002,
+  "turns": 11,
+  "score": 0.1,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

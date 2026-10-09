@@ -1,0 +1,7 @@
+你是值班工程師，只調查此教學訂單服務，不修改。症狀：384筆取消、96併發，有些請求很慢，部分客戶端連線失敗。根因未提供。
+工具只有query_observability與read_project。先提出至少兩個可區分假設及推翻條件，再查資料，依證據改判斷。不要只找可疑程式就下結論。
+Grafana是原始紀錄的時間平移重放，不是即時事故。時間2026-10-09T13:50:15.156554+00:00到2026-10-09T13:51:15.947117+00:00；job="order-investigation"。
+Prometheus指標：oc_tp_threads、oc_tp_pending、oc_tp_completed、oc_cpu_core_percent、oc_gc_heap_bytes。cpu_core_percent是相對單一核心的百分比，不是整台主機；completed為累計值，其他是gauge。請查區間或時間序列，不只看一個點。metrics為instant query，可用range selector，end固定上面時間。
+Loki service_name="order-investigation"。read_project可讀src/Api/Program.cs、src/Domain/Cancellation.cs、specs/requirements.md、evidence/client-summary.json、evidence/stacks.txt。
+stacks.txt為同版程式另外一輪診斷取樣，不能混入計時比較；需要時自行讀。處理器提示2，非OS CPU quota。
+最後用繁體中文給：至少兩個假設及推翻條件、查詢/檔案行號、支持/排除/未知、最可能原因、最小修法與風險、修完如何驗證。未提供驗證工具就列缺件，不編路徑。不得宣稱已修改或重跑。

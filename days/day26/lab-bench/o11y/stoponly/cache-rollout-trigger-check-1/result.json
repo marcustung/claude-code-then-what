@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "cache-rollout-trigger-check",
+  "category": "investigation",
+  "set": "design",
+  "rep": 1,
+  "scenario_time": "2026-10-04T03:02:48Z",
+  "seconds": 63.1,
+  "cost_usd": 0.12384659999999999,
+  "turns": 14,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

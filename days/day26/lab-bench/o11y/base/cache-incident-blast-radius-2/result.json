@@ -1,0 +1,13 @@
+{
+  "task": "cache-incident-blast-radius",
+  "category": "investigation",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-03T21:39:49Z",
+  "seconds": 59.0,
+  "cost_usd": 0.163561,
+  "turns": 18,
+  "score": 0.0,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

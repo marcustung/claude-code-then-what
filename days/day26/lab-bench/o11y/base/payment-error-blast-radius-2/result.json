@@ -1,0 +1,13 @@
+{
+  "task": "payment-error-blast-radius",
+  "category": "investigation",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-03T22:20:21Z",
+  "seconds": 23.8,
+  "cost_usd": 0.0550732,
+  "turns": 7,
+  "score": 0.1,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

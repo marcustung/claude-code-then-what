@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate"
+  ],
+  "task": "traceql-checkout-p99-by-service",
+  "category": "tempo_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T01:25:35Z",
+  "seconds": 94.3,
+  "cost_usd": 0.18482140000000002,
+  "turns": 22,
+  "score": 0.5,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

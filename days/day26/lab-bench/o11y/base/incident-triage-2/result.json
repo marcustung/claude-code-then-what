@@ -1,0 +1,13 @@
+{
+  "task": "incident-triage",
+  "category": "investigation",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-03T22:31:41Z",
+  "seconds": 63.6,
+  "cost_usd": 0.1408346,
+  "turns": 18,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

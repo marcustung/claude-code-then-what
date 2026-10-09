@@ -1,0 +1,176 @@
+{
+ "cases": [
+  {
+   "suite": "RE3-OB",
+   "fault_dir": "adservice_f3",
+   "case_dir": "RE3-OB/adservice_f3/2",
+   "service": "adservice",
+   "fault": "f3",
+   "id": "R01"
+  },
+  {
+   "suite": "RE3-OB",
+   "fault_dir": "emailservice_f5",
+   "case_dir": "RE3-OB/emailservice_f5/2",
+   "service": "emailservice",
+   "fault": "f5",
+   "id": "R02"
+  },
+  {
+   "suite": "RE3-OB",
+   "fault_dir": "emailservice_f1",
+   "case_dir": "RE3-OB/emailservice_f1/3",
+   "service": "emailservice",
+   "fault": "f1",
+   "id": "R03"
+  },
+  {
+   "suite": "RE3-OB",
+   "fault_dir": "adservice_f4",
+   "case_dir": "RE3-OB/adservice_f4/1",
+   "service": "adservice",
+   "fault": "f4",
+   "id": "R04"
+  },
+  {
+   "suite": "RE3-SS",
+   "fault_dir": "orders_f1",
+   "case_dir": "RE3-SS/orders_f1/1",
+   "service": "orders",
+   "fault": "f1",
+   "id": "R05"
+  },
+  {
+   "suite": "RE3-SS",
+   "fault_dir": "front-end_f2",
+   "case_dir": "RE3-SS/front-end_f2/3",
+   "service": "front-end",
+   "fault": "f2",
+   "id": "R06"
+  },
+  {
+   "suite": "RE3-SS",
+   "fault_dir": "carts_f1",
+   "case_dir": "RE3-SS/carts_f1/4",
+   "service": "carts",
+   "fault": "f1",
+   "id": "R07"
+  },
+  {
+   "suite": "RE3-TT",
+   "fault_dir": "ts-route-service_f3",
+   "case_dir": "RE3-TT/ts-route-service_f3/1",
+   "service": "ts-route-service",
+   "fault": "f3",
+   "id": "R08"
+  },
+  {
+   "suite": "RE3-TT",
+   "fault_dir": "ts-auth-service_f2",
+   "case_dir": "RE3-TT/ts-auth-service_f2/1",
+   "service": "ts-auth-service",
+   "fault": "f2",
+   "id": "R09"
+  },
+  {
+   "suite": "RE3-TT",
+   "fault_dir": "ts-route-service_f2",
+   "case_dir": "RE3-TT/ts-route-service_f2/3",
+   "service": "ts-route-service",
+   "fault": "f2",
+   "id": "R10"
+  },
+  {
+   "suite": "RE2-OB",
+   "fault_dir": "currencyservice_delay",
+   "case_dir": "RE2-OB/currencyservice_delay/1",
+   "service": "currencyservice",
+   "fault": "delay",
+   "id": "R11"
+  },
+  {
+   "suite": "RE2-OB",
+   "fault_dir": "emailservice_socket",
+   "case_dir": "RE2-OB/emailservice_socket/2",
+   "service": "emailservice",
+   "fault": "socket",
+   "id": "R12"
+  },
+  {
+   "suite": "RE2-OB",
+   "fault_dir": "recommendationservice_disk",
+   "case_dir": "RE2-OB/recommendationservice_disk/2",
+   "service": "recommendationservice",
+   "fault": "disk",
+   "id": "R13"
+  },
+  {
+   "suite": "RE2-OB",
+   "fault_dir": "emailservice_loss",
+   "case_dir": "RE2-OB/emailservice_loss/3",
+   "service": "emailservice",
+   "fault": "loss",
+   "id": "R14"
+  },
+  {
+   "suite": "RE2-OB",
+   "fault_dir": "checkoutservice_mem",
+   "case_dir": "RE2-OB/checkoutservice_mem/2",
+   "service": "checkoutservice",
+   "fault": "mem",
+   "id": "R15"
+  },
+  {
+   "suite": "RE2-SS",
+   "fault_dir": "carts_delay",
+   "case_dir": "RE2-SS/carts_delay/3",
+   "service": "carts",
+   "fault": "delay",
+   "id": "R16"
+  },
+  {
+   "suite": "RE2-SS",
+   "fault_dir": "catalogue_disk",
+   "case_dir": "RE2-SS/catalogue_disk/3",
+   "service": "catalogue",
+   "fault": "disk",
+   "id": "R17"
+  },
+  {
+   "suite": "RE2-SS",
+   "fault_dir": "carts_socket",
+   "case_dir": "RE2-SS/carts_socket/1",
+   "service": "carts",
+   "fault": "socket",
+   "id": "R18"
+  },
+  {
+   "suite": "RE2-SS",
+   "fault_dir": "orders_mem",
+   "case_dir": "RE2-SS/orders_mem/2",
+   "service": "orders",
+   "fault": "mem",
+   "id": "R19"
+  },
+  {
+   "suite": "RE2-SS",
+   "fault_dir": "user_mem",
+   "case_dir": "RE2-SS/user_mem/2",
+   "service": "user",
+   "fault": "mem",
+   "id": "R20"
+  }
+ ],
+ "holdout": [
+  "R01",
+  "R02",
+  "R07",
+  "R09",
+  "R10",
+  "R12",
+  "R13",
+  "R15",
+  "R19",
+  "R20"
+ ]
+}

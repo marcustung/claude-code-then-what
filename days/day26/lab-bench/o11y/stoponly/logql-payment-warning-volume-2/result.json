@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "logql-payment-warning-volume",
+  "category": "loki_query",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-04T03:27:06Z",
+  "seconds": 31.1,
+  "cost_usd": 0.059239599999999996,
+  "turns": 8,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

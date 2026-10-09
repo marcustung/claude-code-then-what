@@ -1,0 +1,45 @@
+--- before/src/Api/Program.cs
++++ after/src/Api/Program.cs
+@@ -67,11 +67,11 @@
+         return Results.Json(new { ok = false, reason = "not_found", request_id = rid }, statusCode: 404);
+     }
+     await CustomerHistory.FetchAsync();
+-    var result = Cancellation.Cancel(before);
+-    bool transitioned = Cancellation.Transitioned(before, result);
++    // 500ms 查詢完成後，才在同一把鎖內重新讀取、判斷、寫入；鎖內無 await，只有 transitioned 的那一次會排入通知。
++    store.TryCancel(id, out var current, out var result, out var transitioned);
+     string outcome; int status;
+-    if (before.Shipped) { outcome = "rejected_shipped"; status = 409; }          // BR-02，不通知（NC-03）
+-    else if (transitioned) { outcome = "ok"; status = 200; store.Put(id, result.Order); }
++    if (current.Shipped) { outcome = "rejected_shipped"; status = 409; }         // BR-02，不通知（NC-03）
++    else if (transitioned) { outcome = "ok"; status = 200; }
+     else { outcome = "idempotent"; status = 200; }                               // BR-04／NC-02，不通知
+     metrics.Inc("cancel_requests_total", outcome);
+     if (transitioned)
+@@ -84,7 +84,7 @@
+     var lat = (DateTime.UtcNow - t0).TotalMilliseconds;
+     metrics.ObserveLatency(lat);
+     log.Write(new { level = status == 200 ? "INFO" : "WARN", @event = "cancel", request_id = rid, run_id = runId, order_id = id, actor, result = outcome, transitioned, refund_requested = result.RefundRequested, latency_ms = Math.Round(lat, 1), queue_depth = channel.Reader.Count });
+-    return Results.Json(new { ok = status == 200, transitioned, refund_requested = result.RefundRequested, reason = status == 200 ? null : outcome, request_id = rid, order = status == 200 ? result.Order : before }, statusCode: status);
++    return Results.Json(new { ok = status == 200, transitioned, refund_requested = result.RefundRequested, reason = status == 200 ? null : outcome, request_id = rid, order = status == 200 ? result.Order : current }, statusCode: status);
+ });
+ app.MapGet("/metrics", () => Results.Text(metrics.Render(channel.Reader.Count, version), "text/plain"));
+ app.Run();
+@@ -96,6 +96,17 @@
+     readonly Dictionary<string, Order> _d = new(); readonly object _g = new();
+     public void Put(string id, Order o) { lock (_g) _d[id] = o; }
+     public bool TryGet(string id, out Order o) { lock (_g) return _d.TryGetValue(id, out o!); }
++    // 讀取、判斷、寫入在同一把鎖內完成，同一訂單只會有一次 transitioned=true。呼叫前訂單已確認存在（本服務不刪單）。
++    public void TryCancel(string id, out Order current, out CancellationResult result, out bool transitioned)
++    {
++        lock (_g)
++        {
++            current = _d[id];
++            result = Cancellation.Cancel(current);
++            transitioned = Cancellation.Transitioned(current, result);
++            if (transitioned) _d[id] = result.Order;
++        }
++    }
+ }
+ 
+ sealed class Metrics

@@ -1,0 +1,13 @@
+{
+  "task": "promql-offset-traffic-compare",
+  "category": "prometheus_query",
+  "set": "holdout",
+  "rep": 2,
+  "scenario_time": "2026-10-03T21:35:29Z",
+  "seconds": 19.9,
+  "cost_usd": 0.039548,
+  "turns": 5,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

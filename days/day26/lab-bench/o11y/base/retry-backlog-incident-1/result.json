@@ -1,0 +1,13 @@
+{
+  "task": "retry-backlog-incident",
+  "category": "investigation",
+  "set": "design",
+  "rep": 1,
+  "scenario_time": "2026-10-03T22:27:35Z",
+  "seconds": 35.2,
+  "cost_usd": 0.088813,
+  "turns": 11,
+  "score": 0.65,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

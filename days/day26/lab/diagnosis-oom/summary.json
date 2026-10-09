@@ -1,0 +1,207 @@
+[
+ {
+  "run": "D1",
+  "arm": "A",
+  "turns": 10,
+  "usd": 0.229,
+  "sec": 58.0,
+  "tools": [
+   "Read",
+   "Glob",
+   "Read",
+   "Read",
+   "Read",
+   "Read",
+   "Read",
+   "Grep",
+   "Grep"
+  ],
+  "h1": "RequestAudit 靜態記憶體佇列無界成長，每次取消請求都把 65536 bytes 的 payload 永久保留在 process 記憶體中且從未清除",
+  "h1_conf": "high",
+  "hits_RequestAudit": true,
+  "n_hyp": 2,
+  "cites": 7,
+  "cites_ok": 7,
+  "fix_file_line": "src/Api/Program.cs:146",
+  "invented_paths_in_verify": [
+   "tools/load.py",
+   "scenarios/oom-retained-payloads.json",
+   "tools/check-load.py"
+  ],
+  "unknowns": [
+   "RequestAudit._items 的內容是否曾在其他端點被讀出並清空（Snapshot 方法存在但未見任何呼叫點），未確認是否有清除路徑被遺漏在別處",
+   "src/Api/Program.cs 第 52-53 行程式碼順序（RequestAudit.Keep 使用 rid 卻在下一行才宣告 rid）在目前快照中順序看似會導致編譯錯誤，但服務明顯已成功執行並產生大量請求記錄，此處順序是否為快照擷取/格式化造成的失真，未確認",
+   "128 MB 上限是否為容器/cgroup 限制或 dotnet GC heap hard limit 設定，未在提供檔案中找到明確設定來源"
+  ]
+ },
+ {
+  "run": "D2",
+  "arm": "A",
+  "turns": 9,
+  "usd": 0.195,
+  "sec": 45.2,
+  "tools": [
+   "Read",
+   "Glob",
+   "Read",
+   "Read",
+   "Read",
+   "Read",
+   "Read",
+   "Read"
+  ],
+  "h1": "RequestAudit.Keep 把每筆取消請求的完整 payload（65536 bytes）永久保留在一個沒有上限、沒有清理機制的 static List<> 中。",
+  "h1_conf": "high",
+  "hits_RequestAudit": true,
+  "n_hyp": 2,
+  "cites": 7,
+  "cites_ok": 7,
+  "fix_file_line": "src/Api/Program.cs:52",
+  "invented_paths_in_verify": [
+   "tools/run-load.ps1",
+   "tools/check-load.py"
+  ],
+  "unknowns": [
+   "RequestAudit 保留的資料是否曾在其他地方（例如客服工具、另一個尚未在此快照內的服務）被讀取消費，本快照原始碼中未見任何呼叫 Snapshot()，未確認其存在意義是設計缺陷還是尚未串接完成的功能。",
+   "api-stderr.txt 完整內容尚未讀完（僅檢視前 308/461 行），未確認是否有其他型別的例外或不同根因的訊息出現在後段。"
+  ]
+ },
+ {
+  "run": "D3",
+  "arm": "A",
+  "turns": 9,
+  "usd": 0.173,
+  "sec": 42.0,
+  "tools": [
+   "Glob",
+   "Glob",
+   "Read",
+   "Read",
+   "Read",
+   "Read",
+   "Read",
+   "Read"
+  ],
+  "h1": "RequestAudit（src/Api/Program.cs:146-151）為每筆取消請求保留完整 payload 且永不釋放，是無界成長的程序內快取",
+  "h1_conf": "high",
+  "hits_RequestAudit": true,
+  "n_hyp": 1,
+  "cites": 4,
+  "cites_ok": 4,
+  "fix_file_line": "src/Api/Program.cs:52",
+  "invented_paths_in_verify": [
+   "scenarios/load-baseline.json",
+   "tools/run-load.ps1",
+   "tools/load.py",
+   "check.json"
+  ],
+  "unknowns": [
+   "未確認：RequestAudit.Snapshot() 是否被任何其他端點或客服工具呼叫（目前 src/Api/Program.cs 中未見呼叫端）",
+   "未確認：128MB 記憶體上限是如何配置的（cgroup/container limit 或 dotnet GC 設定），事故快照中未提供啟動腳本或 runsettings",
+   "未確認：metrics-timeline.jsonl 中 heap 成長曲線的確切拐點時間戳與哪個 request_id 對應（未逐筆核對，可作為佐證但非必要）"
+  ]
+ },
+ {
+  "run": "M1",
+  "arm": "B",
+  "turns": 9,
+  "usd": 0.257,
+  "sec": 45.2,
+  "tools": [
+   "Read",
+   "Read",
+   "Glob",
+   "Read",
+   "Read",
+   "Read",
+   "Read",
+   "Read"
+  ],
+  "h1": "RequestAudit 靜態清單無限累積每筆取消請求的完整 body（此負載下每筆 65536 bytes），造成記憶體單調增長，最終耗盡 128 MB 上限。",
+  "h1_conf": "high",
+  "hits_RequestAudit": true,
+  "n_hyp": 2,
+  "cites": 6,
+  "cites_ok": 6,
+  "fix_file_line": "src/Api/Program.cs:52",
+  "invented_paths_in_verify": [
+   "tools/load.py",
+   "tools/check-load.py",
+   "check.json"
+  ],
+  "unknowns": [
+   "src/Api/Program.cs:52 在 rid（第53行宣告）之前就使用 rid，屬未確認：不清楚這是快照程式碼的既有缺陷、筆誤，還是此檔案並非完整/可編譯版本，需要與部署當時的實際組建產物核對。",
+   "RequestAudit.Snapshot() 是否被任何端點或背景服務呼叫，快照中未見呼叫點，未確認其用途是否仍必要。",
+   "metrics-timeline.jsonl 全檔案中 oc_notify_queue_depth 的完整走勢未讀取，僅看前5行為0，未能完全排除通知佇列堆積是否有次要貢獻。"
+  ]
+ },
+ {
+  "run": "M2",
+  "arm": "B",
+  "turns": 9,
+  "usd": 0.203,
+  "sec": 57.4,
+  "tools": [
+   "Read",
+   "Glob",
+   "Read",
+   "Read",
+   "Grep",
+   "Read",
+   "Read",
+   "Read"
+  ],
+  "h1": "RequestAudit 靜態清單把每筆取消請求的完整 65536 bytes payload 永久保留在程序記憶體中，且沒有任何上限或清除機制",
+  "h1_conf": "high",
+  "hits_RequestAudit": true,
+  "n_hyp": 2,
+  "cites": 7,
+  "cites_ok": 7,
+  "fix_file_line": "src/Api/Program.cs:146",
+  "invented_paths_in_verify": [
+   "scenarios/oom-retained-payloads.json",
+   "check.json"
+  ],
+  "unknowns": [
+   "src/Api/Program.cs:52-53 中 rid 使用在宣告之前，理論上無法通過 C# 編譯，未確認此快照原始碼是否為事故當時實際跑的位元組（可能是快照整理時的行序錯置，或編譯器版本/特性差異），需要建置紀錄或原始部署二進位確認",
+   "未讀取 metrics-timeline.jsonl 完整內容以確認 oc_notify_queue_depth 是否參與記憶體成長",
+   "未檢視 requests.jsonl 與 logs.jsonl 全文以逐筆核對 500 發生時間點與 heap 成長曲線的精確對應關係"
+  ]
+ },
+ {
+  "run": "M3",
+  "arm": "B",
+  "turns": 10,
+  "usd": 0.255,
+  "sec": 64.8,
+  "tools": [
+   "Read",
+   "Read",
+   "Read",
+   "Read",
+   "mcp__codegraph__codegraph_explore",
+   "Glob",
+   "Read",
+   "Read",
+   "Read"
+  ],
+  "h1": "RequestAudit（Program.cs:146-151）用 process-lifetime 的 static List<(OrderId, RequestId, Body)> 保留每一筆取消請求的完整 body，且在本次負載中每請求附帶 65536 bytes 附註、無上限/無淘汰機制，導致記憶體隨請求數線性成長，在 128 MB 縮小配置下觸及上限，引發 OutOfMemoryException。",
+  "h1_conf": "high",
+  "hits_RequestAudit": true,
+  "n_hyp": 2,
+  "cites": 7,
+  "cites_ok": 7,
+  "fix_file_line": "src/Api/Program.cs:149",
+  "invented_paths_in_verify": [
+   "tools/load.py",
+   "scenarios/oom-retained-payloads.json",
+   "tools/check-load.py",
+   "check.json"
+  ],
+  "unknowns": [
+   "src/Api/Program.cs:52 在 rid 變數宣告（第 53 行）之前就使用 RequestAudit.Keep(id, rid, payload)，依 C# 語意此行序會導致編譯錯誤（use of unassigned local），但服務顯然有成功執行並產生 log；未確認此檔案是否為事故當時實際編譯執行的原始碼，或行號順序在快照整理時被打亂。",
+   "未確認 RequestAudit.Snapshot() 是否被任何 API endpoint 呼叫／曝露；目前程式碼中未見呼叫點，無法確認客服查詢功能是否真的被使用到，僅能確認其造成的記憶體洩漏。",
+   "未確認事故當時 GC 模式（Server GC / Workstation GC，是否啟用 gcServer）與 128 MB 上限的具體強制機制（container limit / GC.HeapHardLimit 等），僅能從 metrics 觀察到行為。"
+  ]
+ }
+]

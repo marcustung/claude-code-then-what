@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "check-service-health",
+  "category": "prometheus_query",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T03:36:27Z",
+  "seconds": 23.7,
+  "cost_usd": 0.0482664,
+  "turns": 6,
+  "score": 1.0,
+  "checks_passed": 1,
+  "rubric_passed": 1
+}

@@ -1,0 +1,37 @@
+{
+  "mode": "claude-repair",
+  "diagnostic": false,
+  "request_count": 384,
+  "concurrency": 96,
+  "elapsed_s": 2.383,
+  "p50_ms": 522.5,
+  "p95_ms": 541.6,
+  "max_ms": 562.9,
+  "http_200": 384,
+  "thread_peak": 10,
+  "pending_peak": 3,
+  "cpu_core_percent_mean": 87.1,
+  "heap_peak_mb": 8.9,
+  "receipts": {
+    "received": 387,
+    "duplicates": 0
+  },
+  "checks": {
+    "all_http_200": true,
+    "all_transitioned": true,
+    "refund_preserved": true,
+    "states_cancelled": true,
+    "exact_receiver_order_ids": true,
+    "no_duplicate_notifications": true,
+    "idempotent": true,
+    "shipped_409": true,
+    "unauthorized_401": true,
+    "missing_404": true,
+    "no_extra_receipts": true,
+    "same_order_only_one_transition": true,
+    "same_order_only_one_notification": true
+  },
+  "load_start_epoch": 1791555627.19988,
+  "load_end_epoch": 1791555629.5827706,
+  "dll_sha256": "101f42273a1bb579dd2cf7c09b4d250e2fa7884a6ace182e959e1147c8199792"
+}

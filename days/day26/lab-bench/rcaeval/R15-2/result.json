@@ -1,0 +1,20 @@
+{
+  "case": "R15",
+  "suite": "RE2-OB",
+  "set": "holdout",
+  "rep": 2,
+  "truth_service": "checkoutservice",
+  "truth_fault": "mem",
+  "seconds": 73.7,
+  "cost_usd": 0.2112086,
+  "turns": 13,
+  "answer": "checkoutservice",
+  "top3": [
+    "checkoutservice",
+    "cartservice",
+    "redis"
+  ],
+  "solved": true,
+  "in_top3": true,
+  "outside_reads": 0
+}

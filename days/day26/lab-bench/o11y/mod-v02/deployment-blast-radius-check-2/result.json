@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate"
+  ],
+  "task": "deployment-blast-radius-check",
+  "category": "investigation",
+  "set": "design",
+  "rep": 2,
+  "scenario_time": "2026-10-04T01:59:09Z",
+  "seconds": 35.4,
+  "cost_usd": 0.08433180000000001,
+  "turns": 8,
+  "score": 0.0,
+  "checks_passed": 1,
+  "rubric_passed": 0
+}

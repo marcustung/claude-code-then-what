@@ -1,0 +1,13 @@
+{
+  "task": "slow-path-hotspot-correlation",
+  "category": "investigation",
+  "set": "holdout",
+  "rep": 1,
+  "scenario_time": "2026-10-03T22:13:21Z",
+  "seconds": 81.9,
+  "cost_usd": 0.252077,
+  "turns": 25,
+  "score": 0.25,
+  "checks_passed": 0,
+  "rubric_passed": 0
+}

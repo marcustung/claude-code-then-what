@@ -1,0 +1,16 @@
+{
+  "mods": [
+    "verify-gate-stoponly"
+  ],
+  "task": "payments-path-root-cause",
+  "category": "investigation",
+  "set": "design",
+  "rep": 1,
+  "scenario_time": "2026-10-04T02:52:49Z",
+  "seconds": 84.0,
+  "cost_usd": 0.1918928,
+  "turns": 23,
+  "score": 0.8,
+  "checks_passed": 0,
+  "rubric_passed": 0
+}
