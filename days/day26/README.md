@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10422890) |
 | 今天練習 | CPU 正常、服務卻卡住：讓 Claude 只用唯讀 MCP 查 Grafana 指標、Log、堆疊與程式找出同步等待（ThreadPool 飢餓）；另開工作階段修，第一版速度恢復卻被同單 16 併發攔下，第二版鎖內讀取、判斷、更新才過關；另附第三方題庫成績 |
 | 需要什麼 | Python 3、.NET 9 SDK（重跑最終修法驗收，不需 Claude 或 Grafana）；重跑 Claude 查因需 Day 24 的本機 Grafana、gcx 與 Claude Code CLI |
 | 跑什麼 | `python days/day26/lab-threadpool/validate_claude_repair.py --workspace days/day26/lab-threadpool/claude-final-source` |
