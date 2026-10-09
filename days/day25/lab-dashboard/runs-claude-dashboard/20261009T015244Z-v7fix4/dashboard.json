@@ -1,0 +1,2125 @@
+{
+  "apiVersion": "dashboard.grafana.app/v2",
+  "kind": "Dashboard",
+  "metadata": {
+    "annotations": {
+      "grafana.app/createdBy": "service-account:fg0na4lipqi9sa",
+      "grafana.app/folder": "day25",
+      "grafana.app/updatedBy": "service-account:fg0na4lipqi9sa",
+      "grafana.app/updatedTimestamp": "2026-10-09T01:53:27Z"
+    },
+    "creationTimestamp": "2026-10-09T00:20:13Z",
+    "generation": 5,
+    "labels": {
+      "grafana.app/deprecatedInternalID": "655508194934784"
+    },
+    "name": "day25-work-view-v7",
+    "namespace": "default",
+    "resourceVersion": "1791510807996989",
+    "uid": "a6a46be0-bbb0-4307-a0fb-7d88a9354d14"
+  },
+  "spec": {
+    "annotations": [
+      {
+        "kind": "AnnotationQuery",
+        "spec": {
+          "builtIn": true,
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "legacyOptions": {
+            "type": "dashboard"
+          },
+          "name": "Annotations \u0026 Alerts",
+          "query": {
+            "datasource": {
+              "name": "-- Grafana --"
+            },
+            "group": "grafana",
+            "kind": "DataQuery",
+            "spec": {},
+            "version": "v0"
+          }
+        }
+      }
+    ],
+    "cursorSync": "Off",
+    "editable": true,
+    "elements": {
+      "panel-1": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "min((max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3))",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 1,
+          "links": [],
+          "title": "狀態",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "mappings": [
+                    {
+                      "options": {
+                        "1": {
+                          "color": "red",
+                          "index": 0,
+                          "text": "沒處理完"
+                        },
+                        "2": {
+                          "color": "#808080",
+                          "index": 1,
+                          "text": "紀錄不全"
+                        },
+                        "3": {
+                          "color": "green",
+                          "index": 2,
+                          "text": "都處理完了"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ],
+                  "noValue": "看不到"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^Value$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 18
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-11": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range])) unless on() max(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))) or (max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max(last_over_time(work_status{job=\"day25-work-view\",status=~\"investigate|unknown\"}[$__range])))",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 11,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "text",
+                    "mode": "fixed"
+                  },
+                  "noValue": "看不到"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "none",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^impact$/",
+                  "values": false
+                },
+                "text": {
+                  "valueSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-12": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "label_replace(vector(1), \"sub\", \"被拒、重複取消另計（業務規則）\", \"\", \"\")",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 12,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "text",
+                    "mode": "fixed"
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "none",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^sub$/",
+                  "values": false
+                },
+                "text": {
+                  "valueSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-13": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "label_replace(label_join(count_values(\"m\", sum(last_over_time(work_matched{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))))  * on() group_left(e) count_values(\"e\", sum(last_over_time(work_expected{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))))), \"sub\", \"／\", \"m\", \"e\"), \"sub\", \"對方收到 $1\", \"sub\", \"(.*)\")",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 13,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "text",
+                    "mode": "fixed"
+                  },
+                  "noValue": "看不到"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "none",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^sub$/",
+                  "values": false
+                },
+                "text": {
+                  "valueSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-14": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "max by (note)(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\"}[$__range]))",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 14,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "text",
+                    "mode": "fixed"
+                  },
+                  "noValue": "看不到"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "none",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^note$/",
+                  "values": false
+                },
+                "text": {
+                  "valueSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-2": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "(sum(abs(max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) - on(run) max by (run)(last_over_time(request_outcome{job=\"day25-work-view\",outcome=\"取消成功\"}[$__range])))) + sum(last_over_time(request_outcome{job=\"day25-work-view\",outcome=\"系統錯誤\"}[$__range]))) or vector(0)",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 2,
+          "links": [],
+          "title": "取消成功",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "mappings": [
+                    {
+                      "options": {
+                        "0": {
+                          "color": "green",
+                          "index": 0,
+                          "text": "全部"
+                        }
+                      },
+                      "type": "value"
+                    },
+                    {
+                      "options": {
+                        "from": 0.0001,
+                        "result": {
+                          "color": "red",
+                          "index": 1,
+                          "text": "有缺"
+                        },
+                        "to": 1000000000
+                      },
+                      "type": "range"
+                    }
+                  ]
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^Value$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 18
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-21": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "((((max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) \u003c on(run) group_left() max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))) or (max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"5\"}[$__range])) \u003c on(run) group_left() max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])))) * 0 + 2) or (max by (run, stage, stage_order)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range])) * 0 + 3) or (max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\"}[$__range])) * 0 + 1)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "sortBy",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "fields": {},
+                      "sort": [
+                        {
+                          "field": "stage_order"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "group": "organize",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "excludeByName": {
+                        "Time": true,
+                        "run": true,
+                        "stage_order": true
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "id": 21,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "mappings": [
+                    {
+                      "options": {
+                        "1": {
+                          "color": "green",
+                          "index": 0,
+                          "text": "正常"
+                        },
+                        "2": {
+                          "color": "red",
+                          "index": 1,
+                          "text": "卡住"
+                        },
+                        "3": {
+                          "color": "#808080",
+                          "index": 2,
+                          "text": "看不到"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ],
+                  "noValue": "沒有卡住的項目"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "vertical",
+                "reduceOptions": {
+                  "calcs": [],
+                  "fields": "/^Value$/",
+                  "values": true
+                },
+                "text": {
+                  "titleSize": 16
+                },
+                "textMode": "value_and_name",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-22": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "((max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\"}[$__range]))) or (max by (run, stage, stage_order)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range])) * 0 - 1)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "sortBy",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "fields": {},
+                      "sort": [
+                        {
+                          "field": "stage_order"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "group": "organize",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "excludeByName": {
+                        "Time": true,
+                        "run": true,
+                        "stage_order": true
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "id": 22,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "text",
+                    "mode": "fixed"
+                  },
+                  "decimals": 0,
+                  "mappings": [
+                    {
+                      "options": {
+                        "-1": {
+                          "color": "#808080",
+                          "index": 0,
+                          "text": "看不到"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ],
+                  "noValue": "沒有",
+                  "unit": "suffix: 筆"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "none",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "vertical",
+                "reduceOptions": {
+                  "calcs": [],
+                  "fields": "/^Value$/",
+                  "values": true
+                },
+                "text": {
+                  "titleSize": 16
+                },
+                "textMode": "value_and_name",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-23": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "(max by (run, stage, stage_order, note)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range]))) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "sortBy",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "fields": {},
+                      "sort": [
+                        {
+                          "field": "stage_order"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "group": "organize",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "excludeByName": {
+                        "Time": true,
+                        "Value": true,
+                        "run": true,
+                        "stage_order": true
+                      },
+                      "indexByName": {
+                        "note": 1,
+                        "stage": 0
+                      },
+                      "renameByName": {
+                        "note": "看不到的原因",
+                        "stage": "段落"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "id": 23,
+          "links": [],
+          "title": "看不到的段落與原因",
+          "vizConfig": {
+            "group": "table",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "#808080",
+                    "mode": "fixed"
+                  },
+                  "custom": {
+                    "align": "left",
+                    "cellOptions": {
+                      "type": "color-text",
+                      "wrapText": true
+                    }
+                  },
+                  "noValue": "沒有"
+                },
+                "overrides": []
+              },
+              "options": {
+                "cellHeight": "sm",
+                "showHeader": false
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-24": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "label_replace(label_join(max by (impact, stuck_detail, data_time)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])), \"sub\", \"|\", \"impact\", \"stuck_detail\", \"data_time\"), \"sub\", \"$1 · $2 · 資料時間 $3\", \"sub\", \"(.*)[|](.*)[|](.*)\")",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 24,
+          "links": [],
+          "title": "影響到誰",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "red",
+                    "mode": "fixed"
+                  },
+                  "noValue": "沒有"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^sub$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-25": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "label_replace(label_join(max by (impact, stuck_detail, data_time)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range])), \"sub\", \"|\", \"impact\", \"stuck_detail\", \"data_time\"), \"sub\", \"$1 · $2 · 資料時間 $3\", \"sub\", \"(.*)[|](.*)[|](.*)\")",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 25,
+          "links": [],
+          "title": "看不到有沒有送到",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "#808080",
+                    "mode": "fixed"
+                  },
+                  "noValue": "沒有"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^sub$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-26": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "label_replace(label_join(count_values(\"s\", sum(last_over_time(sender_reported_sent{job=\"day25-work-view\"}[$__range]) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))) * on() group_left(r) count_values(\"r\", sum(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"5\"}[$__range]) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))), \"sub\", \"|\", \"s\", \"r\"), \"sub\", \"系統記錄已送 $1，對方收到 $2\", \"sub\", \"(.*)[|](.*)\")",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 26,
+          "links": [],
+          "title": "證據（只供對照，不算進度）",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "text",
+                    "mode": "fixed"
+                  },
+                  "noValue": "沒有"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "none",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^sub$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-3": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "100 * sum(last_over_time(work_matched{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))) / sum(last_over_time(work_expected{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))) ",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 3,
+          "links": [],
+          "title": "客人被告知",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "decimals": 0,
+                  "noValue": "看不到",
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "red",
+                        "value": null
+                      },
+                      {
+                        "color": "green",
+                        "value": 100
+                      }
+                    ]
+                  },
+                  "unit": "percent"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^Value$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 18
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-31": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "(max by (run, impact, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, impact, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2)",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "sortBy",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "fields": {},
+                      "sort": [
+                        {
+                          "field": "Value"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "group": "organize",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "excludeByName": {
+                        "Time": true,
+                        "Value": true,
+                        "run": true
+                      },
+                      "indexByName": {
+                        "impact": 0,
+                        "next_step": 2,
+                        "owner": 1
+                      },
+                      "renameByName": {
+                        "impact": "影響",
+                        "next_step": "下一步",
+                        "owner": "誰處理"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "id": 31,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "table",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {
+                    "align": "left",
+                    "cellOptions": {
+                      "type": "auto",
+                      "wrapText": true
+                    }
+                  },
+                  "noValue": "沒有"
+                },
+                "overrides": []
+              },
+              "options": {
+                "cellHeight": "sm",
+                "showHeader": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-4": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "(max(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\",available=\"看不到\"}[$__range]))*0+3) or (max(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\",available=\"有\"}[$__range]))*0+1)",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 4,
+          "links": [],
+          "title": "退款",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "mappings": [
+                    {
+                      "options": {
+                        "1": {
+                          "color": "green",
+                          "index": 1,
+                          "text": "有資料"
+                        },
+                        "3": {
+                          "color": "#808080",
+                          "index": 0,
+                          "text": "看不到"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ],
+                  "noValue": "看不到"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^Value$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 18
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-41": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "loki"
+                      },
+                      "group": "loki",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "editorMode": "code",
+                        "expr": "sum by (refund, order_id, notification_id, last_step, cancel_time, waited)(count_over_time({service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" [$__range]))",
+                        "queryType": "instant"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "organize",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "excludeByName": {
+                        "Time": true,
+                        "Value": true
+                      },
+                      "indexByName": {
+                        "cancel_time": 4,
+                        "last_step": 3,
+                        "notification_id": 2,
+                        "order_id": 1,
+                        "refund": 0,
+                        "waited": 5
+                      },
+                      "renameByName": {
+                        "cancel_time": "取消時間",
+                        "last_step": "最後一步",
+                        "notification_id": "通知編號",
+                        "order_id": "訂單",
+                        "refund": "退款",
+                        "waited": "等了多久"
+                      }
+                    }
+                  }
+                },
+                {
+                  "group": "sortBy",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "fields": {},
+                      "sort": [
+                        {
+                          "desc": true,
+                          "field": "退款"
+                        },
+                        {
+                          "field": "訂單"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "id": 41,
+          "links": [],
+          "title": "",
+          "vizConfig": {
+            "group": "table",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "custom": {
+                    "align": "left",
+                    "cellOptions": {
+                      "type": "auto",
+                      "wrapText": true
+                    }
+                  },
+                  "noValue": "沒有"
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "退款"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.cellOptions",
+                        "value": {
+                          "type": "color-text"
+                        }
+                      },
+                      {
+                        "id": "mappings",
+                        "value": [
+                          {
+                            "options": {
+                              "退款": {
+                                "color": "red",
+                                "index": 0,
+                                "text": "退款"
+                              }
+                            },
+                            "type": "value"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "options": {
+                "cellHeight": "sm",
+                "showHeader": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-50": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "last_over_time(work_summary{job=\"day25-work-view\"}[$__range])",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 50,
+          "links": [],
+          "title": "一句話結論",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "text",
+                    "mode": "fixed"
+                  },
+                  "noValue": "看不到"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "none",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^summary$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-51": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "last_over_time(work_summary{job=\"day25-work-view\"}[$__range])",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "id": 51,
+          "links": [],
+          "title": "下一步",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "text",
+                    "mode": "fixed"
+                  },
+                  "noValue": "看不到"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "none",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "/^next$/",
+                  "values": false
+                },
+                "text": {
+                  "titleSize": 16
+                },
+                "textMode": "value",
+                "wideLayout": true
+              }
+            },
+            "version": ""
+          }
+        }
+      },
+      "panel-61": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "prometheus"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "max by (run, question, answer, verified, first_step, generated_at)(last_over_time(work_ai_card{job=\"day25-work-view\"}[$__range]))",
+                        "format": "table",
+                        "instant": true,
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "group": "organize",
+                  "kind": "Transformation",
+                  "spec": {
+                    "options": {
+                      "excludeByName": {
+                        "Time": true,
+                        "Value": true,
+                        "run": true
+                      },
+                      "indexByName": {
+                        "answer": 1,
+                        "first_step": 3,
+                        "generated_at": 4,
+                        "question": 0,
+                        "verified": 2
+                      },
+                      "renameByName": {
+                        "answer": "判斷",
+                        "first_step": "先查哪裡",
+                        "generated_at": "產生時間",
+                        "question": "問了什麼",
+                        "verified": "用查詢驗證到什麼"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "id": 61,
+          "links": [],
+          "title": "AI 判斷，待確認（AI 產生、尚未人工確認；不影響上方燈號與負責人）",
+          "vizConfig": {
+            "group": "table",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "#8E7CC3",
+                    "mode": "fixed"
+                  },
+                  "custom": {
+                    "align": "left",
+                    "cellOptions": {
+                      "type": "color-text",
+                      "wrapText": true
+                    }
+                  },
+                  "noValue": "沒有"
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "問了什麼"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.width",
+                        "value": 200
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "產生時間"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.width",
+                        "value": 160
+                      }
+                    ]
+                  }
+                ]
+              },
+              "options": {
+                "cellHeight": "sm",
+                "showHeader": true
+              }
+            },
+            "version": ""
+          }
+        }
+      }
+    },
+    "layout": {
+      "kind": "RowsLayout",
+      "spec": {
+        "rows": [
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "collapse": false,
+              "hideHeader": true,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-50"
+                        },
+                        "height": 3,
+                        "width": 18,
+                        "x": 0,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-51"
+                        },
+                        "height": 3,
+                        "width": 6,
+                        "x": 18,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-1"
+                        },
+                        "height": 5,
+                        "width": 6,
+                        "x": 0,
+                        "y": 3
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-2"
+                        },
+                        "height": 5,
+                        "width": 6,
+                        "x": 6,
+                        "y": 3
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-3"
+                        },
+                        "height": 5,
+                        "width": 6,
+                        "x": 12,
+                        "y": 3
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-4"
+                        },
+                        "height": 5,
+                        "width": 6,
+                        "x": 18,
+                        "y": 3
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-11"
+                        },
+                        "height": 2,
+                        "width": 6,
+                        "x": 0,
+                        "y": 8
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-12"
+                        },
+                        "height": 2,
+                        "width": 6,
+                        "x": 6,
+                        "y": 8
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-13"
+                        },
+                        "height": 2,
+                        "width": 6,
+                        "x": 12,
+                        "y": 8
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-14"
+                        },
+                        "height": 2,
+                        "width": 6,
+                        "x": 18,
+                        "y": 8
+                      }
+                    }
+                  ]
+                }
+              },
+              "title": ""
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-21"
+                        },
+                        "height": 4,
+                        "width": 24,
+                        "x": 0,
+                        "y": 0
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-22"
+                        },
+                        "height": 3,
+                        "width": 24,
+                        "x": 0,
+                        "y": 4
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-23"
+                        },
+                        "height": 4,
+                        "width": 16,
+                        "x": 0,
+                        "y": 7
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-26"
+                        },
+                        "height": 4,
+                        "width": 8,
+                        "x": 16,
+                        "y": 7
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-24"
+                        },
+                        "height": 3,
+                        "width": 24,
+                        "x": 0,
+                        "y": 11
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-25"
+                        },
+                        "height": 3,
+                        "width": 24,
+                        "x": 0,
+                        "y": 14
+                      }
+                    }
+                  ]
+                }
+              },
+              "title": "卡在哪？"
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-31"
+                        },
+                        "height": 5,
+                        "width": 24,
+                        "x": 0,
+                        "y": 0
+                      }
+                    }
+                  ]
+                }
+              },
+              "title": "誰處理？"
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-61"
+                        },
+                        "height": 9,
+                        "width": 24,
+                        "x": 0,
+                        "y": 0
+                      }
+                    }
+                  ]
+                }
+              },
+              "title": "AI 判斷，待確認"
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "collapse": true,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "element": {
+                          "kind": "ElementReference",
+                          "name": "panel-41"
+                        },
+                        "height": 10,
+                        "width": 24,
+                        "x": 0,
+                        "y": 0
+                      }
+                    }
+                  ]
+                }
+              },
+              "title": "哪幾筆？"
+            }
+          }
+        ]
+      }
+    },
+    "links": [],
+    "liveNow": false,
+    "preload": false,
+    "tags": [
+      "day25",
+      "notification"
+    ],
+    "timeSettings": {
+      "autoRefresh": "",
+      "autoRefreshIntervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "fiscalYearStartMonth": 0,
+      "from": "now-5m",
+      "hideTimepicker": false,
+      "timezone": "browser",
+      "to": "now"
+    },
+    "title": "取消的訂單都處理完了嗎？",
+    "variables": []
+  },
+  "status": {
+    "conversion": {
+      "failed": false,
+      "storedVersion": "v1"
+    }
+  }
+}

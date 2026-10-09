@@ -1,0 +1,1476 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 655508194934784,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "noValue": "看不到"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 18,
+        "x": 0,
+        "y": 0
+      },
+      "id": 50,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^summary$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "last_over_time(work_summary{job=\"day25-work-view\"}[$__range])",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "一句話結論",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "noValue": "看不到"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 51,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^next$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "last_over_time(work_summary{job=\"day25-work-view\"}[$__range])",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "下一步",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "1": {
+                  "color": "red",
+                  "index": 0,
+                  "text": "✗ 沒處理完"
+                },
+                "2": {
+                  "color": "#808080",
+                  "index": 1,
+                  "text": "? 紀錄不全"
+                },
+                "3": {
+                  "color": "green",
+                  "index": 2,
+                  "text": "✓ 都處理完了"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "noValue": "看不到"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 3
+      },
+      "id": 1,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Value$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 18
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "min((max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "狀態",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "✓ 全部"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 0.0001,
+                "result": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "✗ 有缺"
+                },
+                "to": 1000000000
+              },
+              "type": "range"
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 6,
+        "y": 3
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Value$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 18
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "(sum(abs(max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) - on(run) max by (run)(last_over_time(request_outcome{job=\"day25-work-view\",outcome=\"取消成功\"}[$__range])))) + sum(last_over_time(request_outcome{job=\"day25-work-view\",outcome=\"系統錯誤\"}[$__range]))) or vector(0)",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "取消成功",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "noValue": "看不到",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "green",
+                "value": 100
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 12,
+        "y": 3
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Value$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 18
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "100 * sum(last_over_time(work_matched{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))) / sum(last_over_time(work_expected{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))) ",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "客人被告知",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "1": {
+                  "color": "green",
+                  "index": 1,
+                  "text": "有資料"
+                },
+                "3": {
+                  "color": "#808080",
+                  "index": 0,
+                  "text": "看不到"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "noValue": "看不到"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 18,
+        "y": 3
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Value$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 18
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "(max(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\",available=\"看不到\"}[$__range]))*0+3) or (max(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\",available=\"有\"}[$__range]))*0+1)",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "退款",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "noValue": "看不到"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 6,
+        "x": 0,
+        "y": 8
+      },
+      "id": 11,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^impact$/",
+          "values": false
+        },
+        "text": {
+          "valueSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range])) unless on() max(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))) or (max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max(last_over_time(work_status{job=\"day25-work-view\",status=~\"investigate|unknown\"}[$__range])))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 6,
+        "x": 6,
+        "y": 8
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^sub$/",
+          "values": false
+        },
+        "text": {
+          "valueSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "label_replace(vector(1), \"sub\", \"被拒、重複取消另計（業務規則）\", \"\", \"\")",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "noValue": "看不到"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 6,
+        "x": 12,
+        "y": 8
+      },
+      "id": 13,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^sub$/",
+          "values": false
+        },
+        "text": {
+          "valueSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "label_replace(label_join(count_values(\"m\", sum(last_over_time(work_matched{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))))  * on() group_left(e) count_values(\"e\", sum(last_over_time(work_expected{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))))), \"sub\", \"／\", \"m\", \"e\"), \"sub\", \"對方收到 $1\", \"sub\", \"(.*)\")",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "noValue": "看不到"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 6,
+        "x": 18,
+        "y": 8
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^note$/",
+          "values": false
+        },
+        "text": {
+          "valueSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "max by (note)(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 20,
+      "panels": [],
+      "title": "卡在哪？",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "1": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "✓ 正常"
+                },
+                "2": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "✗ 卡住"
+                },
+                "3": {
+                  "color": "#808080",
+                  "index": 2,
+                  "text": "看不到"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "noValue": "沒有卡住的項目"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 11
+      },
+      "id": 21,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/^Value$/",
+          "values": true
+        },
+        "text": {
+          "titleSize": 16
+        },
+        "textMode": "value_and_name",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "((((max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) < on(run) group_left() max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))) or (max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"5\"}[$__range])) < on(run) group_left() max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])))) * 0 + 2) or (max by (run, stage, stage_order)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range])) * 0 + 3) or (max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\"}[$__range])) * 0 + 1)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "stage_order"
+              }
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "run": true,
+              "stage_order": true
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "decimals": 0,
+          "mappings": [
+            {
+              "options": {
+                "-1": {
+                  "color": "#808080",
+                  "index": 0,
+                  "text": "看不到"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "noValue": "沒有",
+          "unit": "suffix: 筆"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 15
+      },
+      "id": 22,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [],
+          "fields": "/^Value$/",
+          "values": true
+        },
+        "text": {
+          "titleSize": 16
+        },
+        "textMode": "value_and_name",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "((max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\"}[$__range]))) or (max by (run, stage, stage_order)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range])) * 0 - 1)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "stage_order"
+              }
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "run": true,
+              "stage_order": true
+            }
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#808080",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": "left",
+            "cellOptions": {
+              "type": "color-text",
+              "wrapText": true
+            }
+          },
+          "noValue": "沒有"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 16,
+        "x": 0,
+        "y": 18
+      },
+      "id": 23,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": false
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "(max by (run, stage, stage_order, note)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range]))) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "看不到的段落與原因",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "stage_order"
+              }
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value": true,
+              "run": true,
+              "stage_order": true
+            },
+            "indexByName": {
+              "note": 1,
+              "stage": 0
+            },
+            "renameByName": {
+              "note": "看不到的原因",
+              "stage": "段落"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "text",
+            "mode": "fixed"
+          },
+          "noValue": "沒有"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 8,
+        "x": 16,
+        "y": 18
+      },
+      "id": 26,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^sub$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "label_replace(label_join(count_values(\"s\", sum(last_over_time(sender_reported_sent{job=\"day25-work-view\"}[$__range]) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))) * on() group_left(r) count_values(\"r\", sum(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"5\"}[$__range]) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))), \"sub\", \"|\", \"s\", \"r\"), \"sub\", \"系統記錄已送 $1，對方收到 $2\", \"sub\", \"(.*)[|](.*)\")",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "證據（只供對照，不算進度）",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "red",
+            "mode": "fixed"
+          },
+          "noValue": "沒有"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "id": 24,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^sub$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "label_replace(label_join(max by (impact, stuck_detail, data_time)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])), \"sub\", \"|\", \"impact\", \"stuck_detail\", \"data_time\"), \"sub\", \"$1 · $2 · 資料時間 $3\", \"sub\", \"(.*)[|](.*)[|](.*)\")",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "影響到誰",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#808080",
+            "mode": "fixed"
+          },
+          "noValue": "沒有"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 25,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^sub$/",
+          "values": false
+        },
+        "text": {
+          "titleSize": 16
+        },
+        "textMode": "value",
+        "wideLayout": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "label_replace(label_join(max by (impact, stuck_detail, data_time)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range])), \"sub\", \"|\", \"impact\", \"stuck_detail\", \"data_time\"), \"sub\", \"$1 · $2 · 資料時間 $3\", \"sub\", \"(.*)[|](.*)[|](.*)\")",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "看不到有沒有送到",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 28
+      },
+      "id": 30,
+      "panels": [],
+      "title": "誰處理？",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "left",
+            "cellOptions": {
+              "type": "auto",
+              "wrapText": true
+            }
+          },
+          "noValue": "沒有"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 29
+      },
+      "id": 31,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "(max by (run, impact, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, impact, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2)",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "Value"
+              }
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value": true,
+              "run": true
+            },
+            "indexByName": {
+              "impact": 0,
+              "next_step": 2,
+              "owner": 1
+            },
+            "renameByName": {
+              "impact": "影響",
+              "next_step": "下一步",
+              "owner": "誰處理"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 34
+      },
+      "id": 60,
+      "panels": [],
+      "title": "AI 判斷，待確認",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#8E7CC3",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": "left",
+            "cellOptions": {
+              "type": "color-text",
+              "wrapText": true
+            }
+          },
+          "noValue": "沒有"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "影響"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 200
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "AI 自評把握"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 110
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "產生時間"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 160
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 35
+      },
+      "id": 61,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "max by (run, likely_cause, first_check, confidence, generated_at)(last_over_time(work_ai_hint{job=\"day25-work-view\"}[$__range])) * on(run) group_left(impact) max by (run, impact)(last_over_time(work_status{job=\"day25-work-view\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "AI 判斷，待確認（AI 產生、尚未人工確認；不影響上方燈號與負責人）",
+      "transformations": [
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "impact"
+              }
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value": true,
+              "run": true
+            },
+            "indexByName": {
+              "confidence": 3,
+              "first_check": 2,
+              "generated_at": 4,
+              "impact": 0,
+              "likely_cause": 1
+            },
+            "renameByName": {
+              "confidence": "AI 自評把握",
+              "first_check": "AI 建議先查",
+              "generated_at": "產生時間",
+              "impact": "影響",
+              "likely_cause": "AI 判斷，待確認"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 43
+      },
+      "id": 40,
+      "panels": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "align": "left",
+                "cellOptions": {
+                  "type": "auto",
+                  "wrapText": true
+                }
+              },
+              "noValue": "沒有"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "退款"
+                },
+                "properties": [
+                  {
+                    "id": "custom.cellOptions",
+                    "value": {
+                      "type": "color-text"
+                    }
+                  },
+                  {
+                    "id": "mappings",
+                    "value": [
+                      {
+                        "options": {
+                          "退款": {
+                            "color": "red",
+                            "index": 0,
+                            "text": "退款"
+                          }
+                        },
+                        "type": "value"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 44
+          },
+          "id": 41,
+          "options": {
+            "cellHeight": "sm",
+            "showHeader": true
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "loki"
+              },
+              "editorMode": "code",
+              "expr": "sum by (refund, order_id, notification_id, last_step, cancel_time, waited)(count_over_time({service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" [$__range]))",
+              "queryType": "instant",
+              "refId": "A"
+            }
+          ],
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true
+                },
+                "indexByName": {
+                  "cancel_time": 4,
+                  "last_step": 3,
+                  "notification_id": 2,
+                  "order_id": 1,
+                  "refund": 0,
+                  "waited": 5
+                },
+                "renameByName": {
+                  "cancel_time": "取消時間",
+                  "last_step": "最後一步",
+                  "notification_id": "通知編號",
+                  "order_id": "訂單",
+                  "refund": "退款",
+                  "waited": "等了多久"
+                }
+              }
+            },
+            {
+              "id": "sortBy",
+              "options": {
+                "fields": {},
+                "sort": [
+                  {
+                    "desc": true,
+                    "field": "退款"
+                  },
+                  {
+                    "field": "訂單"
+                  }
+                ]
+              }
+            }
+          ],
+          "type": "table"
+        }
+      ],
+      "title": "哪幾筆？",
+      "type": "row"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 42,
+  "tags": [
+    "day25",
+    "notification"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "取消的訂單都處理完了嗎？",
+  "uid": "day25-work-view-v7",
+  "version": 1,
+  "weekStart": ""
+}

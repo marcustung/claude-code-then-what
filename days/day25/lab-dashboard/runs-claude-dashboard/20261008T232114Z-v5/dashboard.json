@@ -1,0 +1,191 @@
+{
+  "apiVersion": "dashboard.grafana.app/v1beta1",
+  "kind": "Dashboard",
+  "metadata": { "name": "day25-work-view-v5", "annotations": { "grafana.app/folder": "day25" } },
+  "spec": {
+    "uid": "day25-work-view-v5",
+    "title": "取消通知送到了嗎？",
+    "tags": ["day25", "notification"],
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "refresh": "",
+    "time": { "from": "now-5m", "to": "now" },
+    "templating": { "list": [] },
+    "panels": [
+      { "id": 1, "type": "row", "title": "有問題嗎？", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 }, "panels": [] },
+      {
+        "id": 2, "type": "table", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 7, "w": 24, "x": 0, "y": 1 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "(max by (run, scenario, status_text)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status_text)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status_text)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3)" }
+        ],
+        "transformations": [
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "Value" } ] } },
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "run": true, "Value": true },
+            "indexByName": { "status_text": 0, "scenario": 1 } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "custom": { "align": "auto", "cellOptions": { "type": "auto" } } },
+          "overrides": [
+            { "matcher": { "id": "byName", "options": "status_text" }, "properties": [
+              { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+              { "id": "mappings", "value": [ { "type": "value", "options": {
+                "成功": { "text": "● 成功", "color": "green", "index": 0 },
+                "失敗": { "text": "● 失敗", "color": "red", "index": 1 },
+                "紀錄不全": { "text": "● 紀錄不全", "color": "#808080", "index": 2 } } } ] },
+              { "id": "custom.width", "value": 170 } ] }
+          ]
+        },
+        "options": { "showHeader": false, "cellHeight": "sm" }
+      },
+      { "id": 3, "type": "row", "title": "卡在哪？", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 8 }, "panels": [] },
+      {
+        "id": 4, "type": "table", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 3, "w": 24, "x": 0, "y": 9 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run, scenario, stuck_detail, data_time)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" },
+          { "refId": "B", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range])) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" },
+          { "refId": "C", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" },
+          { "refId": "D", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" },
+          { "refId": "E", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" },
+          { "refId": "F", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "((max by (run, stage)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) < on(run) group_left() max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range]))) or (max by (run, stage)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])) < on(run) group_left() max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))) or (max by (run, stage)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) < on(run) group_left() max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])))) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" },
+          { "refId": "G", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "label_replace((max by (run)(last_over_time(work_matched{job=\"day25-work-view\"}[$__range])) / max by (run)(last_over_time(work_expected{job=\"day25-work-view\"}[$__range]))) * 100 and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])), \"p\", \"進度\", \"\", \"\")" }
+        ],
+        "transformations": [
+          { "id": "joinByField", "options": { "byField": "run", "mode": "outer" } },
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "Time 1": true, "Time 2": true, "Time 3": true, "Time 4": true, "Time 5": true, "Time 6": true, "Time 7": true, "run": true, "Value #A": true, "Value #F": true },
+            "indexByName": { "scenario": 0, "Value #B": 1, "Value #C": 2, "Value #D": 3, "Value #E": 4, "stage": 5, "p": 6, "Value #G": 7, "stuck_detail": 8, "data_time": 9 } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "decimals": 0, "custom": { "align": "auto", "cellOptions": { "type": "auto" } } },
+          "overrides": [
+            { "matcher": { "id": "byName", "options": "scenario" }, "properties": [ { "id": "custom.width", "value": 170 } ] },
+            { "matcher": { "id": "byName", "options": "Value #B" }, "properties": [ { "id": "unit", "value": "prefix:取消成功 " }, { "id": "custom.width", "value": 110 } ] },
+            { "matcher": { "id": "byName", "options": "Value #C" }, "properties": [ { "id": "unit", "value": "prefix:→ 排進待送 " }, { "id": "custom.width", "value": 140 } ] },
+            { "matcher": { "id": "byName", "options": "Value #D" }, "properties": [ { "id": "unit", "value": "prefix:→ 系統說已送 " }, { "id": "custom.width", "value": 160 } ] },
+            { "matcher": { "id": "byName", "options": "Value #E" }, "properties": [ { "id": "unit", "value": "prefix:→ 對方收到 " }, { "id": "custom.width", "value": 150 } ] },
+            { "matcher": { "id": "byName", "options": "stage" }, "properties": [
+              { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+              { "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } },
+              { "id": "mappings", "value": [ { "type": "value", "options": {
+                "排進待送": { "text": "◀ 卡在這（排進待送）", "index": 0 },
+                "系統說已送": { "text": "◀ 卡在這（系統說已送）", "index": 1 },
+                "對方收到": { "text": "◀ 卡在這（對方收到）", "index": 2 } } } ] },
+              { "id": "custom.width", "value": 230 } ] },
+            { "matcher": { "id": "byName", "options": "p" }, "properties": [ { "id": "custom.width", "value": 60 } ] },
+            { "matcher": { "id": "byName", "options": "Value #G" }, "properties": [
+              { "id": "unit", "value": "percent" },
+              { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+              { "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } },
+              { "id": "custom.width", "value": 60 } ] },
+            { "matcher": { "id": "byName", "options": "stuck_detail" }, "properties": [ { "id": "custom.width", "value": 330 } ] },
+            { "matcher": { "id": "byName", "options": "data_time" }, "properties": [ { "id": "custom.width", "value": 170 } ] }
+          ]
+        },
+        "options": { "showHeader": false, "cellHeight": "sm" }
+      },
+      {
+        "id": 5, "type": "table", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 3, "w": 24, "x": 0, "y": 12 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run, scenario, status_text, stuck_detail, data_time)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))" }
+        ],
+        "transformations": [
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "run": true, "Value": true },
+            "indexByName": { "scenario": 0, "status_text": 1, "stuck_detail": 2, "data_time": 3 } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "custom": { "align": "auto", "cellOptions": { "type": "auto" } } },
+          "overrides": [
+            { "matcher": { "id": "byName", "options": "scenario" }, "properties": [ { "id": "custom.width", "value": 170 } ] },
+            { "matcher": { "id": "byName", "options": "status_text" }, "properties": [
+              { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+              { "id": "mappings", "value": [ { "type": "value", "options": {
+                "紀錄不全": { "text": "紀錄不全，看不出卡在哪", "color": "#808080", "index": 0 } } } ] },
+              { "id": "custom.width", "value": 910 } ] },
+            { "matcher": { "id": "byName", "options": "stuck_detail" }, "properties": [ { "id": "custom.width", "value": 330 } ] },
+            { "matcher": { "id": "byName", "options": "data_time" }, "properties": [ { "id": "custom.width", "value": 170 } ] }
+          ]
+        },
+        "options": { "showHeader": false, "cellHeight": "sm" }
+      },
+      { "id": 6, "type": "row", "title": "誰處理？", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 15 }, "panels": [] },
+      {
+        "id": 7, "type": "table", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 4, "w": 24, "x": 0, "y": 16 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "(max by (run, scenario, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2)" },
+          { "refId": "B", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_refund_unmatched{job=\"day25-work-view\"}[$__range])) > 0" }
+        ],
+        "transformations": [
+          { "id": "joinByField", "options": { "byField": "run", "mode": "outer" } },
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "Value #A" } ] } },
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "Time 1": true, "Time 2": true, "run": true, "Value #A": true },
+            "indexByName": { "scenario": 0, "owner": 1, "next_step": 2, "Value #B": 3 } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "custom": { "align": "auto", "cellOptions": { "type": "auto" } } },
+          "overrides": [
+            { "matcher": { "id": "byName", "options": "scenario" }, "properties": [ { "id": "custom.width", "value": 170 } ] },
+            { "matcher": { "id": "byName", "options": "owner" }, "properties": [ { "id": "custom.width", "value": 150 } ] },
+            { "matcher": { "id": "byName", "options": "next_step" }, "properties": [ { "id": "custom.width", "value": 330 } ] },
+            { "matcher": { "id": "byName", "options": "Value #B" }, "properties": [
+              { "id": "unit", "value": "suffix:筆退款通知未對上" },
+              { "id": "decimals", "value": 0 },
+              { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+              { "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } },
+              { "id": "mappings", "value": [ { "type": "special", "options": { "match": "null+nan", "result": { "text": "", "index": 0 } } } ] } ] }
+          ]
+        },
+        "options": { "showHeader": false, "cellHeight": "sm" }
+      },
+      {
+        "id": 8, "type": "row", "title": "哪幾筆？", "collapsed": true,
+        "gridPos": { "h": 1, "w": 24, "x": 0, "y": 20 },
+        "panels": [
+          {
+            "id": 9, "type": "table", "title": "",
+            "datasource": { "type": "loki", "uid": "loki" },
+            "gridPos": { "h": 9, "w": 24, "x": 0, "y": 21 },
+            "targets": [ { "refId": "A", "datasource": { "type": "loki", "uid": "loki" }, "queryType": "instant", "editorMode": "code",
+              "expr": "sum by (scenario, refund, order_id, last_step, cancel_time, waited)(count_over_time({service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" [$__range]))" } ],
+            "transformations": [
+              { "id": "organize", "options": { "excludeByName": { "Time": true, "Value": true },
+                "indexByName": { "scenario": 0, "refund": 1, "order_id": 2, "last_step": 3, "cancel_time": 4, "waited": 5 },
+                "renameByName": { "scenario": "項目", "refund": "退款", "order_id": "訂單", "last_step": "最後停在", "cancel_time": "取消時間", "waited": "等了多久" } } },
+              { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "退款", "desc": true }, { "field": "訂單" } ] } }
+            ],
+            "fieldConfig": {
+              "defaults": { "noValue": "沒有", "custom": { "align": "auto" } },
+              "overrides": [
+                { "matcher": { "id": "byName", "options": "退款" }, "properties": [
+                  { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+                  { "id": "mappings", "value": [ { "type": "value", "options": { "退款": { "text": "退款", "color": "red", "index": 0 } } } ] } ] }
+              ]
+            },
+            "options": { "showHeader": true, "cellHeight": "sm" }
+          }
+        ]
+      }
+    ]
+  }
+}

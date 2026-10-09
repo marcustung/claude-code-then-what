@@ -1,0 +1,190 @@
+{
+  "uid": "day25-work-view-v2",
+  "S1": true,
+  "S2": true,
+  "panels": 10,
+  "D1": true,
+  "D2": false,
+  "D3": true,
+  "D3_offending": [],
+  "D4": true,
+  "D5": false,
+  "sep_missing_values": [
+    [
+      "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3), \"note\", \"-\", \"status\", \"reason\")",
+      1.0
+    ],
+    [
+      "max by (run)(last_over_time(work_unmatched{job=\"day25-work-view\"}[$__range])) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))",
+      6.0
+    ],
+    [
+      "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3), \"note\", \"-\", \"status\", \"reason\")",
+      1.0
+    ],
+    [
+      "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range]))",
+      9.0
+    ],
+    [
+      "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))",
+      9.0
+    ],
+    [
+      "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range]))",
+      9.0
+    ],
+    [
+      "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range]))",
+      3.0
+    ],
+    [
+      "(((((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range])))*0+2) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])))*0+3) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])))*0+4)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+99) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))*0))",
+      4.0
+    ]
+  ],
+  "sep_slow_values": [
+    [
+      "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3), \"note\", \"-\", \"status\", \"reason\")",
+      2.0
+    ],
+    [
+      "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3), \"note\", \"-\", \"status\", \"reason\")",
+      2.0
+    ],
+    [
+      "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range]))",
+      259.0
+    ],
+    [
+      "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))",
+      259.0
+    ],
+    [
+      "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range]))",
+      5.0
+    ],
+    [
+      "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range]))",
+      12.0
+    ],
+    [
+      "(((((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range])))*0+2) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])))*0+3) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])))*0+4)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+99) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))*0))",
+      99.0
+    ]
+  ],
+  "queries": [
+    {
+      "panel": "需要處理",
+      "type": "stat",
+      "kind": "prom",
+      "expr": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))) or vector(0)",
+      "evaluated_as": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[1h]))) or vector(0)",
+      "series": 1
+    },
+    {
+      "panel": "資料不足，還無法判斷",
+      "type": "stat",
+      "kind": "prom",
+      "expr": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))) or vector(0)",
+      "evaluated_as": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[1h]))) or vector(0)",
+      "series": 1
+    },
+    {
+      "panel": "已確認沒問題",
+      "type": "stat",
+      "kind": "prom",
+      "expr": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))) or vector(0)",
+      "evaluated_as": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[1h]))) or vector(0)",
+      "series": 1
+    },
+    {
+      "panel": "每一輪的結論（最需要處理的排最前面）",
+      "type": "table",
+      "kind": "prom",
+      "expr": "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3), \"note\", \"-\", \"status\", \"reason\")",
+      "evaluated_as": "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[1h]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[1h]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[1h]))*0+3), \"note\", \"-\", \"status\", \"reason\")",
+      "series": 5
+    },
+    {
+      "panel": "每一輪的結論（最需要處理的排最前面）",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run)(last_over_time(work_unmatched{job=\"day25-work-view\"}[$__range])) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))",
+      "evaluated_as": "max by (run)(last_over_time(work_unmatched{job=\"day25-work-view\"}[1h])) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[1h]))",
+      "series": 4
+    },
+    {
+      "panel": "每一輪走到哪一段、卡在哪一段",
+      "type": "table",
+      "kind": "prom",
+      "expr": "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3), \"note\", \"-\", \"status\", \"reason\")",
+      "evaluated_as": "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[1h]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[1h]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[1h]))*0+3), \"note\", \"-\", \"status\", \"reason\")",
+      "series": 5
+    },
+    {
+      "panel": "每一輪走到哪一段、卡在哪一段",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range]))",
+      "evaluated_as": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[1h]))",
+      "series": 5
+    },
+    {
+      "panel": "每一輪走到哪一段、卡在哪一段",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))",
+      "evaluated_as": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[1h]))",
+      "series": 5
+    },
+    {
+      "panel": "每一輪走到哪一段、卡在哪一段",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range]))",
+      "evaluated_as": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[1h]))",
+      "series": 5
+    },
+    {
+      "panel": "每一輪走到哪一段、卡在哪一段",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range]))",
+      "evaluated_as": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[1h]))",
+      "series": 5
+    },
+    {
+      "panel": "每一輪走到哪一段、卡在哪一段",
+      "type": "table",
+      "kind": "prom",
+      "expr": "(((((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range])))*0+2) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])))*0+3) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])))*0+4)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+99) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))*0))",
+      "evaluated_as": "(((((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[1h])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[1h])))*0+2) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[1h])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[1h])))*0+3) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[1h])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[1h])))*0+4)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[1h]))) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[1h]))*0+99) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[1h]))*0))",
+      "series": 5
+    },
+    {
+      "panel": "每一輪走到哪一段、卡在哪一段",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run)(last_over_time(stage_queue_wait_avg_ms{job=\"day25-work-view\"}[$__range]))/1000",
+      "evaluated_as": "max by (run)(last_over_time(stage_queue_wait_avg_ms{job=\"day25-work-view\"}[1h]))/1000",
+      "series": 2
+    },
+    {
+      "panel": "要逐筆查的訂單（對方沒收到確認）",
+      "type": "table",
+      "kind": "loki",
+      "expr": "sum by (scenario, order_id)(count_over_time({service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" [$__range]))",
+      "evaluated_as": "sum by (scenario, order_id)(count_over_time({service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" [1h]))",
+      "series": 6
+    },
+    {
+      "panel": "資料不足、還無法判斷的訂單",
+      "type": "table",
+      "kind": "loki",
+      "expr": "sum by (scenario, order_id)(count_over_time({service_name=\"day25-work-view\"} | state=\"unknown_identity\" [$__range]))",
+      "evaluated_as": "sum by (scenario, order_id)(count_over_time({service_name=\"day25-work-view\"} | state=\"unknown_identity\" [1h]))",
+      "series": 247
+    }
+  ]
+}

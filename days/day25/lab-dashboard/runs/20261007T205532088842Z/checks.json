@@ -1,0 +1,34 @@
+{
+  "model_called": false,
+  "checks": [
+    {
+      "name": "original_missing_9_to_3",
+      "passed": true
+    },
+    {
+      "name": "fixed_same_scenario_9_to_9",
+      "passed": true
+    },
+    {
+      "name": "unfinished_window_is_not_loss",
+      "passed": false
+    },
+    {
+      "name": "missing_file_is_unknown",
+      "passed": true
+    },
+    {
+      "name": "equal_counts_wrong_ids_fail",
+      "passed": true
+    },
+    {
+      "name": "duplicate_receipt_is_not_extra_completion",
+      "passed": true
+    },
+    {
+      "name": "missing_sender_identity_is_unknown",
+      "passed": true
+    }
+  ],
+  "passed": false
+}

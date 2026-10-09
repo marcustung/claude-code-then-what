@@ -1,0 +1,9 @@
+這是本機 .NET 教學服務的歷史紀錄，不是公司資料。只讀寫目前目錄，不要讀父目錄。
+
+目前目錄的 reconcile.py 是上一輪寫的對帳程式（介面與輸出欄位不變：python reconcile.py <run 資料夾>... --out <輸出資料夾>）。審查時，固定檢查用改造過的資料跑它，發現三個問題：
+
+1. 接收端收據的筆數和 request_id 都對得上，但 notification_id 和發送端記錄的不同時，程式判成 matched。
+2. 發送端紀錄裡完全沒有 notification_id 時，程式仍判成 matched。
+3. slow-sync-control 那輪判成 waiting。這是 15 天前保存的快照，不會再有新收據進來；值班的人看到 waiting 只會繼續等。
+
+請依 notification-contract.md 重新想清楚「什麼才算這則通知已完成」，修正 reconcile.py，對 data/ 三輪重跑輸出到 out/，用繁體中文說明改了什麼、為什麼。不要修改 data/ 與 notification-contract.md。

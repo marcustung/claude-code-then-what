@@ -1,0 +1,10 @@
+這是本機教學用的 Grafana（只有本機，不是公司環境）。只讀寫目前目錄，不要讀父目錄。
+
+previous-version.json 是你剛建的第七版（UID day25-work-view-v7，資料夾 day25）。你當時沒找到 work_ai_card，改接了 work_ai_hint；那是作者切換資料時殘留的舊指標，現在已經不存在。正確的指標是 work_ai_card（現在有 2 筆，每個有問題的項目一筆），標籤：run、scenario、question、answer、verified、first_step、generated_at。
+
+請只改「AI 判斷，待確認」區塊：改查 work_ai_card，顯示 question（問了什麼）、answer（判斷）、verified（用查詢驗證到什麼）、first_step（先查哪裡）、generated_at；文字照資料顯示。其他面板、版面、用詞都不要動。UID 不變，更新同一個 Dashboard。
+
+環境限制：允許清單一次只認一個 gcx 指令，不要用 ;、&&、| 串接。gcx 已經設定好連線，**gcx config 不開放**。可用的子命令：
+gcx datasources list／get／prometheus …／loki …、gcx metrics query／labels／metadata、gcx logs query／labels／series、gcx resources validate／push／get／pull、gcx dashboards get／list／search／update。
+
+改好後用 gcx 查一次 work_ai_card 確認面板查詢有資料，把最後的定義存成 dashboard.json，用繁體中文說明改了什麼。

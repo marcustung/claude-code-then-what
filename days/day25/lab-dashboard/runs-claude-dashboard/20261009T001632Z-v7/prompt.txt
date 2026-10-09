@@ -1,0 +1,22 @@
+這是本機教學用的 Grafana（只有本機，不是公司環境）。只讀寫目前目錄，不要讀父目錄。
+
+previous-version.json 是第六版 Dashboard（UID day25-work-view-v6），版面（上方大卡片、下方細節，參考圖 user-reference-layout.webp）使用者認可。使用者驗收第六版的意見：
+- 「? 無資料 是什麼」「系統說已送 是什麼」：看不懂。
+- 「一句話說目前狀態是什麼」：缺一句話的結論。
+- 「檢查 dashboard 目的是否目前有回答」：主問題「取消的訂單都處理完了嗎？」只回答了一半，小字寫的是情境名稱（例如「漏送通知」），看不出影響到誰。
+- 使用者另外要求加一個「AI 判斷」欄位，示範 LLM 怎麼幫值班的人想下一步。
+
+請建立第七版，UID day25-work-view-v7，資料夾 day25（folder UID：day25），預設時間範圍最近 5 分鐘，沿用第六版版面，改這些地方：
+1. 最上方放一句話結論與下一步：照資料 work_summary 的 summary 與 next 兩個標籤原樣顯示（固定規則產生的，不要改寫）。
+2. 「無資料」全部改成「看不到」，並在旁邊照資料顯示原因（flow_stage_info 的 note）。
+3. 流程拿掉「系統說已送」。流程現在是 flow_count／flow_stage_info 的七段：收到請求 → 取消成功 → 提出退款 → 排進待送 → 對方收到 → 待處理清單（看不到）→ 退款完成（看不到）。系統自報的已送出數（sender_reported_sent）若要出現，只能放在證據裡，和對方收到並列（例如「系統記錄已送 9，對方只收到 3」），不能當成一段流程或標綠燈。
+4. 卡片小字講影響，不講情境名稱：照 work_status 的 impact 標籤顯示（例如「6 位客人沒收到通知（3 位是退款）」）。
+5. 新增「AI 判斷，待確認」區塊：資料 work_ai_card（每個有問題的項目一筆：question、answer、verified、first_step、generated_at）。必須清楚標示「AI 判斷，待確認」，和規則判定的狀態、負責人分開，不能改變燈號；文字照資料顯示。
+
+其他原則照舊：不能有任何捲軸；文字簡短；不用「批」「輪」與術語；紅＝有問題、灰＝看不到或紀錄不全、綠＝正常；進度與通知編號都要在。
+
+資料：work_summary、work_status（status_text、impact、stuck_detail、data_time、next_step、owner、scenario）、flow_count、flow_stage_info、request_outcome、work_expected、work_matched、work_refund_unmatched、sender_reported_sent、work_ai_card；Loki 的 service_name="day25-work-view" 事件有 refund、last_step、cancel_time、waited、notification_id。本機 Grafana 沒有截圖用的 renderer。
+環境限制：允許清單一次只認一個 gcx 指令，不要用 ;、&&、| 串接。gcx 已經設定好連線，**gcx config 不開放**，不需要檢查設定。可用的子命令：
+gcx datasources list／get／prometheus …／loki …、gcx metrics query／labels／metadata、gcx logs query／labels／series、gcx resources validate／push／get／pull／list-types／list-examples、gcx dashboards get／list／search／create／update、gcx agent skills get。
+
+建好後用 gcx 實際執行每個面板的查詢確認數字，把最後的定義存成 dashboard.json。最後用繁體中文說明：結論句放哪、看不到怎麼呈現、AI 判斷怎麼和規則分開。

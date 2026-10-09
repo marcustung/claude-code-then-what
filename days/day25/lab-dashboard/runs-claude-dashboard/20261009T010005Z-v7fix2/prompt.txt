@@ -1,0 +1,13 @@
+這是本機教學用的 Grafana（只有本機，不是公司環境）。只讀寫目前目錄，不要讀父目錄。
+
+previous-version.json 是你建的第七版修正版（UID day25-work-view-v7，資料夾 day25）。使用者驗收後有兩點要改：
+
+1. 使用者原話：「有燈號 正常不用打勾 有紅燈 異常不用打x」。顏色和文字已經說明狀態，請拿掉所有打勾、叉叉符號（例如「✓ 正常」改成「正常」、「✗ 卡住」改成「卡住」），顏色與文字保留不變。
+2. 「AI 判斷，待確認」表格的文字被切掉：第二列「判斷」欄最後一行只露出一半。請讓表格每一格的文字完整顯示（例如自動換行並讓列高跟著文字），不要用捲軸。調查卡的文字現在改成白話，比之前短（資料指標 work_ai_card 不變）。
+
+只改這兩點；其他面板、查詢、版面、用詞都不要動。UID 不變，更新同一個 Dashboard。
+
+環境限制：允許清單一次只認一個 gcx 指令，不要用 ;、&&、| 串接。gcx 已經設定好連線，**gcx config 不開放**。可用的子命令：
+gcx datasources list／get／prometheus …／loki …、gcx metrics query／labels／metadata、gcx logs query／labels／series、gcx resources validate／push／get／pull、gcx dashboards get／list／search／update。
+
+改好後用 gcx dashboards get 取回確認已經沒有打勾、叉叉符號，把最後的定義存成 dashboard.json，用繁體中文說明改了什麼。

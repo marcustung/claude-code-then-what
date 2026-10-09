@@ -1,0 +1,17 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 85.62,
+  "cost_usd": 0.2283736,
+  "turns": 22,
+  "model": "sonnet",
+  "allowed": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Write",
+    "Edit",
+    "Bash(python reconcile.py:*)",
+    "Bash(python -c:*)"
+  ],
+  "first_round": "20261008T081258Z"
+}

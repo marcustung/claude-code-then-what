@@ -1,0 +1,178 @@
+{
+  "apiVersion": "dashboard.grafana.app/v1beta1",
+  "kind": "Dashboard",
+  "metadata": { "name": "day25-work-view-v2", "annotations": { "grafana.app/folder": "day25" } },
+  "spec": {
+    "uid": "day25-work-view-v2",
+    "title": "取消訂單通知：要處理哪幾筆",
+    "tags": ["day25", "notification"],
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "refresh": "",
+    "time": { "from": "now-24h", "to": "now" },
+    "templating": { "list": [] },
+    "panels": [
+      { "id": 1, "type": "row", "title": "① 要不要處理？", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 }, "panels": [] },
+      {
+        "id": 2, "type": "stat", "title": "需要處理", "description": "確定有通知對方沒收到的輪次數。",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 4, "w": 8, "x": 0, "y": 1 },
+        "targets": [ { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "time_series",
+          "expr": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))) or vector(0)" } ],
+        "fieldConfig": { "defaults": { "unit": "suffix: 輪", "decimals": 0, "noValue": "0 輪",
+          "thresholds": { "mode": "absolute", "steps": [ { "color": "text", "value": null }, { "color": "red", "value": 1 } ] } }, "overrides": [] },
+        "options": { "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "colorMode": "value", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto" }
+      },
+      {
+        "id": 3, "type": "stat", "title": "資料不足，還無法判斷", "description": "缺少可核對的編號，不能算完成也不能算失敗的輪次數。",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 4, "w": 8, "x": 8, "y": 1 },
+        "targets": [ { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "time_series",
+          "expr": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))) or vector(0)" } ],
+        "fieldConfig": { "defaults": { "unit": "suffix: 輪", "decimals": 0, "noValue": "0 輪",
+          "thresholds": { "mode": "absolute", "steps": [ { "color": "text", "value": null }, { "color": "#808080", "value": 1 } ] } }, "overrides": [] },
+        "options": { "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "colorMode": "value", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto" }
+      },
+      {
+        "id": 4, "type": "stat", "title": "已確認沒問題", "description": "每一筆都有收到對方確認的輪次數。",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 4, "w": 8, "x": 16, "y": 1 },
+        "targets": [ { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "time_series",
+          "expr": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))) or vector(0)" } ],
+        "fieldConfig": { "defaults": { "unit": "suffix: 輪", "decimals": 0, "noValue": "0 輪",
+          "thresholds": { "mode": "absolute", "steps": [ { "color": "text", "value": null } ] } }, "overrides": [] },
+        "options": { "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "colorMode": "value", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto" }
+      },
+      {
+        "id": 6, "type": "table", "title": "每一輪的結論（最需要處理的排最前面）",
+        "description": "紅色＝需要處理；灰色＝資料不足、還無法判斷（不是失敗，也不是沒問題）；沒有顏色＝已確認沒問題。",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 8, "w": 24, "x": 0, "y": 5 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3), \"note\", \"-\", \"status\", \"reason\")" },
+          { "refId": "B", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_unmatched{job=\"day25-work-view\"}[$__range])) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))" }
+        ],
+        "transformations": [
+          { "id": "joinByField", "options": { "byField": "run", "mode": "outer" } },
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "Value #A" } ] } },
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "Time 1": true, "Time 2": true, "run": true, "reason": true, "Value #A": true },
+            "indexByName": { "scenario": 0, "status": 1, "Value #B": 2, "note": 3 },
+            "renameByName": { "scenario": "輪次", "status": "結論", "Value #B": "沒收到確認的筆數", "note": "說明" } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "custom": { "align": "auto", "cellOptions": { "type": "auto" } } },
+          "overrides": [
+            { "matcher": { "id": "byName", "options": "結論" }, "properties": [
+              { "id": "custom.cellOptions", "value": { "type": "color-background", "mode": "basic" } },
+              { "id": "mappings", "value": [ { "type": "value", "options": {
+                "investigate": { "text": "需要處理", "color": "red", "index": 0 },
+                "unknown": { "text": "資料不足", "color": "#808080", "index": 1 },
+                "matched": { "text": "已確認沒問題", "color": "transparent", "index": 2 } } } ] },
+              { "id": "custom.width", "value": 150 } ] },
+            { "matcher": { "id": "byName", "options": "沒收到確認的筆數" }, "properties": [
+              { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+              { "id": "unit", "value": "suffix: 筆" },
+              { "id": "decimals", "value": 0 },
+              { "id": "thresholds", "value": { "mode": "absolute", "steps": [ { "color": "text", "value": null }, { "color": "red", "value": 1 } ] } },
+              { "id": "mappings", "value": [ { "type": "special", "options": { "match": "null+nan", "result": { "text": "還無法判斷", "color": "#808080", "index": 0 } } } ] },
+              { "id": "custom.width", "value": 170 } ] },
+            { "matcher": { "id": "byName", "options": "說明" }, "properties": [
+              { "id": "mappings", "value": [ { "type": "value", "options": {
+                "matched-identity_reconciliation": { "text": "每一筆都有收到對方確認", "color": "text", "index": 0 },
+                "investigate-identity_reconciliation": { "text": "有幾筆對方沒收到確認，請到最下面逐筆查", "color": "text", "index": 1 },
+                "unknown-missing_notification_identity": { "text": "大部分通知缺少可核對的編號，現在判斷不出來，要先補資料", "color": "#808080", "index": 2 } } } ] } ] }
+          ]
+        },
+        "options": { "showHeader": true, "cellHeight": "sm" }
+      },
+      { "id": 7, "type": "row", "title": "② 卡在哪一段？", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 13 }, "panels": [] },
+      {
+        "id": 8, "type": "table", "title": "每一輪走到哪一段、卡在哪一段",
+        "description": "四段依序：取消成功 → 排進待送清單 → 系統回報已送出 → 對方確認收到。數字是各段的筆數。平均排隊時間只有 Day 24 兩輪有量測。",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 8, "w": 24, "x": 0, "y": 14 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "label_join((max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, reason)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3), \"note\", \"-\", \"status\", \"reason\")" },
+          { "refId": "B", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range]))" },
+          { "refId": "C", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))" },
+          { "refId": "D", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range]))" },
+          { "refId": "E", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range]))" },
+          { "refId": "F", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "(((((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range])))*0+2) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])))*0+3) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])))*0+4)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+99) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))*0))" },
+          { "refId": "G", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run)(last_over_time(stage_queue_wait_avg_ms{job=\"day25-work-view\"}[$__range]))/1000" }
+        ],
+        "transformations": [
+          { "id": "joinByField", "options": { "byField": "run", "mode": "outer" } },
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "Value #A" } ] } },
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "Time 1": true, "Time 2": true, "Time 3": true, "Time 4": true, "Time 5": true, "Time 6": true, "Time 7": true, "run": true, "reason": true, "status": true, "note": true, "Value #A": true },
+            "indexByName": { "scenario": 0, "Value #F": 1, "Value #B": 2, "Value #C": 3, "Value #D": 4, "Value #E": 5, "Value #G": 6 },
+            "renameByName": { "scenario": "輪次", "Value #F": "卡在哪一段", "Value #B": "取消成功", "Value #C": "排進待送清單", "Value #D": "系統回報已送出", "Value #E": "對方確認收到", "Value #G": "平均排隊時間" } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "custom": { "align": "auto", "cellOptions": { "type": "auto" } }, "decimals": 0 },
+          "overrides": [
+            { "matcher": { "id": "byName", "options": "卡在哪一段" }, "properties": [
+              { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+              { "id": "mappings", "value": [ { "type": "value", "options": {
+                "0": { "text": "沒有卡住", "color": "text", "index": 0 },
+                "2": { "text": "卡在「排進待送清單」", "color": "red", "index": 1 },
+                "3": { "text": "卡在「系統回報已送出」", "color": "red", "index": 2 },
+                "4": { "text": "卡在「對方確認收到」", "color": "red", "index": 3 },
+                "99": { "text": "資料不足，還看不出來", "color": "#808080", "index": 4 } } } ] },
+              { "id": "custom.width", "value": 200 } ] },
+            { "matcher": { "id": "byName", "options": "平均排隊時間" }, "properties": [
+              { "id": "unit", "value": "suffix: 秒" },
+              { "id": "decimals", "value": 2 },
+              { "id": "mappings", "value": [ { "type": "special", "options": { "match": "null+nan", "result": { "text": "沒有量測", "color": "#808080", "index": 0 } } } ] } ] }
+          ]
+        },
+        "options": { "showHeader": true, "cellHeight": "sm" }
+      },
+      { "id": 9, "type": "row", "title": "③ 是哪幾筆？", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 22 }, "panels": [] },
+      {
+        "id": 10, "type": "table", "title": "要逐筆查的訂單（對方沒收到確認）",
+        "description": "只列出確定沒對上的訂單。沒有資料代表目前沒有需要逐筆查的訂單。",
+        "datasource": { "type": "loki", "uid": "loki" },
+        "gridPos": { "h": 8, "w": 24, "x": 0, "y": 23 },
+        "targets": [ { "refId": "A", "datasource": { "type": "loki", "uid": "loki" }, "queryType": "instant", "editorMode": "code",
+          "expr": "sum by (scenario, order_id)(count_over_time({service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" [$__range]))" } ],
+        "transformations": [
+          { "id": "organize", "options": { "excludeByName": { "Time": true, "Value": true }, "indexByName": { "order_id": 0, "scenario": 1 }, "renameByName": { "order_id": "訂單編號", "scenario": "輪次" } } },
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "輪次" }, { "field": "訂單編號" } ] } }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "目前沒有需要逐筆查的訂單", "custom": { "align": "auto" } }, "overrides": [] },
+        "options": { "showHeader": true, "cellHeight": "sm" }
+      },
+      {
+        "id": 11, "type": "row", "title": "資料不足的訂單（需要時再展開）", "collapsed": true,
+        "gridPos": { "h": 1, "w": 24, "x": 0, "y": 31 },
+        "panels": [
+          {
+            "id": 12, "type": "table", "title": "資料不足、還無法判斷的訂單",
+            "description": "這些訂單缺少可核對的編號，不能算已完成，也不能算失敗；要先補資料才能判斷。",
+            "datasource": { "type": "loki", "uid": "loki" },
+            "gridPos": { "h": 10, "w": 24, "x": 0, "y": 32 },
+            "targets": [ { "refId": "A", "datasource": { "type": "loki", "uid": "loki" }, "queryType": "instant", "editorMode": "code",
+              "expr": "sum by (scenario, order_id)(count_over_time({service_name=\"day25-work-view\"} | state=\"unknown_identity\" [$__range]))" } ],
+            "transformations": [
+              { "id": "organize", "options": { "excludeByName": { "Time": true, "Value": true }, "indexByName": { "order_id": 0, "scenario": 1 }, "renameByName": { "order_id": "訂單編號", "scenario": "輪次" } } },
+              { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "輪次" }, { "field": "訂單編號" } ] } }
+            ],
+            "fieldConfig": { "defaults": { "noValue": "沒有資料不足的訂單", "custom": { "align": "auto" } }, "overrides": [] },
+            "options": { "showHeader": true, "cellHeight": "sm" }
+          }
+        ]
+      }
+    ]
+  }
+}

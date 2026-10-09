@@ -1,0 +1,127 @@
+{
+  "apiVersion": "dashboard.grafana.app/v1beta1",
+  "kind": "Dashboard",
+  "metadata": { "name": "day25-work-view" },
+  "spec": {
+    "uid": "day25-work-view",
+    "title": "取消訂單通知：待辦工作視圖",
+    "tags": ["day25", "notification"],
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "refresh": "",
+    "time": { "from": "now-6h", "to": "now" },
+    "templating": {
+      "list": [
+        {
+          "name": "run",
+          "label": "輪次",
+          "type": "query",
+          "datasource": { "type": "prometheus", "uid": "prometheus" },
+          "query": { "query": "label_values(work_expected{job=\"day25-work-view\"}, run)", "refId": "runvar" },
+          "definition": "label_values(work_expected{job=\"day25-work-view\"}, run)",
+          "multi": true,
+          "includeAll": true,
+          "allValue": ".*",
+          "current": { "text": "All", "value": "$__all" },
+          "refresh": 2,
+          "sort": 1
+        }
+      ]
+    },
+    "panels": [
+      {
+        "id": 1,
+        "type": "text",
+        "title": "怎麼讀這張圖",
+        "gridPos": { "h": 4, "w": 24, "x": 0, "y": 0 },
+        "options": {
+          "mode": "markdown",
+          "content": "**完成** = 接收端收據已逐筆對上通知（`work_matched`），不是寄送端自己回報送出（`sender_reported_sent` 刻意不用）。\n\n**完成率** = 已對上 ÷ 應完成；對帳狀態為「資料不足」(unknown) 的輪次不算完成率，顯示「資料不足」，不是 0%、也不是綠燈。\n\n下方先看各輪狀態，再看「未完成事件清單」決定先查哪一批。"
+        }
+      },
+      {
+        "id": 2,
+        "type": "table",
+        "title": "各輪對帳：應完成 / 已確認 / 完成率 / 狀態",
+        "description": "每列一輪。完成率只在對帳狀態不是 unknown 時計算；資料不足的輪次完成率顯示「資料不足」。",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 9, "w": 24, "x": 0, "y": 4 },
+        "targets": [
+          { "refId": "A", "instant": true, "range": false, "format": "table", "datasource": { "type": "prometheus", "uid": "prometheus" },
+            "expr": "max by (run, scenario) (last_over_time(work_expected{job=\"day25-work-view\", run=~\"$run\"}[$__range]))" },
+          { "refId": "B", "instant": true, "range": false, "format": "table", "datasource": { "type": "prometheus", "uid": "prometheus" },
+            "expr": "max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\"$run\"}[$__range]))" },
+          { "refId": "C", "instant": true, "range": false, "format": "table", "datasource": { "type": "prometheus", "uid": "prometheus" },
+            "expr": "(max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\"$run\"}[$__range])) / (max by (run) (last_over_time(work_expected{job=\"day25-work-view\", run=~\"$run\"}[$__range])) > 0)) and on (run) max by (run) (last_over_time(work_status{job=\"day25-work-view\", run=~\"$run\", status!=\"unknown\"}[$__range]))" },
+          { "refId": "D", "instant": true, "range": false, "format": "table", "datasource": { "type": "prometheus", "uid": "prometheus" },
+            "expr": "max by (run, status, reason) (last_over_time(work_status{job=\"day25-work-view\", run=~\"$run\"}[$__range]))" },
+          { "refId": "E", "instant": true, "range": false, "format": "table", "datasource": { "type": "prometheus", "uid": "prometheus" },
+            "expr": "max by (run) (last_over_time(work_unmatched{job=\"day25-work-view\", run=~\"$run\"}[$__range]))" }
+        ],
+        "transformations": [
+          { "id": "joinByField", "options": { "byField": "run", "mode": "outer" } },
+          { "id": "organize", "options": {
+              "excludeByName": { "Time": true, "Time 1": true, "Time 2": true, "Time 3": true, "Time 4": true, "Time 5": true, "Value #D": true },
+              "indexByName": { "run": 0, "scenario": 1, "Value #A": 2, "Value #B": 3, "Value #E": 4, "Value #C": 5, "status": 6, "reason": 7 },
+              "renameByName": { "run": "輪次", "scenario": "情境", "Value #A": "應完成", "Value #B": "確認完成", "Value #E": "未完成", "Value #C": "完成率", "status": "狀態", "reason": "原因" }
+          } }
+        ],
+        "fieldConfig": {
+          "defaults": { "custom": { "align": "auto", "cellOptions": { "type": "auto" } } },
+          "overrides": [
+            { "matcher": { "id": "byName", "options": "完成率" },
+              "properties": [
+                { "id": "unit", "value": "percentunit" },
+                { "id": "decimals", "value": 1 },
+                { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+                { "id": "thresholds", "value": { "mode": "absolute", "steps": [ { "color": "red", "value": null }, { "color": "green", "value": 1 } ] } },
+                { "id": "mappings", "value": [ { "type": "special", "options": { "match": "null+nan", "result": { "text": "資料不足", "color": "text", "index": 0 } } } ] }
+              ] },
+            { "matcher": { "id": "byName", "options": "狀態" },
+              "properties": [
+                { "id": "custom.cellOptions", "value": { "type": "color-background" } },
+                { "id": "mappings", "value": [
+                  { "type": "value", "options": {
+                    "matched": { "text": "已完成", "color": "green", "index": 0 },
+                    "investigate": { "text": "需調查", "color": "red", "index": 1 },
+                    "unknown": { "text": "資料不足", "color": "#808080", "index": 2 } } },
+                  { "type": "special", "options": { "match": "null+nan", "result": { "text": "資料不足", "color": "#808080", "index": 3 } } } ] }
+              ] },
+            { "matcher": { "id": "byName", "options": "未完成" },
+              "properties": [
+                { "id": "thresholds", "value": { "mode": "absolute", "steps": [ { "color": "text", "value": null }, { "color": "red", "value": 1 } ] } },
+                { "id": "custom.cellOptions", "value": { "type": "color-text" } }
+              ] }
+          ]
+        },
+        "options": { "showHeader": true }
+      },
+      {
+        "id": 3,
+        "type": "logs",
+        "title": "未完成事件清單（已知通知 ID，未對上收據）→ 先查這批",
+        "description": "state=unmatched 且帶有通知 ID：接收端沒有對上的收據。重複發布的相同行已去重。空白只代表所選輪次沒有已知 ID 的未完成事件。",
+        "datasource": { "type": "loki", "uid": "loki" },
+        "gridPos": { "h": 11, "w": 24, "x": 0, "y": 13 },
+        "targets": [
+          { "refId": "A", "queryType": "range", "datasource": { "type": "loki", "uid": "loki" },
+            "expr": "{service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" | run=~\"$run\"" }
+        ],
+        "options": { "showTime": false, "showLabels": false, "showCommonLabels": false, "wrapLogMessage": true, "prettifyLogMessage": false, "enableLogDetails": true, "dedupStrategy": "exact", "sortOrder": "Ascending" }
+      },
+      {
+        "id": 4,
+        "type": "logs",
+        "title": "資料不足、無法判斷的事件（缺通知 ID，需先補資料）",
+        "description": "通知 ID 缺失（notification_id=unknown）或狀態為 unknown 的事件：缺少通知身分，無法判斷是否完成。這不是「已完成」也不是「確定失敗」。",
+        "datasource": { "type": "loki", "uid": "loki" },
+        "gridPos": { "h": 11, "w": 24, "x": 0, "y": 24 },
+        "targets": [
+          { "refId": "A", "queryType": "range", "datasource": { "type": "loki", "uid": "loki" },
+            "expr": "{service_name=\"day25-work-view\"} | state=\"unknown\" or notification_id=\"unknown\" | run=~\"$run\"" }
+        ],
+        "options": { "showTime": false, "showLabels": false, "showCommonLabels": false, "wrapLogMessage": true, "prettifyLogMessage": false, "enableLogDetails": true, "dedupStrategy": "exact", "sortOrder": "Ascending" }
+      }
+    ]
+  }
+}

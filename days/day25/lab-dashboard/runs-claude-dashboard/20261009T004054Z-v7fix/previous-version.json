@@ -1,0 +1,355 @@
+{
+  "apiVersion": "dashboard.grafana.app/v1beta1",
+  "kind": "Dashboard",
+  "metadata": { "name": "day25-work-view-v7", "annotations": { "grafana.app/folder": "day25" } },
+  "spec": {
+    "uid": "day25-work-view-v7",
+    "title": "取消的訂單都處理完了嗎？",
+    "tags": ["day25", "notification"],
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "refresh": "",
+    "time": { "from": "now-5m", "to": "now" },
+    "templating": { "list": [] },
+    "panels": [
+      {
+        "id": 50, "type": "stat", "title": "一句話結論",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 3, "w": 18, "x": 0, "y": 0 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "last_over_time(work_summary{job=\"day25-work-view\"}[$__range])" }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "看不到", "color": { "mode": "fixed", "fixedColor": "text" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^summary$/" },
+          "colorMode": "none", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 16 } }
+      },
+      {
+        "id": 51, "type": "stat", "title": "下一步",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 3, "w": 6, "x": 18, "y": 0 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "last_over_time(work_summary{job=\"day25-work-view\"}[$__range])" }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "看不到", "color": { "mode": "fixed", "fixedColor": "text" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^next$/" },
+          "colorMode": "none", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 16 } }
+      },
+      {
+        "id": 1, "type": "stat", "title": "狀態",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 5, "w": 6, "x": 0, "y": 3 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "min((max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3))" }
+        ],
+        "fieldConfig": {
+          "defaults": { "noValue": "看不到", "color": { "mode": "thresholds" },
+            "mappings": [ { "type": "value", "options": {
+              "1": { "text": "✗ 沒處理完", "color": "red", "index": 0 },
+              "2": { "text": "? 紀錄不全", "color": "#808080", "index": 1 },
+              "3": { "text": "✓ 都處理完了", "color": "green", "index": 2 } } } ] },
+          "overrides": []
+        },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^Value$/" },
+          "colorMode": "background", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 18 } }
+      },
+      {
+        "id": 2, "type": "stat", "title": "取消成功",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 5, "w": 6, "x": 6, "y": 3 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "(sum(abs(max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) - on(run) max by (run)(last_over_time(request_outcome{job=\"day25-work-view\",outcome=\"取消成功\"}[$__range])))) + sum(last_over_time(request_outcome{job=\"day25-work-view\",outcome=\"系統錯誤\"}[$__range]))) or vector(0)" }
+        ],
+        "fieldConfig": {
+          "defaults": { "color": { "mode": "thresholds" },
+            "mappings": [
+              { "type": "value", "options": { "0": { "text": "✓ 全部", "color": "green", "index": 0 } } },
+              { "type": "range", "options": { "from": 0.0001, "to": 1000000000, "result": { "text": "✗ 有缺", "color": "red", "index": 1 } } } ] },
+          "overrides": []
+        },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^Value$/" },
+          "colorMode": "background", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 18 } }
+      },
+      {
+        "id": 3, "type": "stat", "title": "客人被告知",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 5, "w": 6, "x": 12, "y": 3 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "100 * sum(last_over_time(work_matched{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))) / sum(last_over_time(work_expected{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))) " }
+        ],
+        "fieldConfig": {
+          "defaults": { "unit": "percent", "decimals": 0, "noValue": "看不到", "color": { "mode": "thresholds" },
+            "thresholds": { "mode": "absolute", "steps": [ { "color": "red", "value": null }, { "color": "green", "value": 100 } ] },
+            "mappings": [] },
+          "overrides": []
+        },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^Value$/" },
+          "colorMode": "background", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 18 } }
+      },
+      {
+        "id": 4, "type": "stat", "title": "退款",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 5, "w": 6, "x": 18, "y": 3 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "(max(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\",available=\"看不到\"}[$__range]))*0+3) or (max(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\",available=\"有\"}[$__range]))*0+1)" }
+        ],
+        "fieldConfig": {
+          "defaults": { "noValue": "看不到", "color": { "mode": "thresholds" },
+            "mappings": [ { "type": "value", "options": {
+              "3": { "text": "看不到", "color": "#808080", "index": 0 },
+              "1": { "text": "有資料", "color": "green", "index": 1 } } } ] },
+          "overrides": []
+        },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^Value$/" },
+          "colorMode": "background", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 18 } }
+      },
+      {
+        "id": 11, "type": "stat", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 2, "w": 6, "x": 0, "y": 8 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range])) unless on() max(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))) or (max by (impact)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max(last_over_time(work_status{job=\"day25-work-view\",status=~\"investigate|unknown\"}[$__range])))" }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "看不到", "color": { "mode": "fixed", "fixedColor": "text" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^impact$/" },
+          "colorMode": "none", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "valueSize": 16 } }
+      },
+      {
+        "id": 12, "type": "stat", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 2, "w": 6, "x": 6, "y": 8 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "label_replace(vector(1), \"sub\", \"被拒、重複取消另計（業務規則）\", \"\", \"\")" }
+        ],
+        "fieldConfig": { "defaults": { "color": { "mode": "fixed", "fixedColor": "text" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^sub$/" },
+          "colorMode": "none", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "valueSize": 16 } }
+      },
+      {
+        "id": 13, "type": "stat", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 2, "w": 6, "x": 12, "y": 8 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "label_replace(label_join(count_values(\"m\", sum(last_over_time(work_matched{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))))))  * on() group_left(e) count_values(\"e\", sum(last_over_time(work_expected{job=\"day25-work-view\"}[$__range]) and on(run) (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range])) unless on() max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))))), \"sub\", \"／\", \"m\", \"e\"), \"sub\", \"對方收到 $1\", \"sub\", \"(.*)\")" }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "看不到", "color": { "mode": "fixed", "fixedColor": "text" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^sub$/" },
+          "colorMode": "none", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "valueSize": 16 } }
+      },
+      {
+        "id": 14, "type": "stat", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 2, "w": 6, "x": 18, "y": 8 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (note)(last_over_time(flow_stage_info{job=\"day25-work-view\",stage_order=\"7\"}[$__range]))" }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "看不到", "color": { "mode": "fixed", "fixedColor": "text" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^note$/" },
+          "colorMode": "none", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "valueSize": 16 } }
+      },
+      { "id": 20, "type": "row", "title": "卡在哪？", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 10 }, "panels": [] },
+      {
+        "id": 21, "type": "stat", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 4, "w": 24, "x": 0, "y": 11 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "((((max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) < on(run) group_left() max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))) or (max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"5\"}[$__range])) < on(run) group_left() max by (run)(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])))) * 0 + 2) or (max by (run, stage, stage_order)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range])) * 0 + 3) or (max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\"}[$__range])) * 0 + 1)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" }
+        ],
+        "transformations": [
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "stage_order" } ] } },
+          { "id": "organize", "options": { "excludeByName": { "Time": true, "run": true, "stage_order": true } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "noValue": "沒有卡住的項目", "color": { "mode": "thresholds" },
+            "mappings": [ { "type": "value", "options": {
+              "1": { "text": "✓ 正常", "color": "green", "index": 0 },
+              "2": { "text": "✗ 卡住", "color": "red", "index": 1 },
+              "3": { "text": "看不到", "color": "#808080", "index": 2 } } } ] },
+          "overrides": []
+        },
+        "options": { "reduceOptions": { "values": true, "calcs": [], "fields": "/^Value$/" },
+          "colorMode": "background", "graphMode": "none", "textMode": "value_and_name", "justifyMode": "center", "orientation": "vertical", "wideLayout": true,
+          "text": { "titleSize": 16 } }
+      },
+      {
+        "id": 22, "type": "stat", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 3, "w": 24, "x": 0, "y": 15 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "((max by (run, stage, stage_order)(last_over_time(flow_count{job=\"day25-work-view\"}[$__range]))) or (max by (run, stage, stage_order)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range])) * 0 - 1)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" }
+        ],
+        "transformations": [
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "stage_order" } ] } },
+          { "id": "organize", "options": { "excludeByName": { "Time": true, "run": true, "stage_order": true } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "noValue": "沒有", "unit": "suffix: 筆", "decimals": 0, "color": { "mode": "fixed", "fixedColor": "text" },
+            "mappings": [ { "type": "value", "options": { "-1": { "text": "看不到", "color": "#808080", "index": 0 } } } ] },
+          "overrides": []
+        },
+        "options": { "reduceOptions": { "values": true, "calcs": [], "fields": "/^Value$/" },
+          "colorMode": "none", "graphMode": "none", "textMode": "value_and_name", "justifyMode": "center", "orientation": "vertical", "wideLayout": true,
+          "text": { "titleSize": 16 } }
+      },
+      {
+        "id": 23, "type": "table", "title": "看不到的段落與原因",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 4, "w": 16, "x": 0, "y": 18 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "(max by (run, stage, stage_order, note)(last_over_time(flow_stage_info{job=\"day25-work-view\",available=\"看不到\"}[$__range]))) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))" }
+        ],
+        "transformations": [
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "stage_order" } ] } },
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "run": true, "stage_order": true, "Value": true },
+            "indexByName": { "stage": 0, "note": 1 },
+            "renameByName": { "stage": "段落", "note": "看不到的原因" } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "noValue": "沒有", "color": { "mode": "fixed", "fixedColor": "#808080" },
+            "custom": { "align": "left", "cellOptions": { "type": "color-text", "wrapText": true } } },
+          "overrides": []
+        },
+        "options": { "showHeader": false, "cellHeight": "sm" }
+      },
+      {
+        "id": 26, "type": "stat", "title": "證據（只供對照，不算進度）",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 4, "w": 8, "x": 16, "y": 18 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "label_replace(label_join(count_values(\"s\", sum(last_over_time(sender_reported_sent{job=\"day25-work-view\"}[$__range]) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))) * on() group_left(r) count_values(\"r\", sum(last_over_time(flow_count{job=\"day25-work-view\",stage_order=\"5\"}[$__range]) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])))), \"sub\", \"|\", \"s\", \"r\"), \"sub\", \"系統記錄已送 $1，對方收到 $2\", \"sub\", \"(.*)[|](.*)\")" }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "沒有", "color": { "mode": "fixed", "fixedColor": "text" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^sub$/" },
+          "colorMode": "none", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 16 } }
+      },
+      {
+        "id": 24, "type": "stat", "title": "影響到誰",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 3, "w": 24, "x": 0, "y": 22 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "label_replace(label_join(max by (impact, stuck_detail, data_time)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range])), \"sub\", \"|\", \"impact\", \"stuck_detail\", \"data_time\"), \"sub\", \"$1 · $2 · 資料時間 $3\", \"sub\", \"(.*)[|](.*)[|](.*)\")" }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "沒有", "color": { "mode": "fixed", "fixedColor": "red" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^sub$/" },
+          "colorMode": "value", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 16 } }
+      },
+      {
+        "id": 25, "type": "stat", "title": "看不到有沒有送到",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 3, "w": 24, "x": 0, "y": 25 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "label_replace(label_join(max by (impact, stuck_detail, data_time)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range])), \"sub\", \"|\", \"impact\", \"stuck_detail\", \"data_time\"), \"sub\", \"$1 · $2 · 資料時間 $3\", \"sub\", \"(.*)[|](.*)[|](.*)\")" }
+        ],
+        "fieldConfig": { "defaults": { "noValue": "沒有", "color": { "mode": "fixed", "fixedColor": "#808080" } }, "overrides": [] },
+        "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"], "fields": "/^sub$/" },
+          "colorMode": "value", "graphMode": "none", "textMode": "value", "justifyMode": "center", "orientation": "auto", "wideLayout": true,
+          "text": { "titleSize": 16 } }
+      },
+      { "id": 30, "type": "row", "title": "誰處理？", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 28 }, "panels": [] },
+      {
+        "id": 31, "type": "table", "title": "",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 5, "w": 24, "x": 0, "y": 29 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "(max by (run, impact, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, impact, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2)" }
+        ],
+        "transformations": [
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "Value" } ] } },
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "run": true, "Value": true },
+            "indexByName": { "impact": 0, "owner": 1, "next_step": 2 },
+            "renameByName": { "impact": "影響", "owner": "誰處理", "next_step": "下一步" } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "noValue": "沒有", "custom": { "align": "left", "cellOptions": { "type": "auto", "wrapText": true } } },
+          "overrides": []
+        },
+        "options": { "showHeader": true, "cellHeight": "sm" }
+      },
+      { "id": 60, "type": "row", "title": "AI 判斷，待確認", "collapsed": false, "gridPos": { "h": 1, "w": 24, "x": 0, "y": 34 }, "panels": [] },
+      {
+        "id": 61, "type": "table", "title": "AI 判斷，待確認（AI 產生、尚未人工確認；不影響上方燈號與負責人）",
+        "datasource": { "type": "prometheus", "uid": "prometheus" },
+        "gridPos": { "h": 8, "w": 24, "x": 0, "y": 35 },
+        "targets": [
+          { "refId": "A", "datasource": { "type": "prometheus", "uid": "prometheus" }, "instant": true, "range": false, "format": "table",
+            "expr": "max by (run, likely_cause, first_check, confidence, generated_at)(last_over_time(work_ai_hint{job=\"day25-work-view\"}[$__range])) * on(run) group_left(impact) max by (run, impact)(last_over_time(work_status{job=\"day25-work-view\"}[$__range]))" }
+        ],
+        "transformations": [
+          { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "impact" } ] } },
+          { "id": "organize", "options": {
+            "excludeByName": { "Time": true, "run": true, "Value": true },
+            "indexByName": { "impact": 0, "likely_cause": 1, "first_check": 2, "confidence": 3, "generated_at": 4 },
+            "renameByName": { "impact": "影響", "likely_cause": "AI 判斷，待確認", "first_check": "AI 建議先查", "confidence": "AI 自評把握", "generated_at": "產生時間" } } }
+        ],
+        "fieldConfig": {
+          "defaults": { "noValue": "沒有", "color": { "mode": "fixed", "fixedColor": "#8E7CC3" },
+            "custom": { "align": "left", "cellOptions": { "type": "color-text", "wrapText": true } } },
+          "overrides": [
+            { "matcher": { "id": "byName", "options": "影響" }, "properties": [ { "id": "custom.width", "value": 200 } ] },
+            { "matcher": { "id": "byName", "options": "AI 自評把握" }, "properties": [ { "id": "custom.width", "value": 110 } ] },
+            { "matcher": { "id": "byName", "options": "產生時間" }, "properties": [ { "id": "custom.width", "value": 160 } ] }
+          ]
+        },
+        "options": { "showHeader": true, "cellHeight": "sm" }
+      },
+      {
+        "id": 40, "type": "row", "title": "哪幾筆？", "collapsed": true,
+        "gridPos": { "h": 1, "w": 24, "x": 0, "y": 43 },
+        "panels": [
+          {
+            "id": 41, "type": "table", "title": "",
+            "datasource": { "type": "loki", "uid": "loki" },
+            "gridPos": { "h": 10, "w": 24, "x": 0, "y": 44 },
+            "targets": [ { "refId": "A", "datasource": { "type": "loki", "uid": "loki" }, "queryType": "instant", "editorMode": "code",
+              "expr": "sum by (refund, order_id, notification_id, last_step, cancel_time, waited)(count_over_time({service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" [$__range]))" } ],
+            "transformations": [
+              { "id": "organize", "options": { "excludeByName": { "Time": true, "Value": true },
+                "indexByName": { "refund": 0, "order_id": 1, "notification_id": 2, "last_step": 3, "cancel_time": 4, "waited": 5 },
+                "renameByName": { "refund": "退款", "order_id": "訂單", "notification_id": "通知編號", "last_step": "最後一步", "cancel_time": "取消時間", "waited": "等了多久" } } },
+              { "id": "sortBy", "options": { "fields": {}, "sort": [ { "field": "退款", "desc": true }, { "field": "訂單" } ] } }
+            ],
+            "fieldConfig": {
+              "defaults": { "noValue": "沒有", "custom": { "align": "left", "cellOptions": { "type": "auto", "wrapText": true } } },
+              "overrides": [
+                { "matcher": { "id": "byName", "options": "退款" }, "properties": [
+                  { "id": "custom.cellOptions", "value": { "type": "color-text" } },
+                  { "id": "mappings", "value": [ { "type": "value", "options": { "退款": { "text": "退款", "color": "red", "index": 0 } } } ] } ] }
+              ]
+            },
+            "options": { "showHeader": true, "cellHeight": "sm" }
+          }
+        ]
+      }
+    ]
+  }
+}

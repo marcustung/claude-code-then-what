@@ -1,0 +1,184 @@
+[
+  {
+    "run_id": "missing-notification-20260921-193704",
+    "version": "1.0.0",
+    "started": "2026-09-21T19:37:04.0709239+08:00",
+    "ended": "2026-09-21T19:37:12.7866699+08:00",
+    "queue_snapshot": 0,
+    "source": "saved tutorial files; not live Grafana",
+    "reconciliation": {
+      "status": "investigate",
+      "reason": "identity_reconciliation",
+      "expected": 9,
+      "received": 3,
+      "unmatched": 6,
+      "duplicates": 0,
+      "unexpected_receipts": 0,
+      "observation_closed": true,
+      "events": [
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r001",
+          "order_id": "o-01",
+          "notification_id": "adb413f734ed4b0f8adea9bc7e8b5618",
+          "state": "unmatched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r002",
+          "order_id": "o-02",
+          "notification_id": "cba06e3d4ba44fbdb604c6b5b5399a72",
+          "state": "unmatched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r004",
+          "order_id": "o-04",
+          "notification_id": "bf6ab2fc0b8f48c3909bb78ec9cbd242",
+          "state": "unmatched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r006",
+          "order_id": "o-05",
+          "notification_id": "f9277350ce304fd3b0c19d80c8ef4763",
+          "state": "unmatched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r008",
+          "order_id": "o-07",
+          "notification_id": "252109d8c2cc4b6aa2dfbbcad449c27d",
+          "state": "unmatched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r010",
+          "order_id": "o-08",
+          "notification_id": "129fb17661eb46f8bf065e069d28ac62",
+          "state": "unmatched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r013",
+          "order_id": "o-09",
+          "notification_id": "54584bbfffd746c7a49f2335cf522e3e",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r014",
+          "order_id": "o-10",
+          "notification_id": "ba9e4eaa459d47048f2219ce32ba50cd",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193704",
+          "request_id": "missing-notification-r015",
+          "order_id": "o-11",
+          "notification_id": "915910bf58c6445a9928b6be1f2fc0b2",
+          "state": "matched"
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "missing-notification-20260921-193835",
+    "version": "1.1.0",
+    "started": "2026-09-21T19:38:35.7991549+08:00",
+    "ended": "2026-09-21T19:39:01.6819263+08:00",
+    "queue_snapshot": 0,
+    "source": "saved tutorial files; not live Grafana",
+    "reconciliation": {
+      "status": "matched",
+      "reason": "identity_reconciliation",
+      "expected": 9,
+      "received": 9,
+      "unmatched": 0,
+      "duplicates": 0,
+      "unexpected_receipts": 0,
+      "observation_closed": true,
+      "events": [
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r001",
+          "order_id": "o-01",
+          "notification_id": "ecfa1e420144461da68fcd0e7d819444",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r002",
+          "order_id": "o-02",
+          "notification_id": "104ca22ce4524c85a0c0f8abe49331ed",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r004",
+          "order_id": "o-04",
+          "notification_id": "25a5254afcd542f890e11513f86abf15",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r006",
+          "order_id": "o-05",
+          "notification_id": "b65f0d5196214a6eaf3dcde2820a73e3",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r008",
+          "order_id": "o-07",
+          "notification_id": "3fb4314f2ae3468ebff567ff050d92cc",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r010",
+          "order_id": "o-08",
+          "notification_id": "99a3c27dac814d779a98573613f6013a",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r013",
+          "order_id": "o-09",
+          "notification_id": "805b1516fdb64df89b7a6f93404c2f1f",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r014",
+          "order_id": "o-10",
+          "notification_id": "40c8a24528064d36802d050faeacaadb",
+          "state": "matched"
+        },
+        {
+          "run_id": "missing-notification-20260921-193835",
+          "request_id": "missing-notification-r015",
+          "order_id": "o-11",
+          "notification_id": "dc6f76f997ee4b98b012a9b8ff31fded",
+          "state": "matched"
+        }
+      ]
+    }
+  },
+  {
+    "run_id": "slow-sync-control-20260923-191636",
+    "version": "1.2.0",
+    "started": "2026-09-23T19:16:45.2600507+08:00",
+    "ended": "2026-09-23T19:16:52.3110399+08:00",
+    "queue_snapshot": null,
+    "source": "saved tutorial files; not live Grafana",
+    "reconciliation": {
+      "status": "unknown",
+      "reason": "event_identity_incomplete",
+      "expected": 259,
+      "received": null,
+      "unmatched": null,
+      "events": []
+    }
+  }
+]

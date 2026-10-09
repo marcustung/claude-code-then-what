@@ -1,0 +1,88 @@
+{
+  "A_passed": 2,
+  "B_passed": 3,
+  "verdict": "方向對、仍需人補",
+  "results": [
+    {
+      "name": "A1 original 9/3 investigate +6 events",
+      "passed": true,
+      "got": {
+        "expected": 9,
+        "received": 3,
+        "unmatched": 6,
+        "status": "investigate",
+        "unmatched_events": 6
+      }
+    },
+    {
+      "name": "A2 fixed 9/9 matched",
+      "passed": true,
+      "got": {
+        "expected": 9,
+        "received": 9,
+        "unmatched": 0,
+        "status": "matched"
+      }
+    },
+    {
+      "name": "A3 slow 259/12 unknown",
+      "passed": false,
+      "got": {
+        "expected": 259,
+        "received": 12,
+        "unmatched": 247,
+        "status": "waiting"
+      }
+    },
+    {
+      "name": "B1 missing receiver file -> null/unknown",
+      "passed": true,
+      "got": {
+        "expected": 9,
+        "received": null,
+        "unmatched": null,
+        "status": "unknown"
+      }
+    },
+    {
+      "name": "B2 same count wrong ids -> 0/investigate",
+      "passed": false,
+      "got": {
+        "expected": 9,
+        "received": 9,
+        "unmatched": 0,
+        "status": "matched"
+      }
+    },
+    {
+      "name": "B3 duplicate receipt -> still 9",
+      "passed": true,
+      "got": {
+        "expected": 9,
+        "received": 9,
+        "unmatched": 0,
+        "status": "matched"
+      }
+    },
+    {
+      "name": "B4 sender lacks notification id -> unknown",
+      "passed": false,
+      "got": {
+        "expected": 9,
+        "received": 9,
+        "unmatched": 0,
+        "status": "matched"
+      }
+    },
+    {
+      "name": "B5 unfinished window -> waiting",
+      "passed": true,
+      "got": {
+        "expected": 9,
+        "received": 3,
+        "unmatched": 6,
+        "status": "waiting"
+      }
+    }
+  ]
+}

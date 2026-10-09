@@ -1,0 +1,730 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 632316436889600,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "panels": [],
+      "title": "① 要不要處理？（紅＝要處理　灰＝資料不足　綠＝沒問題）",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "description": "確定有通知對方沒收到的批數。0 批代表沒有需要處理的批。",
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "noValue": "0 批",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text"
+              },
+              {
+                "color": "red",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "suffix: 批"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))) or vector(0)",
+          "format": "time_series",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "要處理",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "description": "缺少可核對的編號，不能算完成也不能算失敗的批數。",
+      "fieldConfig": {
+        "defaults": {
+          "decimals": 0,
+          "noValue": "0 批",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text"
+              },
+              {
+                "color": "#808080",
+                "value": 1
+              }
+            ]
+          },
+          "unit": "suffix: 批"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 12,
+        "x": 12,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "count(max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))) or vector(0)",
+          "format": "time_series",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "資料不足，還無法判斷",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "description": "最需要處理的排最前面。進度條＝對方確認收到的筆數 ÷ 應完成的筆數；資料不足的批不畫進度條。負責人與下一步是事先由人定好的分派，這裡照實呈現。",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            }
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "結論"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "color-background"
+                }
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "investigate": {
+                        "color": "red",
+                        "index": 0,
+                        "text": "要處理"
+                      },
+                      "matched": {
+                        "color": "green",
+                        "index": 2,
+                        "text": "沒問題"
+                      },
+                      "unknown": {
+                        "color": "#808080",
+                        "index": 1,
+                        "text": "資料不足"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 110
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "哪一批通知"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 220
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "完成進度（對方確認收到 ÷ 應完成）"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "gauge",
+                  "valueDisplayMode": "text"
+                }
+              },
+              {
+                "id": "unit",
+                "value": "percentunit"
+              },
+              {
+                "id": "decimals",
+                "value": 0
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 1
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "red"
+                    },
+                    {
+                      "color": "green",
+                      "value": 1
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "match": "null+nan",
+                      "result": {
+                        "color": "#808080",
+                        "index": 0,
+                        "text": "資料不足"
+                      }
+                    },
+                    "type": "special"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 280
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "負責人"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 150
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 4,
+      "options": {
+        "cellHeight": "md",
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "(max by (run, scenario, status, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",owner!=\"\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",owner!=\"\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status, owner, next_step)(last_over_time(work_status{job=\"day25-work-view\",owner!=\"\",status=\"matched\"}[$__range]))*0+3)",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "(max by (run)(last_over_time(work_matched{job=\"day25-work-view\"}[$__range])) / max by (run)(last_over_time(work_expected{job=\"day25-work-view\"}[$__range]))) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "B"
+        }
+      ],
+      "title": "每一批的結論、完成進度，以及下一步交給誰",
+      "transformations": [
+        {
+          "id": "joinByField",
+          "options": {
+            "byField": "run",
+            "mode": "outer"
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "Value #A"
+              }
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Time 1": true,
+              "Time 2": true,
+              "Value #A": true,
+              "run": true
+            },
+            "indexByName": {
+              "Value #B": 2,
+              "next_step": 4,
+              "owner": 3,
+              "scenario": 1,
+              "status": 0
+            },
+            "renameByName": {
+              "Value #B": "完成進度（對方確認收到 ÷ 應完成）",
+              "next_step": "下一步",
+              "owner": "負責人",
+              "scenario": "哪一批通知",
+              "status": "結論"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 13
+      },
+      "id": 5,
+      "panels": [],
+      "title": "② 卡在哪一段？",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "description": "四段依序：取消成功 → 排進待送清單 → 系統回報已送出 → 對方確認收到。數字是各段的筆數，第一個比前一段少的就是卡住的那一段。",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            }
+          },
+          "decimals": 0
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "卡在哪一段"
+            },
+            "properties": [
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "type": "color-text"
+                }
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "0": {
+                        "color": "text",
+                        "index": 0,
+                        "text": "沒有卡住"
+                      },
+                      "2": {
+                        "color": "red",
+                        "index": 1,
+                        "text": "卡在「排進待送清單」"
+                      },
+                      "3": {
+                        "color": "red",
+                        "index": 2,
+                        "text": "卡在「系統回報已送出」"
+                      },
+                      "4": {
+                        "color": "red",
+                        "index": 3,
+                        "text": "卡在「對方確認收到」"
+                      },
+                      "99": {
+                        "color": "#808080",
+                        "index": 4,
+                        "text": "資料不足，還看不出來"
+                      }
+                    },
+                    "type": "value"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 220
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 6,
+      "options": {
+        "cellHeight": "sm",
+        "showHeader": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "(max by (run, scenario, status)(last_over_time(work_status{job=\"day25-work-view\",status=\"investigate\"}[$__range]))*0+1) or (max by (run, scenario, status)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+2) or (max by (run, scenario, status)(last_over_time(work_status{job=\"day25-work-view\",status=\"matched\"}[$__range]))*0+3)",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range]))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "expr": "(((((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"1\"}[$__range])))*0+2) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"2\"}[$__range])))*0+3) or ((max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"4\"}[$__range])) < max by (run)(last_over_time(work_stage_count{job=\"day25-work-view\",stage_order=\"3\"}[$__range])))*0+4)) and on(run) max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status=\"unknown\"}[$__range]))*0+99) or (max by (run)(last_over_time(work_status{job=\"day25-work-view\",status!=\"unknown\"}[$__range]))*0))",
+          "format": "table",
+          "instant": true,
+          "range": false,
+          "refId": "F"
+        }
+      ],
+      "title": "每一批走到哪一段、卡在哪一段",
+      "transformations": [
+        {
+          "id": "joinByField",
+          "options": {
+            "byField": "run",
+            "mode": "outer"
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "Value #A"
+              }
+            ]
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Time 1": true,
+              "Time 2": true,
+              "Time 3": true,
+              "Time 4": true,
+              "Time 5": true,
+              "Time 6": true,
+              "Value #A": true,
+              "run": true,
+              "status": true
+            },
+            "indexByName": {
+              "Value #B": 2,
+              "Value #C": 3,
+              "Value #D": 4,
+              "Value #E": 5,
+              "Value #F": 1,
+              "scenario": 0
+            },
+            "renameByName": {
+              "Value #B": "取消成功",
+              "Value #C": "排進待送清單",
+              "Value #D": "系統回報已送出",
+              "Value #E": "對方確認收到",
+              "Value #F": "卡在哪一段",
+              "scenario": "哪一批通知"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "id": 7,
+      "panels": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "loki"
+          },
+          "description": "只列出確定沒對上的訂單與其通知編號。沒有資料代表目前沒有需要逐筆查的訂單。資料不足的批沒有可核對的通知編號，所以不在這裡。",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "align": "auto"
+              },
+              "noValue": "目前沒有需要逐筆查的訂單"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 22
+          },
+          "id": 8,
+          "options": {
+            "cellHeight": "sm",
+            "showHeader": true
+          },
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "loki"
+              },
+              "editorMode": "code",
+              "expr": "sum by (scenario, order_id, notification_id)(count_over_time({service_name=\"day25-work-view\"} | state=\"unmatched\" | notification_id!=\"unknown\" [$__range]))",
+              "queryType": "instant",
+              "refId": "A"
+            }
+          ],
+          "title": "對方沒收到確認的訂單",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "Value": true
+                },
+                "indexByName": {
+                  "notification_id": 2,
+                  "order_id": 1,
+                  "scenario": 0
+                },
+                "renameByName": {
+                  "notification_id": "通知編號",
+                  "order_id": "訂單編號",
+                  "scenario": "哪一批通知"
+                }
+              }
+            },
+            {
+              "id": "sortBy",
+              "options": {
+                "fields": {},
+                "sort": [
+                  {
+                    "field": "哪一批通知"
+                  },
+                  {
+                    "field": "訂單編號"
+                  }
+                ]
+              }
+            }
+          ],
+          "type": "table"
+        }
+      ],
+      "title": "③ 是哪幾筆？（需要逐筆查時再展開）",
+      "type": "row"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 42,
+  "tags": [
+    "day25",
+    "notification"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "取消訂單通知：然後呢？要處理什麼、交給誰",
+  "uid": "day25-work-view-v3",
+  "version": 2,
+  "weekStart": ""
+}

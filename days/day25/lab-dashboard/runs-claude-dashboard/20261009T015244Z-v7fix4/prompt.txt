@@ -1,0 +1,13 @@
+這是本機教學用的 Grafana（只有本機，不是公司環境）。只讀寫目前目錄，不要讀父目錄。
+
+previous-version.json 是你上一輪改好的版本（UID day25-work-view-v7，資料夾 day25）。使用者驗收後有兩點要改：
+
+1. 「狀態」面板裡「? 紀錄不全」前面的問號，和之前拿掉的打勾叉叉是同一類符號，使用者同意拿掉，改成「紀錄不全」，顏色不變。其他狀態文字前面如果還有類似符號，也一起拿掉。
+2. 使用者原話：「用條列式呈現」。「AI 判斷，待確認」表格裡「缺什麼資料、怎麼補」那一列的判斷欄（answer），資料現在改成每項一行：以換行分隔，每行開頭是「• 」。請讓這一欄照換行顯示成條列，文字完整、不切字。表格高度依現在的資料調整（請用 gcx 查一次 work_ai_card 確認筆數與內容），不要留大片空白、不要捲軸；下方收合的「哪幾筆？」跟著移動。
+
+只改這兩點；其他面板、查詢、版面、用詞都不要動。UID 不變，更新同一個 Dashboard。
+
+環境限制：允許清單一次只認一個 gcx 指令，不要用 ;、&&、| 串接。gcx 已經設定好連線，**gcx config 不開放**。可用的子命令：
+gcx datasources list／get／prometheus …／loki …、gcx metrics query／labels／metadata、gcx logs query／labels／series、gcx resources validate／push／get／pull、gcx dashboards get／list／search／update。
+
+改好後用 gcx dashboards get 取回確認，把最後的定義存成 dashboard.json，用繁體中文說明改了什麼。

@@ -1,0 +1,12 @@
+這是本機教學用的 Grafana（只有本機，不是公司環境）。只讀寫目前目錄，不要讀父目錄。
+
+previous-version.json 是你上一輪改好的版本（UID day25-work-view-v7，資料夾 day25）。打勾叉叉已拿掉、AI 判斷表文字也完整了。
+
+只剩一點：你上一輪看到 work_ai_card 有 6 筆，其中 4 筆是作者換資料時殘留的舊資料，現在已經過期，只剩 2 筆。你依 6 筆把「AI 判斷，待確認」表格高度設成 24，現在表格下方留了一大片空白。請用 gcx 查一次 work_ai_card 確認現在的筆數，把表格高度改成剛好容納現在的資料：文字不能被切掉，也不要留大片空白、不要捲軸。下方收合的「哪幾筆？」跟著往上移。
+
+只改這一點；其他面板、查詢、版面、用詞都不要動。UID 不變，更新同一個 Dashboard。
+
+環境限制：允許清單一次只認一個 gcx 指令，不要用 ;、&&、| 串接。gcx 已經設定好連線，**gcx config 不開放**。可用的子命令：
+gcx datasources list／get／prometheus …／loki …、gcx metrics query／labels／metadata、gcx logs query／labels／series、gcx resources validate／push／get／pull、gcx dashboards get／list／search／update。
+
+改好後用 gcx dashboards get 取回確認，把最後的定義存成 dashboard.json，用繁體中文說明改了什麼。

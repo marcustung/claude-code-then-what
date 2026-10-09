@@ -1,0 +1,107 @@
+{
+  "panels": 4,
+  "D1": true,
+  "D2": true,
+  "D3": true,
+  "D3_offending": [],
+  "D4": true,
+  "D5": true,
+  "sep_missing_values": [
+    [
+      "max by (run, scenario) (last_over_time(work_expected{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      9.0
+    ],
+    [
+      "max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      3.0
+    ],
+    [
+      "(max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\"$run\"}[$__range])) / (max by (run) (last_over_time(work_expected{job=\"day25-work-view\", run=~\"$run\"}[$__range])) > 0)) and on (run) max by (run) (last_over_time(work_status{job=\"day25-work-view\", run=~\"$run\", status!=\"unknown\"}[$__range]))",
+      0.3333333333333333
+    ],
+    [
+      "max by (run, status, reason) (last_over_time(work_status{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      1.0
+    ],
+    [
+      "max by (run) (last_over_time(work_unmatched{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      6.0
+    ]
+  ],
+  "sep_slow_values": [
+    [
+      "max by (run, scenario) (last_over_time(work_expected{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      259.0
+    ],
+    [
+      "max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      12.0
+    ],
+    [
+      "max by (run, status, reason) (last_over_time(work_status{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      1.0
+    ],
+    [
+      "max by (run) (last_over_time(work_unmatched{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      247.0
+    ]
+  ],
+  "queries": [
+    {
+      "panel": "各輪對帳：應完成 / 已確認 / 完成率 / 狀態",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run, scenario) (last_over_time(work_expected{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      "evaluated_as": "max by (run, scenario) (last_over_time(work_expected{job=\"day25-work-view\", run=~\".*\"}[1h]))",
+      "series": 5
+    },
+    {
+      "panel": "各輪對帳：應完成 / 已確認 / 完成率 / 狀態",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      "evaluated_as": "max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\".*\"}[1h]))",
+      "series": 5
+    },
+    {
+      "panel": "各輪對帳：應完成 / 已確認 / 完成率 / 狀態",
+      "type": "table",
+      "kind": "prom",
+      "expr": "(max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\"$run\"}[$__range])) / (max by (run) (last_over_time(work_expected{job=\"day25-work-view\", run=~\"$run\"}[$__range])) > 0)) and on (run) max by (run) (last_over_time(work_status{job=\"day25-work-view\", run=~\"$run\", status!=\"unknown\"}[$__range]))",
+      "evaluated_as": "(max by (run) (last_over_time(work_matched{job=\"day25-work-view\", run=~\".*\"}[1h])) / (max by (run) (last_over_time(work_expected{job=\"day25-work-view\", run=~\".*\"}[1h])) > 0)) and on (run) max by (run) (last_over_time(work_status{job=\"day25-work-view\", run=~\".*\", status!=\"unknown\"}[1h]))",
+      "series": 4
+    },
+    {
+      "panel": "各輪對帳：應完成 / 已確認 / 完成率 / 狀態",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run, status, reason) (last_over_time(work_status{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      "evaluated_as": "max by (run, status, reason) (last_over_time(work_status{job=\"day25-work-view\", run=~\".*\"}[1h]))",
+      "series": 5
+    },
+    {
+      "panel": "各輪對帳：應完成 / 已確認 / 完成率 / 狀態",
+      "type": "table",
+      "kind": "prom",
+      "expr": "max by (run) (last_over_time(work_unmatched{job=\"day25-work-view\", run=~\"$run\"}[$__range]))",
+      "evaluated_as": "max by (run) (last_over_time(work_unmatched{job=\"day25-work-view\", run=~\".*\"}[1h]))",
+      "series": 5
+    },
+    {
+      "panel": "未完成事件清單（已知通知 ID，未對上收據）→ 先查這批",
+      "type": "logs",
+      "kind": "loki",
+      "expr": "{service_name=\"day25-work-view\"} | state=\"unmatched\" | run=~\"$run\"",
+      "evaluated_as": "{service_name=\"day25-work-view\"} | state=\"unmatched\" | run=~\".*\"",
+      "series": 6
+    },
+    {
+      "panel": "資料不足、無法判斷的事件（缺通知 ID，需先補資料）",
+      "type": "logs",
+      "kind": "loki",
+      "expr": "{service_name=\"day25-work-view\"} | state=~\"unknown|unknown_identity\" | run=~\"$run\"",
+      "evaluated_as": "{service_name=\"day25-work-view\"} | state=~\"unknown|unknown_identity\" | run=~\".*\"",
+      "series": 20
+    }
+  ]
+}

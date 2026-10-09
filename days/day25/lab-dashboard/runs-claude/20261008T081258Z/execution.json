@@ -1,0 +1,15 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 223.7,
+  "model": "sonnet",
+  "allowed": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Write",
+    "Edit",
+    "Bash(python reconcile.py:*)",
+    "Bash(python -c:*)"
+  ],
+  "budget_usd": 3
+}

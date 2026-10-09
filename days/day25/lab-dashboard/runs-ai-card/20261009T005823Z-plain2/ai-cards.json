@@ -1,0 +1,88 @@
+{
+  "generated_at": "2026-10-09T00:58:23.815148+00:00",
+  "model": "sonnet",
+  "cards": {
+    "sep-missing": {
+      "scenario": "漏送通知",
+      "question": "cause",
+      "card": {
+        "hypothesis": "疑似 6 筆通知被「延後」後，沒有機制再送出，也沒進待處理清單。",
+        "checks": [
+          {
+            "why": "看服務對每筆通知記了哪些後續動作",
+            "query": "{service_name=\"order-api-replay\"} | run=\"sep-missing\" | event=~\"notify_.*\"",
+            "result": "6 筆只有延後；沒查到送出失敗、重送、待處理清單。另 3 筆有記錄已送。"
+          },
+          {
+            "why": "用對方收據確認哪些通知真的送達",
+            "query": "{service_name=\"notify-receiver-replay\"} | run=\"sep-missing\"",
+            "result": "只收到 3 筆（o-09、o-10、o-11）；6 筆延後的訂單都沒查到收據。"
+          }
+        ],
+        "conclusion": "可能是 6 筆延後的通知一直沒被重新處理，又沒留下失敗紀錄，所以無聲漏掉。",
+        "cannot_see": [
+          "看不到為何延後，也看不到重新處理的機制有沒有被觸發。",
+          "系統統計的已送 9 筆，與紀錄只有 3 筆已送不符，原因沒查。"
+        ],
+        "first_step": "先查 o-01、o-02、o-04、o-05、o-07、o-08 為何延後後沒人接手，再補發通知，退款客人優先。"
+      },
+      "cost_usd": 0.07648640000000001,
+      "elapsed_seconds": 21.3,
+      "audit": "runs-ai-card\\20261009T005823Z-plain2\\sep-missing\\tool-audit.jsonl"
+    },
+    "sep-slow": {
+      "scenario": "回得慢・資料未齊",
+      "question": "missing",
+      "card": {
+        "missing": [
+          {
+            "what": "其餘 247 筆取消沒查到通知編號，也沒查到排進待送的紀錄",
+            "why_needed": "沒有通知編號，就無法把取消單和對方收據一一對上。",
+            "how_to_add": "請服務負責人補出這 247 筆的排進待送紀錄，並附通知編號、訂單編號、請求編號。"
+          },
+          {
+            "what": "沒查到這 247 筆的結束紀錄（已送、送出失敗或進待處理清單）",
+            "why_needed": "沒有結束紀錄，看不出通知是送完、失敗，還是仍在等。",
+            "how_to_add": "請服務負責人補出每筆通知最後的結果；若仍在等，請補上等待中的待送數量。"
+          },
+          {
+            "what": "沒查到這 247 筆的對方收據；只查到 12 筆，與系統記錄已送的 12 筆相符",
+            "why_needed": "是否送達只能以對方收據為準，系統記錄已送不算證據。",
+            "how_to_add": "請對方提供這一次完整的收據清單，含通知編號與收到時間，再逐筆比對。"
+          },
+          {
+            "what": "卡片的系統記錄已送數 5 和服務紀錄裡的 12 筆不一致，沒查到說明",
+            "why_needed": "兩個來源數字不同，無法確認哪個是完整的。",
+            "how_to_add": "請補上系統統計數字的取樣時間，以及服務紀錄是否完整匯入。"
+          }
+        ],
+        "checks": [
+          {
+            "why": "確認服務紀錄裡有沒有送出失敗、重送、待處理清單、延後的紀錄",
+            "query": "{service_name=\"order-api-replay\"} | run=\"sep-slow\" | event=~\"notify_sent|notify_failed|dead_letter|notify_deferred|startup\"",
+            "result": "只查到 12 筆系統記錄已送和 1 筆服務啟動紀錄；沒查到送出失敗、待處理清單、延後的紀錄。"
+          },
+          {
+            "why": "確認對方收據筆數，並對照上一項的 12 筆",
+            "query": "{service_name=\"notify-receiver-replay\"} | run=\"sep-slow\"",
+            "result": "查到 12 筆對方收據，通知編號與系統記錄已送的 12 筆相同；其餘 247 筆沒查到收據。"
+          },
+          {
+            "why": "確認排進待送紀錄是否有缺通知編號的",
+            "query": "{service_name=\"order-api-replay\"} | run=\"sep-slow\" | event=\"notify_enqueued\" | notification_id=\"\"",
+            "result": "沒查到結果。這不代表編號都齊全，因為卡片顯示 247 筆沒有通知編號。"
+          },
+          {
+            "why": "取得完整服務紀錄與統計數字來核對筆數",
+            "query": "{service_name=\"order-api-replay\"} | run=\"sep-slow\"；{job=\"day25-work-view\"}",
+            "result": "結果太大，沒完整讀完，所以沒用它下結論。"
+          }
+        ],
+        "first_step": "先請服務負責人補出另外 247 筆的通知編號與結束紀錄，再請對方提供完整收據清單。"
+      },
+      "cost_usd": 0.1343252,
+      "elapsed_seconds": 35.4,
+      "audit": "runs-ai-card\\20261009T005823Z-plain2\\sep-slow\\tool-audit.jsonl"
+    }
+  }
+}
