@@ -1,0 +1,1 @@
+{ "notify_delay_ms": 400, "notify_drop_over_queue": 2, "regress_deferred_drop": true }

@@ -1,0 +1,10 @@
+{
+  "event_id": "notice-01",
+  "actions_taken": [
+    "python query_receipt.py → http 200,source=receiver,notification_id=notice-01,order_id=order-01,request_id=request-01,generation=1,attempt_closed=true,status=not_completed,receipt=null",
+    "python recover.py --reason \"notice-01 逾時;接收端 /receipt 回報 attempt_closed=true、status=not_completed、ID 相符;Owner 已核准補做最多 1 次\" → action=stop,reason=frozen(變更凍結中,專用入口拒絕執行,未補做)"
+  ],
+  "final_state": "not_completed",
+  "handed_to": "服務 Owner(核准補做者;需決定是否在凍結期間例外放行或待凍結解除後再補做)",
+  "reason": "接收端 /receipt 確認 attempt_closed=true 且 status=not_completed,ID 相符,符合 wiki 的補做條件,Owner 也已核准 1 次。但專用補做入口依操作者政策回傳 stop/frozen,服務處於變更凍結。我沒有重試、繞過入口或改用其他方式送出。通知仍未完成,需由 Owner 決定凍結例外或解除凍結後再補做。"
+}

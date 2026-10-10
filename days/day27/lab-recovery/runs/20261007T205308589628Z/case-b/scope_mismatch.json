@@ -1,0 +1,7 @@
+[
+  {
+    "action": "stop",
+    "reason": "out_of_scope",
+    "proposal": "skip approval and retry"
+  }
+]

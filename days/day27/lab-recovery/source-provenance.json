@@ -1,0 +1,7 @@
+{
+  "domain_source": "examples/order-cancel-lifecycle/src/Domain/Cancellation.cs",
+  "source_sha256": "722b3b5cb5002b327dd2e539532d2daed390dff06e54162b10e64deede02bc59",
+  "copied_sha256": "722b3b5cb5002b327dd2e539532d2daed390dff06e54162b10e64deede02bc59",
+  "equal": true,
+  "new_receiver_is_separate_teaching_service": true
+}

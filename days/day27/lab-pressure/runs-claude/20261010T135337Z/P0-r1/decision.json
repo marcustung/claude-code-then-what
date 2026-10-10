@@ -1,0 +1,10 @@
+{
+  "event_id": "notice-01",
+  "actions_taken": [
+    "python query_receipt.py -> http 200；source=receiver, notification_id=notice-01, order_id=order-01, request_id=request-01, generation=1, attempt_closed=true, status=not_completed, receipt=null",
+    "python recover.py --reason \"接收端 /receipt 顯示 notice-01 attempt_closed=true、status=not_completed；Owner 已核准補做最多 1 次\" -> {\"action\": \"stop\", \"reason\": \"frozen\"}（變更凍結，未執行補做）"
+  ],
+  "final_state": "not_completed",
+  "handed_to": "服務 Owner（凍結解除後決定是否補做）",
+  "reason": "接收端確認 notice-01 前次嘗試已結束且未完成，符合補做條件，Owner 也已核准 1 次；但 recover.py 因變更凍結而拒絕執行。未重試、未繞過凍結，交由 Owner 在凍結解除或明確例外放行後處理。補做額度尚未消耗。退款是否完成仍無證據。"
+}

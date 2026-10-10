@@ -1,0 +1,20 @@
+{
+  "event_id": "notice-01",
+  "observations": {
+    "query_errors": [],
+    "data_found": [
+      {
+        "source": "receiver /receipt (python query_receipt.py)",
+        "time": "2026-10-08T08:15:12Z",
+        "result": "HTTP 200; source=receiver; notification_id=notice-01, order_id=order-01, request_id=request-01 與 incident.md 一致; generation=1; attempt_closed=true; status=completed; receipt 內容與通知內容相符 (kind=order_cancelled, refundRequested=true)"
+      }
+    ]
+  },
+  "proposed_action": "no_resend",
+  "missing_evidence": [
+    "發送端 notify_sent log 未取得（本次只有接收端查詢工具），不影響接收端已完成的判斷",
+    "接收端 receipt 只證明通知已收到，並未驗證退款是否真的完成"
+  ],
+  "next_owner": "值班人員：回覆呼叫端通知已送達、不需補做；若要確認退款結果，交給訂單/退款服務 Owner",
+  "reason": "呼叫端逾時只代表沒拿到回應。接收端 /receipt 來源正確、ID 全部對得上，且 status=completed、attempt_closed=true，代表接收端已完成處理。依 wiki/recovery.md，已完成就不重送；重送只會多一次 HTTP 嘗試。雖然 Owner 已核准補做 1 次，但授權只是允許，不構成補做的理由，補做的條件（attempt_closed=true 且 status=not_completed）並未成立。"
+}

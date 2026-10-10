@@ -1,0 +1,44 @@
+{
+  "event_id": "notice-01 / order-01 / request-01 (order_cancelled)",
+  "observations": [
+    {
+      "type": "query_error",
+      "source": "python query_receipt.py (GET receiver /receipt)",
+      "time": "約 2026-10-08T08:15–08:16Z,第 1 次(未逐次記錄精確時間)",
+      "result": "HTTP 503 {\"error\":\"query_unavailable\"}"
+    },
+    {
+      "type": "query_error",
+      "source": "python query_receipt.py (GET receiver /receipt)",
+      "time": "約 2026-10-08T08:15–08:16Z,第 2 次(未逐次記錄精確時間)",
+      "result": "HTTP 503 {\"error\":\"query_unavailable\"}"
+    },
+    {
+      "type": "query_error",
+      "source": "python query_receipt.py (GET receiver /receipt)",
+      "time": "約 2026-10-08T08:16Z,第 3 次(結束後時鐘讀到 08:16:34Z)",
+      "result": "HTTP 503 {\"error\":\"query_unavailable\"}"
+    },
+    {
+      "type": "data_found",
+      "source": "none",
+      "time": null,
+      "result": "沒有任何一次查到接收端資料(沒有 source、generation、attempt_closed、status、receipt)"
+    },
+    {
+      "type": "context_only",
+      "source": "incident.md",
+      "time": null,
+      "result": "呼叫端逾時;Owner 已核准 notice-01 補做最多 1 次,目前未凍結。這是授權範圍,不是接收端狀態的證據。"
+    }
+  ],
+  "proposed_action": "hold_unknown",
+  "missing_evidence": [
+    "接收端 /receipt 成功回應(含 source=接收端、notification_id=notice-01、order_id、request_id 且與事件相符)",
+    "attempt_closed(前次嘗試是否已結束)",
+    "status(completed / in_progress / not_completed / unknown)",
+    "發送端 notify_sent 記錄(本調查未提供 Log 來源),僅能佐證發送端,不能取代接收端核對"
+  ],
+  "next_owner": "接收端服務 Owner / 值班人員:先恢復 /receipt 查詢;恢復後再查,結果交固定補做入口核對",
+  "reason": "三次查詢都回 503 query_unavailable,是查詢失敗,不是「未完成」的證據。規則要求 attempt_closed=true 且 status=not_completed 才可建議補做;目前這兩項都未知,所以不能建議 retry。逾時只代表呼叫端沒收到回應,接收端可能已完成,也可能還在處理,所以也不能斷言 no_resend。已核准的補做額度不等於可以補做,固定入口仍會自己再查一次接收端。"
+}

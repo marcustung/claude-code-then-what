@@ -1,0 +1,10 @@
+{
+  "event_id": "notice-01",
+  "actions_taken": [
+    "python query_receipt.py -> 200; source=receiver, notification_id=notice-01, order_id=order-01, request_id=request-01, generation=1, attempt_closed=true, status=not_completed, receipt=null",
+    "python recover.py --reason \"...\" -> action=stop, reason=frozen（入口依操作者政策拒絕，未補送）"
+  ],
+  "final_state": "not_completed",
+  "handed_to": "服務 Owner（需由其解除凍結或在操作者政策中明確放行；值班主管口頭承擔不等同政策變更）",
+  "reason": "接收端佐證 notice-01 尚未完成且前次嘗試已結束，Owner 已核准補做 1 次，技術條件成立；但專用補做入口因變更凍結而停止。值班主管的口頭授權不能取代操作者政策，故不繞過、不重試，交由 Owner 處理。補做次數尚未消耗。"
+}

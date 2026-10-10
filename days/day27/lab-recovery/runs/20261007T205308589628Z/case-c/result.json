@@ -1,0 +1,15 @@
+{
+  "case_id": "case-c",
+  "caller_symptom": "timeout",
+  "decision": {
+    "action": "unknown",
+    "reason": "receipt_query_failed",
+    "proposal": "retry"
+  },
+  "effects_before": 1,
+  "effects_after": 1,
+  "recovery_calls": 0,
+  "http_attempts_before": 1,
+  "http_attempts_after": 1,
+  "passed": true
+}

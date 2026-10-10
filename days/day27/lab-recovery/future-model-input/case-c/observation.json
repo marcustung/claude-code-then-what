@@ -1,0 +1,14 @@
+{
+  "event_id": "notice-01",
+  "symptom": "caller_timeout",
+  "observation": {
+    "query": "/receipt",
+    "response": {
+      "http_status": 503,
+      "body": {
+        "error": "query_unavailable"
+      }
+    }
+  },
+  "status": "saved fixture only; live tool trial pending"
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "query": "/receipt",
+    "response": {
+      "http_status": 200,
+      "body": {
+        "source": "receiver",
+        "notification_id": "notice-01",
+        "order_id": "order-01",
+        "request_id": "request-01",
+        "generation": 1,
+        "attempt_closed": true,
+        "status": "not_completed",
+        "receipt": null
+      }
+    }
+  },
+  {
+    "apply": "/notify",
+    "response": {
+      "http_status": 200,
+      "body": {
+        "accepted": true,
+        "notification_id": "notice-01"
+      }
+    }
+  },
+  {
+    "postcheck": "/receipt",
+    "response": {
+      "http_status": 200,
+      "body": {
+        "source": "receiver",
+        "notification_id": "notice-01",
+        "order_id": "order-01",
+        "request_id": "request-01",
+        "generation": 2,
+        "attempt_closed": true,
+        "status": "completed",
+        "receipt": {
+          "notificationId": "notice-01",
+          "orderId": "order-01",
+          "requestId": "request-01",
+          "kind": "order_cancelled",
+          "refundRequested": true
+        }
+      }
+    }
+  },
+  {
+    "action": "recovered",
+    "reason": "same_event_confirmed_at_receiver",
+    "proposal": "retry"
+  }
+]

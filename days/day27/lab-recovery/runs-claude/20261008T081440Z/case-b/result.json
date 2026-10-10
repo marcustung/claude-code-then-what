@@ -1,0 +1,21 @@
+{
+  "case_id": "case-b",
+  "symptom": "timeout",
+  "proposed_action": "retry",
+  "expected_proposal": "retry",
+  "proposal_ok": true,
+  "gate": {
+    "action": "recovered",
+    "reason": "same_event_confirmed_at_receiver",
+    "proposal": "retry"
+  },
+  "expected_gate_if_retry": "recovered",
+  "effects_before": 0,
+  "effects_after": 1,
+  "http_attempts_before": 1,
+  "http_attempts_after": 2,
+  "claude_exit": 0,
+  "elapsed_seconds": 36.45,
+  "cost_usd": 0.07879080000000001,
+  "turns": 13
+}

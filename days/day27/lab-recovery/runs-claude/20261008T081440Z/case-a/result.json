@@ -1,0 +1,26 @@
+{
+  "case_id": "case-a",
+  "symptom": "timeout",
+  "proposed_action": "no_resend",
+  "expected_proposal": "no_resend",
+  "proposal_ok": true,
+  "gate": {
+    "action": "no_gate_call",
+    "reason": "proposal_did_not_request_retry",
+    "proposal": "no_resend"
+  },
+  "expected_gate_if_retry": "already_completed",
+  "effects_before": 1,
+  "effects_after": 1,
+  "http_attempts_before": 1,
+  "http_attempts_after": 1,
+  "claude_exit": 0,
+  "elapsed_seconds": 38.41,
+  "cost_usd": 0.0915624,
+  "turns": 8,
+  "gate_if_forced_retry": {
+    "action": "already_completed",
+    "reason": "do_not_repeat_effect",
+    "proposal": "retry"
+  }
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "action": "stop",
+    "reason": "owner_approval_missing",
+    "proposal": "skip approval and retry"
+  }
+]

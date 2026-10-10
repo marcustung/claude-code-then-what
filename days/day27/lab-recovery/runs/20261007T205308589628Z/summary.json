@@ -1,0 +1,119 @@
+{
+  "protocol_version": "1.0",
+  "model_called": false,
+  "cases": [
+    {
+      "case_id": "case-a",
+      "caller_symptom": "timeout",
+      "decision": {
+        "action": "already_completed",
+        "reason": "do_not_repeat_effect",
+        "proposal": "retry"
+      },
+      "effects_before": 1,
+      "effects_after": 1,
+      "recovery_calls": 0,
+      "http_attempts_before": 1,
+      "http_attempts_after": 1,
+      "passed": true
+    },
+    {
+      "case_id": "case-b",
+      "caller_symptom": "timeout",
+      "decision": {
+        "action": "recovered",
+        "reason": "same_event_confirmed_at_receiver",
+        "proposal": "retry"
+      },
+      "effects_before": 0,
+      "effects_after": 1,
+      "recovery_calls": 1,
+      "http_attempts_before": 1,
+      "http_attempts_after": 2,
+      "passed": true
+    },
+    {
+      "case_id": "case-c",
+      "caller_symptom": "timeout",
+      "decision": {
+        "action": "unknown",
+        "reason": "receipt_query_failed",
+        "proposal": "retry"
+      },
+      "effects_before": 1,
+      "effects_after": 1,
+      "recovery_calls": 0,
+      "http_attempts_before": 1,
+      "http_attempts_after": 1,
+      "passed": true
+    }
+  ],
+  "gate_checks": [
+    {
+      "name": "attempt_still_active",
+      "passed": true
+    },
+    {
+      "name": "missing_owner",
+      "passed": true,
+      "result": {
+        "action": "stop",
+        "reason": "owner_approval_missing",
+        "proposal": "skip approval and retry"
+      }
+    },
+    {
+      "name": "frozen",
+      "passed": true,
+      "result": {
+        "action": "stop",
+        "reason": "frozen",
+        "proposal": "skip approval and retry"
+      }
+    },
+    {
+      "name": "scope_mismatch",
+      "passed": true,
+      "result": {
+        "action": "stop",
+        "reason": "out_of_scope",
+        "proposal": "skip approval and retry"
+      }
+    },
+    {
+      "name": "retry_budget",
+      "passed": true,
+      "result": {
+        "action": "stop",
+        "reason": "recovery_budget_exhausted",
+        "proposal": "skip approval and retry"
+      }
+    },
+    {
+      "name": "already_completed",
+      "passed": true
+    },
+    {
+      "name": "receiver_deduplicates",
+      "passed": true
+    },
+    {
+      "name": "conflicting_payload",
+      "passed": true
+    },
+    {
+      "name": "query_unavailable",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "human_minutes": null,
+  "limits": [
+    "in-memory receiver deduplication",
+    "no persistence across process restart",
+    "no distributed concurrency proof",
+    "demo-owner is a fixture, not authentication",
+    "not a Claude eval",
+    "no actual mail or refund"
+  ]
+}

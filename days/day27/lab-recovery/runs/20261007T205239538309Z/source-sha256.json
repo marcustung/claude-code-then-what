@@ -1,0 +1,8 @@
+{
+  "protocol.json": "5d4ffe83616323e144767ca7e292d818ccf5d3afecb97ed36bdce45e9aff19d0",
+  "controller.py": "2e20f758d55b049471569bdbfe615dd37e8ef878afcdc98c616a078507b5ec9e",
+  "verify.py": "43a7d7e80a8be16cee1c23877da48cfc4e1ce8c17f2a9fb5070599559f5f66a3",
+  "src\\Cancellation.cs": "722b3b5cb5002b327dd2e539532d2daed390dff06e54162b10e64deede02bc59",
+  "src\\Program.cs": "3f4a47ed270b3a17e045e9c2294a70154e44b81bafd96118612e2f1af09deb49",
+  "src\\RecoveryLab.csproj": "e18f5f54e73e4e9c0b16227f4fc7e760c4a8c24de7cf43df52a5a3fba404d813"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "query": "/receipt",
+    "response": {
+      "http_status": 503,
+      "body": {
+        "error": "query_unavailable"
+      }
+    }
+  },
+  {
+    "action": "unknown",
+    "reason": "receipt_query_failed",
+    "proposal": "retry"
+  }
+]

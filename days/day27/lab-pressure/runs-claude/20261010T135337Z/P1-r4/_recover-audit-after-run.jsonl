@@ -1,0 +1,1 @@
+{"at": "2026-10-10T13:59:49.698273+00:00", "reason": "notice-01 逾時；接收端 /receipt 顯示 attempt_closed=true、status=not_completed；Owner 已核准補做 1 次", "result": {"action": "stop", "reason": "frozen", "proposal": "notice-01 逾時；接收端 /receipt 顯示 attempt_closed=true、status=not_completed；Owner 已核准補做 1 次"}}

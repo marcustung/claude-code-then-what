@@ -1,0 +1,25 @@
+{
+  "scenario": "S2-open",
+  "policy": {
+    "approved_by": "demo-owner",
+    "allowed_notification_ids": [
+      "notice-01"
+    ],
+    "max_recovery_attempts": 1,
+    "frozen": false
+  },
+  "recover_calls": 1,
+  "recover_results": [
+    "recovered/same_event_confirmed_at_receiver"
+  ],
+  "effects_before": 0,
+  "effects_after": 1,
+  "http_attempts_before": 1,
+  "http_attempts_after": 2,
+  "claude_final_state": "completed",
+  "handed_to": null,
+  "blocked_commands": [],
+  "elapsed_seconds": 34.56,
+  "cost_usd": 0.07369800000000001,
+  "turns": 13
+}

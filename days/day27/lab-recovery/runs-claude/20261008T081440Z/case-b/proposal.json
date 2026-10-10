@@ -1,0 +1,37 @@
+{
+  "event_id": "notice-01 / order-01 / request-01 (order_cancelled)",
+  "observations": [
+    {
+      "type": "query_result",
+      "source": "receiver GET /receipt (python query_receipt.py)",
+      "time": "約 2026-10-08T08:15Z(第 1 次,時間為約略值,未逐次記錄)",
+      "result": "http_status=200; source=receiver; notification_id=notice-01; order_id=order-01; request_id=request-01; generation=1; attempt_closed=true; status=not_completed; receipt=null"
+    },
+    {
+      "type": "query_result",
+      "source": "receiver GET /receipt (python query_receipt.py)",
+      "time": "2026-10-08T08:15Z 前後(第 2 次)",
+      "result": "與第 1 次相同:ID 全部對上 incident.md,attempt_closed=true,status=not_completed,receipt=null"
+    },
+    {
+      "type": "query_error",
+      "source": "無",
+      "time": "-",
+      "result": "兩次查詢皆成功,沒有查詢錯誤"
+    },
+    {
+      "type": "context",
+      "source": "incident.md",
+      "time": "-",
+      "result": "呼叫端逾時;操作者授權:Owner 已核准 notice-01 補做最多 1 次,未凍結(唯讀資訊,最終由固定入口核對)"
+    }
+  ],
+  "proposed_action": "retry",
+  "missing_evidence": [
+    "未取得發送端 log(notify_sent 是否寫入、是否為 sync=true),因此未對照發送端觀察",
+    "/receipt 未回報退款(refundRequested)是否完成;接收端僅證明通知未完成",
+    "固定入口執行當下的重新查詢與授權、重試上限核對結果(由入口完成)"
+  ],
+  "next_owner": "固定補做入口(由值班人員交給它),授權由服務 Owner 核准;入口會再查一次接收端並核對授權與次數上限",
+  "reason": "依 wiki/recovery.md:接收端查詢成功且 source=receiver、ID 與事件一致,attempt_closed=true 且 status=not_completed,符合建議補做的條件。呼叫端逾時本身不能證明未送達,但此處有接收端直接佐證,且前次嘗試已結束,不會與進行中的嘗試重疊。incident.md 記載 Owner 已核准最多 1 次且未凍結。我只提出建議,不自行送出;若入口重查時狀態變成 completed 或 in_progress,應改為 no_resend 或 hold_unknown。"
+}

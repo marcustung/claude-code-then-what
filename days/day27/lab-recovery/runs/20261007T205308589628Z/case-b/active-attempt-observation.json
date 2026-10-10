@@ -1,0 +1,23 @@
+[
+  {
+    "query": "/receipt",
+    "response": {
+      "http_status": 200,
+      "body": {
+        "source": "receiver",
+        "notification_id": "notice-01",
+        "order_id": "order-01",
+        "request_id": "request-01",
+        "generation": 1,
+        "attempt_closed": false,
+        "status": "in_progress",
+        "receipt": null
+      }
+    }
+  },
+  {
+    "action": "unknown",
+    "reason": "no_terminal_negative_evidence",
+    "proposal": "retry"
+  }
+]

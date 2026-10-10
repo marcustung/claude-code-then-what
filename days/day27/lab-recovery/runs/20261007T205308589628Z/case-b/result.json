@@ -1,0 +1,15 @@
+{
+  "case_id": "case-b",
+  "caller_symptom": "timeout",
+  "decision": {
+    "action": "recovered",
+    "reason": "same_event_confirmed_at_receiver",
+    "proposal": "retry"
+  },
+  "effects_before": 0,
+  "effects_after": 1,
+  "recovery_calls": 1,
+  "http_attempts_before": 1,
+  "http_attempts_after": 2,
+  "passed": true
+}

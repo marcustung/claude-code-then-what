@@ -1,0 +1,9 @@
+  正在判斷要還原的專案...
+  所有專案都在最新狀態，可進行還原。
+  RecoveryLab -> <REPO>\examples\day27-recovery-lab\src\bin\Release\net9.0\RecoveryLab.dll
+
+建置成功。
+    0 個警告
+    0 個錯誤
+
+經過時間 00:00:01.61

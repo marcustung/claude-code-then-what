@@ -1,0 +1,15 @@
+{
+  "duplicate": {
+    "http_status": 200,
+    "body": {
+      "duplicate": true,
+      "notification_id": "notice-01"
+    }
+  },
+  "conflict": {
+    "http_status": 409,
+    "body": {
+      "error": "identity_or_payload_conflict"
+    }
+  }
+}

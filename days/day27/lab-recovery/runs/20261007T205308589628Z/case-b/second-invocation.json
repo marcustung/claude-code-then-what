@@ -1,0 +1,29 @@
+[
+  {
+    "query": "/receipt",
+    "response": {
+      "http_status": 200,
+      "body": {
+        "source": "receiver",
+        "notification_id": "notice-01",
+        "order_id": "order-01",
+        "request_id": "request-01",
+        "generation": 2,
+        "attempt_closed": true,
+        "status": "completed",
+        "receipt": {
+          "notificationId": "notice-01",
+          "orderId": "order-01",
+          "requestId": "request-01",
+          "kind": "order_cancelled",
+          "refundRequested": true
+        }
+      }
+    }
+  },
+  {
+    "action": "already_completed",
+    "reason": "do_not_repeat_effect",
+    "proposal": "retry"
+  }
+]

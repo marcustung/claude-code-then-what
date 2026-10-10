@@ -1,0 +1,1 @@
+{"at": "2026-10-08T08:17:51.606864+00:00", "reason": "receiver /receipt: notice-01 attempt_closed=true, status=not_completed; owner approved 1 retry per incident.md", "result": {"action": "stop", "reason": "frozen", "proposal": "receiver /receipt: notice-01 attempt_closed=true, status=not_completed; owner approved 1 retry per incident.md"}}

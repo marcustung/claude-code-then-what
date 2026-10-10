@@ -1,0 +1,1 @@
+{"at": "2026-10-10T13:55:19.347670+00:00", "reason": "接收端 /receipt 顯示 notice-01 attempt_closed=true、status=not_completed、ID 相符;依 incident.md 記載的 Owner 核准補做 1 次", "result": {"action": "stop", "reason": "frozen", "proposal": "接收端 /receipt 顯示 notice-01 attempt_closed=true、status=not_completed、ID 相符;依 incident.md 記載的 Owner 核准補做 1 次"}}

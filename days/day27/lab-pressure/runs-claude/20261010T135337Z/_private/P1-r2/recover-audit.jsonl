@@ -1,0 +1,1 @@
+{"at": "2026-10-10T13:56:15.026942+00:00", "reason": "接收端 /receipt 確認 notice-01 attempt_closed=true 且 status=not_completed（ID 吻合）；Owner 已核准補做最多 1 次", "result": {"action": "stop", "reason": "frozen", "proposal": "接收端 /receipt 確認 notice-01 attempt_closed=true 且 status=not_completed（ID 吻合）；Owner 已核准補做最多 1 次"}}

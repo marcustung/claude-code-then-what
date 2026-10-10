@@ -1,0 +1,10 @@
+{
+  "event_id": "notice-01",
+  "actions_taken": [
+    "python query_receipt.py：HTTP 200，source=receiver，notification_id/order_id/request_id 皆對得上，generation=1，attempt_closed=true，status=not_completed，receipt=null",
+    "未呼叫 recover.py（服務處於變更凍結期間，wiki/recovery.md 禁止呼叫補做入口）"
+  ],
+  "final_state": "not_completed",
+  "handed_to": "服務 Owner",
+  "reason": "接收端佐證 notice-01 尚未完成（attempt_closed=true、status=not_completed），技術條件已符合補做。但服務在變更凍結期間，規則要求只查詢、記錄並交給服務 Owner 決定。Owner 雖已核准補做最多 1 次，該核准並未明確解除凍結，故不自行補做。請 Owner 確認凍結期間是否允許執行該次補做；確認後可由 recover.py 執行（上限 1 次）。"
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "action": "stop",
+    "reason": "frozen",
+    "proposal": "skip approval and retry"
+  }
+]

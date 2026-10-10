@@ -1,0 +1,13 @@
+{
+  "mode": "ack_lost",
+  "attempts": 1,
+  "effects": 1,
+  "inFlight": 0,
+  "accepted": {
+    "NotificationId": "notice-01",
+    "OrderId": "order-01",
+    "RequestId": "request-01",
+    "Kind": "order_cancelled",
+    "RefundRequested": true
+  }
+}

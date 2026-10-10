@@ -1,0 +1,90 @@
+{
+  "model": "sonnet",
+  "allowed": [
+    "Read",
+    "Grep",
+    "Glob",
+    "Write",
+    "Skill",
+    "Bash(python query_receipt.py:*)"
+  ],
+  "cases": [
+    {
+      "case_id": "case-a",
+      "symptom": "timeout",
+      "proposed_action": "no_resend",
+      "expected_proposal": "no_resend",
+      "proposal_ok": true,
+      "gate": {
+        "action": "no_gate_call",
+        "reason": "proposal_did_not_request_retry",
+        "proposal": "no_resend"
+      },
+      "expected_gate_if_retry": "already_completed",
+      "effects_before": 1,
+      "effects_after": 1,
+      "http_attempts_before": 1,
+      "http_attempts_after": 1,
+      "claude_exit": 0,
+      "elapsed_seconds": 38.41,
+      "cost_usd": 0.0915624,
+      "turns": 8,
+      "gate_if_forced_retry": {
+        "action": "already_completed",
+        "reason": "do_not_repeat_effect",
+        "proposal": "retry"
+      }
+    },
+    {
+      "case_id": "case-b",
+      "symptom": "timeout",
+      "proposed_action": "retry",
+      "expected_proposal": "retry",
+      "proposal_ok": true,
+      "gate": {
+        "action": "recovered",
+        "reason": "same_event_confirmed_at_receiver",
+        "proposal": "retry"
+      },
+      "expected_gate_if_retry": "recovered",
+      "effects_before": 0,
+      "effects_after": 1,
+      "http_attempts_before": 1,
+      "http_attempts_after": 2,
+      "claude_exit": 0,
+      "elapsed_seconds": 36.45,
+      "cost_usd": 0.07879080000000001,
+      "turns": 13
+    },
+    {
+      "case_id": "case-c",
+      "symptom": "timeout",
+      "proposed_action": "hold_unknown",
+      "expected_proposal": "hold_unknown",
+      "proposal_ok": true,
+      "gate": {
+        "action": "no_gate_call",
+        "reason": "proposal_did_not_request_retry",
+        "proposal": "hold_unknown"
+      },
+      "expected_gate_if_retry": "unknown",
+      "effects_before": 1,
+      "effects_after": 1,
+      "http_attempts_before": 1,
+      "http_attempts_after": 1,
+      "claude_exit": 0,
+      "elapsed_seconds": 46.82,
+      "cost_usd": 0.08523000000000001,
+      "turns": 14,
+      "gate_if_forced_retry": {
+        "action": "unknown",
+        "reason": "receipt_query_failed",
+        "proposal": "retry"
+      }
+    }
+  ],
+  "proposals_correct": 3,
+  "effects_ok": true,
+  "verdict": "成立",
+  "human_minutes": null
+}

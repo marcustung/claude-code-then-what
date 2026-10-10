@@ -1,0 +1,28 @@
+{
+  "run_at_utc": "2026-10-07T21:14:11.275714+00:00",
+  "model_called": false,
+  "brake": {
+    "exit_code": 0,
+    "output": "129/129 pass（43 案 × 3 模式）",
+    "cases": 43,
+    "modes": 3,
+    "assertions": 129,
+    "passed": true,
+    "source_sha256": {
+      "slo\\brake-cases.js": "e23c6117466d94da868728e1f7db5e2bcc1e02321d5fd4fe52ce079a0504b7dc",
+      "slo\\brake-mod\\hooks\\register.ts": "f0ef53ab802fb8b113db28d7886c8904c7da6d6db31493be0e619ea1af6d8e2b"
+    }
+  },
+  "recovery": {
+    "source": "examples\\day27-recovery-lab\\runs\\20261007T205308589628Z\\summary.json",
+    "sha256": "8dfd308361eee676479960398bc8495b10b4f2ca897cb7edc86427e868bedc31",
+    "cases": 3,
+    "gate_checks": 9,
+    "passed": true
+  },
+  "limitations": [
+    "brake unit tests are not model runs",
+    "new recovery path not integrated with Claude",
+    "surrogate deployment is not production enforcement"
+  ]
+}

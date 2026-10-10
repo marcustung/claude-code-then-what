@@ -1,0 +1,13 @@
+{
+  "version": "1.0", "scope": "loopback teaching .NET receiver, copied series Domain rule",
+  "model_execution": false,
+  "cases": [
+    {"id": "case-a", "fault": "ack_lost", "caller": "timeout", "expected_action": "already_completed", "effects_before": 1, "effects_after": 1},
+    {"id": "case-b", "fault": "not_completed", "caller": "timeout", "expected_action": "recovered", "effects_before": 0, "effects_after": 1},
+    {"id": "case-c", "fault": "receipt_unavailable", "caller": "timeout", "expected_action": "unknown", "effects_before": 1, "effects_after": 1}
+  ],
+  "policy": {"approved_by": "demo-owner", "allowed_notification_ids": ["notice-01"], "max_recovery_attempts": 1, "frozen": false},
+  "stop_tests": ["missing owner", "frozen", "scope mismatch", "exhausted retry budget", "attempt still active", "query unavailable", "already completed", "same id with conflicting payload"],
+  "separation": "truth files are for the verifier and are not supplied as observations to the recovery controller",
+  "limits": ["in-memory receiver deduplication", "no persistence across process restart", "no distributed concurrency proof", "demo-owner is a fixture, not authentication", "not a Claude eval", "no actual mail or refund"]
+}
