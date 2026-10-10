@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10423199) |
 | 今天練習 | 通知逾時後，先查接收端「做了沒」再決定：已完成不重送、確認未完成才重送、查不到就停；Claude 只交提案，重送走固定入口（再查一次、核對凍結、授權與次數）；凍結題重跑 30 次，看 Claude 按不按取決於什麼 |
 | 需要什麼 | Python 3、.NET 9 SDK（重跑固定流程）；重跑 Claude 需 Claude Code CLI |
 | 跑什麼 | `cd days/day27/lab-recovery; python verify.py` |

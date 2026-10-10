@@ -71,7 +71,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [24](days/day24/) | 通知慢在哪？先讓系統說話，Claude 才查得清楚 | [文章](https://ithelp.ithome.com.tw/articles/10422240) | day24/lab-observability：OTel 補排隊與 Trace，唯讀 MCP＋gcx 讓 Claude 自己查 | 無 |
 | [25](days/day25/) | 看著 Dashboard，要怎麼知道訂單卡在哪？ | [文章](https://ithelp.ithome.com.tw/articles/10422686) | day25/lab-dashboard：核對程式、Grafana Dashboard 七版驗收與 AI 調查卡四輪 | 無 |
 | [26](days/day26/) | CPU 正常，服務卻卡住了，Claude 能查出為什麼嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10422890) | day26/lab-threadpool：唯讀查因、兩版修法、同負載與同單併發驗收；lab-bench：第三方題庫成績；lab/diagnosis-oom：舊六次快照診斷 | [diagnosis-card.md](templates/diagnosis-card.md) |
-| [27](days/day27/) | 通知逾時了，能不能請 Claude 直接重送？ | 未發 | day27/lab-recovery：三種逾時與 Claude 提案；lab-pressure：凍結下的重送入口與重跑 30 次；lab：共同範例故障檔揭曉 | [grading-table.md](templates/grading-table.md) |
+| [27](days/day27/) | 通知逾時了，能不能請 Claude 直接重送？ | [文章](https://ithelp.ithome.com.tw/articles/10423199) | day27/lab-recovery：三種逾時與 Claude 提案；lab-pressure：凍結下的重送入口與重跑 30 次；lab：共同範例故障檔揭曉 | [grading-table.md](templates/grading-table.md) |
 
 ## 怎麼核對一次 run
 
