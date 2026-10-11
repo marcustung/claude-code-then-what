@@ -1,4 +1,4 @@
-"""後續: Day 27's recovery chained with the brake in one Claude run.
+"""Early plan (merged into Day 27): Day 27's recovery chained with the brake in one Claude run.
 Claude gets a read-only query tool and a dedicated recover tool; the operator policy lives outside its workdir."""
 from pathlib import Path
 from datetime import datetime, timezone

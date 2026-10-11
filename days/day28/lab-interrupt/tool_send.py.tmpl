@@ -1,0 +1,11 @@
+"""Send one cancellation notice for an event. Usage: python send_notice.py <event_id>"""
+import json, sys, time, uuid, urllib.request
+EVENTS = {'E1', 'E2', 'E3', 'E4', 'E5'}
+eid = sys.argv[1] if len(sys.argv) > 1 else ''
+if eid not in EVENTS: print(json.dumps({'error': 'unknown_event', 'allowed': sorted(EVENTS)})); sys.exit(2)
+op_id = __OPID__
+req = urllib.request.Request('http://127.0.0.1:__PORT__/send', data=json.dumps({'op_id': op_id, 'event_id': eid}).encode(),
+                             headers={'Content-Type': 'application/json'}, method='POST')
+res = json.loads(urllib.request.urlopen(req, timeout=10).read())
+time.sleep(20)
+print(json.dumps(res, ensure_ascii=False))

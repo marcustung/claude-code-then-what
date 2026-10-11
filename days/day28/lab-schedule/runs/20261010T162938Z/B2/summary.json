@@ -1,0 +1,49 @@
+{
+  "group": "B2",
+  "service_mode": "dedupe",
+  "flags": [
+    "--dup-row"
+  ],
+  "kind": "single",
+  "items_total": 2,
+  "items_per_anomaly": {
+    "O-1002 timeout": [
+      {
+        "item_id": "W-001",
+        "count": 1,
+        "runs": [
+          "r1"
+        ]
+      }
+    ],
+    "O-1004 bounced": [
+      {
+        "item_id": "W-002",
+        "count": 1,
+        "runs": [
+          "r1"
+        ]
+      }
+    ]
+  },
+  "requests": 3,
+  "runs": [
+    {
+      "run": "r1",
+      "started": "2026-10-10T16:29:39.070071+00:00",
+      "seconds": 57.1,
+      "exit_code": 0,
+      "is_error": false,
+      "subtype": "success",
+      "turns": 3,
+      "cost_usd": 0.018393800000000002,
+      "permission_denials": [],
+      "tool_calls": [
+        "python check_notifications.py",
+        "python open_item.py O-1002 timeout; python open_item.py O-1004 bounced"
+      ],
+      "answer": "**通知對帳報告(2026-10-11)**\n\n**檢查內容:** 執行 `check_notifications.py`,共 6 筆通知(N1–N6),涵蓋訂單 O-1001 到 O-1005。\n\n**狀態:**\n- delivered(正常):N1 (O-1001)、N3 (O-1003)、N5 (O-1005)\n- 異常:\n  - O-1002 `timeout`:N2 (01:05) 和 N6 (01:31) 各出現一次,是同一訂單的同一種異常。\n  - O-1004 `bounced`:N4 (01:09)。\n\n**已開事項(共 2 張):**\n- **W-001**:O-1002 / timeout。N2 和 N6 只開一張。\n- **W-002**:O-1004 / bounced。\n\n兩張都是新建,不是既有事項。值班人員早上可直接處理。",
+      "dispatched": true
+    }
+  ]
+}

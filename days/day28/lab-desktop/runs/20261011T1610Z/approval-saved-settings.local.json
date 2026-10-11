@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Set-Location C:\\\\<AUTHOR>\\\\d28-desktop-work; Get-ChildItem; python check_notifications.py; \"EXIT=$LASTEXITCODE\")"
+    ]
+  }
+}

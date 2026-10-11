@@ -1,0 +1,16 @@
+[
+  {"session": "local_e2e920cd", "started": "16:10:33", "last": "16:25:19", "status": "succeeded", "note": "E1：Run now，卡在 PowerShell 核准；使用者允許一次後又卡在 Read；16:25 由實驗者停止，紀錄仍為 succeeded；模型 claude-opus-5-5（未指定，用預設）"},
+  {"session": "local_bee5c716", "started": "16:16:25", "last": "16:17:38", "status": "succeeded", "note": "使用者 Run now；埠設定錯誤（8765 被其他 http.server 佔用）拿到 404，Claude 回報未檢查、未開單，紀錄為 succeeded"},
+  {"window": "16:18:38–16:25:21", "fires": "每分鐘", "runs": 0, "note": "E1 延伸：卡住的 16:10 那輪未結束，之後每分鐘觸發都沒有啟動；lastRunAt 停在 16:16:25"},
+  {"session": "local_ef2242ab", "started": "16:25:37", "last": "16:35:16", "status": "succeeded", "note": "停掉卡住那輪後立即啟動；又卡在 PowerShell 核准，使用者逐次「允許一次」後開出 W-001、W-002"},
+  {"session": "local_f67aca04", "started": "16:35:37", "last": "16:49:03", "status": "succeeded", "note": "又卡在核准；對話框只有「拒絕／允許一次／允許並切換至自動模式」，沒有 always allow；使用者選自動模式並把任務權限模式改為自動；開出 W-003、W-004"},
+  {"session": "local_0833e2cc", "started": "16:49:37", "last": "16:50:33", "status": "succeeded", "note": "E2 第 1 輪（自動模式）：讀了工作目錄下的 svc/items.json，發現已有單，沒有開新單並指出 W-003、W-004 重複（偏離：資料目錄放在工作目錄內）"},
+  {"session": "local_6c0ebe56", "started": "16:50:37", "last": "16:52:37", "status": "succeeded", "note": "E2：W-005、W-006"},
+  {"session": "local_cad4c137", "started": "16:52:37", "last": "16:54:42", "status": "succeeded", "note": "E2：W-007、W-008"},
+  {"session": "local_c142b2f2", "started": "16:55:37", "last": "16:57:42", "status": "succeeded", "note": "E2：W-009、W-010"},
+  {"session": "local_cff7960b", "started": "16:58:37", "last": "17:00:39", "status": "succeeded", "note": "E2：W-011、W-012"},
+  {"session": "local_d03df773", "started": "17:01:37", "last": "17:01:42", "status": "succeeded", "note": "E3：STOP 存在，hook 擋下，0 turns，服務端 0 請求"},
+  {"session": "local_114074da", "started": "17:02:38", "last": "17:02:44", "status": "succeeded", "note": "E3：同上"},
+  {"session": "local_c8465342", "started": "17:03:37", "last": "17:03:40", "status": "succeeded", "note": "E3：同上"},
+  {"session": "local_5b0b0e41", "started": "17:04:37", "last": "17:04:41", "status": "succeeded", "note": "E3：同上；17:05 任務停用"}
+]

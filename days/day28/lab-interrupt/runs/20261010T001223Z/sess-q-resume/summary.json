@@ -1,0 +1,41 @@
+{
+  "config": "sess-q-resume",
+  "op_id": "session",
+  "query_tool": true,
+  "restart": "resume",
+  "phase1": {
+    "killed_at_3rd_effect": true,
+    "seconds": 52.7,
+    "session_id": "af4f1862-92ee-4fd8-b1fe-25a6205823be",
+    "effects_at_kill": 3,
+    "tool_calls": [
+      "python send_notice.py E1",
+      "python send_notice.py E2",
+      "python send_notice.py E3"
+    ]
+  },
+  "phase2": {
+    "seconds": 62.4,
+    "session_id": "af4f1862-92ee-4fd8-b1fe-25a6205823be",
+    "tool_calls": [
+      "python query_receipt.py E3",
+      "python query_receipt.py E4; python query_receipt.py E5",
+      "python send_notice.py E4",
+      "python send_notice.py E5",
+      "for i in E1 E2 E3 E4 E5; do python query_receipt.py $i; done",
+      "python query_receipt.py E1; python query_receipt.py E2; python query_receipt.py E3; python query_receipt.py E4; python query_receipt.py E5"
+    ],
+    "cost_usd": 0.022004,
+    "turns": 7,
+    "answer": "5 張訂單的取消通知都已送達,每張只寄了一次。\n\n| 訂單 | 結果 |\n|---|---|\n| E1 | 已寄出,接收端確認送達 |\n| E2 | 已寄出,接收端確認送達 |\n| E3 | 已送達。中斷時不確定有沒有寄出,我先查詢,接收端已有紀錄,所以沒有重寄 |\n| E4 | 查詢無紀錄後才寄出,接收端確認送達 |\n| E5 | 查詢無紀錄後才寄出,接收端確認送達 |\n\nE3 是中斷前那次呼叫送出的,所以只收到一封。最後我對 E1 到 E5 都查過接收狀態,全部是 delivered。"
+  },
+  "effects_per_event": {
+    "E1": 1,
+    "E2": 1,
+    "E3": 1,
+    "E4": 1,
+    "E5": 1
+  },
+  "duplicates": 0,
+  "missed": 0
+}

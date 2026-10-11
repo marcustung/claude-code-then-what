@@ -1,0 +1,6 @@
+{"at": "2026-10-10T16:29:39.061667+00:00", "run": "r1", "decision": "dispatched"}
+{"at": "2026-10-10T16:30:00.222057+00:00", "run": "r1", "decision": "finished", "independent_check": "no_successful_fetch", "consecutive_failures": 1}
+{"at": "2026-10-10T16:30:00.222727+00:00", "run": "r2", "decision": "dispatched"}
+{"at": "2026-10-10T16:30:17.714706+00:00", "run": "r2", "decision": "finished", "independent_check": "no_successful_fetch", "consecutive_failures": 2}
+{"at": "2026-10-10T16:30:17.719053+00:00", "run": "r2", "decision": "stop_written"}
+{"at": "2026-10-10T16:30:17.742769+00:00", "run": "r3", "decision": "not_dispatched", "reason": "連續 2 輪沒有成功取得通知資料（服務端紀錄），最後一輪 r2"}

@@ -25,7 +25,7 @@
 | 判級 | 路徑、Owner、diff 大小、敏感關鍵字（金額、授權、狀態轉換、資料遷移） | CODEOWNERS＋branch protection、Danger／reviewdog 讀 `routing-policy.yml`、PR labels |
 | 第二層 AI 對照材料 | 給規格版本、呼叫端、測試，要求發現附來源；找不到寫不知道；保存誤報 | Claude Code `/review`（GitHub Action）、GitHub Copilot code review、CodeRabbit 等；輸出進 PR comment，不自動核准 |
 | 第三層 Owner | 核心規則、例外、接受條件；附前後狀態圖／循序圖 | 人；退件單格式固定 |
-| 校準 | 每季看退回率、revert、事故、AI 意見採納率與誤報率，回頭改閘門 | 你的 issue tracker 與 git 紀錄|
+| 校準 | 每季看退回率、revert、事故、AI 意見採納率與誤報率，回頭改閘門 | 你的 issue tracker 與 git 紀錄 |
 
 ## 第一週怎麼開始（三步）
 

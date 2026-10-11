@@ -1,0 +1,42 @@
+[
+  {
+    "item_id": "W-001",
+    "order": "O-1002",
+    "kind": "timeout",
+    "count": 1,
+    "opened_at": "2026-10-10T16:29:50.131074+00:00",
+    "runs": [
+      "r1"
+    ]
+  },
+  {
+    "item_id": "W-002",
+    "order": "O-1004",
+    "kind": "bounced",
+    "count": 1,
+    "opened_at": "2026-10-10T16:30:10.658196+00:00",
+    "runs": [
+      "r1"
+    ]
+  },
+  {
+    "item_id": "W-003",
+    "order": "O-1002",
+    "kind": "timeout",
+    "count": 1,
+    "opened_at": "2026-10-10T16:30:16.942561+00:00",
+    "runs": [
+      "r2"
+    ]
+  },
+  {
+    "item_id": "W-004",
+    "order": "O-1004",
+    "kind": "bounced",
+    "count": 1,
+    "opened_at": "2026-10-10T16:30:37.245926+00:00",
+    "runs": [
+      "r2"
+    ]
+  }
+]

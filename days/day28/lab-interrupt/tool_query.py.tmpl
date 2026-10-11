@@ -1,0 +1,4 @@
+"""Ask the receiver whether a notice for this event has been delivered. Usage: python query_receipt.py <event_id>"""
+import json, sys, urllib.request
+eid = sys.argv[1] if len(sys.argv) > 1 else ''
+print(urllib.request.urlopen('http://127.0.0.1:__PORT__/receipt?event_id=' + eid, timeout=10).read().decode())

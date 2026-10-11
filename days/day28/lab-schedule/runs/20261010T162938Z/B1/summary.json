@@ -1,0 +1,49 @@
+{
+  "group": "B1",
+  "service_mode": "new",
+  "flags": [
+    "--dup-row"
+  ],
+  "kind": "single",
+  "items_total": 2,
+  "items_per_anomaly": {
+    "O-1002 timeout": [
+      {
+        "item_id": "W-001",
+        "count": 1,
+        "runs": [
+          "r1"
+        ]
+      }
+    ],
+    "O-1004 bounced": [
+      {
+        "item_id": "W-002",
+        "count": 1,
+        "runs": [
+          "r1"
+        ]
+      }
+    ]
+  },
+  "requests": 3,
+  "runs": [
+    {
+      "run": "r1",
+      "started": "2026-10-10T16:29:39.071762+00:00",
+      "seconds": 57.0,
+      "exit_code": 0,
+      "is_error": false,
+      "subtype": "success",
+      "turns": 3,
+      "cost_usd": 0.0182304,
+      "permission_denials": [],
+      "tool_calls": [
+        "python check_notifications.py",
+        "python open_item.py O-1002 timeout; python open_item.py O-1004 bounced"
+      ],
+      "answer": "**通知對帳報告(2026-10-11)**\n\n**檢查內容:** 執行 `check_notifications.py`,共 6 筆通知,涵蓋訂單 O-1001 到 O-1005。\n\n**狀態統計:**\n- delivered(正常):N1(O-1001)、N3(O-1003)、N5(O-1005)\n- 異常:3 筆,屬於 2 個訂單\n  - N2 和 N6:O-1002,`timeout`。同一訂單同一異常出現兩次,合併處理。\n  - N4:O-1004,`bounced`\n\n**已開立事項(共 2 張,皆為新建):**\n- W-001:O-1002 / timeout\n- W-002:O-1004 / bounced\n\n沒有重複開單,也沒有失敗的呼叫。請早班值班人員處理這兩張。",
+      "dispatched": true
+    }
+  ]
+}

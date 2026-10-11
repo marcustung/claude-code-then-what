@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python C:/<AUTHOR>/d28-desktop-work/stop_hook.py",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
