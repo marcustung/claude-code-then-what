@@ -72,7 +72,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [25](days/day25/) | 看著 Dashboard，要怎麼知道訂單卡在哪？ | [文章](https://ithelp.ithome.com.tw/articles/10422686) | day25/lab-dashboard：核對程式、Grafana Dashboard 七版驗收與 AI 調查卡四輪 | 無 |
 | [26](days/day26/) | CPU 正常，服務卻卡住了，Claude 能查出為什麼嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10422890) | day26/lab-threadpool：唯讀查因、兩版修法、同負載與同單併發驗收；lab-bench：第三方題庫成績；lab/diagnosis-oom：舊六次快照診斷 | [diagnosis-card.md](templates/diagnosis-card.md) |
 | [27](days/day27/) | 通知逾時了，能不能請 Claude 直接重送？ | [文章](https://ithelp.ithome.com.tw/articles/10423199) | day27/lab-recovery：三種逾時與 Claude 提案；lab-pressure：凍結下的重送入口與重跑 30 次；lab：共同範例故障檔揭曉 | [grading-table.md](templates/grading-table.md) |
-| [28](days/day28/) | 交給排程每天自己跑，我不在旁邊，Claude 靠得住嗎？ | 未發 | day28/lab-schedule：排程重疊、重複、空跑、連續失敗八組；lab-desktop：Desktop 排程實測 13 輪（權限、重疊、hook 煞車）；lab-interrupt：中斷重跑對照 | [loop-contract.md](templates/loop-contract.md) |
+| [28](days/day28/) | Claude 每天自動跑，顯示成功就能放心嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10423514) | day28/lab-schedule：排程重疊、重複、空跑、連續失敗八組；lab-desktop：Desktop 排程實測 13 輪（權限、重疊、hook 煞車）；lab-interrupt：中斷重跑對照 | [loop-contract.md](templates/loop-contract.md) |
 
 ## 怎麼核對一次 run
 

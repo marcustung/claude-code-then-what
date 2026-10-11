@@ -1,8 +1,8 @@
-# Day 28｜交給排程每天自己跑，我不在旁邊，Claude 靠得住嗎？
+# Day 28｜Claude 每天自動跑，顯示成功就能放心嗎？
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10423514) |
 | 今天練習 | 把每天凌晨的通知檢查交給排程（claude -p 模擬排程器八組＋真的 Desktop 排程 13 輪）：上一輪未完又觸發、同一異常出現兩次、沒給權限、資料源連續失敗，各會怎樣；鎖、去重與停止派送放在 Claude 外面 |
 | 需要什麼 | Python 3；Claude Code CLI |
 | 跑什麼 | `cd days/day28/lab-schedule; python run.py A1 A3 D` |
