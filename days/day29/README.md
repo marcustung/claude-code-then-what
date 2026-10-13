@@ -2,7 +2,7 @@
 
 | 格 | 內容 |
 |---|---|
-| 文章 | 未發 |
+| 文章 | [文章](https://ithelp.ithome.com.tw/articles/10424013) |
 | 今天練習 | 用一份 loop.yaml 跑一圈迷你迴圈：Claude 觀測、提案，你在 Gate 1 退回一張並寫理由，看它下一輪怎麼回應 |
 | 需要什麼 | Python 3；Claude Code CLI（一圈約 US$0.3） |
 | 跑什麼 | `cd days/day29/lab-mini-loop; python loop.py day 1; python loop.py observe --day 1` |

@@ -73,7 +73,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [26](days/day26/) | CPU 正常，服務卻卡住了，Claude 能查出為什麼嗎？ | [文章](https://ithelp.ithome.com.tw/articles/10422890) | day26/lab-threadpool：唯讀查因、兩版修法、同負載與同單併發驗收；lab-bench：第三方題庫成績；lab/diagnosis-oom：舊六次快照診斷 | [diagnosis-card.md](templates/diagnosis-card.md) |
 | [27](days/day27/) | 通知逾時了，能不能請 Claude 直接重送？ | [文章](https://ithelp.ithome.com.tw/articles/10423199) | day27/lab-recovery：三種逾時與 Claude 提案；lab-pressure：凍結下的重送入口與重跑 30 次；lab：共同範例故障檔揭曉 | [grading-table.md](templates/grading-table.md) |
 | [28](days/day28/) | 交給 Claude 每天自動跑，怎麼確認它真的做完？ | [文章](https://ithelp.ithome.com.tw/articles/10423514) | day28/lab-schedule：排程重疊、重複、空跑、連續失敗八組；lab-desktop：Desktop 排程實測 13 輪（權限、重疊、hook 煞車）；lab-interrupt：中斷重跑對照 | [loop-contract.md](templates/loop-contract.md) |
-| [29](days/day29/) | 讓 Claude 自己提出下一步，為什麼我反而更忙？ | 未發 | day29/lab-mini-loop：迷你迴圈三天、五張提案；lab-loop-experiment：長期實驗原件；lab-board：看板提案與裁決 | [loop-goals.md](templates/loop-goals.md) |
+| [29](days/day29/) | 讓 Claude 自己提出下一步，為什麼我反而更忙？ | [文章](https://ithelp.ithome.com.tw/articles/10424013) | day29/lab-mini-loop：迷你迴圈三天、五張提案；lab-loop-experiment：長期實驗原件；lab-board：看板提案與裁決 | [loop-goals.md](templates/loop-goals.md) |
 
 ## 怎麼核對一次 run
 
