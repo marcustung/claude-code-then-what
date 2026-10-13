@@ -1,0 +1,103 @@
+diff --git a/reports/loop-health-2026-10-05.md b/reports/loop-health-2026-10-05.md
+new file mode 100644
+index 0000000..6f97f8e
+--- /dev/null
++++ b/reports/loop-health-2026-10-05.md
+@@ -0,0 +1,27 @@
++# 迴圈健康報告 2026-10-05（r-04-loop-health，第 1 輪）
++
++## 結論
++**SSOT 尚無資料，本輪無法產出任何迴圈指標。** 本報告只記錄觀測到的事實，不推估、不補數字。
++
++## 觀測（皆為本輪實際讀取）
++| 項目 | 結果 | 來源 |
++|---|---|---|
++| SSOT 檔案 `ws/metrics/loop-metrics-*.json` | **不存在**（目錄為空） | `C:/Marcus/loop-lab/ws/metrics/`（目錄列表） |
++| 產生器 `ws/tools/loop-metrics.js` | 存在；寫入 `metrics/loop-metrics-<日期>.json/.md`，指令帶 `--since 2026-10-07` | `ws/tools/loop-metrics.js:2-5` |
++| `--since` 起算日 | 2026-10-07，晚於本輪日期 2026-10-05，窗口內尚無資料 | spec.md 約束、系統日期 |
++| 議題狀態 | `state: running`，cron `30 3 */3 * *`，`target_repo: order-service` | `ws/issues/r-04-loop-health/status.yml:1-4` |
++| 先前留痕 | 僅 `2026-10-04-run1.trace.jsonl`（本輪前的啟動 trace） | `ws/issues/r-04-loop-health/runs/` |
++| workspace 進場守則 | `ws/CLAUDE.md` 仍是未填的樣板（`{{PRODUCT_NAME}}` 等） | `ws/CLAUDE.md:1-7` |
++
++## 為何不執行 `loop-metrics.js`
++1. 該工具會把輸出寫進 `ws/metrics/`，即寫入 SSOT，違反本議題「唯讀觀測，不寫回 SSOT」。
++2. 輸出落在本 worktree 以外，違反「所有變更只留在本 worktree」。
++3. `--since 2026-10-07` 尚未到，即使執行也不會有內容。
++
++## 建議（供人決策，本輪未動作）
++- 待 2026-10-07 之後、由人或外層流程產出 `ws/metrics/loop-metrics-*.json`，下一輪即可彙整成指標報告。
++- 若希望本輪報告帶數字，需人決定是否放寬「不寫回 SSOT」或由外層先產出。
++- `ws/CLAUDE.md` 樣板待填。
++
++## 回溯
++本報告每項觀測皆可由上表「來源」欄重現；無 SSOT 數值被引用。
+diff --git a/reports/loop-health-2026-10-07.md b/reports/loop-health-2026-10-07.md
+new file mode 100644
+index 0000000..770e046
+--- /dev/null
++++ b/reports/loop-health-2026-10-07.md
+@@ -0,0 +1,28 @@
++# 迴圈健康報告 2026-10-07（r-04-loop-health，第 2 輪）
++
++## 結論
++**SSOT 仍無資料，本輪仍無法產出任何迴圈指標。** 本報告只記錄觀測到的事實，不推估、不補數字。`--since 2026-10-07` 的窗口今天才開始，當日尚無已產出的 metrics 檔。
++
++## 觀測（皆為本輪實際讀取）
++| 項目 | 結果 | 來源 |
++|---|---|---|
++| SSOT 檔案 `ws/metrics/loop-metrics-*.json` | **不存在**（目錄為空，最後修改 10/04） | `C:/Marcus/loop-lab/ws/metrics/`（目錄列表） |
++| 產生器 `ws/tools/loop-metrics.js` | 存在（5952 bytes） | `C:/Marcus/loop-lab/ws/tools/` |
++| `--since` 起算日 | 2026-10-07 = 本輪日期，窗口剛開始 | spec.md 約束、系統日期 |
++| 先前報告 | `reports/loop-health-2026-10-05.md`（第 1 輪，同樣無資料） | `reports/loop-health-2026-10-05.md:4` |
++| runs/ 留痕 | `2026-10-04-run1.{md,run.json,trace.jsonl}`、`2026-10-06-run1.trace.jsonl`（後者尚無 .md／.run.json） | `ws/issues/r-04-loop-health/runs/` |
++| workspace 進場守則 | `ws/CLAUDE.md` 仍是未填樣板（`{{PRODUCT_NAME}}` 等） | `ws/CLAUDE.md:1-7` |
++| 本 worktree `freeze.json` | 無 | 專案根目錄搜尋 |
++
++## 為何不執行 `loop-metrics.js`
++1. 該工具會把輸出寫進 `ws/metrics/`（即寫入 SSOT），違反「唯讀觀測，不寫回 SSOT」。
++2. 輸出落在本 worktree 以外，違反「所有變更只留在本 worktree」。
++
++## 建議（供人決策，本輪未動作）
++- 由人或外層流程執行 `node tools/loop-metrics.js --since 2026-10-07` 產出 SSOT，下一輪（cron `30 3 */3 * *`）即可彙整成指標。
++- 連續兩輪皆無資料：若外層不打算產出 SSOT，需決定是否放寬約束或暫停此 routine。
++- `ws/CLAUDE.md` 樣板待填。
++- `2026-10-06-run1` 只有 trace、沒有 .md／.run.json，留痕疑似不完整，請人確認（本輪未讀其內容）。
++
++## 回溯
++每項觀測皆可由上表「來源」欄重現；無 SSOT 數值被引用。
+diff --git a/reports/loop-health-2026-10-11.md b/reports/loop-health-2026-10-11.md
+new file mode 100644
+index 0000000..daff287
+--- /dev/null
++++ b/reports/loop-health-2026-10-11.md
+@@ -0,0 +1,30 @@
++# 迴圈健康報告 2026-10-11（r-04-loop-health，第 3 輪）
++
++## 結論
++**SSOT 仍無資料，本輪仍無法產出任何迴圈指標。** 本報告只記錄觀測到的事實，不推估、不補數字。`ws/metrics/` 目錄已連續三輪為空（最後修改 10/04）。
++
++## 觀測（皆為本輪實際讀取）
++| 項目 | 結果 | 來源 |
++|---|---|---|
++| SSOT 檔案 `ws/metrics/loop-metrics-*.json` | **不存在**（目錄為空，最後修改 10/04 18:44） | `C:/Marcus/loop-lab/ws/metrics/`（目錄列表） |
++| 產生器 `ws/tools/loop-metrics.js` | 存在 | `C:/Marcus/loop-lab/ws/tools/`（目錄列表） |
++| 先前報告 | `reports/loop-health-2026-10-05.md`、`reports/loop-health-2026-10-07.md`，皆無資料 | `reports/loop-health-2026-10-07.md:4` |
++| runs/ 留痕 | `2026-10-04-run1`、`2026-10-06-run1` 皆有 `.md`／`.run.json`／`.trace.jsonl`；`2026-10-11-run1` 目前只有 `.trace.jsonl`（本輪進行中，由 LoopDeck 於結束時寫入） | `ws/issues/r-04-loop-health/runs/` |
++| workspace 進場守則 | `ws/CLAUDE.md` 仍是未填樣板（`{{PRODUCT_NAME}}` 等） | `ws/CLAUDE.md:1-7` |
++| 本 worktree `freeze.json` | 無 | 專案根目錄搜尋 |
++
++## 與上一輪的差異
++- 上一輪標註「`2026-10-06-run1` 缺 .md／.run.json」：本輪已看到兩者齊備，該疑慮解除。
++- 其餘（SSOT 為空、`ws/CLAUDE.md` 為樣板）無變化。
++
++## 為何不執行 `loop-metrics.js`
++1. 該工具會把輸出寫進 `ws/metrics/`（即寫入 SSOT），違反「唯讀觀測，不寫回 SSOT」。
++2. 輸出落在本 worktree 以外，違反「所有變更只留在本 worktree」。
++
++## 建議（供人決策，本輪未動作）
++- 由人或外層流程執行 `node tools/loop-metrics.js --since 2026-10-07` 產出 SSOT，下一輪（cron `30 3 */3 * *`）即可彙整成指標。
++- 已連續三輪無資料：若外層不打算產出 SSOT，需決定是放寬約束或暫停此 routine，以免持續空轉耗費成本。
++- `ws/CLAUDE.md` 樣板待填。
++
++## 回溯
++每項觀測皆可由上表「來源」欄重現；無 SSOT 數值被引用。

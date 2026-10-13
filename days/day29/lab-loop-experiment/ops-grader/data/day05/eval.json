@@ -1,0 +1,47 @@
+{
+  "day": 5,
+  "rules": 5,
+  "page_noise": 412,
+  "ticket_noise": 0,
+  "incidents": 3,
+  "missed": [
+    "silent_drop"
+  ],
+  "per_rule": [
+    {
+      "name": "HighLatency",
+      "severity": "page",
+      "fired": 29,
+      "valid": 1,
+      "noise": 28
+    },
+    {
+      "name": "AnyServerError",
+      "severity": "page",
+      "fired": 14,
+      "valid": 0,
+      "noise": 14
+    },
+    {
+      "name": "ManyConflicts",
+      "severity": "page",
+      "fired": 288,
+      "valid": 0,
+      "noise": 288
+    },
+    {
+      "name": "QueueBacklog",
+      "severity": "page",
+      "fired": 44,
+      "valid": 1,
+      "noise": 43
+    },
+    {
+      "name": "HeapHigh",
+      "severity": "page",
+      "fired": 39,
+      "valid": 0,
+      "noise": 39
+    }
+  ]
+}

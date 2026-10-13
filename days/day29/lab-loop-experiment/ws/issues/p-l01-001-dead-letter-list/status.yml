@@ -1,0 +1,35 @@
+state: done
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 1
+executor: claude-code
+risk: 3
+category: 功能實作
+framework: null
+backend: local
+origin: l-01-notify-retry
+finding_fingerprint: fc3f32e20ecb25a7c40769c6
+finding_signature: "在 notificationworker 加入記憶體死信清單與受 x-actor 保護的 get /admin/dead-letters | 執行 python order-service/acceptance/run_acceptance.py 的實際輸出:at-01 fail「死信清單沒有這筆通知」、at-02 fail「沒帶 x-actor 也能存取」、at-03/04/05/07/08/11 fail「沒進死信」、at-06/09/10 fail「/admin/dead-letters 回 404」、at-12 pass,合計 1/12 pass | order-service/src/api/program.cs:253-258 與 304-305:重試用盡後只做 m.inc(\"notify_failed_total\")、m.inc(\"notify_dead_letter_total\") 與 log.write(notify_dead_letter),沒有保存 notification 內容與 last_error | order-service/src/api/program.cs 全檔沒有 /admin/ 路由(grep \"admin\" 無命中);x-actor 檢查目前只存在於 post /orders/{id}/cancel(program.cs:57-62) | order-service/acceptance/spec.md at-01:get /admin/dead-letters 須列出 notification_id、order_id、attempts、last_error、status;at-02:/admin/* 沒有 x-actor 要回 401"
+proposal_verdict: approved
+updated_at: "2026-10-07T00:38:33.312Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: a553aff6-302f-4e63-a6c4-006be75eec9b
+budget_reserved_usd: null
+run_pid: null
+run_id: ab58e118-bc15-4a57-9839-4d36b44c61c5
+run_started_at: "2026-10-06T19:57:02.331Z"
+run_branch: ld/p-l01-001-dead-letter-list
+run_ended_at: "2026-10-06T20:00:40.892Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+approved_by: <AUTHOR> Tung
+merge_commit: d20222d

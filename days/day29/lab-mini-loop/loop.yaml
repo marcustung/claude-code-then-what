@@ -1,0 +1,23 @@
+# 迴圈契約：給 Claude 的目標與邊界，以及外層 loop.py 要執行的限制。
+# 只有寫在「外層」那幾項是程式擋的；其餘是寫給 Claude 讀的。
+name: alert-tuning
+model: sonnet
+
+# 目標：要往哪裡走（給 Claude 讀）
+improvement_goals:
+  - 每日 page 雜訊相對第 1 天下降 30% 以上
+  - 漏報為 0：任何事故都要有 page 級告警抓到
+
+# 邊界：哪些線不能越過（給 Claude 讀；標「外層」的由 loop.py 檢查）
+constraints:
+  - 只能修改 rules.yml（外層：實作後比對檔案，動到其他檔案就判失敗）
+  - 觀測時不得修改任何檔案（外層：觀測前後比對雜湊）
+  - 不得用關掉告警或放寬到永不觸發來降雜訊；漏報一律算失敗
+  - 每輪花費上限（外層：budget_usd_per_run）
+
+# 外層執行的限制
+allowed_paths:
+  - rules.yml
+budget_usd_per_run: 0.6
+max_open_proposals: 3
+max_consecutive_failures: 2

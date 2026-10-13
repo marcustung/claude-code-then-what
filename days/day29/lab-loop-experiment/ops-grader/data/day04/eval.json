@@ -1,0 +1,59 @@
+{
+  "day": 4,
+  "rules": 7,
+  "page_noise": 0,
+  "ticket_noise": 13,
+  "incidents": 2,
+  "missed": [],
+  "per_rule": [
+    {
+      "name": "HighLatency",
+      "severity": "page",
+      "fired": 0,
+      "valid": 0,
+      "noise": 0
+    },
+    {
+      "name": "AnyServerError",
+      "severity": "page",
+      "fired": 0,
+      "valid": 0,
+      "noise": 0
+    },
+    {
+      "name": "AnyServerErrorTicket",
+      "severity": "ticket",
+      "fired": 13,
+      "valid": 0,
+      "noise": 13
+    },
+    {
+      "name": "ManyConflicts",
+      "severity": "page",
+      "fired": 0,
+      "valid": 0,
+      "noise": 0
+    },
+    {
+      "name": "QueueBacklog",
+      "severity": "page",
+      "fired": 1,
+      "valid": 1,
+      "noise": 0
+    },
+    {
+      "name": "HeapHigh",
+      "severity": "page",
+      "fired": 0,
+      "valid": 0,
+      "noise": 0
+    },
+    {
+      "name": "SilentDropReceiptsGap",
+      "severity": "page",
+      "fired": 2,
+      "valid": 2,
+      "noise": 0
+    }
+  ]
+}

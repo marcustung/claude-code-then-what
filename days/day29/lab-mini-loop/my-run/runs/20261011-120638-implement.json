@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T04:06:38+00:00",
+  "kind": "implement",
+  "id": "P-003",
+  "touched": [
+    "rules.yml"
+  ],
+  "outside_allowed": [],
+  "replay": {
+    "1": {
+      "page_noise": 350,
+      "missed": []
+    }
+  },
+  "cost_usd": 0.0175852,
+  "result": "已依 P-003 修改 `rules.yml`，只動兩處，其他規則和檔案都沒碰：\n\n- **QueueBacklog**：`for_minutes` 從 0 改為 5（threshold 維持 8）\n- **HeapHigh**：`for_minutes` 從 0 改為 10（threshold 維持 120）\n\n我沒有跑 `ops/sim/evaluate.py`，所以提案預期的雜訊下降和漏報不增加，都還沒驗證。"
+}

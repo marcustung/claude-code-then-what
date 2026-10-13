@@ -1,0 +1,35 @@
+state: done
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 1
+executor: claude-code
+risk: 2
+category: 告警調整
+framework: null
+backend: local
+origin: l-02-alert-tuning
+finding_fingerprint: 490d6839f8860f3076ef888e
+finding_signature: "新增 receipts_gap 持續性 page 規則,補上 silent_drop 漏報 | order-service/ops/scores/day01.json: \"missed\": [\"silent_drop\"],incidents=2,只有 1 個事故被偵測到 | order-service/ops/alerts/rules.yml: 只有 p95_latency_ms、error_rate、http_409_rate、queue_depth、heap_mb 五個 metric,沒有 receipts_gap 或 notify_failed | order-service/ops/data/day01/metrics.json 的 receipts_gap 序列(1440 點):p99 才 125.1 但 99% 以上時間為 0;唯一一段非零是第 1155–1223 分鐘連續 69 分鐘,從 4.01 → 7.25 → 11.88 → 17.48 → 20.83 逐步爬升,峰值 125.1,之後回到 0。非事故時段完全沒有誤報風險 | order-service/ops/readme.md: 「有 silent_drop 的日子會漏報」"
+proposal_verdict: approved
+updated_at: "2026-10-07T00:38:36.968Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: c8ccfb07-72fd-4295-89f6-fa098a3a7163
+budget_reserved_usd: null
+run_pid: null
+run_id: b9198841-5908-4bcf-b764-b4484da54519
+run_started_at: "2026-10-06T20:00:43.941Z"
+run_branch: ld/p-l02-001-silent-drop-rule
+run_ended_at: "2026-10-06T20:01:35.541Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+approved_by: <AUTHOR> Tung
+merge_commit: 6dbb389

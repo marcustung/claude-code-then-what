@@ -1,0 +1,20 @@
+LoopDeck 已啟動：http://127.0.0.1:4610
+repo：C:/Marcus/loop-lab/ws
+[scheduler] C:/Marcus/loop-lab/ws：註冊 8 個週期 routine（local backend）
+[scheduler]   - l-01-notify-retry｜cron="0 2 * * *"（Asia/Taipei）｜下次觸發：2026-10-07T18:00:00.000Z
+[scheduler]   - l-02-alert-tuning｜cron="20 2 * * *"（Asia/Taipei）｜下次觸發：2026-10-06T18:20:00.000Z
+[scheduler]   - l-03-skill-opt｜cron="40 2 * * *"（Asia/Taipei）｜下次觸發：2026-10-06T18:40:00.000Z
+[scheduler]   - l-04-loop-self｜cron="30 1 */3 * *"（Asia/Taipei）｜下次觸發：2026-10-09T17:30:00.000Z
+[scheduler]   - r-01-acceptance-report｜cron="0 3 * * *"（Asia/Taipei）｜下次觸發：2026-10-06T19:00:00.000Z
+[scheduler]   - r-02-alert-report｜cron="10 3 * * *"（Asia/Taipei）｜下次觸發：2026-10-06T19:10:00.000Z
+[scheduler]   - r-03-eval-report｜cron="20 3 * * *"（Asia/Taipei）｜下次觸發：2026-10-06T19:20:00.000Z
+[scheduler]   - r-04-loop-health｜cron="30 3 */3 * *"（Asia/Taipei）｜下次觸發：2026-10-06T19:30:00.000Z
+[scheduler] 派工 l-01-notify-retry：到點 2026-10-06T18:00:00.000Z（runId=schedule-6039d3c0faece23be77e）
+[scheduler] 跳過 l-04-loop-self：executor-busy（到點 2026-10-06T17:30:00.000Z，執行器目前忙或本輪已派工）
+[scheduler] 派工 l-04-loop-self：到點 2026-10-06T17:30:00.000Z（runId=schedule-17f4fdd1ba5f3409b2c3）
+[scheduler] 派工 l-02-alert-tuning：到點 2026-10-06T18:20:00.000Z（runId=schedule-a39c29608ab7baf2d29b）
+[scheduler] 派工 l-03-skill-opt：到點 2026-10-06T18:40:00.000Z（runId=schedule-4e721909f451acce107c）
+[scheduler] 派工 r-01-acceptance-report：到點 2026-10-06T19:00:00.000Z（runId=schedule-f7c98fc9676a2ad479c4）
+[scheduler] 派工 r-02-alert-report：到點 2026-10-06T19:10:00.000Z（runId=schedule-6e0a27f8ed0f257f7b72）
+[scheduler] 派工 r-03-eval-report：到點 2026-10-06T19:20:00.000Z（runId=schedule-d2d87e935e327475a621）
+[scheduler] 派工 r-04-loop-health：到點 2026-10-06T19:30:00.000Z（runId=schedule-c0fa3a3eba20043823c2）

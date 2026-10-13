@@ -1,0 +1,16 @@
+{
+  "lowRisk": 3,
+  "highRisk": 7,
+  "untouchable": [
+    "acceptance/",
+    "LOCK.json",
+    "skill-lab/cases",
+    "skill-lab/expected.json",
+    "skill-lab/eval",
+    "truth",
+    "ops/data/",
+    "ops/scores/"
+  ],
+  "autoApprove": [],
+  "minStreak": 5
+}

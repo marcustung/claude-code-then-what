@@ -1,0 +1,17 @@
+state: archived
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 2
+executor: claude-code
+risk: 2
+category: Skill 修正
+framework: null
+backend: local
+origin: l-03-skill-opt
+finding_fingerprint: 032ef377b50f9397b9722ed2
+finding_signature: "skill 加入「收據 payload 內容須與發送端 log 一致」的查核,修正 h6 語意 1/2 | order-service/skill-lab/scores/day01.json:per_case.h6-payload-mismatch = {semantic:1, contract:2, runs:2} | order-service/skill-lab/expected.json:h6-payload-mismatch → receiver_status=unknown,why=「收據的 refund_requested 與 log 相反:收到的不是這則通知的正確內容」 | order-service/skill-lab/cases/h6-payload-mismatch/data/logs.jsonl 第 2 行 cancel 事件 refund_requested=true;同案例 receipts.json 的 payload.refund_requested=false | order-service/skill-lab/skill/.claude/skills/trace-notification/scripts/collect.py:receiver record 只帶 order_id/notification_id/version,沒有 payload 內容欄位 | order-service/skill-lab/skill/.claude/skills/trace-notification/skill.md「查核迴圈」:沒有任何比對收據內容與發送端事件內容的步驟"
+run_result: rejected
+proposal_verdict: rejected
+proposal_reason: evidence
+updated_at: "2026-10-05T19:30:25.448Z"

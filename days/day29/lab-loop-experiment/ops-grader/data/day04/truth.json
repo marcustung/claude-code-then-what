@@ -1,0 +1,15 @@
+{
+  "day": 4,
+  "incidents": [
+    {
+      "kind": "silent_drop",
+      "start": 277,
+      "end": 316
+    },
+    {
+      "kind": "sink_down",
+      "start": 956,
+      "end": 971
+    }
+  ]
+}

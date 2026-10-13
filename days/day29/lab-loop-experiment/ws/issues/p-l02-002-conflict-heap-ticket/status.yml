@@ -1,0 +1,17 @@
+state: archived
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 2
+executor: claude-code
+risk: 3
+category: 告警調整
+framework: null
+backend: local
+origin: l-02-alert-tuning
+finding_fingerprint: c5cd321caf2202e824db5356
+finding_signature: "manyconflicts、heaphigh 降為 ticket 並加持續時間(零 valid、共 317 次 page 雜訊) | order-service/ops/scores/day01.json per_rule: manyconflicts fired=278 valid=0 noise=278;heaphigh fired=39 valid=0 noise=39;page_noise=397 | metrics.json http_409_rate:p50=2.08,p90=4.28,超過門檻 3 的 278 段中 251 段不到 3 分鐘,最長僅 5 分鐘,屬正常抖動 | metrics.json heap_mb:每約 37 分鐘一次、每次 6 分鐘的規律鋸齒,峰值固定 128.38(第 31、68、105、142... 分鐘開始),是週期性 gc 行為,不是洩漏;p50=99.19"
+run_result: rejected
+proposal_verdict: rejected
+proposal_reason: direction
+updated_at: "2026-10-05T19:30:13.620Z"

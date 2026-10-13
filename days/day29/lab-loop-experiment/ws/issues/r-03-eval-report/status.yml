@@ -1,0 +1,36 @@
+state: ready
+blocked_by: []
+target_repo: order-service
+schedule: "20 3 * * *"
+priority: 2
+executor: claude-code
+framework:
+  evolution_goals: []
+  ssot: order-service/skill-lab/scores（外層每日 Eval 成績單；不得自己執行 eval.py）
+  ssot_kind: repo-native
+  stability_goals: []
+backend: local
+model: null
+timezone: Asia/Taipei
+overlap_policy: skip
+missed_run_policy: latest
+updated_at: "2026-10-11T02:50:05.432Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: b72db575-9405-487e-a2d1-7484ffc48319
+budget_reserved_usd: null
+last_scheduled_for: "2026-10-10T19:20:00.000Z"
+run_pid: null
+run_id: schedule-135b07d96c8f4ec29869
+run_started_at: "2026-10-11T02:49:23.542Z"
+run_branch: ld/r-03-eval-report
+run_ended_at: "2026-10-11T02:50:04.234Z"
+run_result: failed
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null

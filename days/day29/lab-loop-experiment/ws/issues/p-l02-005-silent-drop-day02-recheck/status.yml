@@ -1,0 +1,17 @@
+state: archived
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 2
+executor: claude-code
+risk: 2
+category: 告警調整
+framework: null
+backend: local
+origin: l-02-alert-tuning
+finding_fingerprint: 8e55f997a474351b38ab434c
+finding_signature: "p-l02-001 的 silent_drop 規則在 day02 再度驗證:事故窗位置不固定,規則不得綁定時段 | order-service/ops/scores/day02.json: \"missed\": [\"silent_drop\"],incidents=3;day01.json 同樣 missed=[silent_drop],連續兩天漏報。 | order-service/ops/data/day02/metrics.json receipts_gap:唯一一段非零是第 562~617 分鐘(56 點),超過 10 的連續段為第 564~616 分鐘(53 分鐘),峰值 92.1,其餘時間皆為 0。 | order-service/ops/data/day01/metrics.json receipts_gap:非零段第 1155~1223 分鐘(69 點),超過 10 的連續段第 1157~1222 分鐘(66 分鐘),峰值 125.1。 | order-service/ops/alerts/rules.yml:5 條規則,沒有 receipts_gap。 | ws/issues/p-l02-001-silent-drop-rule/spec.md:提議 receipts_gap>10、for_minutes=2、severity=page,目前 state=review。"
+run_result: rejected
+proposal_verdict: rejected
+proposal_reason: duplicate
+updated_at: "2026-10-05T19:30:18.767Z"

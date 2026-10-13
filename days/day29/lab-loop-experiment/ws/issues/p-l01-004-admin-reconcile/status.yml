@@ -1,0 +1,13 @@
+state: review
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 3
+executor: claude-code
+risk: 3
+category: 功能實作
+framework: null
+backend: local
+origin: l-01-notify-retry
+finding_fingerprint: 009326fa8e0ca7f1b55f9b19
+finding_signature: "新增 get /admin/reconcile 對帳端點(transitions == delivered + pending + abandoned) | order-service/acceptance/spec.md at-09:get /admin/reconcile 回 transitions、delivered、pending、abandoned,且 transitions == delivered + pending + abandoned | order-service/src/api/program.cs:92:取消成功時 metrics.inc(\"transitions_total\"),94 行同時 inc notify_enqueued_total 並入佇列,可作為 transitions 來源 | order-service/src/api/program.cs 全檔 grep \"admin\" 無命中,目前沒有 /admin/reconcile | issues/p-l01-001-dead-letter-list/spec.md 證據:run_acceptance.py 輸出 at-06/09/10 fail「/admin/dead-letters 回 404」,整體 1/12 pass"

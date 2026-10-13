@@ -1,0 +1,2 @@
+{"i": 0, "at": "2026-10-05 07:48:03", "score": 15, "of": 18, "guard_ok": true, "done": false, "cost": 0, "spent": 0.0}
+{"i": 1, "at": "2026-10-05 07:59:59", "agent_cost": 0.2564198, "score": 18, "of": 18, "guard_ok": true, "done": true, "cost": 2.088, "spent": 2.344, "minutes": 11.9}

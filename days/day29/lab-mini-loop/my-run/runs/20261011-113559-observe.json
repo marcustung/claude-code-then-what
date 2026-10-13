@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-11T03:35:59+00:00",
+  "kind": "observe",
+  "day": 1,
+  "ok": true,
+  "project_changed": false,
+  "added": [
+    "P-001",
+    "P-002",
+    "P-003"
+  ],
+  "duplicates_skipped": [],
+  "no_proposal_reason": "",
+  "exit_code": 0,
+  "cost_usd": 0.0949732,
+  "turns": 7,
+  "result": "第 1 天的資料顯示有 3 起事故，目前規則漏掉 1 起（silent_drop）。page 雜訊是 440，其中 ManyConflicts 單條就佔 315。\n\n我只讀了資料，沒有修改任何檔案。\n\n**事故（從 metrics.json 還原）**\n- **佇列積壓**：第 531 分鐘起，持續 19 分鐘。`queue_depth` 升到 209，同時 `notify_failed` 和 `receipts_gap` 也異常。QueueBacklog 有抓到（valid=1）。\n- **silent_drop**：第 727 分鐘起，`receipts_gap` 連續 80 分鐘，最高 152.9。其他 6 個指標都正常，所以現有 5 條規則完全看不到，這就是漏報。\n- **記憶體洩漏**：第 1160 分鐘起，`heap_mb` 連續 98 分鐘，最高 438。HeapHigh 有抓到（valid=1）。\n\n**雜訊來源**\n- **ManyConflicts**：觸發 315 次，valid=0。`http_409_rate` 的超標段最長只有 4 分鐘，而且在沒有事故時也經常超過 3。\n- **QueueBacklog**：54 次雜訊。非事故的超標段只有 1～2 分鐘，真事故是 19 分鐘。\n- **HeapHigh**：36 次雜訊。每 37 分鐘固定出現一次 6 分鐘、峰值 128 的鋸齒波，真洩漏是 98 分鐘。\n- **HighLatency 和 AnyServerError**：22 次和 13 次，valid=0。超標段全是 1 分鐘的單點，但我沒提案處理它們。這兩條降級或加持續時間，可能讓其他天的真事故沒人 page，風險比較大。\n\n**提案**\n1. **補上 silent_drop 的告警**：新增 `ReceiptsGap`，用 `receipts_gap > 20 for_minutes: 3`，severity 為 page。\n2. **ManyConflicts 降為 ticket**：把 severity 從 page 改成 ticket，門檻維持 3。規則仍在，只是不再 page。\n3. **QueueBacklog 和 HeapHigh 加持續時間**：QueueBacklog 設 `for_minutes: 5`，HeapHigh 設 `for_minutes: 10`。\n\n三項都做的話，預期 page 雜訊約為 35 次，比第 1 天的 440 降約 92%，漏報預期降到 0。\n\n```json\n{\"proposals\": [\n{\"title\": \"新增 ReceiptsGap page 規則，補抓 silent_drop 漏報\", \"change\": \"在 rules.yml 新增規則 name: ReceiptsGap, metric: receipts_gap, op: '>', threshold: 20, for_minutes: 3, severity: page\", \"expected\": \"missed 由 [silent_drop] 變為 [];page 雜訊幾乎不增加(約 1 次有效觸發)\", \"evidence\": \"第 727 分鐘起 receipts_gap 連續 80 分鐘超過 0(最高 152.9),期間其他 6 個指標都正常,5 條現有規則完全看不到;第 531 分鐘的佇列事故也有 33 分鐘的 receipts_gap。基準期 receipts_gap 的 p50 為 0,只在這兩段事故中出現高值。\"},\n{\"title\": \"ManyConflicts 由 page 降為 ticket\", \"change\": \"規則 ManyConflicts: severity 從 page 改為 ticket,門檻維持 threshold: 3(也可再加 for_minutes: 5)\", \"expected\": \"page 雜訊 440 → 約 125(-315),降幅約 72%;ticket_noise 會上升但不算 page\", \"evidence\": \"per_rule 顯示 ManyConflicts fired=315、valid=0、noise=315;http_409_rate 的 p50=2.18,p95=5.27,超標段最長只有 4 分鐘,3 起事故中沒有任何一起由它引起。\"},\n{\"title\": \"QueueBacklog 與 HeapHigh 加持續時間,濾掉短暫尖峰與鋸齒波\", \"change\": \"規則 QueueBacklog: for_minutes 從 0 改為 5(threshold 維持 8);規則 HeapHigh: for_minutes 從 0 改為 10(threshold 維持 120)\", \"expected\": \"QueueBacklog 雜訊 54 → 0,HeapHigh 雜訊 36 → 0,合計再降約 90;兩條規則仍各抓到 1 次真事故,漏報不增加\", \"evidence\": \"queue_depth 非事故超標段長度只有 1~2 分鐘,真事故是第 531 分鐘起連續 19 分鐘(峰值 209);heap_mb 有 36 段每 37 分鐘出現一次、長 6 分鐘、峰值 128 的鋸齒波,真洩漏是第 1160 分鐘起連續 98 分鐘(峰值 438)。for_minutes 5 與 10 都低於真事故長度,又高於雜訊長度。\"}\n],\n\"no_proposal_reason\": \"\"}\n```"
+}

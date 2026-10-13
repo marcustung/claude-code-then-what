@@ -1,0 +1,48 @@
+{
+  "day": 1,
+  "rules": 5,
+  "page_noise": 397,
+  "ticket_noise": 0,
+  "incidents": 2,
+  "missed": [
+    "silent_drop"
+  ],
+  "per_rule": [
+    {
+      "name": "HighLatency",
+      "severity": "page",
+      "fired": 35,
+      "valid": 1,
+      "noise": 34
+    },
+    {
+      "name": "AnyServerError",
+      "severity": "page",
+      "fired": 13,
+      "valid": 0,
+      "noise": 13
+    },
+    {
+      "name": "ManyConflicts",
+      "severity": "page",
+      "fired": 278,
+      "valid": 0,
+      "noise": 278
+    },
+    {
+      "name": "QueueBacklog",
+      "severity": "page",
+      "fired": 33,
+      "valid": 0,
+      "noise": 33
+    },
+    {
+      "name": "HeapHigh",
+      "severity": "page",
+      "fired": 39,
+      "valid": 0,
+      "noise": 39
+    }
+  ],
+  "note": "外層評分（評分程式與答案不在本 repo）；missed 只列事故種類，不含時間窗"
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-11T05:52:45+00:00",
+  "kind": "implement",
+  "id": "P-005",
+  "touched": [
+    "rules.yml"
+  ],
+  "outside_allowed": [],
+  "replay": {
+    "1": {
+      "page_noise": 0,
+      "missed": []
+    },
+    "2": {
+      "page_noise": 0,
+      "missed": []
+    }
+  },
+  "cost_usd": 0.0181836,
+  "result": "我已照 P-005 修改 `rules.yml`：\n\n- `HighLatency`：`for_minutes` 由 0 改為 2。\n- `AnyServerError`：`for_minutes` 由 0 改為 2。\n\n這兩條規則的 threshold 和 severity 都沒動，其他規則和其他檔案也沒碰。我沒有跑 `ops/sim/evaluate.py`，所以預期的雜訊下降幅度和漏報 0 都還沒驗證。\n\n提案裡提到的風險仍然存在：如果出現只持續 1 分鐘的真事故，這兩條規則會晚 1 分鐘才 page。"
+}

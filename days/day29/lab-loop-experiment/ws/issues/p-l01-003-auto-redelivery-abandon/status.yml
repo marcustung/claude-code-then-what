@@ -1,0 +1,13 @@
+state: review
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 2
+executor: claude-code
+risk: 4
+category: 功能實作
+framework: null
+backend: local
+origin: l-01-notify-retry
+finding_fingerprint: e7ac03b64d25e3cc0e7b990a
+finding_signature: "新增死信自動重送背景迴圈與 abandoned 放棄狀態(oc_redelivery_interval_ms / max_rounds) | order-service/acceptance/spec.md at-05:接收端恢復後,死信須在 interval × max_rounds 內自動送達;at-06:輪數用盡仍失敗則狀態改為 abandoned,oc_notify_abandoned_total 遞增,並寫 notify_abandoned 的 error log | order-service/acceptance/spec.md 設定表:oc_redelivery_interval_ms(測試值 1000)、oc_redelivery_max_rounds(測試值 3) | order-service/src/api/program.cs:全檔 grep redelivery、abandoned 無命中;重試用盡只在 257 行與 304-305 行遞增 notify_failed_total / notify_dead_letter_total 並寫 notify_dead_letter log | issues/p-l01-001-dead-letter-list/spec.md 與 issues/p-l01-002-dl-replay-depth/spec.md 的【驗收】只列 at-01/02/03/04/07/08,沒有 at-05、at-06 | ssot 現況(沿用 p-l01-001 證據):run_acceptance.py 為 1/12 pass,兩張前置提案仍為 state=review,尚未合併"

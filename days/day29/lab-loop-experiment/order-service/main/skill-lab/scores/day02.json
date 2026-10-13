@@ -1,0 +1,57 @@
+{
+  "day": 2,
+  "commit": "63ad9ca",
+  "skill_version": "2.1.2",
+  "semantic_ok": 15,
+  "contract_ok": 14,
+  "runs": 18,
+  "cost_usd": 2.106,
+  "per_case": {
+    "c01": {
+      "semantic": 2,
+      "contract": 2,
+      "runs": 2
+    },
+    "c02": {
+      "semantic": 2,
+      "contract": 2,
+      "runs": 2
+    },
+    "c03": {
+      "semantic": 2,
+      "contract": 2,
+      "runs": 2
+    },
+    "c04": {
+      "semantic": 2,
+      "contract": 0,
+      "runs": 2
+    },
+    "c05": {
+      "semantic": 0,
+      "contract": 2,
+      "runs": 2
+    },
+    "c06": {
+      "semantic": 1,
+      "contract": 2,
+      "runs": 2
+    },
+    "c07": {
+      "semantic": 2,
+      "contract": 0,
+      "runs": 2
+    },
+    "c08": {
+      "semantic": 2,
+      "contract": 2,
+      "runs": 2
+    },
+    "c09": {
+      "semantic": 2,
+      "contract": 2,
+      "runs": 2
+    }
+  },
+  "note": "外層每日 Eval（main 上目前的 skill-lab/skill/）；考題與正解不在 repo，題目以匿名編號表示"
+}

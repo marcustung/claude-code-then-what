@@ -1,0 +1,2 @@
+i1 11/11 guard=True spent=US$0.69
+{"exp": "exp1", "stop": "done", "iterations": 1, "spent_usd": 0.686, "hours": 0.12, "branch": "longrun/exp1", "diff": "2 files changed, 142 insertions(+), 14 deletions(-)"}

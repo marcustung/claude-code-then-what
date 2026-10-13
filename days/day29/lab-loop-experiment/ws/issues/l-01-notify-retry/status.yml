@@ -1,0 +1,44 @@
+state: ready
+blocked_by: []
+target_repo: order-service
+schedule: "0 2 * * *"
+priority: 2
+executor: claude-code
+framework:
+  evolution_goals:
+    - 讓 AT-01～AT-11 逐日轉綠（目標 ≥ 7/11）
+    - 每輪挑一個下一步，提案附「預期轉綠的 AT 編號」
+  ssot: order-service/acceptance（run_acceptance.py 結果）
+  ssot_kind: repo-native
+  stability_goals:
+    - 不得修改 acceptance/（SPEC.md、run_acceptance.py）與 LOCK.json 鎖住的任何檔案；雜湊不符即判失敗
+    - "產出只能進 ld/<id> 分支，合併由人；不 push、不碰其他 repo"
+    - 每輪預算 ≤ US$2，第一期合計 ≤ US$50
+    - AT-12（不退步守門）必須保持綠燈
+backend: local
+model: null
+timezone: Asia/Taipei
+overlap_policy: skip
+missed_run_policy: latest
+updated_at: "2026-10-11T18:02:26.605Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: 8379aadd-afe7-44ce-8200-860522570380
+budget_reserved_usd: null
+last_scheduled_for: "2026-10-11T18:00:00.000Z"
+run_pid: null
+run_id: schedule-ce85cb2bcfdf086202ee
+run_started_at: "2026-10-11T18:00:19.555Z"
+run_mode: loop-engineer
+run_ended_at: "2026-10-11T18:02:25.329Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+run_proposals: 0
+run_branch: ld/l-01-notify-retry

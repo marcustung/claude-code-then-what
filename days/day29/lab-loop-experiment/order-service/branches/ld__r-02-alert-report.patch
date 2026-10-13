@@ -1,0 +1,315 @@
+diff --git a/reports/2026-10-05-ops-summary.md b/reports/2026-10-05-ops-summary.md
+new file mode 100644
+index 0000000..d0cdd1b
+--- /dev/null
++++ b/reports/2026-10-05-ops-summary.md
+@@ -0,0 +1,53 @@
++# 監控摘要日報（r-02-alert-report）
++
++- 產出日：2026-10-05（唯讀觀測，未寫回 SSOT）
++- SSOT：`ops/`（本 repo，git 可讀）；觀測基準 commit：`4a54a31`（ops 最後變更 `8f28cad`）
++- 觀測範圍：目前只有 day01（`ops/data/day01/metrics.json`、`ops/scores/day01.json`）
++
++## 1. 成績單摘要（`ops/scores/day01.json`）
++
++| 項目 | 值 | 來源行 |
++|---|---|---|
++| 規則數 | 5 | scores/day01.json:3 |
++| page 級雜訊 | 397 | scores/day01.json:4 |
++| ticket 級雜訊 | 0 | scores/day01.json:5 |
++| 事故數 | 2 | scores/day01.json:6 |
++| 漏報 | silent_drop | scores/day01.json:7-9 |
++
++## 2. 各規則表現（scores/day01.json:10-46；規則定義 `ops/alerts/rules.yml`）
++
++| 規則 | 條件（rules.yml） | 觸發 | 有效 | 雜訊 |
++|---|---|---|---|---|
++| HighLatency | p95_latency_ms > 150（:5-10） | 35 | 1 | 34 |
++| AnyServerError | error_rate > 0（:12-17） | 13 | 0 | 13 |
++| ManyConflicts | http_409_rate > 3（:19-24） | 278 | 0 | 278 |
++| QueueBacklog | queue_depth > 8（:26-31） | 33 | 0 | 33 |
++| HeapHigh | heap_mb > 120（:33-38） | 39 | 0 | 39 |
++
++- 5 條規則全為 `severity: page`、`for_minutes: 0`。
++- 雜訊 397 = 34+13+278+33+39；ManyConflicts 單條佔約 70%。
++- 5 條規則僅 HighLatency 有 1 次有效觸發；其餘 4 條有效 0。
++
++## 3. 原始指標概況（`ops/data/day01/metrics.json`，每項 1440 點）
++
++| 指標 | min | max | mean | 有規則覆蓋 |
++|---|---|---|---|---|
++| p95_latency_ms | 33.53 | 419.63 | 70.39 | 是 |
++| error_rate | 0.0 | 1.0 | 0.01 | 是 |
++| http_409_rate | 0.0 | 13.47 | 2.29 | 是 |
++| queue_depth | 0.0 | 29.4 | 2.52 | 是 |
++| heap_mb | 70.0 | 128.38 | 99.13 | 是 |
++| notify_failed | 0.0 | 1.0 | 0.0 | **否** |
++| receipts_gap | 0.0 | 125.1 | 3.86 | **否** |
++
++## 4. 觀察（僅陳述，不提案、不改規則）
++
++- 漏報種類為 silent_drop（scores/day01.json:8）。metrics.json 內 `notify_failed`、`receipts_gap` 兩個指標沒有任何規則引用（rules.yml 全檔僅 5 條）。成績單未說明 silent_drop 與這兩個指標的關係，此為推測，未驗證。
++- `ops/README.md` 起點描述「每天約 390–410 次 page 雜訊；silent_drop 日會漏報」與 day01（397、漏報 silent_drop）一致。
++- 僅一天資料，無法看趨勢。
++- `rules.yml:1` 註解仍指向 `ops/sim/evaluate.py`，該檔已於 2026-10-05 移出 repo（ops/README.md 末段）。
++
++## 5. 未讀到 / 限制
++
++- 事故時間窗與答案不在 repo，未讀到。
++- 本報告未修改 `ops/`、`src/`、`tests/`；未跑測試（未動 code，不適用）。
+diff --git a/reports/2026-10-06-ops-summary.md b/reports/2026-10-06-ops-summary.md
+new file mode 100644
+index 0000000..9f6db06
+--- /dev/null
++++ b/reports/2026-10-06-ops-summary.md
+@@ -0,0 +1,58 @@
++# 監控摘要日報（r-02-alert-report）
++
++- 產出日：2026-10-06（唯讀觀測，未寫回 SSOT）
++- SSOT：`ops/`（本 repo，git 可讀）；觀測基準 commit：`943b56e`（`git log -- ops` 最後變更仍為 `8f28cad`）
++- 觀測範圍：仍只有 day01（`ops/data/day01/metrics.json`、`ops/scores/day01.json`）；自 2026-10-05 日報以來 `ops/` 無新增日期，無新成績單
++
++## 1. 與昨日日報的差異
++
++- `ops/` 無任何變更：沒有 day02 資料或成績單，`ops/alerts/rules.yml` 也未被改動。
++- 因此下列數字與 `reports/2026-10-05-ops-summary.md` 相同；本輪已對 `metrics.json` 重新計算，min/max/mean 與昨日一致。
++
++## 2. 成績單摘要（`ops/scores/day01.json`）
++
++| 項目 | 值 | 來源行 |
++|---|---|---|
++| 規則數 | 5 | scores/day01.json:3 |
++| page 級雜訊 | 397 | scores/day01.json:4 |
++| ticket 級雜訊 | 0 | scores/day01.json:5 |
++| 事故數 | 2 | scores/day01.json:6 |
++| 漏報 | silent_drop | scores/day01.json:7-9 |
++
++## 3. 各規則表現（scores/day01.json:10-46；定義 `ops/alerts/rules.yml`）
++
++| 規則 | 條件（rules.yml） | 觸發 | 有效 | 雜訊 |
++|---|---|---|---|---|
++| HighLatency | p95_latency_ms > 150（:5-10） | 35 | 1 | 34 |
++| AnyServerError | error_rate > 0（:12-17） | 13 | 0 | 13 |
++| ManyConflicts | http_409_rate > 3（:19-24） | 278 | 0 | 278 |
++| QueueBacklog | queue_depth > 8（:26-31） | 33 | 0 | 33 |
++| HeapHigh | heap_mb > 120（:33-38） | 39 | 0 | 39 |
++
++- 5 條規則全為 `severity: page`、`for_minutes: 0`。
++- 雜訊 397 = 34+13+278+33+39；ManyConflicts 單條約佔 70%（278/397）。
++- 只有 HighLatency 有 1 次有效觸發，其餘 4 條有效 0。
++
++## 4. 原始指標概況（`ops/data/day01/metrics.json`，每項 1440 點）
++
++| 指標 | min | max | mean | 有規則覆蓋 |
++|---|---|---|---|---|
++| p95_latency_ms | 33.53 | 419.63 | 70.39 | 是 |
++| error_rate | 0.0 | 1.0 | 0.01 | 是 |
++| http_409_rate | 0.0 | 13.47 | 2.29 | 是 |
++| queue_depth | 0.0 | 29.4 | 2.52 | 是 |
++| heap_mb | 70.0 | 128.38 | 99.13 | 是 |
++| notify_failed | 0.0 | 1.0 | 0.0 | **否** |
++| receipts_gap | 0.0 | 125.1 | 3.86 | **否** |
++
++## 5. 觀察（僅陳述，不提案、不改規則）
++
++- 漏報為 silent_drop（scores/day01.json:8）。`notify_failed`、`receipts_gap` 無任何規則引用（rules.yml 全檔僅 5 條）；成績單未說明兩者與 silent_drop 的關係，此為推測，未驗證。
++- `ops/README.md:10` 的起點描述（約 390–410 次 page 雜訊、silent_drop 日漏報）與 day01 一致。
++- 僅一天資料，無法看趨勢。
++- `rules.yml:1` 註解仍指向 `ops/sim/evaluate.py`，該檔已移出 repo（ops/README.md:9）。
++
++## 6. 未讀到 / 限制
++
++- 事故時間窗與答案不在 repo，未讀到。
++- 本報告未修改 `ops/`、`src/`、`tests/`；未跑測試（未動 code，不適用）。
+diff --git a/reports/2026-10-07-ops-summary.md b/reports/2026-10-07-ops-summary.md
+new file mode 100644
+index 0000000..741be6a
+--- /dev/null
++++ b/reports/2026-10-07-ops-summary.md
+@@ -0,0 +1,58 @@
++# 監控摘要日報（r-02-alert-report）
++
++- 產出日：2026-10-07（唯讀觀測，未寫回 SSOT）
++- SSOT：`ops/`（本 repo，git 可讀）；觀測基準 commit：`aff7a1f`（`git log -- ops` 最後變更仍為 `8f28cad`）
++- 觀測範圍：仍只有 day01（`ops/data/day01/metrics.json`、`ops/scores/day01.json`）；自 2026-10-06 日報以來 `ops/` 無新增日期，無新成績單
++
++## 1. 與昨日日報的差異
++
++- `ops/` 無任何變更：沒有 day02 資料或成績單，`ops/alerts/rules.yml` 也未被改動。
++- 因此下列數字與 `reports/2026-10-06-ops-summary.md` 相同；本輪已對 `metrics.json` 重新計算，min/max/mean 與昨日一致。
++
++## 2. 成績單摘要（`ops/scores/day01.json`）
++
++| 項目 | 值 | 來源行 |
++|---|---|---|
++| 規則數 | 5 | scores/day01.json:3 |
++| page 級雜訊 | 397 | scores/day01.json:4 |
++| ticket 級雜訊 | 0 | scores/day01.json:5 |
++| 事故數 | 2 | scores/day01.json:6 |
++| 漏報 | silent_drop | scores/day01.json:7-9 |
++
++## 3. 各規則表現（scores/day01.json:10-46；定義 `ops/alerts/rules.yml`）
++
++| 規則 | 條件（rules.yml） | 觸發 | 有效 | 雜訊 |
++|---|---|---|---|---|
++| HighLatency | p95_latency_ms > 150（:5-10） | 35 | 1 | 34 |
++| AnyServerError | error_rate > 0（:12-17） | 13 | 0 | 13 |
++| ManyConflicts | http_409_rate > 3（:19-24） | 278 | 0 | 278 |
++| QueueBacklog | queue_depth > 8（:26-31） | 33 | 0 | 33 |
++| HeapHigh | heap_mb > 120（:33-38） | 39 | 0 | 39 |
++
++- 5 條規則全為 `severity: page`、`for_minutes: 0`。
++- 雜訊 397 = 34+13+278+33+39；ManyConflicts 單條約佔 70%（278/397）。
++- 只有 HighLatency 有 1 次有效觸發，其餘 4 條有效 0。
++
++## 4. 原始指標概況（`ops/data/day01/metrics.json`，每項 1440 點）
++
++| 指標 | min | max | mean | 有規則覆蓋 |
++|---|---|---|---|---|
++| p95_latency_ms | 33.53 | 419.63 | 70.39 | 是 |
++| error_rate | 0.0 | 1.0 | 0.01 | 是 |
++| http_409_rate | 0.0 | 13.47 | 2.29 | 是 |
++| queue_depth | 0.0 | 29.4 | 2.52 | 是 |
++| heap_mb | 70.0 | 128.38 | 99.13 | 是 |
++| notify_failed | 0.0 | 1.0 | 0.0 | **否** |
++| receipts_gap | 0.0 | 125.1 | 3.86 | **否** |
++
++## 5. 觀察（僅陳述，不提案、不改規則）
++
++- 漏報為 silent_drop（scores/day01.json:8）。`notify_failed`、`receipts_gap` 無任何規則引用（rules.yml 全檔僅 5 條）；成績單未說明兩者與 silent_drop 的關係，此為推測，未驗證。
++- `ops/README.md:10` 的起點描述（約 390–410 次 page 雜訊、silent_drop 日漏報）與 day01 一致。
++- 僅一天資料，無法看趨勢。
++- `rules.yml:1` 註解仍指向 `ops/sim/evaluate.py`，該檔已移出 repo（ops/README.md:9）。
++
++## 6. 未讀到 / 限制
++
++- 事故時間窗與答案不在 repo，未讀到。
++- 本報告未修改 `ops/`、`src/`、`tests/`；未跑測試（未動 code，不適用）。
+diff --git a/reports/2026-10-08-ops-summary.md b/reports/2026-10-08-ops-summary.md
+new file mode 100644
+index 0000000..5d46680
+--- /dev/null
++++ b/reports/2026-10-08-ops-summary.md
+@@ -0,0 +1,58 @@
++# 監控摘要日報（r-02-alert-report）
++
++- 產出日：2026-10-08（唯讀觀測，未寫回 SSOT）
++- SSOT：`ops/`（本 repo，git 可讀）；觀測基準 commit：`f5639fd`（`git log -- ops` 最後變更仍為 `8f28cad`）
++- 觀測範圍：仍只有 day01（`ops/data/day01/metrics.json`、`ops/scores/day01.json`）；自 2026-10-07 日報以來 `ops/` 無新增日期，無新成績單
++
++## 1. 與昨日日報的差異（2026-10-07）
++
++- `ops/` 無任何變更：沒有 day02 資料或成績單，`ops/alerts/rules.yml` 也未被改動。
++- 因此下列數字與 `reports/2026-10-07-ops-summary.md` 相同；本輪已對 `metrics.json` 重新計算，min/max/mean 與昨日一致。
++
++## 2. 成績單摘要（`ops/scores/day01.json`）
++
++| 項目 | 值 | 來源行 |
++|---|---|---|
++| 規則數 | 5 | scores/day01.json:3 |
++| page 級雜訊 | 397 | scores/day01.json:4 |
++| ticket 級雜訊 | 0 | scores/day01.json:5 |
++| 事故數 | 2 | scores/day01.json:6 |
++| 漏報 | silent_drop | scores/day01.json:7-9 |
++
++## 3. 各規則表現（scores/day01.json:10-46；定義 `ops/alerts/rules.yml`）
++
++| 規則 | 條件（rules.yml） | 觸發 | 有效 | 雜訊 |
++|---|---|---|---|---|
++| HighLatency | p95_latency_ms > 150（:5-10） | 35 | 1 | 34 |
++| AnyServerError | error_rate > 0（:12-17） | 13 | 0 | 13 |
++| ManyConflicts | http_409_rate > 3（:19-24） | 278 | 0 | 278 |
++| QueueBacklog | queue_depth > 8（:26-31） | 33 | 0 | 33 |
++| HeapHigh | heap_mb > 120（:33-38） | 39 | 0 | 39 |
++
++- 5 條規則全為 `severity: page`、`for_minutes: 0`。
++- 雜訊 397 = 34+13+278+33+39；ManyConflicts 單條約佔 70%（278/397）。
++- 只有 HighLatency 有 1 次有效觸發，其餘 4 條有效 0。
++
++## 4. 原始指標概況（`ops/data/day01/metrics.json`，每項 1440 點）
++
++| 指標 | min | max | mean | 有規則覆蓋 |
++|---|---|---|---|---|
++| p95_latency_ms | 33.53 | 419.63 | 70.39 | 是 |
++| error_rate | 0.0 | 1.0 | 0.01 | 是 |
++| http_409_rate | 0.0 | 13.47 | 2.29 | 是 |
++| queue_depth | 0.0 | 29.4 | 2.52 | 是 |
++| heap_mb | 70.0 | 128.38 | 99.13 | 是 |
++| notify_failed | 0.0 | 1.0 | 0.0 | **否** |
++| receipts_gap | 0.0 | 125.1 | 3.86 | **否** |
++
++## 5. 觀察（僅陳述，不提案、不改規則）
++
++- 漏報為 silent_drop（scores/day01.json:8）。`notify_failed`、`receipts_gap` 無任何規則引用（rules.yml 全檔僅 5 條）；成績單未說明兩者與 silent_drop 的關係，此為推測，未驗證。
++- `ops/README.md:10` 的起點描述（約 390–410 次 page 雜訊、silent_drop 日漏報）與 day01 一致。
++- 僅一天資料，無法看趨勢。
++- `rules.yml:1` 註解仍指向 `ops/sim/evaluate.py`，該檔已移出 repo（ops/README.md:9）。
++
++## 6. 未讀到 / 限制
++
++- 事故時間窗與答案不在 repo，未讀到。
++- 本報告未修改 `ops/`、`src/`、`tests/`；未跑測試（未動 code，不適用）。
+diff --git a/reports/2026-10-11-ops-summary.md b/reports/2026-10-11-ops-summary.md
+new file mode 100644
+index 0000000..e02c756
+--- /dev/null
++++ b/reports/2026-10-11-ops-summary.md
+@@ -0,0 +1,58 @@
++# 監控摘要日報（r-02-alert-report）
++
++- 產出日：2026-10-11（唯讀觀測，未寫回 SSOT）
++- SSOT：`ops/`（本 repo，git 可讀）；觀測基準 commit：`0adb6fd`（`git log -- ops` 最後變更仍為 `8f28cad`）
++- 觀測範圍：仍只有 day01（`ops/data/day01/metrics.json`、`ops/scores/day01.json`）；自 2026-10-08 日報以來 `ops/` 無新增日期，無新成績單
++
++## 1. 與上一份日報的差異（2026-10-08）
++
++- `ops/` 無任何變更：沒有 day02 資料或成績單，`ops/alerts/rules.yml` 也未被改動。
++- 因此下列數字與 `reports/2026-10-08-ops-summary.md` 相同；本輪已對 `metrics.json` 重新計算，min/max/mean 與上一份日報一致。
++
++## 2. 成績單摘要（`ops/scores/day01.json`）
++
++| 項目 | 值 | 來源行 |
++|---|---|---|
++| 規則數 | 5 | scores/day01.json:3 |
++| page 級雜訊 | 397 | scores/day01.json:4 |
++| ticket 級雜訊 | 0 | scores/day01.json:5 |
++| 事故數 | 2 | scores/day01.json:6 |
++| 漏報 | silent_drop | scores/day01.json:7-9 |
++
++## 3. 各規則表現（scores/day01.json:10-46；定義 `ops/alerts/rules.yml`）
++
++| 規則 | 條件（rules.yml） | 觸發 | 有效 | 雜訊 |
++|---|---|---|---|---|
++| HighLatency | p95_latency_ms > 150（:5-10） | 35 | 1 | 34 |
++| AnyServerError | error_rate > 0（:12-17） | 13 | 0 | 13 |
++| ManyConflicts | http_409_rate > 3（:19-24） | 278 | 0 | 278 |
++| QueueBacklog | queue_depth > 8（:26-31） | 33 | 0 | 33 |
++| HeapHigh | heap_mb > 120（:33-38） | 39 | 0 | 39 |
++
++- 5 條規則全為 `severity: page`、`for_minutes: 0`。
++- 雜訊 397 = 34+13+278+33+39；ManyConflicts 單條約佔 70%（278/397）。
++- 只有 HighLatency 有 1 次有效觸發，其餘 4 條有效 0。
++
++## 4. 原始指標概況（`ops/data/day01/metrics.json`，每項 1440 點）
++
++| 指標 | min | max | mean | 有規則覆蓋 |
++|---|---|---|---|---|
++| p95_latency_ms | 33.53 | 419.63 | 70.39 | 是 |
++| error_rate | 0.0 | 1.0 | 0.01 | 是 |
++| http_409_rate | 0.0 | 13.47 | 2.29 | 是 |
++| queue_depth | 0.0 | 29.4 | 2.52 | 是 |
++| heap_mb | 70.0 | 128.38 | 99.13 | 是 |
++| notify_failed | 0.0 | 1.0 | 0.0 | **否** |
++| receipts_gap | 0.0 | 125.1 | 3.86 | **否** |
++
++## 5. 觀察（僅陳述，不提案、不改規則）
++
++- 漏報為 silent_drop（scores/day01.json:8）。`notify_failed`、`receipts_gap` 無任何規則引用（rules.yml 全檔僅 5 條）；成績單未說明兩者與 silent_drop 的關係，此為推測，未驗證。
++- `ops/README.md:10` 的起點描述（約 390–410 次 page 雜訊、silent_drop 日漏報）與 day01 一致。
++- 僅一天資料，無法看趨勢。
++- `rules.yml:1` 註解仍指向 `ops/sim/evaluate.py`，該檔已移出 repo（ops/README.md:9）。
++
++## 6. 未讀到 / 限制
++
++- 事故時間窗與答案不在 repo，未讀到。
++- 本報告未修改 `ops/`、`src/`、`tests/`；未跑測試（未動 code，不適用）。

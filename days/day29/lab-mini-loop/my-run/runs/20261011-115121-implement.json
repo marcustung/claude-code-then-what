@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T03:51:21+00:00",
+  "kind": "implement",
+  "id": "P-001",
+  "touched": [
+    "rules.yml"
+  ],
+  "outside_allowed": [],
+  "replay": {
+    "1": {
+      "page_noise": 440,
+      "missed": []
+    }
+  },
+  "cost_usd": 0.0260628,
+  "result": "我已在 `rules.yml` 檔尾新增 `ReceiptsGap` 規則，內容如下：\n\n- `metric: receipts_gap`\n- `op: \">\"`\n- `threshold: 20`\n- `for_minutes: 3`\n- `severity: page`\n\n其他規則和檔案都沒動。我也沒跑 `ops/sim/evaluate.py`，所以提案預期的「missed 變為 []」還沒驗證。"
+}

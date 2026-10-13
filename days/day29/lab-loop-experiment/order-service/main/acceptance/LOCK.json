@@ -1,0 +1,7 @@
+{
+  "note": "考題雜湊；迴圈改動後由操作者比對，不符即判為修改考題；2026-10-05 起 ops/sim 移出 repo（外層評分），不再列入；2026-10-05 run_acceptance.py 改為埠號可由環境變數覆寫（開跑前，重新鎖定）；2026-10-05 skill-lab 的考題、正解、eval.py 移出 repo（外層評分），不再列入",
+  "sha256": {
+    "acceptance/SPEC.md": "eb89826b6a4ba1d75f25748c539a067b31e45bdbb6f57ae7f6a9c3a2fd55a4fd",
+    "acceptance/run_acceptance.py": "a807daf29615478afafe06422827afe48ca302a2da609ba5155962c145282381"
+  }
+}

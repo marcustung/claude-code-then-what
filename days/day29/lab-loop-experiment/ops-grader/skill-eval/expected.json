@@ -1,0 +1,47 @@
+{
+  "complete": {
+    "sender_status": "confirmed",
+    "receiver_status": "confirmed",
+    "why": "Day 21 原案例"
+  },
+  "missing-receipts": {
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "why": "Day 21 原案例"
+  },
+  "decoy-receipt": {
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "why": "Day 21 原案例"
+  },
+  "h1-receipt-500": {
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "why": "收據存在但接收端回 500：沒有成功接收的證據"
+  },
+  "h2-dead-but-received": {
+    "sender_status": "unknown",
+    "receiver_status": "confirmed",
+    "why": "發送端只有失敗與死信、沒有 notify_sent；接收端有 200 收據"
+  },
+  "h3-receipt-before-cancel": {
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "why": "收據時間早於取消事件，證據自相矛盾，不能採信"
+  },
+  "h4-duplicate-receipts": {
+    "sender_status": "confirmed",
+    "receiver_status": "confirmed",
+    "why": "同一通知收到兩次 200：重複不代表沒送到"
+  },
+  "h5-no-sender-log": {
+    "sender_status": "unknown",
+    "receiver_status": "confirmed",
+    "why": "沒有任何發送紀錄，只有接收端收據"
+  },
+  "h6-payload-mismatch": {
+    "sender_status": "confirmed",
+    "receiver_status": "unknown",
+    "why": "收據的 refund_requested 與 log 相反：收到的不是這則通知的正確內容"
+  }
+}

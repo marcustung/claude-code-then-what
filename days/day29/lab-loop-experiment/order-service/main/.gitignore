@@ -1,0 +1,6 @@
+bin/
+obj/
+runs/
+acceptance/.run/
+ops/sim/.data/
+skill-lab/.runs/

@@ -1,0 +1,20 @@
+{
+  "day": 2,
+  "incidents": [
+    {
+      "kind": "memory_leak",
+      "start": 299,
+      "end": 410
+    },
+    {
+      "kind": "latency_regression",
+      "start": 447,
+      "end": 486
+    },
+    {
+      "kind": "silent_drop",
+      "start": 562,
+      "end": 583
+    }
+  ]
+}

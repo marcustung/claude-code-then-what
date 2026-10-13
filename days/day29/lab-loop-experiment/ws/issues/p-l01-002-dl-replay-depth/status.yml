@@ -1,0 +1,13 @@
+state: review
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 2
+executor: claude-code
+risk: 4
+category: 功能實作
+framework: null
+backend: local
+origin: l-01-notify-retry
+finding_fingerprint: 6af03bb1713bed00a8c21c5b
+finding_signature: "新增死信手動重送端點 post /admin/dead-letters/{id}/replay 與 oc_notify_dead_letter_depth 指標 | order-service/acceptance/spec.md at-03:replay 在接收端恢復時回 200,接收端收到收據,死信清單不再列出 | order-service/acceptance/spec.md at-04:已送達的通知再 replay 回 404 或 409,接收端收據仍只有一筆 | order-service/acceptance/spec.md at-07:/metrics 要有 oc_notify_dead_letter_depth,等於待重送筆數,送達後歸零 | order-service/src/api/program.cs:144 目前只輸出 oc_notify_queue_depth,沒有 dead_letter_depth;run_acceptance.py 目前輸出 at-03/04/07 fail「沒進死信」"

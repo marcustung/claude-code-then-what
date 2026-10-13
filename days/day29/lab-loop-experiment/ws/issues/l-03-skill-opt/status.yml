@@ -1,0 +1,44 @@
+state: ready
+blocked_by: []
+target_repo: order-service
+schedule: "40 2 * * *"
+priority: 2
+executor: claude-code
+framework:
+  evolution_goals:
+    - 語意正確數由基準 15/18 上升
+    - 吸收退回理由，同類理由退回次數下降
+  ssot: order-service/skill-lab（scores/ 外層每日 Eval 成績單、skill/）
+  ssot_kind: repo-native
+  stability_goals:
+    - 不得修改 acceptance/（SPEC.md、run_acceptance.py）與 LOCK.json 鎖住的任何檔案；雜湊不符即判失敗
+    - "產出只能進 ld/<id> 分支，合併由人；不 push、不碰其他 repo"
+    - 每輪預算 ≤ US$2，第一期合計 ≤ US$50
+    - 只改 skill-lab/skill/；考題與正解不在 repo，不得從 git 歷史或其他位置取得
+    - 不得自己執行 skill-lab/eval.py（外層每天 01:50 在 main 上跑一次，成績寫進 skill-lab/scores/）；以成績單判斷，有退步不得送審
+backend: local
+model: null
+timezone: Asia/Taipei
+overlap_policy: skip
+missed_run_policy: latest
+updated_at: "2026-10-11T18:56:32.632Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: 2b354e30-be93-416e-adf1-a0985ffc8055
+budget_reserved_usd: null
+last_scheduled_for: "2026-10-11T18:40:00.000Z"
+run_pid: null
+run_id: schedule-53811afa29f322edda59
+run_started_at: "2026-10-11T18:56:02.417Z"
+run_mode: loop-engineer
+run_ended_at: "2026-10-11T18:56:31.295Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+run_proposals: 0

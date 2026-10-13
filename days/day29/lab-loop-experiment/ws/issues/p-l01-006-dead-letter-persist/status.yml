@@ -1,0 +1,13 @@
+state: review
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 3
+executor: claude-code
+risk: 4
+category: 功能實作
+framework: null
+backend: local
+origin: l-01-notify-retry
+finding_fingerprint: 7bb4a9fbe928d0bf583642fe
+finding_signature: "死信持久化到 oc_run_dir(json lines),服務重啟後還原死信清單 | order-service/acceptance/spec.md at-11:死信要持久化,存在 oc_run_dir 下,服務重啟後死信清單仍在 | order-service/src/api/program.cs:10:rundir 已由 oc_run_dir 環境變數取得(預設 runs/default),可直接放檔案 | issues/p-l01-001-dead-letter-list/spec.md【目標】明訂 deadletterstore 為 concurrentdictionary 記憶體結構,並未持久化;該卡驗收也不含 at-11 | ssot 現況:run_acceptance.py 輸出 at-11 fail「沒進死信」,整體 1/12 pass"

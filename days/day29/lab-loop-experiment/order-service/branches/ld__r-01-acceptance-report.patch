@@ -1,0 +1,287 @@
+diff --git a/reports/acceptance-2026-10-05.md b/reports/acceptance-2026-10-05.md
+new file mode 100644
+index 0000000..620ba0f
+--- /dev/null
++++ b/reports/acceptance-2026-10-05.md
+@@ -0,0 +1,43 @@
++# 驗收測試日報 2026-10-05
++
++- 議題：r-01-acceptance-report（report 型，唯讀觀測）
++- SSOT：`order-service/acceptance`（repo-native）
++- 觀測基準：分支 `ld/r-01-acceptance-report` @ `4a54a31`（`acceptance: 埠號可由環境變數覆寫…重新鎖定`）
++- 觀測方式：僅讀取 SSOT；建置並執行 `python acceptance/run_acceptance.py`（埠 5380／5381，輸出在被 gitignore 的 `acceptance/.run/`）。未修改 `acceptance/`、`src/`。
++
++## 1. 結果總覽：1／12 通過
++
++| 編號 | 條件（`acceptance/SPEC.md`） | 結果 | 失敗訊息 |
++|---|---|---|---|
++| AT-01 | 重試用盡進死信清單 | FAIL | 死信清單沒有這筆通知 |
++| AT-02 | `/admin/*` 需 `X-Actor`，否則 401 | FAIL | 沒帶 X-Actor 也能存取 |
++| AT-03 | 手動 replay | FAIL | 沒進死信 |
++| AT-04 | replay 冪等 | FAIL | 沒進死信 |
++| AT-05 | 自動重送 | FAIL | 沒進死信 |
++| AT-06 | 輪數用盡改 `abandoned` | FAIL | `/admin/dead-letters` 回 404 |
++| AT-07 | `oc_notify_dead_letter_depth` | FAIL | 沒進死信 |
++| AT-08 | `oc_notify_sent_total` 只在確認後遞增 | FAIL | 沒進死信 |
++| AT-09 | `/admin/reconcile` 對帳 | FAIL | `/admin/dead-letters` 回 404 |
++| AT-10 | 放棄後 `needs_manual_followup` | FAIL | `/admin/dead-letters` 回 404 |
++| AT-11 | 死信持久化 | FAIL | 沒進死信 |
++| AT-12 | 不退步（DomainTests、正常通知送達） | PASS | — |
++
++與 git 歷史相符：`eed7365 acceptance: redelivery & compensation spec + tests (1/12 green baseline)` 即記載基線為 1/12，`git log -- acceptance` 顯示此後 `acceptance/` 只有 `c3b1d5e`、`fa35c71`、`4a54a31` 三次異動（皆為鎖定／環境調整），`src/` 尚無對應實作。
++
++## 2. 考題完整性（`acceptance/LOCK.json`，68 項雜湊）
++
++- 68／68 相符。
++- 備註：本機 `core.autocrlf=true`，working tree 為 CRLF、git blob 為 LF；LOCK 內各檔的雜湊分別以 LF 或 CRLF 計算（`acceptance/SPEC.md` 等符合 working tree，`run_acceptance.py` 等符合 blob）。單以其中一種換行比對會誤報 13～55 項不符，比對時須兩者皆試。此為操作者鎖定流程的觀察，非考題遭改動。
++
++## 3. 觀察
++
++- 目前缺口集中在 `/admin/dead-letters` 端點不存在（404）與通知失敗不進死信；AT-01、AT-02 是其餘條件的前置。
++- AT-12 通過，表示既有取消流程與正常通知未退步。
++- 一次完整驗收約 55 秒。
++
++## 4. 可回溯來源
++
++- `acceptance/SPEC.md`（AT-01～AT-12 條件）
++- `acceptance/run_acceptance.py`（測試與輸出格式）
++- `acceptance/LOCK.json`（雜湊）
++- `git log -- acceptance`
+diff --git a/reports/acceptance-2026-10-06.md b/reports/acceptance-2026-10-06.md
+new file mode 100644
+index 0000000..a5f2e02
+--- /dev/null
++++ b/reports/acceptance-2026-10-06.md
+@@ -0,0 +1,41 @@
++# 驗收測試日報 2026-10-06
++
++- 議題：r-01-acceptance-report（report 型，唯讀觀測）
++- SSOT：`order-service/acceptance`（repo-native）
++- 觀測基準：分支 `ld/r-01-acceptance-report` @ `8ef3ec2`；`acceptance/` 與 `src/` 最後一次異動仍是 `4a54a31`（`git log -- acceptance src` 未見新 commit），自昨日報告以來 SSOT 沒有變動。
++- 觀測方式：僅讀取 SSOT；執行 `python acceptance/run_acceptance.py`（`ACCEPT_API_PORT=5380`、`ACCEPT_SINK_PORT=5381`，輸出在被 gitignore 的 `acceptance/.run/`）。未修改 `acceptance/`、`src/`。
++
++## 1. 結果總覽：1／12 通過（與 2026-10-05 相同）
++
++| 編號 | 結果 | 失敗訊息 | 較昨日 |
++|---|---|---|---|
++| AT-01 | FAIL | 死信清單沒有這筆通知 | 不變 |
++| AT-02 | FAIL | 沒帶 X-Actor 也能存取 | 不變 |
++| AT-03 | FAIL | 沒進死信 | 不變 |
++| AT-04 | FAIL | 沒進死信 | 不變 |
++| AT-05 | FAIL | 沒進死信 | 不變 |
++| AT-06 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-07 | FAIL | 沒進死信 | 不變 |
++| AT-08 | FAIL | 沒進死信 | 不變 |
++| AT-09 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-10 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-11 | FAIL | 沒進死信 | 不變 |
++| AT-12 | PASS | — | 不變 |
++
++各條件定義見 `acceptance/SPEC.md`；上表為 `run_acceptance.py` 實際輸出（`1/12 pass`）。
++
++## 2. 考題完整性（`acceptance/LOCK.json`，68 項雜湊）
++
++- 68／68 相符（LF、CRLF 兩種換行都試；本機 `core.autocrlf=true`，各檔鎖定時所用換行不一，只比單一種會誤報）。考題未被改動。
++
++## 3. 觀察
++
++- 失敗型態與昨日完全一致：`/admin/dead-letters` 端點不存在（404）、通知失敗後不進死信；`src/` 尚無對應實作，故無進展屬預期。
++- AT-12 持續通過，既有取消流程與正常通知未退步。
++- 工作樹除未追蹤的 `AGENTS.md`（非本輪產生）外乾淨。
++
++## 4. 可回溯來源
++
++- `acceptance/SPEC.md`、`acceptance/run_acceptance.py`、`acceptance/LOCK.json`
++- `git log -- acceptance src`
++- 前一份報告：`reports/acceptance-2026-10-05.md`
+diff --git a/reports/acceptance-2026-10-07.md b/reports/acceptance-2026-10-07.md
+new file mode 100644
+index 0000000..e7ee49a
+--- /dev/null
++++ b/reports/acceptance-2026-10-07.md
+@@ -0,0 +1,41 @@
++# 驗收測試日報 2026-10-07
++
++- 議題：r-01-acceptance-report（report 型，唯讀觀測）
++- SSOT：`order-service/acceptance`（repo-native）
++- 觀測基準：分支 `ld/r-01-acceptance-report` @ `fc704ca`；`acceptance/` 與 `src/` 最後一次異動仍是 `4a54a31`（`git log -- acceptance src` 未見新 commit），自昨日報告以來 SSOT 沒有變動（本輪僅新增 reports/ 日報 commit）。
++- 觀測方式：僅讀取 SSOT；執行 `python acceptance/run_acceptance.py`（`ACCEPT_API_PORT=5380`、`ACCEPT_SINK_PORT=5381`，輸出在被 gitignore 的 `acceptance/.run/`）。未修改 `acceptance/`、`src/`。
++
++## 1. 結果總覽：1／12 通過（與 2026-10-06 相同）
++
++| 編號 | 結果 | 失敗訊息 | 較昨日 |
++|---|---|---|---|
++| AT-01 | FAIL | 死信清單沒有這筆通知 | 不變 |
++| AT-02 | FAIL | 沒帶 X-Actor 也能存取 | 不變 |
++| AT-03 | FAIL | 沒進死信 | 不變 |
++| AT-04 | FAIL | 沒進死信 | 不變 |
++| AT-05 | FAIL | 沒進死信 | 不變 |
++| AT-06 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-07 | FAIL | 沒進死信 | 不變 |
++| AT-08 | FAIL | 沒進死信 | 不變 |
++| AT-09 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-10 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-11 | FAIL | 沒進死信 | 不變 |
++| AT-12 | PASS | — | 不變 |
++
++各條件定義見 `acceptance/SPEC.md`；上表為 `run_acceptance.py` 實際輸出（`1/12 pass`）。
++
++## 2. 考題完整性（`acceptance/LOCK.json`，68 項雜湊）
++
++- 68／68 相符（LF、CRLF 兩種換行都試；本機 `core.autocrlf=true`，各檔鎖定時所用換行不一，只比單一種會誤報）。考題未被改動。
++
++## 3. 觀察
++
++- 失敗型態與昨日完全一致：`/admin/dead-letters` 端點不存在（404）、通知失敗後不進死信；`src/` 尚無對應實作，故無進展屬預期。
++- AT-12 持續通過，既有取消流程與正常通知未退步。
++- 工作樹本輪開始時乾淨（無未追蹤檔）；`runs/` 為 gitignore 排除，不由本報告寫入。
++
++## 4. 可回溯來源
++
++- `acceptance/SPEC.md`、`acceptance/run_acceptance.py`、`acceptance/LOCK.json`
++- `git log -- acceptance src`
++- 前一份報告：`reports/acceptance-2026-10-06.md`
+diff --git a/reports/acceptance-2026-10-08.md b/reports/acceptance-2026-10-08.md
+new file mode 100644
+index 0000000..c461d41
+--- /dev/null
++++ b/reports/acceptance-2026-10-08.md
+@@ -0,0 +1,42 @@
++# 驗收測試日報 2026-10-08
++
++- 議題：r-01-acceptance-report（report 型，唯讀觀測）
++- SSOT：`order-service/acceptance`（repo-native）
++- 觀測基準：分支 `ld/r-01-acceptance-report` @ `64a179e`；`acceptance/` 與 `src/` 最後一次異動仍是 `4a54a31`（`git log -- acceptance src` 未見新 commit），自昨日報告以來 SSOT 沒有變動（本輪僅新增 reports/ 日報 commit）。
++- 觀測方式：僅讀取 SSOT；執行 `python acceptance/run_acceptance.py`（`ACCEPT_API_PORT=5380`、`ACCEPT_SINK_PORT=5381`，輸出在被 gitignore 的 `acceptance/.run/`）。未修改 `acceptance/`、`src/`。
++
++## 1. 結果總覽：1／12 通過（與 2026-10-07 相同）
++
++| 編號 | 結果 | 失敗訊息 | 較昨日 |
++|---|---|---|---|
++| AT-01 | FAIL | 死信清單沒有這筆通知 | 不變 |
++| AT-02 | FAIL | 沒帶 X-Actor 也能存取 | 不變 |
++| AT-03 | FAIL | 沒進死信 | 不變 |
++| AT-04 | FAIL | 沒進死信 | 不變 |
++| AT-05 | FAIL | 沒進死信 | 不變 |
++| AT-06 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-07 | FAIL | 沒進死信 | 不變 |
++| AT-08 | FAIL | 沒進死信 | 不變 |
++| AT-09 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-10 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-11 | FAIL | 沒進死信 | 不變 |
++| AT-12 | PASS | — | 不變 |
++
++各條件定義見 `acceptance/SPEC.md`；上表為 `run_acceptance.py` 實際輸出（`1/12 pass`）。
++
++## 2. 考題完整性（`acceptance/LOCK.json` 的 `sha256` 欄，68 項）
++
++- 68／68 相符（LF、CRLF 兩種換行都試；各檔鎖定時所用換行不一，只比單一種會誤報）。考題未被改動。
++
++## 3. 觀察
++
++- 失敗型態與昨日完全一致：`/admin/dead-letters` 端點不存在（404）、通知失敗後不進死信；`src/` 尚無對應實作，故無進展屬預期。
++- AT-12 持續通過，既有取消流程與正常通知未退步。
++- 工作樹本輪開始時有一個未追蹤的 `AGENTS.md`（內容與 `CLAUDE.md` 相同），非本報告產生，未提交、未改動；昨日報告記載當時工作樹乾淨，此檔為其後再次出現。
++- `runs/` 為 gitignore 排除，不由本報告寫入。
++
++## 4. 可回溯來源
++
++- `acceptance/SPEC.md`、`acceptance/run_acceptance.py`、`acceptance/LOCK.json`
++- `git log -- acceptance src`
++- 前一份報告：`reports/acceptance-2026-10-07.md`
+diff --git a/reports/acceptance-2026-10-11.md b/reports/acceptance-2026-10-11.md
+new file mode 100644
+index 0000000..b46cc50
+--- /dev/null
++++ b/reports/acceptance-2026-10-11.md
+@@ -0,0 +1,42 @@
++# 驗收測試日報 2026-10-11
++
++- 議題：r-01-acceptance-report（report 型，唯讀觀測）
++- SSOT：`order-service/acceptance`（repo-native）
++- 觀測基準：分支 `ld/r-01-acceptance-report` @ `c2a7bd9`；`acceptance/` 與 `src/` 最後一次異動仍是 `4a54a31`（`git log -- acceptance src` 未見新 commit），自 2026-10-08 報告以來 SSOT 沒有變動（本輪僅新增 reports/ 日報 commit）。
++- 觀測方式：僅讀取 SSOT；執行 `python acceptance/run_acceptance.py`（`ACCEPT_API_PORT=5380`、`ACCEPT_SINK_PORT=5381`，輸出在被 gitignore 的 `acceptance/.run/`）。未修改 `acceptance/`、`src/`。
++
++## 1. 結果總覽：1／12 通過（與 2026-10-08 相同）
++
++| 編號 | 結果 | 失敗訊息 | 較 10-08 |
++|---|---|---|---|
++| AT-01 | FAIL | 死信清單沒有這筆通知 | 不變 |
++| AT-02 | FAIL | 沒帶 X-Actor 也能存取 | 不變 |
++| AT-03 | FAIL | 沒進死信 | 不變 |
++| AT-04 | FAIL | 沒進死信 | 不變 |
++| AT-05 | FAIL | 沒進死信 | 不變 |
++| AT-06 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-07 | FAIL | 沒進死信 | 不變 |
++| AT-08 | FAIL | 沒進死信 | 不變 |
++| AT-09 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-10 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-11 | FAIL | 沒進死信 | 不變 |
++| AT-12 | PASS | — | 不變 |
++
++各條件定義見 `acceptance/SPEC.md`；上表為 `run_acceptance.py` 實際輸出（`1/12 pass`）。
++
++## 2. 考題完整性（`acceptance/LOCK.json` 的 `sha256` 欄，68 項）
++
++- 68／68 相符（LF、CRLF 兩種換行都試；各檔鎖定時所用換行不一，只比單一種會誤報）。考題未被改動。
++
++## 3. 觀察
++
++- 失敗型態與 2026-10-08 完全一致：`/admin/dead-letters` 端點不存在（404）、通知失敗後不進死信；`src/` 尚無對應實作，故無進展屬預期。
++- AT-12 持續通過，既有取消流程與正常通知未退步。
++- 工作樹本輪開始時有一個未追蹤的 `AGENTS.md`（內容與 `CLAUDE.md` 相同），非本報告產生，未提交、未改動；內容經比對相同。此檔會使 `git status --porcelain` 非空（前次 run 因此被判 worktree-clean 失敗），需人類決定來源與處置。
++- `runs/` 為 gitignore 排除，不由本報告寫入。
++
++## 4. 可回溯來源
++
++- `acceptance/SPEC.md`、`acceptance/run_acceptance.py`、`acceptance/LOCK.json`
++- `git log -- acceptance src`
++- 前一份報告：`reports/acceptance-2026-10-08.md`
+diff --git a/reports/acceptance-2026-10-12.md b/reports/acceptance-2026-10-12.md
+new file mode 100644
+index 0000000..8816826
+--- /dev/null
++++ b/reports/acceptance-2026-10-12.md
+@@ -0,0 +1,42 @@
++# 驗收測試日報 2026-10-12
++
++- 議題：r-01-acceptance-report（report 型，唯讀觀測）
++- SSOT：`order-service/acceptance`（repo-native）
++- 觀測基準：分支 `ld/r-01-acceptance-report` @ `7e0a146`；`acceptance/` 與 `src/` 最後一次異動仍是 `4a54a31`（`git log -- acceptance src` 未見新 commit），自 2026-10-11 報告以來 SSOT 沒有變動（本輪僅新增 reports/ 日報 commit）。
++- 觀測方式：僅讀取 SSOT；執行 `python acceptance/run_acceptance.py`（`ACCEPT_API_PORT=5380`、`ACCEPT_SINK_PORT=5381`，輸出在被 gitignore 的 `acceptance/.run/`）。未修改 `acceptance/`、`src/`。
++
++## 1. 結果總覽：1／12 通過（與 2026-10-11 相同）
++
++| 編號 | 結果 | 失敗訊息 | 較 10-11 |
++|---|---|---|---|
++| AT-01 | FAIL | 死信清單沒有這筆通知 | 不變 |
++| AT-02 | FAIL | 沒帶 X-Actor 也能存取 | 不變 |
++| AT-03 | FAIL | 沒進死信 | 不變 |
++| AT-04 | FAIL | 沒進死信 | 不變 |
++| AT-05 | FAIL | 沒進死信 | 不變 |
++| AT-06 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-07 | FAIL | 沒進死信 | 不變 |
++| AT-08 | FAIL | 沒進死信 | 不變 |
++| AT-09 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-10 | FAIL | `/admin/dead-letters` 回 404 | 不變 |
++| AT-11 | FAIL | 沒進死信 | 不變 |
++| AT-12 | PASS | — | 不變 |
++
++各條件定義見 `acceptance/SPEC.md`；上表為 `run_acceptance.py` 實際輸出（`1/12 pass`）。
++
++## 2. 考題完整性（`acceptance/LOCK.json` 的 `sha256` 欄，68 項）
++
++- 68／68 相符（LF、CRLF 兩種換行都試；各檔鎖定時所用換行不一，只比單一種會誤報）。考題未被改動。
++
++## 3. 觀察
++
++- 失敗型態與 2026-10-11 完全一致：`/admin/dead-letters` 端點不存在（404）、通知失敗後不進死信；`src/` 尚無對應實作，故無進展屬預期。
++- AT-12 持續通過，既有取消流程與正常通知未退步。
++- 工作樹本輪開始時有一個未追蹤的 `AGENTS.md`（內容與 `CLAUDE.md` 相同），非本報告產生，未提交、未改動；內容經比對相同。此檔會使 `git status --porcelain` 非空（前次 run 因此被判 worktree-clean 失敗），需人類決定來源與處置。
++- `runs/` 為 gitignore 排除，不由本報告寫入。
++
++## 4. 可回溯來源
++
++- `acceptance/SPEC.md`、`acceptance/run_acceptance.py`、`acceptance/LOCK.json`
++- `git log -- acceptance src`
++- 前一份報告：`reports/acceptance-2026-10-11.md`

@@ -1,0 +1,44 @@
+state: ready
+blocked_by: []
+target_repo: order-service
+schedule: "30 1 */3 * *"
+priority: 2
+executor: claude-code
+framework:
+  evolution_goals:
+    - 降低每日裁決分鐘數與退回率
+    - 提高自評風險與裁決的一致性
+    - 可提議：提案範本、切分大小、自評標準、某類提案的核准等級、節流門檻、覆盤頻率
+  ssot: "ws/metrics/loop-metrics-*.json（node tools/loop-metrics.js --since 2026-10-07 產出）"
+  ssot_kind: repo-native
+  stability_goals:
+    - 不得提議拿掉人的核准（Gate 本身）
+    - 不得碰硬邊界與不可觸碰清單、驗收測試、Eval 案例、指標定義（tools/loop-metrics.js）
+    - approval-policy.json 只能提議，由人修改
+    - 每輪預算 ≤ US$2
+backend: local
+model: null
+timezone: Asia/Taipei
+overlap_policy: skip
+missed_run_policy: latest
+updated_at: "2026-10-11T02:46:10.629Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: 1b04620f-43a4-46cc-8ae2-911b9aa505aa
+budget_reserved_usd: null
+last_scheduled_for: "2026-10-09T17:30:00.000Z"
+run_pid: null
+run_id: schedule-b231a8a0c0b83896f138
+run_started_at: "2026-10-11T02:45:52.577Z"
+run_mode: loop-engineer
+run_ended_at: "2026-10-11T02:46:10.161Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+run_proposals: 0

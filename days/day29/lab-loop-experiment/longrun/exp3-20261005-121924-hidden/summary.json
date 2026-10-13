@@ -1,0 +1,9 @@
+{
+  "exp": "exp3",
+  "stop": "budget",
+  "iterations": 4,
+  "spent_usd": 7.18,
+  "hours": 0.57,
+  "branch": "longrun/exp3",
+  "diff": "5 files changed, 71 insertions(+), 3 deletions(-)"
+}

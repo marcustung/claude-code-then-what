@@ -1,0 +1,35 @@
+state: done
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 1
+executor: claude-code
+risk: 2
+category: 告警調整
+framework: null
+backend: local
+origin: l-02-alert-tuning
+finding_fingerprint: d208cdb5d7fed86e044d05de
+finding_signature: "manyconflicts 維持 page 級,只加 for_minutes=10 濾掉短暫 409 尖峰(承接被退回的 p-l02-002 中 manyconflicts 的部分) | order-service/ops/scores/day01.json per_rule: manyconflicts fired=278 valid=0 noise=278(page_noise=397);day02.json: fired=285 valid=0(page_noise=392);day03.json: fired=279 valid=0(page_noise=395) | order-service/ops/alerts/rules.yml: manyconflicts metric=http_409_rate, op='>', threshold=3, for_minutes=0, severity=page。這是五條規則中唯一一條沒有任何已核准提案處理的雜訊規則。 | order-service/ops/data/day01~03/metrics.json http_409_rate(我用腳本離線重算):超過 3 的連續段分別為 278/285/279 段,最長連續只有 5/4/4 分鐘,峰值 13.47/14.3/13.58。以 threshold=3 計,for_minutes=3 仍觸發 27/16/15 次,for_minutes=5 在 day01 仍觸發 5 次,for_minutes=10 三天各 0 次。 | ws/issues/p-l02-002-conflict-heap-ticket/spec.md:manyconflicts 提議改 severity=ticket、for_minutes=5,裁決為 rejected(方向不對)。本案與它的差異:severity 不降,for_minutes 取 10 以使三天的雜訊歸零,且 threshold 不動。 | ws/issues/l-02-alert-tuning/runs/2026-10-05-run1.md 的 derived 分類理由:降雜訊時不要把規則降為 ticket,只用 for_minutes 濾掉短暫尖峰。"
+proposal_verdict: approved
+updated_at: "2026-10-07T00:38:48.668Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: 4ee314e7-700e-4fad-9155-8c563cdb4a6d
+budget_reserved_usd: null
+run_pid: null
+run_id: 1bf7a7db-7deb-4a43-9f41-885d114408de
+run_started_at: "2026-10-06T20:03:28.834Z"
+run_branch: ld/p-l02-006-conflicts-page-for10
+run_ended_at: "2026-10-06T20:04:14.776Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+approved_by: <AUTHOR> Tung
+merge_commit: c8368de

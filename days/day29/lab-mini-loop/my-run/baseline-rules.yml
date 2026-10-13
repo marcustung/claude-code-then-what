@@ -1,0 +1,38 @@
+# 訂單服務告警規則（實驗 2 起點）。迴圈可以提案修改本檔；評估方式見 ops/sim/evaluate.py。
+# 目標：page 級雜訊下降、漏報 0。可以調門檻、加持續時間、降為 ticket、刪掉真正無用的規則、新增規則；
+# 但任何事故漏報一律算失敗——不能為了降雜訊而讓事故沒人知道。
+
+- name: HighLatency
+  metric: p95_latency_ms
+  op: ">"
+  threshold: 150
+  for_minutes: 0
+  severity: page
+
+- name: AnyServerError
+  metric: error_rate
+  op: ">"
+  threshold: 0
+  for_minutes: 0
+  severity: page
+
+- name: ManyConflicts
+  metric: http_409_rate
+  op: ">"
+  threshold: 3
+  for_minutes: 0
+  severity: page
+
+- name: QueueBacklog
+  metric: queue_depth
+  op: ">"
+  threshold: 8
+  for_minutes: 0
+  severity: page
+
+- name: HeapHigh
+  metric: heap_mb
+  op: ">"
+  threshold: 120
+  for_minutes: 0
+  severity: page

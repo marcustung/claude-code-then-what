@@ -1,0 +1,198 @@
+commit 5da3d711c20db43965b05b92b81ad5e3f2cceb7e
+Author: longrun <l@local>
+Date:   2026-10-05 07:48:46 +0800
+
+    longrun exp3 i1
+
+ LONGRUN-NOTES.md                                           | 8 ++++++++
+ skill-lab/skill/.claude/skills/trace-notification/SKILL.md | 6 ++++++
+ 2 files changed, 14 insertions(+)
+
+commit bd0cff6c7cbef5df18a995940ea96578b659b029
+Author: ops-grader <g@local>
+Date:   2026-10-05 06:49:01 +0800
+
+    skill-lab: day01 成績單（沿用 10-04 基準 15/18）
+
+ skill-lab/scores/day01.json | 57 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 4a54a31e8abe6e4f4f422d48c3847470e6e81e91
+Author: marcus <m@local>
+Date:   2026-10-05 06:02:07 +0800
+
+    acceptance: 埠號可由環境變數覆寫（長跑組與迴圈組並行），重新鎖定
+
+ acceptance/LOCK.json         | 4 ++--
+ acceptance/run_acceptance.py | 4 +++-
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+commit 8f28cad0ded43e7999765a3fa21039e7149d3875
+Author: ops-grader <g@local>
+Date:   2026-10-05 06:01:27 +0800
+
+    ops: day01 指標與成績單（外層評分）
+
+ ops/data/day01/metrics.json |  1 +
+ ops/scores/day01.json       | 48 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 49 insertions(+)
+
+commit c3b1d5ee0a287486842a890e7d2d869eaed173d5
+Author: marcus <m@local>
+Date:   2026-10-05 06:01:18 +0800
+
+    exp2: 出題與評分移出 repo（防洩題），改由外層寫入 ops/data 與 ops/scores
+
+ acceptance/LOCK.json |   6 +--
+ ops/README.md        |  14 +++----
+ ops/sim/evaluate.py  | 101 ---------------------------------------------------
+ ops/sim/simulate.py  |  85 -------------------------------------------
+ 4 files changed, 9 insertions(+), 197 deletions(-)
+
+commit fa35c71f06ec2f9a12365eff3f1f024ef5387614
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:41:40 +0800
+
+    lock: add exp3 eval, cases, expected, gate hashes
+
+ acceptance/LOCK.json | 68 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 67 insertions(+), 1 deletion(-)
+
+commit cd62e573dc0ef4ed6ed176522ca1f52df3639bf5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:41:31 +0800
+
+    exp3: skill-lab with 9 cases (6 harder), locked eval & gate; baseline v2.1.2 semantic 15/18 (h3 0/2, h6 1/2)
+
+ .gitignore                                         |   1 +
+ skill-lab/build_cases.py                           |  77 ++++++
+ skill-lab/cases/complete/data/logs.jsonl           |   4 +
+ skill-lab/cases/complete/data/receipts.json        |  16 ++
+ skill-lab/cases/complete/design/design-review.md   |   9 +
+ skill-lab/cases/complete/src/Cancellation.cs       |  26 ++
+ skill-lab/cases/complete/src/Program.cs            | 269 +++++++++++++++++++++
+ skill-lab/cases/complete/task.json                 |   5 +
+ skill-lab/cases/decoy-receipt/CASE.md              |   1 +
+ skill-lab/cases/decoy-receipt/data/logs.jsonl      |   4 +
+ skill-lab/cases/decoy-receipt/data/receipts.json   |  16 ++
+ .../cases/decoy-receipt/design/design-review.md    |   9 +
+ skill-lab/cases/decoy-receipt/src/Cancellation.cs  |  26 ++
+ skill-lab/cases/decoy-receipt/src/Program.cs       | 269 +++++++++++++++++++++
+ skill-lab/cases/decoy-receipt/task.json            |   5 +
+ skill-lab/cases/h1-receipt-500/CASE.md             |   3 +
+ skill-lab/cases/h1-receipt-500/data/logs.jsonl     |   4 +
+ skill-lab/cases/h1-receipt-500/data/receipts.json  |  16 ++
+ .../cases/h1-receipt-500/design/design-review.md   |   9 +
+ skill-lab/cases/h1-receipt-500/src/Cancellation.cs |  26 ++
+ skill-lab/cases/h1-receipt-500/src/Program.cs      | 269 +++++++++++++++++++++
+ skill-lab/cases/h1-receipt-500/task.json           |   5 +
+ skill-lab/cases/h2-dead-but-received/CASE.md       |   3 +
+ .../cases/h2-dead-but-received/data/logs.jsonl     |   8 +
+ .../cases/h2-dead-but-received/data/receipts.json  |  16 ++
+ .../h2-dead-but-received/design/design-review.md   |   9 +
+ .../cases/h2-dead-but-received/src/Cancellation.cs |  26 ++
+ .../cases/h2-dead-but-received/src/Program.cs      | 269 +++++++++++++++++++++
+ skill-lab/cases/h2-dead-but-received/task.json     |   5 +
+ skill-lab/cases/h3-receipt-before-cancel/CASE.md   |   3 +
+ .../cases/h3-receipt-before-cancel/data/logs.jsonl |   4 +
+ .../h3-receipt-before-cancel/data/receipts.json    |  16 ++
+ .../design/design-review.md                        |   9 +
+ .../h3-receipt-before-cancel/src/Cancellation.cs   |  26 ++
+ .../cases/h3-receipt-before-cancel/src/Program.cs  | 269 +++++++++++++++++++++
+ skill-lab/cases/h3-receipt-before-cancel/task.json |   5 +
+ skill-lab/cases/h4-duplicate-receipts/CASE.md      |   3 +
+ .../cases/h4-duplicate-receipts/data/logs.jsonl    |   4 +
+ .../cases/h4-duplicate-receipts/data/receipts.json |  30 +++
+ .../h4-duplicate-receipts/design/design-review.md  |   9 +
+ .../h4-duplicate-receipts/src/Cancellation.cs      |  26 ++
+ .../cases/h4-duplicate-receipts/src/Program.cs     | 269 +++++++++++++++++++++
+ skill-lab/cases/h4-duplicate-receipts/task.json    |   5 +
+ skill-lab/cases/h5-no-sender-log/CASE.md           |   3 +
+ skill-lab/cases/h5-no-sender-log/data/logs.jsonl   |   3 +
+ .../cases/h5-no-sender-log/data/receipts.json      |  16 ++
+ .../cases/h5-no-sender-log/design/design-review.md |   9 +
+ .../cases/h5-no-sender-log/src/Cancellation.cs     |  26 ++
+ skill-lab/cases/h5-no-sender-log/src/Program.cs    | 269 +++++++++++++++++++++
+ skill-lab/cases/h5-no-sender-log/task.json         |   5 +
+ skill-lab/cases/h6-payload-mismatch/CASE.md        |   3 +
+ .../cases/h6-payload-mismatch/data/logs.jsonl      |   4 +
+ .../cases/h6-payload-mismatch/data/receipts.json   |  16 ++
+ .../h6-payload-mismatch/design/design-review.md    |   9 +
+ .../cases/h6-payload-mismatch/src/Cancellation.cs  |  26 ++
+ skill-lab/cases/h6-payload-mismatch/src/Program.cs | 269 +++++++++++++++++++++
+ skill-lab/cases/h6-payload-mismatch/task.json      |   5 +
+ skill-lab/cases/missing-receipts/data/logs.jsonl   |   4 +
+ .../cases/missing-receipts/design/design-review.md |   9 +
+ .../cases/missing-receipts/src/Cancellation.cs     |  26 ++
+ skill-lab/cases/missing-receipts/src/Program.cs    | 269 +++++++++++++++++++++
+ skill-lab/cases/missing-receipts/task.json         |   5 +
+ skill-lab/eval.py                                  |  97 ++++++++
+ skill-lab/eval/gate/check_result.py                |  47 ++++
+ skill-lab/eval/gate/collect.py                     |  60 +++++
+ skill-lab/eval/gate/gate.py                        |  57 +++++
+ skill-lab/expected.json                            |  47 ++++
+ .../.claude/skills/trace-notification/CHANGELOG.md |  24 ++
+ .../.claude/skills/trace-notification/SKILL.md     |  33 +++
+ .../.claude/skills/trace-notification/VERSION      |   1 +
+ .../trace-notification/scripts/check_result.py     |  47 ++++
+ .../skills/trace-notification/scripts/collect.py   |  60 +++++
+ .../skills/trace-notification/scripts/gate.py      |  57 +++++
+ .../skills/trace-notification/scripts/selftest.py  |  52 ++++
+ 74 files changed, 3641 insertions(+)
+
+commit d2c8daeb00e4219e39a66fcd131936ba3baf3b29
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:15:25 +0800
+
+    exp2: alert tuning simulator, evaluator, baseline rules (≈400 page noise/day, silent_drop missed)
+
+ .gitignore           |   1 +
+ acceptance/LOCK.json |   4 +-
+ ops/README.md        |  10 +++++
+ ops/alerts/rules.yml |  38 +++++++++++++++++++
+ ops/sim/evaluate.py  | 101 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ ops/sim/simulate.py  |  85 +++++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 238 insertions(+), 1 deletion(-)
+
+commit eed7365f936b9a7f7d5b7222f3079c2ae7f42ca9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 14:38:38 +0800
+
+    acceptance: redelivery & compensation spec + tests (1/12 green baseline)
+
+ acceptance/LOCK.json         |   7 ++
+ acceptance/SPEC.md           |  29 +++++
+ acceptance/run_acceptance.py | 262 +++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 298 insertions(+)
+
+commit d68caba223dcb1a4ae29c4acaa6b1e0dbb8b08b9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 14:36:21 +0800
+
+    baseline: order-cancel service for loop-lab (Day 29 experiments)
+
+ .gitignore                           |   4 +
+ CHANGELOG.md                         |  23 +++
+ CLAUDE.md                            |  17 ++
+ README.md                            |  80 +++++++++
+ VERSION                              |   1 +
+ specs/decisions-v1.md                |   9 +
+ specs/decisions-v2.1.md              |  14 ++
+ specs/notification-contract-v2.1.md  |  33 ++++
+ specs/rules-v1.md                    |  14 ++
+ specs/rules-v2.md                    |  29 ++++
+ src/Api/Api.csproj                   |   5 +
+ src/Api/Program.cs                   | 309 +++++++++++++++++++++++++++++++++++
+ src/Domain/Cancellation.cs           |  30 ++++
+ src/Domain/Domain.csproj             |   3 +
+ src/FakeSink/FakeSink.csproj         |   3 +
+ src/FakeSink/Program.cs              |  37 +++++
+ tests/DomainTests/DomainTests.csproj |   4 +
+ tests/DomainTests/Program.cs         |  19 +++
+ tools/check-load.py                  |  78 +++++++++
+ tools/check.py                       |  98 +++++++++++
+ tools/dev-session.ps1                |  88 ++++++++++
+ tools/load.py                        |  66 ++++++++
+ tools/run-load.ps1                   | 109 ++++++++++++
+ tools/run.ps1                        |  98 +++++++++++
+ 24 files changed, 1171 insertions(+)

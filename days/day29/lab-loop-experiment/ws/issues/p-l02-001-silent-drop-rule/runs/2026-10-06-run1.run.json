@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-06T20:00:43.941Z",
+  "endedAt": "2026-10-06T20:01:35.541Z",
+  "executor": "claude-code",
+  "model": "sonnet",
+  "branch": "ld/p-l02-001-silent-drop-rule",
+  "result": "ok",
+  "tokens": {
+    "input": 10,
+    "output": 2606,
+    "cacheRead": 263122,
+    "cacheCreation": 33627
+  },
+  "numTurns": 9,
+  "cost": 0.2132,
+  "exitCode": 0,
+  "sessionId": "4f14ea8c-110e-4b33-843f-bb536ca5a1d7",
+  "denials": null,
+  "traceEvents": 19,
+  "traceMaxTurn": 9,
+  "traceTurnMapping": "turn＝以 assistant message id 分組後，每組貢獻 max(1, 該組 tool_use 數) 個 turn（同組內每個 tool_use 各自一個 turn，同組的說明文字併入不額外算）；純文字回覆單獨成組時算 1 個 turn。此公式從實測（含一次 22-tool-call 真實長跑）反推，與該次 numTurns 逐一核對過。step 固定為 1，事件流未暴露更粗的分層（詳見 lib/trace.js 檔頭）。"
+}

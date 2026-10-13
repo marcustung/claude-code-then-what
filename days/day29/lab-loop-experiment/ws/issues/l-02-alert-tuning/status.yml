@@ -1,0 +1,44 @@
+state: ready
+blocked_by: []
+target_repo: order-service
+schedule: "20 2 * * *"
+priority: 2
+executor: claude-code
+framework:
+  evolution_goals:
+    - "每日 page 雜訊比例下降 ≥ 30%"
+    - 補上 silent_drop 等漏報
+  ssot: order-service/ops（data/ 每日指標、scores/ 外層成績單、alerts/rules.yml）
+  ssot_kind: repo-native
+  stability_goals:
+    - 不得修改 acceptance/（SPEC.md、run_acceptance.py）與 LOCK.json 鎖住的任何檔案；雜湊不符即判失敗
+    - "產出只能進 ld/<id> 分支，合併由人；不 push、不碰其他 repo"
+    - 每輪預算 ≤ US$2，第一期合計 ≤ US$50
+    - 不得修改 ops/data/、ops/scores/（外層寫入）；不得嘗試取得出題程式或事故答案
+    - 不得用關掉告警或放寬到永不觸發降雜訊；漏報一律算失敗
+backend: local
+model: null
+timezone: Asia/Taipei
+overlap_policy: skip
+missed_run_policy: latest
+updated_at: "2026-10-11T18:32:34.178Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: a2c1a63e-ea82-4685-8ce7-c53cf874f25e
+budget_reserved_usd: null
+last_scheduled_for: "2026-10-11T18:20:00.000Z"
+run_pid: null
+run_id: schedule-1610d2f13e562e87e1b3
+run_started_at: "2026-10-11T18:20:11.422Z"
+run_mode: loop-engineer
+run_ended_at: "2026-10-11T18:32:33.621Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+run_proposals: 0

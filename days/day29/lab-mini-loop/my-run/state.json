@@ -1,0 +1,121 @@
+{
+  "proposals": [
+    {
+      "id": "P-001",
+      "title": "新增 ReceiptsGap page 規則，補抓 silent_drop 漏報",
+      "fingerprint": "7c90af018145",
+      "status": "merged",
+      "day": 1,
+      "created": "2026-10-11T03:35:59+00:00",
+      "reason": "",
+      "gate1_at": "2026-10-11T03:51:08+00:00",
+      "implement": {
+        "touched": [
+          "rules.yml"
+        ],
+        "outside_allowed": [],
+        "replay": {
+          "1": {
+            "page_noise": 440,
+            "missed": []
+          }
+        },
+        "workdir": "C:\\<AUTHOR>\\d29-mini-work\\P-001"
+      },
+      "gate2_at": "2026-10-11T04:06:27+00:00"
+    },
+    {
+      "id": "P-002",
+      "title": "ManyConflicts 由 page 降為 ticket",
+      "fingerprint": "a68219566c7d",
+      "status": "rejected",
+      "day": 1,
+      "created": "2026-10-11T03:35:59+00:00",
+      "reason": "不同意",
+      "gate1_at": "2026-10-11T03:51:08+00:00"
+    },
+    {
+      "id": "P-003",
+      "title": "QueueBacklog 與 HeapHigh 加持續時間,濾掉短暫尖峰與鋸齒波",
+      "fingerprint": "fc4e3d435669",
+      "status": "merged",
+      "day": 1,
+      "created": "2026-10-11T03:35:59+00:00",
+      "reason": "",
+      "gate1_at": "2026-10-11T03:51:08+00:00",
+      "implement": {
+        "touched": [
+          "rules.yml"
+        ],
+        "outside_allowed": [],
+        "replay": {
+          "1": {
+            "page_noise": 350,
+            "missed": []
+          }
+        },
+        "workdir": "C:\\<AUTHOR>\\d29-mini-work\\P-003"
+      },
+      "gate2_at": "2026-10-11T04:34:54+00:00"
+    },
+    {
+      "id": "P-004",
+      "title": "ManyConflicts 加持續時間 5 分鐘，濾掉單分鐘 409 尖峰，維持 page 等級",
+      "fingerprint": "031709e6172b",
+      "status": "merged",
+      "day": 2,
+      "created": "2026-10-11T04:35:29+00:00",
+      "reason": "",
+      "gate1_at": "2026-10-11T05:44:58+00:00",
+      "implement": {
+        "touched": [
+          "rules.yml"
+        ],
+        "outside_allowed": [],
+        "replay": {
+          "1": {
+            "page_noise": 35,
+            "missed": []
+          },
+          "2": {
+            "page_noise": 45,
+            "missed": []
+          }
+        },
+        "workdir": "C:\\<AUTHOR>\\d29-mini-work\\P-004"
+      },
+      "merged_by": "policy: 只動 allowed_paths 且重播漏報為 0",
+      "gate2_at": "2026-10-11T05:52:33+00:00"
+    },
+    {
+      "id": "P-005",
+      "title": "HighLatency 與 AnyServerError 加 for_minutes 2，濾掉單分鐘孤立尖峰",
+      "fingerprint": "977cb80b69f9",
+      "status": "merged",
+      "day": 2,
+      "created": "2026-10-11T04:35:29+00:00",
+      "reason": "",
+      "gate1_at": "2026-10-11T05:44:58+00:00",
+      "implement": {
+        "touched": [
+          "rules.yml"
+        ],
+        "outside_allowed": [],
+        "replay": {
+          "1": {
+            "page_noise": 0,
+            "missed": []
+          },
+          "2": {
+            "page_noise": 0,
+            "missed": []
+          }
+        },
+        "workdir": "C:\\<AUTHOR>\\d29-mini-work\\P-005"
+      },
+      "merged_by": "policy: 只動 allowed_paths 且重播漏報為 0",
+      "gate2_at": "2026-10-11T05:52:45+00:00"
+    }
+  ],
+  "failures": 0
+}

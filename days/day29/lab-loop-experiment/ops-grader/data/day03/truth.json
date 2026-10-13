@@ -1,0 +1,15 @@
+{
+  "day": 3,
+  "incidents": [
+    {
+      "kind": "latency_regression",
+      "start": 165,
+      "end": 205
+    },
+    {
+      "kind": "silent_drop",
+      "start": 1158,
+      "end": 1188
+    }
+  ]
+}

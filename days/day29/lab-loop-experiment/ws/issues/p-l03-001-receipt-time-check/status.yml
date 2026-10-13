@@ -1,0 +1,17 @@
+state: archived
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 1
+executor: claude-code
+risk: 2
+category: Skill 修正
+framework: null
+backend: local
+origin: l-03-skill-opt
+finding_fingerprint: 1fc950caca1989b47d74d636
+finding_signature: "skill 加入「收據時間須晚於發送事件」的時序一致性查核,修正 h3 語意 0/2 | order-service/skill-lab/scores/day01.json:per_case.h3-receipt-before-cancel = {semantic:0, contract:2, runs:2};semantic_ok=15/runs=18 | order-service/skill-lab/expected.json:h3-receipt-before-cancel → receiver_status=unknown,why=「收據時間早於取消事件,證據自相矛盾,不能採信」 | order-service/skill-lab/cases/h3-receipt-before-cancel/data/receipts.json:at=1790642410.857...;同目錄 logs.jsonl 的 notify_sent ts=2026-09-29t09:40:10.861+08:00。h6 案例同一筆收據的 at 是 1790646010.857...,與 h3 差整整 3600 秒,可見 h3 的收據被提前了一小時。 | order-service/skill-lab/skill/.claude/skills/trace-notification/skill.md「查核迴圈」第 4、5 步:只要求分開 api/發送端/接收端,以及缺證據標 unknown,沒有任何時序比對要求 | order-service/skill-lab/skill/.claude/skills/trace-notification/scripts/collect.py:records 的欄位只有 ref/side/event/order_id/notification_id/version/source,不含 receipt 的 at 或 log 的 ts"
+run_result: rejected
+proposal_verdict: rejected
+proposal_reason: evidence
+updated_at: "2026-10-05T19:30:22.199Z"

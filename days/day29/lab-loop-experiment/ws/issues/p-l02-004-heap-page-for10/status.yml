@@ -1,0 +1,35 @@
+state: done
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 1
+executor: claude-code
+risk: 3
+category: 告警調整
+framework: null
+backend: local
+origin: l-02-alert-tuning
+finding_fingerprint: 219cc765ab76dcfe37c85593
+finding_signature: "heaphigh 改為「page 級、for_minutes=10」,不要降成 ticket(修正 p-l02-002 對 heaphigh 的做法) | order-service/ops/scores/day02.json per_rule: heaphigh fired=37 valid=2 noise=35;day01.json 同規則 fired=39 valid=0 noise=39。valid 從 0 變 2,代表 heap 事故是真的。 | order-service/ops/data/day02/metrics.json heap_mb:第 301~409 分鐘連續超過 120(共 109 點超過 130,起點約 143.6,峰值 434.82),是持續約 111 分鐘的洩漏爬升。鋸齒則維持每次 6 分鐘、峰值 128.38(第 31、68、105、142... 分鐘開始,day01 與 day02 相同)。 | order-service/ops/data/day01/metrics.json heap_mb:最長連續超過 120 為 6 分鐘、峰值 128.38,全是鋸齒,沒有洩漏。 | ws/issues/p-l02-002-conflict-heap-ticket/spec.md:heaphigh 提議改 severity=ticket、for_minutes=10,依據是「零 valid、鋸齒不是洩漏」,只看過 day01。 | order-service/ops/alerts/rules.yml heaphigh: threshold=120, for_minutes=0, severity=page。"
+proposal_verdict: approved
+updated_at: "2026-10-07T00:38:44.112Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: f3dff9c7-8418-4b3e-852a-5d5386304ec3
+budget_reserved_usd: null
+run_pid: null
+run_id: 394b181e-1bf4-4b0d-8a36-35cbff9eb5c9
+run_started_at: "2026-10-06T20:02:33.012Z"
+run_branch: ld/p-l02-004-heap-page-for10
+run_ended_at: "2026-10-06T20:03:25.746Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+approved_by: <AUTHOR> Tung
+merge_commit: d2e20f7

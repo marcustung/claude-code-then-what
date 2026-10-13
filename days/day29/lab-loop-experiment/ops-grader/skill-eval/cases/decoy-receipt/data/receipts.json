@@ -1,0 +1,16 @@
+[
+  {
+    "at": 1790646010.8577874,
+    "phase": "r2-healthy",
+    "status": 200,
+    "payload": {
+      "notification_id": "3f1c9a7e52b04d6e8a1b2c3d4e5f6a7b",
+      "order_id": "r2-healthy-01",
+      "request_id": "r2-healthy-request",
+      "run_id": "r2-healthy-01",
+      "kind": "order_cancelled",
+      "refund_requested": true,
+      "attempt": 0
+    }
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-06T19:57:02.331Z",
+  "endedAt": "2026-10-06T20:00:40.892Z",
+  "executor": "claude-code",
+  "model": "sonnet",
+  "branch": "ld/p-l01-001-dead-letter-list",
+  "result": "ok",
+  "tokens": {
+    "input": 16,
+    "output": 8303,
+    "cacheRead": 532712,
+    "cacheCreation": 53093
+  },
+  "numTurns": 12,
+  "cost": 0.402,
+  "exitCode": 0,
+  "sessionId": "977c8964-8f9e-400d-9437-1d76df34e91a",
+  "denials": null,
+  "traceEvents": 25,
+  "traceMaxTurn": 12,
+  "traceTurnMapping": "turn＝以 assistant message id 分組後，每組貢獻 max(1, 該組 tool_use 數) 個 turn（同組內每個 tool_use 各自一個 turn，同組的說明文字併入不額外算）；純文字回覆單獨成組時算 1 個 turn。此公式從實測（含一次 22-tool-call 真實長跑）反推，與該次 numTurns 逐一核對過。step 固定為 1，事件流未暴露更粗的分層（詳見 lib/trace.js 檔頭）。"
+}

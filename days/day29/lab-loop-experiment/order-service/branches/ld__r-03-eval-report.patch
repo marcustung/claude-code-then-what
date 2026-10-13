@@ -1,0 +1,239 @@
+diff --git a/reports/eval-2026-10-05.md b/reports/eval-2026-10-05.md
+new file mode 100644
+index 0000000..ffe24de
+--- /dev/null
++++ b/reports/eval-2026-10-05.md
+@@ -0,0 +1,39 @@
++# Eval 分數日報 — 2026-10-05
++
++- 議題：r-03-eval-report（flavor: report，唯讀）
++- SSOT：`order-service/skill-lab`（git 可讀）
++- 觀測基準：branch `ld/r-03-eval-report` @ `4a54a31e8abe6e4f4f422d48c3847470e6e81e91`
++- 本報告只讀 git 內容；未重跑 eval、未寫回 SSOT。
++
++## 1. 最新 Eval 分數（取自 SSOT 紀錄）
++
++| 項目 | 值 | 出處 |
++|---|---|---|
++| 受測 Skill | `trace-notification` v2.1.2 | `skill-lab/skill/.claude/skills/trace-notification/VERSION:1` |
++| 語意正確（基準） | **15/18**（9 案例 × 2 reps） | commit `cd62e57` 訊息 |
++| 弱項 | h3-receipt-before-cancel 0/2；h6-payload-mismatch 1/2 | commit `cd62e57` 訊息 |
++| 契約通過數 | 未讀到（`skill-lab/.runs/` 被 .gitignore，worktree 內不存在） | `.gitignore` |
++
++## 2. 案例清單（SSOT：`skill-lab/expected.json`，共 9 案例）
++
++complete、missing-receipts、decoy-receipt（Day 21 原案例）；h1-receipt-500、h2-dead-but-received、h3-receipt-before-cancel、h4-duplicate-receipts、h5-no-sender-log、h6-payload-mismatch（6 個較難案例）。
++
++## 3. 鎖定完整性
++
++- eval.py、build_cases.py、expected.json、cases/ 的雜湊記於 `acceptance/LOCK.json:6-` （commit `fa35c71`，之後 `4a54a31` 重新鎖定）。
++- 本輪未重算雜湊比對，**未驗證**目前檔案是否與 LOCK 相符。
++
++## 4. 近期 SSOT 變動（`git log -- skill-lab`）
++
++- `cd62e57`（2026-10-04）建立 skill-lab 與基準。此為 skill-lab 唯一一筆 commit。
++- Skill CHANGELOG：2.0.0 → 2.1.2 皆於 2026-10-04（`.../trace-notification/CHANGELOG.md:3-`）；基準對應 2.1.2。
++
++## 5. 觀察
++
++- 目前僅有單一基準點，無趨勢可比。
++- 語意失分集中於 h3（時序矛盾的收據不得採信）與 h6（payload 不符）；預期 h3 為 receiver unknown（`expected.json`）。
++- 契約分數與成本資料在外部 `.runs/`，需下輪由外層提供才能納入。
++
++## 6. 回溯
++
++所有數字可由以下取得：`git show cd62e57`、`skill-lab/expected.json`、`skill-lab/skill/.claude/skills/trace-notification/VERSION`、`acceptance/LOCK.json`。
+diff --git a/reports/eval-2026-10-06.md b/reports/eval-2026-10-06.md
+new file mode 100644
+index 0000000..f0b8464
+--- /dev/null
++++ b/reports/eval-2026-10-06.md
+@@ -0,0 +1,44 @@
++# Eval 分數日報 — 2026-10-06
++
++- 議題：r-03-eval-report（flavor: report，唯讀）
++- SSOT：`order-service/skill-lab/scores`（外層每日 Eval 成績單）。本 worktree 分支落後 main，scores 不在工作樹內，故以 `git show main:skill-lab/scores/dayNN.json` 讀取（main @ `636932b`）。
++- 本報告只讀 git 內容；未執行 eval.py、未寫回 SSOT。考題與正解已移出 repo，題目僅以匿名編號 c01–c09 表示。
++
++## 1. 每日成績
++
++| Day | commit | Skill | 語意 | 契約 | 成本 (USD) | 出處 |
++|---|---|---|---|---|---|---|
++| 1 | `cd62e57` | 2.1.2 | 15/18 | 14/18 | 2.12 | `main:skill-lab/scores/day01.json` (commit `bd0cff6`) |
++| 2 | `63ad9ca` | 2.1.2 | 15/18 | 14/18 | 2.106 | `main:skill-lab/scores/day02.json` (commit `636932b`) |
++
++## 2. 逐題（語意／契約，每題 2 reps）
++
++| 題 | Day1 | Day2 | 變化 |
++|---|---|---|---|
++| c01 | 2/2 | 2/2 | — |
++| c02 | 2/2 | 2/2 | — |
++| c03 | 2/2 | 2/2 | — |
++| c04 | 2/0 | 2/0 | — |
++| c05 | 0/2 | 0/2 | — |
++| c06 | 2/2 | 1/2 | 語意 -1 |
++| c07 | 2/0 | 2/0 | — |
++| c08 | 1/2 | 2/2 | 語意 +1 |
++| c09 | 2/2 | 2/2 | — |
++
++## 3. 觀察
++
++- 總分持平：語意 15/18、契約 14/18 兩天相同；Skill 版本同為 2.1.2。
++- 持續失分（兩天皆同）：c05 語意 0/2；c04、c07 契約 0/2。
++- 單題波動：c06 語意 2→1，c08 語意 1→2，互相抵銷。每題僅 2 reps，此幅度可能是抽樣波動，不足以判定退步或進步。
++- 成本：2.12 → 2.106（-0.014，約 -0.7%），無異常。
++- 僅兩個資料點，趨勢判斷力有限。
++
++## 4. 未讀到／未驗證
++
++- c05、c04、c07 對應哪個原案例：未讀到（考題已移出 repo，匿名）。本報告不推測。
++- `acceptance/LOCK.json` 雜湊：本輪未重算，未驗證。
++- 本分支不含 scores 檔：若報告需與分支內容同源，需由人類決定是否把分支更新到 main（本輪未合併、未 rebase）。
++
++## 5. 回溯
++
++`git show main:skill-lab/scores/day01.json`、`git show main:skill-lab/scores/day02.json`、`git log main -- skill-lab/scores`。
+diff --git a/reports/eval-2026-10-07.md b/reports/eval-2026-10-07.md
+new file mode 100644
+index 0000000..9b0d111
+--- /dev/null
++++ b/reports/eval-2026-10-07.md
+@@ -0,0 +1,48 @@
++# Eval 分數日報 — 2026-10-07
++
++- 議題：r-03-eval-report（flavor: report，唯讀）
++- SSOT：`order-service/skill-lab/scores`（外層每日 Eval 成績單）。本 worktree 分支落後 main，scores 不在工作樹內，故以 `git show main:skill-lab/scores/dayNN.json` 讀取（main @ `10e375f`）。
++- 本報告只讀 git 內容；未執行 eval.py、未寫回 SSOT。考題與正解已移出 repo，題目僅以匿名編號 c01–c09 表示。
++
++## 1. 每日成績
++
++| Day | commit | Skill | 語意 | 契約 | 成本 (USD) | 出處 |
++|---|---|---|---|---|---|---|
++| 1 | `cd62e57` | 2.1.2 | 15/18 | 14/18 | 2.12 | `main:skill-lab/scores/day01.json` (commit `bd0cff6`) |
++| 2 | `63ad9ca` | 2.1.2 | 15/18 | 14/18 | 2.106 | `main:skill-lab/scores/day02.json` (commit `636932b`) |
++| 3 | `29a0c5e` | 2.1.2 | 14/18 | 14/18 | 2.156 | `main:skill-lab/scores/day03.json` (commit `10e375f`) |
++
++## 2. 逐題（語意／契約，每題 2 reps）
++
++| 題 | Day1 | Day2 | Day3 | Day2→Day3 |
++|---|---|---|---|---|
++| c01 | 2/2 | 2/2 | 2/2 | — |
++| c02 | 2/2 | 2/2 | 2/2 | — |
++| c03 | 2/2 | 2/2 | 2/2 | — |
++| c04 | 2/0 | 2/0 | 2/0 | — |
++| c05 | 0/2 | 0/2 | 0/2 | — |
++| c06 | 2/2 | 1/2 | 1/2 | — |
++| c07 | 2/0 | 2/0 | 2/0 | — |
++| c08 | 1/2 | 2/2 | 1/2 | 語意 -1 |
++| c09 | 2/2 | 2/2 | 2/2 | — |
++
++（Day1 逐題數字沿用 `reports/eval-2026-10-06.md` 所引的 `day01.json`；本輪未重讀 day01.json。）
++
++## 3. 觀察
++
++- 語意分數 15 → 15 → 14：Day3 比 Day2 少 1，來源只有 c08 語意 2→1。契約 14/18 三天相同；Skill 版本三天皆 2.1.2。
++- 持續失分（三天皆同）：c05 語意 0/2；c04、c07 契約 0/2。c06 語意自 Day2 起維持 1/2。
++- c08 語意 Day1 1、Day2 2、Day3 1，來回擺動。每題僅 2 reps，此幅度可能是抽樣波動，不足以判定退步。
++- 成本：2.12 → 2.106 → 2.156（Day3 較 Day2 +0.05，約 +2.4%），無異常。
++- 僅三個資料點，趨勢判斷力有限。
++
++## 4. 未讀到／未驗證
++
++- c04、c05、c07 對應哪個原案例：未讀到（考題已移出 repo，匿名）。本報告不推測。
++- `acceptance/LOCK.json` 雜湊：本輪未重算，未驗證。
++- 本分支不含 scores 檔：若報告需與分支內容同源，需由人類決定是否把分支更新到 main（本輪未合併、未 rebase）。
++- 先前報告 `reports/eval-2026-10-05.md` 未修改，其「契約通過數未讀到」與現有來源不一致。
++
++## 5. 回溯
++
++`git show main:skill-lab/scores/day01.json`、`git show main:skill-lab/scores/day02.json`、`git show main:skill-lab/scores/day03.json`、`git log main -- skill-lab/scores`。
+diff --git a/reports/eval-2026-10-08.md b/reports/eval-2026-10-08.md
+new file mode 100644
+index 0000000..3528d93
+--- /dev/null
++++ b/reports/eval-2026-10-08.md
+@@ -0,0 +1,52 @@
++# Eval 分數日報 — 2026-10-08
++
++- 議題：r-03-eval-report（flavor: report，唯讀）
++- SSOT：`order-service/skill-lab/scores`（外層每日 Eval 成績單）。本 worktree 分支落後 main，scores 不在工作樹內，故以 `git show main:skill-lab/scores/dayNN.json` 讀取（main @ `db0be13`）。
++- 本報告只讀 git 內容；未執行 eval.py、未寫回 SSOT。考題與正解已移出 repo，題目僅以匿名編號 c01–c09 表示。
++
++## 1. 每日成績
++
++| Day | commit | Skill | 語意 | 契約 | 成本 (USD) | 出處 |
++|---|---|---|---|---|---|---|
++| 1 | `cd62e57` | 2.1.2 | 15/18 | 14/18 | 2.12 | `main:skill-lab/scores/day01.json` (commit `bd0cff6`) |
++| 2 | `63ad9ca` | 2.1.2 | 15/18 | 14/18 | 2.106 | `main:skill-lab/scores/day02.json` (commit `636932b`) |
++| 3 | `29a0c5e` | 2.1.2 | 14/18 | 14/18 | 2.156 | `main:skill-lab/scores/day03.json` (commit `10e375f`) |
++| 4 | `96ccc8c` | 2.1.2 | 14/18 | 14/18 | 2.103 | `main:skill-lab/scores/day04.json` (commit `db0be13`) |
++
++本輪新增：Day 4。
++
++## 2. 逐題（語意／契約，每題 2 reps）
++
++| 題 | Day1 | Day2 | Day3 | Day4 | Day3→Day4 |
++|---|---|---|---|---|---|
++| c01 | 2/2 | 2/2 | 2/2 | 2/2 | — |
++| c02 | 2/2 | 2/2 | 2/2 | 2/2 | — |
++| c03 | 2/2 | 2/2 | 2/2 | 2/2 | — |
++| c04 | 2/0 | 2/0 | 2/0 | 2/0 | — |
++| c05 | 0/2 | 0/2 | 0/2 | 0/2 | — |
++| c06 | 2/2 | 1/2 | 1/2 | 2/2 | 語意 +1 |
++| c07 | 2/0 | 2/0 | 2/0 | 2/0 | — |
++| c08 | 1/2 | 2/2 | 1/2 | 0/2 | 語意 -1 |
++| c09 | 2/2 | 2/2 | 2/2 | 2/2 | — |
++
++（四天逐題數字均取自上列 `dayNN.json`，本輪已重讀 day01–day04。）
++
++## 3. 觀察
++
++- 語意總分 15 → 15 → 14 → 14：Day4 與 Day3 總分相同，但內部有一升一降——c06 語意 1→2（回到 Day1 水準），c08 語意 1→0。契約 14/18 四天相同；Skill 版本四天皆 2.1.2。
++- c08 語意四天為 1、2、1、0，Day4 首次降到 0/2，是目前唯一連續兩天下滑的題目。每題僅 2 reps，仍無法判定是退步還是抽樣波動，建議持續觀察。
++- c06 語意 2、1、1、2：Day4 回升，與 c08 的下降互相抵銷。
++- 持續失分（四天皆同）：c05 語意 0/2；c04、c07 契約 0/2。
++- 成本：2.12 → 2.106 → 2.156 → 2.103（Day4 較 Day3 -0.053，約 -2.5%），無異常。
++- 僅四個資料點，趨勢判斷力有限。
++
++## 4. 未讀到／未驗證
++
++- c04、c05、c07 對應哪個原案例：未讀到（考題已移出 repo，匿名）。本報告不推測。
++- `acceptance/LOCK.json` 雜湊：本輪未重算，未驗證。
++- 本分支不含 scores 檔：若報告需與分支內容同源，需由人類決定是否把分支更新到 main（本輪未合併、未 rebase）。
++- `reports/eval-2026-10-05.md` 未修改，其「契約通過數未讀到」與現有來源不一致。
++
++## 5. 回溯
++
++`git show main:skill-lab/scores/day01.json`、`day02.json`、`day03.json`、`day04.json`，`git log main -- skill-lab/scores`。
+diff --git a/reports/eval-2026-10-11.md b/reports/eval-2026-10-11.md
+new file mode 100644
+index 0000000..60135e5
+--- /dev/null
++++ b/reports/eval-2026-10-11.md
+@@ -0,0 +1,26 @@
++# Eval 分數日報 — 2026-10-11
++
++- 議題：r-03-eval-report（flavor: report，唯讀）
++- SSOT：`order-service/skill-lab/scores`（外層每日 Eval 成績單）。本分支落後 main，scores 不在工作樹內，以 `git show main:skill-lab/scores/dayNN.json` 讀取（main @ `358cde4`）。
++- 本報告只讀 git 內容；未執行 eval.py、未寫回 SSOT。
++
++## 1. 本輪結論：SSOT 無新資料
++
++`git ls-tree main skill-lab/scores/` 只有 day01–day04，最後一次異動是 `db0be13`（day04）。自 2026-10-08 日報以來，SSOT 沒有新增成績單，因此分數與逐題數字與 [eval-2026-10-08.md](eval-2026-10-08.md) 完全相同，不重貼。
++
++| Day | 語意 | 契約 | 成本 (USD) | 出處 |
++|---|---|---|---|---|
++| 4（最新） | 14/18 | 14/18 | 2.103 | `main:skill-lab/scores/day04.json` (commit `db0be13`) |
++
++Skill 版本仍為 2.1.2。c08 語意 Day4 為 0/2（見 10-08 日報），無新資料可判斷是退步或抽樣波動。
++
++## 2. 未讀到／未納入
++
++- main 上有較新的 `ops/scores/day07.json`（commit `358cde4`，另有 `ops/data/day07/metrics.json`），路徑不在本議題指定的 SSOT（`skill-lab/scores`）之內，本輪未讀、未納入數字。是否把 `ops/scores/` 納入觀測範圍，由人類決定。
++- `ops/scores/day05`、`day06` 是否存在：未讀到。
++- `acceptance/LOCK.json` 雜湊：本輪未重算，未驗證。
++- c04、c05、c07 對應哪個原案例：未讀到（考題已移出 repo，匿名）。
++
++## 3. 回溯
++
++`git ls-tree main skill-lab/scores/`、`git log main -- skill-lab/scores`、`git show main:skill-lab/scores/day04.json`。

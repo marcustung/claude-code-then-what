@@ -1,0 +1,659 @@
+commit e5a2f22c489cf69fbbd7b9c51cb54548fdabb6ea
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 03:02:04 +0800
+
+    r-01-acceptance-report: 驗收測試日報 2026-10-12（1/12 通過）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/acceptance-2026-10-12.md | 42 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+
+commit e3560ca606eeb09bf40290b5d9b828453e6a88b7
+Author: ops-grader <g@local>
+Date:   2026-10-12 02:02:19 +0800
+
+    skill-lab: day08 外層 Eval 成績單（v2.1.2，語意 14/18）
+
+ skill-lab/scores/day08.json | 57 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit db22a1a3b59c50ec1e0c0895139fea1f28c87909
+Author: ops-grader <g@local>
+Date:   2026-10-12 01:50:22 +0800
+
+    ops: day08 指標與成績單（外層評分）
+
+ ops/data/day08/metrics.json |  1 +
+ ops/scores/day08.json       | 60 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 61 insertions(+)
+
+commit 598e8faa5810a87cd7617c3ed35183ddb3c3e83e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:46 +0800
+
+    r-04-loop-health: 第 3 輪迴圈健康報告（SSOT 仍無資料）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/loop-health-2026-10-11.md | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+
+commit 9cccbf43e9bf934082e71713fba81a562d781e52
+Author: ops-grader <g@local>
+Date:   2026-10-11 10:50:44 +0800
+
+    skill-lab: day07 外層 Eval 成績單（v2.1.2，語意 13/18）
+
+ skill-lab/scores/day07.json | 57 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit a1ee2563fb8def5df460f2e9921991af9c930e82
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:49:52 +0800
+
+    r-03-eval-report: Eval 分數日報 2026-10-11
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/eval-2026-10-11.md | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+commit cfd06ec8a21fcefee8c0c5435469f212404bb66e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:48:47 +0800
+
+    r-02-alert-report: 監控摘要日報 2026-10-11
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/2026-10-11-ops-summary.md | 58 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 7e0a146a7d0a20398f60cb0a6044cef9c131a7a4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:47:46 +0800
+
+    r-01-acceptance-report: 驗收測試日報 2026-10-11（1/12 通過）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/acceptance-2026-10-11.md | 42 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+
+commit 358cde45da46a3ba63310c75a08113ab5b5eaf97
+Author: ops-grader <g@local>
+Date:   2026-10-11 10:40:30 +0800
+
+    ops: day07 指標與成績單（外層評分）
+
+ ops/data/day07/metrics.json |  1 +
+ ops/scores/day07.json       | 60 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 61 insertions(+)
+
+commit e97f97f004b1daaf4647f6314306e10d80b9cd03
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:20:56 +0800
+
+    r-03-eval-report: Eval 分數日報 2026-10-08
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/eval-2026-10-08.md | 52 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 52 insertions(+)
+
+commit 0adb6fdce8fcf0e61f9b53e19b5f3d8621f90264
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:10:50 +0800
+
+    r-02-alert-report: 監控摘要日報 2026-10-08
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/2026-10-08-ops-summary.md | 58 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit c2a7bd9ed6dd40c3ac852f8123feda4c59ed61ad
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:02:01 +0800
+
+    r-01-acceptance-report: 驗收測試日報 2026-10-08（1/12 通過）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/acceptance-2026-10-08.md | 42 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
+
+commit db0be139925c8c6e47d85c6da2a55e5b1ba4b997
+Author: ops-grader <g@local>
+Date:   2026-10-08 02:02:35 +0800
+
+    skill-lab: day04 外層 Eval 成績單（v2.1.2，語意 14/18）
+
+ skill-lab/scores/day04.json | 57 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 96ccc8cb8a342ce9cf7360525a1eada900ea62e9
+Author: ops-grader <g@local>
+Date:   2026-10-08 01:50:18 +0800
+
+    ops: day04 指標與成績單（外層評分）
+
+ ops/data/day04/metrics.json |  1 +
+ ops/scores/day04.json       | 60 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 61 insertions(+)
+
+commit c8368dec71a3deebf4498380e55d0dfd6c1428fd
+Merge: d2e20f7 78da93b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:48 +0800
+
+    LoopDeck: 合併議題 p-l02-006-conflicts-page-for10 產出（ld/p-l02-006-conflicts-page-for10 → main）by <AUTHOR> Tung
+
+commit d2e20f761b1ddb064eeabbca5ab4b06cde3a0d64
+Merge: 8a21e28 5970408
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:43 +0800
+
+    LoopDeck: 合併議題 p-l02-004-heap-page-for10 產出（ld/p-l02-004-heap-page-for10 → main）by <AUTHOR> Tung
+
+commit 8a21e28525ef191675f8e057dabde41b9164f587
+Merge: 6dbb389 d1b7fcc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:40 +0800
+
+    LoopDeck: 合併議題 p-l02-003-spike-for-duration 產出（ld/p-l02-003-spike-for-duration → main）by <AUTHOR> Tung
+
+commit 6dbb389ed10e8f1b15861a6348b578efa2100571
+Merge: d20222d ebac4ba
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:36 +0800
+
+    LoopDeck: 合併議題 p-l02-001-silent-drop-rule 產出（ld/p-l02-001-silent-drop-rule → main）by <AUTHOR> Tung
+
+commit d20222d3b42004f526766287d1fec63ba122a88f
+Merge: 10e375f abacba0
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:33 +0800
+
+    LoopDeck: 合併議題 p-l01-001-dead-letter-list 產出（ld/p-l01-001-dead-letter-list → main）by <AUTHOR> Tung
+
+commit 78da93b3e551b41af1861f2a76381593293baf92
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:03:59 +0800
+
+    p-l02-006-conflicts-page-for10: ManyConflicts for_minutes 0→10（維持 page、threshold=3）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ ops/alerts/rules.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 59704088618d15ad7c22f4a14720f1b0171d9224
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:03:04 +0800
+
+    p-l02-004-heap-page-for10: HeapHigh 維持 page、for_minutes 0→10
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ ops/alerts/rules.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit d1b7fcc2a33a4cdd86bb4b3e551023f6412862dc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:02:14 +0800
+
+    p-l02-003-spike-for-duration: HighLatency/QueueBacklog 加 for_minutes=5，AnyServerError for_minutes=3 並新增 ticket 留痕規則
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ ops/alerts/rules.yml | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit ebac4bae1a6b5382e88c49e37b3b41e504885257
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:01:22 +0800
+
+    p-l02-001-silent-drop-rule: 新增 SilentDropReceiptsGap（receipts_gap>10 持續 2 分鐘，page）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ ops/alerts/rules.yml | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit abacba0b9b957df7aba3157b086c6182af7aa5a4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:00:21 +0800
+
+    p-l01-001-dead-letter-list: NotificationWorker 加入記憶體死信清單與受 X-Actor 保護的 GET /admin/dead-letters
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ src/Api/Program.cs | 46 ++++++++++++++++++++++++++++++++++++----------
+ 1 file changed, 36 insertions(+), 10 deletions(-)
+
+commit 0f1169b61535fc29fe9e8ce420a6c91beee54fd2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:30:38 +0800
+
+    r-04-loop-health: 第 2 輪迴圈健康報告（SSOT 仍無資料）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/loop-health-2026-10-07.md | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 11ba4d7e86a093eee9cec2532085ff8ab880a522
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:20:38 +0800
+
+    r-03-eval-report: Eval 分數日報 2026-10-07
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/eval-2026-10-07.md | 48 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
+
+commit f5639fd20913c3c38c26ee2eb06f93d5fecd9604
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:10:34 +0800
+
+    r-02-alert-report: 監控摘要日報 2026-10-07
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/2026-10-07-ops-summary.md | 58 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 64a179e72c681e3fcdf4571cb3068c18620e46f4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:01:37 +0800
+
+    r-01-acceptance-report: 驗收測試日報 2026-10-07（1/12 通過）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/acceptance-2026-10-07.md | 41 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 41 insertions(+)
+
+commit 10e375ff700606bf690f6e7c7e7b6c67aaf93a68
+Author: ops-grader <g@local>
+Date:   2026-10-07 02:18:54 +0800
+
+    skill-lab: day03 外層 Eval 成績單（v2.1.2，語意 14/18）
+
+ skill-lab/scores/day03.json | 57 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 29a0c5e43abfd6739ce4ede518594e75218a8a62
+Author: ops-grader <g@local>
+Date:   2026-10-07 02:08:28 +0800
+
+    ops: day03 指標與成績單（外層評分）
+
+ ops/data/day03/metrics.json |  1 +
+ ops/scores/day03.json       | 48 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 49 insertions(+)
+
+commit 62cbc4be434fa570776426b54c20663b1fc264af
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:20:51 +0800
+
+    r-03-eval-report: Eval 分數日報 2026-10-06
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/eval-2026-10-06.md | 44 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+
+commit aff7a1fba25b6f3286487d5e0ebc8036f2155d90
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:10:52 +0800
+
+    r-02-alert-report: 監控摘要日報 2026-10-06
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/2026-10-06-ops-summary.md | 58 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit fc704cae78038b7cd3f12fb85aa1f6d98d399439
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:01:50 +0800
+
+    r-01-acceptance-report: 驗收測試日報 2026-10-06（1/12 通過）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/acceptance-2026-10-06.md | 41 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 41 insertions(+)
+
+commit 636932bc55408f6141c06b8d041f55cedc5aed3a
+Author: ops-grader <g@local>
+Date:   2026-10-06 02:00:53 +0800
+
+    skill-lab: day02 外層 Eval 成績單（v2.1.2，語意 15/18）
+
+ skill-lab/scores/day02.json | 57 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 63ad9ca47c83aca677214f1ae0f19493700539e6
+Author: ops-grader <g@local>
+Date:   2026-10-06 01:50:15 +0800
+
+    ops: day02 指標與成績單（外層評分）
+
+ ops/data/day02/metrics.json |  1 +
+ ops/scores/day02.json       | 48 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 49 insertions(+)
+
+commit da299e26aa2d31b78f65d96e463900e746701d46
+Author: marcus <m@local>
+Date:   2026-10-05 12:17:50 +0800
+
+    exp3: 考題、正解、eval.py 移出 repo（防看題），成績單改匿名編號
+
+ acceptance/LOCK.json                               |  70 +-----
+ skill-lab/README.md                                |   6 +
+ skill-lab/build_cases.py                           |  77 ------
+ skill-lab/cases/complete/data/logs.jsonl           |   4 -
+ skill-lab/cases/complete/data/receipts.json        |  16 --
+ skill-lab/cases/complete/design/design-review.md   |   9 -
+ skill-lab/cases/complete/src/Cancellation.cs       |  26 --
+ skill-lab/cases/complete/src/Program.cs            | 269 ---------------------
+ skill-lab/cases/complete/task.json                 |   5 -
+ skill-lab/cases/decoy-receipt/CASE.md              |   1 -
+ skill-lab/cases/decoy-receipt/data/logs.jsonl      |   4 -
+ skill-lab/cases/decoy-receipt/data/receipts.json   |  16 --
+ .../cases/decoy-receipt/design/design-review.md    |   9 -
+ skill-lab/cases/decoy-receipt/src/Cancellation.cs  |  26 --
+ skill-lab/cases/decoy-receipt/src/Program.cs       | 269 ---------------------
+ skill-lab/cases/decoy-receipt/task.json            |   5 -
+ skill-lab/cases/h1-receipt-500/CASE.md             |   3 -
+ skill-lab/cases/h1-receipt-500/data/logs.jsonl     |   4 -
+ skill-lab/cases/h1-receipt-500/data/receipts.json  |  16 --
+ .../cases/h1-receipt-500/design/design-review.md   |   9 -
+ skill-lab/cases/h1-receipt-500/src/Cancellation.cs |  26 --
+ skill-lab/cases/h1-receipt-500/src/Program.cs      | 269 ---------------------
+ skill-lab/cases/h1-receipt-500/task.json           |   5 -
+ skill-lab/cases/h2-dead-but-received/CASE.md       |   3 -
+ .../cases/h2-dead-but-received/data/logs.jsonl     |   8 -
+ .../cases/h2-dead-but-received/data/receipts.json  |  16 --
+ .../h2-dead-but-received/design/design-review.md   |   9 -
+ .../cases/h2-dead-but-received/src/Cancellation.cs |  26 --
+ .../cases/h2-dead-but-received/src/Program.cs      | 269 ---------------------
+ skill-lab/cases/h2-dead-but-received/task.json     |   5 -
+ skill-lab/cases/h3-receipt-before-cancel/CASE.md   |   3 -
+ .../cases/h3-receipt-before-cancel/data/logs.jsonl |   4 -
+ .../h3-receipt-before-cancel/data/receipts.json    |  16 --
+ .../design/design-review.md                        |   9 -
+ .../h3-receipt-before-cancel/src/Cancellation.cs   |  26 --
+ .../cases/h3-receipt-before-cancel/src/Program.cs  | 269 ---------------------
+ skill-lab/cases/h3-receipt-before-cancel/task.json |   5 -
+ skill-lab/cases/h4-duplicate-receipts/CASE.md      |   3 -
+ .../cases/h4-duplicate-receipts/data/logs.jsonl    |   4 -
+ .../cases/h4-duplicate-receipts/data/receipts.json |  30 ---
+ .../h4-duplicate-receipts/design/design-review.md  |   9 -
+ .../h4-duplicate-receipts/src/Cancellation.cs      |  26 --
+ .../cases/h4-duplicate-receipts/src/Program.cs     | 269 ---------------------
+ skill-lab/cases/h4-duplicate-receipts/task.json    |   5 -
+ skill-lab/cases/h5-no-sender-log/CASE.md           |   3 -
+ skill-lab/cases/h5-no-sender-log/data/logs.jsonl   |   3 -
+ .../cases/h5-no-sender-log/data/receipts.json      |  16 --
+ .../cases/h5-no-sender-log/design/design-review.md |   9 -
+ .../cases/h5-no-sender-log/src/Cancellation.cs     |  26 --
+ skill-lab/cases/h5-no-sender-log/src/Program.cs    | 269 ---------------------
+ skill-lab/cases/h5-no-sender-log/task.json         |   5 -
+ skill-lab/cases/h6-payload-mismatch/CASE.md        |   3 -
+ .../cases/h6-payload-mismatch/data/logs.jsonl      |   4 -
+ .../cases/h6-payload-mismatch/data/receipts.json   |  16 --
+ .../h6-payload-mismatch/design/design-review.md    |   9 -
+ .../cases/h6-payload-mismatch/src/Cancellation.cs  |  26 --
+ skill-lab/cases/h6-payload-mismatch/src/Program.cs | 269 ---------------------
+ skill-lab/cases/h6-payload-mismatch/task.json      |   5 -
+ skill-lab/cases/missing-receipts/data/logs.jsonl   |   4 -
+ .../cases/missing-receipts/design/design-review.md |   9 -
+ .../cases/missing-receipts/src/Cancellation.cs     |  26 --
+ skill-lab/cases/missing-receipts/src/Program.cs    | 269 ---------------------
+ skill-lab/cases/missing-receipts/task.json         |   5 -
+ skill-lab/eval.py                                  |  97 --------
+ skill-lab/eval/gate/check_result.py                |  47 ----
+ skill-lab/eval/gate/collect.py                     |  60 -----
+ skill-lab/eval/gate/gate.py                        |  57 -----
+ skill-lab/expected.json                            |  47 ----
+ skill-lab/scores/day01.json                        |  20 +-
+ 69 files changed, 18 insertions(+), 3444 deletions(-)
+
+commit bd0cff6c7cbef5df18a995940ea96578b659b029
+Author: ops-grader <g@local>
+Date:   2026-10-05 06:49:01 +0800
+
+    skill-lab: day01 成績單（沿用 10-04 基準 15/18）
+
+ skill-lab/scores/day01.json | 57 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 604d8c5542d391a2a8fa950eb783dae771d46fe5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:28:20 +0800
+
+    r-04-loop-health: 第 1 輪迴圈健康報告（SSOT 尚無資料）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/loop-health-2026-10-05.md | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+
+commit 471b81036f9b952aa025822a0b7f8a80e4fffbd5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:27:27 +0800
+
+    r-03-eval-report: Eval 分數日報 2026-10-05
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/eval-2026-10-05.md | 39 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+
+commit 943b56e1e7fc395c9cb02128aa1d9d52fd552b45
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:48 +0800
+
+    r-02-alert-report: 監控摘要日報 2026-10-05
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/2026-10-05-ops-summary.md | 53 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit 8ef3ec25ba0f3482f1e85e8a6a67fbcfcb30ece6
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:22:13 +0800
+
+    r-01-acceptance-report: 驗收測試日報 2026-10-05（1/12 通過）
+    
+    Co-Authored-By: Claude Sonnet 5.5 <<EMAIL>>
+
+ reports/acceptance-2026-10-05.md | 43 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
+
+commit 4a54a31e8abe6e4f4f422d48c3847470e6e81e91
+Author: marcus <m@local>
+Date:   2026-10-05 06:02:07 +0800
+
+    acceptance: 埠號可由環境變數覆寫（長跑組與迴圈組並行），重新鎖定
+
+ acceptance/LOCK.json         | 4 ++--
+ acceptance/run_acceptance.py | 4 +++-
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+commit 8f28cad0ded43e7999765a3fa21039e7149d3875
+Author: ops-grader <g@local>
+Date:   2026-10-05 06:01:27 +0800
+
+    ops: day01 指標與成績單（外層評分）
+
+ ops/data/day01/metrics.json |  1 +
+ ops/scores/day01.json       | 48 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 49 insertions(+)
+
+commit c3b1d5ee0a287486842a890e7d2d869eaed173d5
+Author: marcus <m@local>
+Date:   2026-10-05 06:01:18 +0800
+
+    exp2: 出題與評分移出 repo（防洩題），改由外層寫入 ops/data 與 ops/scores
+
+ acceptance/LOCK.json |   6 +--
+ ops/README.md        |  14 +++----
+ ops/sim/evaluate.py  | 101 ---------------------------------------------------
+ ops/sim/simulate.py  |  85 -------------------------------------------
+ 4 files changed, 9 insertions(+), 197 deletions(-)
+
+commit fa35c71f06ec2f9a12365eff3f1f024ef5387614
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:41:40 +0800
+
+    lock: add exp3 eval, cases, expected, gate hashes
+
+ acceptance/LOCK.json | 68 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 67 insertions(+), 1 deletion(-)
+
+commit cd62e573dc0ef4ed6ed176522ca1f52df3639bf5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:41:31 +0800
+
+    exp3: skill-lab with 9 cases (6 harder), locked eval & gate; baseline v2.1.2 semantic 15/18 (h3 0/2, h6 1/2)
+
+ .gitignore                                         |   1 +
+ skill-lab/build_cases.py                           |  77 ++++++
+ skill-lab/cases/complete/data/logs.jsonl           |   4 +
+ skill-lab/cases/complete/data/receipts.json        |  16 ++
+ skill-lab/cases/complete/design/design-review.md   |   9 +
+ skill-lab/cases/complete/src/Cancellation.cs       |  26 ++
+ skill-lab/cases/complete/src/Program.cs            | 269 +++++++++++++++++++++
+ skill-lab/cases/complete/task.json                 |   5 +
+ skill-lab/cases/decoy-receipt/CASE.md              |   1 +
+ skill-lab/cases/decoy-receipt/data/logs.jsonl      |   4 +
+ skill-lab/cases/decoy-receipt/data/receipts.json   |  16 ++
+ .../cases/decoy-receipt/design/design-review.md    |   9 +
+ skill-lab/cases/decoy-receipt/src/Cancellation.cs  |  26 ++
+ skill-lab/cases/decoy-receipt/src/Program.cs       | 269 +++++++++++++++++++++
+ skill-lab/cases/decoy-receipt/task.json            |   5 +
+ skill-lab/cases/h1-receipt-500/CASE.md             |   3 +
+ skill-lab/cases/h1-receipt-500/data/logs.jsonl     |   4 +
+ skill-lab/cases/h1-receipt-500/data/receipts.json  |  16 ++
+ .../cases/h1-receipt-500/design/design-review.md   |   9 +
+ skill-lab/cases/h1-receipt-500/src/Cancellation.cs |  26 ++
+ skill-lab/cases/h1-receipt-500/src/Program.cs      | 269 +++++++++++++++++++++
+ skill-lab/cases/h1-receipt-500/task.json           |   5 +
+ skill-lab/cases/h2-dead-but-received/CASE.md       |   3 +
+ .../cases/h2-dead-but-received/data/logs.jsonl     |   8 +
+ .../cases/h2-dead-but-received/data/receipts.json  |  16 ++
+ .../h2-dead-but-received/design/design-review.md   |   9 +
+ .../cases/h2-dead-but-received/src/Cancellation.cs |  26 ++
+ .../cases/h2-dead-but-received/src/Program.cs      | 269 +++++++++++++++++++++
+ skill-lab/cases/h2-dead-but-received/task.json     |   5 +
+ skill-lab/cases/h3-receipt-before-cancel/CASE.md   |   3 +
+ .../cases/h3-receipt-before-cancel/data/logs.jsonl |   4 +
+ .../h3-receipt-before-cancel/data/receipts.json    |  16 ++
+ .../design/design-review.md                        |   9 +
+ .../h3-receipt-before-cancel/src/Cancellation.cs   |  26 ++
+ .../cases/h3-receipt-before-cancel/src/Program.cs  | 269 +++++++++++++++++++++
+ skill-lab/cases/h3-receipt-before-cancel/task.json |   5 +
+ skill-lab/cases/h4-duplicate-receipts/CASE.md      |   3 +
+ .../cases/h4-duplicate-receipts/data/logs.jsonl    |   4 +
+ .../cases/h4-duplicate-receipts/data/receipts.json |  30 +++
+ .../h4-duplicate-receipts/design/design-review.md  |   9 +
+ .../h4-duplicate-receipts/src/Cancellation.cs      |  26 ++
+ .../cases/h4-duplicate-receipts/src/Program.cs     | 269 +++++++++++++++++++++
+ skill-lab/cases/h4-duplicate-receipts/task.json    |   5 +
+ skill-lab/cases/h5-no-sender-log/CASE.md           |   3 +
+ skill-lab/cases/h5-no-sender-log/data/logs.jsonl   |   3 +
+ .../cases/h5-no-sender-log/data/receipts.json      |  16 ++
+ .../cases/h5-no-sender-log/design/design-review.md |   9 +
+ .../cases/h5-no-sender-log/src/Cancellation.cs     |  26 ++
+ skill-lab/cases/h5-no-sender-log/src/Program.cs    | 269 +++++++++++++++++++++
+ skill-lab/cases/h5-no-sender-log/task.json         |   5 +
+ skill-lab/cases/h6-payload-mismatch/CASE.md        |   3 +
+ .../cases/h6-payload-mismatch/data/logs.jsonl      |   4 +
+ .../cases/h6-payload-mismatch/data/receipts.json   |  16 ++
+ .../h6-payload-mismatch/design/design-review.md    |   9 +
+ .../cases/h6-payload-mismatch/src/Cancellation.cs  |  26 ++
+ skill-lab/cases/h6-payload-mismatch/src/Program.cs | 269 +++++++++++++++++++++
+ skill-lab/cases/h6-payload-mismatch/task.json      |   5 +
+ skill-lab/cases/missing-receipts/data/logs.jsonl   |   4 +
+ .../cases/missing-receipts/design/design-review.md |   9 +
+ .../cases/missing-receipts/src/Cancellation.cs     |  26 ++
+ skill-lab/cases/missing-receipts/src/Program.cs    | 269 +++++++++++++++++++++
+ skill-lab/cases/missing-receipts/task.json         |   5 +
+ skill-lab/eval.py                                  |  97 ++++++++
+ skill-lab/eval/gate/check_result.py                |  47 ++++
+ skill-lab/eval/gate/collect.py                     |  60 +++++
+ skill-lab/eval/gate/gate.py                        |  57 +++++
+ skill-lab/expected.json                            |  47 ++++
+ .../.claude/skills/trace-notification/CHANGELOG.md |  24 ++
+ .../.claude/skills/trace-notification/SKILL.md     |  33 +++
+ .../.claude/skills/trace-notification/VERSION      |   1 +
+ .../trace-notification/scripts/check_result.py     |  47 ++++
+ .../skills/trace-notification/scripts/collect.py   |  60 +++++
+ .../skills/trace-notification/scripts/gate.py      |  57 +++++
+ .../skills/trace-notification/scripts/selftest.py  |  52 ++++
+ 74 files changed, 3641 insertions(+)
+
+commit d2c8daeb00e4219e39a66fcd131936ba3baf3b29
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:15:25 +0800
+
+    exp2: alert tuning simulator, evaluator, baseline rules (≈400 page noise/day, silent_drop missed)
+
+ .gitignore           |   1 +
+ acceptance/LOCK.json |   4 +-
+ ops/README.md        |  10 +++++
+ ops/alerts/rules.yml |  38 +++++++++++++++++++
+ ops/sim/evaluate.py  | 101 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ ops/sim/simulate.py  |  85 +++++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 238 insertions(+), 1 deletion(-)
+
+commit eed7365f936b9a7f7d5b7222f3079c2ae7f42ca9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 14:38:38 +0800
+
+    acceptance: redelivery & compensation spec + tests (1/12 green baseline)
+
+ acceptance/LOCK.json         |   7 ++
+ acceptance/SPEC.md           |  29 +++++
+ acceptance/run_acceptance.py | 262 +++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 298 insertions(+)
+
+commit d68caba223dcb1a4ae29c4acaa6b1e0dbb8b08b9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 14:36:21 +0800
+
+    baseline: order-cancel service for loop-lab (Day 29 experiments)
+
+ .gitignore                           |   4 +
+ CHANGELOG.md                         |  23 +++
+ CLAUDE.md                            |  17 ++
+ README.md                            |  80 +++++++++
+ VERSION                              |   1 +
+ specs/decisions-v1.md                |   9 +
+ specs/decisions-v2.1.md              |  14 ++
+ specs/notification-contract-v2.1.md  |  33 ++++
+ specs/rules-v1.md                    |  14 ++
+ specs/rules-v2.md                    |  29 ++++
+ src/Api/Api.csproj                   |   5 +
+ src/Api/Program.cs                   | 309 +++++++++++++++++++++++++++++++++++
+ src/Domain/Cancellation.cs           |  30 ++++
+ src/Domain/Domain.csproj             |   3 +
+ src/FakeSink/FakeSink.csproj         |   3 +
+ src/FakeSink/Program.cs              |  37 +++++
+ tests/DomainTests/DomainTests.csproj |   4 +
+ tests/DomainTests/Program.cs         |  19 +++
+ tools/check-load.py                  |  78 +++++++++
+ tools/check.py                       |  98 +++++++++++
+ tools/dev-session.ps1                |  88 ++++++++++
+ tools/load.py                        |  66 ++++++++
+ tools/run-load.ps1                   | 109 ++++++++++++
+ tools/run.ps1                        |  98 +++++++++++
+ 24 files changed, 1171 insertions(+)

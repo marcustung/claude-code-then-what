@@ -1,0 +1,35 @@
+state: done
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 3
+executor: claude-code
+risk: 4
+category: 告警調整
+framework: null
+backend: local
+origin: l-02-alert-tuning
+finding_fingerprint: 099626c506d523e7eab646d4
+finding_signature: "highlatency/queuebacklog 加 for_minutes,anyservererror 單點錯誤改 ticket | day01.json per_rule: highlatency fired=35 valid=1 noise=34;queuebacklog fired=33 valid=0;anyservererror fired=13 valid=0 | metrics.json p95_latency_ms:超過 150 共 35 段,其中 34 段不到 3 分鐘,唯一的長段是第 1241 分鐘起連續 26 分鐘、峰值 419.6,對應 valid=1 | metrics.json queue_depth:超過 8 共 33 段,全部不到 3 分鐘,峰值 29.4 | metrics.json error_rate:13 段全是單一分鐘的 1.0 孤點,無連續段 | rules.yml 目前三條規則 for_minutes 皆為 0"
+proposal_verdict: approved
+updated_at: "2026-10-07T00:38:40.511Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: 6818a71f-12c9-458f-9cdb-79670b70b5a2
+budget_reserved_usd: null
+run_pid: null
+run_id: 61ad353d-8aa0-4582-a157-b5643fea6d30
+run_started_at: "2026-10-06T20:01:38.649Z"
+run_branch: ld/p-l02-003-spike-for-duration
+run_ended_at: "2026-10-06T20:02:29.926Z"
+run_result: ok
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null
+approved_by: <AUTHOR> Tung
+merge_commit: 8a21e28

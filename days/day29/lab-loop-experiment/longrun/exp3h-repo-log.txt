@@ -1,0 +1,835 @@
+commit 06d9529541573c54856302261f27896716809f96
+Author: longrun <l@local>
+Date:   2026-10-06 01:56:25 +0800
+
+    longrun exp3 i53
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit a463e362dcf6015c3b835164cb4575328d75936f
+Author: longrun <l@local>
+Date:   2026-10-06 01:44:10 +0800
+
+    longrun exp3 i52
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 1e2429d6722d037898d0b7cc49ba05dc2becf512
+Author: longrun <l@local>
+Date:   2026-10-06 01:32:41 +0800
+
+    longrun exp3 i51
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 692463552e7aacf270344e4124f9864de16d4271
+Author: longrun <l@local>
+Date:   2026-10-06 01:21:30 +0800
+
+    longrun exp3 i50
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit 7f46526ca02644e303b4ffd69eb4f4145f4c58ec
+Author: longrun <l@local>
+Date:   2026-10-06 01:09:22 +0800
+
+    longrun exp3 i49
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit 0fd09f4d9929ffd7f7777ac109dc2401334afe06
+Author: longrun <l@local>
+Date:   2026-10-06 00:58:43 +0800
+
+    longrun exp3 i48
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit e460fc3933e58b86d2d0ab76a362d51ab1132d78
+Author: longrun <l@local>
+Date:   2026-10-06 00:48:33 +0800
+
+    longrun exp3 i47
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit 5f372cb60b6e4e1b21a51e325627dcee7e0c8195
+Author: longrun <l@local>
+Date:   2026-10-06 00:38:00 +0800
+
+    longrun exp3 i46
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 12 ++++++------
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit dfbc69117784307b334fa2efa4227b42eed01c18
+Author: longrun <l@local>
+Date:   2026-10-06 00:26:59 +0800
+
+    longrun exp3 i45
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit e620f508176b50b5cc4085c9f068654e7e70d9a9
+Author: longrun <l@local>
+Date:   2026-10-06 00:16:07 +0800
+
+    longrun exp3 i44
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 440ec64643ad75ffc458d296ba39d334c3f75532
+Author: longrun <l@local>
+Date:   2026-10-06 00:04:13 +0800
+
+    longrun exp3 i43
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit e31b0b083904e20ff25af57f3844742342496a63
+Author: longrun <l@local>
+Date:   2026-10-05 23:53:18 +0800
+
+    longrun exp3 i42
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 14 +++++++-------
+ 2 files changed, 12 insertions(+), 7 deletions(-)
+
+commit 908a8f69f5c9fe24b2fa41528324a2a0b7aed62b
+Author: longrun <l@local>
+Date:   2026-10-05 23:42:58 +0800
+
+    longrun exp3 i41
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit 20fd1408d2270e4d2211bf621f6f4f4f9da20751
+Author: longrun <l@local>
+Date:   2026-10-05 23:31:55 +0800
+
+    longrun exp3 i40
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 331ba721242d2231be06b0cac7ce2e032a0a1438
+Author: longrun <l@local>
+Date:   2026-10-05 23:21:22 +0800
+
+    longrun exp3 i39
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit e4d3993744c68f25b4eac39d969f8769553eb502
+Author: longrun <l@local>
+Date:   2026-10-05 23:10:16 +0800
+
+    longrun exp3 i38
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 121c90f0402c45054dd23a45d873d3ff117cb5e9
+Author: longrun <l@local>
+Date:   2026-10-05 22:58:58 +0800
+
+    longrun exp3 i37
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit ff411b4bdd7fa1e922db1848b0fd259baa78cc7d
+Author: longrun <l@local>
+Date:   2026-10-05 22:48:02 +0800
+
+    longrun exp3 i36
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit e9de9fb99d6c15bce82d97ab1d11af418c62a2ef
+Author: longrun <l@local>
+Date:   2026-10-05 22:37:06 +0800
+
+    longrun exp3 i35
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 12 ++++++------
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit b285800959babec2fa60a5547dbc0ff6cee93b13
+Author: longrun <l@local>
+Date:   2026-10-05 22:25:30 +0800
+
+    longrun exp3 i34
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 773bac2ceacec7836dfc17d16a4bd852d1db3551
+Author: longrun <l@local>
+Date:   2026-10-05 22:14:27 +0800
+
+    longrun exp3 i33
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit b45c2a028c4124a70667502ba6f1d169fe40d179
+Author: longrun <l@local>
+Date:   2026-10-05 22:03:08 +0800
+
+    longrun exp3 i32
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit 4a90825331f87070278a0dcdf113bfe518be0fb3
+Author: longrun <l@local>
+Date:   2026-10-05 21:48:41 +0800
+
+    longrun exp3 i31
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit c92a07f70432d788bbb65e659de0751fb81493a5
+Author: longrun <l@local>
+Date:   2026-10-05 21:36:52 +0800
+
+    longrun exp3 i30
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 77742987d50715b80cefb3f8ce84c35414ccdd58
+Author: longrun <l@local>
+Date:   2026-10-05 21:25:21 +0800
+
+    longrun exp3 i29
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 1eac765cb0adde24734cac51e7471bf63c3727ac
+Author: longrun <l@local>
+Date:   2026-10-05 21:13:19 +0800
+
+    longrun exp3 i28
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit d9659180fae6e858716f6ab20630a1b8130ef537
+Author: longrun <l@local>
+Date:   2026-10-05 21:01:35 +0800
+
+    longrun exp3 i27
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 8c825f144e53e568c40f743ad8eec78c64682aea
+Author: longrun <l@local>
+Date:   2026-10-05 20:48:57 +0800
+
+    longrun exp3 i26
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 7a222a200ca8d6980fbabd4fd418356c5f1d083f
+Author: longrun <l@local>
+Date:   2026-10-05 20:37:04 +0800
+
+    longrun exp3 i25
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit f7e67f2dc8472f6e778da0337c2a69cce7d81190
+Author: longrun <l@local>
+Date:   2026-10-05 20:25:36 +0800
+
+    longrun exp3 i24
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 9dbb59187d5c68ea82e4e1696db5e7014b6ad201
+Author: longrun <l@local>
+Date:   2026-10-05 20:14:33 +0800
+
+    longrun exp3 i23
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 2d2d240c5a2586348000a07bd7c5ec4d6d5ab518
+Author: longrun <l@local>
+Date:   2026-10-05 20:03:16 +0800
+
+    longrun exp3 i22
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 12 ++++++------
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit e10e91e4d6d6faf6bee01eeb3a1fc58a3504032d
+Author: longrun <l@local>
+Date:   2026-10-05 19:51:08 +0800
+
+    longrun exp3 i21
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 14 +++++++-------
+ 2 files changed, 12 insertions(+), 7 deletions(-)
+
+commit ec9c7f5d2259d99cde8f47f30dfe67b205796a56
+Author: longrun <l@local>
+Date:   2026-10-05 19:11:54 +0800
+
+    longrun exp3 i20
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 12 ++++++------
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit 82f24bb3e2dec407ea3f15204879d7c245c9c11a
+Author: longrun <l@local>
+Date:   2026-10-05 18:15:26 +0800
+
+    longrun exp3 i19
+
+ LONGRUN-SCORES.json | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 06e32e9b93646ff64820c091143ef48fcd4c7c3e
+Author: longrun <l@local>
+Date:   2026-10-05 17:32:31 +0800
+
+    longrun exp3 i18
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit dcbaf7f2f10113892fafb16a862c230e6ded3b63
+Author: longrun <l@local>
+Date:   2026-10-05 17:20:55 +0800
+
+    longrun exp3 i17
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 2 +-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+commit 2f15caf9e020d58f805ac1e3441fadb36879f746
+Author: longrun <l@local>
+Date:   2026-10-05 17:09:39 +0800
+
+    longrun exp3 i16
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 67011a71f45c3b24d8f799ce246ef4baf87db4af
+Author: longrun <l@local>
+Date:   2026-10-05 16:57:49 +0800
+
+    longrun exp3 i15
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit e5c8994cd308718532a96aa32f5c251a5cf2266c
+Author: longrun <l@local>
+Date:   2026-10-05 16:45:55 +0800
+
+    longrun exp3 i14
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 5a9cb3b41da6cee950cd19f222e43f39ae601974
+Author: longrun <l@local>
+Date:   2026-10-05 16:34:40 +0800
+
+    longrun exp3 i13
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit 4d2f22ea29614904fd456375bcca4bcf8ebea83f
+Author: longrun <l@local>
+Date:   2026-10-05 16:23:48 +0800
+
+    longrun exp3 i12
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 6760a9261912b6cc495bca0f036a142240a4eff7
+Author: longrun <l@local>
+Date:   2026-10-05 16:11:25 +0800
+
+    longrun exp3 i11
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit c48483cc6bd0a2d3e0221fbc3267754d900c84d0
+Author: longrun <l@local>
+Date:   2026-10-05 15:48:34 +0800
+
+    longrun exp3 i10
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit b13b7e21ae94580579fa3ab6c2630977083a227f
+Author: longrun <l@local>
+Date:   2026-10-05 15:36:23 +0800
+
+    longrun exp3 i9
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 8 ++++----
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit 61fff08d307b5dbaa6f6944419f509d7d068e6a3
+Author: longrun <l@local>
+Date:   2026-10-05 15:23:51 +0800
+
+    longrun exp3 i8
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit e08642ba9d69cd8670d2ee0508288db83d6dbcbe
+Author: longrun <l@local>
+Date:   2026-10-05 15:10:30 +0800
+
+    longrun exp3 i7
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 12 ++++++------
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit 61eb8e7becbcd50bc0982a5c157d105d94b935aa
+Author: longrun <l@local>
+Date:   2026-10-05 14:57:44 +0800
+
+    longrun exp3 i6
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 73c514b3e5daf1cdac4b67f7c9c0b8b5ae79ac86
+Author: longrun <l@local>
+Date:   2026-10-05 14:46:08 +0800
+
+    longrun exp3 i5
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit 482d829f0382a7ac4555e029a901e60cf60133e7
+Author: longrun <l@local>
+Date:   2026-10-05 14:35:18 +0800
+
+    longrun exp3 i4
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 6 +++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit c6762fdbbdbdf1dbde56a8bb7db23b699b2f2507
+Author: longrun <l@local>
+Date:   2026-10-05 14:24:02 +0800
+
+    longrun exp3 i3
+
+ LONGRUN-NOTES.md    | 5 +++++
+ LONGRUN-SCORES.json | 2 +-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+commit 7c44ade860b9151f0c411761e5b439e6482be303
+Author: longrun <l@local>
+Date:   2026-10-05 14:12:47 +0800
+
+    longrun exp3 i2
+
+ LONGRUN-NOTES.md    |  5 +++++
+ LONGRUN-SCORES.json | 10 +++++-----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+commit c56bffae1a694d734828e5b321b43c4ba675b5e5
+Author: longrun <l@local>
+Date:   2026-10-05 14:01:29 +0800
+
+    longrun exp3 i1
+
+ LONGRUN-NOTES.md                                           |  8 +++++++-
+ LONGRUN-SCORES.json                                        | 14 +++++++-------
+ .../skill/.claude/skills/trace-notification/CHANGELOG.md   |  3 +++
+ skill-lab/skill/.claude/skills/trace-notification/SKILL.md |  4 ++--
+ skill-lab/skill/.claude/skills/trace-notification/VERSION  |  2 +-
+ 5 files changed, 20 insertions(+), 11 deletions(-)
+
+commit 3b5b4f88367960d2b1f6a8d1d6f49fe54c78147b
+Author: longrun <l@local>
+Date:   2026-10-05 12:43:05 +0800
+
+    longrun exp3 i3
+
+ LONGRUN-NOTES.md                                             |  6 ++++++
+ LONGRUN-SCORES.json                                          | 12 ++++++------
+ .../skill/.claude/skills/trace-notification/CHANGELOG.md     |  3 +++
+ skill-lab/skill/.claude/skills/trace-notification/SKILL.md   |  4 ++--
+ skill-lab/skill/.claude/skills/trace-notification/VERSION    |  2 +-
+ 5 files changed, 18 insertions(+), 9 deletions(-)
+
+commit 177d6391c3b35881f3074a09939c933f779e0981
+Author: longrun <l@local>
+Date:   2026-10-05 12:31:57 +0800
+
+    longrun exp3 i2
+
+ LONGRUN-NOTES.md                                   |  6 +++
+ LONGRUN-SCORES.json                                | 43 ++++++++++++++++++++++
+ .../.claude/skills/trace-notification/CHANGELOG.md |  4 +-
+ .../.claude/skills/trace-notification/SKILL.md     |  9 +----
+ .../.claude/skills/trace-notification/VERSION      |  2 +-
+ 5 files changed, 53 insertions(+), 11 deletions(-)
+
+commit cdbdaa9751dc42595b21cb4f4210c93006d70218
+Author: longrun <l@local>
+Date:   2026-10-05 12:20:02 +0800
+
+    longrun exp3 i1
+
+ LONGRUN-NOTES.md                                               | 7 +++++++
+ skill-lab/skill/.claude/skills/trace-notification/CHANGELOG.md | 3 +++
+ skill-lab/skill/.claude/skills/trace-notification/SKILL.md     | 9 ++++++++-
+ skill-lab/skill/.claude/skills/trace-notification/VERSION      | 2 +-
+ 4 files changed, 19 insertions(+), 2 deletions(-)
+
+commit da299e26aa2d31b78f65d96e463900e746701d46
+Author: marcus <m@local>
+Date:   2026-10-05 12:17:50 +0800
+
+    exp3: 考題、正解、eval.py 移出 repo（防看題），成績單改匿名編號
+
+ acceptance/LOCK.json                               |  70 +-----
+ skill-lab/README.md                                |   6 +
+ skill-lab/build_cases.py                           |  77 ------
+ skill-lab/cases/complete/data/logs.jsonl           |   4 -
+ skill-lab/cases/complete/data/receipts.json        |  16 --
+ skill-lab/cases/complete/design/design-review.md   |   9 -
+ skill-lab/cases/complete/src/Cancellation.cs       |  26 --
+ skill-lab/cases/complete/src/Program.cs            | 269 ---------------------
+ skill-lab/cases/complete/task.json                 |   5 -
+ skill-lab/cases/decoy-receipt/CASE.md              |   1 -
+ skill-lab/cases/decoy-receipt/data/logs.jsonl      |   4 -
+ skill-lab/cases/decoy-receipt/data/receipts.json   |  16 --
+ .../cases/decoy-receipt/design/design-review.md    |   9 -
+ skill-lab/cases/decoy-receipt/src/Cancellation.cs  |  26 --
+ skill-lab/cases/decoy-receipt/src/Program.cs       | 269 ---------------------
+ skill-lab/cases/decoy-receipt/task.json            |   5 -
+ skill-lab/cases/h1-receipt-500/CASE.md             |   3 -
+ skill-lab/cases/h1-receipt-500/data/logs.jsonl     |   4 -
+ skill-lab/cases/h1-receipt-500/data/receipts.json  |  16 --
+ .../cases/h1-receipt-500/design/design-review.md   |   9 -
+ skill-lab/cases/h1-receipt-500/src/Cancellation.cs |  26 --
+ skill-lab/cases/h1-receipt-500/src/Program.cs      | 269 ---------------------
+ skill-lab/cases/h1-receipt-500/task.json           |   5 -
+ skill-lab/cases/h2-dead-but-received/CASE.md       |   3 -
+ .../cases/h2-dead-but-received/data/logs.jsonl     |   8 -
+ .../cases/h2-dead-but-received/data/receipts.json  |  16 --
+ .../h2-dead-but-received/design/design-review.md   |   9 -
+ .../cases/h2-dead-but-received/src/Cancellation.cs |  26 --
+ .../cases/h2-dead-but-received/src/Program.cs      | 269 ---------------------
+ skill-lab/cases/h2-dead-but-received/task.json     |   5 -
+ skill-lab/cases/h3-receipt-before-cancel/CASE.md   |   3 -
+ .../cases/h3-receipt-before-cancel/data/logs.jsonl |   4 -
+ .../h3-receipt-before-cancel/data/receipts.json    |  16 --
+ .../design/design-review.md                        |   9 -
+ .../h3-receipt-before-cancel/src/Cancellation.cs   |  26 --
+ .../cases/h3-receipt-before-cancel/src/Program.cs  | 269 ---------------------
+ skill-lab/cases/h3-receipt-before-cancel/task.json |   5 -
+ skill-lab/cases/h4-duplicate-receipts/CASE.md      |   3 -
+ .../cases/h4-duplicate-receipts/data/logs.jsonl    |   4 -
+ .../cases/h4-duplicate-receipts/data/receipts.json |  30 ---
+ .../h4-duplicate-receipts/design/design-review.md  |   9 -
+ .../h4-duplicate-receipts/src/Cancellation.cs      |  26 --
+ .../cases/h4-duplicate-receipts/src/Program.cs     | 269 ---------------------
+ skill-lab/cases/h4-duplicate-receipts/task.json    |   5 -
+ skill-lab/cases/h5-no-sender-log/CASE.md           |   3 -
+ skill-lab/cases/h5-no-sender-log/data/logs.jsonl   |   3 -
+ .../cases/h5-no-sender-log/data/receipts.json      |  16 --
+ .../cases/h5-no-sender-log/design/design-review.md |   9 -
+ .../cases/h5-no-sender-log/src/Cancellation.cs     |  26 --
+ skill-lab/cases/h5-no-sender-log/src/Program.cs    | 269 ---------------------
+ skill-lab/cases/h5-no-sender-log/task.json         |   5 -
+ skill-lab/cases/h6-payload-mismatch/CASE.md        |   3 -
+ .../cases/h6-payload-mismatch/data/logs.jsonl      |   4 -
+ .../cases/h6-payload-mismatch/data/receipts.json   |  16 --
+ .../h6-payload-mismatch/design/design-review.md    |   9 -
+ .../cases/h6-payload-mismatch/src/Cancellation.cs  |  26 --
+ skill-lab/cases/h6-payload-mismatch/src/Program.cs | 269 ---------------------
+ skill-lab/cases/h6-payload-mismatch/task.json      |   5 -
+ skill-lab/cases/missing-receipts/data/logs.jsonl   |   4 -
+ .../cases/missing-receipts/design/design-review.md |   9 -
+ .../cases/missing-receipts/src/Cancellation.cs     |  26 --
+ skill-lab/cases/missing-receipts/src/Program.cs    | 269 ---------------------
+ skill-lab/cases/missing-receipts/task.json         |   5 -
+ skill-lab/eval.py                                  |  97 --------
+ skill-lab/eval/gate/check_result.py                |  47 ----
+ skill-lab/eval/gate/collect.py                     |  60 -----
+ skill-lab/eval/gate/gate.py                        |  57 -----
+ skill-lab/expected.json                            |  47 ----
+ skill-lab/scores/day01.json                        |  20 +-
+ 69 files changed, 18 insertions(+), 3444 deletions(-)
+
+commit bd0cff6c7cbef5df18a995940ea96578b659b029
+Author: ops-grader <g@local>
+Date:   2026-10-05 06:49:01 +0800
+
+    skill-lab: day01 成績單（沿用 10-04 基準 15/18）
+
+ skill-lab/scores/day01.json | 57 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+
+commit 4a54a31e8abe6e4f4f422d48c3847470e6e81e91
+Author: marcus <m@local>
+Date:   2026-10-05 06:02:07 +0800
+
+    acceptance: 埠號可由環境變數覆寫（長跑組與迴圈組並行），重新鎖定
+
+ acceptance/LOCK.json         | 4 ++--
+ acceptance/run_acceptance.py | 4 +++-
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+commit 8f28cad0ded43e7999765a3fa21039e7149d3875
+Author: ops-grader <g@local>
+Date:   2026-10-05 06:01:27 +0800
+
+    ops: day01 指標與成績單（外層評分）
+
+ ops/data/day01/metrics.json |  1 +
+ ops/scores/day01.json       | 48 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 49 insertions(+)
+
+commit c3b1d5ee0a287486842a890e7d2d869eaed173d5
+Author: marcus <m@local>
+Date:   2026-10-05 06:01:18 +0800
+
+    exp2: 出題與評分移出 repo（防洩題），改由外層寫入 ops/data 與 ops/scores
+
+ acceptance/LOCK.json |   6 +--
+ ops/README.md        |  14 +++----
+ ops/sim/evaluate.py  | 101 ---------------------------------------------------
+ ops/sim/simulate.py  |  85 -------------------------------------------
+ 4 files changed, 9 insertions(+), 197 deletions(-)
+
+commit fa35c71f06ec2f9a12365eff3f1f024ef5387614
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:41:40 +0800
+
+    lock: add exp3 eval, cases, expected, gate hashes
+
+ acceptance/LOCK.json | 68 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 67 insertions(+), 1 deletion(-)
+
+commit cd62e573dc0ef4ed6ed176522ca1f52df3639bf5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:41:31 +0800
+
+    exp3: skill-lab with 9 cases (6 harder), locked eval & gate; baseline v2.1.2 semantic 15/18 (h3 0/2, h6 1/2)
+
+ .gitignore                                         |   1 +
+ skill-lab/build_cases.py                           |  77 ++++++
+ skill-lab/cases/complete/data/logs.jsonl           |   4 +
+ skill-lab/cases/complete/data/receipts.json        |  16 ++
+ skill-lab/cases/complete/design/design-review.md   |   9 +
+ skill-lab/cases/complete/src/Cancellation.cs       |  26 ++
+ skill-lab/cases/complete/src/Program.cs            | 269 +++++++++++++++++++++
+ skill-lab/cases/complete/task.json                 |   5 +
+ skill-lab/cases/decoy-receipt/CASE.md              |   1 +
+ skill-lab/cases/decoy-receipt/data/logs.jsonl      |   4 +
+ skill-lab/cases/decoy-receipt/data/receipts.json   |  16 ++
+ .../cases/decoy-receipt/design/design-review.md    |   9 +
+ skill-lab/cases/decoy-receipt/src/Cancellation.cs  |  26 ++
+ skill-lab/cases/decoy-receipt/src/Program.cs       | 269 +++++++++++++++++++++
+ skill-lab/cases/decoy-receipt/task.json            |   5 +
+ skill-lab/cases/h1-receipt-500/CASE.md             |   3 +
+ skill-lab/cases/h1-receipt-500/data/logs.jsonl     |   4 +
+ skill-lab/cases/h1-receipt-500/data/receipts.json  |  16 ++
+ .../cases/h1-receipt-500/design/design-review.md   |   9 +
+ skill-lab/cases/h1-receipt-500/src/Cancellation.cs |  26 ++
+ skill-lab/cases/h1-receipt-500/src/Program.cs      | 269 +++++++++++++++++++++
+ skill-lab/cases/h1-receipt-500/task.json           |   5 +
+ skill-lab/cases/h2-dead-but-received/CASE.md       |   3 +
+ .../cases/h2-dead-but-received/data/logs.jsonl     |   8 +
+ .../cases/h2-dead-but-received/data/receipts.json  |  16 ++
+ .../h2-dead-but-received/design/design-review.md   |   9 +
+ .../cases/h2-dead-but-received/src/Cancellation.cs |  26 ++
+ .../cases/h2-dead-but-received/src/Program.cs      | 269 +++++++++++++++++++++
+ skill-lab/cases/h2-dead-but-received/task.json     |   5 +
+ skill-lab/cases/h3-receipt-before-cancel/CASE.md   |   3 +
+ .../cases/h3-receipt-before-cancel/data/logs.jsonl |   4 +
+ .../h3-receipt-before-cancel/data/receipts.json    |  16 ++
+ .../design/design-review.md                        |   9 +
+ .../h3-receipt-before-cancel/src/Cancellation.cs   |  26 ++
+ .../cases/h3-receipt-before-cancel/src/Program.cs  | 269 +++++++++++++++++++++
+ skill-lab/cases/h3-receipt-before-cancel/task.json |   5 +
+ skill-lab/cases/h4-duplicate-receipts/CASE.md      |   3 +
+ .../cases/h4-duplicate-receipts/data/logs.jsonl    |   4 +
+ .../cases/h4-duplicate-receipts/data/receipts.json |  30 +++
+ .../h4-duplicate-receipts/design/design-review.md  |   9 +
+ .../h4-duplicate-receipts/src/Cancellation.cs      |  26 ++
+ .../cases/h4-duplicate-receipts/src/Program.cs     | 269 +++++++++++++++++++++
+ skill-lab/cases/h4-duplicate-receipts/task.json    |   5 +
+ skill-lab/cases/h5-no-sender-log/CASE.md           |   3 +
+ skill-lab/cases/h5-no-sender-log/data/logs.jsonl   |   3 +
+ .../cases/h5-no-sender-log/data/receipts.json      |  16 ++
+ .../cases/h5-no-sender-log/design/design-review.md |   9 +
+ .../cases/h5-no-sender-log/src/Cancellation.cs     |  26 ++
+ skill-lab/cases/h5-no-sender-log/src/Program.cs    | 269 +++++++++++++++++++++
+ skill-lab/cases/h5-no-sender-log/task.json         |   5 +
+ skill-lab/cases/h6-payload-mismatch/CASE.md        |   3 +
+ .../cases/h6-payload-mismatch/data/logs.jsonl      |   4 +
+ .../cases/h6-payload-mismatch/data/receipts.json   |  16 ++
+ .../h6-payload-mismatch/design/design-review.md    |   9 +
+ .../cases/h6-payload-mismatch/src/Cancellation.cs  |  26 ++
+ skill-lab/cases/h6-payload-mismatch/src/Program.cs | 269 +++++++++++++++++++++
+ skill-lab/cases/h6-payload-mismatch/task.json      |   5 +
+ skill-lab/cases/missing-receipts/data/logs.jsonl   |   4 +
+ .../cases/missing-receipts/design/design-review.md |   9 +
+ .../cases/missing-receipts/src/Cancellation.cs     |  26 ++
+ skill-lab/cases/missing-receipts/src/Program.cs    | 269 +++++++++++++++++++++
+ skill-lab/cases/missing-receipts/task.json         |   5 +
+ skill-lab/eval.py                                  |  97 ++++++++
+ skill-lab/eval/gate/check_result.py                |  47 ++++
+ skill-lab/eval/gate/collect.py                     |  60 +++++
+ skill-lab/eval/gate/gate.py                        |  57 +++++
+ skill-lab/expected.json                            |  47 ++++
+ .../.claude/skills/trace-notification/CHANGELOG.md |  24 ++
+ .../.claude/skills/trace-notification/SKILL.md     |  33 +++
+ .../.claude/skills/trace-notification/VERSION      |   1 +
+ .../trace-notification/scripts/check_result.py     |  47 ++++
+ .../skills/trace-notification/scripts/collect.py   |  60 +++++
+ .../skills/trace-notification/scripts/gate.py      |  57 +++++
+ .../skills/trace-notification/scripts/selftest.py  |  52 ++++
+ 74 files changed, 3641 insertions(+)
+
+commit d2c8daeb00e4219e39a66fcd131936ba3baf3b29
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 16:15:25 +0800
+
+    exp2: alert tuning simulator, evaluator, baseline rules (≈400 page noise/day, silent_drop missed)
+
+ .gitignore           |   1 +
+ acceptance/LOCK.json |   4 +-
+ ops/README.md        |  10 +++++
+ ops/alerts/rules.yml |  38 +++++++++++++++++++
+ ops/sim/evaluate.py  | 101 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ ops/sim/simulate.py  |  85 +++++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 238 insertions(+), 1 deletion(-)
+
+commit eed7365f936b9a7f7d5b7222f3079c2ae7f42ca9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 14:38:38 +0800
+
+    acceptance: redelivery & compensation spec + tests (1/12 green baseline)
+
+ acceptance/LOCK.json         |   7 ++
+ acceptance/SPEC.md           |  29 +++++
+ acceptance/run_acceptance.py | 262 +++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 298 insertions(+)
+
+commit d68caba223dcb1a4ae29c4acaa6b1e0dbb8b08b9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 14:36:21 +0800
+
+    baseline: order-cancel service for loop-lab (Day 29 experiments)
+
+ .gitignore                           |   4 +
+ CHANGELOG.md                         |  23 +++
+ CLAUDE.md                            |  17 ++
+ README.md                            |  80 +++++++++
+ VERSION                              |   1 +
+ specs/decisions-v1.md                |   9 +
+ specs/decisions-v2.1.md              |  14 ++
+ specs/notification-contract-v2.1.md  |  33 ++++
+ specs/rules-v1.md                    |  14 ++
+ specs/rules-v2.md                    |  29 ++++
+ src/Api/Api.csproj                   |   5 +
+ src/Api/Program.cs                   | 309 +++++++++++++++++++++++++++++++++++
+ src/Domain/Cancellation.cs           |  30 ++++
+ src/Domain/Domain.csproj             |   3 +
+ src/FakeSink/FakeSink.csproj         |   3 +
+ src/FakeSink/Program.cs              |  37 +++++
+ tests/DomainTests/DomainTests.csproj |   4 +
+ tests/DomainTests/Program.cs         |  19 +++
+ tools/check-load.py                  |  78 +++++++++
+ tools/check.py                       |  98 +++++++++++
+ tools/dev-session.ps1                |  88 ++++++++++
+ tools/load.py                        |  66 ++++++++
+ tools/run-load.ps1                   | 109 ++++++++++++
+ tools/run.ps1                        |  98 +++++++++++
+ 24 files changed, 1171 insertions(+)

@@ -1,0 +1,13 @@
+state: review
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 1
+executor: claude-code
+risk: 3
+category: 功能實作
+framework: null
+backend: local
+origin: l-01-notify-retry
+finding_fingerprint: 6f64a7636e96e2952b8fd409
+finding_signature: "縮短 notificationworker 對接收端的連線逾時,讓死信在驗收等待窗(8 秒)內寫入清單 | 實跑 `python order-service/acceptance/run_acceptance.py`:at-01 fail「死信清單沒有這筆通知」;at-03/04/05/07/08/11 fail「沒進死信」;合計 2/12 pass。單跑 at-01 結果相同。 | order-service/acceptance/run_acceptance.py:115-116:at01 只呼叫 `wait_until(lambda: e.dl_for(oid), 8)`,等待上限 8 秒,且該情境沒有啟動 sink。 | order-service/acceptance/.run/at01/logs.jsonl:cancel 於 10:42:44.41,`notify_attempt_failed` attempt 0/1/2 分別在 10:42:46.50、10:42:48.76、10:42:51.22。每次失敗間隔約 2.2~2.5 秒,其中 backoff 只佔 0.2~0.8 秒。第 4 次嘗試與 dl.add 要到約 10:42:55 之後才發生,已超過 8 秒窗。 | order-service/src/api/program.cs:118、132-136、281、330:/admin/dead-letters、deadletterstore.add、worker 與 sendonce 兩處 dl.add 都已存在。程式路徑正確,只是太晚執行。 | order-service/src/api/program.cs:258 與 267:worker 用的 `_http = new()` 和 sendonce 用的 `sharedhttp = new()` 都沒設 connecttimeout/timeout,被拒連線的等待時間完全由作業系統決定。 | order-service/acceptance/spec.md 背景段:現況是「重試 3 次(200/400/800 ms)」,沒有要求更改 backoff。因此該調的是連線逾時,不是 backoff。"

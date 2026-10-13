@@ -1,0 +1,13 @@
+state: review
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 3
+executor: claude-code
+risk: 3
+category: 功能實作
+framework: null
+backend: local
+origin: l-01-notify-retry
+finding_fingerprint: 79b2b79b115ee765daab1fb3
+finding_signature: "通知被放棄且訂單已付款時,get /orders/{id} 回 needs_manual_followup: true(補償旗標) | order-service/acceptance/spec.md at-10:已付款(會退款)的訂單,通知被放棄時,get /orders/{id} 回 needs_manual_followup: true | order-service/src/api/program.cs:44:建單時記錄 paid;93 行 notification 帶 refundrequested(取消時由 result.refundrequested 決定),可判斷該通知是否屬於退款 | order-service/src/api/program.cs 全檔 grep needs_manual 無命中 | issues/p-l01-001-dead-letter-list/spec.md 證據:run_acceptance.py 目前輸出 at-10 fail"

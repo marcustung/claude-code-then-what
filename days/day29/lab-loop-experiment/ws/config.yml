@@ -1,0 +1,14 @@
+# Day 29 實驗 workspace（2026-10-04）
+repos:
+  order-service: C:/<AUTHOR>/loop-lab/order-service
+executor:
+  # 只對這個 workspace 開放；target 只有實驗 repo 一個，產出只進 ld/ 分支，合併由人
+  permission_mode: bypassPermissions
+  # 各組同模型（協議 §3、D-226）：長跑組也是 sonnet；未指定時會繼承 session 預設（Opus），一輪就超過 US$1
+  model: sonnet
+  concurrency: 1
+  timeout_ms: 1800000
+limits:
+  # 2026-10-04 決定 3a：單輪硬上限 US$1（executor 會帶 --max-budget-usd）；迴圈＋對照組第一期合計 ≤ US$50
+  max_cost_usd: 1
+  workspace_total_cost_usd: 50

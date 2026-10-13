@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-06T20:02:33.012Z",
+  "endedAt": "2026-10-06T20:03:25.746Z",
+  "executor": "claude-code",
+  "model": "sonnet",
+  "branch": "ld/p-l02-004-heap-page-for10",
+  "result": "ok",
+  "tokens": {
+    "input": 14,
+    "output": 2964,
+    "cacheRead": 380550,
+    "cacheCreation": 32111
+  },
+  "numTurns": 12,
+  "cost": 0.2342,
+  "exitCode": 0,
+  "sessionId": "464ebf8c-4e02-46f3-a6ad-216e374c21ea",
+  "denials": null,
+  "traceEvents": 25,
+  "traceMaxTurn": 12,
+  "traceTurnMapping": "turn＝以 assistant message id 分組後，每組貢獻 max(1, 該組 tool_use 數) 個 turn（同組內每個 tool_use 各自一個 turn，同組的說明文字併入不額外算）；純文字回覆單獨成組時算 1 個 turn。此公式從實測（含一次 22-tool-call 真實長跑）反推，與該次 numTurns 逐一核對過。step 固定為 1，事件流未暴露更粗的分層（詳見 lib/trace.js 檔頭）。"
+}

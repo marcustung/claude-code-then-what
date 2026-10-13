@@ -1,0 +1,36 @@
+state: ready
+blocked_by: []
+target_repo: order-service
+schedule: "10 3 * * *"
+priority: 2
+executor: claude-code
+framework:
+  evolution_goals: []
+  ssot: order-service/ops
+  ssot_kind: repo-native
+  stability_goals: []
+backend: local
+model: null
+timezone: Asia/Taipei
+overlap_policy: skip
+missed_run_policy: latest
+updated_at: "2026-10-11T02:48:58.532Z"
+queue_run_id: null
+queue_queued_at: null
+queue_mode: null
+queue_dry_run: false
+queue_scheduled_for: null
+pending_schedule_for: null
+lease_fencing_token: ba22e6e6-1509-4d78-9f36-91a21bba8c3c
+budget_reserved_usd: null
+last_scheduled_for: "2026-10-10T19:10:00.000Z"
+run_pid: null
+run_id: schedule-b38667e29e73b737b5ff
+run_started_at: "2026-10-11T02:48:22.673Z"
+run_branch: ld/r-02-alert-report
+run_ended_at: "2026-10-11T02:48:57.472Z"
+run_result: failed
+stop_reason: null
+stop_detail: null
+dead_letter_at: null
+dead_letter_reason: null

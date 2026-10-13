@@ -1,0 +1,2822 @@
+commit 9c6109e0bd77dddaf118d535dc7860e52fbc9633
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 03:02:17 +0800
+
+    LoopDeck: transition r-01-acceptance-report — running→ready
+
+ issues/r-01-acceptance-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 93a8a7b962bd307484d84dbb9263b09596f18c71
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 03:02:16 +0800
+
+    LoopDeck: run-trace r-01-acceptance-report — 2026-10-11-run2
+
+ .../runs/2026-10-11-run2.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-11-run2.trace.jsonl               | 19 +++++++++++++++++++
+ 2 files changed, 41 insertions(+)
+
+commit 631845e357cb40bfdbd8d12ba6361bb71e00423d
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 03:02:16 +0800
+
+    LoopDeck: run r-01-acceptance-report — 2026-10-11-run2.md
+
+ .../r-01-acceptance-report/runs/2026-10-11-run2.md | 68 ++++++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+
+commit 46c1735754f2a524165fca863151f8de8a460066
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 03:00:30 +0800
+
+    LoopDeck: transition r-01-acceptance-report — ready→running
+
+ issues/r-01-acceptance-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 2e35da166c5ed6ae8d26a246898005049c281a02
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 03:00:28 +0800
+
+    LoopDeck: schedule-enqueue r-01-acceptance-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-01-acceptance-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit b286d0109511af78cb9b9ca007eefe0c8b2da6fd
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:56:33 +0800
+
+    LoopDeck: transition l-03-skill-opt — running→ready
+
+ issues/l-03-skill-opt/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit a3f26e4dce6f8b66a96c69c03f59f9e416e9c137
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:56:32 +0800
+
+    LoopDeck: run l-03-skill-opt — 2026-10-11-run2.md
+
+ issues/l-03-skill-opt/runs/2026-10-11-run2.md | 28 +++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 9ab0369a44211fd8b82bf6216fa0ba2dec2acbb0
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:56:03 +0800
+
+    LoopDeck: transition l-03-skill-opt — ready→running
+
+ issues/l-03-skill-opt/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit e7bfb64c29cb1c5f346947adedae60bbb9fb338a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:56:02 +0800
+
+    LoopDeck: schedule-enqueue l-03-skill-opt — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-03-skill-opt/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 02c2b351a87e6d7e55ca21a4e937a123148a2cbf
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:32:34 +0800
+
+    LoopDeck: transition l-02-alert-tuning — running→ready
+
+ issues/l-02-alert-tuning/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 76c3c8b18f285e731910aa36c7d779cc72f76ab4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:32:34 +0800
+
+    LoopDeck: run l-02-alert-tuning — 2026-10-11-run2.md
+
+ issues/l-02-alert-tuning/runs/2026-10-11-run2.md | 28 ++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 3112ab3eb1daafeeaa28f8f1d76c01078bbda17c
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:20:11 +0800
+
+    LoopDeck: transition l-02-alert-tuning — ready→running
+
+ issues/l-02-alert-tuning/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit cfe09e3f83c40b53759cb62d92e74a0ba67e2e73
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:20:11 +0800
+
+    LoopDeck: schedule-enqueue l-02-alert-tuning — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-02-alert-tuning/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 99bb5ef01fefa9e77b227aeabed289aedbf3fa43
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:02:27 +0800
+
+    LoopDeck: transition l-01-notify-retry — running→ready
+
+ issues/l-01-notify-retry/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit e1f7c943a44ed6063d831314a6a9f41253a359de
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:02:26 +0800
+
+    LoopDeck: run l-01-notify-retry — 2026-10-11-run2.md
+
+ issues/l-01-notify-retry/runs/2026-10-11-run2.md | 28 ++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit eaa1d0685b46c41744486109fd6eaeae2de076e1
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:00:21 +0800
+
+    LoopDeck: transition l-01-notify-retry — ready→running
+
+ issues/l-01-notify-retry/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit c67f1466db5e6d48789fe98027bb5bd9338b9ea3
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-12 02:00:15 +0800
+
+    LoopDeck: schedule-enqueue l-01-notify-retry — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-01-notify-retry/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 9744f373fe1d3216d48b7b99021383cf98578cb4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:55 +0800
+
+    LoopDeck: transition r-04-loop-health — running→ready
+
+ issues/r-04-loop-health/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit bc58a05b21ef2071a31e1cea60b5482fadcd6dc7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:54 +0800
+
+    LoopDeck: run-trace r-04-loop-health — 2026-10-11-run1
+
+ .../r-04-loop-health/runs/2026-10-11-run1.run.json | 22 ++++++++++++++++++++++
+ .../runs/2026-10-11-run1.trace.jsonl               | 19 +++++++++++++++++++
+ 2 files changed, 41 insertions(+)
+
+commit b36fc15a3bdbe6c4d16c2788cf7cd23072170612
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:54 +0800
+
+    LoopDeck: run r-04-loop-health — 2026-10-11-run1.md
+
+ issues/r-04-loop-health/runs/2026-10-11-run1.md | 58 +++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit e2752967056b777f89bd0a0cb41a731ef4674af8
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:24 +0800
+
+    LoopDeck: transition r-04-loop-health — ready→running
+
+ issues/r-04-loop-health/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit a95e7f1c4249a27575d3763cd7521923131f0729
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:22 +0800
+
+    LoopDeck: schedule-enqueue r-04-loop-health — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-04-loop-health/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit c083fde63f1b15168410172326be9871f607da41
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:05 +0800
+
+    LoopDeck: transition r-03-eval-report — running→ready
+
+ issues/r-03-eval-report/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit d18b4627ab887ff2033bca876ea309f727dc550c
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:05 +0800
+
+    LoopDeck: run-trace r-03-eval-report — 2026-10-11-run1
+
+ .../r-03-eval-report/runs/2026-10-11-run1.run.json | 22 ++++++++++++++++++++++
+ .../runs/2026-10-11-run1.trace.jsonl               | 17 +++++++++++++++++
+ 2 files changed, 39 insertions(+)
+
+commit 4401bea67ec0986b8cd480b6d4c599b9214fef59
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:50:04 +0800
+
+    LoopDeck: run r-03-eval-report — 2026-10-11-run1.md
+
+ issues/r-03-eval-report/runs/2026-10-11-run1.md | 64 +++++++++++++++++++++++++
+ 1 file changed, 64 insertions(+)
+
+commit 93fd4930ba190904cc22ab69715f58759a293011
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:49:24 +0800
+
+    LoopDeck: transition r-03-eval-report — ready→running
+
+ issues/r-03-eval-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 7fc7bc37d6c7a0c11e0c9e1b783c0f187bfb82b2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:49:23 +0800
+
+    LoopDeck: schedule-enqueue r-03-eval-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-03-eval-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit bc024a6b144a0780039fc076b9bd26e94eda69bf
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:48:58 +0800
+
+    LoopDeck: transition r-02-alert-report — running→ready
+
+ issues/r-02-alert-report/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit ae0612378564169b728fa51dbad21efd21154413
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:48:58 +0800
+
+    LoopDeck: run-trace r-02-alert-report — 2026-10-11-run1
+
+ .../runs/2026-10-11-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-11-run1.trace.jsonl               | 13 +++++++++++++
+ 2 files changed, 35 insertions(+)
+
+commit 34c65728cc218bbc75bb1992a460c6860119fe70
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:48:57 +0800
+
+    LoopDeck: run r-02-alert-report — 2026-10-11-run1.md
+
+ issues/r-02-alert-report/runs/2026-10-11-run1.md | 68 ++++++++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+
+commit 869ee0b734b034aa895fc5cc00b09aa1edbe8e8e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:48:24 +0800
+
+    LoopDeck: transition r-02-alert-report — ready→running
+
+ issues/r-02-alert-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit db62c0c6c97d551eddc869f709fc1f38bc7f90ae
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:48:22 +0800
+
+    LoopDeck: schedule-enqueue r-02-alert-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-02-alert-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 25d61c9e4b0ec6381a1a9af088c38f491bd8f132
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:48:00 +0800
+
+    LoopDeck: transition r-01-acceptance-report — running→ready
+
+ issues/r-01-acceptance-report/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 9588ec6f5a4cf727c521d7abe27fe4b6e76503fc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:48:00 +0800
+
+    LoopDeck: run-trace r-01-acceptance-report — 2026-10-11-run1
+
+ .../runs/2026-10-11-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-11-run1.trace.jsonl               | 13 +++++++++++++
+ 2 files changed, 35 insertions(+)
+
+commit 69489eb6f239f5f5447e289238c2ed004b0720d3
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:47:59 +0800
+
+    LoopDeck: run r-01-acceptance-report — 2026-10-11-run1.md
+
+ .../r-01-acceptance-report/runs/2026-10-11-run1.md | 69 ++++++++++++++++++++++
+ 1 file changed, 69 insertions(+)
+
+commit b83331e3bc8514b8ee8bc83a66360ebff4e35cfd
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:46:23 +0800
+
+    LoopDeck: transition r-01-acceptance-report — ready→running
+
+ issues/r-01-acceptance-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit d862d8a23cb12a483bcbe425b9c3e596e9f9e0b7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:46:22 +0800
+
+    LoopDeck: schedule-enqueue r-01-acceptance-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-01-acceptance-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit e4d19b575e200ccf14012ac57fcc0794f89025d0
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:46:10 +0800
+
+    LoopDeck: transition l-04-loop-self — running→ready
+
+ issues/l-04-loop-self/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 9f92d8254c518c16d4d8ee3bbbe7d5c7cdb966ef
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:46:10 +0800
+
+    LoopDeck: run l-04-loop-self — 2026-10-11-run1.md
+
+ issues/l-04-loop-self/runs/2026-10-11-run1.md | 28 +++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 9c22926ed7a2ea61904ad52bad2bcb01d198b85e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:45:53 +0800
+
+    LoopDeck: transition l-04-loop-self — ready→running
+
+ issues/l-04-loop-self/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 94bef5e4e1d59cef7ec5003162b8c9ecb5713539
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:45:52 +0800
+
+    LoopDeck: schedule-enqueue l-04-loop-self — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-04-loop-self/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 22ec2866c7de588a4c5141fcf52ef0a8dd5f0339
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:45:23 +0800
+
+    LoopDeck: transition l-03-skill-opt — running→ready
+
+ issues/l-03-skill-opt/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit fe0029630daa2ba756cef83445656584f59f4e11
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:45:22 +0800
+
+    LoopDeck: run l-03-skill-opt — 2026-10-11-run1.md
+
+ issues/l-03-skill-opt/runs/2026-10-11-run1.md | 28 +++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 1052c31fed5fca612c089c8bce0de172a66b6a07
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:44:52 +0800
+
+    LoopDeck: transition l-03-skill-opt — ready→running
+
+ issues/l-03-skill-opt/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit bc373535b0871fdd921f6235edaf68dbdc842901
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:44:51 +0800
+
+    LoopDeck: schedule-enqueue l-03-skill-opt — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-03-skill-opt/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit f469f6ab81c44738b4c30810f35a3513f5594d47
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:44:35 +0800
+
+    LoopDeck: transition l-02-alert-tuning — running→ready
+
+ issues/l-02-alert-tuning/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 026efc50d3f3d606435cab0667b82f3faffa8438
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:44:35 +0800
+
+    LoopDeck: run l-02-alert-tuning — 2026-10-11-run1.md
+
+ issues/l-02-alert-tuning/runs/2026-10-11-run1.md | 28 ++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 6921d1195ffe211550c6c70fc9f82046b62eda1d
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:43:52 +0800
+
+    LoopDeck: transition l-02-alert-tuning — ready→running
+
+ issues/l-02-alert-tuning/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 4717a367a42c4ad53bd57781bcfc667e7ed2d51c
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:43:51 +0800
+
+    LoopDeck: schedule-enqueue l-02-alert-tuning — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-02-alert-tuning/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit cd6d09a88708067eceec4b2fbfb62ea3a8641a80
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:43:23 +0800
+
+    LoopDeck: transition l-01-notify-retry — running→ready
+
+ issues/l-01-notify-retry/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit ae93a7ade9ae1322a4ed0757e4ff2bacdd59f1b7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:43:23 +0800
+
+    LoopDeck: run l-01-notify-retry — 2026-10-11-run1.md
+
+ issues/l-01-notify-retry/runs/2026-10-11-run1.md | 33 ++++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
+
+commit 67ed120c83d240482db4494e5b678d904ae10ad2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:43:22 +0800
+
+    LoopDeck: create p-l01-007-sink-connect-timeout — state=review
+
+ issues/p-l01-007-sink-connect-timeout/spec.md    | 31 ++++++++++++++++++++++++
+ issues/p-l01-007-sink-connect-timeout/status.yml | 13 ++++++++++
+ 2 files changed, 44 insertions(+)
+
+commit 62efac84a2c0291b19c7d1099d3318c0240172a4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:40:48 +0800
+
+    LoopDeck: transition l-01-notify-retry — ready→running
+
+ issues/l-01-notify-retry/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 252c5572771b0fdd04815d57897869dfdfa73021
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-11 10:40:47 +0800
+
+    LoopDeck: schedule-enqueue l-01-notify-retry — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-01-notify-retry/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit c928df89bcb0bfe9a8d79246756c43bf8af03a5b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:21:23 +0800
+
+    LoopDeck: transition r-03-eval-report — running→ready
+
+ issues/r-03-eval-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit aa19cf5a8912c727fcb48fb872eb1a2a1ac4f7c6
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:21:23 +0800
+
+    LoopDeck: run-trace r-03-eval-report — 2026-10-07-run1
+
+ .../r-03-eval-report/runs/2026-10-07-run1.run.json | 22 ++++++++++++++++++++++
+ .../runs/2026-10-07-run1.trace.jsonl               | 17 +++++++++++++++++
+ 2 files changed, 39 insertions(+)
+
+commit 4d4fad43a7b58fb9836233f890d1679c8b8ee04b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:21:22 +0800
+
+    LoopDeck: run r-03-eval-report — 2026-10-07-run1.md
+
+ issues/r-03-eval-report/runs/2026-10-07-run1.md | 69 +++++++++++++++++++++++++
+ 1 file changed, 69 insertions(+)
+
+commit e79c77033ac83543d742931e6c9a0c1460d4e888
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:20:27 +0800
+
+    LoopDeck: transition r-03-eval-report — ready→running
+
+ issues/r-03-eval-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 5385f53facc90f92106d24fa4cd143ef00611e76
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:20:26 +0800
+
+    LoopDeck: schedule-enqueue r-03-eval-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-03-eval-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 7cdf2a8b81609af01770032ed9c0ac0a8154724c
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:11:02 +0800
+
+    LoopDeck: transition r-02-alert-report — running→ready
+
+ issues/r-02-alert-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit f385c3f7aadcdec2cfc6062dbab43b0832debe6e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:11:01 +0800
+
+    LoopDeck: run-trace r-02-alert-report — 2026-10-07-run1
+
+ .../runs/2026-10-07-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-07-run1.trace.jsonl               | 15 +++++++++++++++
+ 2 files changed, 37 insertions(+)
+
+commit 65c50a4c775c28139e12f6396ddbbaa19dcc5341
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:11:01 +0800
+
+    LoopDeck: run r-02-alert-report — 2026-10-07-run1.md
+
+ issues/r-02-alert-report/runs/2026-10-07-run1.md | 70 ++++++++++++++++++++++++
+ 1 file changed, 70 insertions(+)
+
+commit 77dfea92c2fd9b03f889d23e47ec5ee228de8db5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:10:26 +0800
+
+    LoopDeck: transition r-02-alert-report — ready→running
+
+ issues/r-02-alert-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit a3a8210195fd07a3dc847a0a7afd4510d34d5ac9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:10:25 +0800
+
+    LoopDeck: schedule-enqueue r-02-alert-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-02-alert-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 00423746aa12829fd7c4c57fb152b94e145073f1
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:02:13 +0800
+
+    LoopDeck: transition r-01-acceptance-report — running→ready
+
+ issues/r-01-acceptance-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 327cc4f098a085c127c41e153475f3b9bad7a266
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:02:13 +0800
+
+    LoopDeck: run-trace r-01-acceptance-report — 2026-10-07-run1
+
+ .../runs/2026-10-07-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-07-run1.trace.jsonl               | 21 +++++++++++++++++++++
+ 2 files changed, 43 insertions(+)
+
+commit c0769c846f636f959e562ba8c7dd26dbbbca4aa5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:02:12 +0800
+
+    LoopDeck: run r-01-acceptance-report — 2026-10-07-run1.md
+
+ .../r-01-acceptance-report/runs/2026-10-07-run1.md | 66 ++++++++++++++++++++++
+ 1 file changed, 66 insertions(+)
+
+commit 524ebe0233d71584d70bed982a173b2da970da67
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:00:26 +0800
+
+    LoopDeck: transition r-01-acceptance-report — ready→running
+
+ issues/r-01-acceptance-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 422612af870375e23a0f89b3f1dec3d4296cd7dc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 03:00:25 +0800
+
+    LoopDeck: schedule-enqueue r-01-acceptance-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-01-acceptance-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit b2e1c710e1a9c678f86988a3b936024bf483eada
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:41:33 +0800
+
+    LoopDeck: transition l-03-skill-opt — running→ready
+
+ issues/l-03-skill-opt/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 4fadafa1c8b440f4f17e72bcce7b84a09d9e26a6
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:41:32 +0800
+
+    LoopDeck: run l-03-skill-opt — 2026-10-07-run1.md
+
+ issues/l-03-skill-opt/runs/2026-10-07-run1.md | 33 +++++++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
+
+commit f33a09922d421b95e24a30fd3740138898818205
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:41:31 +0800
+
+    LoopDeck: create p-l03-003-contract-rules-gate — state=review
+
+ issues/p-l03-003-contract-rules-gate/spec.md    | 31 +++++++++++++++++++++++++
+ issues/p-l03-003-contract-rules-gate/status.yml | 13 +++++++++++
+ 2 files changed, 44 insertions(+)
+
+commit f3f23cf156f14936c192e176edaf2a890dc98ddc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:40:27 +0800
+
+    LoopDeck: transition l-03-skill-opt — ready→running
+
+ issues/l-03-skill-opt/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit beafd99de1d778d101c3871bc88236080c70072b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:40:26 +0800
+
+    LoopDeck: schedule-enqueue l-03-skill-opt — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-03-skill-opt/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 6f1b871a4dbab53dad07389a279508c415a06901
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:21:00 +0800
+
+    LoopDeck: transition l-02-alert-tuning — running→ready
+
+ issues/l-02-alert-tuning/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 70c2bcde690f38863004db27de20177b0c1de2b6
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:21:00 +0800
+
+    LoopDeck: run l-02-alert-tuning — 2026-10-07-run1.md
+
+ issues/l-02-alert-tuning/runs/2026-10-07-run1.md | 28 ++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 1a86e956286fa06ac65573e0c8caf69f4f463ace
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:20:24 +0800
+
+    LoopDeck: transition l-02-alert-tuning — ready→running
+
+ issues/l-02-alert-tuning/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 6ffd1feeaf3ec8af9bbd980b977036fc04fd3306
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:20:24 +0800
+
+    LoopDeck: schedule-enqueue l-02-alert-tuning — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-02-alert-tuning/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit b82c9fea523267df5ae67701d067bcf16ace1259
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:02:12 +0800
+
+    LoopDeck: transition l-01-notify-retry — running→ready
+
+ issues/l-01-notify-retry/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 697ff2cdc87b3cec16a245f3f6ddb997a3c3bd61
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:02:11 +0800
+
+    LoopDeck: run l-01-notify-retry — 2026-10-07-run1.md
+
+ issues/l-01-notify-retry/runs/2026-10-07-run1.md | 28 ++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 714e37b92d32ba5d7b1f0805401cf035fbae7480
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:00:26 +0800
+
+    LoopDeck: transition l-01-notify-retry — ready→running
+
+ issues/l-01-notify-retry/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 4f0f8c7d76790611dac6c31b5fbb4d9486f1ab5a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-08 02:00:25 +0800
+
+    LoopDeck: schedule-enqueue l-01-notify-retry — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-01-notify-retry/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 6eb65dad4e0827ce9974ed5f5f27f5c491f75c6d
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:49 +0800
+
+    LoopDeck: verdict p-l02-006-conflicts-page-for10 — 核准合併（merge commit c8368de）
+
+ issues/p-l02-006-conflicts-page-for10/runs/2026-10-06-run2.md | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit e9ef565c90ce5f096c5c74da6373abb2ffbdb107
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:48 +0800
+
+    LoopDeck: transition p-l02-006-conflicts-page-for10 — review→done（裁決：<AUTHOR> Tung）
+
+ issues/p-l02-006-conflicts-page-for10/status.yml | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 1cd672465aed6d2aa75e36f36e4d0137dd30d357
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:44 +0800
+
+    LoopDeck: verdict p-l02-004-heap-page-for10 — 核准合併（merge commit d2e20f7）
+
+ issues/p-l02-004-heap-page-for10/runs/2026-10-06-run1.md | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit b5f5b982b5cfd24e07562d11c944f5dd16a9df5c
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:44 +0800
+
+    LoopDeck: transition p-l02-004-heap-page-for10 — review→done（裁決：<AUTHOR> Tung）
+
+ issues/p-l02-004-heap-page-for10/status.yml | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit a8cd65a6864ecb171241178df54d23ae09966a3e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:41 +0800
+
+    LoopDeck: verdict p-l02-003-spike-for-duration — 核准合併（merge commit 8a21e28）
+
+ issues/p-l02-003-spike-for-duration/runs/2026-10-06-run1.md | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 20d62b01febc499ef0aac665d43c1cf5fce812cc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:40 +0800
+
+    LoopDeck: transition p-l02-003-spike-for-duration — review→done（裁決：<AUTHOR> Tung）
+
+ issues/p-l02-003-spike-for-duration/status.yml | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit ef39e51fdf88b12e2015a516c57943e7d7ebc7b9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:37 +0800
+
+    LoopDeck: verdict p-l02-001-silent-drop-rule — 核准合併（merge commit 6dbb389）
+
+ issues/p-l02-001-silent-drop-rule/runs/2026-10-06-run1.md | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit f9a8a5132c5e3ab0960fcb2df90ab8350392e4c3
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:37 +0800
+
+    LoopDeck: transition p-l02-001-silent-drop-rule — review→done（裁決：<AUTHOR> Tung）
+
+ issues/p-l02-001-silent-drop-rule/status.yml | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 899bc41da50dec986efe0704b339c1956fa26f4e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:34 +0800
+
+    LoopDeck: verdict p-l01-001-dead-letter-list — 核准合併（merge commit d20222d）
+
+ issues/p-l01-001-dead-letter-list/runs/2026-10-06-run1.md | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 0695907a350d9f03cf9ca84aacfe3598f44ccbfd
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 08:38:33 +0800
+
+    LoopDeck: transition p-l01-001-dead-letter-list — review→done（裁決：<AUTHOR> Tung）
+
+ issues/p-l01-001-dead-letter-list/status.yml | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+commit 4e2653c6de2cdda9bd9537e649b547a2cdb8aab4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:04:17 +0800
+
+    LoopDeck: transition p-l02-006-conflicts-page-for10 — running→review
+
+ issues/p-l02-006-conflicts-page-for10/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit 76da8174b44e55c2ca143a83d86960e2567e8da5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:04:16 +0800
+
+    LoopDeck: run-trace p-l02-006-conflicts-page-for10 — 2026-10-06-run2
+
+ .../runs/2026-10-06-run2.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-06-run2.trace.jsonl               | 19 +++++++++++++++++++
+ 2 files changed, 41 insertions(+)
+
+commit c66188ae085b7b71a2fec8da4b953d20c6657e7a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:04:15 +0800
+
+    LoopDeck: run p-l02-006-conflicts-page-for10 — 2026-10-06-run2.md
+
+ .../runs/2026-10-06-run2.md                        | 63 ++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
+
+commit bb012e28f9be29f766f93819878b137795fc4b6b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:03:30 +0800
+
+    LoopDeck: transition p-l02-006-conflicts-page-for10 — ready→running
+
+ issues/p-l02-006-conflicts-page-for10/status.yml | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+commit 996fed1847201b4f0b58da9b109dea59a73afef2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:03:28 +0800
+
+    LoopDeck: transition p-l02-004-heap-page-for10 — running→review
+
+ issues/p-l02-004-heap-page-for10/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit c4a627361e840c5abbb8a919290d48f64a6414a9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:03:27 +0800
+
+    LoopDeck: run-trace p-l02-004-heap-page-for10 — 2026-10-06-run1
+
+ .../runs/2026-10-06-run1.run.json                  | 22 +++++++++++++++++++
+ .../runs/2026-10-06-run1.trace.jsonl               | 25 ++++++++++++++++++++++
+ 2 files changed, 47 insertions(+)
+
+commit 22ac3286c8b0734424b205694ccf85f4f09ae7eb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:03:26 +0800
+
+    LoopDeck: run p-l02-004-heap-page-for10 — 2026-10-06-run1.md
+
+ .../runs/2026-10-06-run1.md                        | 53 ++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit c698e75e1e10e2f852cc5a61fbba9c011c6e8ee2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:02:34 +0800
+
+    LoopDeck: transition p-l02-004-heap-page-for10 — ready→running
+
+ issues/p-l02-004-heap-page-for10/status.yml | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+commit 4b8f87a1f200a43bff8c6b8a1041bf869044484a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:02:32 +0800
+
+    LoopDeck: transition p-l02-003-spike-for-duration — running→review
+
+ issues/p-l02-003-spike-for-duration/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit b1248c20554eaaba6ff5125bf5508609501d4b48
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:02:31 +0800
+
+    LoopDeck: run-trace p-l02-003-spike-for-duration — 2026-10-06-run1
+
+ .../runs/2026-10-06-run1.run.json                  | 22 +++++++++++++++++++++
+ .../runs/2026-10-06-run1.trace.jsonl               | 23 ++++++++++++++++++++++
+ 2 files changed, 45 insertions(+)
+
+commit c02188aef1fb382630f507285de8ba249aca8a17
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:02:31 +0800
+
+    LoopDeck: run p-l02-003-spike-for-duration — 2026-10-06-run1.md
+
+ .../runs/2026-10-06-run1.md                        | 62 ++++++++++++++++++++++
+ 1 file changed, 62 insertions(+)
+
+commit a5cb17072b4e33d31db3b2b9a364a193619075dc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:01:40 +0800
+
+    LoopDeck: transition p-l02-003-spike-for-duration — ready→running
+
+ issues/p-l02-003-spike-for-duration/status.yml | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+commit eafada86cdd941891ccb686c9b73cab8fe4b7d83
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:01:38 +0800
+
+    LoopDeck: transition p-l02-001-silent-drop-rule — running→review
+
+ issues/p-l02-001-silent-drop-rule/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit 4866ffbf46f1f2f88c04c18c3536dbb3ca4ca283
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:01:37 +0800
+
+    LoopDeck: run-trace p-l02-001-silent-drop-rule — 2026-10-06-run1
+
+ .../runs/2026-10-06-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-06-run1.trace.jsonl               | 19 +++++++++++++++++++
+ 2 files changed, 41 insertions(+)
+
+commit 6360f8a617ab85cb0626301334d5ac63454a1727
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:01:36 +0800
+
+    LoopDeck: run p-l02-001-silent-drop-rule — 2026-10-06-run1.md
+
+ .../runs/2026-10-06-run1.md                        | 59 ++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+
+commit 51c6765cd86f9245a97d92b2eaab83b575664175
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:00:45 +0800
+
+    LoopDeck: transition p-l02-001-silent-drop-rule — ready→running
+
+ issues/p-l02-001-silent-drop-rule/status.yml | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+commit 691b7c012200d753efb0a9a3159001de5f282ba0
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:00:43 +0800
+
+    LoopDeck: transition p-l01-001-dead-letter-list — running→review
+
+ issues/p-l01-001-dead-letter-list/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit 37cafbfd3a426ba59642ae3cb2a0797a0a6acf8b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:00:42 +0800
+
+    LoopDeck: run-trace p-l01-001-dead-letter-list — 2026-10-06-run1
+
+ .../runs/2026-10-06-run1.run.json                  | 22 +++++++++++++++++++
+ .../runs/2026-10-06-run1.trace.jsonl               | 25 ++++++++++++++++++++++
+ 2 files changed, 47 insertions(+)
+
+commit daf3b2cb2d311f8053c7a2aea3d887d297c8517a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 04:00:42 +0800
+
+    LoopDeck: run p-l01-001-dead-letter-list — 2026-10-06-run1.md
+
+ .../runs/2026-10-06-run1.md                        | 61 ++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit e54adab045ed68f7d834ad2ecefc5a180a98769d
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:57:14 +0800
+
+    LoopDeck: enqueue p-l02-006-conflicts-page-for10 — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/p-l02-006-conflicts-page-for10/status.yml | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit ecae9f3f1847bddab4f1c71ebd1ccac2090a30cb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:57:11 +0800
+
+    LoopDeck: enqueue p-l02-004-heap-page-for10 — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/p-l02-004-heap-page-for10/status.yml | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit 345d73083d84518b95190bd18b48f4ccc4929eff
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:57:08 +0800
+
+    LoopDeck: enqueue p-l02-003-spike-for-duration — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/p-l02-003-spike-for-duration/status.yml | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit d8ed14679f747ae3dd0124708100e0c389802f81
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:57:05 +0800
+
+    LoopDeck: enqueue p-l02-001-silent-drop-rule — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/p-l02-001-silent-drop-rule/status.yml | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit 40ec6d2a44b08efeacfed55f2e49ef5cc03a873f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:57:04 +0800
+
+    LoopDeck: transition p-l01-001-dead-letter-list — ready→running
+
+ issues/p-l01-001-dead-letter-list/status.yml | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+commit d2749b20a1997e63a8a7a08f88186e08b43bf9e7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:57:02 +0800
+
+    LoopDeck: enqueue p-l01-001-dead-letter-list — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/p-l01-001-dead-letter-list/status.yml | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit 4b37a4147f8f0a06fac60c6aa8ae40da9fdf2fca
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:56:58 +0800
+
+    LoopDeck: run p-l02-006-conflicts-page-for10 — 2026-10-06-run1.md
+
+ issues/p-l02-006-conflicts-page-for10/runs/2026-10-06-run1.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 014b6048fea835bcd35293d447b39904f6cfa812
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:56:57 +0800
+
+    LoopDeck: transition p-l02-006-conflicts-page-for10 — review→ready
+
+ issues/p-l02-006-conflicts-page-for10/status.yml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit ea4631108d048d41c5fa7715dec25ad4a74b4023
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:30:48 +0800
+
+    LoopDeck: transition r-04-loop-health — running→ready
+
+ issues/r-04-loop-health/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit f15627dbe5025ca36a5fee4784df6fed2b812ccb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:30:47 +0800
+
+    LoopDeck: run-trace r-04-loop-health — 2026-10-06-run1
+
+ .../r-04-loop-health/runs/2026-10-06-run1.run.json | 22 ++++++++++++++++++++++
+ .../runs/2026-10-06-run1.trace.jsonl               | 21 +++++++++++++++++++++
+ 2 files changed, 43 insertions(+)
+
+commit d94ddb00732a10f8d30d68b40de40e9b8a75e12b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:30:47 +0800
+
+    LoopDeck: run r-04-loop-health — 2026-10-06-run1.md
+
+ issues/r-04-loop-health/runs/2026-10-06-run1.md | 50 +++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
+
+commit 6ab33c548a9e33c899ab6bb3d4229d367b3d78da
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:30:16 +0800
+
+    LoopDeck: transition r-04-loop-health — ready→running
+
+ issues/r-04-loop-health/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 1ba1c94b5f4785af7f730c133eb78624bc8e5e47
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:30:15 +0800
+
+    LoopDeck: schedule-enqueue r-04-loop-health — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-04-loop-health/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 45df4447210d4fc6ed873a6c9ebc73f0431b8a45
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:20:48 +0800
+
+    LoopDeck: transition r-03-eval-report — running→ready
+
+ issues/r-03-eval-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit f3fd7ad6610d05c9b62ccba24db668eae505685e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:20:48 +0800
+
+    LoopDeck: run-trace r-03-eval-report — 2026-10-06-run1
+
+ .../r-03-eval-report/runs/2026-10-06-run1.run.json | 22 ++++++++++++++++++++++
+ .../runs/2026-10-06-run1.trace.jsonl               | 17 +++++++++++++++++
+ 2 files changed, 39 insertions(+)
+
+commit e2a982dceaa9b7c1737f9a0dd1e18191f1a96518
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:20:47 +0800
+
+    LoopDeck: run r-03-eval-report — 2026-10-06-run1.md
+
+ issues/r-03-eval-report/runs/2026-10-06-run1.md | 58 +++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 879b94efca31f725c86b28fde1aaf5a36b841637
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:20:14 +0800
+
+    LoopDeck: transition r-03-eval-report — ready→running
+
+ issues/r-03-eval-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 9fbd2bf9c92a709be9231dc5a104112837648001
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:20:13 +0800
+
+    LoopDeck: schedule-enqueue r-03-eval-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-03-eval-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit f6c52ece3f7f58e7d89fe5c39581b4ea0ba1719a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:10:45 +0800
+
+    LoopDeck: transition r-02-alert-report — running→ready
+
+ issues/r-02-alert-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit fc3307d59615286039d18d4a431692bd9e47c774
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:10:44 +0800
+
+    LoopDeck: run-trace r-02-alert-report — 2026-10-06-run1
+
+ .../runs/2026-10-06-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-06-run1.trace.jsonl               | 17 +++++++++++++++++
+ 2 files changed, 39 insertions(+)
+
+commit 97b2232642e1cf00891c094f2ce90bf72efc8f2a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:10:43 +0800
+
+    LoopDeck: run r-02-alert-report — 2026-10-06-run1.md
+
+ issues/r-02-alert-report/runs/2026-10-06-run1.md | 61 ++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
+
+commit f397c5ab6246b03847ae3b869861ba8c2b9e5d5f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:10:15 +0800
+
+    LoopDeck: transition r-02-alert-report — ready→running
+
+ issues/r-02-alert-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit ce6bf63788f2424cec320a21f275ca417b27cef7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:10:13 +0800
+
+    LoopDeck: schedule-enqueue r-02-alert-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-02-alert-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 84de6a62701d055d404fcd728a28e3846e211ff0
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:01:48 +0800
+
+    LoopDeck: transition r-01-acceptance-report — running→ready
+
+ issues/r-01-acceptance-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 16d5d5fd0484144902bd6dc021ddf4df1cf0cdfe
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:01:48 +0800
+
+    LoopDeck: run-trace r-01-acceptance-report — 2026-10-06-run1
+
+ .../runs/2026-10-06-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-06-run1.trace.jsonl               | 17 +++++++++++++++++
+ 2 files changed, 39 insertions(+)
+
+commit 3cac4851df500e6ebc7b68475948ef22003020a8
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:01:47 +0800
+
+    LoopDeck: run r-01-acceptance-report — 2026-10-06-run1.md
+
+ .../r-01-acceptance-report/runs/2026-10-06-run1.md | 58 ++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+commit 42bb40bb3acaccc7daef719f83568be5da95a316
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:00:13 +0800
+
+    LoopDeck: transition r-01-acceptance-report — ready→running
+
+ issues/r-01-acceptance-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 87ba9e268053bc0ad5050ed10396a2ce472c6309
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 03:00:12 +0800
+
+    LoopDeck: schedule-enqueue r-01-acceptance-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-01-acceptance-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 9d86b2da596118ef8628bab2198bbf293dd5b98c
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:40:39 +0800
+
+    LoopDeck: transition l-03-skill-opt — running→ready
+
+ issues/l-03-skill-opt/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 575a589958b25079ab46fe1be5149bd9b1304d00
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:40:39 +0800
+
+    LoopDeck: run l-03-skill-opt — 2026-10-06-run1.md
+
+ issues/l-03-skill-opt/runs/2026-10-06-run1.md | 28 +++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 0de9e302ffe6e85a22412685888ccd23a130727a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:40:12 +0800
+
+    LoopDeck: transition l-03-skill-opt — ready→running
+
+ issues/l-03-skill-opt/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 13e5d28218ea296ffe0afea171dc06f40b01efcc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:40:11 +0800
+
+    LoopDeck: schedule-enqueue l-03-skill-opt — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-03-skill-opt/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 0a15a7b8134f3d8c6153cc6c52802ecbec5d18a5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:20:56 +0800
+
+    LoopDeck: transition l-02-alert-tuning — running→ready
+
+ issues/l-02-alert-tuning/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 19eb5654a6468d7c3123b1b32e1f0bd2ea4a896f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:20:56 +0800
+
+    LoopDeck: run l-02-alert-tuning — 2026-10-06-run1.md
+
+ issues/l-02-alert-tuning/runs/2026-10-06-run1.md | 33 ++++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
+
+commit b04ff5743cf807364d50814ca6d8b83b5ddd589b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:20:56 +0800
+
+    LoopDeck: create p-l02-006-conflicts-page-for10 — state=review
+
+ issues/p-l02-006-conflicts-page-for10/spec.md    | 30 ++++++++++++++++++++++++
+ issues/p-l02-006-conflicts-page-for10/status.yml | 13 ++++++++++
+ 2 files changed, 43 insertions(+)
+
+commit 71fde2c30169ea1cb4d7f21f808eb11629ca2f79
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:20:11 +0800
+
+    LoopDeck: transition l-02-alert-tuning — ready→running
+
+ issues/l-02-alert-tuning/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 90116b1a76c92c5ced0e52c9b38d6bb70116bca2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:20:11 +0800
+
+    LoopDeck: schedule-enqueue l-02-alert-tuning — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-02-alert-tuning/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 16a9390032f8d142003dfe4be4c91f213b80a6e4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:09:37 +0800
+
+    LoopDeck: transition l-04-loop-self — running→ready
+
+ issues/l-04-loop-self/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit ea2d93d3dd34b77895bd5b1825c3a2cb610c42eb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:09:37 +0800
+
+    LoopDeck: run l-04-loop-self — 2026-10-06-run1.md
+
+ issues/l-04-loop-self/runs/2026-10-06-run1.md | 28 +++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 16f7ca11a3f47a7a1dd22907785f693ff6d60c0e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:09:11 +0800
+
+    LoopDeck: transition l-04-loop-self — ready→running
+
+ issues/l-04-loop-self/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 7c7a9b3aa49d697050c2fd763c86280ed5e660fb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:09:11 +0800
+
+    LoopDeck: schedule-enqueue l-04-loop-self — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-04-loop-self/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit c30f7b38ea792ea8676398620cad506d4cc00fb6
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:09:08 +0800
+
+    LoopDeck: transition l-01-notify-retry — running→ready
+
+ issues/l-01-notify-retry/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 81a64abc7ff12be7559656e64a2623e5dca44ca1
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:09:08 +0800
+
+    LoopDeck: run l-01-notify-retry — 2026-10-06-run1.md
+
+ issues/l-01-notify-retry/runs/2026-10-06-run1.md | 28 ++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit fcd59dd21fb3457f7d7c169af7be6169ef66c719
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:08:39 +0800
+
+    LoopDeck: transition l-01-notify-retry — ready→running
+
+ issues/l-01-notify-retry/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit d61c325c78320e70529e714c1a660469407ee201
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-07 02:08:39 +0800
+
+    LoopDeck: schedule-enqueue l-01-notify-retry — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-01-notify-retry/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 67e480fd0fb5419db4245e26263ea7efd3e4ed94
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:25 +0800
+
+    LoopDeck: transition p-l03-002-payload-match-check — ready→archived
+
+ issues/p-l03-002-payload-match-check/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 83c5d0cfb1d534942a8e7195aa78f19281df47d7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:25 +0800
+
+    LoopDeck: transition p-l03-002-payload-match-check — review→ready
+
+ issues/p-l03-002-payload-match-check/status.yml | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 9daf1051ad4593d4c8e5a0f8f7e95ff829b99410
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:24 +0800
+
+    LoopDeck: run p-l03-002-payload-match-check — 2026-10-05-run1.md
+
+ issues/p-l03-002-payload-match-check/runs/2026-10-05-run1.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit d60e27f7c3220dc0f3a18f6982a47f1fca492d62
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:22 +0800
+
+    LoopDeck: transition p-l03-001-receipt-time-check — ready→archived
+
+ issues/p-l03-001-receipt-time-check/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 1b4e964a8ee733f6d3d4d7f5b30e844e1d6784bb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:22 +0800
+
+    LoopDeck: transition p-l03-001-receipt-time-check — review→ready
+
+ issues/p-l03-001-receipt-time-check/status.yml | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 8db4fe587499ab92f905a859e7dec0935ae44a47
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:21 +0800
+
+    LoopDeck: run p-l03-001-receipt-time-check — 2026-10-05-run1.md
+
+ issues/p-l03-001-receipt-time-check/runs/2026-10-05-run1.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit db5f41ef516da8665228dbdcaf30274239107942
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:19 +0800
+
+    LoopDeck: transition p-l02-005-silent-drop-day02-recheck — ready→archived
+
+ issues/p-l02-005-silent-drop-day02-recheck/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 3ac42ef295cf0328f9717b60c725c1c3e9a29396
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:18 +0800
+
+    LoopDeck: transition p-l02-005-silent-drop-day02-recheck — review→ready
+
+ issues/p-l02-005-silent-drop-day02-recheck/status.yml | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit 26067458d86bca35c48891c4c46a2120ee4d4639
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:18 +0800
+
+    LoopDeck: run p-l02-005-silent-drop-day02-recheck — 2026-10-05-run1.md
+
+ .../p-l02-005-silent-drop-day02-recheck/runs/2026-10-05-run1.md  | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 6e6e134b2c33764ccec7b150d05300a522894407
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:13 +0800
+
+    LoopDeck: transition p-l02-002-conflict-heap-ticket — ready→archived
+
+ issues/p-l02-002-conflict-heap-ticket/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit bbc6f7d345d25ce9a0817a9632261492f3abc73b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:13 +0800
+
+    LoopDeck: transition p-l02-002-conflict-heap-ticket — review→ready
+
+ issues/p-l02-002-conflict-heap-ticket/status.yml | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+commit cf8a6be7b6a6daa7763ea032803a9aa8978d6b4f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:13 +0800
+
+    LoopDeck: run p-l02-002-conflict-heap-ticket — 2026-10-05-run1.md
+
+ issues/p-l02-002-conflict-heap-ticket/runs/2026-10-05-run1.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 9ff48cd78624b30f429f6d2cf685643ebd9d8d13
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:10 +0800
+
+    LoopDeck: run p-l02-004-heap-page-for10 — 2026-10-05-run1.md
+
+ issues/p-l02-004-heap-page-for10/runs/2026-10-05-run1.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 5af6cbd39f6af3982e9fd5916a40c393aae40fd5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:10 +0800
+
+    LoopDeck: transition p-l02-004-heap-page-for10 — review→ready
+
+ issues/p-l02-004-heap-page-for10/status.yml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 367b1e74faf8ad8af79ec1319e599f45e87a1beb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:07 +0800
+
+    LoopDeck: run p-l02-003-spike-for-duration — 2026-10-05-run1.md
+
+ issues/p-l02-003-spike-for-duration/runs/2026-10-05-run1.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 6534ab2b3d51e5f4f89b7b38c1543f55b9f415b6
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:07 +0800
+
+    LoopDeck: transition p-l02-003-spike-for-duration — review→ready
+
+ issues/p-l02-003-spike-for-duration/status.yml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 5d14ced0a3a21fc874b49cc663d6d9f871390e0b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:04 +0800
+
+    LoopDeck: run p-l02-001-silent-drop-rule — 2026-10-05-run1.md
+
+ issues/p-l02-001-silent-drop-rule/runs/2026-10-05-run1.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 2369292ddfa6f8f86e9e5d3e59e56ce8b80ae5d8
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:04 +0800
+
+    LoopDeck: transition p-l02-001-silent-drop-rule — review→ready
+
+ issues/p-l02-001-silent-drop-rule/status.yml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit f067debd6d109848d80f25f156d49e36a3c29f3a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:02 +0800
+
+    LoopDeck: run p-l01-001-dead-letter-list — 2026-10-05-run1.md
+
+ issues/p-l01-001-dead-letter-list/runs/2026-10-05-run1.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 9ea0cdcad1f67c8c673982de5708befa79fed4f5
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:30:01 +0800
+
+    LoopDeck: transition p-l01-001-dead-letter-list — review→ready
+
+ issues/p-l01-001-dead-letter-list/status.yml | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+commit 44fd43fe5042f1dc2a8a5378451b766e2b3a9f2e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:21:04 +0800
+
+    LoopDeck: transition r-03-eval-report — running→ready
+
+ issues/r-03-eval-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 78e9a26f8365ed4c9fddd2651fb746e1fdf9a71a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:21:03 +0800
+
+    LoopDeck: run-trace r-03-eval-report — 2026-10-05-run1
+
+ .../r-03-eval-report/runs/2026-10-05-run1.run.json | 22 ++++++++++++++++++++++
+ .../runs/2026-10-05-run1.trace.jsonl               | 17 +++++++++++++++++
+ 2 files changed, 39 insertions(+)
+
+commit 33ef7bb3a9158b203a0eeafff79197a217255856
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:21:03 +0800
+
+    LoopDeck: run r-03-eval-report — 2026-10-05-run1.md
+
+ issues/r-03-eval-report/runs/2026-10-05-run1.md | 67 +++++++++++++++++++++++++
+ 1 file changed, 67 insertions(+)
+
+commit f3b172e76f3e751af23da4b1b17b5550a993c5ce
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:20:19 +0800
+
+    LoopDeck: transition r-03-eval-report — ready→running
+
+ issues/r-03-eval-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 9485a93f90fc5a757adaa39730ec2712e88de5cc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:20:18 +0800
+
+    LoopDeck: schedule-enqueue r-03-eval-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-03-eval-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 277029f0d11da662b33728ae9772e81d603c5fde
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:11:03 +0800
+
+    LoopDeck: transition r-02-alert-report — running→ready
+
+ issues/r-02-alert-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit fbce472853c01c04795f763aa600d4121dbda325
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:11:02 +0800
+
+    LoopDeck: run-trace r-02-alert-report — 2026-10-05-run1
+
+ .../runs/2026-10-05-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-05-run1.trace.jsonl               | 17 +++++++++++++++++
+ 2 files changed, 39 insertions(+)
+
+commit 1486316517dc802735a0300538749752a6bbd879
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:11:01 +0800
+
+    LoopDeck: run r-02-alert-report — 2026-10-05-run1.md
+
+ issues/r-02-alert-report/runs/2026-10-05-run1.md | 64 ++++++++++++++++++++++++
+ 1 file changed, 64 insertions(+)
+
+commit d3f7ace34f2f7f069d8915c47754466467cbd8aa
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:10:21 +0800
+
+    LoopDeck: transition r-02-alert-report — ready→running
+
+ issues/r-02-alert-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 621cb03dab69511ced15867f63350944cfeb846a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:10:19 +0800
+
+    LoopDeck: schedule-enqueue r-02-alert-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-02-alert-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 8eec8a0ae101f5ad296e9343cc5077ce773aa9fc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:02:02 +0800
+
+    LoopDeck: transition r-01-acceptance-report — running→ready
+
+ issues/r-01-acceptance-report/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 39a096fb6001c6912df7d9d9603192b424df6874
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:02:01 +0800
+
+    LoopDeck: run-trace r-01-acceptance-report — 2026-10-05-run1
+
+ .../runs/2026-10-05-run1.run.json                  | 22 +++++++++++++++++++++
+ .../runs/2026-10-05-run1.trace.jsonl               | 23 ++++++++++++++++++++++
+ 2 files changed, 45 insertions(+)
+
+commit f1ec8133a2354fc8ac8bafa8e0f235e90745d5b4
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:02:00 +0800
+
+    LoopDeck: run r-01-acceptance-report — 2026-10-05-run1.md
+
+ .../r-01-acceptance-report/runs/2026-10-05-run1.md | 64 ++++++++++++++++++++++
+ 1 file changed, 64 insertions(+)
+
+commit 9b449a30bacc097056352c9b5b64c57bf2ad7f7f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:00:19 +0800
+
+    LoopDeck: transition r-01-acceptance-report — ready→running
+
+ issues/r-01-acceptance-report/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 9c5e72724a7f135742b9be8949a8aecc7862f36e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 03:00:18 +0800
+
+    LoopDeck: schedule-enqueue r-01-acceptance-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-01-acceptance-report/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 241015940e5efe6ffc9a5233a5f7e7b16eed0a4a
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:40:37 +0800
+
+    LoopDeck: transition l-03-skill-opt — running→ready
+
+ issues/l-03-skill-opt/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit a19ee988296aae628e95b97f64707d8181f94d00
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:40:36 +0800
+
+    LoopDeck: run l-03-skill-opt — 2026-10-05-run1.md
+
+ issues/l-03-skill-opt/runs/2026-10-05-run1.md | 28 +++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+commit 60ffe7bb8de7089de9508a6c95057beead45e919
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:40:17 +0800
+
+    LoopDeck: transition l-03-skill-opt — ready→running
+
+ issues/l-03-skill-opt/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 05f5e2fc851fa5472f2a51292238c90dfb3fb841
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:40:16 +0800
+
+    LoopDeck: schedule-enqueue l-03-skill-opt — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-03-skill-opt/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 7b5ffd8ff9cb4b49b9290bcb3c72a4fdd7fcb62b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:21:23 +0800
+
+    LoopDeck: transition l-02-alert-tuning — running→ready
+
+ issues/l-02-alert-tuning/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit e920c575a7cafc813ee280ee20433f7ded5f075d
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:21:23 +0800
+
+    LoopDeck: run l-02-alert-tuning — 2026-10-05-run1.md
+
+ issues/l-02-alert-tuning/runs/2026-10-05-run1.md | 34 ++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+
+commit ec997676b80cbfc8d975fabadfc03139f5d98821
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:21:22 +0800
+
+    LoopDeck: create p-l02-005-silent-drop-day02-recheck — state=review
+
+ issues/p-l02-005-silent-drop-day02-recheck/spec.md | 29 ++++++++++++++++++++++
+ .../p-l02-005-silent-drop-day02-recheck/status.yml | 13 ++++++++++
+ 2 files changed, 42 insertions(+)
+
+commit 09aa8ef4080545f737083dd7ec58c2afeca20681
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:21:22 +0800
+
+    LoopDeck: create p-l02-004-heap-page-for10 — state=review
+
+ issues/p-l02-004-heap-page-for10/spec.md    | 30 +++++++++++++++++++++++++++++
+ issues/p-l02-004-heap-page-for10/status.yml | 13 +++++++++++++
+ 2 files changed, 43 insertions(+)
+
+commit bd34c971a9a0ce72198467d461e5c9c527e7e2de
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:20:17 +0800
+
+    LoopDeck: transition l-02-alert-tuning — ready→running
+
+ issues/l-02-alert-tuning/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 4621e4e231ba90b055f6a4245b761450f73416e7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:20:16 +0800
+
+    LoopDeck: schedule-enqueue l-02-alert-tuning — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-02-alert-tuning/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit c6c09db25fa65a8c58c94e646650e74a3c0ee37b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:01:07 +0800
+
+    LoopDeck: transition l-01-notify-retry — running→ready
+
+ issues/l-01-notify-retry/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 7f448e6065c8c773b18d43ffed1529f88afb2cf7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:01:07 +0800
+
+    LoopDeck: run l-01-notify-retry — 2026-10-05-run1.md
+
+ issues/l-01-notify-retry/runs/2026-10-05-run1.md | 36 ++++++++++++++++++++++++
+ 1 file changed, 36 insertions(+)
+
+commit f3f53b729ada9388503c6bfb51a70a1534d32fa8
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:01:06 +0800
+
+    LoopDeck: create p-l01-006-dead-letter-persist — state=review
+
+ issues/p-l01-006-dead-letter-persist/spec.md    | 29 +++++++++++++++++++++++++
+ issues/p-l01-006-dead-letter-persist/status.yml | 13 +++++++++++
+ 2 files changed, 42 insertions(+)
+
+commit 848108411c40d9e48cefea9556cf4826d005116f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:01:06 +0800
+
+    LoopDeck: create p-l01-005-manual-followup-flag — state=review
+
+ issues/p-l01-005-manual-followup-flag/spec.md    | 29 ++++++++++++++++++++++++
+ issues/p-l01-005-manual-followup-flag/status.yml | 13 +++++++++++
+ 2 files changed, 42 insertions(+)
+
+commit a8fe928097d522f6cf2d77684592d7e9010f04e1
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:01:06 +0800
+
+    LoopDeck: create p-l01-004-admin-reconcile — state=review
+
+ issues/p-l01-004-admin-reconcile/spec.md    | 29 +++++++++++++++++++++++++++++
+ issues/p-l01-004-admin-reconcile/status.yml | 13 +++++++++++++
+ 2 files changed, 42 insertions(+)
+
+commit 3ea6f5b08fdfeaf84c0848545ce419b91f69a135
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:01:05 +0800
+
+    LoopDeck: create p-l01-003-auto-redelivery-abandon — state=review
+
+ issues/p-l01-003-auto-redelivery-abandon/spec.md   | 30 ++++++++++++++++++++++
+ .../p-l01-003-auto-redelivery-abandon/status.yml   | 13 ++++++++++
+ 2 files changed, 43 insertions(+)
+
+commit df7b0d330390d074e5e79d1dfe909edf5f77d3dd
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:00:15 +0800
+
+    LoopDeck: transition l-01-notify-retry — ready→running
+
+ issues/l-01-notify-retry/status.yml | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+
+commit 5d1581a9b81a029032272df7caabc631c1410f32
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-06 02:00:15 +0800
+
+    LoopDeck: schedule-enqueue l-01-notify-retry — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-01-notify-retry/status.yml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+commit 68650d2648250b4010de26b8922e2a886f1c79bb
+Author: marcus <m@local>
+Date:   2026-10-05 12:20:00 +0800
+
+    exp3: 考題移出 repo，禁止從 git 歷史取得
+
+ AGENTS.md                        | 31 +++++++++++++++++++++++++++++++
+ governance/Stability_Goals.md    |  1 +
+ issues/l-03-skill-opt/spec.md    |  4 ++--
+ issues/l-03-skill-opt/status.yml |  2 +-
+ 4 files changed, 35 insertions(+), 3 deletions(-)
+
+commit efba8d981b1b6945c7a4a1171823d45b496332cb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:52:26 +0800
+
+    LoopDeck: transition l-03-skill-opt — running→ready
+
+ issues/l-03-skill-opt/status.yml | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit b582f533731df1a7e392fe0e88f37f8772c8b968
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:52:26 +0800
+
+    LoopDeck: run l-03-skill-opt — 2026-10-04-run2.md
+
+ issues/l-03-skill-opt/runs/2026-10-04-run2.md | 34 +++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+
+commit 345dae81fd09b0c95dfcc2becd81a00905f7bdb7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:52:25 +0800
+
+    LoopDeck: create p-l03-002-payload-match-check — state=review
+
+ issues/p-l03-002-payload-match-check/spec.md    | 35 +++++++++++++++++++++++++
+ issues/p-l03-002-payload-match-check/status.yml | 13 +++++++++
+ 2 files changed, 48 insertions(+)
+
+commit 2072ca267ab4c30d62d365cdad81a768a009321b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:52:25 +0800
+
+    LoopDeck: create p-l03-001-receipt-time-check — state=review
+
+ issues/p-l03-001-receipt-time-check/spec.md    | 35 ++++++++++++++++++++++++++
+ issues/p-l03-001-receipt-time-check/status.yml | 13 ++++++++++
+ 2 files changed, 48 insertions(+)
+
+commit 32a713e2846cb2d036310b3bd538e3ebf208c842
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:51:24 +0800
+
+    LoopDeck: transition l-03-skill-opt — ready→running
+
+ issues/l-03-skill-opt/status.yml | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit 7454a0180e64078c48e4f3003140ffb4e7bf7076
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:51:24 +0800
+
+    LoopDeck: enqueue l-03-skill-opt — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/l-03-skill-opt/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 2b8fb0ca43b2adadc88fb01eeb56e419461c61f2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:51:10 +0800
+
+    LoopDeck: transition l-02-alert-tuning — running→ready
+
+ issues/l-02-alert-tuning/status.yml | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit ef075c4cb690b9efb34abd2e15c25452d7fcf4c9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:51:10 +0800
+
+    LoopDeck: run l-02-alert-tuning — 2026-10-04-run2.md
+
+ issues/l-02-alert-tuning/runs/2026-10-04-run2.md | 35 ++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
+
+commit 4a57662a7902c03fb9a1166d0cb6463e27d3a943
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:51:10 +0800
+
+    LoopDeck: create p-l02-003-spike-for-duration — state=review
+
+ issues/p-l02-003-spike-for-duration/spec.md    | 31 ++++++++++++++++++++++++++
+ issues/p-l02-003-spike-for-duration/status.yml | 13 +++++++++++
+ 2 files changed, 44 insertions(+)
+
+commit f87f5071d5901b52e7970acb4ab88a94c3afb551
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:51:09 +0800
+
+    LoopDeck: create p-l02-002-conflict-heap-ticket — state=review
+
+ issues/p-l02-002-conflict-heap-ticket/spec.md    | 29 ++++++++++++++++++++++++
+ issues/p-l02-002-conflict-heap-ticket/status.yml | 13 +++++++++++
+ 2 files changed, 42 insertions(+)
+
+commit d14cf796e7bd0f24d654d0ec9eaf243660cc4ef6
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:51:09 +0800
+
+    LoopDeck: create p-l02-001-silent-drop-rule — state=review
+
+ issues/p-l02-001-silent-drop-rule/spec.md    | 29 ++++++++++++++++++++++++++++
+ issues/p-l02-001-silent-drop-rule/status.yml | 13 +++++++++++++
+ 2 files changed, 42 insertions(+)
+
+commit f58f433f95d2973471c68ce62c079898b6894464
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:50:07 +0800
+
+    LoopDeck: transition l-02-alert-tuning — ready→running
+
+ issues/l-02-alert-tuning/status.yml | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit e96c2ddfa373b1acd7bfa304fdd926418168c50e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:50:06 +0800
+
+    LoopDeck: enqueue l-02-alert-tuning — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/l-02-alert-tuning/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 9a866f4119d9dfe8a514c909c0bd484b7fa90401
+Author: marcus <m@local>
+Date:   2026-10-05 06:49:26 +0800
+
+    exp3: Eval 改由外層每日執行，l-03／r-03 只讀 skill-lab/scores
+
+ governance/Stability_Goals.md      | 1 +
+ issues/l-03-skill-opt/spec.md      | 8 ++++----
+ issues/l-03-skill-opt/status.yml   | 4 ++--
+ issues/r-03-eval-report/spec.md    | 2 +-
+ issues/r-03-eval-report/status.yml | 2 +-
+ 5 files changed, 9 insertions(+), 8 deletions(-)
+
+commit 52e3128aa2c837f800485feb17e3d56cc28b4dfc
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:28:30 +0800
+
+    LoopDeck: transition r-04-loop-health — running→ready
+
+ issues/r-04-loop-health/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit c004d2d7b320fb2a8a99dec23a5bb9a656caefca
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:28:29 +0800
+
+    LoopDeck: run-trace r-04-loop-health — 2026-10-04-run1
+
+ .../r-04-loop-health/runs/2026-10-04-run1.run.json | 22 +++++++++++++++++++
+ .../runs/2026-10-04-run1.trace.jsonl               | 25 ++++++++++++++++++++++
+ 2 files changed, 47 insertions(+)
+
+commit 673b0c46c70585e373086f9831f4e285e8c078cd
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:28:29 +0800
+
+    LoopDeck: run r-04-loop-health — 2026-10-04-run1.md
+
+ issues/r-04-loop-health/runs/2026-10-04-run1.md | 54 +++++++++++++++++++++++++
+ 1 file changed, 54 insertions(+)
+
+commit ca10a11198e3af75c50f9bbc4cd730b2fa1bf0d3
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:27:54 +0800
+
+    LoopDeck: transition r-04-loop-health — ready→running
+
+ issues/r-04-loop-health/status.yml | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit e598011966b93318d490968bd2d524d3a4e3bdd2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:27:53 +0800
+
+    LoopDeck: schedule-enqueue r-04-loop-health — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-04-loop-health/status.yml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit e86333cc16348aa6ee06502e0782d993881beff2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:27:37 +0800
+
+    LoopDeck: transition r-03-eval-report — running→ready
+
+ issues/r-03-eval-report/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit 936a449a30e5c274f509714069fdb9a4c9739c0e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:27:37 +0800
+
+    LoopDeck: run-trace r-03-eval-report — 2026-10-04-run1
+
+ .../r-03-eval-report/runs/2026-10-04-run1.run.json | 22 ++++++++++++++++++++++
+ .../runs/2026-10-04-run1.trace.jsonl               | 21 +++++++++++++++++++++
+ 2 files changed, 43 insertions(+)
+
+commit 64d7680d9014339b54004e98e0ac8bdfd51956e9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:27:37 +0800
+
+    LoopDeck: run r-03-eval-report — 2026-10-04-run1.md
+
+ issues/r-03-eval-report/runs/2026-10-04-run1.md | 53 +++++++++++++++++++++++++
+ 1 file changed, 53 insertions(+)
+
+commit 57e76f599095aa22691287441dcbc46523c31e61
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:26:54 +0800
+
+    LoopDeck: transition r-03-eval-report — ready→running
+
+ issues/r-03-eval-report/status.yml | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit f0367aee6fadd980dde3b15b4346aeb1387fde03
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:26:53 +0800
+
+    LoopDeck: schedule-enqueue r-03-eval-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-03-eval-report/status.yml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 217f821be5f8abe6470055e972217303a25b95c8
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:26:36 +0800
+
+    LoopDeck: transition l-01-notify-retry — running→ready
+
+ issues/l-01-notify-retry/status.yml | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+commit 80fb0aceb30356c636a95c86462b65d2ec6dcb75
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:26:36 +0800
+
+    LoopDeck: run l-01-notify-retry — 2026-10-04-run3.md
+
+ issues/l-01-notify-retry/runs/2026-10-04-run3.md | 34 ++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+
+commit 3bf118830416ba9b3a29a1deeb0e710087cc8e09
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:26:35 +0800
+
+    LoopDeck: create p-l01-002-dl-replay-depth — state=review
+
+ issues/p-l01-002-dl-replay-depth/spec.md    | 28 ++++++++++++++++++++++++++++
+ issues/p-l01-002-dl-replay-depth/status.yml | 13 +++++++++++++
+ 2 files changed, 41 insertions(+)
+
+commit b0a8a7cc6caf03e82ad5197f3b9a519a2f3b09a2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:26:35 +0800
+
+    LoopDeck: create p-l01-001-dead-letter-list — state=review
+
+ issues/p-l01-001-dead-letter-list/spec.md    | 28 ++++++++++++++++++++++++++++
+ issues/p-l01-001-dead-letter-list/status.yml | 13 +++++++++++++
+ 2 files changed, 41 insertions(+)
+
+commit 558c286eb5a1dcb8832bb414aec9eb6a092e65bf
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:59 +0800
+
+    LoopDeck: transition l-01-notify-retry — ready→running
+
+ issues/l-01-notify-retry/status.yml | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+
+commit ee6e77437eca7e8abd0734cbe2a6a096e5443e38
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:58 +0800
+
+    LoopDeck: transition r-02-alert-report — running→ready
+
+ issues/r-02-alert-report/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit 585a03d0bff3318bf938c1fa11662863e553d7c1
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:58 +0800
+
+    LoopDeck: run-trace r-02-alert-report — 2026-10-04-run1
+
+ .../runs/2026-10-04-run1.run.json                  | 22 ++++++++++++++++++++++
+ .../runs/2026-10-04-run1.trace.jsonl               | 17 +++++++++++++++++
+ 2 files changed, 39 insertions(+)
+
+commit 0b7af9c968d7a3715ab21926569a8f21fad973ca
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:57 +0800
+
+    LoopDeck: run r-02-alert-report — 2026-10-04-run1.md
+
+ issues/r-02-alert-report/runs/2026-10-04-run1.md | 55 ++++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit 265b886d075c79fba8910f21b582ae8f8a325fa0
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:50 +0800
+
+    LoopDeck: enqueue l-01-notify-retry — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/l-01-notify-retry/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 8197ca61d308b3a6fcc03677e97255e4a3e77484
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:24 +0800
+
+    LoopDeck: transition r-02-alert-report — ready→running
+
+ issues/r-02-alert-report/status.yml | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit 8df98c9af3e9a31674e4b1fbbe1bec0cc59075b7
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:23 +0800
+
+    LoopDeck: schedule-enqueue r-02-alert-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-02-alert-report/status.yml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 98fff41a8b625e5495d376266da86f20c50bbeb3
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:11 +0800
+
+    LoopDeck: transition l-01-notify-retry — running→ready
+
+ issues/l-01-notify-retry/status.yml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+commit 1e17fa6bebe23c0fd2159a4a4d306a0d82f4163f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:10 +0800
+
+    LoopDeck: run-trace l-01-notify-retry — 2026-10-04-run2
+
+ .../runs/2026-10-04-run2.run.json                  | 22 ++++++++++++++++++
+ .../runs/2026-10-04-run2.trace.jsonl               | 27 ++++++++++++++++++++++
+ 2 files changed, 49 insertions(+)
+
+commit 37bd1e095443acc4698961818f0c3d9d808886e3
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:24:10 +0800
+
+    LoopDeck: run l-01-notify-retry — 2026-10-04-run2.md
+
+ issues/l-01-notify-retry/runs/2026-10-04-run2.md | 109 +++++++++++++++++++++++
+ 1 file changed, 109 insertions(+)
+
+commit 2b4cf6e006cfe54dc383a40c8b0eb318cc81c24c
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:22:27 +0800
+
+    LoopDeck: transition l-01-notify-retry — ready→running
+
+ issues/l-01-notify-retry/status.yml | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)
+
+commit e412701d8f1bf9ac1df3a78b360002a38d1ce365
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:22:26 +0800
+
+    LoopDeck: enqueue l-01-notify-retry — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd
+
+ issues/l-01-notify-retry/status.yml | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+commit 92b8a7147f73c00c5e11678d8b33887632983b1e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:22:25 +0800
+
+    LoopDeck: transition r-01-acceptance-report — running→ready
+
+ issues/r-01-acceptance-report/status.yml | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+commit ad761e147a9c40afbbf410fbe5d27d38c62cdf82
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:22:25 +0800
+
+    LoopDeck: run-trace r-01-acceptance-report — 2026-10-04-run1
+
+ .../runs/2026-10-04-run1.run.json                  | 22 +++++++++++++++++++
+ .../runs/2026-10-04-run1.trace.jsonl               | 25 ++++++++++++++++++++++
+ 2 files changed, 47 insertions(+)
+
+commit 7b9313f7079318cebc7d638f9987100e5f566e1b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:22:24 +0800
+
+    LoopDeck: run r-01-acceptance-report — 2026-10-04-run1.md
+
+ .../r-01-acceptance-report/runs/2026-10-04-run1.md | 55 ++++++++++++++++++++++
+ 1 file changed, 55 insertions(+)
+
+commit c03c6b6c10969f7e9d01367667745768ec738217
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:20:21 +0800
+
+    LoopDeck: transition r-01-acceptance-report — ready→running
+
+ issues/r-01-acceptance-report/status.yml | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit d4cefb48827b604794c361d01f61fb75de9b3f74
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:20:20 +0800
+
+    LoopDeck: schedule-enqueue r-01-acceptance-report — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/r-01-acceptance-report/status.yml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 824092c117399fe54ee4616379a3adcc865f7208
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:19:58 +0800
+
+    LoopDeck: transition l-04-loop-self — running→ready
+
+ issues/l-04-loop-self/status.yml | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit 4a0fd404e098e595b9b03ab55df63f7d4130e019
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:19:58 +0800
+
+    LoopDeck: run l-04-loop-self — 2026-10-04-run1.md
+
+ issues/l-04-loop-self/runs/2026-10-04-run1.md | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 14c0b7c6a8b161e7d98538b6dc2cc5c1d908747f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:19:44 +0800
+
+    LoopDeck: transition l-04-loop-self — ready→running
+
+ issues/l-04-loop-self/status.yml | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit 6c759dbc8aeb87b6d65357f4fea52fb8b0cb87b3
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:19:43 +0800
+
+    LoopDeck: schedule-enqueue l-04-loop-self — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-04-loop-self/status.yml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 34141f1fcc622a0a0b856c5d27c4e188cdf844bd
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:19:30 +0800
+
+    LoopDeck: transition l-03-skill-opt — running→ready
+
+ issues/l-03-skill-opt/status.yml | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit 5ab49db028f68a0e3af6e6b2b7eb84f3937b2f8b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:19:29 +0800
+
+    LoopDeck: run l-03-skill-opt — 2026-10-04-run1.md
+
+ issues/l-03-skill-opt/runs/2026-10-04-run1.md | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 5b276212402891a60ce86af437191454f688db69
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:18:44 +0800
+
+    LoopDeck: transition l-03-skill-opt — ready→running
+
+ issues/l-03-skill-opt/status.yml | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit 205844696148a61300638bb2d6402ed2fd48a6e8
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:18:44 +0800
+
+    LoopDeck: schedule-enqueue l-03-skill-opt — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-03-skill-opt/status.yml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 1f02e1663692235ecccb6f6e4b356727cdc3d982
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:18:22 +0800
+
+    LoopDeck: transition l-02-alert-tuning — running→ready
+
+ issues/l-02-alert-tuning/status.yml | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit 34a6ffbee1f13aa89b7a01ebd12d2e3a30e90d9b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:18:22 +0800
+
+    LoopDeck: run l-02-alert-tuning — 2026-10-04-run1.md
+
+ issues/l-02-alert-tuning/runs/2026-10-04-run1.md | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit c966a9fa2b098c93297cf76ec7c8fb08c6094df5
+Author: marcus <m@local>
+Date:   2026-10-05 06:17:58 +0800
+
+    executor 指定 sonnet（同模型對照）
+
+ config.yml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 28b99e4bcbbf831f2fc175e0143fa7e35d9ea2bb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:17:13 +0800
+
+    LoopDeck: transition l-02-alert-tuning — ready→running
+
+ issues/l-02-alert-tuning/status.yml | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit 859094d26830a032faab8e34c151b4f03ed05619
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:17:13 +0800
+
+    LoopDeck: schedule-enqueue l-02-alert-tuning — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-02-alert-tuning/status.yml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit 6a3f0990e1ec762eba6e4e1a9ffd2ea573fd959b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:16:45 +0800
+
+    LoopDeck: transition l-01-notify-retry — running→ready
+
+ issues/l-01-notify-retry/status.yml | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+commit 755f6bce789d6a66a4c50e58e34fb7305957dab8
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:16:44 +0800
+
+    LoopDeck: run l-01-notify-retry — 2026-10-04-run1.md
+
+ issues/l-01-notify-retry/runs/2026-10-04-run1.md | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+commit 970d6c6768399460604608045d3171f9c4c23374
+Author: marcus <m@local>
+Date:   2026-10-05 06:15:21 +0800
+
+    分級政策：不可觸碰改為 ops/data、ops/scores
+
+ approval-policy.json | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+commit 32986812bb2434eee98171d157190ca9d79aec99
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:15:10 +0800
+
+    LoopDeck: transition l-01-notify-retry — ready→running
+
+ issues/l-01-notify-retry/status.yml | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+commit 5d8dbc95e659d5077a63dd58655d0e6ed5029e42
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:15:10 +0800
+
+    LoopDeck: schedule-enqueue l-01-notify-retry — queue_run_id,queue_queued_at,queue_mode,queue_dry_run,queue_scheduled_for,pending_schedule_for,lease_fencing_token,budget_reserved_usd,last_scheduled_for
+
+ issues/l-01-notify-retry/status.yml | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+commit f38321eba424ef052e9241c84fa6c04eb96b3803
+Author: marcus <m@local>
+Date:   2026-10-05 06:14:30 +0800
+
+    排程改回半夜（10-05 決定）
+
+ issues/l-01-notify-retry/spec.md      | 2 +-
+ issues/l-02-alert-tuning/spec.md      | 2 +-
+ issues/l-03-skill-opt/spec.md         | 2 +-
+ issues/l-04-loop-self/spec.md         | 2 +-
+ issues/r-01-acceptance-report/spec.md | 2 +-
+ issues/r-02-alert-report/spec.md      | 2 +-
+ issues/r-03-eval-report/spec.md       | 2 +-
+ issues/r-04-loop-health/spec.md       | 2 +-
+ 8 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 2628a214706981012d74e03319057f0909d6edc1
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:14:30 +0800
+
+    LoopDeck: reschedule r-04-loop-health — schedule
+
+ issues/r-04-loop-health/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 6997ae9766f244e426e3fd9a9fb903a6fc56ec05
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:14:30 +0800
+
+    LoopDeck: reschedule r-03-eval-report — schedule
+
+ issues/r-03-eval-report/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 99613e64653f49ea6d0c445c1c4b86296e683ace
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:14:30 +0800
+
+    LoopDeck: reschedule r-02-alert-report — schedule
+
+ issues/r-02-alert-report/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 556750a3a7e18944b6bf5d5c0806f28e98f90867
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:14:29 +0800
+
+    LoopDeck: reschedule r-01-acceptance-report — schedule
+
+ issues/r-01-acceptance-report/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit df52fd059b264085a7a46148e11564fc6227b64b
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:14:29 +0800
+
+    LoopDeck: reschedule l-04-loop-self — schedule
+
+ issues/l-04-loop-self/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit b11da416e471292751374a22c17939c2144a8553
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:14:29 +0800
+
+    LoopDeck: reschedule l-03-skill-opt — schedule
+
+ issues/l-03-skill-opt/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 52603c90507570b046d6aa312fbed2ed2c825c39
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:14:28 +0800
+
+    LoopDeck: reschedule l-02-alert-tuning — schedule
+
+ issues/l-02-alert-tuning/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit a276871efaed6ecc860af8baea4161f31e3805ec
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-05 06:14:28 +0800
+
+    LoopDeck: reschedule l-01-notify-retry — schedule
+
+ issues/l-01-notify-retry/status.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit d0a07129520784cc7a0a66107c2912b4fb7cfbc2
+Author: marcus <m@local>
+Date:   2026-10-05 06:01:36 +0800
+
+    exp2: SSOT 改為 ops/data、ops/scores（出題與評分移出 repo）
+
+ governance/Stability_Goals.md       | 2 +-
+ issues/l-02-alert-tuning/spec.md    | 8 ++++----
+ issues/l-02-alert-tuning/status.yml | 4 ++--
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+
+commit 82326e17955e6d9f5e091dcf537bae94e31ace13
+Author: marcus <m@local>
+Date:   2026-10-04 19:27:25 +0800
+
+    排程改早上、單輪 US$1、合計 US$50
+
+ config.yml                            | 4 ++++
+ issues/l-01-notify-retry/spec.md      | 6 +++---
+ issues/l-02-alert-tuning/spec.md      | 6 +++---
+ issues/l-03-skill-opt/spec.md         | 6 +++---
+ issues/l-04-loop-self/spec.md         | 6 +++---
+ issues/r-01-acceptance-report/spec.md | 2 +-
+ issues/r-02-alert-report/spec.md      | 2 +-
+ issues/r-03-eval-report/spec.md       | 2 +-
+ issues/r-04-loop-health/spec.md       | 2 +-
+ 9 files changed, 20 insertions(+), 16 deletions(-)
+
+commit c7258b7cfdb21032063c9d100f11f1c0ee89a185
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 19:27:25 +0800
+
+    LoopDeck: reschedule r-04-loop-health — schedule
+
+ issues/r-04-loop-health/status.yml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 50442b1946b801d55ea0349f68028cc042baee63
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 19:27:24 +0800
+
+    LoopDeck: reschedule r-03-eval-report — schedule
+
+ issues/r-03-eval-report/status.yml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 08d8270f938406a88f5443f88c74f543ecfc011f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 19:27:24 +0800
+
+    LoopDeck: reschedule r-02-alert-report — schedule
+
+ issues/r-02-alert-report/status.yml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit f84b5327f0bce60ca5939b04b5efcfca4b8ac6bb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 19:27:24 +0800
+
+    LoopDeck: reschedule r-01-acceptance-report — schedule
+
+ issues/r-01-acceptance-report/status.yml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 51dd6fb879cc184a00f666ec37fde08ca10dfe94
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 19:27:24 +0800
+
+    LoopDeck: reschedule l-04-loop-self — schedule
+
+ issues/l-04-loop-self/status.yml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 9ce3c59aa31e6cc7699aa9bf49071052922e48d6
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 19:27:23 +0800
+
+    LoopDeck: reschedule l-03-skill-opt — schedule
+
+ issues/l-03-skill-opt/status.yml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 6d3f7b89f4ec4ae3749c939c46d83d20a8e0c9c9
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 19:27:23 +0800
+
+    LoopDeck: reschedule l-02-alert-tuning — schedule
+
+ issues/l-02-alert-tuning/status.yml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit c253be81041c35982bc76d7a550035b60e5d675f
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 19:27:23 +0800
+
+    LoopDeck: reschedule l-01-notify-retry — schedule
+
+ issues/l-01-notify-retry/status.yml | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit a5ab623f53e9f223e277816296a6226da3c65972
+Author: marcus <m@local>
+Date:   2026-10-04 18:44:49 +0800
+
+    chore: 移除試跑產出的空報表
+
+ metrics/loop-metrics-2026-10-04.md | 9 ---------
+ 1 file changed, 9 deletions(-)
+
+commit 493c5bbe0efeb0f03fd4af49a9277451f3c1d524
+Author: marcus <m@local>
+Date:   2026-10-04 18:44:45 +0800
+
+    exp4: loop-metrics 彙整工具
+
+ .gitignore                         |  1 +
+ metrics/loop-metrics-2026-10-04.md |  9 ++++
+ tools/loop-metrics.js              | 99 ++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 109 insertions(+)
+
+commit 56a189527868eaa7afc467910c633e2929ab02bb
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 18:44:44 +0800
+
+    LoopDeck: create r-04-loop-health — state=ready
+
+ issues/r-04-loop-health/spec.md    | 30 ++++++++++++++++++++++++++++++
+ issues/r-04-loop-health/status.yml | 16 ++++++++++++++++
+ 2 files changed, 46 insertions(+)
+
+commit 09e378f9ee5760a01c00852cbe701b67cb195334
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 18:44:44 +0800
+
+    LoopDeck: create l-04-loop-self — state=ready
+
+ issues/l-04-loop-self/spec.md    | 38 ++++++++++++++++++++++++++++++++++++++
+ issues/l-04-loop-self/status.yml | 23 +++++++++++++++++++++++
+ 2 files changed, 61 insertions(+)
+
+commit ad98cf0c717d260c2eb07c4973cb3a4e67764f22
+Author: marcus <m@local>
+Date:   2026-10-04 18:41:51 +0800
+
+    governance: Day 29 不可觸碰清單
+
+ governance/Stability_Goals.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 3753b582c80791d2136bb6984fac19b56792327e
+Author: marcus <m@local>
+Date:   2026-10-04 18:41:43 +0800
+
+    Day 29 實驗 workspace：治理、政策、3 loop engineer + 3 report
+
+ .claude/commands/cs-loop.md               |  59 ++++++++++++++++
+ CHANGELOG.md                              |  12 ++++
+ CLAUDE.md                                 |  31 +++++++++
+ FRAMEWORK.md                              | 108 ++++++++++++++++++++++++++++++
+ README.md                                 |  67 ++++++++++++++++++
+ approval-policy.json                      |  15 +++++
+ config.yml                                |   8 +++
+ cs-loop/backlog/backlog.md                |  25 +++++++
+ cs-loop/health-reports/health-template.md |  27 ++++++++
+ cs-loop/issues/issue-template.md          |  30 +++++++++
+ governance/Evolution_Goals.md             |  70 +++++++++++++++++++
+ governance/SSOT.md                        |  87 ++++++++++++++++++++++++
+ governance/Stability_Goals.md             |  70 +++++++++++++++++++
+ 13 files changed, 609 insertions(+)
+
+commit 265c351ac7be289fd38de45f03ef35bacb95e720
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 18:41:42 +0800
+
+    LoopDeck: create r-03-eval-report — state=ready
+
+ issues/r-03-eval-report/spec.md    | 30 ++++++++++++++++++++++++++++++
+ issues/r-03-eval-report/status.yml | 16 ++++++++++++++++
+ 2 files changed, 46 insertions(+)
+
+commit 9b453cb0a160814f427774f836388f93cc7af8c2
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 18:41:42 +0800
+
+    LoopDeck: create r-02-alert-report — state=ready
+
+ issues/r-02-alert-report/spec.md    | 30 ++++++++++++++++++++++++++++++
+ issues/r-02-alert-report/status.yml | 16 ++++++++++++++++
+ 2 files changed, 46 insertions(+)
+
+commit a14980a1840d68ccc6ad7319b47dc61334a1c04e
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 18:41:42 +0800
+
+    LoopDeck: create r-01-acceptance-report — state=ready
+
+ issues/r-01-acceptance-report/spec.md    | 30 ++++++++++++++++++++++++++++++
+ issues/r-01-acceptance-report/status.yml | 16 ++++++++++++++++
+ 2 files changed, 46 insertions(+)
+
+commit 9a8e237f6889b0ea3ac474eb17d21b4e56395cb8
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 18:41:42 +0800
+
+    LoopDeck: create l-03-skill-opt — state=ready
+
+ issues/l-03-skill-opt/spec.md    | 39 +++++++++++++++++++++++++++++++++++++++
+ issues/l-03-skill-opt/status.yml | 23 +++++++++++++++++++++++
+ 2 files changed, 62 insertions(+)
+
+commit 13087eef9963b7ff12d7fa96e5ca00f26ffddf43
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 18:41:41 +0800
+
+    LoopDeck: create l-02-alert-tuning — state=ready
+
+ issues/l-02-alert-tuning/spec.md    | 39 +++++++++++++++++++++++++++++++++++++
+ issues/l-02-alert-tuning/status.yml | 23 ++++++++++++++++++++++
+ 2 files changed, 62 insertions(+)
+
+commit efeebcfdaa2b03f08e1be3eebaa32d4d4edc7a01
+Author: <AUTHOR> Tung <<EMAIL>>
+Date:   2026-10-04 18:41:41 +0800
+
+    LoopDeck: create l-01-notify-retry — state=ready
+
+ issues/l-01-notify-retry/spec.md    | 37 +++++++++++++++++++++++++++++++++++++
+ issues/l-01-notify-retry/status.yml | 22 ++++++++++++++++++++++
+ 2 files changed, 59 insertions(+)

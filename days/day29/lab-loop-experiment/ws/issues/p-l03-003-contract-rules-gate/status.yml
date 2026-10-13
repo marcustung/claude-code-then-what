@@ -1,0 +1,13 @@
+state: review
+blocked_by: []
+target_repo: order-service
+schedule: null
+priority: 2
+executor: claude-code
+risk: 2
+category: Skill 修正
+framework: null
+backend: local
+origin: l-03-skill-opt
+finding_fingerprint: 6a2992d0d0fe3edbe4beaa48
+finding_signature: "skill.md 補齊固定檢查器的錯誤碼規則與退出碼 2 的處理,針對 c04、c07 契約連續 0/2 | order-service/skill-lab/scores/day01.json~day04.json:per_case.c04 與 c07 四天皆為 {semantic:2, contract:0, runs:2};各日 contract_ok=14/18、skill_version=2.1.2 | order-service/skill-lab/skill/.claude/skills/trace-notification/skill.md「輸出」第 3 點:只列「退出碼 0」與「退出碼 1」,沒有退出碼 2,也沒有列出錯誤碼規則;且「最多一次」補查 | order-service/skill-lab/skill/.claude/skills/trace-notification/scripts/check_result.py:unknown_needs_missing_source、confirmed_with_missing_source、sender_evidence_required、receiver_evidence_required、unknown_source_ref 等規則未見於 skill.md | order-service/skill-lab/skill/.claude/skills/trace-notification/scripts/gate.py:len(notification_ids)!=1 或 result 檔不存在時回 input_error、退出碼 2,skill.md 沒有說明這種情況的處置 | order-service/skill-lab/skill/.claude/skills/trace-notification/changelog.md:2.0.2 曾因 sender_status 規則沒寫進 skill.md 而被退回,同類缺口曾出現過"

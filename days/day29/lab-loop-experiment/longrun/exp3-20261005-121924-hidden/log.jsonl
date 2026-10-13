@@ -1,0 +1,4 @@
+{"i": 0, "at": "2026-10-05 12:19:25", "score": 15, "of": 18, "guard_ok": true, "done": false, "cost": 0, "spent": 0.0}
+{"i": 1, "at": "2026-10-05 12:31:32", "agent_cost": 0.2239012, "score": 11, "of": 18, "guard_ok": true, "done": false, "cost": 2.199, "spent": 2.423, "minutes": 12.1}
+{"i": 2, "at": "2026-10-05 12:42:31", "agent_cost": 0.1814492, "score": 13, "of": 18, "guard_ok": true, "done": false, "cost": 2.182, "spent": 4.786, "minutes": 23.1}
+{"i": 3, "at": "2026-10-05 12:53:23", "agent_cost": 0.22142040000000004, "score": 12, "of": 18, "guard_ok": true, "done": false, "cost": 2.172, "spent": 7.18, "minutes": 34.0}

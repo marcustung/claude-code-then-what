@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-11T04:35:29+00:00",
+  "kind": "observe",
+  "day": 2,
+  "ok": true,
+  "project_changed": false,
+  "added": [
+    "P-004",
+    "P-005"
+  ],
+  "duplicates_skipped": [],
+  "no_proposal_reason": "",
+  "exit_code": 0,
+  "cost_usd": 0.058935600000000005,
+  "turns": 5,
+  "result": "ManyConflicts 是目前最大的雜訊來源，其餘兩條單分鐘尖峰規則也可以順手處理。我提 2 張提案，都沒有碰 P-002 已退回的「降為 ticket」方向。\n\n**差距**\n- 第 2 天 page 雜訊是 341，第 1 天是 440，只降了 22.5%，離 30% 的目標（≤308）還差一截。\n- 第 2 天漏報為 0，因為 P-001 和 P-003 已生效。\n- 第 2 天 341 筆雜訊裡，ManyConflicts 占 296 筆，AnyServerError 22 筆，HighLatency 23 筆。這三條規則兩天的有效次數都是 0。\n- 第 2 天的有效 page 只來自 HeapHigh 和 ReceiptsGap。\n- 這三條規則的觸發幾乎都是單分鐘尖峰：\n  - 第 2 天 `http_409_rate > 3` 共 414 分鐘，分成 296 段，其中 216 段只有 1 分鐘，最長一段 5 分鐘。\n  - 第 2 天 `error_rate > 0` 的 22 次全是孤立的單分鐘。\n  - 第 2 天 `p95_latency_ms > 150` 的 23 段裡，22 段只有 1 分鐘。\n  - 第 1 天的規律相同：409 最長一段 4 分鐘，錯誤率和延遲都是單分鐘。\n\n```json\n{\"proposals\": [\n{\"title\": \"ManyConflicts 加持續時間 5 分鐘，濾掉單分鐘 409 尖峰，維持 page 等級\",\n \"change\": \"rules.yml 中 ManyConflicts：for_minutes 由 0 改為 5；threshold 維持 3、severity 維持 page。\",\n \"expected\": \"ManyConflicts 每日 page 雜訊由約 296 次降到個位數，整體 page 雜訊由 341 降到約 50 以下，相對第 1 天（440）降幅遠超 30%。持續性的 409 風暴仍會在 5 分鐘後 page，所以規則沒有被關掉也沒有放寬到不觸發。\",\n \"evidence\": \"第 2 天 ManyConflicts 觸發 296 次、有效 0 次；409 超標的 414 分鐘裡，216 段只有 1 分鐘、51 段 2 分鐘、21 段 3 分鐘、7 段 4 分鐘，只有 1 段 5 分鐘。第 1 天觸發 315 次、有效 0 次，最長一段 4 分鐘。兩天的事故（queue、heap、silent_drop、receipts_gap）都是由別的規則抓到，漏報為 0 不依賴此規則。\"},\n{\"title\": \"HighLatency 與 AnyServerError 加 for_minutes 2，濾掉單分鐘孤立尖峰\",\n \"change\": \"rules.yml 中 HighLatency：for_minutes 由 0 改為 2；AnyServerError：for_minutes 由 0 改為 2。threshold 與 severity 不變。\",\n \"expected\": \"兩條規則合計每日 page 雜訊由約 45 次（23+22）降到個位數，整體 page 雜訊再下降約 10%。\",\n \"evidence\": \"第 2 天 AnyServerError 觸發 22 次且全是孤立的單分鐘（error_rate=1.0）、有效 0 次；HighLatency 觸發 23 次、有效 0 次，其中 22 段只有 1 分鐘。第 1 天分別是 13 次和 22 次，同樣有效 0 次。風險：若未來出現只持續 1 分鐘的真事故，這兩條規則會晚 1 分鐘才 page。兩天的資料中沒有這種案例，審核時可決定是否接受；若想保守，可以只採用第一張提案，也已足以達標。\"}\n], \"no_proposal_reason\": \"\"}\n```"
+}
