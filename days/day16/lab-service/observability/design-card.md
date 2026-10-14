@@ -26,7 +26,7 @@ transitioned=true Cancelled=true    receipts.jsonl
 ```
 
 `oc_notify_sent_total` 是服務自己記的「我送出去了」，**不算送達證據**。
-後續 的對帳只認第三欄。這條在 `slo/rules.json` 是 SLI-02。
+Day 25 的對帳只認第三欄。這條在 `slo/rules.json` 是 SLI-02。
 
 ## 三、每個訊號的「什麼時候能讀」
 

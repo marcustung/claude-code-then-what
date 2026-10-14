@@ -1,5 +1,5 @@
 # 本機觀測堆疊：Prometheus 抓訂單服務的 /metrics，Grafana 讀 Prometheus。
-# 用途：讓 Claude Code 透過 gcx 對真實時間序列取證（後續），不使用任何公司環境或資料。
+# 用途：讓 Claude Code 透過 gcx 對真實時間序列取證（Day 24–26），不使用任何公司環境或資料。
 #
 #   docker compose -f observability/docker-compose.yml up -d
 #   Grafana  http://localhost:3000 （admin / admin，僅本機教學用）
@@ -15,6 +15,7 @@ services:
       - "9090:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - oc-prom-data:/prometheus
     command:
       - --config.file=/etc/prometheus/prometheus.yml
       - --storage.tsdb.retention.time=7d
@@ -34,5 +35,11 @@ services:
       GF_FEATURE_TOGGLES_ENABLE: ""
     volumes:
       - ./grafana-datasources.yml:/etc/grafana/provisioning/datasources/oc.yml:ro
+      - oc-grafana-data:/var/lib/grafana
     depends_on:
       - prometheus
+
+# 具名 volume：`docker compose down` 不會刪（加 -v 才會），gcx 用的 service account token 與時間序列都保得住。
+volumes:
+  oc-prom-data:
+  oc-grafana-data:

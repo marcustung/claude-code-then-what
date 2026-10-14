@@ -1,0 +1,40 @@
+{
+ "result": "PASS",
+ "findings": [
+  "ok   客戶端 p95=31 ms（門檻 250）；p50=12 p99=43 n=2400",
+  "ok   GC heap 起 1.4 MB → 末 24.8 MB（峰 24.8 MB，12 個取樣）；成長 23.4 MB，門檻 64 MB",
+  "ok   通知對帳：成功轉換 526／接收端收據 526"
+ ],
+ "summary": {
+  "status": "terminal",
+  "api_exit_code": null,
+  "requests": 2400,
+  "by_status": {
+   "200": 2104,
+   "409": 296
+  },
+  "p50_ms": 11.9,
+  "p95_ms": 30.8,
+  "p99_ms": 43.3,
+  "heap_first_mb": 1.4,
+  "heap_last_mb": 24.8,
+  "heap_peak_mb": 24.8,
+  "transitions": 526,
+  "receipts_unique": 526,
+  "load": {
+   "orders": 600,
+   "repeat": 4,
+   "total_requests": 2400,
+   "completed": 2400,
+   "by_status": {
+    "200": 2104,
+    "409": 296
+   },
+   "concurrency": 32,
+   "payload_bytes": 65536,
+   "elapsed_s": 2.33,
+   "aborted_on_connection_error": false
+  },
+  "version": "1.2.0"
+ }
+}

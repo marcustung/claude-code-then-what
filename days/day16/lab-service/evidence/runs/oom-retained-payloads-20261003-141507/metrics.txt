@@ -1,0 +1,25 @@
+﻿oc_cancel_requests_total{result="idempotent"} 1578
+oc_cancel_requests_total{result="ok"} 526
+oc_cancel_requests_total{result="rejected_shipped"} 296
+oc_notify_enqueued_total 526
+oc_notify_sent_total 526
+oc_transitions_total 526
+oc_notify_queue_depth 0
+oc_request_latency_ms_bucket{le="5"} 2166
+oc_request_latency_ms_bucket{le="10"} 2363
+oc_request_latency_ms_bucket{le="25"} 2400
+oc_request_latency_ms_bucket{le="50"} 2400
+oc_request_latency_ms_bucket{le="100"} 2400
+oc_request_latency_ms_bucket{le="250"} 2400
+oc_request_latency_ms_bucket{le="500"} 2400
+oc_request_latency_ms_bucket{le="1000"} 2400
+oc_request_latency_ms_bucket{le="2500"} 2400
+oc_request_latency_ms_bucket{le="5000"} 2400
+oc_request_latency_ms_bucket{le="+Inf"} 2400
+oc_request_latency_ms_sum 5499.2
+oc_request_latency_ms_count 2400
+oc_gc_heap_bytes 25974272
+oc_working_set_bytes 112705536
+oc_gc_collections_gen2 22
+oc_info{version="1.2.0"} 1
+

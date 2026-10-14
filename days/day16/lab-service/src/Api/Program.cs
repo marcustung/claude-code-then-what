@@ -12,6 +12,7 @@ Directory.CreateDirectory(runDir);
 var versionFile = Path.Combine(AppContext.BaseDirectory, "VERSION");
 var version = File.Exists(versionFile) ? File.ReadAllText(versionFile).Trim() : (Environment.GetEnvironmentVariable("OC_VERSION") ?? "unknown");
 var faults = Faults.Load(Environment.GetEnvironmentVariable("OC_FAULTS"));
+long gcTick = 0;
 var store = new OrderStore();
 var metrics = new Metrics();
 var log = new JsonlLog(Path.Combine(runDir, "logs.jsonl"), version);
@@ -32,7 +33,7 @@ app.Use(async (ctx, next) =>
         if (!ctx.Response.HasStarted) { ctx.Response.StatusCode = 500; await ctx.Response.WriteAsync("{\"ok\":false,\"reason\":\"internal_error\"}"); }
     }
 });
-log.Write(new { level = "INFO", @event = "startup", faults_loaded = faults.Any, sink = Environment.GetEnvironmentVariable("OC_SINK_URL") });
+log.Write(new { level = "INFO", @event = "startup", sink = Environment.GetEnvironmentVariable("OC_SINK_URL") });
 
 app.MapGet("/health", () => Results.Ok(new { ok = true, version }));
 app.MapGet("/ready", () => Results.Ok(new { ready = true, version }));   // 記憶體儲存無外部依賴；readiness＝程序起來
@@ -66,11 +67,24 @@ app.MapPost("/orders/{id}/cancel", async (string id, HttpRequest req) =>
         log.Write(new { level = "WARN", @event = "cancel", request_id = rid, run_id = runId, order_id = id, result = "not_found" });
         return Results.Json(new { ok = false, reason = "not_found", request_id = rid }, statusCode: 404);
     }
+    if (faults.FailPaidCancel && before.Paid && !before.Shipped && !before.Cancelled)
+    {
+        metrics.Inc("cancel_requests_total", "error");
+        metrics.ObserveLatency((DateTime.UtcNow - t0).TotalMilliseconds);
+        log.Write(new { level = "ERROR", @event = "cancel", request_id = rid, run_id = runId, order_id = id, actor, result = "error", error = "upstream_timeout" });
+        return Results.Json(new { ok = false, reason = "upstream_timeout", request_id = rid }, statusCode: 503);
+    }
+    if (faults.CpuSpinMs > 0) { var sw = System.Diagnostics.Stopwatch.StartNew(); double x = 0; while (sw.ElapsedMilliseconds < faults.CpuSpinMs) x += Math.Sqrt(x + 1); }
+    if (faults.GcEvery > 0 && Interlocked.Increment(ref gcTick) % faults.GcEvery == 0) GC.Collect(2, GCCollectionMode.Forced, true, true);
     var result = Cancellation.Cancel(before);
     bool transitioned = Cancellation.Transitioned(before, result);
     string outcome; int status;
     if (before.Shipped) { outcome = "rejected_shipped"; status = 409; }          // BR-02，不通知（NC-03）
-    else if (transitioned) { outcome = "ok"; status = 200; store.Put(id, result.Order); }
+    else if (transitioned)
+    {
+        outcome = "ok"; status = 200;
+        if (!(faults.SkipPersistPct > 0 && Random.Shared.Next(100) < faults.SkipPersistPct)) store.Put(id, result.Order);
+    }
     else { outcome = "idempotent"; status = 200; }                               // BR-04／NC-02，不通知
     metrics.Inc("cancel_requests_total", outcome);
     if (transitioned)
@@ -88,7 +102,13 @@ app.MapPost("/orders/{id}/cancel", async (string id, HttpRequest req) =>
     log.Write(new { level = status == 200 ? "INFO" : "WARN", @event = "cancel", request_id = rid, run_id = runId, order_id = id, actor, result = outcome, transitioned, refund_requested = result.RefundRequested, latency_ms = Math.Round(lat, 1), queue_depth = channel.Reader.Count });
     return Results.Json(new { ok = status == 200, transitioned, refund_requested = result.RefundRequested, reason = status == 200 ? null : outcome, request_id = rid, order = status == 200 ? result.Order : before }, statusCode: status);
 });
-app.MapGet("/metrics", () => Results.Text(metrics.Render(channel.Reader.Count, version), "text/plain"));
+var startedAt = DateTime.UtcNow; string? frozen = null;
+app.MapGet("/metrics", () =>
+{
+    var text = metrics.Render(channel.Reader.Count, version);
+    if (faults.MetricsFreezeAfterS > 0 && (DateTime.UtcNow - startedAt).TotalSeconds > faults.MetricsFreezeAfterS) text = frozen ??= text;
+    return Results.Text(text, "text/plain");
+});
 app.Run();
 
 record Notification(string NotificationId, string OrderId, string RequestId, string? RunId, string Kind, bool RefundRequested, int Deferrals = 0);
@@ -96,7 +116,8 @@ record Notification(string NotificationId, string OrderId, string RequestId, str
 sealed class OrderStore
 {
     readonly Dictionary<string, Order> _d = new(); readonly object _g = new();
-    public void Put(string id, Order o) { lock (_g) _d[id] = o; }
+    public static int HoldMs;
+    public void Put(string id, Order o) { lock (_g) { _d[id] = o; if (HoldMs > 0) Thread.Sleep(HoldMs); } }
     public bool TryGet(string id, out Order o) { lock (_g) return _d.TryGetValue(id, out o!); }
 }
 
@@ -128,6 +149,8 @@ sealed class Metrics
             sb.Append("oc_gc_heap_bytes ").Append(GC.GetTotalMemory(false)).Append('\n');
             sb.Append("oc_working_set_bytes ").Append(Environment.WorkingSet).Append('\n');
             sb.Append("oc_gc_collections_gen2 ").Append(GC.CollectionCount(2)).Append('\n');
+            sb.Append("oc_gc_pause_seconds_total ").Append(Math.Round(GC.GetTotalPauseDuration().TotalSeconds, 3)).Append('\n');
+            sb.Append("oc_process_cpu_seconds_total ").Append(Math.Round(System.Diagnostics.Process.GetCurrentProcess().TotalProcessorTime.TotalSeconds, 2)).Append('\n');
             sb.Append("oc_info{version=\"").Append(version).Append("\"} 1\n");
             return sb.ToString();
         }
@@ -152,18 +175,33 @@ static class Retained
 {
     const int MaxItems = 256, MaxBodyChars = 256;
     static readonly Queue<(string OrderId, string Head, int Length)> _items = new(); static readonly object _g = new();
+    // 演練用回歸開關 regress_unbounded_retain：重現 v1.1.0 修復前的行為（無上限、保留完整 body）。預設關閉。
+    public static bool RegressUnbounded;
+    static readonly List<(string OrderId, string Body)> _unbounded = new();
     public static void Keep(string orderId, string? body)
     {
         var b = body ?? "";
+        if (RegressUnbounded) { lock (_g) _unbounded.Add((orderId, b)); return; }
         lock (_g) { _items.Enqueue((orderId, b.Length > MaxBodyChars ? b[..MaxBodyChars] : b, b.Length)); while (_items.Count > MaxItems) _items.Dequeue(); }
     }
-    public static int Count { get { lock (_g) return _items.Count; } }
+    public static int Count { get { lock (_g) return RegressUnbounded ? _unbounded.Count : _items.Count; } }
 }
 
 sealed class Faults
 {
     public int? DropOverQueue; public int DelayMs; public bool RetainPayloads; public bool SyncNotify;
-    public bool Any => DropOverQueue is not null || DelayMs > 0 || RetainPayloads || SyncNotify;
+    // 演練用回歸開關（預設關閉）：重現已修復 bug 被改回去的情境，供後續盲查。
+    public bool RegressUnboundedRetain; public bool RegressDeferredDrop;
+    // 演練注入，夜間巡查用（預設關閉）：專打可觀測性盲點。
+    // 演練注入 metrics_freeze_after_s：啟動 N 秒後 /metrics 回傳凍結的快照（up 仍為 1，counter 不再前進，看起來很平靜）。
+    // 演練注入 fail_paid_cancel：已付款未出貨的取消一律 503（只壞一小群，總錯誤率被稀釋）。
+    // 演練注入 skip_persist_pct：成功取消中有 N% 回 200 並發通知，但沒有寫回訂單狀態（回應與業務結果不一致）。
+    public int MetricsFreezeAfterS; public bool FailPaidCancel; public int SkipPersistPct;
+    // 演練注入 sink_url_override：接收端網址設錯（設定錯誤類）。cpu_spin_ms：每筆取消空轉 N ms（CPU 飽和）。
+    // 演練注入 lock_hold_ms：寫入訂單時持鎖 N ms（鎖競爭）。gc_every：每 N 筆取消強制完整 GC（GC 暫停）。
+    public bool SinkUnreachable; public int CpuSpinMs; public int LockHoldMs; public int GcEvery;
+    public bool Any => DropOverQueue is not null || DelayMs > 0 || RetainPayloads || SyncNotify || RegressUnboundedRetain || RegressDeferredDrop
+                       || MetricsFreezeAfterS > 0 || FailPaidCancel || SkipPersistPct > 0 || SinkUnreachable || CpuSpinMs > 0 || LockHoldMs > 0 || GcEvery > 0;
     public static Faults Load(string? path)
     {
         var f = new Faults();
@@ -173,6 +211,17 @@ sealed class Faults
         if (r.TryGetProperty("notify_delay_ms", out var d)) f.DelayMs = d.GetInt32();
         if (r.TryGetProperty("retain_payloads", out var rp)) f.RetainPayloads = rp.GetBoolean();
         if (r.TryGetProperty("sync_notify", out var sn)) f.SyncNotify = sn.GetBoolean();
+        if (r.TryGetProperty("regress_unbounded_retain", out var ru)) f.RegressUnboundedRetain = ru.GetBoolean();
+        if (r.TryGetProperty("regress_deferred_drop", out var rd)) f.RegressDeferredDrop = rd.GetBoolean();
+        if (r.TryGetProperty("metrics_freeze_after_s", out var mf)) f.MetricsFreezeAfterS = mf.GetInt32();
+        if (r.TryGetProperty("fail_paid_cancel", out var fp)) f.FailPaidCancel = fp.GetBoolean();
+        if (r.TryGetProperty("skip_persist_pct", out var sp)) f.SkipPersistPct = sp.GetInt32();
+        if (r.TryGetProperty("cpu_spin_ms", out var cs)) f.CpuSpinMs = cs.GetInt32();
+        if (r.TryGetProperty("lock_hold_ms", out var lh)) f.LockHoldMs = lh.GetInt32();
+        if (r.TryGetProperty("gc_every", out var ge)) f.GcEvery = ge.GetInt32();
+        if (r.TryGetProperty("sink_url_override", out var so)) { f.SinkUnreachable = true; Environment.SetEnvironmentVariable("OC_SINK_URL", so.GetString()); }
+        OrderStore.HoldMs = f.LockHoldMs;
+        Retained.RegressUnbounded = f.RegressUnboundedRetain;
         return f;
     }
 }
@@ -212,6 +261,12 @@ sealed class NotificationWorker : BackgroundService
         await foreach (var n in _ch.Reader.ReadAllAsync(ct))
         {
             if (_f.DelayMs > 0) await Task.Delay(_f.DelayMs, ct);
+            if (_f.DropOverQueue is int q0 && _ch.Reader.Count > q0 && _f.RegressDeferredDrop)
+            {   // 演練用回歸開關 regress_deferred_drop：重現 v1.0.0 修復前的行為——記一行 notify_deferred 就不再重送，sent 照加。
+                _m.Inc("notify_sent_total");
+                _log.Write(new { level = "INFO", @event = "notify_deferred", notification_id = n.NotificationId, order_id = n.OrderId, request_id = n.RequestId, run_id = n.RunId, queue_depth = _ch.Reader.Count });
+                continue;
+            }
             if (_f.DropOverQueue is int q && _ch.Reader.Count > q)
             {   // v1.1.0 修復：壓力下不再「假裝送了」。延後＝重排到隊尾（最多 MaxDeferrals 次），sent_total 只在接收端 ack 後才加；延後另計。
                 if (n.Deferrals < MaxDeferrals)

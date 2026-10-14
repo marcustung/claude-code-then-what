@@ -71,9 +71,9 @@ python tools/check.py evidence/runs/<run_id>                   # 只對帳，不
 - 不接真金流、客戶資料、Production；`RefundRequested` 只是業務結果旗標。
 - 記憶體儲存，**不保證重啟持久性**；要證明 crash recovery 才補持久化與對應測試。
 - 權限用 `X-Actor` 測試身分，不是正式認證設計。
-- 故障是演練注入，不是自然發生的事故；`scenarios/faults/` 在 後續 前不公開。
+- 故障是演練注入，不是自然發生的事故；`scenarios/faults/` 在 Day 27 前不公開。
 - 沒有基線，不宣稱開發加速或維運減載；人工分鐘欄位為 null＝未記錄。
-- 診斷（後續）尚未跑；盲診用的 snapshot 須去掉 `faults/` 與 `notify_deferred` 的 `requeued` 欄位等會洩答案的內容，另行製作。
+- 診斷（Day 26）尚未跑；盲診用的 snapshot 須去掉 `faults/` 與 `notify_deferred` 的 `requeued` 欄位等會洩答案的內容，另行製作。
 
 ## 版本
 

@@ -1,0 +1,47 @@
+{
+ "result": "FAIL",
+ "findings": [
+  "FAIL 服務程序崩潰 exit=None：[unhandled] System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown. path=/orders/L-00275/cancel request_id=regress-oom--r00876 | [unhandled] System.OutOfMemoryException: Exception of type 'System.OutOfMemoryException' was thrown. path=/orders/L-00279/cancel request_i",
+  "FAIL 負載器在連線中斷後停止：完成 1069／2400",
+  "FAIL 32 筆請求沒有回應（連線錯誤）",
+  "FAIL 客戶端 p95=379 ms（門檻 250）；p50=24 p99=497 n=1037",
+  "FAIL GC heap 起 1.4 MB → 末 123.3 MB（峰 123.5 MB，12 個取樣）；成長 121.9 MB，門檻 64 MB",
+  "info 通知對帳（崩潰前）：成功轉換 526／收據 202"
+ ],
+ "summary": {
+  "status": "crashed",
+  "api_exit_code": null,
+  "requests": 1069,
+  "by_status": {
+   "200": 831,
+   "409": 119,
+   "500": 87,
+   "0": 32
+  },
+  "p50_ms": 24.1,
+  "p95_ms": 378.8,
+  "p99_ms": 497.4,
+  "heap_first_mb": 1.4,
+  "heap_last_mb": 123.3,
+  "heap_peak_mb": 123.5,
+  "transitions": 526,
+  "receipts_unique": 202,
+  "load": {
+   "orders": 600,
+   "repeat": 4,
+   "total_requests": 2400,
+   "completed": 1069,
+   "by_status": {
+    "200": 831,
+    "409": 119,
+    "500": 87,
+    "0": 32
+   },
+   "concurrency": 32,
+   "payload_bytes": 65536,
+   "elapsed_s": 2.58,
+   "aborted_on_connection_error": true
+  },
+  "version": "1.2.0"
+ }
+}

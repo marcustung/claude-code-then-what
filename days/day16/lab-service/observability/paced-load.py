@@ -17,6 +17,7 @@ def main():
     ap.add_argument('--orders', type=int, default=300)
     ap.add_argument('--concurrency', type=int, default=12)
     ap.add_argument('--api', default='http://127.0.0.1:5080')
+    ap.add_argument('--payload-bytes', type=int, default=0, help='每筆取消附帶的 payload 大小（OOM 演練用）')
     a = ap.parse_args()
 
     out = os.path.join(ROOT, 'observability', '.run', 'paced-' + a.label)
@@ -28,7 +29,7 @@ def main():
                             '--api', a.api, '--run-id', '%s-%02d' % (a.label, i),
                             '--out', os.path.join(out, '%02d' % i),
                             '--orders', str(a.orders), '--concurrency', str(a.concurrency),
-                            '--repeat', '2', '--seed', str(7 + i)],
+                            '--repeat', '2', '--seed', str(7 + i), '--payload-bytes', str(a.payload_bytes)],
                            capture_output=True, text=True, encoding='utf-8', errors='replace')
         line = (r.stdout or '').strip().splitlines()[-1] if r.stdout else '(no output)'
         print('[%s %02d/%02d] %s' % (a.label, i, a.rounds, line[:160]), flush=True)

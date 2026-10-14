@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""後續 取證實跑：把每一次 gcx 呼叫（指令、時間窗、回傳）完整存檔。
+"""Day 26 取證實跑：把每一次 gcx 呼叫（指令、時間窗、回傳）完整存檔。
 本腳本只負責「執行並留痕」，判斷與假設寫在 result.md，由人與 Claude 分開負責。
 
   python observability/gcx-investigate.py --out evidence/gcx/<run-id>

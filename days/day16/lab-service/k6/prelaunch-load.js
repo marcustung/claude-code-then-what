@@ -1,4 +1,4 @@
-// 上線前壓測：健康服務（無故障注入）逐步加壓，找 p95 跨過 250ms（後續 定的門檻）的那一點。
+// 上線前壓測：健康服務（無故障注入）逐步加壓，找 p95 跨過 250ms（Day 24 定的門檻）的那一點。
 // 每次迭代建一張新訂單（唯一 id）再取消它，模擬持續進來的新取消請求，不是重複打同一張。
 import http from 'k6/http';
 import { check } from 'k6';
@@ -27,7 +27,7 @@ export const options = {
     },
   },
   thresholds: {
-    // 後續 的門檻：p95 <= 250ms。不讓它中斷測試（abortOnFail: false），只記錄有沒有越界。
+    // Day 24 的門檻：p95 <= 250ms。不讓它中斷測試（abortOnFail: false），只記錄有沒有越界。
     'cancel_latency_ms': [{ threshold: 'p(95)<250', abortOnFail: false }],
   },
 };

@@ -11,6 +11,7 @@ param(
   [int]$sinkDelayMs = 0,
   [int]$apiPort = 5080,
   [int]$sinkPort = 5081,
+  [string]$heapLimit = '',
   [switch]$noBuild
 )
 $ErrorActionPreference = 'Stop'
@@ -48,6 +49,7 @@ $sinkEnv = @{ OC_RUN_DIR = $outDir; ASPNETCORE_URLS = "http://0.0.0.0:$sinkPort"
 $apiEnv = @{ OC_RUN_DIR = $outDir; ASPNETCORE_URLS = "http://0.0.0.0:$apiPort"; OC_SINK_URL = "http://127.0.0.1:$sinkPort/notify" }
 if ($sinkDelayMs -gt 0) { $apiEnv['OC_SINK_DELAY_MS'] = "$sinkDelayMs"; $sinkEnv['OC_SINK_DELAY_MS'] = "$sinkDelayMs" }
 if ($faults) { $apiEnv['OC_FAULTS'] = (Join-Path $root $faults) }
+if ($heapLimit) { $apiEnv['DOTNET_GCHeapHardLimit'] = $heapLimit }   # 演練用縮小環境，例：0x8000000 = 128 MB
 
 $sink = Start-Svc 'src/FakeSink/FakeSink.csproj' $sinkEnv 'sink'
 $api = Start-Svc 'src/Api/Api.csproj' $apiEnv 'api'

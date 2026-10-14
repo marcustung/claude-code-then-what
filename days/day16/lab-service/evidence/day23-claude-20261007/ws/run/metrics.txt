@@ -1,0 +1,11 @@
+﻿oc_cancel_requests_total{result="idempotent"} 6
+oc_cancel_requests_total{result="not_found"} 1
+oc_cancel_requests_total{result="ok"} 9
+oc_cancel_requests_total{result="rejected_shipped"} 3
+oc_cancel_requests_total{result="unauthorized"} 1
+oc_notify_enqueued_total 9
+oc_notify_sent_total 9
+oc_transitions_total 9
+oc_notify_queue_depth 0
+oc_info{version="1.0.0"} 1
+

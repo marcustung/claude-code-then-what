@@ -3,7 +3,7 @@
 **2026 iThome 鐵人賽・Claude AI 組・三十天系列的配套 repo。** 文章談的是一個工程團隊導入 Claude Code 之後，怎麼把「程式寫得更快」接回需求、審查、驗收與成效判斷；這裡放的是文章裡每一個實驗的原件——提示、trace、輸出、判準與重跑腳本——讓每一句「我試過」都能被打開來看。
 
 - 系列文章：[iThome 系列頁](https://ithelp.ithome.com.tw/users/20162577/ironman/9862)（每日一篇，2026-09-15 起）
-- 目前開放：Day 1–29（索引隨發文節奏開放，未發布的日子只有空資料夾）
+- 目前開放：Day 1–30（索引隨發文節奏開放，未發布的日子只有空資料夾）
 - 試跑紀錄：[VERIFIED.md](VERIFIED.md)（每一天的練習都在乾淨副本裡照 README 跑過，含時間、環境、修過的問題）
 
 ## 這個 repo 是什麼、不是什麼
@@ -74,6 +74,7 @@ VERIFIED.md          讀者視角試跑紀錄
 | [27](days/day27/) | 通知逾時了，能不能請 Claude 直接重送？ | [文章](https://ithelp.ithome.com.tw/articles/10423199) | day27/lab-recovery：三種逾時與 Claude 提案；lab-pressure：凍結下的重送入口與重跑 30 次；lab：共同範例故障檔揭曉 | [grading-table.md](templates/grading-table.md) |
 | [28](days/day28/) | 交給 Claude 每天自動跑，怎麼確認它真的做完？ | [文章](https://ithelp.ithome.com.tw/articles/10423514) | day28/lab-schedule：排程重疊、重複、空跑、連續失敗八組；lab-desktop：Desktop 排程實測 13 輪（權限、重疊、hook 煞車）；lab-interrupt：中斷重跑對照 | [loop-contract.md](templates/loop-contract.md) |
 | [29](days/day29/) | 讓 Claude 自己提出下一步，為什麼我反而更忙？ | [文章](https://ithelp.ithome.com.tw/articles/10424013) | day29/lab-mini-loop：迷你迴圈三天、五張提案；lab-loop-experiment：長期實驗原件；lab-board：看板提案與裁決 | [loop-goals.md](templates/loop-goals.md) |
+| [30](days/day30/) | 工具買完後，我們終於能怎麼回答總經理？ | [文章](https://ithelp.ithome.com.tw/articles/10424336) | day30/lab-otel：Claude Code 自己的遙測看得到什麼、看不到什麼（A1 重疊、C1 沒權限） | [five-layers-ledger.md](templates/five-layers-ledger.md) |
 
 ## 怎麼核對一次 run
 

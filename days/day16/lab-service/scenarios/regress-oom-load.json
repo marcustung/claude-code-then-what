@@ -1,0 +1,23 @@
+{
+  "scenario": "regress-oom-load",
+  "mode": "load",
+  "description": "Day 27：OOM 修法被改回去（regress-oom.json：無上限保留 payload）＋ heap 上限 128 MB，跑既有的壓測情境。",
+  "faults": "scenarios/faults/regress-oom.json",
+  "env": {
+    "DOTNET_GCHeapHardLimit": "0x8000000"
+  },
+  "load": {
+    "orders": 600,
+    "concurrency": 32,
+    "payload_bytes": 65536,
+    "repeat": 4,
+    "seed": 7
+  },
+  "expected": {
+    "p95_ms_max": 250,
+    "heap_growth_mb_max": 64
+  },
+  "wait": {
+    "timeout_seconds": 180
+  }
+}

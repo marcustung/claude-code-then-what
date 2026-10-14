@@ -1,6 +1,6 @@
 {
- "files": 5411,
- "binary": 252,
+ "files": 5724,
+ "binary": 265,
  "scrubbed": [
   "days\\day09\\lab-scope\\runs\\r0-naive\\meta.json",
   "days\\day09\\lab-scope\\runs\\r0-naive\\trace.jsonl",
@@ -301,6 +301,29 @@
   "days\\day08\\lab\\runs\\r3\\trace.jsonl",
   "days\\day10\\lab\\day10\\trace.jsonl",
   "days\\day16\\lab\\.claude\\settings.json",
+  "days\\day16\\lab-service\\.claude\\settings.json",
+  "days\\day16\\lab-service\\evidence\\day23-claude-20261007\\first-copy-missing-brace\\r3.json",
+  "days\\day16\\lab-service\\evidence\\day23-claude-20261007\\ws\\specs\\notification-contract-v2.1.md",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\impl\\meta.json",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\impl\\trace.jsonl",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\plan\\meta.json",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\plan\\trace.jsonl",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\pr\\meta.json",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\pr\\trace.jsonl",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\review\\meta.json",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\review\\trace.jsonl",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\reviewdirect\\meta.json",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\reviewdirect\\trace.jsonl",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\tests\\meta.json",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\tests\\trace.jsonl",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\trap\\meta.json",
+  "days\\day16\\lab-service\\evidence\\dev\\day16\\trap\\trace.jsonl",
+  "days\\day16\\lab-service\\observability\\claude-dashboard-run.py",
+  "days\\day16\\lab-service\\observability\\claude-gcx-run.py",
+  "days\\day16\\lab-service\\slo\\brake-cases.js",
+  "days\\day16\\lab-service\\slo\\run-brake.py",
+  "days\\day16\\lab-service\\specs\\notification-contract-v2.1.md",
+  "days\\day16\\lab-service\\src\\Api\\Program.cs",
   "days\\day26\\lab\\diagnosis-oom\\runs\\D1\\meta.json",
   "days\\day26\\lab\\diagnosis-oom\\runs\\D1\\trace.jsonl",
   "days\\day26\\lab\\diagnosis-oom\\runs\\D2\\meta.json",
@@ -713,6 +736,10 @@
   "days\\day29\\lab-loop-experiment\\ws\\issues\\r-04-loop-health\\runs\\2026-10-11-run1.md",
   "days\\day29\\lab-loop-experiment\\ws\\issues\\r-04-loop-health\\runs\\2026-10-11-run1.trace.jsonl",
   "days\\day29\\lab-loop-experiment\\ws\\tools\\loop-metrics.js",
+  "days\\day30\\lab-otel\\run.py",
+  "days\\day30\\lab-otel\\runs\\20261012T030354Z\\A1\\r1.trace.jsonl",
+  "days\\day30\\lab-otel\\runs\\20261012T030354Z\\A1\\r2.trace.jsonl",
+  "days\\day30\\lab-otel\\runs\\20261012T030354Z\\C1\\r1.trace.jsonl",
   "days\\day27\\lab-pressure\\runs-claude\\20261008T081722Z\\S1-frozen\\trace.jsonl",
   "days\\day27\\lab-pressure\\runs-claude\\20261008T081722Z\\S2-open\\trace.jsonl",
   "days\\day27\\lab-pressure\\runs-claude\\20261010T135337Z\\P0-r1\\trace.jsonl",
@@ -747,8 +774,19 @@
   "days\\day27\\lab-pressure\\runs-claude\\20261010T140351Z\\R1-r5\\trace.jsonl"
  ],
  "forbidden": [],
- "frozen": [
-  "days/day16/lab-service"
+ "oversized": [
+  [
+   "examples\\order-cancel-lifecycle\\k6\\results\\run-20260925-172355.json",
+   1242896030
+  ],
+  [
+   "examples\\order-cancel-lifecycle\\runs\\default\\logs.jsonl",
+   81446487
+  ],
+  [
+   "examples\\order-cancel-lifecycle\\runs\\default\\receipts.jsonl",
+   22945821
+  ]
  ],
  "dropped": [
   "examples\\day25-business-view\\user-reference-layout.webp",
@@ -775,5 +813,5 @@
   "examples\\day25-business-view\\runs-claude-dashboard\\20261009T015244Z-v7fix4\\user-reference-layout.webp"
  ],
  "figures": 49,
- "bytes": 343966396
+ "bytes": 342048381
 }
